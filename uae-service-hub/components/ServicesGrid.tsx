@@ -36,14 +36,16 @@ function ServiceItem({ service, isLeft }: { service: Service; isLeft: boolean })
         {/* Image column */}
         <div className="service-img-col">
           <div className="service-img">
-            <Image
-              src={service.images[0]}
-              alt={service.name}
-              width={300}
-              height={300}
-              style={{ borderRadius: '50%', objectFit: 'cover', width: '100%', height: 'auto' }}
-              sizes="(max-width: 767px) 200px, 300px"
-            />
+            {/* Desktop: circular. Mobile: overridden to banner via CSS */}
+            <div className="service-img-inner">
+              <Image
+                src={service.images[0]}
+                alt={service.name}
+                fill
+                className="svc-grid-img"
+                sizes="(max-width: 767px) 50vw, 300px"
+              />
+            </div>
           </div>
         </div>
 
@@ -75,14 +77,16 @@ export default function ServicesGrid({ services }: { services: Service[] }) {
           </div>
         </div>
 
-        {/* Alternating pill items — each animates in on scroll */}
-        {services.map((service, index) => (
-          <ServiceItem
-            key={service.id}
-            service={service}
-            isLeft={index % 2 === 0}
-          />
-        ))}
+        {/* Wrapper becomes 2-col card grid on mobile */}
+        <div className="service-items-list">
+          {services.map((service, index) => (
+            <ServiceItem
+              key={service.id}
+              service={service}
+              isLeft={index % 2 === 0}
+            />
+          ))}
+        </div>
       </div>
     </section>
   )
