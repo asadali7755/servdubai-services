@@ -141,7 +141,7 @@ export default async function EmiratePage({ params }: Props) {
         </div>
       </div>
 
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '4rem 2rem' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '4rem 2rem' }} className="emir-main">
 
         {/* ══════════════════════════════════════
             SELECT YOUR AREA

@@ -1143,3 +1143,163 @@ img { max-width: 100%; }
 .emir-city-img-card:hover .emir-city-img-inner {
   transform: scale(1.07) !important;
 }
+
+/* =============================================
+   GLOBAL RESPONSIVE — MOBILE FIRST
+============================================= */
+
+/* ── Hero ── */
+@media (max-width: 640px) {
+  .p-hero-caption {
+    padding: 0 1rem !important;
+    padding-top: 80px !important;
+  }
+  .p-hero-caption .p-title-center h1 {
+    font-size: clamp(1.5rem, 7vw, 2.2rem) !important;
+  }
+  .subtitle-text {
+    font-size: 0.85rem !important;
+  }
+  .p-hero-caption > div:last-child {
+    gap: 0.5rem !important;
+  }
+  .p-hero-prev, .p-hero-next {
+    width: 36px !important;
+    height: 36px !important;
+  }
+  .p-hero-dots { bottom: 14px !important; }
+}
+
+/* ── About section on homepage ── */
+@media (max-width: 640px) {
+  .p-about-img { min-height: 220px !important; }
+}
+
+/* ── Services grid (ServicesGrid) ── */
+@media (max-width: 640px) {
+  .service-item { margin-bottom: 1.5rem; }
+}
+
+/* ── Emirates section ── */
+@media (max-width: 480px) {
+  .team-name h5 { font-size: 0.85rem !important; }
+}
+
+/* ── Specialist Sites Banner ── */
+@media (max-width: 640px) {
+  .specialist-banner-card { width: 100%; }
+}
+
+/* ── Stats bar (emirate + service pages) ── */
+@media (max-width: 480px) {
+  .svc-stat-card { min-width: 80px !important; padding: 0.875rem 0.5rem !important; }
+  .svc-stat-number { font-size: 1rem !important; }
+}
+
+/* ── Service page 2-col ── */
+@media (max-width: 768px) {
+  .svc-grid { grid-template-columns: 1fr !important; }
+  .svc-sidebar { position: static !important; top: auto !important; }
+  .svc-desc-card { padding: 1.25rem !important; }
+}
+
+/* ── Service area cards (service page) ── */
+@media (max-width: 480px) {
+  .svc-area-card { aspect-ratio: 4/3 !important; }
+}
+
+/* ── Emirate page main container ── */
+@media (max-width: 640px) {
+  .emir-main { padding: 2rem 1rem !important; }
+  .emir-section-mb { margin-bottom: 3rem !important; }
+}
+
+/* ── City image grid ── */
+@media (max-width: 480px) {
+  .emir-city-img-card { height: 150px !important; }
+}
+
+/* ── Service image cards (emirate page) ── */
+@media (max-width: 480px) {
+  .emir-svc-card { aspect-ratio: 3/2 !important; }
+}
+
+/* ── How It Works ── */
+@media (max-width: 480px) {
+  .how-step-card { padding: 1.25rem 1rem !important; }
+}
+
+/* ── Websites page alternating sections ── */
+@media (max-width: 768px) {
+  .site-section-grid { grid-template-columns: 1fr !important; }
+  .site-section-img-col {
+    min-height: 240px !important;
+    order: 0 !important;
+  }
+  .site-section-content-col {
+    order: 1 !important;
+    padding: 2rem 1.25rem !important;
+  }
+  .site-feature-grid { grid-template-columns: 1fr !important; }
+  .site-stats-row { gap: 0.5rem !important; }
+}
+
+/* ── Footer ── */
+@media (max-width: 640px) {
+  .p-footer-links {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.75rem !important;
+  }
+  .p-footer-inner { padding: 1rem 1rem 0.75rem !important; }
+  .p-footer-logo { font-size: 1.3rem !important; }
+}
+
+/* ── CTA Banners (all pages) ── */
+@media (max-width: 640px) {
+  .cta-banner-inner { padding: 2rem 1.25rem !important; }
+}
+
+/* ── Btn-icon smaller on mobile ── */
+@media (max-width: 480px) {
+  .p-btn-icon { width: 40px !important; height: 40px !important; }
+}
+
+/* ── Overflow guard — prevent horizontal scroll ── */
+html, body { overflow-x: hidden; max-width: 100vw; }
+img { max-width: 100%; }
+* { box-sizing: border-box; }
+
+/* ── Dropdown not overflow on mobile ── */
+@media (max-width: 991px) {
+  .dropdown-menu { display: none !important; }
+}
+
+/* =============================================
+   PERFORMANCE — REDUCED MOTION
+============================================= */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .p-footer { animation: none !important; }
+  .emir-hero-img { animation: none !important; }
+  .svc-book-btn { animation: none !important; }
+  .svc-stat-number { animation: none !important; }
+}
+
+/* =============================================
+   PERFORMANCE — GPU HINT FOR ANIMATED ELEMENTS
+============================================= */
+.p-footer,
+.emir-hero-img,
+.emir-svc-card-img,
+.emir-city-img-inner,
+.specialist-banner-img,
+.svc-area-img {
+  will-change: transform;
+}
+.svc-book-btn {
+  will-change: box-shadow;
+}

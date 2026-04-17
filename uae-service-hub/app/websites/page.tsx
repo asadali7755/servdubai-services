@@ -227,7 +227,7 @@ export default function WebsitesPage() {
                 </p>
 
                 {/* Features */}
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.4rem 1rem', marginBottom: '2rem' }}>
+                <div className="site-feature-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.4rem 1rem', marginBottom: '2rem' }}>
                   {site.features.map((f) => (
                     <div key={f} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
                       <span style={{ color: '#c9a84c', fontSize: '0.75rem', marginTop: '2px', flexShrink: 0 }}>✓</span>
@@ -237,7 +237,7 @@ export default function WebsitesPage() {
                 </div>
 
                 {/* Stats row */}
-                <div style={{ display: 'flex', gap: '1rem', marginBottom: '2rem', flexWrap: 'wrap' }}>
+                <div className="site-stats-row" style={{ display: 'flex', gap: '1rem', marginBottom: '2rem', flexWrap: 'wrap' }}>
                   {site.stats.map((s) => (
                     <div key={s.l} style={{
                       background: 'rgba(201,168,76,0.08)',
