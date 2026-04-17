@@ -16,7 +16,7 @@ import { SITE_CONFIG } from '@/lib/data/constants'
 export const metadata: Metadata = buildMetadata({
   title: 'Professional Cleaning Services in UAE | Al Haya',
   description:
-    'Al Haya offers 11 professional cleaning services across 7 UAE Emirates including Dubai, Sharjah, Abu Dhabi. Same-day service. Call 0547199189.',
+    'Al Haya offers 11 professional cleaning services across 7 UAE Emirates including Dubai, Sharjah, Abu Dhabi. Same-day service. Call 0551275545.',
   path: '/',
 })
 

@@ -10,7 +10,7 @@ import { getWhatsAppLink } from '@/lib/utils/whatsapp'
 export const metadata: Metadata = buildMetadata({
   title: 'About Al Haya Cleaning Services | UAE',
   description:
-    'Al Haya is a professional cleaning company serving all 7 UAE Emirates. 11 services, certified technicians, same-day service. Call 0547199189.',
+    'Al Haya is a professional cleaning company serving all 7 UAE Emirates. 11 services, certified technicians, same-day service. Call 0551275545.',
   path: '/about',
 })
 
@@ -89,7 +89,7 @@ export default function AboutPage() {
             className="inline-block px-8 py-4 rounded-lg font-semibold text-lg"
             style={{ background: '#25D366', color: '#111111' }}
           >
-            WhatsApp: 0547199189
+            WhatsApp: 0551275545
           </a>
         </div>
       </div>

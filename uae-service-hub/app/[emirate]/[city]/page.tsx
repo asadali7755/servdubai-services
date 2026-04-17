@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!emirate || !city) return {}
   return buildMetadata({
     title: `Cleaning Services in ${city.name}, ${emirate.name} | Al Haya`,
-    description: `Professional cleaning in ${city.name}, ${emirate.name}. Sofa, carpet, villa & more. Same-day. Call 0547199189.`,
+    description: `Professional cleaning in ${city.name}, ${emirate.name}. Sofa, carpet, villa & more. Same-day. Call 0551275545.`,
     path: `/${emirateSlug}/${citySlug}`,
   })
 }
@@ -65,7 +65,7 @@ export default async function CityPage({ params }: Props) {
           Cleaning Services in {city.name}
         </h1>
         <h2 className="text-gray-400 mb-10 text-lg" style={{ fontWeight: 400 }}>
-          {emirate.name} · Professional cleaning — same-day service · Call 0547199189
+          {emirate.name} · Professional cleaning — same-day service · Call 0551275545
         </h2>
 
         {/* Services list */}
@@ -127,7 +127,7 @@ export default async function CityPage({ params }: Props) {
             className="inline-block px-8 py-4 rounded-lg font-semibold text-lg"
             style={{ background: '#25D366', color: '#111111' }}
           >
-            WhatsApp: 0547199189
+            WhatsApp: 0551275545
           </a>
         </div>
       </div>

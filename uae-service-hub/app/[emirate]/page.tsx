@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!emirate) return {}
   return buildMetadata({
     title: `Cleaning Services in ${emirate.name} | Al Haya`,
-    description: `Professional cleaning services across ${emirate.name}. Sofa, carpet, villa, marble and more. Call 0547199189.`,
+    description: `Professional cleaning services across ${emirate.name}. Sofa, carpet, villa, marble and more. Call 0551275545.`,
     path: `/${emirateSlug}`,
   })
 }
