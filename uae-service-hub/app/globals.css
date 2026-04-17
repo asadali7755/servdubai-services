@@ -189,6 +189,9 @@ img { max-width: 100%; }
   background: rgba(33, 37, 41, 0.98);
   border-top: 1px solid rgba(201, 168, 76, 0.15);
   padding: 1rem 0 1.5rem;
+  max-height: calc(100dvh - 70px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .p-navbar .mobile-menu.open {
@@ -223,7 +226,14 @@ img { max-width: 100%; }
 }
 
 @media (max-width: 991px) {
-  .p-navbar { padding: 0 1rem; }
+  .p-navbar {
+    padding: 0 1rem;
+    /* Always fixed on mobile so the open menu stays anchored at top */
+    position: fixed;
+    background: rgba(33, 37, 41, 0.97);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+  }
   .p-navbar .nav-links { display: none; }
   .p-navbar .hamburger { display: flex; align-items: center; justify-content: center; }
   .p-navbar .nav-cta-wrap { display: none; }
