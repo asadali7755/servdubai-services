@@ -31,7 +31,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${josefin.variable} ${workSans.variable}`}>
+    <html lang="en" className={`${josefin.variable} ${workSans.variable}`} data-theme="dark" suppressHydrationWarning>
       <head>
         {/* Prevent flash of wrong theme */}
         <script dangerouslySetInnerHTML={{ __html: `try{var t=localStorage.getItem('al-haya-theme')||'dark';document.documentElement.setAttribute('data-theme',t);}catch(e){}` }} />
