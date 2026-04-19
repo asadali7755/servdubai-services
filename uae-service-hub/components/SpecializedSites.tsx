@@ -3,7 +3,7 @@ import type { SpecializedSite } from '@/lib/data/specialized-sites'
 
 export default function SpecializedSites({ sites }: { sites: SpecializedSite[] }) {
   return (
-    <section style={{ background: '#343a40', padding: '5rem 0' }}>
+    <section className="theme-sites" style={{ background: '#343a40', padding: '5rem 0' }}>
       <div style={{ maxWidth: '1140px', margin: '0 auto', padding: '0 1.5rem' }}>
 
         {/* Poseify title */}

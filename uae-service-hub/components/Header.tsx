@@ -6,6 +6,7 @@ import { services } from '@/lib/data/services'
 import { emirates } from '@/lib/data/emirates'
 import { getWhatsAppLink } from '@/lib/utils/whatsapp'
 import { SITE_CONFIG } from '@/lib/data/constants'
+import ThemeToggle from './ThemeToggle'
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
@@ -74,6 +75,7 @@ export default function Header() {
 
         {/* CTA button */}
         <div className="nav-cta-wrap">
+          <ThemeToggle />
           <a
             href={getWhatsAppLink()}
             target="_blank"
@@ -108,6 +110,9 @@ export default function Header() {
 
       {/* Mobile menu */}
       <div className={`mobile-menu${mobileOpen ? ' open' : ''}`}>
+        <div style={{ padding: '0.5rem 1.5rem', borderBottom: '1px solid rgba(201,168,76,0.1)', marginBottom: '0.5rem' }}>
+          <ThemeToggle />
+        </div>
         <Link href="/" onClick={() => setMobileOpen(false)}>Home</Link>
         <Link href="/about" onClick={() => setMobileOpen(false)}>About</Link>
         <p className="section-label">Services</p>

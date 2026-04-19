@@ -1424,3 +1424,326 @@ img { max-width: 100%; }
 .svc-book-btn {
   will-change: box-shadow;
 }
+
+/* =============================================
+   THEME TOGGLE BUTTON
+============================================= */
+.nav-cta-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+@media (max-width: 991px) {
+  .nav-cta-wrap { display: none !important; }
+}
+
+.theme-toggle-btn {
+  background: none;
+  border: 1px solid rgba(201,168,76,0.45);
+  border-radius: 500px;
+  padding: 0.35rem 0.85rem;
+  cursor: pointer;
+  color: #c9a84c;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  font-family: var(--font-josefin), sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+
+.theme-toggle-btn:hover {
+  background: rgba(201,168,76,0.12);
+}
+
+/* =============================================
+   LIGHT THEME  — [data-theme="light"]
+   Uses !important to override inline styles
+============================================= */
+
+/* Body */
+[data-theme="light"] .theme-body,
+[data-theme="light"] body {
+  background: #fdfcf8 !important;
+  color: #1a1510 !important;
+}
+
+/* ── Navbar ── */
+[data-theme="light"] .p-navbar {
+  background: rgba(253,252,248,0.97) !important;
+  border-bottom: 1px solid rgba(201,168,76,0.25) !important;
+}
+
+[data-theme="light"] .p-navbar.scrolled {
+  background: rgba(253,252,248,0.97) !important;
+}
+
+[data-theme="light"] .p-navbar .nav-links .nav-link {
+  color: #1a1510 !important;
+}
+
+[data-theme="light"] .p-navbar .nav-links .nav-link:hover,
+[data-theme="light"] .p-navbar .nav-links .nav-link.active {
+  color: #c9a84c !important;
+}
+
+[data-theme="light"] .p-navbar .dropdown-menu {
+  background: #ffffff !important;
+  border-color: rgba(201,168,76,0.2) !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08) !important;
+}
+
+[data-theme="light"] .p-navbar .dropdown-menu a {
+  color: #3a3020 !important;
+}
+
+[data-theme="light"] .p-navbar .dropdown-menu a:hover {
+  color: #c9a84c !important;
+  background: rgba(201,168,76,0.07) !important;
+}
+
+[data-theme="light"] .p-navbar .hamburger {
+  color: #1a1510 !important;
+}
+
+[data-theme="light"] .p-navbar .mobile-menu {
+  background: rgba(253,252,248,0.99) !important;
+  border-top-color: rgba(201,168,76,0.2) !important;
+}
+
+[data-theme="light"] .p-navbar .mobile-menu a,
+[data-theme="light"] .p-navbar .mobile-menu button {
+  color: #1a1510 !important;
+}
+
+[data-theme="light"] .p-navbar .mobile-menu a:hover {
+  color: #c9a84c !important;
+}
+
+/* ── P-Title system ── */
+[data-theme="light"] .p-title h1 {
+  color: #1a1510 !important;
+}
+
+[data-theme="light"] .p-title-center h5::before,
+[data-theme="light"] .p-title-center h5::after,
+[data-theme="light"] .p-title-left h5::before,
+[data-theme="light"] .p-title-left h5::after {
+  background: rgba(201,168,76,0.45) !important;
+}
+
+/* ── Buttons ── */
+[data-theme="light"] .p-btn-primary {
+  background: #1a1510 !important;
+  color: #fff !important;
+}
+
+[data-theme="light"] .p-btn-outline {
+  color: #1a1510 !important;
+  border-color: #1a1510 !important;
+}
+
+[data-theme="light"] .p-btn-outline:hover {
+  background: #1a1510 !important;
+  color: #fff !important;
+}
+
+/* ── About section ── */
+[data-theme="light"] .theme-about {
+  background: #f5f0e5 !important;
+}
+
+[data-theme="light"] .theme-about h2 {
+  color: #5a4e3a !important;
+}
+
+[data-theme="light"] .p-checklist li {
+  color: #1a1510 !important;
+}
+
+/* ── Services section ── */
+[data-theme="light"] .theme-services {
+  background: #fdfcf8 !important;
+}
+
+[data-theme="light"] .service-item.service-item-left {
+  background: linear-gradient(to right, #f5f0e5, #fdfcf8) !important;
+  border: 1px solid rgba(201,168,76,0.18) !important;
+}
+
+[data-theme="light"] .service-item.service-item-right {
+  background: linear-gradient(to left, #f5f0e5, #fdfcf8) !important;
+  border: 1px solid rgba(201,168,76,0.18) !important;
+}
+
+[data-theme="light"] .service-item .service-text h3 {
+  color: #1a1510 !important;
+}
+
+[data-theme="light"] .service-item .service-text p {
+  color: #5a4e3a !important;
+}
+
+/* Mobile service cards in light mode */
+@media (max-width: 767px) {
+  [data-theme="light"] .service-item.service-item-left,
+  [data-theme="light"] .service-item.service-item-right {
+    background: #ffffff !important;
+    border: 1px solid rgba(201,168,76,0.25) !important;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06) !important;
+  }
+}
+
+/* ── CTA / Booking section ── */
+[data-theme="light"] .theme-cta {
+  background: linear-gradient(135deg, #fdf8ee 0%, #f5e8c8 50%, #fdf0d5 100%) !important;
+}
+
+[data-theme="light"] .theme-cta h1 {
+  color: #1a1510 !important;
+}
+
+[data-theme="light"] .theme-cta h2 {
+  color: #5a4e3a !important;
+}
+
+[data-theme="light"] .cta-stat-label {
+  color: #8a7a60 !important;
+}
+
+/* ── Emirates section ── */
+[data-theme="light"] .theme-emirates {
+  background: #f5f0e5 !important;
+}
+
+[data-theme="light"] .team-item {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08) !important;
+}
+
+/* ── Specialist Sites section ── */
+[data-theme="light"] .theme-sites {
+  background: #fdfcf8 !important;
+}
+
+[data-theme="light"] .theme-sites .site-card {
+  background: #ffffff !important;
+  border-color: rgba(201,168,76,0.3) !important;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07) !important;
+}
+
+[data-theme="light"] .theme-sites .site-card h3 {
+  color: #1a1510 !important;
+}
+
+[data-theme="light"] .theme-sites .site-card p {
+  color: #5a4e3a !important;
+}
+
+/* ── Specialist Sites Banner (shared component) ── */
+[data-theme="light"] .specialist-banner-section {
+  background: linear-gradient(135deg, #f5f0e5 0%, #fdf8ee 50%, #f5f0e5 100%) !important;
+  border-top-color: rgba(201,168,76,0.2) !important;
+  border-bottom-color: rgba(201,168,76,0.2) !important;
+}
+
+[data-theme="light"] .specialist-banner-card {
+  background: #ffffff !important;
+  border-color: rgba(201,168,76,0.25) !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06) !important;
+}
+
+[data-theme="light"] .specialist-banner-card:hover {
+  border-color: #c9a84c !important;
+  box-shadow: 0 8px 32px rgba(201,168,76,0.2) !important;
+}
+
+[data-theme="light"] .specialist-banner-card h3 {
+  color: #1a1510 !important;
+}
+
+[data-theme="light"] .specialist-banner-card p {
+  color: #5a4e3a !important;
+}
+
+/* ── Service detail page ── */
+[data-theme="light"] .svc-desc-card {
+  background: #ffffff !important;
+  border-color: rgba(201,168,76,0.2) !important;
+  color: #1a1510 !important;
+}
+
+[data-theme="light"] .svc-sidebar {
+  background: #f5f0e5 !important;
+  border-color: rgba(201,168,76,0.2) !important;
+}
+
+[data-theme="light"] .svc-stat-card {
+  background: rgba(201,168,76,0.1) !important;
+  border-color: rgba(201,168,76,0.3) !important;
+}
+
+[data-theme="light"] .svc-area-card {
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08) !important;
+}
+
+/* ── Emirate pages ── */
+[data-theme="light"] .emir-city-card {
+  background: #ffffff !important;
+  border-color: rgba(201,168,76,0.2) !important;
+  color: #1a1510 !important;
+}
+
+[data-theme="light"] .emir-city-card h3 {
+  color: #1a1510 !important;
+}
+
+[data-theme="light"] .why-row {
+  background: #ffffff !important;
+  border-color: rgba(201,168,76,0.15) !important;
+}
+
+[data-theme="light"] .why-row p {
+  color: #5a4e3a !important;
+}
+
+[data-theme="light"] .how-step-card {
+  background: #f5f0e5 !important;
+  border-color: rgba(201,168,76,0.2) !important;
+}
+
+[data-theme="light"] .how-step-card h3 {
+  color: #1a1510 !important;
+}
+
+[data-theme="light"] .how-step-card p {
+  color: #5a4e3a !important;
+}
+
+/* ── Contact / About pages ── */
+[data-theme="light"] .contact-form-card {
+  background: #ffffff !important;
+  border-color: rgba(201,168,76,0.2) !important;
+}
+
+[data-theme="light"] input,
+[data-theme="light"] textarea,
+[data-theme="light"] select {
+  background: #fdfcf8 !important;
+  color: #1a1510 !important;
+  border-color: rgba(201,168,76,0.3) !important;
+}
+
+/* ── Toggle button light mode color ── */
+[data-theme="light"] .theme-toggle-btn {
+  color: #c9a84c;
+  border-color: rgba(201,168,76,0.5);
+}
+
+[data-theme="light"] .theme-toggle-btn:hover {
+  background: rgba(201,168,76,0.12);
+}

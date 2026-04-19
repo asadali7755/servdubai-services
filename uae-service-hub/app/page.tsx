@@ -62,7 +62,7 @@ export default function Home() {
       <Hero slides={heroSlides} />
 
       {/* ABOUT — Poseify bg-secondary, text left + image right */}
-      <section style={{ background: '#343a40', padding: '5rem 0' }}>
+      <section className="theme-about" style={{ background: '#343a40', padding: '5rem 0' }}>
         <div style={{ maxWidth: '1140px', margin: '0 auto', padding: '0 1.5rem' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '3rem', alignItems: 'center' }}>
 
@@ -130,7 +130,7 @@ export default function Home() {
       <ServicesGrid services={services} />
 
       {/* BANNER / CTA — dynamic gradient with stats */}
-      <section style={{
+      <section className="theme-cta" style={{
         background: 'linear-gradient(135deg, #0d1b35 0%, #1a0a2e 45%, #2d1b00 100%)',
         padding: '6rem 0',
         position: 'relative',
@@ -152,8 +152,8 @@ export default function Home() {
               { number: 'Same Day', label: 'Availability' },
             ].map((stat) => (
               <div key={stat.label} style={{ textAlign: 'center', minWidth: '90px' }}>
-                <div style={{ fontSize: '1.75rem', fontWeight: 700, color: '#c9a84c', fontFamily: 'var(--font-josefin)', lineHeight: 1.1 }}>{stat.number}</div>
-                <div style={{ fontSize: '0.75rem', color: '#6b7280', textTransform: 'uppercase', letterSpacing: '0.1em', marginTop: '0.25rem' }}>{stat.label}</div>
+                <div className="cta-stat-number" style={{ fontSize: '1.75rem', fontWeight: 700, color: '#c9a84c', fontFamily: 'var(--font-josefin)', lineHeight: 1.1 }}>{stat.number}</div>
+                <div className="cta-stat-label" style={{ fontSize: '0.75rem', color: '#6b7280', textTransform: 'uppercase', letterSpacing: '0.1em', marginTop: '0.25rem' }}>{stat.label}</div>
               </div>
             ))}
           </div>

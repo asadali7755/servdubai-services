@@ -66,7 +66,7 @@ function ServiceItem({ service, isLeft }: { service: Service; isLeft: boolean })
 
 export default function ServicesGrid({ services }: { services: Service[] }) {
   return (
-    <section style={{ background: '#212529', padding: '5rem 0' }}>
+    <section className="theme-services" style={{ background: '#212529', padding: '5rem 0' }}>
       <div style={{ maxWidth: '1140px', margin: '0 auto', padding: '0 1.5rem' }}>
 
         {/* Poseify title */}

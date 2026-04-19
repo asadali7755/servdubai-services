@@ -4,7 +4,7 @@ import type { Emirate } from '@/lib/data/emirates'
 
 export default function EmiratesSection({ emirates }: { emirates: Emirate[] }) {
   return (
-    <section style={{ background: '#212529', padding: '5rem 0' }}>
+    <section className="theme-emirates" style={{ background: '#212529', padding: '5rem 0' }}>
       <div style={{ maxWidth: '1140px', margin: '0 auto', padding: '0 1.5rem' }}>
 
         {/* Poseify title */}
