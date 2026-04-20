@@ -121,7 +121,7 @@ export default async function EmiratePage({ params }: Props) {
       {/* ══════════════════════════════════════
           STATS BAR
       ══════════════════════════════════════ */}
-      <div style={{ background: '#0d0d0d', borderBottom: '1px solid rgba(201,168,76,0.15)' }}>
+      <div className="emir-stats-bar" style={{ background: '#0d0d0d', borderBottom: '1px solid rgba(201,168,76,0.15)' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem', display: 'flex', flexWrap: 'wrap' }}>
           {[
             { number: emirate.cities.length.toString(), label: 'Service Areas' },
@@ -151,12 +151,12 @@ export default async function EmiratePage({ params }: Props) {
             <div style={{ width: '4px', height: '2rem', background: 'linear-gradient(to bottom, #c9a84c, rgba(201,168,76,0.2))', borderRadius: '2px', flexShrink: 0 }} />
             <div>
               <div style={{ fontSize: '0.65rem', color: '#c9a84c', letterSpacing: '0.2em', textTransform: 'uppercase' }}>Browse by Location</div>
-              <h2 style={{ fontFamily: 'var(--font-josefin)', fontSize: '1.7rem', fontWeight: 700, color: '#fff' }}>
+              <h2 className="emir-section-h2" style={{ fontFamily: 'var(--font-josefin)', fontSize: '1.7rem', fontWeight: 700, color: '#fff' }}>
                 Select Your Area in {emirate.name}
               </h2>
             </div>
           </div>
-          <p style={{ color: '#6b7280', fontSize: '0.9rem', marginBottom: '1.75rem', paddingLeft: '1.25rem' }}>
+          <p className="emir-section-p" style={{ color: '#6b7280', fontSize: '0.9rem', marginBottom: '1.75rem', paddingLeft: '1.25rem' }}>
             Click on your area to see available services and book instantly.
           </p>
 
@@ -219,12 +219,12 @@ export default async function EmiratePage({ params }: Props) {
             <div style={{ width: '4px', height: '2rem', background: 'linear-gradient(to bottom, #c9a84c, rgba(201,168,76,0.2))', borderRadius: '2px', flexShrink: 0 }} />
             <div>
               <div style={{ fontSize: '0.65rem', color: '#c9a84c', letterSpacing: '0.2em', textTransform: 'uppercase' }}>What We Offer</div>
-              <h2 style={{ fontFamily: 'var(--font-josefin)', fontSize: '1.7rem', fontWeight: 700, color: '#fff' }}>
+              <h2 className="emir-section-h2" style={{ fontFamily: 'var(--font-josefin)', fontSize: '1.7rem', fontWeight: 700, color: '#fff' }}>
                 Services Available in {emirate.name}
               </h2>
             </div>
           </div>
-          <p style={{ color: '#6b7280', fontSize: '0.9rem', marginBottom: '1.75rem', paddingLeft: '1.25rem' }}>
+          <p className="emir-section-p" style={{ color: '#6b7280', fontSize: '0.9rem', marginBottom: '1.75rem', paddingLeft: '1.25rem' }}>
             {services.length} professional cleaning services, all available across {emirate.name}.
           </p>
 

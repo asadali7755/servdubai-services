@@ -1525,15 +1525,50 @@ img { max-width: 100%; }
   color: #c9a84c !important;
 }
 
-/* ── P-Title system ── */
-[data-theme="light"] .p-title h1 {
+/* ── Hero: always white text regardless of theme ── */
+.p-hero-caption .p-title h1,
+.p-hero-caption .p-title h5,
+.p-hero-caption h2,
+.p-hero-caption .p-title-center h5 {
+  color: #fff !important;
+}
+
+.p-hero-caption .p-title-center h5::before,
+.p-hero-caption .p-title-center h5::after {
+  background: rgba(255,255,255,0.3) !important;
+}
+
+/* ── P-Title system (scoped — not hero) ── */
+[data-theme="light"] .theme-about .p-title h1,
+[data-theme="light"] .theme-services .p-title h1,
+[data-theme="light"] .theme-emirates .p-title h1,
+[data-theme="light"] .theme-sites .p-title h1,
+[data-theme="light"] .theme-cta .p-title h1,
+[data-theme="light"] .about-main .p-title h1,
+[data-theme="light"] .about-values .p-title h1,
+[data-theme="light"] .about-services .p-title h1,
+[data-theme="light"] .about-emirates .p-title h1 {
   color: #1a1510 !important;
 }
 
-[data-theme="light"] .p-title-center h5::before,
-[data-theme="light"] .p-title-center h5::after,
-[data-theme="light"] .p-title-left h5::before,
-[data-theme="light"] .p-title-left h5::after {
+[data-theme="light"] .theme-about .p-title-center h5::before,
+[data-theme="light"] .theme-about .p-title-center h5::after,
+[data-theme="light"] .theme-about .p-title-left h5::before,
+[data-theme="light"] .theme-about .p-title-left h5::after,
+[data-theme="light"] .theme-services .p-title-center h5::before,
+[data-theme="light"] .theme-services .p-title-center h5::after,
+[data-theme="light"] .theme-emirates .p-title-center h5::before,
+[data-theme="light"] .theme-emirates .p-title-center h5::after,
+[data-theme="light"] .theme-sites .p-title-center h5::before,
+[data-theme="light"] .theme-sites .p-title-center h5::after,
+[data-theme="light"] .about-main .p-title-left h5::before,
+[data-theme="light"] .about-main .p-title-left h5::after,
+[data-theme="light"] .about-values .p-title-center h5::before,
+[data-theme="light"] .about-values .p-title-center h5::after,
+[data-theme="light"] .about-services .p-title-center h5::before,
+[data-theme="light"] .about-services .p-title-center h5::after,
+[data-theme="light"] .about-emirates .p-title-center h5::before,
+[data-theme="light"] .about-emirates .p-title-center h5::after {
   background: rgba(201,168,76,0.45) !important;
 }
 
@@ -1746,4 +1781,144 @@ img { max-width: 100%; }
 
 [data-theme="light"] .theme-toggle-btn:hover {
   background: rgba(201,168,76,0.12);
+}
+
+/* ── Why row h3 ── */
+[data-theme="light"] .why-row h3 {
+  color: #1a1510 !important;
+}
+
+/* ── Service items: slightly darker in light mode ── */
+[data-theme="light"] .service-item.service-item-left {
+  background: linear-gradient(to right, #e8e0d0, #f2ece0) !important;
+}
+
+[data-theme="light"] .service-item.service-item-right {
+  background: linear-gradient(to left, #e8e0d0, #f2ece0) !important;
+}
+
+/* ── Service page stats bar ── */
+[data-theme="light"] .svc-stats-bar {
+  background: #f2ece0 !important;
+  border-bottom-color: rgba(201,168,76,0.25) !important;
+}
+
+[data-theme="light"] .svc-stats-bar .svc-stat-number {
+  color: #c9a84c !important;
+}
+
+/* ── Service page main body ── */
+[data-theme="light"] .theme-svc-body {
+  background: #fdfcf8 !important;
+}
+
+[data-theme="light"] .svc-content-h {
+  color: #1a1510 !important;
+}
+
+[data-theme="light"] .svc-content-p {
+  color: #5a4e3a !important;
+}
+
+[data-theme="light"] .svc-feat-txt {
+  color: #5a4e3a !important;
+}
+
+[data-theme="light"] .svc-sidebar-divider {
+  border-top-color: rgba(0,0,0,0.1) !important;
+}
+
+[data-theme="light"] .theme-svc-body .svc-spec-banner {
+  background: linear-gradient(135deg, #fdf8ee, #f5f0e5) !important;
+  border-color: rgba(201,168,76,0.4) !important;
+}
+
+/* ── Emirates page stats bar ── */
+[data-theme="light"] .emir-stats-bar {
+  background: #f2ece0 !important;
+  border-bottom-color: rgba(201,168,76,0.2) !important;
+}
+
+[data-theme="light"] .emir-stats-bar .svc-stat-number {
+  color: #c9a84c !important;
+}
+
+/* ── Emirates page section headings and text ── */
+[data-theme="light"] .emir-section-h2 {
+  color: #1a1510 !important;
+}
+
+[data-theme="light"] .emir-section-p {
+  color: #6b5840 !important;
+}
+
+[data-theme="light"] .emir-main {
+  background: #fdfcf8 !important;
+}
+
+/* ── About page light theme ── */
+[data-theme="light"] .about-stats-bar {
+  background: #f2ece0 !important;
+  border-bottom-color: rgba(201,168,76,0.2) !important;
+}
+
+[data-theme="light"] .about-stat-label {
+  color: #8a7a60 !important;
+}
+
+[data-theme="light"] .about-main {
+  background: #fdfcf8 !important;
+}
+
+[data-theme="light"] .about-main .p-title-left h1,
+[data-theme="light"] .about-main .p-about-img + div h1 {
+  color: #1a1510 !important;
+}
+
+[data-theme="light"] .about-body-p {
+  color: #5a4e3a !important;
+}
+
+[data-theme="light"] .about-feat-txt {
+  color: #3a3020 !important;
+}
+
+[data-theme="light"] .about-values {
+  background: #f5f0e5 !important;
+}
+
+[data-theme="light"] .about-value-card {
+  background: #ffffff !important;
+  border-color: rgba(201,168,76,0.2) !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06) !important;
+}
+
+[data-theme="light"] .about-value-h3 {
+  color: #1a1510 !important;
+}
+
+[data-theme="light"] .about-value-p {
+  color: #5a4e3a !important;
+}
+
+[data-theme="light"] .about-services {
+  background: #fdfcf8 !important;
+}
+
+[data-theme="light"] .about-svc-card {
+  background: #ffffff !important;
+  border-color: rgba(201,168,76,0.2) !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06) !important;
+}
+
+[data-theme="light"] .about-svc-h3 {
+  color: #1a1510 !important;
+}
+
+[data-theme="light"] .about-emirates {
+  background: #f5f0e5 !important;
+}
+
+[data-theme="light"] .about-emir-card {
+  border-color: rgba(201,168,76,0.3) !important;
 }

@@ -119,7 +119,7 @@ export default async function ServicePage({ params }: Props) {
       </div>
 
       {/* ── STATS BAR ── */}
-      <div style={{ background: '#111', borderBottom: '1px solid rgba(201,168,76,0.2)', padding: '0 1.5rem' }}>
+      <div className="svc-stats-bar" style={{ background: '#111', borderBottom: '1px solid rgba(201,168,76,0.2)', padding: '0 1.5rem' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', gap: '0.75rem', padding: '1.25rem 0', flexWrap: 'wrap' }}>
           {stats.map((s) => (
             <div key={s.label} className="svc-stat-card">
@@ -138,14 +138,14 @@ export default async function ServicePage({ params }: Props) {
       </div>
 
       {/* ── MAIN CONTENT ── */}
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '3rem 1.5rem' }}>
+      <div className="theme-svc-body" style={{ maxWidth: '1200px', margin: '0 auto', padding: '3rem 1.5rem' }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0,1fr) 320px', gap: '2rem', alignItems: 'start' }}
           className="svc-grid">
 
           {/* Left: description */}
           <div>
             <div className="svc-desc-card" style={{ marginBottom: '2rem' }}>
-              <h2 style={{
+              <h2 className="svc-content-h" style={{
                 fontFamily: 'var(--font-josefin)',
                 fontSize: '1.35rem',
                 fontWeight: 700,
@@ -156,7 +156,7 @@ export default async function ServicePage({ params }: Props) {
                 About This Service
               </h2>
               {paragraphs.map((para, i) => (
-                <p key={i} style={{ color: '#9ca3af', lineHeight: 1.8, marginBottom: '1rem', fontSize: '0.9375rem' }}>
+                <p key={i} className="svc-content-p" style={{ color: '#9ca3af', lineHeight: 1.8, marginBottom: '1rem', fontSize: '0.9375rem' }}>
                   {para}
                 </p>
               ))}
@@ -180,7 +180,7 @@ export default async function ServicePage({ params }: Props) {
                   <div style={{ fontSize: '0.7rem', color: '#c9a84c', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '0.3rem' }}>
                     Specialist Site
                   </div>
-                  <div style={{ color: '#fff', fontWeight: 600, fontFamily: 'var(--font-josefin)' }}>
+                  <div className="svc-content-h" style={{ color: '#fff', fontWeight: 600, fontFamily: 'var(--font-josefin)' }}>
                     {service.externalWebsite.name}
                   </div>
                 </div>
@@ -216,7 +216,7 @@ export default async function ServicePage({ params }: Props) {
                   color: '#fff',
                   letterSpacing: '0.05em',
                   textTransform: 'uppercase',
-                }}>
+                }} className="svc-content-h">
                   Service Areas
                 </h2>
               </div>
@@ -266,7 +266,7 @@ export default async function ServicePage({ params }: Props) {
             <div style={{ fontSize: '0.7rem', color: '#c9a84c', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
               Book Now
             </div>
-            <h3 style={{
+            <h3 className="svc-content-h" style={{
               fontFamily: 'var(--font-josefin)',
               fontSize: '1.4rem',
               fontWeight: 700,
@@ -277,7 +277,7 @@ export default async function ServicePage({ params }: Props) {
               {service.name}
             </h3>
 
-            <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '1rem', marginBottom: '1.5rem' }}>
+            <div className="svc-sidebar-divider" style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '1rem', marginBottom: '1.5rem' }}>
               {[
                 'Free instant quote',
                 'Same-day service available',
@@ -287,7 +287,7 @@ export default async function ServicePage({ params }: Props) {
               ].map((feat) => (
                 <div key={feat} style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.6rem' }}>
                   <div style={{ width: '6px', height: '6px', background: '#c9a84c', borderRadius: '50%', flexShrink: 0 }} />
-                  <span style={{ color: '#d1d5db', fontSize: '0.875rem' }}>{feat}</span>
+                  <span className="svc-feat-txt" style={{ color: '#d1d5db', fontSize: '0.875rem' }}>{feat}</span>
                 </div>
               ))}
             </div>
