@@ -1474,22 +1474,35 @@ img { max-width: 100%; }
 }
 
 /* ── Navbar ── */
+/* Light theme navbar — transparent at top, cream when scrolled (mirrors dark mode) */
 [data-theme="light"] .p-navbar {
-  background: rgba(253,252,248,0.97) !important;
-  border-bottom: 1px solid rgba(201,168,76,0.25) !important;
+  background: transparent !important;
+  border-bottom: none !important;
 }
 
 [data-theme="light"] .p-navbar.scrolled {
   background: rgba(253,252,248,0.97) !important;
+  border-bottom: 1px solid rgba(201,168,76,0.25) !important;
 }
 
-[data-theme="light"] .p-navbar .nav-links .nav-link {
+/* Nav links: white over hero at top, dark when scrolled */
+[data-theme="light"] .p-navbar:not(.scrolled) .nav-links .nav-link {
+  color: #ffffff !important;
+}
+[data-theme="light"] .p-navbar.scrolled .nav-links .nav-link {
   color: #1a1510 !important;
 }
-
-[data-theme="light"] .p-navbar .nav-links .nav-link:hover,
-[data-theme="light"] .p-navbar .nav-links .nav-link.active {
+[data-theme="light"] .p-navbar.scrolled .nav-links .nav-link:hover,
+[data-theme="light"] .p-navbar.scrolled .nav-links .nav-link.active {
   color: #c9a84c !important;
+}
+
+/* Hamburger: white at top, dark when scrolled */
+[data-theme="light"] .p-navbar:not(.scrolled) .hamburger {
+  color: #ffffff !important;
+}
+[data-theme="light"] .p-navbar.scrolled .hamburger {
+  color: #1a1510 !important;
 }
 
 [data-theme="light"] .p-navbar .dropdown-menu {
@@ -1507,10 +1520,6 @@ img { max-width: 100%; }
   background: rgba(201,168,76,0.07) !important;
 }
 
-[data-theme="light"] .p-navbar .hamburger {
-  color: #1a1510 !important;
-}
-
 [data-theme="light"] .p-navbar .mobile-menu {
   background: rgba(253,252,248,0.99) !important;
   border-top-color: rgba(201,168,76,0.2) !important;
@@ -1525,12 +1534,34 @@ img { max-width: 100%; }
   color: #c9a84c !important;
 }
 
+/* Mobile: navbar is always fixed — always show cream so it stays readable */
+@media (max-width: 991px) {
+  [data-theme="light"] .p-navbar {
+    background: rgba(253,252,248,0.97) !important;
+    border-bottom: 1px solid rgba(201,168,76,0.25) !important;
+  }
+  [data-theme="light"] .p-navbar .hamburger {
+    color: #1a1510 !important;
+  }
+}
+
 /* ── Hero: always white text regardless of theme ── */
 .p-hero-caption .p-title h1,
 .p-hero-caption .p-title h5,
 .p-hero-caption h2,
 .p-hero-caption .p-title-center h5 {
   color: #fff !important;
+}
+
+/* Hero buttons always gold-outline style — hero has dark overlay in both themes */
+[data-theme="light"] .p-hero-caption .p-btn-outline {
+  color: #c9a84c !important;
+  border-color: rgba(201,168,76,0.8) !important;
+  background: rgba(201,168,76,0.08) !important;
+}
+[data-theme="light"] .p-hero-caption .p-btn-outline:hover {
+  background: #c9a84c !important;
+  color: #111 !important;
 }
 
 .p-hero-caption .p-title-center h5::before,
@@ -1677,6 +1708,14 @@ img { max-width: 100%; }
 
 [data-theme="light"] .theme-sites .site-card p {
   color: #5a4e3a !important;
+}
+
+[data-theme="light"] .theme-sites .site-card span {
+  color: #8a6a20 !important;
+}
+
+[data-theme="light"] .theme-sites .p-title-center h5 {
+  color: #8a6a20 !important;
 }
 
 /* ── Specialist Sites Banner (shared component) ── */
