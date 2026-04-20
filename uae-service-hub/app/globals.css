@@ -1783,7 +1783,68 @@ img { max-width: 100%; }
   background: rgba(201,168,76,0.12);
 }
 
-/* ── Why row h3 ── */
+/* ══════════════════════════════════════════════════
+   NUCLEAR LIGHT THEME — force ALL heading + body
+   text dark inside themed sections (overrides
+   inline colour:#fff and any CSS class colour)
+══════════════════════════════════════════════════ */
+
+/* About page sections */
+[data-theme="light"] .about-main h1,
+[data-theme="light"] .about-main h2,
+[data-theme="light"] .about-main h3,
+[data-theme="light"] .about-values h1,
+[data-theme="light"] .about-values h2,
+[data-theme="light"] .about-values h3,
+[data-theme="light"] .about-services h1,
+[data-theme="light"] .about-services h2,
+[data-theme="light"] .about-services h3,
+[data-theme="light"] .about-emirates h1,
+[data-theme="light"] .about-emirates h2,
+[data-theme="light"] .about-emirates h3 { color: #1a1510 !important; }
+
+[data-theme="light"] .about-main p,
+[data-theme="light"] .about-values p,
+[data-theme="light"] .about-services p,
+[data-theme="light"] .about-emirates p { color: #5a4e3a !important; }
+
+[data-theme="light"] .about-main span:not([style*="c9a84c"]):not([style*="25D3"]),
+[data-theme="light"] .about-values span:not([style*="c9a84c"]) { color: #3a3020 !important; }
+
+/* Service page main body */
+[data-theme="light"] .theme-svc-body h1,
+[data-theme="light"] .theme-svc-body h2,
+[data-theme="light"] .theme-svc-body h3 { color: #1a1510 !important; }
+[data-theme="light"] .theme-svc-body p { color: #5a4e3a !important; }
+
+/* Emirate page main body */
+[data-theme="light"] .emir-main h1,
+[data-theme="light"] .emir-main h2,
+[data-theme="light"] .emir-main h3 { color: #1a1510 !important; }
+[data-theme="light"] .emir-main p { color: #5a4e3a !important; }
+
+/* Home page sections */
+[data-theme="light"] .theme-about h1,
+[data-theme="light"] .theme-about h2,
+[data-theme="light"] .theme-about h3 { color: #1a1510 !important; }
+[data-theme="light"] .theme-about p { color: #5a4e3a !important; }
+
+[data-theme="light"] .theme-services h1,
+[data-theme="light"] .theme-services h3 { color: #1a1510 !important; }
+[data-theme="light"] .theme-services p { color: #5a4e3a !important; }
+
+[data-theme="light"] .theme-emirates h1 { color: #1a1510 !important; }
+[data-theme="light"] .theme-sites h1,
+[data-theme="light"] .theme-sites h3 { color: #1a1510 !important; }
+[data-theme="light"] .theme-sites p { color: #5a4e3a !important; }
+
+/* Keep image-overlay text WHITE (text on dark images) */
+[data-theme="light"] .about-emir-card div,
+[data-theme="light"] .emir-city-img-card div,
+[data-theme="light"] .emir-svc-card div,
+[data-theme="light"] .svc-area-card div { color: inherit; }
+
+/* Why row h3 */
 [data-theme="light"] .why-row h3 {
   color: #1a1510 !important;
 }
