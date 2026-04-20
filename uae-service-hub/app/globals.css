@@ -1983,3 +1983,68 @@ img { max-width: 100%; }
 [data-theme="light"] .about-emir-card {
   border-color: rgba(201,168,76,0.3) !important;
 }
+
+/* ── Service page: desc card ── */
+[data-theme="light"] .svc-desc-card {
+  background: #fdfcf8 !important;
+  border-color: rgba(0,0,0,0.08) !important;
+  border-left-color: #c9a84c !important;
+}
+
+/* ── Service page: specialist site card ── */
+[data-theme="light"] .svc-specialist-card {
+  background: linear-gradient(135deg, #fdf8ee, #f5f0e5) !important;
+  border-color: rgba(201,168,76,0.4) !important;
+}
+
+/* ── Service page: booking sidebar ── */
+[data-theme="light"] .svc-sidebar {
+  background: linear-gradient(160deg, #fdf8ee, #f5f0e5) !important;
+  border-color: rgba(201,168,76,0.3) !important;
+}
+
+/* ── Service page: bottom CTA banner ── */
+[data-theme="light"] .svc-cta-banner {
+  background: linear-gradient(135deg, #fdf8ee 0%, #f5f0e5 50%, #ede8dc 100%) !important;
+  border-color: rgba(201,168,76,0.3) !important;
+}
+
+/* ── Emirates page: Why Choose grid ── */
+[data-theme="light"] .why-grid {
+  background: linear-gradient(135deg, #fdf8ee 0%, #fdfcf8 100%) !important;
+  border-color: rgba(201,168,76,0.2) !important;
+}
+[data-theme="light"] .why-left-panel {
+  background: linear-gradient(160deg, #f0ead8 0%, #e8e0cc 100%) !important;
+  border-right-color: rgba(201,168,76,0.2) !important;
+}
+[data-theme="light"] .why-right-panel {
+  background: transparent !important;
+}
+[data-theme="light"] .why-stat-label {
+  color: #6b5840 !important;
+}
+[data-theme="light"] .why-desc {
+  color: #5a4e3a !important;
+}
+
+/* ── Emirates page: How It Works cards ── */
+[data-theme="light"] .how-it-works-card {
+  background: linear-gradient(160deg, #fdf8ee, #f5f0e5) !important;
+  border-color: rgba(201,168,76,0.2) !important;
+}
+
+/* ── Emirates page: trust bar ── */
+[data-theme="light"] .emir-trust-bar {
+  background: rgba(201,168,76,0.08) !important;
+  border-color: rgba(201,168,76,0.2) !important;
+}
+[data-theme="light"] .trust-item {
+  color: #3d3020 !important;
+}
+
+/* ── Emirates page: bottom CTA banner ── */
+[data-theme="light"] .emir-cta-banner {
+  background: linear-gradient(135deg, #fdf8ee 0%, #f5f0e5 50%, #ede8dc 100%) !important;
+  border-color: rgba(201,168,76,0.3) !important;
+}

@@ -164,7 +164,7 @@ export default async function ServicePage({ params }: Props) {
 
             {/* Specialist site banner */}
             {service.externalWebsite && (
-              <div style={{
+              <div className="svc-specialist-card" style={{
                 background: 'linear-gradient(135deg, #1a1505 0%, #1e1e1e 100%)',
                 border: '1px solid #c9a84c',
                 borderRadius: '8px',
@@ -344,7 +344,7 @@ export default async function ServicePage({ params }: Props) {
         </div>
 
         {/* ── BOTTOM CTA BANNER ── */}
-        <div style={{
+        <div className="svc-cta-banner" style={{
           marginTop: '3rem',
           background: 'linear-gradient(135deg, #0d1b35 0%, #1a0a2e 50%, #2d1b00 100%)',
           border: '1px solid rgba(201,168,76,0.2)',

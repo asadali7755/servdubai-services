@@ -300,7 +300,7 @@ export default async function EmiratePage({ params }: Props) {
           }} className="why-grid">
 
             {/* Left decorative panel */}
-            <div style={{
+            <div className="why-left-panel" style={{
               background: 'linear-gradient(160deg, #1a0a2e 0%, #0d1b35 60%, #1a1505 100%)',
               padding: '2.5rem 2rem',
               display: 'flex',
@@ -347,14 +347,14 @@ export default async function EmiratePage({ params }: Props) {
                     borderRadius: '6px', padding: '0.5rem 0.875rem',
                   }}>
                     <span style={{ fontFamily: 'var(--font-josefin)', fontWeight: 700, color: '#c9a84c', fontSize: '1rem' }}>{s.n}</span>
-                    <span style={{ color: '#9ca3af', fontSize: '0.7rem', letterSpacing: '0.05em' }}>{s.l}</span>
+                    <span className="why-stat-label" style={{ color: '#9ca3af', fontSize: '0.7rem', letterSpacing: '0.05em' }}>{s.l}</span>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Right: animated feature rows */}
-            <div style={{ padding: '1.5rem 1.75rem' }}>
+            <div className="why-right-panel" style={{ padding: '1.5rem 1.75rem' }}>
               {whyUs.map((item, i) => (
                 <div
                   key={item.title}
@@ -373,7 +373,7 @@ export default async function EmiratePage({ params }: Props) {
                   {/* Text */}
                   <div>
                     <div className="why-title" style={{ fontFamily: 'var(--font-josefin)' }}>{item.title}</div>
-                    <div style={{ color: '#9ca3af', fontSize: '0.84rem', lineHeight: 1.6 }}>{item.desc}</div>
+                    <div className="why-desc" style={{ color: '#9ca3af', fontSize: '0.84rem', lineHeight: 1.6 }}>{item.desc}</div>
                   </div>
                 </div>
               ))}
@@ -400,7 +400,7 @@ export default async function EmiratePage({ params }: Props) {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.25rem' }}>
             {howItWorks.map((step) => (
-              <div key={step.step} style={{
+              <div key={step.step} className="how-it-works-card" style={{
                 background: 'linear-gradient(160deg, #1a0a2e 0%, #1a1a1a 100%)',
                 border: '1px solid rgba(201,168,76,0.15)',
                 borderRadius: '8px',
@@ -437,7 +437,7 @@ export default async function EmiratePage({ params }: Props) {
         {/* ══════════════════════════════════════
             TRUST BAR
         ══════════════════════════════════════ */}
-        <div style={{
+        <div className="emir-trust-bar" style={{
           background: 'rgba(201,168,76,0.05)',
           border: '1px solid rgba(201,168,76,0.15)',
           borderRadius: '10px',
@@ -456,7 +456,7 @@ export default async function EmiratePage({ params }: Props) {
             '✓  Eco-Friendly Solutions',
             '✓  Satisfaction Guaranteed',
           ].map((item) => (
-            <span key={item} style={{ color: '#d1d5db', fontSize: '0.875rem', fontWeight: 500, whiteSpace: 'nowrap' }}>
+            <span key={item} className="trust-item" style={{ color: '#d1d5db', fontSize: '0.875rem', fontWeight: 500, whiteSpace: 'nowrap' }}>
               <span style={{ color: '#c9a84c' }}>{item.slice(0, 1)}</span>{item.slice(1)}
             </span>
           ))}
@@ -465,7 +465,7 @@ export default async function EmiratePage({ params }: Props) {
         {/* ══════════════════════════════════════
             BOTTOM CTA BANNER
         ══════════════════════════════════════ */}
-        <div style={{
+        <div className="emir-cta-banner" style={{
           background: 'linear-gradient(135deg, #0d1b35 0%, #1a0a2e 50%, #2d1b00 100%)',
           border: '1px solid rgba(201,168,76,0.2)',
           borderRadius: '14px',
