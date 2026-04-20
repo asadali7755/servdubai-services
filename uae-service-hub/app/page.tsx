@@ -27,7 +27,7 @@ const heroSlides: HeroSlide[] = [
     subtitle: 'Trusted cleaning across all 7 UAE Emirates — same-day service available.',
   },
   {
-    image: '/images/services/dining-chair-cleaning.jpg',
+    image: '/images/services/sofa-cleaning.webp',
     title: 'Sofa & Carpet Experts',
     subtitle: 'Deep cleaning using hot-water extraction and eco-friendly solutions.',
   },

@@ -29,7 +29,7 @@ export const services: Service[] = [
     fullDescription: `Our professional sofa deep cleaning service uses advanced hot-water extraction and eco-friendly shampoos to restore your sofa to its original freshness. We treat all fabric types including velvet, cotton, linen, and microfiber. Our certified technicians remove deep-set stains, eliminate odors, and extract dust mites and allergens, leaving your sofa hygienically clean and looking new.
 
 We cover all sofa types — L-shaped, sectional, 3-seater, corner sofas, and fabric recliners. Our quick-dry technology means your sofa is ready to use within 3–4 hours. Available across all 7 UAE Emirates with same-day service in most areas.`,
-    images: ['/images/services/dining-chair-cleaning.jpg'],
+    images: ['/images/services/sofa-cleaning.webp'],
     availableInEmirates: ALL_EMIRATES,
     externalWebsite: { name: 'Sofa Shampooing Dubai', url: 'https://sofashampooingdubai.com' },
   },
