@@ -40,7 +40,7 @@ export default function SpecializedSites({ sites }: { sites: SpecializedSite[] }
               }}
             >
               {/* Card image */}
-              <div style={{ position: 'relative', width: '100%', aspectRatio: '16/9', overflow: 'hidden' }}>
+              <div className="site-card-img" style={{ position: 'relative', width: '100%', aspectRatio: '16/9', overflow: 'hidden' }}>
                 <Image
                   src={site.image}
                   alt={site.name}
@@ -73,6 +73,7 @@ export default function SpecializedSites({ sites }: { sites: SpecializedSite[] }
                   {site.description}
                 </p>
                 <span
+                  className="site-card-link"
                   style={{
                     display: 'inline-flex',
                     alignItems: 'center',
