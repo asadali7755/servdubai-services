@@ -2178,3 +2178,20 @@ img { max-width: 100%; }
   background: linear-gradient(135deg, #fdf8ee 0%, #f5f0e5 50%, #ede8dc 100%) !important;
   border-color: rgba(201,168,76,0.3) !important;
 }
+
+/* ── Footer light theme ── */
+[data-theme="light"] .p-footer-overlay {
+  background: rgba(245,240,229,0.93) !important;
+}
+[data-theme="light"] .p-footer-logo {
+  color: #1a1510 !important;
+}
+[data-theme="light"] .p-footer-links a {
+  color: #1a1510 !important;
+}
+[data-theme="light"] .p-footer-links a:hover {
+  color: #c9a84c !important;
+}
+[data-theme="light"] .p-footer-copy {
+  color: #5a4e3a !important;
+}
