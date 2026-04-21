@@ -26,7 +26,7 @@
 * { box-sizing: border-box; }
 
 body {
-  background-color: #0b1020;
+  background-color: #0a1128;
   color: #ffffff;
   font-family: var(--font-work), sans-serif;
   margin: 0;
@@ -1513,84 +1513,83 @@ img { max-width: 100%; }
 
 /* =============================================
    DARK THEME — Black + Blue palette
-   html:not([data-theme="light"]) ensures these
-   only apply in dark mode. Light theme rules
-   below (higher specificity) override in light.
-   Blue palette: #0b1020 → #111e3a → #162448
+   [data-theme="dark"] targets dark mode directly
+   (ThemeProvider sets data-theme="dark" on html)
+   Blue palette: #0a1128 → #132040 → #1c2f58
 ============================================= */
 
-html:not([data-theme="light"]) body {
-  background-color: #0b1020 !important;
+[data-theme="dark"] body {
+  background-color: #0a1128 !important;
 }
 
-html:not([data-theme="light"]) .p-navbar.scrolled {
-  background: rgba(11, 16, 32, 0.97) !important;
+[data-theme="dark"] .p-navbar.scrolled {
+  background: rgba(10, 17, 40, 0.97) !important;
 }
-html:not([data-theme="light"]) .mobile-menu {
-  background: #0d1530 !important;
+[data-theme="dark"] .mobile-menu {
+  background: #0e1635 !important;
 }
 
 /* About page sections */
-html:not([data-theme="light"]) .about-stats-bar  { background: #080e1c !important; }
-html:not([data-theme="light"]) .about-main       { background: #111e3a !important; }
-html:not([data-theme="light"]) .about-values     { background: #0d1530 !important; }
-html:not([data-theme="light"]) .about-value-card { background: #162448 !important; border-color: rgba(60,120,220,0.2) !important; }
-html:not([data-theme="light"]) .about-services   { background: #111e3a !important; }
-html:not([data-theme="light"]) .about-svc-card   { background: #162448 !important; border-color: rgba(60,120,220,0.2) !important; }
-html:not([data-theme="light"]) .about-emirates   { background: #0d1530 !important; }
+[data-theme="dark"] .about-stats-bar  { background: #080e20 !important; }
+[data-theme="dark"] .about-main       { background: #132040 !important; }
+[data-theme="dark"] .about-values     { background: #0e1635 !important; }
+[data-theme="dark"] .about-value-card { background: #1c2f58 !important; border-color: rgba(80,140,255,0.25) !important; }
+[data-theme="dark"] .about-services   { background: #132040 !important; }
+[data-theme="dark"] .about-svc-card   { background: #1c2f58 !important; border-color: rgba(80,140,255,0.25) !important; }
+[data-theme="dark"] .about-emirates   { background: #0e1635 !important; }
 
 /* Service page */
-html:not([data-theme="light"]) .svc-stats-bar    { background: #080e1c !important; }
-html:not([data-theme="light"]) .theme-svc-body   { background: #111e3a !important; }
-html:not([data-theme="light"]) .svc-desc-card    { background: #162448 !important; border-color: rgba(60,120,220,0.2) !important; }
-html:not([data-theme="light"]) .svc-sidebar      { background: #162448 !important; border-color: rgba(60,120,220,0.2) !important; }
-html:not([data-theme="light"]) .svc-specialist-card {
-  background: linear-gradient(135deg, #0d1b3e 0%, #162448 100%) !important;
+[data-theme="dark"] .svc-stats-bar    { background: #080e20 !important; }
+[data-theme="dark"] .theme-svc-body   { background: #132040 !important; }
+[data-theme="dark"] .svc-desc-card    { background: #1c2f58 !important; border-color: rgba(80,140,255,0.25) !important; }
+[data-theme="dark"] .svc-sidebar      { background: #1c2f58 !important; border-color: rgba(80,140,255,0.25) !important; }
+[data-theme="dark"] .svc-specialist-card {
+  background: linear-gradient(135deg, #0e1b40 0%, #1c2f58 100%) !important;
 }
-html:not([data-theme="light"]) .svc-cta-banner {
-  background: linear-gradient(135deg, #0b1020 0%, #1a2d5a 50%, #1a0a2e 100%) !important;
+[data-theme="dark"] .svc-cta-banner {
+  background: linear-gradient(135deg, #080e20 0%, #1a3060 50%, #1a0a2e 100%) !important;
 }
 
 /* Emirate page */
-html:not([data-theme="light"]) .emir-stats-bar   { background: #080e1c !important; }
-html:not([data-theme="light"]) .emir-main        { background: #111e3a !important; }
-html:not([data-theme="light"]) .why-grid         {
-  background: linear-gradient(135deg, #0d1530 0%, #1a2848 100%) !important;
+[data-theme="dark"] .emir-stats-bar   { background: #080e20 !important; }
+[data-theme="dark"] .emir-main        { background: #132040 !important; }
+[data-theme="dark"] .why-grid         {
+  background: linear-gradient(135deg, #0e1635 0%, #1a2d55 100%) !important;
 }
-html:not([data-theme="light"]) .why-left-panel   {
-  background: linear-gradient(160deg, #0d1b3e 0%, #0d1530 60%, #0b1020 100%) !important;
+[data-theme="dark"] .why-left-panel   {
+  background: linear-gradient(160deg, #0e1b40 0%, #0e1635 60%, #0a1128 100%) !important;
 }
-html:not([data-theme="light"]) .why-right-panel  { background: #1a2848 !important; }
-html:not([data-theme="light"]) .how-it-works-card {
-  background: linear-gradient(160deg, #0d1b3e 0%, #162448 100%) !important;
-  border-color: rgba(60,120,220,0.2) !important;
+[data-theme="dark"] .why-right-panel  { background: #1a2d55 !important; }
+[data-theme="dark"] .how-it-works-card {
+  background: linear-gradient(160deg, #0e1b40 0%, #1c2f58 100%) !important;
+  border-color: rgba(80,140,255,0.25) !important;
 }
-html:not([data-theme="light"]) .emir-trust-bar   {
-  background: rgba(22,36,72,0.6) !important;
-  border-color: rgba(60,120,220,0.25) !important;
+[data-theme="dark"] .emir-trust-bar   {
+  background: rgba(28,47,88,0.6) !important;
+  border-color: rgba(80,140,255,0.3) !important;
 }
-html:not([data-theme="light"]) .emir-cta-banner  {
-  background: linear-gradient(135deg, #0b1020 0%, #1a2d5a 50%, #1a0a2e 100%) !important;
+[data-theme="dark"] .emir-cta-banner  {
+  background: linear-gradient(135deg, #080e20 0%, #1a3060 50%, #1a0a2e 100%) !important;
 }
 
 /* Home page */
-html:not([data-theme="light"]) .theme-about { background: #111e3a !important; }
-html:not([data-theme="light"]) .theme-cta   {
-  background: linear-gradient(135deg, #0b1020 0%, #1a2d5a 50%, #0b1020 100%) !important;
+[data-theme="dark"] .theme-about { background: #132040 !important; }
+[data-theme="dark"] .theme-cta   {
+  background: linear-gradient(135deg, #080e20 0%, #1a3060 50%, #080e20 100%) !important;
 }
 
 /* Specialist sites — home & banner */
-html:not([data-theme="light"]) .theme-sites { background: #0d1530 !important; }
-html:not([data-theme="light"]) .site-card   {
-  background: rgba(22,36,72,0.7) !important;
-  border-color: rgba(60,120,220,0.2) !important;
+[data-theme="dark"] .theme-sites { background: #0e1635 !important; }
+[data-theme="dark"] .site-card   {
+  background: rgba(28,47,88,0.75) !important;
+  border-color: rgba(80,140,255,0.25) !important;
 }
-html:not([data-theme="light"]) .specialist-banner-section {
-  background: linear-gradient(135deg, #0b1020 0%, #0d1b3e 40%, #0b1020 100%) !important;
+[data-theme="dark"] .specialist-banner-section {
+  background: linear-gradient(135deg, #080e20 0%, #0e1b40 40%, #080e20 100%) !important;
 }
-html:not([data-theme="light"]) .specialist-banner-body {
-  background: linear-gradient(135deg, #162448, #1a2848) !important;
-  border-color: rgba(60,120,220,0.2) !important;
+[data-theme="dark"] .specialist-banner-body {
+  background: linear-gradient(135deg, #1c2f58, #1a2d55) !important;
+  border-color: rgba(80,140,255,0.25) !important;
 }
 
 /* =============================================
