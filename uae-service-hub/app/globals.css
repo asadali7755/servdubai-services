@@ -26,7 +26,7 @@
 * { box-sizing: border-box; }
 
 body {
-  background-color: #212529;
+  background-color: #06090f;
   color: #ffffff;
   font-family: var(--font-work), sans-serif;
   margin: 0;
@@ -1509,6 +1509,80 @@ img { max-width: 100%; }
 
 .theme-toggle-btn:hover {
   background: rgba(201,168,76,0.12);
+}
+
+/* =============================================
+   DARK THEME — Black + Blue palette
+   :not([data-theme="light"]) keeps these out
+   of light mode; light theme !important below
+   overrides anything that leaks through.
+============================================= */
+
+/* Base */
+:not([data-theme="light"]) body { background-color: #06090f !important; }
+:not([data-theme="light"]) .p-navbar.scrolled {
+  background: rgba(6, 9, 15, 0.97) !important;
+}
+:not([data-theme="light"]) .mobile-menu { background: #080d18 !important; }
+
+/* About page sections */
+:not([data-theme="light"]) .about-stats-bar   { background: #06090f !important; }
+:not([data-theme="light"]) .about-main        { background: #0c1220 !important; }
+:not([data-theme="light"]) .about-values      { background: #080d18 !important; }
+:not([data-theme="light"]) .about-value-card  { background: #111d30 !important; }
+:not([data-theme="light"]) .about-services    { background: #0c1220 !important; }
+:not([data-theme="light"]) .about-svc-card    { background: #111d30 !important; }
+:not([data-theme="light"]) .about-emirates    { background: #080d18 !important; }
+
+/* Service page */
+:not([data-theme="light"]) .svc-stats-bar     { background: #06090f !important; }
+:not([data-theme="light"]) .theme-svc-body    { background: #0c1220 !important; }
+:not([data-theme="light"]) .svc-desc-card     { background: #111d30 !important; }
+:not([data-theme="light"]) .svc-sidebar       { background: #111d30 !important; }
+:not([data-theme="light"]) .svc-specialist-card {
+  background: linear-gradient(135deg, #0d1b35 0%, #111d30 100%) !important;
+}
+:not([data-theme="light"]) .svc-cta-banner {
+  background: linear-gradient(135deg, #06090f 0%, #0d1b35 50%, #1a0a2e 100%) !important;
+}
+
+/* Emirate page */
+:not([data-theme="light"]) .emir-stats-bar    { background: #06090f !important; }
+:not([data-theme="light"]) .emir-main         { background: #0c1220 !important; }
+:not([data-theme="light"]) .why-grid          {
+  background: linear-gradient(135deg, #080d18 0%, #0f1a2e 100%) !important;
+}
+:not([data-theme="light"]) .why-left-panel    {
+  background: linear-gradient(160deg, #0d1b35 0%, #080d18 60%, #06090f 100%) !important;
+}
+:not([data-theme="light"]) .why-right-panel   { background: #0f1a2e !important; }
+:not([data-theme="light"]) .how-it-works-card {
+  background: linear-gradient(160deg, #0d1b35 0%, #111d30 100%) !important;
+}
+:not([data-theme="light"]) .emir-trust-bar    {
+  background: rgba(13,27,53,0.5) !important;
+  border-color: rgba(26,70,130,0.25) !important;
+}
+:not([data-theme="light"]) .emir-cta-banner   {
+  background: linear-gradient(135deg, #06090f 0%, #0d1b35 50%, #1a0a2e 100%) !important;
+}
+
+/* Home page */
+:not([data-theme="light"]) .theme-about       { background: #0c1220 !important; }
+:not([data-theme="light"]) .theme-cta         {
+  background: linear-gradient(135deg, #06090f 0%, #0d1b35 50%, #06090f 100%) !important;
+}
+
+/* Specialist sites — home & banner */
+:not([data-theme="light"]) .theme-sites       { background: #0c1220 !important; }
+:not([data-theme="light"]) .site-card         {
+  background: rgba(17,29,48,0.65) !important;
+}
+:not([data-theme="light"]) .specialist-banner-section {
+  background: linear-gradient(135deg, #06090f 0%, #0d1225 40%, #06090f 100%) !important;
+}
+:not([data-theme="light"]) .specialist-banner-body {
+  background: linear-gradient(135deg, #111d30, #0f1a2e) !important;
 }
 
 /* =============================================
