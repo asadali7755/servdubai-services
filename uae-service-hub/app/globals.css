@@ -1941,13 +1941,15 @@ img { max-width: 100%; }
 [data-theme="light"] .theme-svc-body h1,
 [data-theme="light"] .theme-svc-body h2,
 [data-theme="light"] .theme-svc-body h3 { color: #1a1510 !important; }
-[data-theme="light"] .theme-svc-body p { color: #5a4e3a !important; }
+[data-theme="light"] .theme-svc-body p,
+[data-theme="light"] .theme-svc-body h3.svc-content-p { color: #5a4e3a !important; }
 
 /* Emirate page main body */
 [data-theme="light"] .emir-main h1,
 [data-theme="light"] .emir-main h2,
 [data-theme="light"] .emir-main h3 { color: #1a1510 !important; }
-[data-theme="light"] .emir-main p { color: #5a4e3a !important; }
+[data-theme="light"] .emir-main p,
+[data-theme="light"] .emir-main h3.emir-section-p { color: #5a4e3a !important; }
 
 /* Home page sections */
 [data-theme="light"] .theme-about h1,

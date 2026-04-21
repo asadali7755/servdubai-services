@@ -98,9 +98,9 @@ export default function SpecialistSitesBanner() {
                 justifyContent: 'space-between',
                 gap: '0.75rem',
               }}>
-                <p style={{ color: '#9ca3af', fontSize: '0.75rem', lineHeight: 1.5, margin: 0 }}>
+                <h3 style={{ color: '#9ca3af', fontSize: '0.75rem', lineHeight: 1.5, margin: 0, fontWeight: 400 }}>
                   {site.description}
-                </p>
+                </h3>
                 <span style={{
                   flexShrink: 0,
                   display: 'inline-flex', alignItems: 'center', gap: '0.2rem',

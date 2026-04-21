@@ -69,9 +69,9 @@ export default function SpecializedSites({ sites }: { sites: SpecializedSite[] }
                 >
                   {site.name}
                 </h3>
-                <p style={{ color: '#9ca3af', fontSize: '0.875rem', lineHeight: 1.65, marginBottom: '1.25rem', flex: 1 }}>
+                <h3 style={{ color: '#9ca3af', fontSize: '0.875rem', lineHeight: 1.65, marginBottom: '1.25rem', flex: 1, fontWeight: 400, marginTop: 0 }}>
                   {site.description}
-                </p>
+                </h3>
                 <span
                   className="site-card-link"
                   style={{

@@ -116,9 +116,9 @@ export default function WebsitesPage() {
           }}>
             Our Specialist Websites
           </h1>
-          <p style={{ color: '#9ca3af', fontSize: '1.05rem', maxWidth: '560px', margin: '0 auto', lineHeight: 1.7 }}>
+          <h2 style={{ color: '#9ca3af', fontSize: '1.05rem', maxWidth: '560px', margin: '0 auto', lineHeight: 1.7, fontWeight: 400 }}>
             4 dedicated websites. Each one a specialist in its field. All backed by Al Haya's certified cleaning professionals across UAE.
-          </p>
+          </h2>
           {/* 4 dots representing 4 sites */}
           <div style={{ display: 'flex', justifyContent: 'center', gap: '0.6rem', marginTop: '2rem' }}>
             {sites.map((s) => (
@@ -216,15 +216,15 @@ export default function WebsitesPage() {
                 }}>
                   {site.name}
                 </h2>
-                <p style={{ color: '#c9a84c', fontSize: '0.85rem', fontWeight: 600, marginBottom: '1.25rem', letterSpacing: '0.02em' }}>
+                <h3 style={{ color: '#c9a84c', fontSize: '0.85rem', fontWeight: 600, marginBottom: '1.25rem', letterSpacing: '0.02em', marginTop: 0 }}>
                   {site.tagline}
-                </p>
+                </h3>
 
                 <div style={{ width: '40px', height: '2px', background: '#c9a84c', borderRadius: '2px', marginBottom: '1.25rem' }} />
 
-                <p style={{ color: '#9ca3af', fontSize: '0.9rem', lineHeight: 1.75, marginBottom: '1.75rem' }}>
+                <h3 style={{ color: '#9ca3af', fontSize: '0.9rem', lineHeight: 1.75, marginBottom: '1.75rem', fontWeight: 400, marginTop: 0 }}>
                   {site.description}
-                </p>
+                </h3>
 
                 {/* Features */}
                 <div className="site-feature-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.4rem 1rem', marginBottom: '2rem' }}>
@@ -294,9 +294,9 @@ export default function WebsitesPage() {
         <h2 style={{ fontFamily: 'var(--font-josefin)', fontSize: 'clamp(1.5rem, 3vw, 2.2rem)', fontWeight: 700, color: '#fff', marginBottom: '0.75rem' }}>
           Not Sure Which Site to Visit?
         </h2>
-        <p style={{ color: '#9ca3af', marginBottom: '2rem', fontSize: '1rem', maxWidth: '480px', margin: '0 auto 2rem' }}>
+        <h3 style={{ color: '#9ca3af', marginBottom: '2rem', fontSize: '1rem', maxWidth: '480px', margin: '0 auto 2rem', fontWeight: 400 }}>
           Message us on WhatsApp — we'll direct you to the right specialist and give you a free quote instantly.
-        </p>
+        </h3>
         <a
           href={getWhatsAppLink()} target="_blank" rel="noopener noreferrer"
           className="svc-book-btn"

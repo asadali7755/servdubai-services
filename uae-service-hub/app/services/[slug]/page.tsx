@@ -156,9 +156,9 @@ export default async function ServicePage({ params }: Props) {
                 About This Service
               </h2>
               {paragraphs.map((para, i) => (
-                <p key={i} className="svc-content-p" style={{ color: '#9ca3af', lineHeight: 1.8, marginBottom: '1rem', fontSize: '0.9375rem' }}>
+                <h3 key={i} className="svc-content-p" style={{ color: '#9ca3af', lineHeight: 1.8, marginBottom: '1rem', fontSize: '0.9375rem', fontWeight: 400, marginTop: 0 }}>
                   {para}
-                </p>
+                </h3>
               ))}
             </div>
 
@@ -360,9 +360,9 @@ export default async function ServicePage({ params }: Props) {
             <h2 style={{ fontFamily: 'var(--font-josefin)', fontSize: '1.75rem', fontWeight: 700, color: '#fff', marginBottom: '0.5rem' }}>
               Ready to Book {service.name}?
             </h2>
-            <p style={{ color: '#9ca3af', marginBottom: '2rem', fontSize: '0.95rem' }}>
+            <h3 style={{ color: '#9ca3af', marginBottom: '2rem', fontSize: '0.95rem', fontWeight: 400, marginTop: 0 }}>
               Same-day service across all UAE Emirates — free quote in minutes.
-            </p>
+            </h3>
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
               <a
                 href={getWhatsAppLink(service.name)}

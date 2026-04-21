@@ -53,9 +53,9 @@ export default function AboutPage() {
           <h1 style={{ fontFamily: 'var(--font-josefin)', fontSize: 'clamp(2.2rem, 5vw, 3.8rem)', fontWeight: 700, color: '#fff', lineHeight: 1.1, marginBottom: '1rem', textShadow: '0 2px 20px rgba(0,0,0,0.5)' }}>
             About Al Haya
           </h1>
-          <p style={{ color: '#d1d5db', fontSize: '1.05rem', maxWidth: '520px', lineHeight: 1.7 }}>
+          <h2 style={{ color: '#d1d5db', fontSize: '1.05rem', maxWidth: '520px', lineHeight: 1.7, fontWeight: 400, marginTop: 0 }}>
             UAE's trusted professional cleaning company — serving all 7 Emirates with certified technicians and eco-friendly solutions.
-          </p>
+          </h2>
         </div>
       </div>
 
@@ -86,10 +86,10 @@ export default function AboutPage() {
                   <h1>Who We Are</h1>
                 </div>
               </div>
-              <p className="about-body-p" style={{ color: '#9ca3af', lineHeight: 1.85, marginBottom: '1.25rem', fontSize: '0.95rem' }}>
+              <h3 className="about-body-p" style={{ color: '#9ca3af', lineHeight: 1.85, marginBottom: '1.25rem', fontSize: '0.95rem', fontWeight: 400, marginTop: 0 }}>
                 Al Haya Cleaning Services is a trusted professional cleaning company operating across all 7 UAE Emirates. Our mission is to deliver consistently high-quality cleaning and restoration services to homes, villas, apartments, and commercial spaces throughout the UAE.
               </p>
-              <p className="about-body-p" style={{ color: '#9ca3af', lineHeight: 1.85, marginBottom: '2rem', fontSize: '0.95rem' }}>
+              <h3 className="about-body-p" style={{ color: '#9ca3af', lineHeight: 1.85, marginBottom: '2rem', fontSize: '0.95rem', fontWeight: 400, marginTop: 0 }}>
                 We employ certified, background-checked cleaning technicians who use professional-grade equipment and eco-friendly cleaning solutions. From sofa deep cleaning to villa deep cleans and marble polishing — we bring expertise and reliability to every job.
               </p>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.6rem 1.5rem' }}>
@@ -138,7 +138,7 @@ export default function AboutPage() {
                   <h3 className="about-value-h3" style={{ fontFamily: 'var(--font-josefin)', fontSize: '0.95rem', fontWeight: 700, color: '#fff', marginBottom: '0.4rem' }}>
                     {v.title}
                   </h3>
-                  <p className="about-value-p" style={{ color: '#9ca3af', fontSize: '0.85rem', lineHeight: 1.6 }}>{v.desc}</p>
+                  <h3 className="about-value-p" style={{ color: '#9ca3af', fontSize: '0.85rem', lineHeight: 1.6, fontWeight: 400, marginTop: 0, marginBottom: 0 }}>{v.desc}</h3>
                 </div>
               </div>
             ))}
@@ -223,9 +223,9 @@ export default function AboutPage() {
           <h2 style={{ fontFamily: 'var(--font-josefin)', fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)', fontWeight: 700, color: '#fff', marginBottom: '0.75rem' }}>
             Ready to Book a Cleaning?
           </h2>
-          <p style={{ color: '#9ca3af', fontSize: '1rem', lineHeight: 1.7, marginBottom: '2rem' }}>
+          <h3 style={{ color: '#9ca3af', fontSize: '1rem', lineHeight: 1.7, marginBottom: '2rem', fontWeight: 400, marginTop: 0 }}>
             Message us on WhatsApp for a free instant quote. Same-day service across all 7 UAE Emirates.
-          </p>
+          </h3>
           <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', justifyContent: 'center' }}>
             <a href={getWhatsAppLink()} target="_blank" rel="noopener noreferrer" style={{
               display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
