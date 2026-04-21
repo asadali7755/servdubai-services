@@ -4,7 +4,7 @@ import { specializedSites } from '@/lib/data/specialized-sites'
 export default function SpecialistSitesBanner() {
   return (
     <section className="specialist-banner-section" style={{
-      background: 'linear-gradient(135deg, #0a0a0a 0%, #111827 40%, #0a0a0a 100%)',
+      background: 'linear-gradient(135deg, #080e20 0%, #0e1b40 40%, #080e20 100%)',
       borderTop: '1px solid rgba(201,168,76,0.2)',
       borderBottom: '1px solid rgba(201,168,76,0.2)',
       padding: '3rem 1.5rem',
@@ -88,8 +88,8 @@ export default function SpecialistSitesBanner() {
 
               {/* Card body */}
               <div className="specialist-banner-body" style={{
-                background: 'linear-gradient(135deg, #1a1a1a, #1e1e1e)',
-                border: '1px solid rgba(201,168,76,0.15)',
+                background: 'linear-gradient(135deg, #1c2f58, #1a2d55)',
+                border: '1px solid rgba(80,140,255,0.2)',
                 borderTop: 'none',
                 borderRadius: '0 0 6px 6px',
                 padding: '0.875rem 1rem',

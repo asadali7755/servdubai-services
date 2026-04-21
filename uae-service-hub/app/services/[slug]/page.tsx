@@ -119,7 +119,7 @@ export default async function ServicePage({ params }: Props) {
       </div>
 
       {/* ── STATS BAR ── */}
-      <div className="svc-stats-bar" style={{ background: '#111', borderBottom: '1px solid rgba(201,168,76,0.2)', padding: '0 1.5rem' }}>
+      <div className="svc-stats-bar" style={{ background: '#080e20', borderBottom: '1px solid rgba(201,168,76,0.2)', padding: '0 1.5rem' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', gap: '0.75rem', padding: '1.25rem 0', flexWrap: 'wrap' }}>
           {stats.map((s) => (
             <div key={s.label} className="svc-stat-card">
@@ -138,7 +138,7 @@ export default async function ServicePage({ params }: Props) {
       </div>
 
       {/* ── MAIN CONTENT ── */}
-      <div className="theme-svc-body" style={{ maxWidth: '1200px', margin: '0 auto', padding: '3rem 1.5rem' }}>
+      <div className="theme-svc-body" style={{ maxWidth: '1200px', margin: '0 auto', padding: '3rem 1.5rem', background: '#132040' }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0,1fr) 320px', gap: '2rem', alignItems: 'start' }}
           className="svc-grid">
 

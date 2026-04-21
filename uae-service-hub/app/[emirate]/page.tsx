@@ -121,7 +121,7 @@ export default async function EmiratePage({ params }: Props) {
       {/* ══════════════════════════════════════
           STATS BAR
       ══════════════════════════════════════ */}
-      <div className="emir-stats-bar" style={{ background: '#0d0d0d', borderBottom: '1px solid rgba(201,168,76,0.15)' }}>
+      <div className="emir-stats-bar" style={{ background: '#080e20', borderBottom: '1px solid rgba(201,168,76,0.15)' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem', display: 'flex', flexWrap: 'wrap' }}>
           {[
             { number: emirate.cities.length.toString(), label: 'Service Areas' },
@@ -141,7 +141,7 @@ export default async function EmiratePage({ params }: Props) {
         </div>
       </div>
 
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '4rem 2rem' }} className="emir-main">
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '4rem 2rem', background: '#132040' }} className="emir-main">
 
         {/* ══════════════════════════════════════
             SELECT YOUR AREA
@@ -293,8 +293,8 @@ export default async function EmiratePage({ params }: Props) {
             display: 'grid',
             gridTemplateColumns: '300px 1fr',
             gap: '0',
-            background: 'linear-gradient(135deg, #0d1b35 0%, #1a1a1a 100%)',
-            border: '1px solid rgba(201,168,76,0.18)',
+            background: 'linear-gradient(135deg, #0e1635 0%, #1c2f58 100%)',
+            border: '1px solid rgba(80,140,255,0.2)',
             borderRadius: '12px',
             overflow: 'hidden',
           }} className="why-grid">
@@ -401,8 +401,8 @@ export default async function EmiratePage({ params }: Props) {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.25rem' }}>
             {howItWorks.map((step) => (
               <div key={step.step} className="how-it-works-card" style={{
-                background: 'linear-gradient(160deg, #1a0a2e 0%, #1a1a1a 100%)',
-                border: '1px solid rgba(201,168,76,0.15)',
+                background: 'linear-gradient(160deg, #0e1b40 0%, #1c2f58 100%)',
+                border: '1px solid rgba(80,140,255,0.25)',
                 borderRadius: '8px',
                 padding: '2rem 1.5rem',
                 position: 'relative',

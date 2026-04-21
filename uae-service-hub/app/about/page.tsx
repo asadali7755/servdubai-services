@@ -60,7 +60,7 @@ export default function AboutPage() {
       </div>
 
       {/* ── STATS BAR ── */}
-      <div className="about-stats-bar" style={{ background: '#0d0d0d', borderBottom: '1px solid rgba(201,168,76,0.2)', padding: '0 1.5rem' }}>
+      <div className="about-stats-bar" style={{ background: '#080e20', borderBottom: '1px solid rgba(201,168,76,0.2)', padding: '0 1.5rem' }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
           {stats.map((s, i) => (
             <div key={s.l} style={{
@@ -75,7 +75,7 @@ export default function AboutPage() {
       </div>
 
       {/* ── WHO WE ARE ── */}
-      <section className="about-main" style={{ background: '#151515', padding: '5rem 1.5rem' }}>
+      <section className="about-main" style={{ background: '#132040', padding: '5rem 1.5rem' }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '4rem', alignItems: 'center' }}>
 
@@ -110,7 +110,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── OUR VALUES ── */}
-      <section className="about-values" style={{ background: '#111', padding: '5rem 1.5rem', borderTop: '1px solid rgba(201,168,76,0.1)' }}>
+      <section className="about-values" style={{ background: '#0e1635', padding: '5rem 1.5rem', borderTop: '1px solid rgba(201,168,76,0.1)' }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
           <div className="p-title" style={{ textAlign: 'center' }}>
             <div className="p-title-center">
@@ -121,7 +121,7 @@ export default function AboutPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '1.25rem', marginTop: '1rem' }}>
             {values.map((v, i) => (
               <div key={v.title} className="about-value-card" style={{
-                background: '#1a1a1a', border: '1px solid rgba(201,168,76,0.15)',
+                background: '#1c2f58', border: '1px solid rgba(80,140,255,0.2)',
                 borderRadius: '12px', padding: '1.5rem',
                 display: 'flex', gap: '1rem', alignItems: 'flex-start',
               }}>
@@ -147,7 +147,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── SERVICES ── */}
-      <section className="about-services" style={{ background: '#151515', padding: '5rem 1.5rem', borderTop: '1px solid rgba(201,168,76,0.1)' }}>
+      <section className="about-services" style={{ background: '#132040', padding: '5rem 1.5rem', borderTop: '1px solid rgba(201,168,76,0.1)' }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
           <div className="p-title" style={{ textAlign: 'center' }}>
             <div className="p-title-center">
@@ -159,7 +159,7 @@ export default function AboutPage() {
             {services.map((service) => (
               <Link key={service.id} href={`/services/${service.slug}`} style={{ textDecoration: 'none' }}>
                 <div className="about-svc-card" style={{
-                  background: '#1a1a1a', border: '1px solid rgba(201,168,76,0.15)',
+                  background: '#1c2f58', border: '1px solid rgba(80,140,255,0.2)',
                   borderRadius: '10px', overflow: 'hidden',
                 }}>
                   <div style={{ position: 'relative', height: '110px' }}>
@@ -180,7 +180,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── EMIRATES ── */}
-      <section className="about-emirates" style={{ background: '#111', padding: '5rem 1.5rem', borderTop: '1px solid rgba(201,168,76,0.1)' }}>
+      <section className="about-emirates" style={{ background: '#0e1635', padding: '5rem 1.5rem', borderTop: '1px solid rgba(201,168,76,0.1)' }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
           <div className="p-title" style={{ textAlign: 'center' }}>
             <div className="p-title-center">

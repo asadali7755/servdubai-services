@@ -62,7 +62,7 @@ export default function Home() {
       <Hero slides={heroSlides} />
 
       {/* ABOUT — Poseify bg-secondary, text left + image right */}
-      <section className="theme-about" style={{ background: '#343a40', padding: '5rem 0' }}>
+      <section className="theme-about" style={{ background: '#132040', padding: '5rem 0' }}>
         <div style={{ maxWidth: '1140px', margin: '0 auto', padding: '0 1.5rem' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '3rem', alignItems: 'center' }}>
 
