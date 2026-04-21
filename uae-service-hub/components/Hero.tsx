@@ -135,6 +135,9 @@ export default function Hero({ slides }: { slides: HeroSlide[] }) {
         </div>
       )}
 
+      {/* Theme-aware overlay — dark in dark mode, warm cream in light mode */}
+      <div className="hero-overlay" style={{ position: 'absolute', inset: 0, zIndex: 4 }} />
+
       {/* Caption — always on top, content fades between slides */}
       <div className="p-hero-caption" style={{ zIndex: 10 }}>
         <div className="p-title" style={{ marginBottom: '0.5rem' }}>
@@ -162,6 +165,7 @@ export default function Hero({ slides }: { slides: HeroSlide[] }) {
           <a href="/about" className="p-btn-outline">Learn More</a>
           <a
             href="/websites"
+            className="hero-websites-btn"
             style={{
               display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
               padding: '0.6rem 1.4rem',
