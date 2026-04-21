@@ -37,13 +37,13 @@ export default function AboutPage() {
   return (
     <>
       {/* ── CINEMATIC HERO ── */}
-      <div style={{ position: 'relative', height: 'clamp(380px, 55vh, 520px)', overflow: 'hidden' }}>
+      <div className="page-hero-wrap" style={{ position: 'relative', height: 'clamp(380px, 55vh, 520px)', overflow: 'hidden' }}>
         <Image
           src="/images/hero/professional-cleaning-services.webp"
           alt="About Al Haya Cleaning Services"
           fill priority className="object-cover" sizes="100vw"
         />
-        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.65) 60%, rgba(0,0,0,0.88) 100%)' }} />
+        <div className="hero-overlay" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.65) 60%, rgba(0,0,0,0.88) 100%)' }} />
         <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '90px 1.5rem 2rem' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
             <div style={{ width: '40px', height: '1px', background: '#c9a84c' }} />

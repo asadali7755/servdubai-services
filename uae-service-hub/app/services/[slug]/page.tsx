@@ -54,7 +54,7 @@ export default async function ServicePage({ params }: Props) {
       />
 
       {/* ── FULL-WIDTH HERO ── */}
-      <div style={{ position: 'relative', width: '100%', height: 'clamp(340px, 55vh, 520px)', marginTop: 0 }}>
+      <div className="page-hero-wrap" style={{ position: 'relative', width: '100%', height: 'clamp(340px, 55vh, 520px)', marginTop: 0 }}>
         <Image
           src={service.images[0]}
           alt={service.name}
@@ -64,7 +64,7 @@ export default async function ServicePage({ params }: Props) {
           sizes="100vw"
         />
         {/* Gradient overlay */}
-        <div style={{
+        <div className="hero-overlay" style={{
           position: 'absolute', inset: 0,
           background: 'linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.9) 100%)',
         }} />

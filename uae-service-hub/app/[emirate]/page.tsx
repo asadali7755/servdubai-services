@@ -60,12 +60,12 @@ export default async function EmiratePage({ params }: Props) {
       {/* ══════════════════════════════════════
           CINEMATIC HERO
       ══════════════════════════════════════ */}
-      <div style={{ position: 'relative', width: '100%', height: 'clamp(420px, 65vh, 600px)', overflow: 'hidden' }}>
+      <div className="page-hero-wrap" style={{ position: 'relative', width: '100%', height: 'clamp(420px, 65vh, 600px)', overflow: 'hidden' }}>
         <div className="emir-hero-img" style={{ position: 'absolute', inset: 0 }}>
           <Image src={emirate.image} alt={emirate.name} fill priority className="object-cover" sizes="100vw" />
         </div>
-        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.5) 45%, rgba(0,0,0,0.93) 100%)' }} />
-        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(0,0,0,0.45) 0%, transparent 65%)' }} />
+        <div className="hero-overlay" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.5) 45%, rgba(0,0,0,0.93) 100%)' }} />
+        <div className="hero-overlay-side" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(0,0,0,0.45) 0%, transparent 65%)' }} />
 
         {/* Breadcrumb */}
         <nav style={{ position: 'absolute', top: '90px', left: '2rem', zIndex: 5, fontSize: '0.8rem' }}>

@@ -1607,6 +1607,35 @@ img { max-width: 100%; }
   text-shadow: 0 1px 6px rgba(255,240,200,0.5) !important;
 }
 
+/* ══════════════════════════════════════════════════════
+   PAGE HERO SECTIONS — light theme (service, emirate, about)
+   .hero-overlay already handled above; these rules handle text
+══════════════════════════════════════════════════════ */
+[data-theme="light"] .page-hero-wrap h1 {
+  color: #2a1a00 !important;
+  text-shadow: 0 1px 8px rgba(255,240,200,0.5) !important;
+}
+[data-theme="light"] .page-hero-wrap h2 {
+  color: #3a2800 !important;
+  text-shadow: none !important;
+}
+[data-theme="light"] .page-hero-wrap p {
+  color: #3a2800 !important;
+}
+/* breadcrumb span text */
+[data-theme="light"] .page-hero-wrap nav > span {
+  color: #3a2800 !important;
+}
+/* "Call" button (white border/text) in emirate hero */
+[data-theme="light"] .page-hero-wrap a[href^="tel"] {
+  color: #2a1a00 !important;
+  border-color: rgba(42,26,0,0.5) !important;
+}
+/* side vignette — lighter in light mode */
+[data-theme="light"] .hero-overlay-side {
+  background: linear-gradient(to right, rgba(237,220,170,0.4) 0%, transparent 65%) !important;
+}
+
 /* "Our Websites" hero button — dark amber in light theme */
 [data-theme="light"] .hero-websites-btn {
   color: #2a1a00 !important;
