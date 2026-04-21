@@ -88,10 +88,10 @@ export default function AboutPage() {
               </div>
               <h3 className="about-body-p" style={{ color: '#9ca3af', lineHeight: 1.85, marginBottom: '1.25rem', fontSize: '0.95rem', fontWeight: 400, marginTop: 0 }}>
                 Al Haya Cleaning Services is a trusted professional cleaning company operating across all 7 UAE Emirates. Our mission is to deliver consistently high-quality cleaning and restoration services to homes, villas, apartments, and commercial spaces throughout the UAE.
-              </p>
+              </h3>
               <h3 className="about-body-p" style={{ color: '#9ca3af', lineHeight: 1.85, marginBottom: '2rem', fontSize: '0.95rem', fontWeight: 400, marginTop: 0 }}>
                 We employ certified, background-checked cleaning technicians who use professional-grade equipment and eco-friendly cleaning solutions. From sofa deep cleaning to villa deep cleans and marble polishing — we bring expertise and reliability to every job.
-              </p>
+              </h3>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.6rem 1.5rem' }}>
                 {['11 professional services', 'All 7 UAE Emirates', 'Same-day availability', 'Eco-friendly solutions', 'Certified technicians', 'Free instant quote'].map((feat) => (
                   <div key={feat} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
