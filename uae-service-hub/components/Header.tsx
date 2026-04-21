@@ -7,17 +7,21 @@ import { emirates } from '@/lib/data/emirates'
 import { getWhatsAppLink } from '@/lib/utils/whatsapp'
 import { SITE_CONFIG } from '@/lib/data/constants'
 import ThemeToggle from './ThemeToggle'
+import { useTheme } from './ThemeProvider'
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const { theme } = useTheme()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 45)
-    onScroll() // run once on mount
+    onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  const linkColor = theme === 'light' ? '#1a1510' : undefined
 
   return (
     <header className={`p-navbar${scrolled ? ' scrolled' : ''}`}>
@@ -30,15 +34,15 @@ export default function Header() {
         {/* Desktop nav */}
         <ul className="nav-links">
           <li>
-            <Link href="/" className="nav-link active">Home</Link>
+            <Link href="/" className="nav-link active" style={{ color: linkColor }}>Home</Link>
           </li>
           <li>
-            <Link href="/about" className="nav-link">About</Link>
+            <Link href="/about" className="nav-link" style={{ color: linkColor }}>About</Link>
           </li>
 
           {/* Services dropdown */}
           <li className="dropdown">
-            <span className="nav-link">
+            <span className="nav-link" style={{ color: linkColor }}>
               Services
               <svg style={{ display: 'inline', marginLeft: '5px', verticalAlign: 'middle' }} width="10" height="8" viewBox="0 0 10 6" fill="currentColor">
                 <path d="M0 0l5 6 5-6z" />
@@ -55,7 +59,7 @@ export default function Header() {
 
           {/* Emirates dropdown */}
           <li className="dropdown">
-            <span className="nav-link">
+            <span className="nav-link" style={{ color: linkColor }}>
               Emirates
               <svg style={{ display: 'inline', marginLeft: '5px', verticalAlign: 'middle' }} width="10" height="8" viewBox="0 0 10 6" fill="currentColor">
                 <path d="M0 0l5 6 5-6z" />
@@ -69,7 +73,7 @@ export default function Header() {
           </li>
 
           <li>
-            <Link href="/contact" className="nav-link">Contact</Link>
+            <Link href="/contact" className="nav-link" style={{ color: linkColor }}>Contact</Link>
           </li>
         </ul>
 
