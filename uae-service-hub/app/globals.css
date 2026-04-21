@@ -1778,57 +1778,70 @@ img { max-width: 100%; }
   box-shadow: 0 4px 20px rgba(0,0,0,0.08) !important;
 }
 
-/* ── Specialist Sites section ── */
+/* ── Specialist Sites section (home page) ── */
 [data-theme="light"] .theme-sites {
-  background: #fdfcf8 !important;
+  background: linear-gradient(135deg, #ede8f8 0%, #f3f0fc 50%, #ede8f8 100%) !important;
 }
 
 [data-theme="light"] .theme-sites .site-card {
   background: #ffffff !important;
-  border-color: rgba(201,168,76,0.3) !important;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.07) !important;
+  border-color: rgba(109,76,196,0.2) !important;
+  box-shadow: 0 4px 24px rgba(109,76,196,0.08) !important;
 }
 
 [data-theme="light"] .theme-sites .site-card h3 {
-  color: #1a1510 !important;
+  color: #2a1a4e !important;
 }
 
+[data-theme="light"] .theme-sites .site-card h3.about-value-p,
 [data-theme="light"] .theme-sites .site-card p {
-  color: #5a4e3a !important;
+  color: #3a2a5e !important;
 }
 
 [data-theme="light"] .theme-sites .site-card span {
-  color: #8a6a20 !important;
+  color: #6d4cc4 !important;
 }
 
 [data-theme="light"] .theme-sites .p-title-center h5 {
-  color: #8a6a20 !important;
+  color: #6d4cc4 !important;
 }
 
 /* ── Specialist Sites Banner (shared component) ── */
 [data-theme="light"] .specialist-banner-section {
-  background: linear-gradient(135deg, #f5f0e5 0%, #fdf8ee 50%, #f5f0e5 100%) !important;
-  border-top-color: rgba(201,168,76,0.2) !important;
-  border-bottom-color: rgba(201,168,76,0.2) !important;
+  background: linear-gradient(135deg, #ede8f8 0%, #f3f0fc 50%, #ede8f8 100%) !important;
+  border-top-color: rgba(109,76,196,0.2) !important;
+  border-bottom-color: rgba(109,76,196,0.2) !important;
 }
 
 [data-theme="light"] .specialist-banner-card {
-  background: #ffffff !important;
-  border-color: rgba(201,168,76,0.25) !important;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.06) !important;
+  border-color: rgba(109,76,196,0.2) !important;
+  box-shadow: 0 4px 20px rgba(109,76,196,0.08) !important;
 }
 
 [data-theme="light"] .specialist-banner-card:hover {
-  border-color: #c9a84c !important;
-  box-shadow: 0 8px 32px rgba(201,168,76,0.2) !important;
+  border-color: rgba(109,76,196,0.5) !important;
+  box-shadow: 0 8px 32px rgba(109,76,196,0.15) !important;
 }
 
-[data-theme="light"] .specialist-banner-card h3 {
-  color: #1a1510 !important;
+[data-theme="light"] .specialist-banner-body {
+  background: #ffffff !important;
+  border-color: rgba(109,76,196,0.15) !important;
 }
 
-[data-theme="light"] .specialist-banner-card p {
-  color: #5a4e3a !important;
+[data-theme="light"] .specialist-banner-body h3 {
+  color: #3a2a5e !important;
+}
+
+[data-theme="light"] .specialist-banner-body span {
+  color: #6d4cc4 !important;
+}
+
+[data-theme="light"] .specialist-banner-section h2 {
+  color: #2a1a4e !important;
+}
+
+[data-theme="light"] .specialist-banner-section span {
+  color: #6d4cc4 !important;
 }
 
 /* ── Service detail page ── */
