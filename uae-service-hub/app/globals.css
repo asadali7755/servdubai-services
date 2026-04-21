@@ -16,6 +16,11 @@
   --primary: #c9a84c;
   --dark: #212529;
   --secondary: #343a40;
+  --nav-link-color: #ffffff;
+}
+
+[data-theme="light"] {
+  --nav-link-color: #1a1510;
 }
 
 * { box-sizing: border-box; }
@@ -82,7 +87,7 @@ img { max-width: 100%; }
   display: inline-block;
   padding: 40px 0;
   margin-right: 25px;
-  color: #ffffff;
+  color: var(--nav-link-color);
   font-size: 17px;
   font-family: var(--font-josefin), sans-serif;
   font-weight: 600;
@@ -1530,10 +1535,7 @@ img { max-width: 100%; }
   border-bottom: 1px solid rgba(201,168,76,0.25) !important;
 }
 
-/* Nav links: always dark in light mode (hero has warm cream overlay so still readable) */
-[data-theme="light"] .p-navbar .nav-links .nav-link {
-  color: #1a1510 !important;
-}
+/* Nav link hover/active in light mode */
 [data-theme="light"] .p-navbar .nav-links .nav-link:hover,
 [data-theme="light"] .p-navbar .nav-links .nav-link.active {
   color: #c9a84c !important;

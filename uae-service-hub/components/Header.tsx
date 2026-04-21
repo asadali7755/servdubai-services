@@ -34,15 +34,15 @@ export default function Header() {
         {/* Desktop nav */}
         <ul className="nav-links">
           <li>
-            <Link href="/" className="nav-link active" style={{ color: linkColor }}>Home</Link>
+            <Link href="/" className="nav-link active">Home</Link>
           </li>
           <li>
-            <Link href="/about" className="nav-link" style={{ color: linkColor }}>About</Link>
+            <Link href="/about" className="nav-link">About</Link>
           </li>
 
           {/* Services dropdown */}
           <li className="dropdown">
-            <span className="nav-link" style={{ color: linkColor }}>
+            <span className="nav-link">
               Services
               <svg style={{ display: 'inline', marginLeft: '5px', verticalAlign: 'middle' }} width="10" height="8" viewBox="0 0 10 6" fill="currentColor">
                 <path d="M0 0l5 6 5-6z" />
@@ -59,7 +59,7 @@ export default function Header() {
 
           {/* Emirates dropdown */}
           <li className="dropdown">
-            <span className="nav-link" style={{ color: linkColor }}>
+            <span className="nav-link">
               Emirates
               <svg style={{ display: 'inline', marginLeft: '5px', verticalAlign: 'middle' }} width="10" height="8" viewBox="0 0 10 6" fill="currentColor">
                 <path d="M0 0l5 6 5-6z" />
@@ -73,7 +73,7 @@ export default function Header() {
           </li>
 
           <li>
-            <Link href="/contact" className="nav-link" style={{ color: linkColor }}>Contact</Link>
+            <Link href="/contact" className="nav-link">Contact</Link>
           </li>
         </ul>
 
