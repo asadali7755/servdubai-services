@@ -1,0 +1,39 @@
+{
+  "lastUpdated": "2026-04-23T08:00:00.000Z",
+  "date": "2026-04-23",
+  "cards": [
+    {
+      "id": 1,
+      "title": "Best Sofa Cleaning Methods in Dubai 2026",
+      "subtitle": "Keep your furniture fresh in UAE's humid climate",
+      "description": "Dubai's humid climate causes sofas to absorb moisture and odors quickly. Professional hot-water extraction removes 99% of bacteria and allergens while extending your sofa's lifespan by 3–5 years. Al Haya uses eco-friendly solutions that are safe for children and pets.",
+      "tip": "Clean your sofa every 6 months in Dubai to prevent mold and dust mite buildup caused by humidity.",
+      "badge": "TRENDING",
+      "category": "Sofa Cleaning",
+      "keywords": ["sofa cleaning Dubai", "furniture cleaning UAE", "upholstery cleaning"]
+    },
+    {
+      "id": 2,
+      "title": "Marble Polishing: Restore UAE Home Surfaces",
+      "subtitle": "Professional restoration for Dubai villas and apartments",
+      "description": "Marble floors in UAE homes lose their shine due to foot traffic, sand abrasion, and harsh cleaning chemicals. Diamond-disc polishing restores the original mirror finish without costly replacement. This service significantly increases your property value and visual appeal.",
+      "tip": "Avoid acidic cleaners like vinegar on marble — they cause permanent etching. Use only pH-neutral solutions.",
+      "badge": "PRO TIP",
+      "category": "Marble Polishing",
+      "keywords": ["marble polishing Dubai", "floor restoration UAE", "marble cleaning"]
+    },
+    {
+      "id": 3,
+      "title": "Move-Out Cleaning Checklist for UAE Tenants",
+      "subtitle": "Get your full security deposit back with these tips",
+      "description": "UAE landlords are strict about property handover conditions. A professional move-out clean covers kitchen degreasing, bathroom descaling, window cleaning, and carpet shampooing — the key areas inspectors check. Book professionals 48 hours before handover for best results.",
+      "tip": "Always take timestamped photos after professional cleaning as proof during UAE property handover.",
+      "badge": "MUST READ",
+      "category": "Move Out Cleaning",
+      "keywords": ["move out cleaning Dubai", "end of tenancy UAE", "property handover cleaning"]
+    }
+  ],
+  "totalCards": 3,
+  "previousDate": "",
+  "version": 1
+}

@@ -6,6 +6,7 @@ import ServicesGrid from '@/components/ServicesGrid'
 import EmiratesSection from '@/components/EmiratesSection'
 import SpecializedSites from '@/components/SpecializedSites'
 import WhatsAppButton from '@/components/WhatsAppButton'
+import DailyContentSection from '@/components/DailyContentSection'
 import { services } from '@/lib/data/services'
 import { emirates } from '@/lib/data/emirates'
 import { specializedSites } from '@/lib/data/specialized-sites'
@@ -232,6 +233,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* DAILY AI CONTENT — animated sliding section */}
+      <DailyContentSection />
 
       {/* EMIRATES — team-card hover grid */}
       <EmiratesSection emirates={emirates} />

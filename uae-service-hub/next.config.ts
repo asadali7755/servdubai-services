@@ -10,9 +10,7 @@ const nextConfig: NextConfig = {
   },
   compress: true,
   poweredByHeader: false,
-  experimental: {
-    optimizeCss: true,
-  },
+  // optimizeCss removed — incompatible with Tailwind v4 in dev mode (causes infinite loop + system crash)
 }
 
 export default nextConfig
