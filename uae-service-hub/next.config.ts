@@ -10,7 +10,7 @@ const nextConfig: NextConfig = {
   },
   compress: true,
   poweredByHeader: false,
-  // optimizeCss removed — incompatible with Tailwind v4 in dev mode (causes infinite loop + system crash)
+  // optimizeCss removed — Tailwind v4 ke saath Turbopack infinite loop cause karta tha
 }
 
 export default nextConfig

@@ -15,8 +15,9 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 # Load environment variables
+# Local PC pe .env.local se, GitHub Actions pe environment secrets se
 env_path = Path(__file__).parent.parent / ".env.local"
-load_dotenv(env_path)
+load_dotenv(env_path, override=False)  # override=False: GitHub secrets ko priority milti hai
 
 from agents import Agent, Runner, Tool
 from tavily import TavilyClient
@@ -230,8 +231,4 @@ async def run_content_pipeline():
     return output
 
 
-# ══════════════════════════════════════════════════════════
-# ENTRY POINT
-# ══════════════════════════════════════════════════════════
-if __name__ == "__main__":
-    asyncio.run(run_content_pipeline())
+# ═════════════════

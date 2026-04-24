@@ -234,7 +234,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* DAILY AI CONTENT — animated sliding section */}
+
+      {/* DAILY AI CONTENT — animated section, updates every 24 hours */}
       <DailyContentSection />
 
       {/* EMIRATES — team-card hover grid */}
