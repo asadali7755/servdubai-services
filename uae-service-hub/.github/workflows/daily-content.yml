@@ -1,0 +1,53 @@
+name: Daily AI Content Update
+
+on:
+  schedule:
+    # Roz subah 8 AM Pakistan/UAE time (UTC+5 = 3:00 AM UTC)
+    - cron: '0 3 * * *'
+
+  # Manual trigger bhi available hai (GitHub pe "Run workflow" button)
+  workflow_dispatch:
+
+jobs:
+  update-content:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Repo checkout
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      # Step 2: Python setup
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+          cache-dependency-path: agents/requirements.txt
+
+      # Step 3: Install dependencies
+      - name: Install Python dependencies
+        run: |
+          cd agents
+          pip install -r requirements.txt
+
+      # Step 4: Run AI agents
+      - name: Run Daily Content Agents
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd agents
+          python run_agents.py
+
+      # Step 5: Commit updated JSON back to repo
+      - name: Commit and push updated content
+        run: |
+          git config --local user.email "ai-agent@servedubai.com"
+          git config --local user.name "Al Haya AI Agent"
+          git add public/daily-content.json
+          git diff --staged --quiet || git commit -m "🤖 Daily content update $(date +'%Y-%m-%d')"
+          git push
