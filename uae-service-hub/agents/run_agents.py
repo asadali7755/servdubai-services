@@ -125,13 +125,15 @@ Rules:
             return text.strip()
         except Exception as e:
             err = str(e)
+            print(f"   ❌ {model_name} error: {err[:200]}")
             if "429" in err or "RESOURCE_EXHAUSTED" in err:
                 print(f"   ⏳ Rate limit on {model_name}, waiting 15s before retry...")
                 time.sleep(15)
                 continue
-            return f'{{"error": "{err[:100]}"}}'
+            # Try next model on any error
+            continue
 
-    return '{"error": "All Gemini models rate limited. Will retry tomorrow."}'
+    return '{"error": "All Gemini models failed."}'
 
 
 # ══════════════════════════════════════════════════════════
