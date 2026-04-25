@@ -19,7 +19,6 @@ from dotenv import load_dotenv
 env_path = Path(__file__).parent.parent / ".env.local"
 load_dotenv(env_path, override=False)  # override=False: GitHub secrets ko priority milti hai
 
-from agents import Agent, Runner, Tool
 from tavily import TavilyClient
 from google import genai
 from google.genai import types
@@ -231,4 +230,16 @@ async def run_content_pipeline():
     return output
 
 
-# ═════════════════
+# ══════════════════════════════════════════════════════════
+# ENTRY POINT
+# ══════════════════════════════════════════════════════════
+if __name__ == "__main__":
+    result = asyncio.run(run_content_pipeline())
+    if result:
+        print(f"✅ Success: {result['totalCards']} cards saved for {result['date']}")
+        import sys
+        sys.exit(0)
+    else:
+        print("⚠️  No cards generated. Exiting.")
+        import sys
+        sys.exit(1)
