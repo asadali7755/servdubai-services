@@ -125,6 +125,63 @@ export default function ContactPage() {
           Or call directly:{' '}
           <a href="tel:0551275545" style={{ color: '#c9a84c' }}>0551275545</a>
         </p>
+
+        {/* Google Business Profile Section */}
+        <div style={{ marginTop: '3rem' }}>
+          <h2
+            style={{
+              color: '#c9a84c',
+              fontFamily: 'var(--font-josefin)',
+              fontSize: '1.5rem',
+              fontWeight: '700',
+              marginBottom: '0.5rem',
+            }}
+          >
+            Find Us on Google
+          </h2>
+          <p style={{ color: '#6b7280', fontSize: '0.875rem', marginBottom: '1rem' }}>
+            Check our reviews, location & business hours on Google.
+          </p>
+          <div
+            style={{
+              borderRadius: '0.75rem',
+              overflow: 'hidden',
+              border: '1px solid #333',
+            }}
+          >
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.2426037257887!2d55.362276599999994!3d25.2960519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5dc6fe655c83%3A0x2790bef8b91a957!2sAL%20HAYA%20cleaning%20services!5e0!3m2!1sen!2s!4v1777990342134!5m2!1sen!2s"
+              width="100%"
+              height="300"
+              style={{ border: 0, display: 'block' }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Al Haya Cleaning Services on Google Maps"
+            />
+          </div>
+          <div style={{ marginTop: '1rem', textAlign: 'center' }}>
+            <a
+              href="https://share.google/bDF6NqN3sJvO2nxSr"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                padding: '0.75rem 1.75rem',
+                background: '#c9a84c',
+                color: '#111111',
+                fontWeight: '600',
+                borderRadius: '0.5rem',
+                textDecoration: 'none',
+                fontSize: '0.9rem',
+              }}
+            >
+              View Our Google Business Profile ↗
+            </a>
+          </div>
+        </div>
       </div>
       <SpecialistSitesBanner />
       <WhatsAppButton />

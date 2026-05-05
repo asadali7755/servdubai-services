@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import SpecialistSitesBanner from '@/components/SpecialistSitesBanner'
+import ServiceDailyContent from '@/components/ServiceDailyContent'
 import { services, getServiceBySlug } from '@/lib/data/services'
 import { emirates } from '@/lib/data/emirates'
 import { buildMetadata, buildLocalBusinessSchema } from '@/lib/utils/seo'
@@ -404,6 +405,13 @@ export default async function ServicePage({ params }: Props) {
           </div>
         </div>
       </div>
+
+      {/* ── DAILY AI CONTENT — service specific ── */}
+      <ServiceDailyContent
+        slug={service.slug}
+        serviceName={service.name}
+        defaultImage={service.images[0]}
+      />
 
       <SpecialistSitesBanner />
       <WhatsAppButton service={service.name} />
