@@ -10,54 +10,120 @@ import DailyContentSection from '@/components/DailyContentSection'
 import { services } from '@/lib/data/services'
 import { emirates } from '@/lib/data/emirates'
 import { specializedSites } from '@/lib/data/specialized-sites'
-import { buildMetadata, buildLocalBusinessSchema } from '@/lib/utils/seo'
+import { buildMetadata, buildLocalBusinessSchema, buildImageObjectSchema } from '@/lib/utils/seo'
 import { getWhatsAppLink } from '@/lib/utils/whatsapp'
 import { SITE_CONFIG } from '@/lib/data/constants'
 
 export const metadata: Metadata = buildMetadata({
-  title: 'Professional Cleaning Services in UAE | Al Haya',
+  title: 'Al Haya Cleaning Services | Professional Cleaners Across UAE',
   description:
-    'Al Haya offers 11 professional cleaning services across 7 UAE Emirates including Dubai, Sharjah, Abu Dhabi. Same-day service. Call 0551275545.',
+    'Al Haya offers 11 professional cleaning services across 7 UAE Emirates including Dubai, Sharjah, Abu Dhabi. Same-day service. Call +971-54-719-9189.',
   path: '/',
 })
 
 const heroSlides: HeroSlide[] = [
   {
-    image: '/images/hero/professional-cleaning-services.webp',
+    image: '/images/hero/professional-cleaning-services-UAE.webp',
     title: 'Professional Cleaning Services',
     subtitle: 'Trusted cleaning across all 7 UAE Emirates — same-day service available.',
+    imageAlt: 'Professional Cleaning Services UAE — Al Haya certified technicians',
+    imageTitle: 'Professional Cleaning Services UAE by Al Haya',
+    tags: [
+      'professional cleaning services UAE',
+      'cleaning services Dubai',
+      'Al Haya cleaning',
+      'deep cleaning UAE',
+      'home cleaning services UAE',
+      'certified cleaning technicians',
+      'eco-friendly cleaning UAE',
+      'same day cleaning service',
+    ],
   },
   {
-    image: '/images/services/sofa-cleaning.webp',
-    title: 'Sofa & Carpet Experts',
-    subtitle: 'Deep cleaning using hot-water extraction and eco-friendly solutions.',
+    image: '/images/hero/sofa-carpet-cleaning.webp',
+    title: 'Sofa & Carpet Deep Cleaning',
+    subtitle: 'Hot-water extraction and eco-friendly solutions for all fabric types.',
+    imageAlt: 'Sofa Carpet Cleaning UAE — professional upholstery and carpet cleaning',
+    imageTitle: 'Sofa Carpet Cleaning by Al Haya',
+    tags: [
+      'sofa cleaning UAE',
+      'carpet cleaning Dubai',
+      'sofa carpet cleaning',
+      'upholstery cleaning UAE',
+      'sofa shampooing Dubai',
+      'carpet steam cleaning',
+      'fabric sofa cleaning',
+      'rug cleaning UAE',
+    ],
   },
   {
-    image: '/images/hero/villa-apartment-cleaning.jpg',
+    image: '/images/hero/villa-apartment-cleaning-services.jpg',
     title: 'Villa & Apartment Cleaning',
     subtitle: 'Move-in, move-out, and regular deep cleaning for homes and offices.',
+    imageAlt: 'Villa Apartment Cleaning Services UAE — residential deep cleaning',
+    imageTitle: 'Villa Apartment Cleaning Services by Al Haya',
+    tags: [
+      'villa cleaning UAE',
+      'apartment cleaning Dubai',
+      'villa apartment cleaning services',
+      'move in cleaning UAE',
+      'move out cleaning Dubai',
+      'residential cleaning UAE',
+      'deep cleaning villa Dubai',
+      'house cleaning services UAE',
+    ],
   },
   {
-    image: '/images/hero/marble-polishing.jpg',
+    image: '/images/hero/marble-polishing-dubai.jpg',
     title: 'Marble Polishing & Restoration',
     subtitle: 'Restore the natural shine of your marble floors and surfaces.',
+    imageAlt: 'Marble Polishing Dubai — professional floor polishing and restoration',
+    imageTitle: 'Marble Polishing Dubai by Al Haya',
+    tags: [
+      'marble polishing Dubai',
+      'floor polishing UAE',
+      'marble restoration Dubai',
+      'stone polishing UAE',
+      'marble floor cleaning Dubai',
+      'marble cleaning services',
+      'floor restoration UAE',
+      'professional marble polishing',
+    ],
   },
   {
-    image: '/images/hero/all-uae.webp',
+    image: '/images/hero/cleaning-services-UAE.webp',
     title: 'Serving All UAE Emirates',
     subtitle: 'Dubai, Sharjah, Abu Dhabi, Ajman, RAK, Fujairah, Umm Al Quwain.',
+    imageAlt: 'Cleaning Services UAE — Al Haya serving all seven Emirates',
+    imageTitle: 'Cleaning Services UAE by Al Haya',
+    tags: [
+      'cleaning services UAE',
+      'cleaning services Dubai',
+      'cleaning services Abu Dhabi',
+      'cleaning services Sharjah',
+      'cleaning services Ajman',
+      'cleaning services RAK',
+      'Al Haya cleaning UAE',
+      'all emirates cleaning',
+    ],
   },
 ]
 
 const schema = buildLocalBusinessSchema({})
+const imageSchema = buildImageObjectSchema(
+  heroSlides.map((slide) => ({
+    url: slide.image,
+    name: slide.imageTitle ?? slide.title,
+    description: slide.imageAlt ?? slide.title,
+    tags: slide.tags,
+  }))
+)
 
 export default function Home() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(imageSchema) }} />
 
       {/* HERO — full screen, header overlays it */}
       <Hero slides={heroSlides} />

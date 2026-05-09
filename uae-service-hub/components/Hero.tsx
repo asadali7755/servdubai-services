@@ -8,6 +8,9 @@ export interface HeroSlide {
   image: string
   title: string
   subtitle: string
+  imageAlt?: string
+  imageTitle?: string
+  tags?: string[]
 }
 
 type SlideState = {
@@ -98,9 +101,10 @@ export default function Hero({ slides }: { slides: HeroSlide[] }) {
       <div style={{ position: 'absolute', inset: 0, zIndex: 1 }}>
         <Image
           src={slides[active].image}
-          alt={slides[active].title}
+          alt={slides[active].imageAlt ?? slides[active].title}
+          title={slides[active].imageTitle ?? slides[active].title}
           fill
-          priority
+          priority={active === 0}
           className="object-cover"
           sizes="100vw"
           quality={80}
@@ -112,8 +116,10 @@ export default function Hero({ slides }: { slides: HeroSlide[] }) {
         <div style={getSlideStyle(exiting.animClass)}>
           <Image
             src={slides[exiting.index].image}
-            alt={slides[exiting.index].title}
+            alt={slides[exiting.index].imageAlt ?? slides[exiting.index].title}
+            title={slides[exiting.index].imageTitle ?? slides[exiting.index].title}
             fill
+            loading="lazy"
             className="object-cover"
             sizes="100vw"
             quality={80}
@@ -126,8 +132,10 @@ export default function Hero({ slides }: { slides: HeroSlide[] }) {
         <div style={getSlideStyle(entering.animClass)}>
           <Image
             src={slides[entering.index].image}
-            alt={slides[entering.index].title}
+            alt={slides[entering.index].imageAlt ?? slides[entering.index].title}
+            title={slides[entering.index].imageTitle ?? slides[entering.index].title}
             fill
+            loading="lazy"
             className="object-cover"
             sizes="100vw"
             quality={80}
@@ -143,11 +151,15 @@ export default function Hero({ slides }: { slides: HeroSlide[] }) {
         <div className="p-title" style={{ marginBottom: '0.5rem' }}>
           <div className="p-title-center">
             <h5>Professional Cleaning UAE</h5>
-            <h1 className="display-1">{slides[active].title}</h1>
+            {active === 0 ? (
+              <h1 className="display-1">{slides[active].title}</h1>
+            ) : (
+              <h2 className="display-1">{slides[active].title}</h2>
+            )}
           </div>
         </div>
 
-        <h2 className="subtitle-text">{slides[active].subtitle}</h2>
+        <p className="subtitle-text">{slides[active].subtitle}</p>
 
         <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
           <a

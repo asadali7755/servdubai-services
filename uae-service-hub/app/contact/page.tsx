@@ -123,7 +123,7 @@ export default function ContactPage() {
 
         <p className="text-center text-gray-500 text-sm mt-6">
           Or call directly:{' '}
-          <a href="tel:0551275545" style={{ color: '#c9a84c' }}>0551275545</a>
+          <a href="tel:+971547199189" style={{ color: '#c9a84c' }}>+971-54-719-9189</a>
         </p>
 
         {/* Google Business Profile Section */}

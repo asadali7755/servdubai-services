@@ -215,7 +215,7 @@ export default function ServiceDailyContent({ slug, serviceName, defaultImage }:
               <a href={getWhatsAppLink(serviceName)} target="_blank" rel="noopener noreferrer" className="p-btn-outline">
                 Get Free Quote
               </a>
-              <a href={`tel:0551275545`} className="p-btn-primary">
+              <a href="tel:+971547199189" className="p-btn-primary">
                 Call Now
               </a>
             </div>

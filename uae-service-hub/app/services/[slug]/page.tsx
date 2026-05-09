@@ -7,7 +7,7 @@ import SpecialistSitesBanner from '@/components/SpecialistSitesBanner'
 import ServiceDailyContent from '@/components/ServiceDailyContent'
 import { services, getServiceBySlug } from '@/lib/data/services'
 import { emirates } from '@/lib/data/emirates'
-import { buildMetadata, buildLocalBusinessSchema } from '@/lib/utils/seo'
+import { buildMetadata, buildLocalBusinessSchema, buildServiceSchema, buildBreadcrumbSchema, buildFAQSchema } from '@/lib/utils/seo'
 import { getWhatsAppLink } from '@/lib/utils/whatsapp'
 import { SITE_CONFIG } from '@/lib/data/constants'
 
@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!service) return {}
   return buildMetadata({
     title: `${service.name} in UAE | Al Haya`,
-    description: `${service.shortDescription} Available across all UAE Emirates. Call 0551275545.`,
+    description: `${service.shortDescription} Available across all UAE Emirates. Call +971-54-719-9189.`,
     path: `/services/${slug}`,
   })
 }
@@ -44,15 +44,28 @@ export default async function ServicePage({ params }: Props) {
     service.availableInEmirates.includes(e.id)
   )
 
-  const schema = buildLocalBusinessSchema({ service: service.name })
+  const localBusinessSchema = buildLocalBusinessSchema({ service: service.name })
+  const serviceSchema = buildServiceSchema({
+    serviceName: service.name,
+    description: service.shortDescription,
+    url: `/services/${slug}`,
+  })
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Services', url: '/services' },
+    { name: service.name, url: `/services/${slug}` },
+  ])
+  const faqSchema = service.faqs.length > 0 ? buildFAQSchema(service.faqs) : null
   const paragraphs = service.fullDescription.split('\n\n').map((p) => p.trim()).filter(Boolean)
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      {faqSchema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      )}
 
       {/* ── FULL-WIDTH HERO ── */}
       <div className="page-hero-wrap" style={{ position: 'relative', width: '100%', height: 'clamp(340px, 55vh, 520px)', marginTop: 0 }}>
@@ -162,6 +175,54 @@ export default async function ServicePage({ params }: Props) {
                 </h3>
               ))}
             </div>
+
+            {/* Benefits */}
+            {service.benefits && service.benefits.length > 0 && (
+              <div className="svc-desc-card" style={{ marginBottom: '2rem' }}>
+                <h2 className="svc-content-h" style={{
+                  fontFamily: 'var(--font-josefin)', fontSize: '1.2rem', fontWeight: 700,
+                  color: '#fff', marginBottom: '1rem', letterSpacing: '0.03em',
+                }}>
+                  Key Benefits
+                </h2>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                  {service.benefits.map((benefit) => (
+                    <li key={benefit} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', marginBottom: '0.6rem' }}>
+                      <div style={{ width: '6px', height: '6px', background: '#c9a84c', borderRadius: '50%', flexShrink: 0, marginTop: '0.45rem' }} />
+                      <span style={{ color: '#d1d5db', fontSize: '0.9rem', lineHeight: 1.6 }}>{benefit}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {/* Our Process */}
+            {service.process && service.process.length > 0 && (
+              <div className="svc-desc-card" style={{ marginBottom: '2rem' }}>
+                <h2 className="svc-content-h" style={{
+                  fontFamily: 'var(--font-josefin)', fontSize: '1.2rem', fontWeight: 700,
+                  color: '#fff', marginBottom: '1rem', letterSpacing: '0.03em',
+                }}>
+                  Our Cleaning Process
+                </h2>
+                <ol style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                  {service.process.map((step, i) => (
+                    <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.875rem', marginBottom: '0.75rem' }}>
+                      <div style={{
+                        minWidth: '28px', height: '28px', borderRadius: '50%',
+                        background: 'rgba(201,168,76,0.15)', border: '1px solid rgba(201,168,76,0.4)',
+                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                        fontFamily: 'var(--font-josefin)', fontSize: '0.75rem', fontWeight: 700, color: '#c9a84c',
+                        flexShrink: 0,
+                      }}>
+                        {i + 1}
+                      </div>
+                      <span style={{ color: '#d1d5db', fontSize: '0.9rem', lineHeight: 1.6, paddingTop: '0.2rem' }}>{step}</span>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            )}
 
             {/* Specialist site banner */}
             {service.externalWebsite && (
@@ -343,6 +404,51 @@ export default async function ServicePage({ params }: Props) {
             </a>
           </div>
         </div>
+
+        {/* ── FAQ SECTION ── */}
+        {service.faqs && service.faqs.length > 0 && (
+          <div style={{ marginTop: '3rem', marginBottom: '3rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
+              <div style={{ width: '3px', height: '1.5rem', background: '#c9a84c', borderRadius: '2px', flexShrink: 0 }} />
+              <h2 style={{
+                fontFamily: 'var(--font-josefin)', fontSize: '1.35rem', fontWeight: 700,
+                color: '#fff', letterSpacing: '0.03em',
+              }}>
+                Frequently Asked Questions
+              </h2>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              {service.faqs.map((faq, i) => (
+                <details key={i} style={{
+                  background: 'linear-gradient(135deg, #0e1635 0%, #1c2f58 100%)',
+                  border: '1px solid rgba(80,140,255,0.2)',
+                  borderRadius: '8px',
+                  overflow: 'hidden',
+                }}>
+                  <summary style={{
+                    padding: '1rem 1.25rem',
+                    cursor: 'pointer',
+                    fontFamily: 'var(--font-josefin)',
+                    fontWeight: 600,
+                    color: '#fff',
+                    fontSize: '0.95rem',
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    listStyle: 'none',
+                    userSelect: 'none',
+                  }}>
+                    {faq.question}
+                    <span style={{ color: '#c9a84c', fontSize: '1.2rem', flexShrink: 0, marginLeft: '1rem' }}>+</span>
+                  </summary>
+                  <div style={{ padding: '0 1.25rem 1rem', color: '#9ca3af', fontSize: '0.9rem', lineHeight: 1.7 }}>
+                    {faq.answer}
+                  </div>
+                </details>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* ── BOTTOM CTA BANNER ── */}
         <div className="svc-cta-banner" style={{
