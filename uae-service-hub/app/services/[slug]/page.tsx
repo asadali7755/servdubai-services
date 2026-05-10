@@ -170,11 +170,51 @@ export default async function ServicePage({ params }: Props) {
                 About {service.heroTitle ?? service.name}
               </h2>
               {paragraphs.map((para, i) => (
-                <h3 key={i} className="svc-content-p" style={{ color: '#9ca3af', lineHeight: 1.8, marginBottom: '1rem', fontSize: '0.9375rem', fontWeight: 400, marginTop: 0 }}>
+                <p key={i} className="svc-content-p" style={{ color: '#9ca3af', lineHeight: 1.8, marginBottom: '1rem', fontSize: '0.9375rem', marginTop: 0 }}>
                   {para}
-                </h3>
+                </p>
               ))}
             </div>
+
+            {/* Rich content sections with H2/H3 structure */}
+            {service.contentSections && service.contentSections.length > 0 && (
+              <div className="svc-desc-card" style={{ marginBottom: '2rem' }}>
+                {service.contentSections.map((section, i) => (
+                  <div key={i} style={{ marginBottom: '1.25rem' }}>
+                    {section.heading && section.headingLevel === 'h2' && (
+                      <h2 style={{
+                        fontFamily: 'var(--font-josefin)',
+                        fontSize: '1.15rem',
+                        fontWeight: 700,
+                        color: '#fff',
+                        marginBottom: '0.5rem',
+                        marginTop: i === 0 ? 0 : '1.5rem',
+                        letterSpacing: '0.02em',
+                      }}>
+                        {section.heading}
+                      </h2>
+                    )}
+                    {section.heading && section.headingLevel === 'h3' && (
+                      <h3 style={{
+                        fontFamily: 'var(--font-josefin)',
+                        fontSize: '1rem',
+                        fontWeight: 600,
+                        color: '#c9a84c',
+                        marginBottom: '0.4rem',
+                        marginTop: '1rem',
+                      }}>
+                        {section.heading}
+                      </h3>
+                    )}
+                    {section.text && (
+                      <p style={{ color: '#9ca3af', lineHeight: 1.8, fontSize: '0.9375rem', margin: 0 }}>
+                        {section.text}
+                      </p>
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
 
             {/* Specialist site banner */}
             {service.externalWebsite && (
