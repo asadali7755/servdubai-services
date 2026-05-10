@@ -1,9 +1,0 @@
-{
-  "buildCommand": "cd uae-service-hub && npm ci && npm run build",
-  "outputDirectory": "uae-service-hub/.next",
-  "installCommand": "cd uae-service-hub && npm ci",
-  "framework": "nextjs",
-  "devCommand": "cd uae-service-hub && npm run dev",
-  "cleanUrls": true,
-  "trailingSlash": false
-}
