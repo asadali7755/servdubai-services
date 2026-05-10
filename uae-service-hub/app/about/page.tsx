@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import WhatsAppButton from '@/components/WhatsAppButton'
-import SpecialistSitesBanner from '@/components/SpecialistSitesBanner'
 import { services } from '@/lib/data/services'
 import { emirates } from '@/lib/data/emirates'
 import { buildMetadata } from '@/lib/utils/seo'
@@ -250,7 +249,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <SpecialistSitesBanner />
       <WhatsAppButton />
     </>
   )

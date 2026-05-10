@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import { services } from '@/lib/data/services'
 import { emirates } from '@/lib/data/emirates'
-import { specializedSites } from '@/lib/data/specialized-sites'
 import { getWhatsAppLink } from '@/lib/utils/whatsapp'
 import { SITE_CONFIG } from '@/lib/data/constants'
 
@@ -78,27 +77,6 @@ export default function Footer() {
               {emirates.map((e) => (
                 <li key={e.id}>
                   <Link href={`/${e.slug}`}>{e.name}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3>Specialist Sites</h3>
-            <ul>
-              {specializedSites.map((site) => (
-                <li key={site.id} style={{ marginBottom: '0.5rem' }}>
-                  <a
-                    href={site.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{ color: '#c9a84c', fontWeight: 600 }}
-                  >
-                    {site.name} ↗
-                  </a>
-                  <p style={{ color: '#6b7280', fontSize: '0.75rem', margin: '0.15rem 0 0' }}>
-                    {site.description}
-                  </p>
                 </li>
               ))}
             </ul>

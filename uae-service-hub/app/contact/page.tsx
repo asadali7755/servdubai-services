@@ -4,7 +4,6 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import WhatsAppButton from '@/components/WhatsAppButton'
-import SpecialistSitesBanner from '@/components/SpecialistSitesBanner'
 import { getWhatsAppLink } from '@/lib/utils/whatsapp'
 
 const schema = z.object({
@@ -183,7 +182,6 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
-      <SpecialistSitesBanner />
       <WhatsAppButton />
     </>
   )

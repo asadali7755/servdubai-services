@@ -4,12 +4,9 @@ import Link from 'next/link'
 import Hero, { type HeroSlide } from '@/components/Hero'
 import ServicesGrid from '@/components/ServicesGrid'
 import EmiratesSection from '@/components/EmiratesSection'
-import SpecializedSites from '@/components/SpecializedSites'
 import WhatsAppButton from '@/components/WhatsAppButton'
-import DailyContentSection from '@/components/DailyContentSection'
 import { services } from '@/lib/data/services'
 import { emirates } from '@/lib/data/emirates'
-import { specializedSites } from '@/lib/data/specialized-sites'
 import { buildMetadata, buildLocalBusinessSchema, buildImageObjectSchema } from '@/lib/utils/seo'
 import { getWhatsAppLink } from '@/lib/utils/whatsapp'
 import { SITE_CONFIG } from '@/lib/data/constants'
@@ -301,14 +298,8 @@ export default function Home() {
       </section>
 
 
-      {/* DAILY AI CONTENT — animated section, updates every 24 hours */}
-      <DailyContentSection />
-
       {/* EMIRATES — team-card hover grid */}
       <EmiratesSection emirates={emirates} />
-
-      {/* SPECIALIST SITES */}
-      <SpecializedSites sites={specializedSites} />
 
       {/* Floating WhatsApp */}
       <WhatsAppButton />

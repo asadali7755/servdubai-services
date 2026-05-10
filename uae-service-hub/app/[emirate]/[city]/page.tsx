@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import WhatsAppButton from '@/components/WhatsAppButton'
-import SpecialistSitesBanner from '@/components/SpecialistSitesBanner'
 import { emirates, getEmirateBySlug, getCityBySlug } from '@/lib/data/emirates'
 import { services, getServiceBySlug } from '@/lib/data/services'
 import { buildMetadata, buildLocalBusinessSchema, buildBreadcrumbSchema } from '@/lib/utils/seo'
@@ -132,7 +131,6 @@ export default async function CityPage({ params }: Props) {
         </div>
       </div>
 
-      <SpecialistSitesBanner />
       <WhatsAppButton city={city.name} />
     </>
   )

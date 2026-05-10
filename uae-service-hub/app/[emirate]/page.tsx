@@ -3,7 +3,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import WhatsAppButton from '@/components/WhatsAppButton'
-import SpecialistSitesBanner from '@/components/SpecialistSitesBanner'
 import { emirates, getEmirateBySlug } from '@/lib/data/emirates'
 import { services } from '@/lib/data/services'
 import { buildMetadata, buildLocalBusinessSchema } from '@/lib/utils/seo'
@@ -513,7 +512,6 @@ export default async function EmiratePage({ params }: Props) {
         </div>
       </div>
 
-      <SpecialistSitesBanner />
       <WhatsAppButton />
     </>
   )
