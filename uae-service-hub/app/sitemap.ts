@@ -4,7 +4,7 @@ import { emirates } from '@/lib/data/emirates'
 import { SITE_CONFIG } from '@/lib/data/constants'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = SITE_CONFIG.siteUrl || 'https://uae-service-hub.vercel.app'
+  const base = 'https://servedubai.com'
   const now = new Date()
 
   const staticRoutes: MetadataRoute.Sitemap = [

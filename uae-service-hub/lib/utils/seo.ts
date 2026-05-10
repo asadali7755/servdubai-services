@@ -8,10 +8,12 @@ export interface SeoOptions {
   imageUrl?: string
 }
 
+const SITE_URL = 'https://servedubai.com'
+
 export const buildMetadata = (options: SeoOptions): Metadata => {
   const { title, description, path, imageUrl } = options
-  const url = `${SITE_CONFIG.siteUrl}${path}`
-  const ogImage = imageUrl ?? `${SITE_CONFIG.siteUrl}/images/hero/slide-1.jpg`
+  const url = `${SITE_URL}${path}`
+  const ogImage = imageUrl ?? `${SITE_URL}/images/hero/professional-cleaning-services-UAE.webp`
 
   return {
     title,
