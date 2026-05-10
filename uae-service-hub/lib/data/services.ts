@@ -33,56 +33,76 @@ export const services: Service[] = [
     name: 'Sofa Deep Cleaning & Shampooing',
     slug: 'sofa-cleaning',
     category: 'domestic',
-    shortDescription: 'Professional sofa deep cleaning and shampooing service across UAE. Removes stains, odors, and allergens.',
-    fullDescription: `Our professional sofa deep cleaning service uses advanced hot-water extraction and eco-friendly shampoos to restore your sofa to its original freshness. We treat all fabric types including velvet, cotton, linen, microfiber, and synthetic blends — using the correct technique and cleaning agent for each material to deliver results without damage.
+    shortDescription: 'Best professional sofa cleaning services in Dubai, Abu Dhabi & Sharjah. Expert upholstery shampooing at home — removes stains, odors & allergens. Same-day service across UAE.',
+    fullDescription: `Professional Sofa Deep Cleaning & Shampooing in Dubai: The Ultimate Guide to Reviving Your Upholstery
 
-Our certified technicians begin with a detailed pre-inspection to identify fabric type, stain types, and any areas requiring special attention. We then apply a specialist pre-treatment solution that breaks down oils, food residue, and embedded grime before the main extraction process begins. The hot-water extraction method penetrates deep into the fibers, flushing out allergens, dust mites, bacteria, and odor-causing particles that ordinary vacuuming simply cannot reach.
+In a city like Dubai, where golden sands and desert winds are part of daily life, our homes often bear the brunt of the environment. While we focus on floors and windows, one of the most used items in any household — the sofa — is often the most neglected.
 
-We cover all sofa types — L-shaped, sectional, 3-seater, corner sofas, fabric recliners, and modular configurations. For leather sofas, we use a dedicated leather cleaner and follow up with a conditioning treatment that restores suppleness and prevents cracking. Our quick-dry technology means your sofa is ready to use within 3–4 hours — a fraction of the drying time of traditional methods.
+Whether you are dealing with dust from a summer sandstorm, coffee spills, or just general wear and tear, professional sofa deep cleaning and shampooing in Dubai is no longer a luxury; it is a necessity for a healthy, dust-free home.
 
-After cleaning, we apply a fabric protector on request that repels future spills and staining, significantly extending the time between professional cleans. All products used are non-toxic, child-safe, and pet-friendly, with no harsh chemical residues left behind.
+Why Your Sofa Needs More Than Just a Surface Vacuum
 
-Maintaining a clean sofa is more important than most people realize. Your sofa accumulates sweat, skin cells, pet dander, food particles, and dust mite colonies over time — all of which affect indoor air quality and can trigger allergies or respiratory issues. A professional deep clean every 6–12 months keeps your living space genuinely hygienic, not just visually clean. Al Haya operates across all 7 UAE Emirates with same-day service available in most areas, including Dubai, Sharjah, Abu Dhabi, Ajman, Ras Al Khaimah, Fujairah, and Umm Al Quwain.`,
+In Dubai's high-humidity environment, sofas act like giant filters, trapping dust mites, allergens, and microscopic pollutants. Standard home vacuuming only reaches the surface, leaving deep-seated grime untouched. Our professional sofa cleaning services in Dubai use advanced hot-water extraction technology that penetrates deep into every fiber — removing what ordinary vacuuming simply cannot reach.
+
+Health and Indoor Air Quality
+
+Deep cleaning removes allergens that can trigger asthma or skin sensitivities. For families with children and pets, our professional sofa cleaning services ensure that the heart of your living room is hygienic and safe. Our upholstery sofa cleaning services in Dubai use non-toxic, eco-friendly products that are completely safe for children and pets.
+
+Extending the Life of Your Furniture
+
+Upholstery is an investment. Dust particles act like tiny sandpaper, grinding down fabric fibers every time you sit. Our professional sofa cleaning services at home remove these abrasive particles, preserving the fabric's integrity for years. Whether you need fabric sofa cleaning services near you or best sofa cleaning services in Abu Dhabi, our certified technicians deliver consistent results.
+
+Eliminating Stubborn Odors
+
+Dubai's heat can sometimes lead to trapped moisture and musty smells within sofa cushions. Our professional-grade deodorizers and shampooing treatments neutralize these odors at the source — not just masking them. This is why residents across Dubai, Sharjah, and Abu Dhabi trust Al Haya for their sofa cleaning services.
+
+Our Sofa Cleaning Services Cover All UAE Emirates
+
+Al Haya provides the best sofa cleaning services in Dubai, sofa cleaning services in Abu Dhabi, sofa cleaning services in Sharjah, and across all 7 UAE Emirates. We offer carpet sofa cleaning services as a package deal, covering both your sofas and carpets in a single visit. Our sofa cleaning services cost is transparent — no hidden charges, free quotes via WhatsApp.
+
+We handle all sofa types: L-shaped, sectional, 3-seater, corner sofas, fabric recliners, velvet sofas, leather sofas, and modular configurations. Our quick-dry technology means your sofa is ready to use within 3–4 hours after our professional sofa cleaning services at home.`,
     benefits: [
-      'Removes deep-set stains, odors, and allergens',
-      'Safe for all fabric types including velvet and microfiber',
-      'Quick-dry — sofa ready in 3–4 hours',
-      'Eco-friendly, child-safe, and pet-safe products',
-      'Optional fabric protector treatment',
+      'Best sofa cleaning services in Dubai & Abu Dhabi',
+      'Professional sofa cleaning services at home — we come to you',
+      'Removes deep stains, odors, dust mites & allergens',
+      'Safe for all fabrics — velvet, microfiber, leather, cotton',
+      'Eco-friendly products safe for children and pets',
+      'Transparent sofa cleaning services cost — free quotes',
       'Same-day service across all UAE Emirates',
+      'Carpet sofa cleaning services available as a package',
     ],
     process: [
-      'Pre-inspection — fabric type, stain assessment',
-      'Pre-treatment spray to loosen embedded dirt',
-      'Hot-water extraction (deep steam cleaning)',
-      'Stain spot treatment where required',
-      'Speed-dry with professional air movers',
+      'Pre-inspection — fabric type and stain assessment',
+      'Pre-treatment spray to loosen embedded dirt and oils',
+      'Hot-water extraction (professional deep shampooing)',
+      'Stain spot treatment for stubborn marks',
+      'Speed-dry with professional air movers (3–4 hours)',
       'Optional fabric protector application',
     ],
     faqs: [
       {
-        question: 'How long does sofa cleaning take?',
-        answer: 'Most sofas take 1–2 hours to clean depending on size and soiling level. Drying time is 3–4 hours with our quick-dry equipment, significantly faster than traditional methods.',
+        question: 'What is the sofa cleaning services cost in Dubai?',
+        answer: 'Our sofa cleaning services cost depends on sofa size and type. A standard 3-seater starts from AED 150. We provide free quotes via WhatsApp — no hidden charges. We offer the best sofa cleaning services in Dubai at competitive prices.',
       },
       {
-        question: 'Is the cleaning safe for children and pets?',
-        answer: 'Yes. All products we use are non-toxic, biodegradable, and free from harsh chemical residues. They are completely safe for children and pets once the sofa is dry.',
+        question: 'Do you provide sofa cleaning services at home in Dubai?',
+        answer: 'Yes. All our professional sofa cleaning services are done at your home across Dubai, Abu Dhabi, Sharjah, and all UAE Emirates. Our technicians arrive with all equipment — you do not need to move the sofa anywhere.',
       },
       {
-        question: 'Can you clean leather sofas?',
-        answer: 'Absolutely. We use dedicated leather cleaners and follow up with a conditioning treatment that restores suppleness, prevents cracking, and extends the life of your leather upholstery.',
+        question: 'Are you the best sofa cleaning services in Abu Dhabi?',
+        answer: 'Al Haya provides professional sofa cleaning services in Abu Dhabi with the same certified technicians and equipment used in Dubai. Same-day service is available across Abu Dhabi including Khalifa City, Yas Island, and Al Ain.',
       },
       {
-        question: 'Do I need to move the sofa before you arrive?',
-        answer: 'No. Our technicians handle all the preparation. Please ensure there is clear access to the sofa and a nearby power socket.',
+        question: 'Do you offer upholstery sofa cleaning services in Dubai for fabric sofas?',
+        answer: 'Yes. Our upholstery sofa cleaning services in Dubai cover all fabric types — velvet, cotton, linen, microfiber, and synthetic blends. We also offer fabric sofa cleaning services near you with same-day availability.',
       },
       {
-        question: 'How often should I get my sofa professionally cleaned?',
-        answer: 'We recommend a professional deep clean every 6–12 months for households with children or pets, and annually for sofas with lighter use.',
+        question: 'Can I book carpet sofa cleaning services together?',
+        answer: 'Yes. We offer carpet sofa cleaning services as a combined package at a discounted rate. Book both sofa and carpet cleaning in one visit and save on the total sofa cleaning services cost.',
       },
       {
-        question: 'Do you offer same-day sofa cleaning?',
-        answer: 'Yes. We offer same-day service across most areas in all 7 UAE Emirates. WhatsApp or call us to check availability for your location.',
+        question: 'Do you offer sofa cleaning services in Sharjah?',
+        answer: 'Yes. Our sofa cleaning services in Sharjah cover all areas including Sharjah City, Al Nahda, Al Majaz, Al Khan, and Al Qasimia. Same-day professional sofa cleaning services are available in most Sharjah locations.',
       },
     ],
     images: ['/images/services/sofa-cleaning.webp'],
