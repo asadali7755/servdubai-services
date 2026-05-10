@@ -40,7 +40,7 @@ const BASE_LOCAL_BUSINESS = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   name: 'Al Haya Cleaning Services',
-  image: 'https://servedubai.com/images/hero/professional-cleaning-services.webp',
+  image: 'https://servedubai.com/images/hero/professional-cleaning-services-UAE.webp',
   url: 'https://servedubai.com',
   telephone: '+97154719189',
   email: 'info@servedubai.com',

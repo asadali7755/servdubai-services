@@ -320,7 +320,7 @@ A clean carpet is the foundation of a healthy UAE home. By investing in carpet c
         answer: 'Yes. Our carpet cleaning services cover Abu Dhabi, Sharjah, Ajman, RAK, Fujairah, and Umm Al Quwain. We provide carpet cleaning services near me across all 7 UAE Emirates with the same high standards.',
       },
     ],
-    images: ['/images/services/carpet-cleaning.jpg'],
+    images: ['/images/services/carpet-cleaning.webp'],
     availableInEmirates: ALL_EMIRATES,
     externalWebsite: { name: 'Carpet Cleaning Dubai', url: 'https://carpetcleaningdubai.com' },
   },
@@ -708,7 +708,7 @@ Al Haya is the best curtain cleaning company covering curtain cleaning Dubai, cu
         text: 'Curtain cleaning Abu Dhabi, curtain cleaning Sharjah, Arabian Ranches, The Springs, The Meadows, Emirates Hills, and all villa communities across UAE. Our curtain cleaning company covers the full UAE.',
       },
     ],
-    images: ['/images/services/curtain-cleaning.jpg'],
+    images: ['/images/services/curtain-cleaning.webp'],
     availableInEmirates: ALL_EMIRATES,
   },
   {
@@ -880,7 +880,7 @@ Al Haya provides car seats cleaning services across all 7 UAE Emirates — Dubai
         text: 'Car seats cleaning services Dubai start from AED 99. Car seat cleaning near me same-day service available across most UAE areas. Free quotes via WhatsApp — transparent car seats cleaning products pricing, no hidden charges.',
       },
     ],
-    images: ['/images/services/car-interior-detailing.jpg'],
+    images: ['/images/services/car-interior-detailing.webp'],
     availableInEmirates: ALL_EMIRATES,
   },
   {
@@ -940,7 +940,7 @@ The service is available for single chairs or full dining sets, and we can also 
         answer: 'Yes. We offer a fabric protector treatment that creates an invisible barrier against spills and staining, making your chairs much easier to maintain between professional cleans.',
       },
     ],
-    images: ['/images/services/dining-chair-cleaning.jpg'],
+    images: ['/images/services/dining-chair-cleaning.webp'],
     availableInEmirates: ALL_EMIRATES,
   },
   {
@@ -1243,7 +1243,7 @@ We hold comprehensive liability insurance and our cleaning teams undergo regular
         answer: 'All Al Haya cleaning staff are background-checked, reference-verified, uniformed, and trained to our quality standards before being deployed to client premises.',
       },
     ],
-    images: ['/images/services/office-cleaning.jpg'],
+    images: ['/images/services/office-cleaning.webp'],
     availableInEmirates: ALL_EMIRATES,
   },
   {
@@ -1303,7 +1303,7 @@ Pricing is based on kitchen size and the extent of buildup. We recommend monthly
         answer: 'Restaurants, cafes, hotels, catering companies, school and hospital canteens, cloud kitchens, food manufacturing facilities, and supermarket food preparation areas.',
       },
     ],
-    images: ['/images/services/restaurant-kitchen-cleaning.jpg'],
+    images: ['/images/services/restaurant-kitchen-cleaning.webp'],
     availableInEmirates: ALL_EMIRATES,
   },
   {

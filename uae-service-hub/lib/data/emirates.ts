@@ -57,7 +57,7 @@ export const emirates: Emirate[] = [
     id: 'sharjah',
     name: 'Sharjah',
     slug: 'sharjah',
-    image: '/images/emirates/sharjah.jpg',
+    image: '/images/emirates/sharjah.webp',
     cities: [
       makeCity('sharjah', 'sharjah-city', 'Sharjah City'),
       makeCity('sharjah', 'al-nahda', 'Al Nahda'),
@@ -82,7 +82,7 @@ export const emirates: Emirate[] = [
     id: 'ajman',
     name: 'Ajman',
     slug: 'ajman',
-    image: '/images/emirates/ajman.jpg',
+    image: '/images/emirates/ajman.webp',
     cities: [
       makeCity('ajman', 'ajman-city', 'Ajman City'),
       makeCity('ajman', 'al-nuaimiya', 'Al Nuaimiya'),

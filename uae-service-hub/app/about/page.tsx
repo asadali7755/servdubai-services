@@ -38,7 +38,7 @@ export default function AboutPage() {
       {/* ── CINEMATIC HERO ── */}
       <div className="page-hero-wrap" style={{ position: 'relative', height: 'clamp(380px, 55vh, 520px)', overflow: 'hidden' }}>
         <Image
-          src="/images/hero/professional-cleaning-services.webp"
+          src="/images/hero/professional-cleaning-services-UAE.webp"
           alt="About Al Haya Cleaning Services"
           fill priority className="object-cover" sizes="100vw"
         />
@@ -102,7 +102,7 @@ export default function AboutPage() {
             </div>
 
             <div className="p-about-img" style={{ aspectRatio: '4/3', minHeight: '280px' }}>
-              <Image src="/images/hero/villa-apartment-cleaning.jpg" alt="Professional cleaning team" fill className="object-cover" sizes="(max-width:768px) 100vw, 50vw" />
+              <Image src="/images/hero/villa-apartment-cleaning-services.webp" alt="Professional cleaning team" fill className="object-cover" sizes="(max-width:768px) 100vw, 50vw" />
             </div>
           </div>
         </div>

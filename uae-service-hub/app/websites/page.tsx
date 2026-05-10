@@ -17,7 +17,7 @@ const sites = [
     tagline: 'The UAE\'s Premier Villa Cleaning Specialists',
     url: 'https://www.villadeepcleaning.com/',
     urlLabel: 'villadeepcleaning.com',
-    image: '/images/hero/villa-apartment-cleaning.jpg',
+    image: '/images/hero/villa-apartment-cleaning-services.webp',
     accentColor: '#c9a84c',
     description: 'Our dedicated villa deep cleaning website serves homeowners, landlords, and property managers across all 7 UAE Emirates. From move-in and move-out cleans to post-construction and periodic deep cleans, we handle every corner of your villa with meticulous attention to detail.',
     features: [
@@ -36,7 +36,7 @@ const sites = [
     tagline: 'Dubai\'s Leading Sofa Deep Cleaning Experts',
     url: 'https://sofashampooingdubai.com',
     urlLabel: 'sofashampooingdubai.com',
-    image: '/images/hero/sofa-carpet.webp',
+    image: '/images/hero/sofa-carpet-cleaning.webp',
     accentColor: '#c9a84c',
     description: 'Dedicated entirely to sofa and upholstery cleaning across Dubai and the wider UAE, our specialist site brings deep-cleaning expertise to every fabric type — velvet, linen, cotton, microfiber, leather, and faux leather. We use hot-water extraction combined with eco-friendly shampoos for a truly hygienic result.',
     features: [
@@ -55,7 +55,7 @@ const sites = [
     tagline: 'Expert Carpet & Rug Cleaning Across Dubai',
     url: 'https://carpetcleaningdubai.com',
     urlLabel: 'carpetcleaningdubai.com',
-    image: '/images/hero/professional-cleaning-services.webp',
+    image: '/images/hero/professional-cleaning-services-UAE.webp',
     accentColor: '#c9a84c',
     description: 'Our carpet cleaning specialist site covers every type of carpet and rug in Dubai — from wall-to-wall carpets and area rugs to delicate Persian and handmade rugs. Using professional steam cleaning (hot-water extraction) and specialist shampoo solutions, we remove embedded dirt, pet hair, food stains, and allergens deep from the carpet fibers.',
     features: [
@@ -74,7 +74,7 @@ const sites = [
     tagline: 'Premium Marble Polishing & Restoration Across UAE',
     url: 'https://marblepro.ae',
     urlLabel: 'marblepro.ae',
-    image: '/images/hero/marble-polishing.jpg',
+    image: '/images/hero/marble-polishing-dubai.webp',
     accentColor: '#c9a84c',
     description: 'Marble Pro UAE is our dedicated specialist site for marble polishing, restoration, and sealing services across the UAE. Marble requires expert care to maintain its natural luster and prevent damage from etching, scratching, and staining. Our certified technicians use diamond abrasive pads and professional polishing compounds to restore your marble to factory finish.',
     features: [

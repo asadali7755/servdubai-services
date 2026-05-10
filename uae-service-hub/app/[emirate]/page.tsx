@@ -161,11 +161,11 @@ export default async function EmiratePage({ params }: Props) {
 
           {(() => {
             const cityImages = [
-              '/images/hero/villa-apartment-cleaning.jpg',
-              '/images/hero/sofa-carpet.webp',
-              '/images/hero/professional-cleaning-services.webp',
-              '/images/hero/marble-polishing.jpg',
-              '/images/hero/all-uae.webp',
+              '/images/hero/villa-apartment-cleaning-services.webp',
+              '/images/hero/sofa-carpet-cleaning.webp',
+              '/images/hero/professional-cleaning-services-UAE.webp',
+              '/images/hero/marble-polishing-dubai.webp',
+              '/images/hero/cleaning-services-UAE.webp',
             ]
             return (
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '1rem' }}>

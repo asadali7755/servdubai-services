@@ -6,11 +6,11 @@ import Link from 'next/link'
 import type { City } from '@/lib/data/emirates'
 
 const CITY_IMAGES = [
-  '/images/hero/villa-apartment-cleaning.jpg',
-  '/images/hero/sofa-carpet.webp',
-  '/images/hero/professional-cleaning-services.webp',
-  '/images/hero/marble-polishing.jpg',
-  '/images/hero/all-uae.webp',
+  '/images/hero/villa-apartment-cleaning-services.webp',
+  '/images/hero/sofa-carpet-cleaning.webp',
+  '/images/hero/professional-cleaning-services-UAE.webp',
+  '/images/hero/marble-polishing-dubai.webp',
+  '/images/hero/cleaning-services-UAE.webp',
 ]
 
 interface Props {

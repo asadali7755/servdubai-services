@@ -54,7 +54,7 @@ const heroSlides: HeroSlide[] = [
     ],
   },
   {
-    image: '/images/hero/villa-apartment-cleaning-services.jpg',
+    image: '/images/hero/villa-apartment-cleaning-services.webp',
     title: 'Villa & Apartment Cleaning',
     subtitle: 'Move-in, move-out, and regular deep cleaning for homes and offices.',
     imageAlt: 'Villa Apartment Cleaning Services UAE — residential deep cleaning',
@@ -71,7 +71,7 @@ const heroSlides: HeroSlide[] = [
     ],
   },
   {
-    image: '/images/hero/marble-polishing-dubai.jpg',
+    image: '/images/hero/marble-polishing-dubai.webp',
     title: 'Marble Polishing & Restoration',
     subtitle: 'Restore the natural shine of your marble floors and surfaces.',
     imageAlt: 'Marble Polishing Dubai — professional floor polishing and restoration',
@@ -179,7 +179,7 @@ export default function Home() {
             {/* Right: image */}
             <div className="p-about-img" style={{ aspectRatio: '4/3', minHeight: '280px' }}>
               <Image
-                src="/images/hero/villa-apartment-cleaning.jpg"
+                src="/images/hero/villa-apartment-cleaning-services.webp"
                 alt="Professional cleaning team"
                 fill
                 className="object-cover"
