@@ -15,6 +15,17 @@ const nextConfig: NextConfig = {
   compress: true,
   poweredByHeader: false,
   // optimizeCss removed — Tailwind v4 ke saath Turbopack infinite loop cause karta tha
+  async headers() {
+    return [
+      {
+        // Block all PHP requests at header level
+        source: '/:path*.php',
+        headers: [
+          { key: 'X-Robots-Tag', value: 'noindex, nofollow' },
+        ],
+      },
+    ]
+  },
 }
 
 export default nextConfig
