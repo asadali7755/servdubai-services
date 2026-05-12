@@ -18,12 +18,16 @@ export const buildMetadata = (options: SeoOptions): Metadata => {
   return {
     title,
     description,
-    alternates: { canonical: url },
+    alternates: {
+      canonical: url,
+      languages: { 'en-AE': url },
+    },
     openGraph: {
       title,
       description,
       url,
       siteName: SITE_CONFIG.siteName,
+      locale: 'en_AE',
       images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
       type: 'website',
     },
@@ -33,12 +37,18 @@ export const buildMetadata = (options: SeoOptions): Metadata => {
       description,
       images: [ogImage],
     },
+    other: {
+      'geo.region': 'AE-DU',
+      'geo.placename': 'Dubai, United Arab Emirates',
+      'geo.position': '25.2048;55.2708',
+      'ICBM': '25.2048, 55.2708',
+    },
   }
 }
 
 const BASE_LOCAL_BUSINESS = {
   '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
+  '@type': ['LocalBusiness', 'CleaningService'],
   name: 'Al Haya Cleaning Services',
   image: 'https://servedubai.com/images/hero/professional-cleaning-services-UAE.webp',
   url: 'https://servedubai.com',
@@ -52,14 +62,14 @@ const BASE_LOCAL_BUSINESS = {
     streetAddress: 'Dubai',
     addressLocality: 'Dubai',
     addressRegion: 'Dubai',
-    postalCode: '00000',
     addressCountry: 'AE',
   },
   geo: {
     '@type': 'GeoCoordinates',
-    latitude: 25.2048,
-    longitude: 55.2708,
+    latitude: 25.2960519,
+    longitude: 55.3622766,
   },
+  hasMap: 'https://share.google/bDF6NqN3sJvO2nxSr',
   openingHoursSpecification: {
     '@type': 'OpeningHoursSpecification',
     dayOfWeek: [
@@ -71,7 +81,17 @@ const BASE_LOCAL_BUSINESS = {
   },
   sameAs: [
     'https://servedubai.com',
+    'https://share.google/bDF6NqN3sJvO2nxSr',
   ],
+  serviceArea: {
+    '@type': 'GeoCircle',
+    geoMidpoint: {
+      '@type': 'GeoCoordinates',
+      latitude: 25.2048,
+      longitude: 55.2708,
+    },
+    geoRadius: '200000',
+  },
 }
 
 export const buildLocalBusinessSchema = (options: {
