@@ -254,6 +254,70 @@ export default function Home() {
         </div>
       </section>
 
+      {/* GOOGLE MAP — Local SEO signal */}
+      <section className="home-map-section" style={{ padding: '5rem 0' }}>
+        <div style={{ maxWidth: '1140px', margin: '0 auto', padding: '0 1.5rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '3rem', alignItems: 'center' }}>
+
+            {/* Left — info */}
+            <div>
+              <div style={{ fontSize: '0.63rem', color: '#c9a84c', letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Find Us</div>
+              <h2 className="home-section-h2">Al Haya Cleaning Services — Dubai, UAE</h2>
+              <p className="home-section-p" style={{ marginBottom: '1.5rem' }}>
+                Serving all 7 UAE Emirates from our Dubai base. Same-day service available across Dubai Marina, Downtown, Business Bay, Jumeirah, Arabian Ranches, and beyond.
+              </p>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.875rem', marginBottom: '1.75rem' }}>
+                {[
+                  { label: 'Phone / WhatsApp', value: '+971 55 127 5545', href: 'tel:+971551275545' },
+                  { label: 'Service Area', value: 'All 7 UAE Emirates', href: null },
+                  { label: 'Hours', value: 'Monday – Sunday: 8AM – 10PM', href: null },
+                  { label: 'Same-Day', value: 'Available on request', href: null },
+                ].map((item) => (
+                  <div key={item.label} style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
+                    <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#c9a84c', marginTop: '0.45rem', flexShrink: 0 }} />
+                    <div>
+                      <div style={{ fontSize: '0.65rem', color: '#6b7280', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.1rem' }}>{item.label}</div>
+                      {item.href ? (
+                        <a href={item.href} className="home-map-value" style={{ color: '#c9a84c', fontWeight: 600, fontSize: '0.9rem', textDecoration: 'none' }}>{item.value}</a>
+                      ) : (
+                        <div className="home-map-value" style={{ color: '#d1d5db', fontSize: '0.9rem', fontWeight: 500 }}>{item.value}</div>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+                <a href={getWhatsAppLink()} target="_blank" rel="noopener noreferrer"
+                  style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', padding: '0.75rem 1.5rem', background: 'linear-gradient(135deg,#25D366,#128C7E)', color: '#fff', fontWeight: 700, borderRadius: '500px', textDecoration: 'none', fontSize: '0.85rem' }}>
+                  WhatsApp Now
+                </a>
+                <a href="https://share.google/bDF6NqN3sJvO2nxSr" target="_blank" rel="noopener noreferrer"
+                  style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', padding: '0.75rem 1.5rem', background: 'rgba(201,168,76,0.1)', border: '1px solid rgba(201,168,76,0.3)', color: '#c9a84c', fontWeight: 700, borderRadius: '500px', textDecoration: 'none', fontSize: '0.85rem' }}>
+                  View on Google Maps
+                </a>
+              </div>
+            </div>
+
+            {/* Right — map */}
+            <div className="home-map-wrap">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.2426037257887!2d55.362276599999994!3d25.2960519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5dc6fe655c83%3A0x2790bef8b91a957!2sAL%20HAYA%20cleaning%20services!5e0!3m2!1sen!2s!4v1777990342134!5m2!1sen!2s"
+                width="100%"
+                height="380"
+                style={{ border: 0, display: 'block', borderRadius: '12px' }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Al Haya Cleaning Services location on Google Maps Dubai"
+              />
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* EMIRATES */}
       <EmiratesSection emirates={emirates} />
 
