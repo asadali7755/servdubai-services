@@ -124,9 +124,9 @@ export default async function ServicePage({ params }: Props) {
           }}>
             {service.heroTitle ?? service.name}
           </h1>
-          <h2 style={{ color: '#d1d5db', fontSize: '1rem', fontWeight: 400, lineHeight: 1.5 }}>
+          <p style={{ color: '#d1d5db', fontSize: '1rem', fontWeight: 400, lineHeight: 1.5 }}>
             {service.heroSubtitle ?? service.shortDescription}
-          </h2>
+          </p>
         </div>
       </div>
 
@@ -457,9 +457,9 @@ export default async function ServicePage({ params }: Props) {
             <h2 style={{ fontFamily: 'var(--font-josefin)', fontSize: '1.75rem', fontWeight: 700, color: '#fff', marginBottom: '0.5rem' }}>
               Ready to Book {service.name}?
             </h2>
-            <h3 style={{ color: '#9ca3af', marginBottom: '2rem', fontSize: '0.95rem', fontWeight: 400, marginTop: 0 }}>
+            <p style={{ color: '#9ca3af', marginBottom: '2rem', fontSize: '0.95rem', fontWeight: 400, marginTop: 0 }}>
               Same-day service across all UAE Emirates — free quote in minutes.
-            </h3>
+            </p>
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
               <a
                 href={getWhatsAppLink(service.name)}

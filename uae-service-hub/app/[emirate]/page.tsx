@@ -87,9 +87,9 @@ export default async function EmiratePage({ params }: Props) {
           }}>
             Cleaning Services<br />in {emirate.name}
           </h1>
-          <h2 style={{ color: '#d1d5db', fontSize: '1.05rem', fontWeight: 400, marginBottom: '2rem', lineHeight: 1.6 }}>
+          <p style={{ color: '#d1d5db', fontSize: '1.05rem', fontWeight: 400, marginBottom: '2rem', lineHeight: 1.6 }}>
             Professional cleaning across {emirate.cities.length} areas — certified technicians, same-day service
-          </h2>
+          </p>
 
           <div style={{ display: 'flex', gap: '0.875rem', flexWrap: 'wrap' }}>
             <a href={getWhatsAppLink(undefined, emirate.name)} target="_blank" rel="noopener noreferrer"
@@ -155,9 +155,9 @@ export default async function EmiratePage({ params }: Props) {
               </h2>
             </div>
           </div>
-          <h3 className="emir-section-p" style={{ color: '#6b7280', fontSize: '0.9rem', marginBottom: '1.75rem', paddingLeft: '1.25rem', fontWeight: 400, marginTop: 0 }}>
+          <p className="emir-section-p" style={{ color: '#6b7280', fontSize: '0.9rem', marginBottom: '1.75rem', paddingLeft: '1.25rem', fontWeight: 400, marginTop: 0 }}>
             Click on your area to see available services and book instantly.
-          </h3>
+          </p>
 
           {(() => {
             const cityImages = [
@@ -223,9 +223,9 @@ export default async function EmiratePage({ params }: Props) {
               </h2>
             </div>
           </div>
-          <h3 className="emir-section-p" style={{ color: '#6b7280', fontSize: '0.9rem', marginBottom: '1.75rem', paddingLeft: '1.25rem', fontWeight: 400, marginTop: 0 }}>
+          <p className="emir-section-p" style={{ color: '#6b7280', fontSize: '0.9rem', marginBottom: '1.75rem', paddingLeft: '1.25rem', fontWeight: 400, marginTop: 0 }}>
             {services.length} professional cleaning services, all available across {emirate.name}.
-          </h3>
+          </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '1.1rem' }}>
             {services.map((service) => (
@@ -327,9 +327,9 @@ export default async function EmiratePage({ params }: Props) {
                 }}>
                   Why Choose<br />Al Haya in<br />{emirate.name}
                 </h2>
-                <h3 style={{ color: '#6b7280', fontSize: '0.85rem', lineHeight: 1.65, fontWeight: 400, marginTop: 0, marginBottom: 0 }}>
+                <p style={{ color: '#6b7280', fontSize: '0.85rem', lineHeight: 1.65, fontWeight: 400, marginTop: 0, marginBottom: 0 }}>
                   Trusted by hundreds of homes and businesses across {emirate.name}.
-                </h3>
+                </p>
               </div>
 
               {/* Stat pills */}
@@ -393,9 +393,9 @@ export default async function EmiratePage({ params }: Props) {
               </h2>
             </div>
           </div>
-          <h3 style={{ color: '#6b7280', fontSize: '0.9rem', marginBottom: '2rem', paddingLeft: '1.25rem', fontWeight: 400, marginTop: 0 }}>
+          <p style={{ color: '#6b7280', fontSize: '0.9rem', marginBottom: '2rem', paddingLeft: '1.25rem', fontWeight: 400, marginTop: 0 }}>
             Book a cleaning in {emirate.name} in four simple steps.
-          </h3>
+          </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.25rem' }}>
             {howItWorks.map((step) => (
@@ -425,9 +425,9 @@ export default async function EmiratePage({ params }: Props) {
                 <h3 style={{ fontFamily: 'var(--font-josefin)', fontSize: '1.1rem', fontWeight: 700, color: '#fff', marginBottom: '0.5rem' }}>
                   {step.title}
                 </h3>
-                <h3 style={{ color: '#9ca3af', fontSize: '0.875rem', lineHeight: 1.65, fontWeight: 400, marginTop: 0, marginBottom: 0 }}>
+                <p style={{ color: '#9ca3af', fontSize: '0.875rem', lineHeight: 1.65, fontWeight: 400, marginTop: 0, marginBottom: 0 }}>
                   {step.desc}
-                </h3>
+                </p>
               </div>
             ))}
           </div>
@@ -483,9 +483,9 @@ export default async function EmiratePage({ params }: Props) {
             <h2 style={{ fontFamily: 'var(--font-josefin)', fontSize: 'clamp(1.6rem, 3.5vw, 2.4rem)', fontWeight: 700, color: '#fff', marginBottom: '0.75rem', lineHeight: 1.2 }}>
               Book a Cleaning in {emirate.name} Today
             </h2>
-            <h3 style={{ color: '#9ca3af', fontSize: '1rem', maxWidth: '520px', margin: '0 auto 2.25rem', lineHeight: 1.7, fontWeight: 400 }}>
+            <p style={{ color: '#9ca3af', fontSize: '1rem', maxWidth: '520px', margin: '0 auto 2.25rem', lineHeight: 1.7, fontWeight: 400 }}>
               Same-day service available across all {emirate.cities.length} areas in {emirate.name}. Free instant quote — we respond in minutes.
-            </h3>
+            </p>
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
               <a href={getWhatsAppLink(undefined, emirate.name)} target="_blank" rel="noopener noreferrer"
                 className="svc-book-btn"

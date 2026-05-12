@@ -63,9 +63,9 @@ export default async function CityPage({ params }: Props) {
         >
           Cleaning Services in {city.name}
         </h1>
-        <h2 className="text-gray-400 mb-10 text-lg" style={{ fontWeight: 400 }}>
+        <p className="text-gray-400 mb-10 text-lg" style={{ fontWeight: 400 }}>
           {emirate.name} · Professional cleaning — same-day service · Call +971 55 127 5545
-        </h2>
+        </p>
 
         {/* Services list */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
