@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { services } from '@/lib/data/services'
+import { servicesNav as services } from '@/lib/data/services-nav'
 import { emirates } from '@/lib/data/emirates'
 import { getWhatsAppLink } from '@/lib/utils/whatsapp'
 import { SITE_CONFIG } from '@/lib/data/constants'

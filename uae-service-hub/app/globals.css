@@ -2271,3 +2271,236 @@ img { max-width: 100%; }
   border-color: rgba(201,168,76,0.3) !important;
 }
 
+
+/* ══════════════════════════════════════════════════════
+   HOME PAGE — New sections (dark + light theme + mobile)
+══════════════════════════════════════════════════════ */
+
+/* ── About grid ── */
+.home-about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 3rem;
+  align-items: center;
+}
+.home-about-img { aspect-ratio: 4/3; min-height: 260px; }
+
+/* ── Shared text helpers ── */
+.home-section-h2 {
+  font-family: var(--font-josefin);
+  font-size: clamp(1.45rem, 3vw, 2.1rem);
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+.home-section-p {
+  color: #9ca3af;
+  font-size: 0.9375rem;
+  line-height: 1.8;
+  margin-bottom: 0.875rem;
+}
+.home-checklist { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.55rem; }
+.home-check-item { display: flex; align-items: center; gap: 0.65rem; color: #d1d5db; font-size: 0.9rem; }
+
+/* ── Services section background ── */
+.home-services-section { background: #0d1b35; }
+
+/* ── Services grid ── */
+.home-svc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.25rem;
+}
+
+/* ── Service card ── */
+.home-svc-card {
+  background: linear-gradient(160deg, #0e1b40 0%, #1c2f58 100%);
+  border: 1px solid rgba(80,140,255,0.18);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.home-svc-badge {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  background: #c9a84c;
+  color: #111;
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  padding: 0.22rem 0.6rem;
+  border-radius: 2px;
+}
+.home-svc-h2 {
+  font-family: var(--font-josefin);
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 0.35rem;
+}
+.home-svc-h3 { font-size: 0.78rem; color: #c9a84c; font-weight: 600; margin: 0 0 0.6rem; }
+.home-svc-p { color: #9ca3af; font-size: 0.82rem; line-height: 1.6; margin-bottom: 0.55rem; }
+.home-kw-row { display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0.65rem 0; }
+.home-kw-tag {
+  background: rgba(201,168,76,0.08);
+  border: 1px solid rgba(201,168,76,0.18);
+  color: #c9a84c;
+  font-size: 0.58rem;
+  padding: 0.18rem 0.45rem;
+  border-radius: 3px;
+}
+.home-svc-link { color: #c9a84c; font-size: 0.78rem; font-weight: 700; text-decoration: none; }
+.home-svc-link:hover { text-decoration: underline; }
+.home-svc-pill {
+  background: rgba(201,168,76,0.08);
+  border: 1px solid rgba(201,168,76,0.2);
+  color: #c9a84c;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.4rem 1rem;
+  border-radius: 500px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.home-svc-pill:hover { background: rgba(201,168,76,0.18); }
+
+/* ── Why Choose Us ── */
+.home-why-section { background: #132040; border-top: 1px solid rgba(201,168,76,0.1); }
+.home-why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.1rem;
+}
+.home-why-card {
+  background: linear-gradient(160deg, #0e1b40, #1c2f58);
+  border: 1px solid rgba(201,168,76,0.15);
+  border-radius: 10px;
+  padding: 1.75rem 1.4rem;
+}
+.home-why-h3 { font-family: var(--font-josefin); font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; }
+.home-why-p { color: #9ca3af; font-size: 0.84rem; line-height: 1.65; margin: 0; }
+
+/* ── FAQ ── */
+.home-faq-section { background: #0d1b35; }
+.home-faq-item {
+  background: linear-gradient(160deg, #0e1b40, #1c2f58);
+  border: 1px solid rgba(80,140,255,0.18);
+  border-radius: 8px;
+  padding: 1.1rem 1.4rem;
+}
+.home-faq-q {
+  cursor: pointer;
+  font-family: var(--font-josefin);
+  font-size: 0.93rem;
+  font-weight: 700;
+  color: #fff;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.home-faq-q::-webkit-details-marker { display: none; }
+.home-faq-a { color: #9ca3af; font-size: 0.875rem; line-height: 1.75; margin-top: 0.75rem; margin-bottom: 0; }
+
+/* ══════════════════════════════════════════════════════
+   MOBILE RESPONSIVE
+══════════════════════════════════════════════════════ */
+@media (max-width: 767px) {
+  .home-about-grid { gap: 1.5rem; }
+  .home-about-img { min-height: 220px; }
+  .home-svc-grid { grid-template-columns: 1fr; }
+  .home-why-grid { grid-template-columns: 1fr 1fr; }
+  .home-faq-q { font-size: 0.85rem; }
+}
+@media (max-width: 480px) {
+  .home-why-grid { grid-template-columns: 1fr; }
+  .home-svc-pill { font-size: 0.7rem; }
+}
+
+/* ══════════════════════════════════════════════════════
+   LIGHT THEME — Home sections
+══════════════════════════════════════════════════════ */
+[data-theme="light"] .home-about-section { background: #f5f0e5 !important; }
+[data-theme="light"] .home-section-h2 { color: #1a1510 !important; }
+[data-theme="light"] .home-section-p { color: #5a4e3a !important; }
+[data-theme="light"] .home-check-item { color: #3a3020 !important; }
+
+[data-theme="light"] .home-services-section { background: #fdfcf8 !important; }
+[data-theme="light"] .home-svc-card {
+  background: #ffffff !important;
+  border-color: rgba(201,168,76,0.2) !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06) !important;
+}
+[data-theme="light"] .home-svc-h2 { color: #1a1510 !important; }
+[data-theme="light"] .home-svc-p { color: #5a4e3a !important; }
+[data-theme="light"] .home-kw-tag {
+  background: rgba(201,168,76,0.12) !important;
+  border-color: rgba(201,168,76,0.25) !important;
+  color: #7a5e20 !important;
+}
+[data-theme="light"] .home-svc-pill {
+  background: rgba(201,168,76,0.12) !important;
+  border-color: rgba(201,168,76,0.3) !important;
+  color: #7a5e20 !important;
+}
+
+[data-theme="light"] .home-why-section { background: #f5f0e5 !important; }
+[data-theme="light"] .home-why-card {
+  background: #ffffff !important;
+  border-color: rgba(201,168,76,0.2) !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05) !important;
+}
+[data-theme="light"] .home-why-h3 { color: #1a1510 !important; }
+[data-theme="light"] .home-why-p { color: #5a4e3a !important; }
+
+[data-theme="light"] .home-faq-section { background: #fdfcf8 !important; }
+[data-theme="light"] .home-faq-item {
+  background: #ffffff !important;
+  border-color: rgba(201,168,76,0.2) !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05) !important;
+}
+[data-theme="light"] .home-faq-q { color: #1a1510 !important; }
+[data-theme="light"] .home-faq-a { color: #5a4e3a !important; }
+
+/* ── Extra services text grid ── */
+.home-extra-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 0.875rem;
+}
+.home-extra-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  background: linear-gradient(160deg, #0e1b40, #1c2f58);
+  border: 1px solid rgba(80,140,255,0.15);
+  border-radius: 8px;
+  padding: 1.1rem 1.2rem;
+  text-decoration: none;
+  transition: border-color 0.2s;
+}
+.home-extra-card:hover { border-color: rgba(201,168,76,0.4); }
+.home-extra-h3 { font-family: var(--font-josefin); font-size: 0.9rem; font-weight: 700; color: #fff; margin: 0; }
+.home-extra-p { color: #9ca3af; font-size: 0.78rem; line-height: 1.55; margin: 0; }
+.home-extra-kw { color: rgba(201,168,76,0.6); font-size: 0.65rem; margin-top: 0.2rem; }
+.home-extra-arrow { color: #c9a84c; font-size: 0.75rem; font-weight: 700; margin-top: auto; padding-top: 0.4rem; }
+
+/* light theme extra cards */
+[data-theme="light"] .home-extra-card {
+  background: #ffffff !important;
+  border-color: rgba(201,168,76,0.2) !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05) !important;
+}
+[data-theme="light"] .home-extra-h3 { color: #1a1510 !important; }
+[data-theme="light"] .home-extra-p { color: #5a4e3a !important; }
+
+@media (max-width: 640px) {
+  .home-extra-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 400px) {
+  .home-extra-grid { grid-template-columns: 1fr; }
+}

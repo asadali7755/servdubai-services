@@ -42,7 +42,7 @@ const BASE_LOCAL_BUSINESS = {
   name: 'Al Haya Cleaning Services',
   image: 'https://servedubai.com/images/hero/professional-cleaning-services-UAE.webp',
   url: 'https://servedubai.com',
-  telephone: '+97154719189',
+  telephone: '+971551275545',
   email: 'info@servedubai.com',
   priceRange: '$$',
   currenciesAccepted: 'AED',
@@ -115,7 +115,7 @@ export const buildServiceSchema = (options: {
   provider: {
     '@type': 'LocalBusiness',
     name: 'Al Haya Cleaning Services',
-    telephone: '+97154719189',
+    telephone: '+971551275545',
     url: 'https://servedubai.com',
   },
   areaServed: options.emirate

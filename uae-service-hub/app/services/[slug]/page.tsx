@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!service) return {}
   return buildMetadata({
     title: `${service.name} in UAE | Al Haya`,
-    description: `${service.shortDescription} Available across all UAE Emirates. Call +971-54-719-9189.`,
+    description: `${service.shortDescription} Available across all UAE Emirates. Call +971 55 127 5545.`,
     path: `/services/${slug}`,
   })
 }

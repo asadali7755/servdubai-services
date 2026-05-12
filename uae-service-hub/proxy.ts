@@ -26,7 +26,7 @@ const SPAM_410_RESPONSE = new NextResponse(null, {
   },
 })
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const { pathname, search } = request.nextUrl
 
   const isSpamPath = SPAM_PATH_PATTERNS.some((p) => p.test(pathname))
@@ -40,6 +40,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  // Run on all routes except Next.js internals and static assets
   matcher: ['/((?!_next/static|_next/image|favicon.ico|images/).*)'],
 }
