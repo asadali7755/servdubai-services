@@ -27,6 +27,22 @@ export const metadata: Metadata = {
   verification: {
     google: 'kcRs3u_-iV5Ou0Op2OAvNBajnVhBwo3epUrUm0gEKCg',
   },
+  // Geo targeting — UAE/Dubai
+  other: {
+    'geo.region': 'AE-DU',
+    'geo.placename': 'Dubai, United Arab Emirates',
+    'geo.position': '25.2048;55.2708',
+    'ICBM': '25.2048, 55.2708',
+    'language': 'en-AE',
+    'content-language': 'en-AE',
+  },
+  alternates: {
+    canonical: 'https://servedubai.com',
+    languages: {
+      'en-AE': 'https://servedubai.com',
+      'en-US': 'https://servedubai.com',
+    },
+  },
 }
 
 export default function RootLayout({
@@ -35,7 +51,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${josefin.variable} ${workSans.variable}`} data-theme="dark" suppressHydrationWarning>
+    <html lang="en-AE" className={`${josefin.variable} ${workSans.variable}`} data-theme="dark" suppressHydrationWarning>
       <head>
         {/* Prevent flash of wrong theme */}
         <script dangerouslySetInnerHTML={{ __html: `try{var t=localStorage.getItem('al-haya-theme')||'dark';document.documentElement.setAttribute('data-theme',t);}catch(e){}` }} />
