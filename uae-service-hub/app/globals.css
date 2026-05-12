@@ -2646,3 +2646,8 @@ img { max-width: 100%; }
   box-shadow: 0 6px 20px rgba(0,0,0,0.1) !important;
 }
 [data-theme="light"] .abt-img-card-h3 { color: #1a1510 !important; }
+
+/* about services section bg — light theme */
+[data-theme="light"] .abt-svc-section { background: #fdfcf8 !important; }
+[data-theme="light"] .abt-heading { color: #1a1510 !important; }
+[data-theme="light"] .abt-subtext { color: #7a6a50 !important; }

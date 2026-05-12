@@ -100,7 +100,7 @@ export default function AboutPage() {
 
       {/* ── SERVICES ── */}
       <section className="about-services abt-svc-section" style={{ padding: '5rem 1.5rem', borderTop: '1px solid rgba(201,168,76,0.1)' }}>
-        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '2.75rem' }}>
             <div style={{ fontSize: '0.63rem', color: '#c9a84c', letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.4rem' }}>What We Do</div>
             <h2 className="abt-heading">Comprehensive Cleaning Services We Provide</h2>
@@ -109,46 +109,35 @@ export default function AboutPage() {
             </p>
           </div>
 
-          {/* Service detail rows */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '2.5rem' }}>
-            {[
-              { slug: 'villa-deep-cleaning', icon: '🏠', h3: 'Villa & Apartment Deep Cleaning Services', desc: 'Complete home sanitization, move-in and move-out cleaning, spring cleaning packages, and regular maintenance. Our villa cleaning Dubai service handles multiple bathrooms, AC vents, window tracks, pool decks, and every surface in your property.', pills: ['Complete home sanitization','Move-in & move-out cleaning','Post-construction cleaning','Regular maintenance plans'] },
-              { slug: 'sofa-cleaning', icon: '🛋️', h3: 'Professional Sofa & Upholstery Cleaning', desc: 'Fabric sofa deep cleaning, leather furniture care, stain and odor removal using IICRC-standard steam extraction. We handle velvet, silk, cotton, and all upholstery types safely.', pills: ['Fabric sofa deep cleaning','Leather furniture care','Stain & odor removal','Scotchgard protection'] },
-              { slug: 'mattress-cleaning', icon: '🛏️', h3: 'Mattress Deep Cleaning & Sanitization', desc: 'Dust mite elimination, allergen removal, and hospital-grade UV-C sanitization. Medical-grade HEPA vacuums extract contaminants deep within the foam for a healthier sleep environment.', pills: ['Dust mite elimination','UV-C sanitization','HEPA allergen removal','Steam cleaning'] },
-              { slug: 'carpet-cleaning', icon: '🪄', h3: 'Expert Carpet & Rug Cleaning Services', desc: 'Persian and Oriental rug care, wall-to-wall carpet cleaning, pet stain and odor removal using enzyme-based treatments, and commercial carpet maintenance with rapid drying.', pills: ['Persian & Oriental rug care','Pet stain removal','Steam extraction','Commercial carpet maintenance'] },
-              { slug: 'marble-polishing', icon: '✨', h3: 'Marble Polishing & Restoration Specialists', desc: 'Diamond polishing and grinding, crystallization for a lasting mirror shine, scratch and etch repair, and sealing for long-term protection. We use advanced Italian machinery for dust-free results.', pills: ['Diamond polishing & grinding','Re-crystallization','Scratch & etch repair','Sealing & protection'] },
-            ].map((svc) => (
-              <div key={svc.slug} className="abt-svc-row">
-                <div className="abt-svc-row-icon">{svc.icon}</div>
-                <div style={{ flex: 1, minWidth: 0 }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '1rem', flexWrap: 'wrap', marginBottom: '0.5rem' }}>
-                    <h3 className="abt-svc-row-h3">{svc.h3}</h3>
-                    <Link href={`/services/${svc.slug}`} className="abt-svc-row-link">View Service →</Link>
+          <div className="home-svc-grid">
+            {services.map((service) => (
+              <div key={service.id} className="home-svc-card">
+                <div style={{ position: 'relative', height: '170px', flexShrink: 0 }}>
+                  <Image
+                    src={service.images[0]}
+                    alt={`${service.name} Dubai — professional ${service.name.toLowerCase()} UAE`}
+                    fill className="object-cover"
+                    sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 380px"
+                    loading="lazy"
+                  />
+                  <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(0,0,0,0.05), rgba(0,0,0,0.65))' }} />
+                  <span className="home-svc-badge">{service.category.toUpperCase()}</span>
+                  <span style={{ position: 'absolute', top: '0.75rem', right: '0.75rem', background: '#25D366', color: '#fff', fontSize: '0.55rem', fontWeight: 800, letterSpacing: '0.08em', padding: '0.22rem 0.55rem', borderRadius: '2px' }}>BOOK NOW</span>
+                </div>
+                <div style={{ padding: '1.1rem', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                  <h2 className="home-svc-h2">{service.heroTitle ?? service.name}</h2>
+                  <h3 className="home-svc-h3">{service.shortDescription.slice(0, 60)}…</h3>
+                  <p className="home-svc-p" style={{ flex: 1 }}>{service.shortDescription.slice(0, 130)}…</p>
+                  <div className="home-kw-row">
+                    {service.benefits.slice(0, 3).map((b) => (
+                      <span key={b} className="home-kw-tag">{b.slice(0, 28)}</span>
+                    ))}
                   </div>
-                  <p className="abt-svc-row-desc">{svc.desc}</p>
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', marginTop: '0.6rem' }}>
-                    {svc.pills.map((p) => <span key={p} className="abt-svc-pill">{p}</span>)}
-                  </div>
+                  <Link href={`/services/${service.slug}`} className="home-svc-link" style={{ marginTop: '0.6rem' }}>
+                    View Service →
+                  </Link>
                 </div>
               </div>
-            ))}
-          </div>
-
-          {/* All 11 service cards */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(175px, 1fr))', gap: '0.875rem' }}>
-            {services.map((service) => (
-              <Link key={service.id} href={`/services/${service.slug}`} style={{ textDecoration: 'none' }}>
-                <div className="about-svc-card abt-img-card">
-                  <div style={{ position: 'relative', height: '100px' }}>
-                    <Image src={service.images[0]} alt={service.name} fill className="object-cover" sizes="200px" loading="lazy" />
-                    <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 35%, rgba(0,0,0,0.72))' }} />
-                  </div>
-                  <div className="abt-img-card-body">
-                    <h3 className="about-svc-h3 abt-img-card-h3">{service.name}</h3>
-                    <span className="abt-img-card-cta">Book Now →</span>
-                  </div>
-                </div>
-              </Link>
             ))}
           </div>
         </div>
