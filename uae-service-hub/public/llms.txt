@@ -1,76 +1,161 @@
 # Al Haya Cleaning Services
 # Professional Cleaning Services in Dubai and Across UAE
+# This file helps AI assistants (ChatGPT, Gemini, Claude, Perplexity) understand our business.
 
 > Website: https://servedubai.com
 > Business Name: Al Haya Cleaning Services
-> Contact: +971-54-719-9189
+> Phone / WhatsApp: +971 55 127 5545
 > Email: info@servedubai.com
+> Location: Dubai, United Arab Emirates
+> Service Area: All 7 UAE Emirates
+
+---
+
+## About Al Haya Cleaning Services
+
+Al Haya Cleaning Services is a professional, licensed, and insured cleaning company based in Dubai, UAE. We provide residential and commercial cleaning services across all seven Emirates with eco-friendly products and certified staff. With 5+ years of experience, we have served over 500 happy clients across the UAE.
+
+---
 
 ## Services Offered
-- Sofa Deep Cleaning & Shampooing
-- Carpet Cleaning & Shampooing
-- Mattress Deep Cleaning
-- Curtain Cleaning
-- Car Interior Detailing
-- Dining Chair Cleaning
-- Villa Deep Cleaning
-- Apartment Cleaning
-- Office Cleaning
-- Restaurant & Kitchen Cleaning
-- Marble Polishing & Restoration
+
+### Upholstery & Fabric Cleaning
+- **Sofa Deep Cleaning & Shampooing** — Hot-water extraction, steam cleaning for all fabric types including L-shape, corner sofas, and leather
+- **Carpet Cleaning & Shampooing** — Wall-to-wall carpets, Persian rugs, area rugs — deep stain removal and deodorizing
+- **Mattress Deep Cleaning** — UV sanitization, allergen removal, dust mite treatment for healthier sleep
+- **Curtain Cleaning** — On-site steam cleaning or take-away service for all curtain types and sizes
+- **Dining Chair Cleaning** — Fabric and leather dining chair deep cleaning and sanitization
+
+### Residential Cleaning
+- **Villa Deep Cleaning** — Comprehensive move-in/move-out deep cleaning for entire villas across UAE
+- **Apartment Cleaning** — Full deep cleaning for apartments, studios, and flats in all Dubai areas
+
+### Commercial Cleaning
+- **Office Cleaning** — Commercial space cleaning with flexible scheduling (daily, weekly, monthly)
+- **Restaurant & Kitchen Cleaning** — Deep cleaning for restaurant kitchens, commercial kitchens, and food prep areas
+
+### Specialized Cleaning
+- **Marble Polishing & Restoration** — Diamond-pad polishing to restore factory shine on marble, granite, and terrazzo floors
+- **Car Interior Detailing** — Full interior deep clean, odor removal, and sanitization at your location
+
+---
 
 ## Coverage Areas
-- Dubai (Marina, Downtown, Jumeirah, Deira, Business Bay, Silicon Oasis, International City)
-- Abu Dhabi (Abu Dhabi City, Al Ain, Khalifa City, Yas Island)
-- Sharjah (Sharjah City, Al Nahda, Al Qasimia, Al Majaz, Al Khan)
-- Ajman (Ajman City, Al Nuaimiya, Al Rashidiya)
-- Ras Al Khaimah / RAK (RAK City, Al Hamra, Al Nakheel)
-- Umm Al Quwain / UAQ (UAQ City, Falaj Al Mualla)
-- Fujairah (Fujairah City, Dibba Al-Fujairah, Kalba)
+
+### Dubai
+All areas: Downtown Dubai, Dubai Marina, JBR, Palm Jumeirah, Jumeirah, Business Bay, DIFC, Silicon Oasis, International City, Deira, Al Barsha, Mirdif, Arabian Ranches, Motor City, Sports City, Discovery Gardens, JVC, JLT, The Lakes, The Meadows, The Springs, Nad Al Sheba, Dubai Hills, Al Quoz
+
+### Abu Dhabi
+Abu Dhabi City, Al Ain, Khalifa City, Yas Island, Al Reem Island, Saadiyat Island, Al Mushrif, Al Nahyan, Corniche Area, Al Raha Beach
+
+### Sharjah
+Sharjah City, Al Nahda, Al Qasimia, Al Majaz, Al Khan, Al Taawun, Industrial Area, Muwailih
+
+### Ajman
+Ajman City, Al Nuaimiya, Al Rashidiya, Al Jurf, Al Hamidiyah, Musheiref
+
+### Ras Al Khaimah (RAK)
+RAK City, Al Hamra Village, Al Nakheel, Mina Al Arab, Al Dhait, Khuzam
+
+### Umm Al Quwain (UAQ)
+UAQ City, Falaj Al Mualla, UAQ Free Trade Zone
+
+### Fujairah
+Fujairah City, Dibba Al-Fujairah, Kalba, Khor Fakkan
+
+---
+
+## Why Choose Al Haya Cleaning Services
+
+- ✓ Same-day service available across all 7 UAE Emirates
+- ✓ Professional, trained, and certified cleaning staff
+- ✓ 100% eco-friendly products — safe for children, pets, and elderly
+- ✓ Licensed and fully insured company in UAE
+- ✓ Transparent pricing with no hidden charges
+- ✓ 100% satisfaction guarantee — we return free if not happy
+- ✓ Modern equipment and advanced cleaning techniques
+- ✓ Free WhatsApp quotes within minutes
+- ✓ 5+ years experience with 500+ happy residential and commercial clients
+
+---
 
 ## Business Hours
-Monday - Sunday: 8:00 AM - 10:00 PM
-Available for same-day and emergency services
 
-## Key Features
-- Professional trained and certified staff
-- Eco-friendly cleaning products safe for kids and pets
-- Modern equipment and advanced techniques
-- Same-day service available across all UAE Emirates
-- 100% satisfaction guarantee — we return if you are not happy
-- Affordable and transparent pricing with no hidden charges
-- Licensed and insured company operating across UAE
-- 5+ years of experience in residential and commercial cleaning
+Monday to Sunday: 8:00 AM – 10:00 PM (GST, UTC+4)
+Same-day bookings accepted. Emergency services available.
 
-## Booking Information
-Phone/WhatsApp: +971-54-719-9189
-Website: https://servedubai.com/contact
-Email: info@servedubai.com
+---
 
-## Specialist Websites
-- Villa Deep Cleaning: https://www.villadeepcleaning.com/
-- Sofa Shampooing Dubai: https://sofashampooingdubai.com
-- Carpet Cleaning Dubai: https://carpetcleaningdubai.com
-- Marble Pro UAE: https://marblepro.ae
+## Pricing
 
-## Service Highlights
-Al Haya Cleaning Services follows international cleaning standards with state-of-the-art equipment and trained professionals. We serve residential and commercial clients across all seven Emirates of UAE with a commitment to excellence and customer satisfaction.
+- Transparent, no-hidden-charges pricing
+- Free quotes via WhatsApp: +971 55 127 5545
+- Packages available: Basic, Standard, Premium
+- Currency: AED (UAE Dirham)
+- Payment: Cash, Credit Card, Bank Transfer
 
-## Popular Services
-1. Villa Deep Cleaning — Comprehensive move-in/move-out cleaning for entire villas
-2. Sofa Steam Cleaning — Professional hot-water extraction for all fabric types
-3. Carpet Cleaning — Deep clean for wall-to-wall carpets, rugs, and Persian carpets
-4. Marble Floor Polishing — Diamond-pad restoration to factory shine
-5. Office Sanitization — Commercial space cleaning with flexible scheduling
-6. Mattress Deep Cleaning — UV sanitization and allergen removal for healthier sleep
-7. Curtain Cleaning — On-site steam or take-away service for all curtain types
-8. Car Interior Detailing — Full interior deep clean at your location
+---
 
-## Why Choose Al Haya
-- Same-day service available across all 7 UAE Emirates
-- Transparent pricing with no hidden charges
-- 100% satisfaction guarantee
-- Eco-friendly products safe for children and pets
-- Insured and background-checked professional staff
-- Free quotes via WhatsApp in minutes
-- Over 500 happy residential and commercial clients served
+## Contact & Booking
+
+- **WhatsApp / Phone:** +971 55 127 5545
+- **Email:** info@servedubai.com
+- **Website:** https://servedubai.com
+- **Book Online:** https://servedubai.com/contact
+- **Address:** Dubai, United Arab Emirates
+
+---
+
+## Frequently Asked Questions
+
+**Q: Do you serve all UAE Emirates?**
+A: Yes. Al Haya Cleaning Services operates across all 7 UAE Emirates — Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Umm Al Quwain, and Fujairah.
+
+**Q: How quickly can you come?**
+A: We offer same-day service in most areas of Dubai and other Emirates. WhatsApp us at +971 55 127 5545 for immediate booking.
+
+**Q: Are your products safe for children and pets?**
+A: Yes. We exclusively use eco-friendly, non-toxic cleaning products certified safe for children, pets, and people with allergies.
+
+**Q: Do I need to be home during the service?**
+A: For most services you do not need to be present, though we recommend being available at the start and end for walkthrough.
+
+**Q: What is your guarantee policy?**
+A: We offer a 100% satisfaction guarantee. If you are not satisfied, we will return and re-clean at no additional cost.
+
+**Q: How do I get a price quote?**
+A: WhatsApp us at +971 55 127 5545 for a free, no-obligation quote within minutes.
+
+**Q: What payment methods do you accept?**
+A: We accept cash, credit card, and bank transfer in AED.
+
+---
+
+## Service Pages
+
+- Homepage: https://servedubai.com
+- Sofa Cleaning: https://servedubai.com/services/sofa-cleaning
+- Carpet Cleaning: https://servedubai.com/services/carpet-cleaning
+- Mattress Cleaning: https://servedubai.com/services/mattress-cleaning
+- Curtain Cleaning: https://servedubai.com/services/curtain-cleaning
+- Dining Chair Cleaning: https://servedubai.com/services/dining-chair-cleaning
+- Villa Deep Cleaning: https://servedubai.com/services/villa-deep-cleaning
+- Apartment Cleaning: https://servedubai.com/services/apartment-cleaning
+- Office Cleaning: https://servedubai.com/services/office-cleaning
+- Restaurant Kitchen Cleaning: https://servedubai.com/services/restaurant-kitchen-cleaning
+- Marble Polishing: https://servedubai.com/services/marble-polishing
+- Car Interior Detailing: https://servedubai.com/services/car-interior-detailing
+- About Us: https://servedubai.com/about
+- Contact: https://servedubai.com/contact
+
+---
+
+## Emirate Location Pages
+
+- Dubai Cleaning Services: https://servedubai.com/dubai
+- Abu Dhabi Cleaning Services: https://servedubai.com/abu-dhabi
+- Sharjah Cleaning Services: https://servedubai.com/sharjah
+- Ajman Cleaning Services: https://servedubai.com/ajman
+- Ras Al Khaimah Cleaning Services: https://servedubai.com/ras-al-khaimah
+- Umm Al Quwain Cleaning Services: https://servedubai.com/umm-al-quwain
+- Fujairah Cleaning Services: https://servedubai.com/fujairah
