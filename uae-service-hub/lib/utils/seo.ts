@@ -99,6 +99,14 @@ export const buildLocalBusinessSchema = (options: {
   service?: string
   city?: string
   emirate?: string
+  /** City-specific coordinates — overrides generic geo + serviceArea when provided */
+  coords?: {
+    lat: number
+    lng: number
+    radiusMeters: number
+    addressLocality: string
+    addressRegion: string
+  }
 }): Record<string, unknown> => {
   const areaServed = options.city && options.emirate
     ? [
@@ -111,12 +119,49 @@ export const buildLocalBusinessSchema = (options: {
         (n) => ({ '@type': 'State', name: n })
       )
 
+  // City-specific overrides — precise geo + tight serviceArea radius
+  const geoOverride = options.coords
+    ? {
+        '@type': 'GeoCoordinates',
+        latitude: options.coords.lat,
+        longitude: options.coords.lng,
+      }
+    : BASE_LOCAL_BUSINESS.geo
+
+  const serviceAreaOverride = options.coords
+    ? {
+        '@type': 'GeoCircle',
+        geoMidpoint: {
+          '@type': 'GeoCoordinates',
+          latitude: options.coords.lat,
+          longitude: options.coords.lng,
+        },
+        geoRadius: String(options.coords.radiusMeters),
+      }
+    : BASE_LOCAL_BUSINESS.serviceArea
+
+  // City-specific address — localises the business per page
+  const addressOverride = options.coords
+    ? {
+        '@type': 'PostalAddress',
+        streetAddress: options.coords.addressLocality,
+        addressLocality: options.coords.addressLocality,
+        addressRegion: options.coords.addressRegion,
+        addressCountry: 'AE',
+      }
+    : BASE_LOCAL_BUSINESS.address
+
   return {
     ...BASE_LOCAL_BUSINESS,
     ...(options.name ? { name: options.name } : {}),
     description: options.service
-      ? `Professional ${options.service} service in UAE — certified technicians, eco-friendly products, same-day service.`
+      ? `Professional ${options.service} service in ${options.city ?? 'UAE'} — certified technicians, eco-friendly products, same-day service.`
+      : options.city
+      ? `Professional cleaning services in ${options.city}, ${options.emirate ?? 'UAE'} — sofa, carpet, villa, office & marble. Same-day service available.`
       : 'Professional cleaning and restoration services across all 7 UAE Emirates — sofa, carpet, villa, office, marble and more.',
+    geo: geoOverride,
+    serviceArea: serviceAreaOverride,
+    address: addressOverride,
     areaServed,
   }
 }

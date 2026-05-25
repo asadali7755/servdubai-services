@@ -7,6 +7,7 @@ import { emirates, getEmirateBySlug } from '@/lib/data/emirates'
 import { services } from '@/lib/data/services'
 import { buildMetadata, buildLocalBusinessSchema } from '@/lib/utils/seo'
 import { getWhatsAppLink } from '@/lib/utils/whatsapp'
+import { getEmirateCoords } from '@/lib/data/cityCoordinates'
 import { SITE_CONFIG } from '@/lib/data/constants'
 
 type Props = { params: Promise<{ emirate: string }> }
@@ -47,7 +48,19 @@ export default async function EmiratePage({ params }: Props) {
   const emirate = getEmirateBySlug(emirateSlug)
   if (!emirate) notFound()
 
-  const schema = buildLocalBusinessSchema({ emirate: emirate.name })
+  const emirateCoords = getEmirateCoords(emirateSlug)
+  const schema = buildLocalBusinessSchema({
+    emirate: emirate.name,
+    coords: emirateCoords
+      ? {
+          lat: emirateCoords.lat,
+          lng: emirateCoords.lng,
+          radiusMeters: emirateCoords.radiusMeters,
+          addressLocality: emirate.name,
+          addressRegion: emirateCoords.addressRegion,
+        }
+      : undefined,
+  })
 
   return (
     <>
