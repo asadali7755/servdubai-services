@@ -52,6 +52,7 @@ export default async function CityPage({ params }: Props) {
   const localSchema = buildLocalBusinessSchema({
     city: city.name,
     emirate: emirate.name,
+    path: `/${emirateSlug}/${citySlug}`,
     coords: coords ?? undefined,
   })
   const breadcrumbSchema = buildBreadcrumbSchema([

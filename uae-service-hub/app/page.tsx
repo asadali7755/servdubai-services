@@ -49,7 +49,7 @@ const heroSlides: HeroSlide[] = [
   },
 ]
 
-const schema = buildLocalBusinessSchema({})
+const schema = buildLocalBusinessSchema({ path: '/' })
 const imageSchema = buildImageObjectSchema(
   heroSlides.map((s) => ({ url: s.image, name: s.imageTitle ?? s.title, description: s.imageAlt ?? s.title, tags: s.tags }))
 )

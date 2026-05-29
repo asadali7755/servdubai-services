@@ -42,7 +42,7 @@ export default async function ServicePage({ params }: Props) {
     service.availableInEmirates.includes(e.id)
   )
 
-  const localBusinessSchema = buildLocalBusinessSchema({ service: service.name })
+  const localBusinessSchema = buildLocalBusinessSchema({ service: service.name, path: `/services/${service.slug}` })
   const serviceSchema = buildServiceSchema({
     serviceName: service.name,
     description: service.shortDescription,

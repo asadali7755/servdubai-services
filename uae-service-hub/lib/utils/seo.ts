@@ -99,6 +99,8 @@ export const buildLocalBusinessSchema = (options: {
   service?: string
   city?: string
   emirate?: string
+  /** Page-specific path — sets url and @id to this page's URL instead of root domain */
+  path?: string
   /** City-specific coordinates — overrides generic geo + serviceArea when provided */
   coords?: {
     lat: number
@@ -151,8 +153,12 @@ export const buildLocalBusinessSchema = (options: {
       }
     : BASE_LOCAL_BUSINESS.address
 
+  const pageUrl = options.path ? `${SITE_URL}${options.path}` : SITE_URL
+
   return {
     ...BASE_LOCAL_BUSINESS,
+    '@id': pageUrl,
+    url: pageUrl,
     ...(options.name ? { name: options.name } : {}),
     description: options.service
       ? `Professional ${options.service} service in ${options.city ?? 'UAE'} — certified technicians, eco-friendly products, same-day service.`

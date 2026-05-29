@@ -51,6 +51,7 @@ export default async function EmiratePage({ params }: Props) {
   const emirateCoords = getEmirateCoords(emirateSlug)
   const schema = buildLocalBusinessSchema({
     emirate: emirate.name,
+    path: `/${emirateSlug}`,
     coords: emirateCoords
       ? {
           lat: emirateCoords.lat,
