@@ -4,7 +4,7 @@ import Link from 'next/link'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import { services } from '@/lib/data/services'
 import { emirates } from '@/lib/data/emirates'
-import { buildMetadata } from '@/lib/utils/seo'
+import { buildMetadata, buildLocalBusinessSchema } from '@/lib/utils/seo'
 import { getWhatsAppLink } from '@/lib/utils/whatsapp'
 import { SITE_CONFIG } from '@/lib/data/constants'
 
@@ -14,6 +14,8 @@ export const metadata: Metadata = buildMetadata({
     'Learn about Al Haya — Dubai\'s trusted professional cleaning company serving all 7 UAE Emirates. Expert villa, sofa, carpet, mattress cleaning & marble polishing. Vetted technicians. Free quotes.',
   path: '/about',
 })
+
+const localBusinessSchema = buildLocalBusinessSchema({ path: '/about' })
 
 const faqSchema = {
   '@context': 'https://schema.org',
@@ -31,6 +33,7 @@ const faqSchema = {
 export default function AboutPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* ── HERO ── */}

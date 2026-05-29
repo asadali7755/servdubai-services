@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { buildLocalBusinessSchema } from '@/lib/utils/seo'
 
 export const metadata: Metadata = {
   title: 'Contact Al Haya Cleaning Services | Book a Clean in UAE',
@@ -9,6 +10,13 @@ export const metadata: Metadata = {
   },
 }
 
+const contactSchema = buildLocalBusinessSchema({ path: '/contact' })
+
 export default function ContactLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }} />
+      {children}
+    </>
+  )
 }
