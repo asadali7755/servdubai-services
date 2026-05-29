@@ -1,3 +1,6 @@
+export const revalidate = 0
+export const dynamic = 'force-dynamic'
+
 import type { MetadataRoute } from 'next'
 import { services } from '@/lib/data/services'
 import { emirates } from '@/lib/data/emirates'
