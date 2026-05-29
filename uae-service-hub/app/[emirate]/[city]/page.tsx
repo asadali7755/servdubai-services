@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import WhatsAppButton from '@/components/WhatsAppButton'
@@ -44,6 +45,9 @@ export default async function CityPage({ params }: Props) {
   const siblingCities = emirate.cities.filter((c) => c.slug !== city.slug)
   const localContent = getCityContent(emirateSlug, citySlug)
   const coords = getCityCoords(emirateSlug, citySlug)
+  const emirateBannerSrc = emirateSlug === 'ras-al-khaimah'
+    ? '/images/emirates/ras-al-khaimah2.webp'
+    : `/images/emirates/${emirateSlug}.webp`
 
   const localSchema = buildLocalBusinessSchema({
     city: city.name,
@@ -80,6 +84,30 @@ export default async function CityPage({ params }: Props) {
           <span className="mx-2" style={{ color: '#4b5563' }}>/</span>
           <span className="text-white city-crumb-cur">{city.name}</span>
         </nav>
+
+        {/* ══════════════════════════════════════
+            CITY BANNER IMAGE
+        ══════════════════════════════════════ */}
+        <div style={{ position: 'relative', height: '220px', borderRadius: '12px', overflow: 'hidden', marginBottom: '1.75rem' }}>
+          <Image
+            src={emirateBannerSrc}
+            alt={`Professional cleaning services in ${city.name}, ${emirate.name} — Al Haya expert cleaning team serving ${city.name} homes, villas and apartments`}
+            title={`Cleaning Services in ${city.name}, ${emirate.name} | Al Haya`}
+            fill
+            style={{ objectFit: 'cover', objectPosition: 'center' }}
+            priority
+            sizes="(max-width: 768px) 100vw, 1152px"
+          />
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 60%, transparent 100%)' }} />
+          <div style={{ position: 'absolute', bottom: '1.25rem', left: '1.5rem', zIndex: 2 }}>
+            <div style={{ fontSize: '0.6rem', color: '#c9a84c', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '0.3rem' }}>
+              {emirate.name} · {city.name}
+            </div>
+            <div style={{ color: '#fff', fontSize: '0.9rem', fontWeight: 700, fontFamily: 'var(--font-josefin)', letterSpacing: '0.05em' }}>
+              Professional Cleaning Services
+            </div>
+          </div>
+        </div>
 
         {/* ══════════════════════════════════════
             PAGE HEADING
@@ -198,46 +226,63 @@ export default async function CityPage({ params }: Props) {
             {cityServices.map((service) => (
               <div
                 key={service.id}
-                className="city-svc-card rounded-xl p-5"
+                className="city-svc-card rounded-xl overflow-hidden"
                 style={{ background: '#1e1e1e', border: '1px solid rgba(255,255,255,0.05)' }}
               >
-                <div className="flex items-start justify-between mb-3">
-                  <div>
+                {/* Service thumbnail image */}
+                {service.images[0] && (
+                  <div style={{ position: 'relative', height: '150px' }}>
+                    <Image
+                      src={service.images[0]}
+                      alt={`${service.name} in ${city.name}, ${emirate.name} — professional ${service.name.toLowerCase()} by Al Haya cleaning services`}
+                      title={`${service.name} in ${city.name} | Al Haya`}
+                      fill
+                      style={{ objectFit: 'cover' }}
+                      loading="lazy"
+                      sizes="(max-width: 640px) 100vw, 50vw"
+                    />
+                    <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(30,30,30,0.75) 0%, transparent 55%)' }} />
+                    <span style={{
+                      position: 'absolute', bottom: '0.6rem', left: '0.75rem',
+                      color: '#c9a84c', fontSize: '0.6rem', fontWeight: 700,
+                      letterSpacing: '0.1em', textTransform: 'uppercase',
+                    }}>{service.category}</span>
+                  </div>
+                )}
+                <div className="p-5">
+                  <div className="flex items-start justify-between mb-3">
                     <h3
                       className="text-white font-bold"
                       style={{ fontFamily: 'var(--font-josefin)', fontSize: '1rem' }}
                     >
                       {service.name}
                     </h3>
-                    <span className="text-xs capitalize" style={{ color: '#c9a84c' }}>
-                      {service.category}
-                    </span>
                   </div>
-                </div>
-                <p className="text-gray-400 text-sm mb-4 leading-relaxed">{service.shortDescription}</p>
-                <div className="flex flex-col sm:flex-row gap-2">
-                  <a
-                    href={getWhatsAppLink(service.name, city.name)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 text-center px-4 py-2 rounded-lg text-sm font-semibold"
-                    style={{
-                      background: '#25D366', color: '#111111',
-                      minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    }}
-                  >
-                    Book via WhatsApp
-                  </a>
-                  <Link
-                    href={`/services/${service.slug}`}
-                    className="city-view-btn flex-1 text-center px-4 py-2 rounded-lg text-sm font-semibold"
-                    style={{
-                      background: '#252525', color: '#c9a84c',
-                      minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    }}
-                  >
-                    View Details
-                  </Link>
+                  <p className="text-gray-400 text-sm mb-4 leading-relaxed">{service.shortDescription}</p>
+                  <div className="flex flex-col sm:flex-row gap-2">
+                    <a
+                      href={getWhatsAppLink(service.name, city.name)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 text-center px-4 py-2 rounded-lg text-sm font-semibold"
+                      style={{
+                        background: '#25D366', color: '#111111',
+                        minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      }}
+                    >
+                      Book via WhatsApp
+                    </a>
+                    <Link
+                      href={`/services/${service.slug}`}
+                      className="city-view-btn flex-1 text-center px-4 py-2 rounded-lg text-sm font-semibold"
+                      style={{
+                        background: '#252525', color: '#c9a84c',
+                        minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      }}
+                    >
+                      View Details
+                    </Link>
+                  </div>
                 </div>
               </div>
             ))}
