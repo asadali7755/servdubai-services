@@ -1,7 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { services } from '@/lib/data/services'
 import { emirates } from '@/lib/data/emirates'
-import { SITE_CONFIG } from '@/lib/data/constants'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = 'https://servedubai.com'
@@ -24,15 +23,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${base}/${e.slug}`,
     lastModified: now,
     changeFrequency: 'monthly' as const,
-    priority: 0.7,
+    priority: 0.8,
   }))
 
   const cityRoutes: MetadataRoute.Sitemap = emirates.flatMap((e) =>
     e.cities.map((c) => ({
       url: `${base}/${e.slug}/${c.slug}`,
       lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.6,
+      changeFrequency: 'weekly' as const,
+      priority: 0.85,
     }))
   )
 
