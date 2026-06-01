@@ -18,13 +18,19 @@ const SPAM_QUERY_PATTERNS = [
   /\.php/i,
 ]
 
-const SPAM_410_RESPONSE = new NextResponse(null, {
-  status: 410,
-  headers: {
-    'X-Robots-Tag': 'noindex, nofollow',
-    'Cache-Control': 'no-store',
-  },
-})
+// Build a fresh 410 response per request.
+// Proxy must NOT reuse a shared/global Response instance (Next.js docs:
+// "you should not attempt relying on shared modules or globals") — a single
+// Response object cannot be safely returned for multiple concurrent requests.
+function gone(): NextResponse {
+  return new NextResponse(null, {
+    status: 410,
+    headers: {
+      'X-Robots-Tag': 'noindex, nofollow',
+      'Cache-Control': 'no-store',
+    },
+  })
+}
 
 export function proxy(request: NextRequest) {
   const { pathname, search } = request.nextUrl
@@ -33,7 +39,7 @@ export function proxy(request: NextRequest) {
   const isSpamQuery = search.length > 1 && SPAM_QUERY_PATTERNS.some((p) => p.test(search))
 
   if (isSpamPath || isSpamQuery) {
-    return SPAM_410_RESPONSE
+    return gone()
   }
 
   return NextResponse.next()
