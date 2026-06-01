@@ -10,6 +10,11 @@ const SPAM_PATH_PATTERNS = [
   /\/cgi-bin/i,
   /\/adminer/i,
   /\/phpmyadmin/i,
+  // Hack-injected spam pages (auto-generated fake product/search URLs).
+  // The real site has NO /products or /ctg routes, so 410 (Gone) is safe and
+  // de-indexes faster than the bare 404 these currently return.
+  /^\/products\//i,
+  /^\/ctg\//i,
 ]
 
 // Query string spam — e.g. /?products/68533758
