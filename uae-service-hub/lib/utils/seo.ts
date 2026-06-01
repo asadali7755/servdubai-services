@@ -259,6 +259,6 @@ export const buildBreadcrumbSchema = (
     '@type': 'ListItem',
     position: i + 1,
     name: crumb.name,
-    item: `${SITE_CONFIG.siteUrl}${crumb.url}`,
+    item: `${SITE_URL}${crumb.url}`,
   })),
 })
