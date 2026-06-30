@@ -22,6 +22,19 @@ const nextConfig: NextConfig = {
   // Expand this list from GSC -> Pages -> "Not found (404)" as more old URLs surface.
   async redirects() {
     return [
+      // .com domain -> canonical .ae (keeps SEO equity on one domain)
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'servedubai.com' }],
+        destination: 'https://servedubai.ae/:path*',
+        permanent: true,
+      },
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'www.servedubai.com' }],
+        destination: 'https://servedubai.ae/:path*',
+        permanent: true,
+      },
       // Old singular /service/* -> new plural /services/*
       { source: '/service/:slug', destination: '/services/:slug', permanent: true },
       // Common old WordPress page slugs

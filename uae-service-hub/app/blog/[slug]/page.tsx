@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: post.title,
     description: post.description,
     path: `/blog/${slug}`,
-    imageUrl: `https://servedubai.com${post.image}`,
+    imageUrl: `https://servedubai.ae${post.image}`,
   })
 }
 

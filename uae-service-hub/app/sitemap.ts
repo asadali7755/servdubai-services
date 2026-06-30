@@ -8,7 +8,7 @@ import { SERVICE_AREA_COMBOS } from '@/lib/data/serviceAreaCombos'
 import { blogPosts } from '@/lib/data/blog'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = 'https://servedubai.com'
+  const base = 'https://servedubai.ae'
   const now = new Date()
 
   const staticRoutes: MetadataRoute.Sitemap = [

@@ -8,7 +8,7 @@ export interface SeoOptions {
   imageUrl?: string
 }
 
-const SITE_URL = 'https://servedubai.com'
+const SITE_URL = 'https://servedubai.ae'
 
 export const buildMetadata = (options: SeoOptions): Metadata => {
   const { title, description, path, imageUrl } = options
@@ -58,8 +58,8 @@ const BASE_LOCAL_BUSINESS = {
   '@context': 'https://schema.org',
   '@type': ['LocalBusiness', 'CleaningService'],
   name: 'Madinat Alhaya Building Cleaning Services',
-  image: 'https://servedubai.com/images/hero/professional-cleaning-services-UAE.webp',
-  url: 'https://servedubai.com',
+  image: 'https://servedubai.ae/images/hero/professional-cleaning-services-UAE.webp',
+  url: 'https://servedubai.ae',
   telephone: '+971551275545',
   email: 'info@servedubai.com',
   priceRange: '$$',
@@ -165,12 +165,12 @@ export const buildServiceSchema = (options: {
   '@type': 'Service',
   name: options.serviceName,
   description: options.description,
-  url: `https://servedubai.com${options.url}`,
+  url: `https://servedubai.ae${options.url}`,
   provider: {
     '@type': 'LocalBusiness',
     name: 'Madinat Alhaya Building Cleaning Services',
     telephone: '+971551275545',
-    url: 'https://servedubai.com',
+    url: 'https://servedubai.ae',
   },
   areaServed: options.emirate
     ? { '@type': 'State', name: options.emirate }
@@ -203,12 +203,12 @@ export const buildImageObjectSchema = (
 ): Record<string, unknown> => ({
   '@context': 'https://schema.org',
   '@type': 'ImageGallery',
-  url: 'https://servedubai.com',
+  url: 'https://servedubai.ae',
   name: 'Madinat Alhaya Building Cleaning Services — Hero Images',
   associatedMedia: images.map((img) => ({
     '@type': 'ImageObject',
-    url: `https://servedubai.com${img.url}`,
-    contentUrl: `https://servedubai.com${img.url}`,
+    url: `https://servedubai.ae${img.url}`,
+    contentUrl: `https://servedubai.ae${img.url}`,
     name: img.name,
     description: img.description,
     keywords: img.tags ? img.tags.join(', ') : undefined,
@@ -217,7 +217,7 @@ export const buildImageObjectSchema = (
     author: {
       '@type': 'Organization',
       name: 'Madinat Alhaya Building Cleaning Services',
-      url: 'https://servedubai.com',
+      url: 'https://servedubai.ae',
     },
     copyrightHolder: {
       '@type': 'Organization',

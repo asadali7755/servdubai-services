@@ -26,6 +26,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
       },
     ],
-    sitemap: 'https://servedubai.com/sitemap.xml',
+    sitemap: 'https://servedubai.ae/sitemap.xml',
   }
 }

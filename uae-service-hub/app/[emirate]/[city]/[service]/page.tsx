@@ -51,7 +51,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       158
     ),
     path: `/${eSlug}/${cSlug}/${sSlug}`,
-    imageUrl: service.images[0] ? `https://servedubai.com${service.images[0]}` : undefined,
+    imageUrl: service.images[0] ? `https://servedubai.ae${service.images[0]}` : undefined,
   })
 }
 
