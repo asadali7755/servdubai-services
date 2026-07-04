@@ -184,20 +184,6 @@ export default function GalleryContent() {
                   </div>
                 ))}
 
-                {/* Add more photos CTA tile */}
-                <div style={{ position: 'relative', aspectRatio: '4/3', borderRadius: '10px', overflow: 'hidden', background: 'var(--bg-secondary)', border: '1px dashed rgba(201,168,76,0.3)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', padding: '1.5rem', textAlign: 'center' }}>
-                  <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'rgba(201,168,76,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '0.25rem' }}>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" strokeWidth="2">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
-                    </svg>
-                  </div>
-                  <p style={{ color: 'var(--gold)', fontSize: '0.75rem', fontFamily: 'var(--font-josefin)', letterSpacing: '0.1em', textTransform: 'uppercase', margin: 0 }}>
-                    {locale === 'ar' ? 'أضف صورك هنا' : 'Add Your Photos'}
-                  </p>
-                  <p style={{ color: 'var(--text-muted)', fontSize: '0.7rem', margin: 0, lineHeight: 1.5 }}>
-                    {locale === 'ar' ? 'أضف صور أعمالك الحقيقية هنا' : 'Drop real job photos into gallery.ts'}
-                  </p>
-                </div>
               </div>
             )}
 
