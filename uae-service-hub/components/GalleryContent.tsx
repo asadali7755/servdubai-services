@@ -9,6 +9,7 @@ import { useLocale } from '@/lib/i18n/LanguageProvider'
 import translations from '@/lib/i18n/translations'
 
 interface Lightbox {
+  type: 'image' | 'video'
   src: string
   alt: string
   caption?: string
@@ -150,11 +151,11 @@ export default function GalleryContent() {
 
             {/* Image Grid */}
             {service.images.length > 0 && (
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '0.75rem', marginBottom: service.videos.length > 0 ? '2.5rem' : '1.5rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '0.75rem', marginBottom: (service.localVideos.length > 0 || service.videos.length > 0) ? '2.5rem' : '1.5rem' }}>
                 {service.images.map((img, idx) => (
                   <div
                     key={idx}
-                    onClick={() => setLightbox(img)}
+                    onClick={() => setLightbox({ type: 'image', src: img.src, alt: img.alt, caption: img.caption })}
                     style={{ position: 'relative', aspectRatio: '4/3', borderRadius: '10px', overflow: 'hidden', cursor: 'zoom-in', background: 'var(--bg-secondary)' }}
                   >
                     <Image
@@ -198,6 +199,49 @@ export default function GalleryContent() {
                   </p>
                 </div>
               </div>
+            )}
+
+            {/* Local Videos (phone recordings, compressed MP4) */}
+            {service.localVideos.length > 0 && (
+              <>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '0.75rem', letterSpacing: '0.15em', textTransform: 'uppercase', fontFamily: 'var(--font-josefin)', marginBottom: '1rem' }}>
+                  {locale === 'ar' ? 'فيديوهات العمل' : 'Work Videos'}
+                </p>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', marginBottom: '2rem' }}>
+                  {service.localVideos.map((vid, idx) => (
+                    <div
+                      key={idx}
+                      onClick={() => setLightbox({ type: 'video', src: vid.src, alt: vid.title, caption: locale === 'ar' && vid.titleAr ? vid.titleAr : vid.title })}
+                      style={{ position: 'relative', width: '220px', aspectRatio: '9/16', borderRadius: '12px', overflow: 'hidden', cursor: 'pointer', background: 'var(--bg-secondary)', flexShrink: 0 }}
+                    >
+                      {/* Poster image */}
+                      {vid.poster && (
+                        <img
+                          src={vid.poster}
+                          alt={vid.title}
+                          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+                        />
+                      )}
+                      {/* Dark overlay */}
+                      <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 60%)' }} />
+                      {/* Play button */}
+                      <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <div style={{ width: '52px', height: '52px', borderRadius: '50%', background: 'rgba(201,168,76,0.9)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 4px 20px rgba(0,0,0,0.4)' }}>
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="#151515" style={{ marginLeft: '3px' }}>
+                            <path d="M8 5v14l11-7z"/>
+                          </svg>
+                        </div>
+                      </div>
+                      {/* Title */}
+                      <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '0.75rem 0.8rem' }}>
+                        <p style={{ color: '#fff', fontSize: '0.72rem', fontFamily: 'var(--font-josefin)', letterSpacing: '0.05em', textTransform: 'uppercase', margin: 0, lineHeight: 1.3 }}>
+                          {locale === 'ar' && vid.titleAr ? vid.titleAr : vid.title}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </>
             )}
 
             {/* YouTube Videos */}
@@ -261,12 +305,23 @@ export default function GalleryContent() {
             </svg>
           </button>
 
-          <img
-            src={lightbox.src}
-            alt={lightbox.alt}
-            style={{ maxWidth: '95vw', maxHeight: '85vh', objectFit: 'contain', borderRadius: '8px', boxShadow: '0 20px 60px rgba(0,0,0,0.5)' }}
-            onClick={(e) => e.stopPropagation()}
-          />
+          {lightbox.type === 'video' ? (
+            <video
+              src={lightbox.src}
+              controls
+              autoPlay
+              playsInline
+              style={{ maxWidth: '95vw', maxHeight: '85vh', borderRadius: '10px', boxShadow: '0 20px 60px rgba(0,0,0,0.5)' }}
+              onClick={(e) => e.stopPropagation()}
+            />
+          ) : (
+            <img
+              src={lightbox.src}
+              alt={lightbox.alt}
+              style={{ maxWidth: '95vw', maxHeight: '85vh', objectFit: 'contain', borderRadius: '8px', boxShadow: '0 20px 60px rgba(0,0,0,0.5)' }}
+              onClick={(e) => e.stopPropagation()}
+            />
+          )}
           {lightbox.caption && (
             <p style={{ color: '#c9a84c', fontSize: '0.8rem', fontFamily: 'var(--font-josefin)', letterSpacing: '0.1em', textTransform: 'uppercase', marginTop: '1rem' }}>
               {lightbox.caption}

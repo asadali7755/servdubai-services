@@ -2,23 +2,36 @@
  * Gallery data — add new images/videos here without touching any UI code.
  *
  * ADD A NEW IMAGE:
- *   1. Copy photo to:  /public/gallery/<service-id>/photo-name.webp
+ *   1. Copy photo to:  /public/galary-images-pics/your-photo.webp
  *   2. Add one line in images[] for that service:
- *      { src: '/gallery/sofa-cleaning/before-after.webp', alt: 'Sofa cleaning before after Dubai' }
+ *      { src: '/galary-images-pics/marble-before-after.webp', alt: 'Marble polishing before after Dubai' }
  *   3. git push → Vercel auto-deploys.
  *
+ * ADD A NEW LOCAL VIDEO (phone recording):
+ *   1. Drop the raw video in /public/galary-images-pics/ (any name)
+ *   2. Run: ffmpeg -i rawvideo.mp4 -c:v libx264 -preset fast -crf 22 -vf "scale=720:1280" -c:a aac -b:a 96k -movflags +faststart service-name-dubai.mp4 -y
+ *   3. Extract poster: ffmpeg -i rawvideo.mp4 -ss 00:00:02 -vframes 1 -q:v 3 service-name-dubai-poster.jpg -y
+ *   4. Add to localVideos[]:
+ *      { src: '/galary-images-pics/service-name-dubai.mp4', poster: '/galary-images-pics/service-name-dubai-poster.jpg', title: '...' }
+ *   5. git push → Vercel auto-deploys.
+ *
  * ADD A YOUTUBE VIDEO:
- *   1. Upload video to YouTube.
- *   2. Copy the Video ID (e.g. from youtu.be/ABC123 → ID is "ABC123")
- *   3. Add to videos[]:
- *      { youtubeId: 'ABC123', title: 'Sofa Cleaning Before & After' }
- *   4. git push → Vercel auto-deploys.
+ *   1. Copy Video ID from URL (youtu.be/ABC123 → ID is "ABC123")
+ *   2. Add to videos[]: { youtubeId: 'ABC123', title: '...' }
+ *   3. git push → Vercel auto-deploys.
  */
 
 export interface GalleryImage {
   src: string
   alt: string
   caption?: string
+}
+
+export interface GalleryLocalVideo {
+  src: string        // path to compressed MP4 in /public/
+  poster?: string    // path to thumbnail JPG in /public/
+  title: string
+  titleAr?: string
 }
 
 export interface GalleryVideo {
@@ -32,6 +45,7 @@ export interface ServiceGallery {
   nameAr: string
   slug: string
   images: GalleryImage[]
+  localVideos: GalleryLocalVideo[]
   videos: GalleryVideo[]
 }
 
@@ -47,8 +61,11 @@ export const galleryData: ServiceGallery[] = [
       { src: '/velvet-microfiber-sofa-cleaning.webp', alt: 'Velvet microfiber sofa cleaning Dubai — fabric restoration', caption: 'Velvet Sofa Restoration' },
       // ADD YOUR PHOTOS: { src: '/gallery/sofa-cleaning/your-photo.webp', alt: '...', caption: '...' },
     ],
+    localVideos: [
+      // ADD YOUR VIDEOS: { src: '/galary-images-pics/sofa-cleaning-dubai.mp4', poster: '/galary-images-pics/sofa-cleaning-dubai-poster.jpg', title: 'Sofa Cleaning Before & After' },
+    ],
     videos: [
-      // ADD YOUR VIDEOS: { youtubeId: 'YOUR_VIDEO_ID', title: 'Sofa Cleaning Before & After Dubai' },
+      // ADD YOUTUBE: { youtubeId: 'YOUR_VIDEO_ID', title: 'Sofa Cleaning Before & After Dubai' },
     ],
   },
   {
@@ -61,6 +78,7 @@ export const galleryData: ServiceGallery[] = [
       { src: '/images/hero/sofa-carpet-cleaning.webp', alt: 'Carpet and sofa cleaning UAE — eco-friendly methods', caption: 'Eco-Friendly Carpet Clean' },
       // ADD YOUR PHOTOS: { src: '/gallery/carpet-cleaning/your-photo.webp', alt: '...' },
     ],
+    localVideos: [],
     videos: [],
   },
   {
@@ -74,6 +92,7 @@ export const galleryData: ServiceGallery[] = [
       { src: '/images/hero/professional-cleaning-services-UAE.webp', alt: 'Professional cleaning services UAE — Madinat Alhaya team', caption: 'Professional Team at Work' },
       // ADD YOUR PHOTOS: { src: '/gallery/villa-deep-cleaning/your-photo.webp', alt: '...' },
     ],
+    localVideos: [],
     videos: [],
   },
   {
@@ -84,7 +103,16 @@ export const galleryData: ServiceGallery[] = [
     images: [
       { src: '/images/services/marble-polishing.webp', alt: 'Marble polishing Dubai — floor restoration and crystallization', caption: 'Floor Crystallization' },
       { src: '/images/hero/marble-polishing-dubai.webp', alt: 'Marble polishing Dubai — mirror finish restoration UAE', caption: 'Mirror Finish Restoration' },
-      // ADD YOUR PHOTOS: { src: '/gallery/marble-polishing/your-photo.webp', alt: '...' },
+      // ADD YOUR PHOTOS: { src: '/galary-images-pics/marble-polishing-before-after.webp', alt: '...' },
+    ],
+    localVideos: [
+      {
+        src: '/galary-images-pics/marble-polishing-dubai.mp4',
+        poster: '/galary-images-pics/marble-polishing-dubai-poster.jpg',
+        title: 'Marble Polishing Dubai — Professional Floor Restoration',
+        titleAr: 'تلميع رخام دبي — ترميم الأرضيات الاحترافي',
+      },
+      // ADD MORE: { src: '/galary-images-pics/marble-crystallization.mp4', poster: '...', title: '...' },
     ],
     videos: [],
   },
@@ -97,6 +125,7 @@ export const galleryData: ServiceGallery[] = [
       { src: '/images/services/mattress-cleaning.webp', alt: 'Mattress deep cleaning Dubai — UV sanitization and HEPA extraction', caption: 'UV-C Sanitization' },
       // ADD YOUR PHOTOS: { src: '/gallery/mattress-cleaning/your-photo.webp', alt: '...' },
     ],
+    localVideos: [],
     videos: [],
   },
   {
@@ -108,6 +137,7 @@ export const galleryData: ServiceGallery[] = [
       { src: '/images/services/office-cleaning.webp', alt: 'Office cleaning Dubai — commercial cleaning company UAE', caption: 'Commercial Office Clean' },
       // ADD YOUR PHOTOS: { src: '/gallery/office-cleaning/your-photo.webp', alt: '...' },
     ],
+    localVideos: [],
     videos: [],
   },
   {
@@ -119,6 +149,7 @@ export const galleryData: ServiceGallery[] = [
       { src: '/images/services/apartment-cleaning.webp', alt: 'Apartment cleaning Dubai — move-in move-out deep cleaning service', caption: 'Move-In / Move-Out Clean' },
       // ADD YOUR PHOTOS: { src: '/gallery/apartment-cleaning/your-photo.webp', alt: '...' },
     ],
+    localVideos: [],
     videos: [],
   },
   {
@@ -130,6 +161,7 @@ export const galleryData: ServiceGallery[] = [
       { src: '/images/services/restaurant-kitchen-cleaning.webp', alt: 'Kitchen cleaning Dubai — restaurant commercial deep cleaning', caption: 'Commercial Kitchen Deep Clean' },
       // ADD YOUR PHOTOS: { src: '/gallery/kitchen-cleaning/your-photo.webp', alt: '...' },
     ],
+    localVideos: [],
     videos: [],
   },
   {
@@ -141,6 +173,7 @@ export const galleryData: ServiceGallery[] = [
       { src: '/images/services/curtain-cleaning.webp', alt: 'Curtain cleaning Dubai — on-site steam cleaning for all fabrics', caption: 'On-Site Curtain Steam Clean' },
       // ADD YOUR PHOTOS: { src: '/gallery/curtain-cleaning/your-photo.webp', alt: '...' },
     ],
+    localVideos: [],
     videos: [],
   },
   {
@@ -152,6 +185,7 @@ export const galleryData: ServiceGallery[] = [
       { src: '/images/services/car-interior-detailing.webp', alt: 'Car interior detailing Dubai — professional auto cleaning and sanitization', caption: 'Full Cabin Sanitization' },
       // ADD YOUR PHOTOS: { src: '/gallery/car-interior/your-photo.webp', alt: '...' },
     ],
+    localVideos: [],
     videos: [],
   },
   {
@@ -163,6 +197,7 @@ export const galleryData: ServiceGallery[] = [
       { src: '/images/services/dining-chair-cleaning.webp', alt: 'Dining chair cleaning Dubai — upholstery and furniture deep cleaning', caption: 'Fabric & Leather Chair Clean' },
       // ADD YOUR PHOTOS: { src: '/gallery/dining-chair/your-photo.webp', alt: '...' },
     ],
+    localVideos: [],
     videos: [],
   },
 ]
