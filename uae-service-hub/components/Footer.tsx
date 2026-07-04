@@ -115,6 +115,7 @@ export default function Footer() {
             <ul>
               <li><Link href="/about">{t.footer.aboutUs}</Link></li>
               <li><Link href="/blog">{t.footer.blog}</Link></li>
+              <li><Link href="/gallery">{t.footer.gallery}</Link></li>
               <li><Link href="/contact">{t.footer.contact}</Link></li>
               <li><Link href="/areas">{t.footer.serviceAreas}</Link></li>
               <li><a href={`tel:${SITE_CONFIG.phone}`}>{SITE_CONFIG.phone}</a></li>

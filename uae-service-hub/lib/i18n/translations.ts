@@ -8,6 +8,7 @@ const translations = {
       services: 'Services',
       emirates: 'Emirates',
       blog: 'Blog',
+      gallery: 'Gallery',
       contact: 'Contact',
     },
     footer: {
@@ -16,6 +17,7 @@ const translations = {
       company: 'Company',
       aboutUs: 'About Us',
       blog: 'Blog',
+      gallery: 'Gallery',
       contact: 'Contact',
       serviceAreas: 'Service Areas',
       reviewGoogle: 'Review us on Google',
@@ -198,6 +200,7 @@ const translations = {
       services: 'خدماتنا',
       emirates: 'الإمارات',
       blog: 'المدونة',
+      gallery: 'معرض الأعمال',
       contact: 'اتصل بنا',
     },
     footer: {
@@ -206,6 +209,7 @@ const translations = {
       company: 'الشركة',
       aboutUs: 'من نحن',
       blog: 'المدونة',
+      gallery: 'معرض الأعمال',
       contact: 'اتصل بنا',
       serviceAreas: 'مناطق الخدمة',
       reviewGoogle: 'قيّمنا على جوجل',
