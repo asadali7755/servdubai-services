@@ -112,9 +112,15 @@ export const galleryData: ServiceGallery[] = [
     images: [
       { src: '/images/services/carpet-cleaning.webp', alt: 'Professional carpet cleaning Dubai — steam extraction service', caption: 'Deep Steam Extraction' },
       { src: '/images/hero/sofa-carpet-cleaning.webp', alt: 'Carpet and sofa cleaning UAE — eco-friendly methods', caption: 'Eco-Friendly Carpet Clean' },
-      // ADD YOUR PHOTOS: { src: '/gallery/carpet-cleaning/your-photo.webp', alt: '...' },
     ],
-    localVideos: [],
+    localVideos: [
+      {
+        src: '/galary-images-pics/carpet/carpet-steam-cleaning-dubai.mp4',
+        poster: '/galary-images-pics/carpet/carpet-steam-cleaning-dubai-poster.jpg',
+        title: 'Carpet Steam Cleaning Dubai — Professional Deep Steam Extraction',
+        titleAr: 'تنظيف السجاد بالبخار دبي — استخراج البخار العميق الاحترافي',
+      },
+    ],
     videos: [],
   },
   {
@@ -225,9 +231,15 @@ export const galleryData: ServiceGallery[] = [
     slug: 'car-interior-detailing',
     images: [
       { src: '/images/services/car-interior-detailing.webp', alt: 'Car interior detailing Dubai — professional auto cleaning and sanitization', caption: 'Full Cabin Sanitization' },
-      // ADD YOUR PHOTOS: { src: '/gallery/car-interior/your-photo.webp', alt: '...' },
     ],
-    localVideos: [],
+    localVideos: [
+      {
+        src: '/galary-images-pics/car/car-floor-mat-cleaning-dubai.mp4',
+        poster: '/galary-images-pics/car/car-floor-mat-cleaning-dubai-poster.jpg',
+        title: 'Car Floor Mat Deep Cleaning Dubai — Before & After',
+        titleAr: 'تنظيف حصيرة أرضية السيارة دبي — قبل وبعد',
+      },
+    ],
     videos: [],
   },
   {
