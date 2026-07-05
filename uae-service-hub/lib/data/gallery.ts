@@ -109,10 +109,7 @@ export const galleryData: ServiceGallery[] = [
     name: 'Carpet & Rug Cleaning',
     nameAr: 'تنظيف السجاد والبسط',
     slug: 'carpet-cleaning',
-    images: [
-      { src: '/images/services/carpet-cleaning.webp', alt: 'Professional carpet cleaning Dubai — steam extraction service', caption: 'Deep Steam Extraction' },
-      { src: '/images/hero/sofa-carpet-cleaning.webp', alt: 'Carpet and sofa cleaning UAE — eco-friendly methods', caption: 'Eco-Friendly Carpet Clean' },
-    ],
+    images: [],
     localVideos: [
       {
         src: '/galary-images-pics/carpet/carpet-steam-cleaning-dubai.mp4',
@@ -138,18 +135,6 @@ export const galleryData: ServiceGallery[] = [
         title: 'Rug Cleaning Before & After Dubai — Full Restoration',
         titleAr: 'تنظيف البساط قبل وبعد دبي — ترميم كامل',
       },
-      {
-        src: '/galary-images-pics/carpet/carpet-shampooing-result-dubai-4.mp4',
-        poster: '/galary-images-pics/carpet/carpet-shampooing-result-dubai-4-poster.jpg',
-        title: 'Carpet Shampooing Result Dubai — Eco-Friendly Deep Clean',
-        titleAr: 'نتيجة شامبو السجاد دبي — تنظيف عميق صديق للبيئة',
-      },
-      {
-        src: '/galary-images-pics/carpet/carpet-sanitization-dubai-5.mp4',
-        poster: '/galary-images-pics/carpet/carpet-sanitization-dubai-5-poster.jpg',
-        title: 'Carpet Sanitization Dubai — Anti-Bacterial Treatment',
-        titleAr: 'تعقيم السجاد دبي — معالجة مضادة للبكتيريا',
-      },
     ],
     videos: [],
   },
@@ -172,11 +157,7 @@ export const galleryData: ServiceGallery[] = [
     name: 'Marble Polishing & Restoration',
     nameAr: 'تلميع وترميم الرخام',
     slug: 'marble-polishing',
-    images: [
-      { src: '/images/services/marble-polishing.webp', alt: 'Marble polishing Dubai — floor restoration and crystallization', caption: 'Floor Crystallization' },
-      { src: '/images/hero/marble-polishing-dubai.webp', alt: 'Marble polishing Dubai — mirror finish restoration UAE', caption: 'Mirror Finish Restoration' },
-      // ADD YOUR PHOTOS: { src: '/galary-images-pics/marble-polishing-before-after.webp', alt: '...' },
-    ],
+    images: [],
     localVideos: [
       {
         src: '/galary-images-pics/marble-polishing-dubai.mp4',
@@ -199,9 +180,7 @@ export const galleryData: ServiceGallery[] = [
     name: 'Mattress Deep Cleaning',
     nameAr: 'تنظيف المراتب العميق',
     slug: 'mattress-cleaning',
-    images: [
-      { src: '/images/services/mattress-cleaning.webp', alt: 'Mattress deep cleaning Dubai — UV sanitization and HEPA extraction', caption: 'UV-C Sanitization' },
-    ],
+    images: [],
     localVideos: [
       {
         src: '/galary-images-pics/matres/mattress-deep-cleaning-dubai-1.mp4',
@@ -271,9 +250,7 @@ export const galleryData: ServiceGallery[] = [
     name: 'Car Interior Detailing',
     nameAr: 'تنظيف داخلية السيارة',
     slug: 'car-interior-detailing',
-    images: [
-      { src: '/images/services/car-interior-detailing.webp', alt: 'Car interior detailing Dubai — professional auto cleaning and sanitization', caption: 'Full Cabin Sanitization' },
-    ],
+    images: [],
     localVideos: [
       {
         src: '/galary-images-pics/car/car-floor-mat-cleaning-dubai.mp4',
