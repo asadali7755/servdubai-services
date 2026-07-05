@@ -120,6 +120,36 @@ export const galleryData: ServiceGallery[] = [
         title: 'Carpet Steam Cleaning Dubai — Professional Deep Steam Extraction',
         titleAr: 'تنظيف السجاد بالبخار دبي — استخراج البخار العميق الاحترافي',
       },
+      {
+        src: '/galary-images-pics/carpet/carpet-deep-cleaning-result-dubai-1.mp4',
+        poster: '/galary-images-pics/carpet/carpet-deep-cleaning-result-dubai-1-poster.jpg',
+        title: 'Carpet Deep Cleaning Result Dubai — Before & After',
+        titleAr: 'نتيجة تنظيف السجاد العميق دبي — قبل وبعد',
+      },
+      {
+        src: '/galary-images-pics/carpet/carpet-stain-removal-dubai-2.mp4',
+        poster: '/galary-images-pics/carpet/carpet-stain-removal-dubai-2-poster.jpg',
+        title: 'Carpet Stain Removal Dubai — Professional Spot Treatment',
+        titleAr: 'إزالة بقع السجاد دبي — معالجة البقع الاحترافية',
+      },
+      {
+        src: '/galary-images-pics/carpet/rug-cleaning-before-after-dubai-3.mp4',
+        poster: '/galary-images-pics/carpet/rug-cleaning-before-after-dubai-3-poster.jpg',
+        title: 'Rug Cleaning Before & After Dubai — Full Restoration',
+        titleAr: 'تنظيف البساط قبل وبعد دبي — ترميم كامل',
+      },
+      {
+        src: '/galary-images-pics/carpet/carpet-shampooing-result-dubai-4.mp4',
+        poster: '/galary-images-pics/carpet/carpet-shampooing-result-dubai-4-poster.jpg',
+        title: 'Carpet Shampooing Result Dubai — Eco-Friendly Deep Clean',
+        titleAr: 'نتيجة شامبو السجاد دبي — تنظيف عميق صديق للبيئة',
+      },
+      {
+        src: '/galary-images-pics/carpet/carpet-sanitization-dubai-5.mp4',
+        poster: '/galary-images-pics/carpet/carpet-sanitization-dubai-5-poster.jpg',
+        title: 'Carpet Sanitization Dubai — Anti-Bacterial Treatment',
+        titleAr: 'تعقيم السجاد دبي — معالجة مضادة للبكتيريا',
+      },
     ],
     videos: [],
   },
@@ -171,9 +201,21 @@ export const galleryData: ServiceGallery[] = [
     slug: 'mattress-cleaning',
     images: [
       { src: '/images/services/mattress-cleaning.webp', alt: 'Mattress deep cleaning Dubai — UV sanitization and HEPA extraction', caption: 'UV-C Sanitization' },
-      // ADD YOUR PHOTOS: { src: '/gallery/mattress-cleaning/your-photo.webp', alt: '...' },
     ],
-    localVideos: [],
+    localVideos: [
+      {
+        src: '/galary-images-pics/matres/mattress-deep-cleaning-dubai-1.mp4',
+        poster: '/galary-images-pics/matres/mattress-deep-cleaning-dubai-1-poster.jpg',
+        title: 'Mattress Deep Cleaning Dubai — Dust & Allergen Removal',
+        titleAr: 'تنظيف المراتب العميق دبي — إزالة الغبار والمواد المسببة للحساسية',
+      },
+      {
+        src: '/galary-images-pics/matres/mattress-sanitization-dubai-2.mp4',
+        poster: '/galary-images-pics/matres/mattress-sanitization-dubai-2-poster.jpg',
+        title: 'Mattress Sanitization Dubai — Anti-Bacterial Steam Treatment',
+        titleAr: 'تعقيم المراتب دبي — معالجة بالبخار مضادة للبكتيريا',
+      },
+    ],
     videos: [],
   },
   {
