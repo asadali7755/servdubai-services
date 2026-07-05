@@ -112,6 +112,12 @@ export const galleryData: ServiceGallery[] = [
         title: 'Marble Polishing Dubai — Professional Floor Restoration',
         titleAr: 'تلميع رخام دبي — ترميم الأرضيات الاحترافي',
       },
+      {
+        src: '/galary-images-pics/marble-polishing-process-dubai.mp4',
+        poster: '/galary-images-pics/marble-polishing-process-dubai-poster.jpg',
+        title: 'Marble Polishing Process Dubai — Step by Step Floor Shine',
+        titleAr: 'عملية تلميع الرخام دبي — خطوات لمعان الأرضية',
+      },
       // ADD MORE: { src: '/galary-images-pics/marble-crystallization.mp4', poster: '...', title: '...' },
     ],
     videos: [],
