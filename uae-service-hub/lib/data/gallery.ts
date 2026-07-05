@@ -55,12 +55,7 @@ export const galleryData: ServiceGallery[] = [
     name: 'Sofa & Upholstery Cleaning',
     nameAr: 'تنظيف الكنب والمقاعد',
     slug: 'sofa-cleaning',
-    images: [
-      { src: '/images/services/sofa-cleaning.webp', alt: 'Professional sofa deep cleaning Dubai — Madinat Alhaya', caption: 'Sofa Steam Cleaning' },
-      { src: '/images/hero/sofa-carpet-cleaning.webp', alt: 'Sofa and carpet cleaning Dubai — steam cleaning service', caption: 'Sofa & Carpet Deep Clean' },
-      { src: '/velvet-microfiber-sofa-cleaning.webp', alt: 'Velvet microfiber sofa cleaning Dubai — fabric restoration', caption: 'Velvet Sofa Restoration' },
-      // ADD YOUR PHOTOS: { src: '/gallery/sofa-cleaning/your-photo.webp', alt: '...', caption: '...' },
-    ],
+    images: [],
     localVideos: [
       {
         src: '/galary-images-pics/sofa/sofa-steam-cleaning-result-dubai-6.mp4',
@@ -85,6 +80,24 @@ export const galleryData: ServiceGallery[] = [
         poster: '/galary-images-pics/sofa/sofa-cleaning-quick-result-dubai-4-poster.jpg',
         title: 'Quick Sofa Cleaning Result Dubai — Same Day Service',
         titleAr: 'نتيجة تنظيف الكنب السريع دبي — خدمة نفس اليوم',
+      },
+      {
+        src: '/galary-images-pics/sofa/fabric-sofa-deep-clean-dubai-5.mp4',
+        poster: '/galary-images-pics/sofa/fabric-sofa-deep-clean-dubai-5-poster.jpg',
+        title: 'Fabric Sofa Deep Clean Dubai — Heavy Stain Removal',
+        titleAr: 'تنظيف الكنب القماشي العميق دبي — إزالة البقع الصعبة',
+      },
+      {
+        src: '/galary-images-pics/sofa/sofa-shampooing-result-dubai-2.mp4',
+        poster: '/galary-images-pics/sofa/sofa-shampooing-result-dubai-2-poster.jpg',
+        title: 'Sofa Shampooing Result Dubai — Before & After',
+        titleAr: 'نتيجة شامبو الكنب دبي — قبل وبعد',
+      },
+      {
+        src: '/galary-images-pics/sofa/upholstery-cleaning-before-after-dubai-3.mp4',
+        poster: '/galary-images-pics/sofa/upholstery-cleaning-before-after-dubai-3-poster.jpg',
+        title: 'Upholstery Cleaning Before & After Dubai',
+        titleAr: 'تنظيف المفروشات قبل وبعد دبي',
       },
     ],
     videos: [
