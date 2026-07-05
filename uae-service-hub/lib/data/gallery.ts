@@ -62,7 +62,30 @@ export const galleryData: ServiceGallery[] = [
       // ADD YOUR PHOTOS: { src: '/gallery/sofa-cleaning/your-photo.webp', alt: '...', caption: '...' },
     ],
     localVideos: [
-      // ADD YOUR VIDEOS: { src: '/galary-images-pics/sofa-cleaning-dubai.mp4', poster: '/galary-images-pics/sofa-cleaning-dubai-poster.jpg', title: 'Sofa Cleaning Before & After' },
+      {
+        src: '/galary-images-pics/sofa/sofa-steam-cleaning-result-dubai-6.mp4',
+        poster: '/galary-images-pics/sofa/sofa-steam-cleaning-result-dubai-6-poster.jpg',
+        title: 'Sofa Steam Cleaning Result Dubai — Before & After',
+        titleAr: 'نتيجة تنظيف الكنب بالبخار دبي — قبل وبعد',
+      },
+      {
+        src: '/galary-images-pics/sofa/couch-cleaning-before-after-dubai-7.mp4',
+        poster: '/galary-images-pics/sofa/couch-cleaning-before-after-dubai-7-poster.jpg',
+        title: 'Couch Cleaning Before & After Dubai',
+        titleAr: 'تنظيف الأريكة قبل وبعد دبي',
+      },
+      {
+        src: '/galary-images-pics/sofa/sofa-sanitization-result-dubai-8.mp4',
+        poster: '/galary-images-pics/sofa/sofa-sanitization-result-dubai-8-poster.jpg',
+        title: 'Sofa Sanitization & Deep Clean Result Dubai',
+        titleAr: 'نتيجة تعقيم وتنظيف الكنب العميق دبي',
+      },
+      {
+        src: '/galary-images-pics/sofa/sofa-cleaning-quick-result-dubai-4.mp4',
+        poster: '/galary-images-pics/sofa/sofa-cleaning-quick-result-dubai-4-poster.jpg',
+        title: 'Quick Sofa Cleaning Result Dubai — Same Day Service',
+        titleAr: 'نتيجة تنظيف الكنب السريع دبي — خدمة نفس اليوم',
+      },
     ],
     videos: [
       // ADD YOUTUBE: { youtubeId: 'YOUR_VIDEO_ID', title: 'Sofa Cleaning Before & After Dubai' },
@@ -109,8 +132,8 @@ export const galleryData: ServiceGallery[] = [
       {
         src: '/galary-images-pics/marble-polishing-dubai.mp4',
         poster: '/galary-images-pics/marble-polishing-dubai-poster.jpg',
-        title: 'Marble Polishing Dubai — Professional Floor Restoration',
-        titleAr: 'تلميع رخام دبي — ترميم الأرضيات الاحترافي',
+        title: 'Kitchen Countertop Marble Polishing Dubai',
+        titleAr: 'تلميع رخام سطح المطبخ دبي',
       },
       {
         src: '/galary-images-pics/marble-polishing-process-dubai.mp4',
