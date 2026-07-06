@@ -258,6 +258,12 @@ export const galleryData: ServiceGallery[] = [
         title: 'Car Floor Mat Deep Cleaning Dubai — Before & After',
         titleAr: 'تنظيف حصيرة أرضية السيارة دبي — قبل وبعد',
       },
+      {
+        src: '/galary-images-pics/car/car-interior-steam-cleaning-dubai.mp4',
+        poster: '/galary-images-pics/car/car-interior-steam-cleaning-dubai-poster.jpg',
+        title: 'Car Interior Steam Cleaning Dubai — Full Cabin Deep Clean',
+        titleAr: 'تنظيف داخلية السيارة بالبخار دبي — تنظيف عميق كامل',
+      },
     ],
     videos: [],
   },
