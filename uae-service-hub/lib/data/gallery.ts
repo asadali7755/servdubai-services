@@ -143,13 +143,21 @@ export const galleryData: ServiceGallery[] = [
     name: 'Villa Deep Cleaning',
     nameAr: 'تنظيف الفلل العميق',
     slug: 'villa-deep-cleaning',
-    images: [
-      { src: '/images/services/villa-deep-cleaning.webp', alt: 'Villa deep cleaning Dubai — complete home cleaning service', caption: 'Complete Villa Deep Clean' },
-      { src: '/images/hero/villa-apartment-cleaning-services.webp', alt: 'Villa and apartment cleaning services UAE', caption: 'Villa & Apartment Cleaning' },
-      { src: '/images/hero/professional-cleaning-services-UAE.webp', alt: 'Professional cleaning services UAE — Madinat Alhaya team', caption: 'Professional Team at Work' },
-      // ADD YOUR PHOTOS: { src: '/gallery/villa-deep-cleaning/your-photo.webp', alt: '...' },
+    images: [],
+    localVideos: [
+      {
+        src: '/galary-images-pics/villa/villa-deep-cleaning-dubai-1.mp4',
+        poster: '/galary-images-pics/villa/villa-deep-cleaning-dubai-1-poster.jpg',
+        title: 'Villa Deep Cleaning Dubai — Complete Home Sanitization',
+        titleAr: 'تنظيف الفلل العميق دبي — تعقيم المنزل الكامل',
+      },
+      {
+        src: '/galary-images-pics/villa/villa-deep-cleaning-dubai-2.mp4',
+        poster: '/galary-images-pics/villa/villa-deep-cleaning-dubai-2-poster.jpg',
+        title: 'Villa Cleaning Process Dubai — Professional Team at Work',
+        titleAr: 'عملية تنظيف الفلل دبي — فريق احترافي في العمل',
+      },
     ],
-    localVideos: [],
     videos: [],
   },
   {
