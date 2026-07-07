@@ -335,11 +335,21 @@ export const galleryData: ServiceGallery[] = [
     name: 'Dining Chair & Furniture Cleaning',
     nameAr: 'تنظيف كراسي الطعام والأثاث',
     slug: 'dining-chair-cleaning',
-    images: [
-      { src: '/images/services/dining-chair-cleaning.webp', alt: 'Dining chair cleaning Dubai — upholstery and furniture deep cleaning', caption: 'Fabric & Leather Chair Clean' },
-      // ADD YOUR PHOTOS: { src: '/gallery/dining-chair/your-photo.webp', alt: '...' },
+    images: [],
+    localVideos: [
+      {
+        src: '/galary-images-pics/dining-chair/dining-chair-fabric-cleaning-dubai-1.mp4',
+        poster: '/galary-images-pics/dining-chair/dining-chair-fabric-cleaning-dubai-1-poster.jpg',
+        title: 'Dining Chair Fabric Cleaning Dubai — White Cushion Stain Removal',
+        titleAr: 'تنظيف كراسي الطعام القماشية دبي — إزالة بقع الوسائد البيضاء',
+      },
+      {
+        src: '/galary-images-pics/dining-chair/dining-chair-steam-cleaning-dubai-2.mp4',
+        poster: '/galary-images-pics/dining-chair/dining-chair-steam-cleaning-dubai-2-poster.jpg',
+        title: 'Dining Chair Steam Cleaning Dubai — Professional Upholstery Care',
+        titleAr: 'تنظيف كراسي الطعام بالبخار دبي — عناية احترافية بالمفروشات',
+      },
     ],
-    localVideos: [],
     videos: [],
   },
 ]
