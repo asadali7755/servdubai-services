@@ -285,11 +285,27 @@ export const galleryData: ServiceGallery[] = [
     name: 'Curtain & Blinds Cleaning',
     nameAr: 'تنظيف الستائر والبلايندز',
     slug: 'curtain-cleaning',
-    images: [
-      { src: '/images/services/curtain-cleaning.webp', alt: 'Curtain cleaning Dubai — on-site steam cleaning for all fabrics', caption: 'On-Site Curtain Steam Clean' },
-      // ADD YOUR PHOTOS: { src: '/gallery/curtain-cleaning/your-photo.webp', alt: '...' },
+    images: [],
+    localVideos: [
+      {
+        src: '/galary-images-pics/curtain/blinds-steam-cleaning-dubai-1.mp4',
+        poster: '/galary-images-pics/curtain/blinds-steam-cleaning-dubai-1-poster.jpg',
+        title: 'Blinds Steam Cleaning Dubai — Before & After Deep Clean',
+        titleAr: 'تنظيف البلايندز بالبخار دبي — قبل وبعد التنظيف العميق',
+      },
+      {
+        src: '/galary-images-pics/curtain/curtain-dry-steam-cleaning-dubai-2.mp4',
+        poster: '/galary-images-pics/curtain/curtain-dry-steam-cleaning-dubai-2-poster.jpg',
+        title: 'Curtain Dry Steam Vac Cleaning Dubai — On-Site Professional Service',
+        titleAr: 'تنظيف الستائر بالبخار الجاف دبي — خدمة احترافية في الموقع',
+      },
+      {
+        src: '/galary-images-pics/curtain/kitchen-blinds-steam-cleaning-dubai-3.mp4',
+        poster: '/galary-images-pics/curtain/kitchen-blinds-steam-cleaning-dubai-3-poster.jpg',
+        title: 'Kitchen Blinds Steam Cleaning Dubai — Aluminium Blind Sanitization',
+        titleAr: 'تنظيف ستائر المطبخ بالبخار دبي — تعقيم الستائر الألمنيوم',
+      },
     ],
-    localVideos: [],
     videos: [],
   },
   {
