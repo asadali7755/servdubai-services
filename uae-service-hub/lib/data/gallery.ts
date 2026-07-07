@@ -239,11 +239,21 @@ export const galleryData: ServiceGallery[] = [
     name: 'Office & Commercial Cleaning',
     nameAr: 'تنظيف المكاتب والمنشآت',
     slug: 'office-cleaning',
-    images: [
-      { src: '/images/services/office-cleaning.webp', alt: 'Office cleaning Dubai — commercial cleaning company UAE', caption: 'Commercial Office Clean' },
-      // ADD YOUR PHOTOS: { src: '/gallery/office-cleaning/your-photo.webp', alt: '...' },
+    images: [],
+    localVideos: [
+      {
+        src: '/galary-images-pics/office/office-workstation-cleaning-dubai-1.mp4',
+        poster: '/galary-images-pics/office/office-workstation-cleaning-dubai-1-poster.jpg',
+        title: 'Office Workstation Cleaning Dubai — Daily Desk Sanitization',
+        titleAr: 'تنظيف محطات العمل المكتبية دبي — تعقيم المكاتب اليومي',
+      },
+      {
+        src: '/galary-images-pics/office/office-deep-cleaning-result-dubai-2.mp4',
+        poster: '/galary-images-pics/office/office-deep-cleaning-result-dubai-2-poster.jpg',
+        title: 'Office Deep Cleaning Result Dubai — Complete Space Transformation',
+        titleAr: 'نتيجة تنظيف المكتب العميق دبي — تحول كامل للمساحة',
+      },
     ],
-    localVideos: [],
     videos: [],
   },
   {
