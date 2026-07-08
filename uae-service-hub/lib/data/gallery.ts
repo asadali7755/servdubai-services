@@ -273,11 +273,21 @@ export const galleryData: ServiceGallery[] = [
     name: 'Kitchen & Restaurant Cleaning',
     nameAr: 'تنظيف المطابخ والمطاعم',
     slug: 'restaurant-kitchen-cleaning',
-    images: [
-      { src: '/images/services/restaurant-kitchen-cleaning.webp', alt: 'Kitchen cleaning Dubai — restaurant commercial deep cleaning', caption: 'Commercial Kitchen Deep Clean' },
-      // ADD YOUR PHOTOS: { src: '/gallery/kitchen-cleaning/your-photo.webp', alt: '...' },
+    images: [],
+    localVideos: [
+      {
+        src: '/galary-images-pics/kitchen/kitchen-floor-tile-cleaning-dubai-1.mp4',
+        poster: '/galary-images-pics/kitchen/kitchen-floor-tile-cleaning-dubai-1-poster.jpg',
+        title: 'Kitchen Floor Tile Scrubbing Dubai — Deep Grout & Tile Cleaning',
+        titleAr: 'تنظيف بلاط أرضية المطبخ دبي — تنظيف عميق للبلاط والفواصل',
+      },
+      {
+        src: '/galary-images-pics/kitchen/restaurant-kitchen-deep-cleaning-dubai-2.mp4',
+        poster: '/galary-images-pics/kitchen/restaurant-kitchen-deep-cleaning-dubai-2-poster.jpg',
+        title: 'Restaurant Kitchen Deep Cleaning Dubai — Commercial Floor Degreasing',
+        titleAr: 'تنظيف مطبخ المطعم العميق دبي — إزالة الشحوم من الأرضيات التجارية',
+      },
     ],
-    localVideos: [],
     videos: [],
   },
   {
