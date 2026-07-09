@@ -32,7 +32,9 @@ export interface BlogPost {
   relatedServices: string[] // service slugs
 }
 
-export const blogPosts: BlogPost[] = [
+import generatedPosts from './generated-blog-posts.json'
+
+const handWrittenBlogPosts: BlogPost[] = [
   {
     slug: 'sofa-cleaning-cost-dubai',
     title: 'How Much Does Sofa Cleaning Cost in Dubai?',
@@ -41,7 +43,7 @@ export const blogPosts: BlogPost[] = [
       'A clear 2026 price guide for professional sofa cleaning in Dubai — costs by sofa size & material, what affects the price, and how to book. Free quotes on WhatsApp.',
     excerpt:
       'Real 2026 prices for professional sofa cleaning in Dubai — by seater, fabric vs leather, and what changes the cost.',
-    image: '/images/services/sofa-cleaning.webp',
+    image: '/images/services/leather-sofa-cleaning-dubai.webp',
     datePublished: '2026-06-01',
     readMins: 5,
     intro: [
@@ -416,6 +418,11 @@ export const blogPosts: BlogPost[] = [
     ],
     relatedServices: ['marble-polishing', 'villa-deep-cleaning'],
   },
+]
+
+export const blogPosts: BlogPost[] = [
+  ...handWrittenBlogPosts,
+  ...(generatedPosts as BlogPost[]),
 ]
 
 export const getBlogPost = (slug: string): BlogPost | undefined =>

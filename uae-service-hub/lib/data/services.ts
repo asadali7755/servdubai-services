@@ -225,7 +225,7 @@ We handle all sofa types: L-shaped, sectional, 3-seater, corner sofas, fabric re
         text: 'Need sofa cleaning services near me urgently? Same-day sofa cleaning services Dubai available across most areas. Transparent pricing — get a free quote via WhatsApp in minutes. No estimates that change upon arrival.',
       },
     ],
-    images: ['/velvet-microfiber-sofa-cleaning.webp'],
+    images: ['/images/services/leather-sofa-cleaning-dubai.webp'],
     availableInEmirates: ALL_EMIRATES,
     externalWebsite: { name: 'Sofa Shampooing Dubai', url: 'https://sofashampooingdubai.com' },
   },

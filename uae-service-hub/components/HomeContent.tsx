@@ -22,7 +22,7 @@ const heroImages = [
 const serviceSlugs = ['villa-deep-cleaning', 'sofa-cleaning', 'carpet-cleaning', 'marble-polishing', 'mattress-cleaning', 'office-cleaning']
 const serviceImages = [
   '/images/services/villa-deep-cleaning.webp',
-  '/images/services/sofa-cleaning.webp',
+  '/images/services/leather-sofa-cleaning-dubai.webp',
   '/images/services/carpet-cleaning.webp',
   '/images/services/marble-polishing.webp',
   '/images/services/mattress-cleaning.webp',
