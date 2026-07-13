@@ -34,7 +34,7 @@ export default function ContactPage() {
 
   const onSubmit = async (data: FormData) => {
     setSubmitStatus('idle')
-    window.open(getWhatsAppLink(data.service), '_blank')
+    const whatsappUrl = getWhatsAppLink(data.service)
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
@@ -50,6 +50,7 @@ export default function ContactPage() {
     } catch {
       setSubmitStatus('error')
     }
+    window.location.href = whatsappUrl
   }
 
   const inputStyle = {
