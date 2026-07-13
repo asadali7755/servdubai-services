@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
@@ -22,14 +23,32 @@ export default function ContactPage() {
   const t = translations[locale]
   const ct = t.contact
 
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors, isSubmitting },
   } = useForm<FormData>({ resolver: zodResolver(formSchema) })
 
-  const onSubmit = (data: FormData) => {
-    const msg = `${ct.whatsappIntro} ${data.name}. ${ct.interestedIn} ${data.service}. ${ct.myNumber} ${data.phone}. ${data.message}`
+  const onSubmit = async (data: FormData) => {
+    setSubmitStatus('idle')
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      })
+      if (res.ok) {
+        setSubmitStatus('success')
+        reset()
+      } else {
+        setSubmitStatus('error')
+      }
+    } catch {
+      setSubmitStatus('error')
+    }
     window.open(getWhatsAppLink(data.service), '_blank')
   }
 
@@ -110,6 +129,17 @@ export default function ContactPage() {
           >
             {ct.sendButton}
           </button>
+
+          {submitStatus === 'success' && (
+            <p className="text-green-400 text-center text-sm mt-3">
+              Message sent successfully! We will contact you soon.
+            </p>
+          )}
+          {submitStatus === 'error' && (
+            <p className="text-red-400 text-center text-sm mt-3">
+              Could not save your message, but WhatsApp is opening.
+            </p>
+          )}
         </form>
 
         <p className="text-center text-gray-500 text-sm mt-6">
