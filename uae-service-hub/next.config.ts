@@ -13,6 +13,7 @@ const nextConfig: NextConfig = {
     imageSizes: [16, 32, 64, 96, 128, 256],
     remotePatterns: [],
   },
+  trailingSlash: false,
   compress: true,
   poweredByHeader: false,
   // optimizeCss removed — Tailwind v4 ke saath Turbopack infinite loop cause karta tha
