@@ -3,7 +3,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import WhatsAppButton from '@/components/WhatsAppButton'
+import AiGuideArticle from '@/components/AiGuideArticle'
 import { blogPosts, getBlogPost } from '@/lib/data/blog'
+import { aiGuides, getAiGuide } from '@/lib/data/aiGuides'
 import { getServiceBySlug } from '@/lib/data/services'
 import {
   buildMetadata,
@@ -18,11 +20,23 @@ type Props = { params: Promise<{ slug: string }> }
 export const dynamicParams = false
 
 export async function generateStaticParams() {
-  return blogPosts.map((p) => ({ slug: p.slug }))
+  return [
+    ...blogPosts.map((p) => ({ slug: p.slug })),
+    ...aiGuides.map((g) => ({ slug: g.slug })),
+  ]
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
+  const guide = getAiGuide(slug)
+  if (guide) {
+    return buildMetadata({
+      title: guide.title,
+      description: guide.description,
+      path: `/blog/${slug}`,
+      imageUrl: `https://servedubai.ae${guide.image}`,
+    })
+  }
   const post = getBlogPost(slug)
   if (!post) return {}
   return buildMetadata({
@@ -35,6 +49,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params
+
+  // AI-researched deep guides render with their own distinct premium design.
+  const guide = getAiGuide(slug)
+  if (guide) return <AiGuideArticle guide={guide} />
+
   const post = getBlogPost(slug)
   if (!post) notFound()
 

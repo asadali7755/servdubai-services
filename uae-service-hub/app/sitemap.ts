@@ -6,6 +6,7 @@ import { services } from '@/lib/data/services'
 import { emirates } from '@/lib/data/emirates'
 import { SERVICE_AREA_COMBOS } from '@/lib/data/serviceAreaCombos'
 import { blogPosts } from '@/lib/data/blog'
+import { aiGuides } from '@/lib/data/aiGuides'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = 'https://servedubai.ae'
@@ -24,6 +25,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const blogRoutes: MetadataRoute.Sitemap = blogPosts.map((p) => ({
     url: `${base}/blog/${p.slug}`,
     lastModified: p.dateModified ?? p.datePublished,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }))
+
+  const guideRoutes: MetadataRoute.Sitemap = aiGuides.map((g) => ({
+    url: `${base}/blog/${g.slug}`,
+    lastModified: g.dateModified ?? g.datePublished,
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }))
@@ -59,5 +67,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }))
 
-  return [...staticRoutes, ...serviceRoutes, ...emirateRoutes, ...cityRoutes, ...comboRoutes, ...blogRoutes]
+  return [...staticRoutes, ...serviceRoutes, ...emirateRoutes, ...cityRoutes, ...comboRoutes, ...blogRoutes, ...guideRoutes]
 }
