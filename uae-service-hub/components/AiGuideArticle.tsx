@@ -29,7 +29,7 @@ export default function AiGuideArticle({ guide }: { guide: AiGuide }) {
         {/* ── Hero ── */}
         <header className="aig-hero">
           <div className="aig-hero-img">
-            <Image src={guide.image} alt={guide.h1} fill priority sizes="100vw" style={{ objectFit: 'cover' }} />
+            <Image src={guide.image} alt={guide.h1} fill priority unoptimized sizes="100vw" style={{ objectFit: 'cover' }} />
             <div className="aig-hero-scrim" />
           </div>
           <div className="aig-hero-inner">
