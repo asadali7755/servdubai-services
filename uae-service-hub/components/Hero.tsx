@@ -58,6 +58,16 @@ export default function Hero({ slides, badge = 'Professional Cleaning UAE', getF
     const svc = service || (isAr ? 'خدمات التنظيف' : 'Cleaning services')
     const msg = encodeURIComponent(`Hi Madinat Alhaya, I need a quote.\nService: ${svc}\nNumber: ${phone}`)
     window.open(`https://wa.me/${SITE_CONFIG.whatsappNumber}?text=${msg}`, '_blank')
+    fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: 'WhatsApp Quote Request',
+        phone,
+        service: svc,
+        message: `Quote requested via hero form — ${new Date().toLocaleString('en-AE', { timeZone: 'Asia/Dubai' })}`,
+      }),
+    }).catch(() => {})
     setTimeout(() => setQSent(false), 3000)
   }
 
