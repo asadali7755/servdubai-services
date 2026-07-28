@@ -421,6 +421,19 @@ img { max-width: 100%; }
   justify-content: center;
   text-align: center;
   z-index: 2;
+  position: relative;
+  pointer-events: auto;
+}
+.p-hero-caption .p-btn-outline,
+.p-hero-caption .hero-websites-btn {
+  position: relative;
+  z-index: 15;
+  pointer-events: auto;
+}
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 0 0 rgba(201,168,76,0.5); }
+  50% { box-shadow: 0 0 20px 6px rgba(201,168,76,0.3); }
+  100% { box-shadow: 0 16px 48px rgba(0,0,0,0.4); }
 }
 
 /* --- HERO QUOTE CARD --- */
@@ -433,6 +446,9 @@ img { max-width: 100%; }
   color: #f6f1e8;
   border: 1px solid rgba(201,168,76,0.15);
   box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+  position: relative;
+  z-index: 15;
+  pointer-events: auto;
 }
 .hqc-label {
   font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase;
