@@ -77,10 +77,6 @@ function RequestCallModal({ onClose, onSent }: { onClose: () => void; onSent: (m
     if (!phone.trim()) { setErr('Phone number is required'); return }
     setErr('')
     setLoading(true)
-    const msg = encodeURIComponent(
-      `Hi Madinat Alhaya, please call me back.\nService: ${service || 'General enquiry'}\nNumber: ${phone}`
-    )
-    window.open(`${getWhatsAppLink()}`, '_blank')
     try {
       await fetch('/api/contact', {
         method: 'POST',
