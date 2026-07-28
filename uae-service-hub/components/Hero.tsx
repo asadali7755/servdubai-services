@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
-import { getWhatsAppLink } from '@/lib/utils/whatsapp'
 import { SITE_CONFIG } from '@/lib/data/constants'
 import { useRequestCall } from '@/components/RequestCallModal'
 
@@ -51,23 +50,23 @@ export default function Hero({ slides, badge = 'Professional Cleaning UAE', getF
   const [qErr, setQErr] = useState('')
   const [qSent, setQSent] = useState(false)
 
-  const handleQuote = () => {
+  const handleQuote = async () => {
     if (!phone.trim()) { setQErr(isAr ? 'يرجى إدخال رقم الهاتف' : 'Please enter your phone number'); return }
     setQErr('')
     setQSent(true)
     const svc = service || (isAr ? 'خدمات التنظيف' : 'Cleaning services')
-    const msg = encodeURIComponent(`Hi Madinat Alhaya, I need a quote.\nService: ${svc}\nNumber: ${phone}`)
-    window.open(`https://wa.me/${SITE_CONFIG.whatsappNumber}?text=${msg}`, '_blank')
-    fetch('/api/contact', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        name: 'WhatsApp Quote Request',
-        phone,
-        service: svc,
-        message: `Quote requested via hero form — ${new Date().toLocaleString('en-AE', { timeZone: 'Asia/Dubai' })}`,
-      }),
-    }).catch(() => {})
+    try {
+      await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: 'Quote Request (Hero Form)',
+          phone,
+          service: svc,
+          message: `Quote requested via hero form — ${new Date().toLocaleString('en-AE', { timeZone: 'Asia/Dubai' })}`,
+        }),
+      })
+    } catch {}
     setTimeout(() => setQSent(false), 3000)
   }
 
@@ -215,17 +214,22 @@ export default function Hero({ slides, badge = 'Professional Cleaning UAE', getF
 
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
             <a
-              href={getWhatsAppLink()}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#quote"
               className="p-btn-outline"
+              onClick={(e) => {
+                e.preventDefault()
+                document.getElementById('hero-quote')?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+              }}
             >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-                <path d="M12 0C5.373 0 0 5.373 0 12c0 2.116.553 4.103 1.523 5.83L.057 23.547a.5.5 0 00.612.611l5.718-1.466A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-5.032-1.386l-.36-.214-3.737.978.997-3.643-.235-.374A9.786 9.786 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
               </svg>
               {getFreeQuote}
             </a>
+            <button className="p-btn-outline" onClick={openCallModal} style={{ cursor: 'pointer' }}>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.71 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.58 2.81.71A2 2 0 0 1 22 16.92z"/></svg>
+              Request a Call
+            </button>
             <a href="/about" className="p-btn-outline">{learnMore}</a>
             <a
               href="/websites"
@@ -246,14 +250,14 @@ export default function Hero({ slides, badge = 'Professional Cleaning UAE', getF
         </div>
 
         {/* Quote card */}
-        <aside className="hero-quote-card">
+        <aside className="hero-quote-card" id="hero-quote">
           <span className="hqc-label">
-            {isAr ? 'عرض سعر فوري' : 'Instant quote via WhatsApp'}
+            {isAr ? 'طلب عرض سعر مجاني' : 'FREE QUOTE REQUEST'}
           </span>
           <h2 className="hqc-heading">
             {isAr
-              ? <>اختر الخدمة ورقمك.<br />هذا كل شيء.</>
-              : <>Pick a service &amp; your number.<br />That&apos;s it.</>}
+              ? <>احصل على عرض سعر مجاني.</>
+              : <>Get your free quote.</>}
           </h2>
           <div className="hqc-form">
             <select
@@ -278,18 +282,17 @@ export default function Hero({ slides, badge = 'Professional Cleaning UAE', getF
             {qErr && <span style={{ color: '#e53e3e', fontSize: 12, display: 'block' }}>{qErr}</span>}
             <div className="hqc-btns">
               <button className="hqc-wa" onClick={handleQuote} disabled={qSent}>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.116.553 4.103 1.523 5.83L.057 23.547a.5.5 0 00.612.611l5.718-1.466A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-5.032-1.386l-.36-.214-3.737.978.997-3.643-.235-.374A9.786 9.786 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/></svg>
-                {qSent ? (isAr ? 'تم الإرسال!' : 'Sent!') : (isAr ? 'واتساب' : 'WhatsApp Quote')}
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                {qSent ? (isAr ? 'تم الإرسال!' : 'Sent!') : (isAr ? 'إرسال الاستفسار' : 'SEND ENQUIRY')}
               </button>
-              <a className="hqc-call" href={`tel:${SITE_CONFIG.phone}`}>
+              <button className="hqc-call" onClick={openCallModal} style={{ cursor: 'pointer', background: 'none', border: '1px solid rgba(201,168,76,0.3)' }}>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.71 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.58 2.81.71A2 2 0 0 1 22 16.92z"/></svg>
-                {isAr ? 'اتصل الآن' : 'Call now'}
-              </a>
+                {isAr ? 'اطلب مكالمة' : 'REQUEST A CALL'}
+              </button>
             </div>
-            <button className="hqc-callback" onClick={openCallModal}>
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.71 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.58 2.81.71A2 2 0 0 1 22 16.92z"/></svg>
-              {isAr ? 'اطلب مكالمة مجانية' : 'Or request a free callback'}
-            </button>
+            <p style={{ fontSize: '0.7rem', color: 'rgba(246,241,232,0.5)', textAlign: 'center', margin: '0.5rem 0 0' }}>
+              {isAr ? '"إرسال" يرسل استفسارك مباشرة. "اطلب مكالمة" — سنتصل بك.' : '"Send" submits your enquiry directly. "Request a call" — we\'ll dial you back.'}
+            </p>
           </div>
         </aside>
       </div>
