@@ -53,12 +53,20 @@ const translations = {
           subtitle: 'Book villa deep cleaning, sofa cleaning, carpet cleaning & marble polishing in Dubai, Abu Dhabi, Sharjah — same-day service across all 7 UAE Emirates.',
         },
         {
+          title: 'Marble Polishing & Crystallization Services Dubai',
+          subtitle: 'Professional marble floor polishing & crystallization company in Dubai. Restore your marble, granite & terrazzo floors to a mirror-finish shine across UAE.',
+        },
+        {
+          title: 'Professional Deep Cleaning Services Across UAE',
+          subtitle: 'Comprehensive cleaning solutions for villas, apartments and offices. Trained professionals with eco-friendly products — serving all seven Emirates.',
+        },
+        {
           title: 'Professional Sofa & Carpet Cleaning Services Dubai',
           subtitle: 'Affordable sofa deep cleaning & eco-friendly carpet cleaning company in Dubai. Steam cleaning for fabric, leather & luxury rugs — book online today.',
         },
         {
-          title: 'Marble Polishing & Crystallization Services Dubai',
-          subtitle: 'Professional marble floor polishing & crystallization company in Dubai. Restore your marble, granite & terrazzo floors to a mirror-finish shine across UAE.',
+          title: 'Villa & Apartment Deep Cleaning Services Dubai',
+          subtitle: 'Complete villa and apartment cleaning — move-in, move-out & regular deep cleaning with sanitization. Licensed, insured and same-day availability.',
         },
       ],
       getFreeQuote: 'Get Free Quote',
@@ -245,12 +253,20 @@ const translations = {
           subtitle: 'احجز تنظيف فلل، تنظيف كنب، تنظيف سجاد وتلميع رخام في دبي وأبوظبي والشارقة — خدمة في نفس اليوم في جميع الإمارات السبع.',
         },
         {
+          title: 'خدمات تلميع الرخام والتبلور في دبي',
+          subtitle: 'شركة تلميع رخام وأرضيات احترافية في دبي. استعد لمعان أرضيات الرخام والجرانيت بلمسة نهائية كالمرآة في جميع الإمارات.',
+        },
+        {
+          title: 'خدمات التنظيف العميق في جميع الإمارات',
+          subtitle: 'حلول تنظيف شاملة للفلل والشقق والمكاتب. فريق محترف مع منتجات صديقة للبيئة — نخدم جميع الإمارات السبع.',
+        },
+        {
           title: 'تنظيف كنب وسجاد احترافي في دبي',
           subtitle: 'شركة تنظيف كنب وسجاد بأسعار معقولة في دبي. تنظيف بالبخار للأقمشة والجلود والسجاد الفاخر — احجز الآن.',
         },
         {
-          title: 'خدمات تلميع الرخام والتبلور في دبي',
-          subtitle: 'شركة تلميع رخام وأرضيات احترافية في دبي. استعد لمعان أرضيات الرخام والجرانيت بلمسة نهائية كالمرآة في جميع الإمارات.',
+          title: 'تنظيف فلل وشقق في دبي',
+          subtitle: 'تنظيف شامل للفلل والشقق — تنظيف عند الانتقال والتنظيف العميق المنتظم مع التعقيم. مرخصون ومؤمنون وخدمة في نفس اليوم.',
         },
       ],
       getFreeQuote: 'احصل على عرض سعر مجاني',
