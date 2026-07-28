@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import PopularAreas from '@/components/PopularAreas'
-import { buildMetadata, buildBreadcrumbSchema } from '@/lib/utils/seo'
+import { buildMetadata, buildBreadcrumbSchema, buildLocalBusinessSchema } from '@/lib/utils/seo'
 import { getWhatsAppLink } from '@/lib/utils/whatsapp'
 import { SITE_CONFIG } from '@/lib/data/constants'
 
@@ -22,6 +22,7 @@ export const metadata: Metadata = {
   ],
 }
 
+const localSchema = buildLocalBusinessSchema({ path: '/areas' })
 const breadcrumbSchema = buildBreadcrumbSchema([
   { name: 'Home', url: '/' },
   { name: 'Service Areas', url: '/areas' },
@@ -30,6 +31,7 @@ const breadcrumbSchema = buildBreadcrumbSchema([
 export default function AreasPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       <div className="city-main max-w-5xl mx-auto px-4 py-12" style={{ paddingTop: '120px' }}>

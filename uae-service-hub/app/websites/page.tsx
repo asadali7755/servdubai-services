@@ -1,14 +1,20 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import { buildMetadata } from '@/lib/utils/seo'
+import { buildMetadata, buildLocalBusinessSchema, buildBreadcrumbSchema } from '@/lib/utils/seo'
 import { getWhatsAppLink } from '@/lib/utils/whatsapp'
 import WhatsAppButton from '@/components/WhatsAppButton'
 
 export const metadata: Metadata = buildMetadata({
-  title: 'Our Specialist Cleaning Websites',
+  title: 'Our Specialist Cleaning Websites | UAE Cleaning Network',
   description: 'Explore our 4 specialist cleaning websites covering sofa cleaning, carpet cleaning, villa deep cleaning, and marble polishing across UAE.',
   path: '/websites',
 })
+
+const localSchema = buildLocalBusinessSchema({ path: '/websites' })
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: 'Home', url: '/' },
+  { name: 'Our Websites', url: '/websites' },
+])
 
 const sites = [
   {
@@ -92,6 +98,8 @@ const sites = [
 export default function WebsitesPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       {/* ── PAGE HERO ── */}
       <div style={{
         paddingTop: '100px',

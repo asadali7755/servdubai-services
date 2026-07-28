@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { buildMetadata } from '@/lib/utils/seo'
+import { buildMetadata, buildLocalBusinessSchema, buildBreadcrumbSchema } from '@/lib/utils/seo'
 import GalleryContent from '@/components/GalleryContent'
 
 export const metadata: Metadata = {
@@ -10,6 +10,18 @@ export const metadata: Metadata = {
   }),
 }
 
+const localSchema = buildLocalBusinessSchema({ path: '/gallery' })
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: 'Home', url: '/' },
+  { name: 'Gallery', url: '/gallery' },
+])
+
 export default function GalleryPage() {
-  return <GalleryContent />
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <GalleryContent />
+    </>
+  )
 }

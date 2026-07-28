@@ -5,7 +5,7 @@ import { notFound } from 'next/navigation'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import { emirates, getEmirateBySlug } from '@/lib/data/emirates'
 import { services } from '@/lib/data/services'
-import { buildMetadata, buildLocalBusinessSchema } from '@/lib/utils/seo'
+import { buildMetadata, buildLocalBusinessSchema, buildBreadcrumbSchema } from '@/lib/utils/seo'
 import { getWhatsAppLink } from '@/lib/utils/whatsapp'
 import { getEmirateCoords } from '@/lib/data/cityCoordinates'
 import { SITE_CONFIG } from '@/lib/data/constants'
@@ -97,6 +97,17 @@ const getHowItWorks = (emirateName: string) => [
   { step: '04', title: 'Spotless & Sanitized', desc: `Your villa, apartment, or office in ${emirateName} is left hygienically clean and sanitized — 100% satisfaction guaranteed.` },
 ]
 
+const getFaqs = (emirateName: string) => [
+  { q: `What cleaning services are available in ${emirateName}?`, a: `Madinat Alhaya offers a full range of professional cleaning services in ${emirateName} including villa deep cleaning, sofa and upholstery cleaning, carpet and rug cleaning, marble polishing and crystallization, mattress cleaning, curtain cleaning, office and commercial cleaning, kitchen deep cleaning, and car interior detailing. All services are available for same-day booking.` },
+  { q: `How much does deep cleaning cost in ${emirateName}?`, a: `Deep cleaning prices in ${emirateName} vary based on the property size and type of service. A standard apartment deep clean starts from AED 300, while villa deep cleaning starts from AED 600. We provide free, no-obligation quotes via WhatsApp — just send us your property details and we respond within minutes with transparent pricing.` },
+  { q: `Do you offer same-day cleaning service in ${emirateName}?`, a: `Yes, Madinat Alhaya provides same-day cleaning services across all areas in ${emirateName}. Contact us before 2 PM for same-day availability. Our team of trained professionals arrives with all necessary commercial-grade equipment — no waiting, no delays.` },
+  { q: `Are your cleaning products safe for children and pets in ${emirateName}?`, a: `Absolutely. We exclusively use eco-friendly, non-toxic, and biodegradable cleaning solutions that are completely safe for children, pets, and allergy sufferers. Our products are powerful enough to eliminate stains, odors, and bacteria while remaining gentle on your family and the environment.` },
+  { q: `How do I book a cleaning service in ${emirateName}?`, a: `Booking is simple: WhatsApp us at +971 55 127 5545 or call directly. Tell us the service you need, your location in ${emirateName}, and your preferred date. We'll provide a free instant quote and confirm your booking — most requests are confirmed within 10 minutes.` },
+  { q: `What areas in ${emirateName} do you cover?`, a: `Madinat Alhaya covers all residential and commercial areas across ${emirateName}. Whether you're in a villa community, apartment tower, or commercial district, our team reaches you. We maintain dedicated crews for ${emirateName} to ensure prompt arrival and familiarity with local properties.` },
+]
+
+const getAboutContent = (emirateName: string, cityCount: number) => `Madinat Alhaya Building Cleaning Services is ${emirateName}'s trusted professional cleaning company, serving ${cityCount} areas with comprehensive residential and commercial cleaning solutions. Our ${emirateName} division employs trained, background-checked professionals who specialize in villa deep cleaning, sofa and upholstery care, carpet steam cleaning, marble polishing and crystallization, mattress sanitization, and office cleaning. Every technician undergoes rigorous training on international cleaning standards and uses commercial-grade equipment — from truck-mounted carpet extractors to Italian diamond marble polishing machines. We've built our reputation in ${emirateName} on three principles: transparent pricing with no hidden fees, same-day service availability, and a 100% satisfaction guarantee on every job. Whether you need a one-time deep clean for a move-in or ongoing maintenance for your office building, Madinat Alhaya delivers consistent, professional results across ${emirateName}.`
+
 export default async function EmiratePage({ params }: Props) {
   const { emirate: emirateSlug } = await params
   const emirate = getEmirateBySlug(emirateSlug)
@@ -116,13 +127,22 @@ export default async function EmiratePage({ params }: Props) {
         }
       : undefined,
   })
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: emirate.name, url: `/${emirateSlug}` },
+  ])
+  const faqs = getFaqs(emirate.name)
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+  }
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* ══════════════════════════════════════
           CINEMATIC HERO
@@ -497,6 +517,72 @@ export default async function EmiratePage({ params }: Props) {
                   {step.desc}
                 </p>
               </div>
+            ))}
+          </div>
+        </div>
+
+        {/* ══════════════════════════════════════
+            ABOUT OUR SERVICES
+        ══════════════════════════════════════ */}
+        <div style={{ marginBottom: '5rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '0.5rem' }}>
+            <div style={{ width: '4px', height: '2rem', background: 'linear-gradient(to bottom, #c9a84c, rgba(201,168,76,0.2))', borderRadius: '2px', flexShrink: 0 }} />
+            <div>
+              <div style={{ fontSize: '0.65rem', color: '#c9a84c', letterSpacing: '0.2em', textTransform: 'uppercase' }}>About Our Services</div>
+              <h2 className="emir-section-h2" style={{ fontFamily: 'var(--font-josefin)', fontSize: '1.7rem', fontWeight: 700, color: '#fff' }}>
+                Professional Cleaning in {emirate.name}
+              </h2>
+            </div>
+          </div>
+          <p style={{ color: '#d1d5db', fontSize: '0.95rem', lineHeight: 1.8, marginTop: '1rem', fontWeight: 400, paddingLeft: '1.25rem' }}>
+            {getAboutContent(emirate.name, emirate.cities.length)}
+          </p>
+        </div>
+
+        {/* ══════════════════════════════════════
+            FAQ SECTION
+        ══════════════════════════════════════ */}
+        <div style={{ marginBottom: '5rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '0.5rem' }}>
+            <div style={{ width: '4px', height: '2rem', background: 'linear-gradient(to bottom, #c9a84c, rgba(201,168,76,0.2))', borderRadius: '2px', flexShrink: 0 }} />
+            <div>
+              <div style={{ fontSize: '0.65rem', color: '#c9a84c', letterSpacing: '0.2em', textTransform: 'uppercase' }}>Common Questions</div>
+              <h2 className="emir-section-h2" style={{ fontFamily: 'var(--font-josefin)', fontSize: '1.7rem', fontWeight: 700, color: '#fff' }}>
+                Frequently Asked Questions — {emirate.name}
+              </h2>
+            </div>
+          </div>
+          <div style={{ marginTop: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            {faqs.map((faq, i) => (
+              <details key={i} style={{
+                background: 'linear-gradient(160deg, #0e1b40 0%, #1c2f58 100%)',
+                border: '1px solid rgba(80,140,255,0.2)',
+                borderRadius: '8px',
+                overflow: 'hidden',
+              }}>
+                <summary style={{
+                  padding: '1.25rem 1.5rem',
+                  color: '#fff',
+                  fontSize: '0.95rem',
+                  fontWeight: 600,
+                  cursor: 'pointer',
+                  listStyle: 'none',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.75rem',
+                }}>
+                  <span style={{ color: '#c9a84c', fontFamily: 'var(--font-josefin)', fontWeight: 700, fontSize: '0.8rem', flexShrink: 0 }}>Q{i + 1}</span>
+                  {faq.q}
+                </summary>
+                <div style={{
+                  padding: '0 1.5rem 1.25rem 3.5rem',
+                  color: '#9ca3af',
+                  fontSize: '0.9rem',
+                  lineHeight: 1.7,
+                }}>
+                  {faq.a}
+                </div>
+              </details>
             ))}
           </div>
         </div>

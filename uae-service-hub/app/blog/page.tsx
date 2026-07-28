@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { blogPosts, type BlogPost } from '@/lib/data/blog'
 import { aiGuides } from '@/lib/data/aiGuides'
-import { buildMetadata, buildBreadcrumbSchema } from '@/lib/utils/seo'
+import { buildMetadata, buildBreadcrumbSchema, buildLocalBusinessSchema } from '@/lib/utils/seo'
 
 export const metadata: Metadata = {
   ...buildMetadata({
@@ -20,6 +20,7 @@ export const metadata: Metadata = {
   ],
 }
 
+const localSchema = buildLocalBusinessSchema({ path: '/blog' })
 const breadcrumbSchema = buildBreadcrumbSchema([
   { name: 'Home', url: '/' },
   { name: 'Blog', url: '/blog' },
@@ -45,6 +46,7 @@ export default function BlogIndexPage() {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       <div className="blog-wrap city-main">
