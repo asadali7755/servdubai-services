@@ -99,6 +99,13 @@ const BASE_LOCAL_BUSINESS = {
     'https://www.facebook.com/alhayacleandubai/',
     'https://www.linkedin.com/in/madinat-al-haya-building-cleaning-services-70a3363b4/',
   ],
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '4.5',
+    reviewCount: '12',
+    bestRating: '5',
+    worstRating: '1',
+  },
 }
 
 export const buildLocalBusinessSchema = (options: {

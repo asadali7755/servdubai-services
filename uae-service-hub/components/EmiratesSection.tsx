@@ -17,7 +17,7 @@ export default function EmiratesSection({ emirates }: { emirates: Emirate[] }) {
         <div className="p-title" style={{ textAlign: 'center' }}>
           <div className="p-title-center">
             <h5>{t.emirates_section.label}</h5>
-            <h1>{t.emirates_section.title}</h1>
+            <h2>{t.emirates_section.title}</h2>
           </div>
         </div>
 

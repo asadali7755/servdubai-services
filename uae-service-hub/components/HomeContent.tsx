@@ -7,8 +7,9 @@ import { getWhatsAppLink } from '@/lib/utils/whatsapp'
 import { SITE_CONFIG } from '@/lib/data/constants'
 import { useLocale } from '@/lib/i18n/LanguageProvider'
 import translations from '@/lib/i18n/translations'
-import WhatsAppButton from '@/components/WhatsAppButton'
 import PopularAreas from '@/components/PopularAreas'
+import GoogleReviews from '@/components/GoogleReviews'
+import { useRequestCall } from '@/components/RequestCallModal'
 import EmiratesSection from '@/components/EmiratesSection'
 import Hero from '@/components/Hero'
 import type { HeroSlide } from '@/components/Hero'
@@ -52,6 +53,8 @@ const whyIcons = ['🏅', '🌿', '⚡', '✓']
 export default function HomeContent() {
   const { locale } = useLocale()
   const t = translations[locale]
+  const isAr = locale === 'ar'
+  const { open: openCallModal } = useRequestCall()
 
   const heroSlides: HeroSlide[] = t.hero.slides.map((s, i) => ({
     ...heroImages[i],
@@ -61,7 +64,7 @@ export default function HomeContent() {
 
   return (
     <>
-      <Hero slides={heroSlides} badge={t.hero.badge} getFreeQuote={t.hero.getFreeQuote} learnMore={t.hero.learnMore} ourWebsites={t.hero.ourWebsites} />
+      <Hero slides={heroSlides} badge={t.hero.badge} getFreeQuote={t.hero.getFreeQuote} learnMore={t.hero.learnMore} ourWebsites={t.hero.ourWebsites} isAr={isAr} />
 
       {/* 2. SERVICES */}
       <section className="home-services-section" style={{ padding: '4.5rem 0' }}>
@@ -160,6 +163,10 @@ export default function HomeContent() {
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.29 21 3 13.71 3 4.5c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.24 1.02l-2.21 2.2z" /></svg>
                 {t.home.callPhone} {SITE_CONFIG.phone}
               </a>
+              <button onClick={openCallModal} style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', minWidth: '190px', justifyContent: 'center', padding: '0.95rem 1.85rem', background: 'transparent', color: '#c9a84c', fontWeight: 700, borderRadius: '500px', fontSize: '1rem', border: '2px solid #c9a84c', cursor: 'pointer' }}>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                {isAr ? 'اطلب مكالمة' : 'Request a Call'}
+              </button>
             </div>
           </div>
         </div>
@@ -276,7 +283,8 @@ export default function HomeContent() {
         </div>
       </section>
 
-      <WhatsAppButton />
+      {/* 10. GOOGLE REVIEWS */}
+      <GoogleReviews />
     </>
   )
 }
