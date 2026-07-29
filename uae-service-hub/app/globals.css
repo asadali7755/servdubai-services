@@ -4189,6 +4189,28 @@ img { max-width: 100%; }
 }
 .svs-btn-call:hover { background: rgba(201,168,76,0.1); }
 
+/* Quote card inside video sections */
+.svs-quote {
+  margin-top: 20px;
+  background: rgba(11,11,11,0.88); backdrop-filter: blur(14px);
+  border-radius: 16px; padding: 1.4rem 1.25rem;
+  border: 1px solid rgba(201,168,76,0.15);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.3);
+}
+.svs-quote-heading {
+  font-family: var(--font-heading); font-size: 1.2rem; line-height: 1.2;
+  font-weight: 700; color: #f6f1e8; margin: 0 0 0.75rem;
+}
+[data-theme="light"] .svs-quote {
+  background: rgba(255,255,255,0.92); border-color: rgba(201,168,76,0.2);
+}
+[data-theme="light"] .svs-quote-heading { color: #1a1510; }
+[data-theme="light"] .svs-quote .hqc-select,
+[data-theme="light"] .svs-quote .hqc-input {
+  background: rgba(0,0,0,0.04); color: #1a1510; border-color: rgba(201,168,76,0.25);
+}
+[data-theme="light"] .svs-quote .hqc-input::placeholder { color: rgba(26,21,16,0.4); }
+
 /* Video side */
 .svs-vid-wrap {
   position: relative; border-radius: 20px; overflow: hidden;

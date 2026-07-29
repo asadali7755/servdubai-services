@@ -3,12 +3,84 @@
 import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import { galleryData } from '@/lib/data/gallery'
-import { getWhatsAppLink } from '@/lib/utils/whatsapp'
-import { SITE_CONFIG } from '@/lib/data/constants'
+import { useRequestCall } from '@/components/RequestCallModal'
 
 interface Props {
   serviceSlug: string
   serviceName: string
+}
+
+const SERVICES = [
+  'Villa Deep Cleaning',
+  'Sofa Cleaning',
+  'Carpet Cleaning',
+  'Marble Polishing',
+  'Mattress Cleaning',
+  'Office Cleaning',
+  'Kitchen Cleaning',
+  'Apartment Cleaning',
+]
+
+function QuoteCard({ defaultService }: { defaultService: string }) {
+  const { open: openCallModal, showToast } = useRequestCall()
+  const [service, setService] = useState(defaultService)
+  const [phone, setPhone] = useState('')
+  const [err, setErr] = useState('')
+  const [sent, setSent] = useState(false)
+
+  const handleSubmit = async () => {
+    if (!phone.trim()) { setErr('Please enter your phone number'); return }
+    setErr('')
+    setSent(true)
+    try {
+      await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: 'Quote Request (Service Video Section)',
+          phone,
+          service: service || 'Cleaning services',
+          message: `Quote requested via service video section — ${new Date().toLocaleString('en-AE', { timeZone: 'Asia/Dubai' })}`,
+        }),
+      })
+    } catch {}
+    showToast('Request sent! We\'ll get back to you shortly.')
+    setPhone('')
+    setTimeout(() => setSent(false), 3000)
+  }
+
+  return (
+    <div className="svs-quote">
+      <span className="hqc-label">FREE QUOTE REQUEST</span>
+      <h3 className="svs-quote-heading">Get your free quote.</h3>
+      <div className="hqc-form">
+        <select value={service} onChange={(e) => setService(e.target.value)} className="hqc-select">
+          <option value="">Select a service (optional)</option>
+          {SERVICES.map((s) => <option key={s} value={s}>{s}</option>)}
+        </select>
+        <input
+          type="tel"
+          inputMode="tel"
+          value={phone}
+          onChange={(e) => { setPhone(e.target.value); setErr('') }}
+          placeholder="Your mobile number (UAE)*"
+          className="hqc-input"
+          style={err ? { borderColor: '#e53e3e' } : {}}
+        />
+        {err && <span style={{ color: '#e53e3e', fontSize: 12, display: 'block' }}>{err}</span>}
+        <div className="hqc-btns">
+          <button className="hqc-wa" onClick={handleSubmit} disabled={sent}>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            {sent ? 'Sent!' : 'SEND ENQUIRY'}
+          </button>
+          <button className="hqc-call" onClick={openCallModal} style={{ cursor: 'pointer', background: 'none', border: '1px solid rgba(201,168,76,0.3)' }}>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.71 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.58 2.81.71A2 2 0 0 1 22 16.92z"/></svg>
+            REQUEST A CALL
+          </button>
+        </div>
+      </div>
+    </div>
+  )
 }
 
 export default function ServiceVideoShowcase({ serviceSlug, serviceName }: Props) {
@@ -51,7 +123,7 @@ export default function ServiceVideoShowcase({ serviceSlug, serviceName }: Props
             className={`svs-section ${i % 2 === 0 ? 'svs-dark' : 'svs-light'}`}
           >
             <div className={`svs-inner ${reversed ? 'svs-reversed' : ''}`}>
-              {/* Text side */}
+              {/* Text + Quote side */}
               <div className="svs-text">
                 <span className="svs-eyebrow">— Real Results · Before &amp; After</span>
                 <h2 className="svs-heading">{vid.title}</h2>
@@ -59,18 +131,7 @@ export default function ServiceVideoShowcase({ serviceSlug, serviceName }: Props
                   Watch real {serviceName.split(/[&]/)[0].trim().toLowerCase()} results from our recent jobs across Dubai &amp; UAE.
                   Our certified technicians deliver professional results using advanced equipment and eco-friendly products.
                 </p>
-                <div className="svs-cta-row">
-                  <a href={getWhatsAppLink(serviceName)} target="_blank" rel="noopener noreferrer" className="svs-btn-wa">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-                      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.116.553 4.103 1.523 5.83L.057 23.547a.5.5 0 00.612.611l5.718-1.466A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-5.032-1.386l-.36-.214-3.737.978.997-3.643-.235-.374A9.786 9.786 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/>
-                    </svg>
-                    Book via WhatsApp
-                  </a>
-                  <a href={`tel:${SITE_CONFIG.phone}`} className="svs-btn-call">
-                    Call {SITE_CONFIG.phone}
-                  </a>
-                </div>
+                <QuoteCard defaultService={serviceName} />
               </div>
 
               {/* Video side */}
