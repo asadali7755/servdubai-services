@@ -206,9 +206,8 @@ export default function Hero({ slides, badge = 'Professional Cleaning UAE', getF
           <div className="p-title" style={{ marginBottom: '0.5rem' }}>
             <div className="p-title-center">
               <h5>{badge}</h5>
-              {active === 0 ? (
-                <h1 className="display-1">{slides[active].title}</h1>
-              ) : (
+              <h1 className="display-1" style={active !== 0 ? { position: 'absolute', width: 1, height: 1, overflow: 'hidden', clip: 'rect(0,0,0,0)' } : undefined}>{slides[0].title}</h1>
+              {active !== 0 && (
                 <h2 className="display-1">{slides[active].title}</h2>
               )}
             </div>
