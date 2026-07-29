@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import WhatsAppButton from '@/components/WhatsAppButton'
+import ServiceVideoShowcase from '@/components/ServiceVideoShowcase'
 import { services, getServiceBySlug } from '@/lib/data/services'
 import { emirates, getCityBySlug } from '@/lib/data/emirates'
 import { combosForService } from '@/lib/data/serviceAreaCombos'
@@ -215,6 +216,9 @@ export default async function ServicePage({ params }: Props) {
                 </a>
               </div>
             )}
+
+            {/* VIDEO SHOWCASE */}
+            <ServiceVideoShowcase serviceSlug={slug} serviceName={service.name} />
 
             {/* SERVICE AREAS */}
             <div>
