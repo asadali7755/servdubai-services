@@ -30,7 +30,7 @@ function ServiceItem({ service, isLeft }: { service: Service; isLeft: boolean })
       ref={ref}
       href={`/services/${service.slug}`}
       className={`service-item ${isLeft ? 'service-item-left' : 'service-item-right'} service-item-animate`}
-      style={{ textDecoration: 'none', display: 'block' }}
+      style={{ textDecoration: 'none' }}
     >
       <div className="service-row">
         {/* Image column */}
@@ -66,11 +66,10 @@ function ServiceItem({ service, isLeft }: { service: Service; isLeft: boolean })
 
 export default function ServicesGrid({ services }: { services: Service[] }) {
   return (
-    <section className="theme-services" style={{ background: '#212529', padding: '5rem 0' }}>
-      <div style={{ maxWidth: '1140px', margin: '0 auto', padding: '0 1.5rem' }}>
+    <section className="theme-services sec-pad" style={{ background: '#212529' }}>
+      <div className="container-xl">
 
-        {/* Poseify title */}
-        <div className="p-title" style={{ textAlign: 'center' }}>
+        <div className="p-title text-center">
           <div className="p-title-center">
             <h5>Services</h5>
             <h1>How We Help You</h1>

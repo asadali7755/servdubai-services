@@ -216,7 +216,7 @@ export default function Hero({ slides, badge = 'Professional Cleaning UAE', getF
 
           <p className="subtitle-text">{slides[active].subtitle}</p>
 
-          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+          <div className="he-cta-row">
             <button
               className="p-btn-outline"
               style={{ cursor: 'pointer' }}
@@ -240,19 +240,7 @@ export default function Hero({ slides, badge = 'Professional Cleaning UAE', getF
               Request a Call
             </button>
             <a href="/about" className="p-btn-outline">{learnMore}</a>
-            <a
-              href="/websites"
-              className="hero-websites-btn"
-              style={{
-                display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
-                padding: '0.6rem 1.4rem',
-                background: 'rgba(201,168,76,0.15)',
-                border: '1px solid #c9a84c',
-                color: '#c9a84c', fontWeight: 600, borderRadius: '500px',
-                textDecoration: 'none', fontSize: '0.82rem', letterSpacing: '0.04em',
-                backdropFilter: 'blur(4px)',
-              }}
-            >
+            <a href="/websites" className="hero-websites-btn he-websites-btn">
               {ourWebsites}
             </a>
           </div>
@@ -300,7 +288,7 @@ export default function Hero({ slides, badge = 'Professional Cleaning UAE', getF
                 {isAr ? 'اطلب مكالمة' : 'REQUEST A CALL'}
               </button>
             </div>
-            <p style={{ fontSize: '0.7rem', color: 'rgba(246,241,232,0.5)', textAlign: 'center', margin: '0.5rem 0 0' }}>
+            <p className="he-form-note">
               {isAr ? '"إرسال" يرسل استفسارك مباشرة. "اطلب مكالمة" — سنتصل بك.' : '"Send" submits your enquiry directly. "Request a call" — we\'ll dial you back.'}
             </p>
           </div>

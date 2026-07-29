@@ -53,46 +53,32 @@ export default function ContactPage() {
     window.location.href = whatsappUrl
   }
 
-  const inputStyle = {
-    background: '#1e1e1e',
-    border: '1px solid #333',
-    borderRadius: '0.5rem',
-    color: '#fff',
-    padding: '0.75rem 1rem',
-    width: '100%',
-    minHeight: '44px',
-    outline: 'none',
-  }
-
   return (
     <>
-      <div className="contact-page-wrap max-w-2xl mx-auto px-4 py-12" style={{ paddingTop: '120px' }}>
-        <h1
-          className="text-3xl md:text-4xl font-bold text-white mb-3"
-          style={{ fontFamily: 'var(--font-josefin)' }}
-        >
+      <div className="contact-page-wrap max-w-2xl mx-auto px-4 py-12 ct-wrap">
+        <h1 className="text-3xl md:text-4xl font-bold text-white mb-3 ct-h1">
           {ct.title}
         </h1>
-        <h2 className="text-gray-400 mb-8" style={{ fontWeight: 400, fontSize: '1rem' }}>
+        <h2 className="text-gray-400 mb-8 ct-subtitle">
           {ct.subtitle}
         </h2>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
           <div>
             <label className="block text-sm font-medium text-gray-300 mb-1">{ct.nameLabel}</label>
-            <input {...register('name')} placeholder={ct.namePlaceholder} style={inputStyle} />
+            <input {...register('name')} placeholder={ct.namePlaceholder} className="ct-input" />
             {errors.name && <p className="text-red-400 text-xs mt-1">{errors.name.message}</p>}
           </div>
 
           <div>
             <label className="block text-sm font-medium text-gray-300 mb-1">{ct.phoneLabel}</label>
-            <input {...register('phone')} placeholder={ct.phonePlaceholder} style={inputStyle} />
+            <input {...register('phone')} placeholder={ct.phonePlaceholder} className="ct-input" />
             {errors.phone && <p className="text-red-400 text-xs mt-1">{errors.phone.message}</p>}
           </div>
 
           <div>
             <label className="block text-sm font-medium text-gray-300 mb-1">{ct.serviceLabel}</label>
-            <select {...register('service')} style={{ ...inputStyle, cursor: 'pointer' }}>
+            <select {...register('service')} className="ct-select">
               <option value="">{ct.servicePlaceholder}</option>
               {ct.serviceOptions.map((s) => (
                 <option key={s} value={s}>{s}</option>
@@ -103,31 +89,11 @@ export default function ContactPage() {
 
           <div>
             <label className="block text-sm font-medium text-gray-300 mb-1">{ct.messageLabel}</label>
-            <textarea
-              {...register('message')}
-              rows={4}
-              placeholder={ct.messagePlaceholder}
-              style={{ ...inputStyle, resize: 'vertical', minHeight: '100px' }}
-            />
+            <textarea {...register('message')} rows={4} placeholder={ct.messagePlaceholder} className="ct-textarea" />
             {errors.message && <p className="text-red-400 text-xs mt-1">{errors.message.message}</p>}
           </div>
 
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            style={{
-              width: '100%',
-              padding: '1rem',
-              background: '#25D366',
-              color: '#111111',
-              fontWeight: '600',
-              borderRadius: '0.5rem',
-              minHeight: '48px',
-              cursor: 'pointer',
-              border: 'none',
-              fontSize: '1rem',
-            }}
-          >
+          <button type="submit" disabled={isSubmitting} className="ct-submit">
             {ct.sendButton}
           </button>
 
@@ -145,31 +111,13 @@ export default function ContactPage() {
 
         <p className="text-center text-gray-500 text-sm mt-6">
           {ct.orCall}{' '}
-          <a href="tel:+971551275545" style={{ color: '#c9a84c' }}>+971 55 127 5545</a>
+          <a href="tel:+971551275545" className="ct-phone-link">+971 55 127 5545</a>
         </p>
 
-        <div style={{ marginTop: '3rem' }}>
-          <h2
-            style={{
-              color: '#c9a84c',
-              fontFamily: 'var(--font-josefin)',
-              fontSize: '1.5rem',
-              fontWeight: '700',
-              marginBottom: '0.5rem',
-            }}
-          >
-            {ct.findUsGoogle}
-          </h2>
-          <p style={{ color: '#6b7280', fontSize: '0.875rem', marginBottom: '1rem' }}>
-            {ct.findUsSubtitle}
-          </p>
-          <div
-            style={{
-              borderRadius: '0.75rem',
-              overflow: 'hidden',
-              border: '1px solid #333',
-            }}
-          >
+        <div className="ct-map-section">
+          <h2 className="ct-map-title">{ct.findUsGoogle}</h2>
+          <p className="ct-map-sub">{ct.findUsSubtitle}</p>
+          <div className="ct-map-frame">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d927577.8847531937!2d55.4692488!3d24.74914795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6dc22e5a8d45%3A0x5f56211bd03d48bd!2sMadinat%20Alhaya%20Building%20Cleaning%20Services!5e0!3m2!1sen!2s!4v1780844711725!5m2!1sen!2s"
               width="100%"
@@ -181,23 +129,12 @@ export default function ContactPage() {
               title="Madinat Alhaya Building Cleaning Services on Google Maps"
             />
           </div>
-          <div style={{ marginTop: '1rem', textAlign: 'center' }}>
+          <div className="ct-gbp-wrap">
             <a
               href="https://maps.app.goo.gl/qAog9d6usteD2jsH6"
               target="_blank"
               rel="noopener noreferrer"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '0.5rem',
-                padding: '0.75rem 1.75rem',
-                background: '#c9a84c',
-                color: '#111111',
-                fontWeight: '600',
-                borderRadius: '0.5rem',
-                textDecoration: 'none',
-                fontSize: '0.9rem',
-              }}
+              className="ct-gbp-btn"
             >
               {ct.viewGBP}
             </a>

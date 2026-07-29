@@ -50,29 +50,24 @@ export default function BlogIndexPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       <div className="blog-wrap city-main">
-        {/* ambient floating accents */}
         <div className="blog-blob b1" />
         <div className="blog-blob b2" />
 
-        <div className="blog-inner max-w-6xl mx-auto px-4 py-12" style={{ paddingTop: '120px' }}>
-          <nav className="text-sm mb-8" aria-label="Breadcrumb" style={{ color: '#9ca3af' }}>
-            <a href="/" style={{ color: '#c9a84c' }}>Home</a>
-            <span className="mx-2" style={{ color: '#4b5563' }}>/</span>
+        <div className="blog-inner max-w-6xl mx-auto px-4 py-12 bi-main">
+          <nav className="text-sm mb-8 bi-breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            <span className="mx-2 bi-breadcrumb-sep">/</span>
             <span className="text-white city-crumb-cur">Blog</span>
           </nav>
 
-          <div style={{ fontSize: '0.7rem', color: '#c9a84c', letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
-            Cleaning Tips &amp; Guides
-          </div>
-          <h1 className="city-page-h1" style={{ fontFamily: 'var(--font-josefin)', fontSize: 'clamp(1.9rem, 4.2vw, 2.8rem)', fontWeight: 700, color: '#fff', lineHeight: 1.12 }}>
-            The Madinat Alhaya Cleaning Blog
-          </h1>
+          <div className="bi-gold-label">Cleaning Tips &amp; Guides</div>
+          <h1 className="city-page-h1 bi-h1">The Madinat Alhaya Cleaning Blog</h1>
           <div className="blog-title-accent" />
-          <p className="city-page-sub" style={{ color: '#9ca3af', fontSize: '1.075rem', lineHeight: 1.7, margin: '1rem 0 2.75rem', maxWidth: '720px' }}>
+          <p className="city-page-sub bi-sub">
             Practical, Dubai-specific cleaning advice — real prices, care schedules, and checklists to help you keep your home spotless and make smart booking decisions.
           </p>
 
-          {/* ── AI DEEP GUIDES (distinct, agent-generated) ── */}
+          {/* AI DEEP GUIDES */}
           {aiGuides.length > 0 && (
             <section className="aig-shelf">
               <div className="aig-shelf-head">
@@ -131,7 +126,7 @@ export default function BlogIndexPage() {
             </section>
           )}
 
-          {/* ── FEATURED POST ── */}
+          {/* FEATURED POST */}
           {featured && (
             <Link href={`/blog/${featured.slug}`} className="blog-featured">
               <div className="blog-featured-img">
@@ -139,15 +134,15 @@ export default function BlogIndexPage() {
                 <span className="blog-cat">Featured · {categoryOf(featured)}</span>
               </div>
               <div className="blog-featured-body">
-                <div style={{ color: '#9aa3b2', fontSize: '0.8rem', marginBottom: '0.6rem', letterSpacing: '0.05em' }}>{featured.readMins} min read</div>
-                <h2 className="blog-card-title" style={{ fontSize: 'clamp(1.4rem, 2.5vw, 1.9rem)', marginBottom: '0.8rem' }}>{featured.h1}</h2>
-                <p className="blog-card-excerpt" style={{ fontSize: '1.02rem', flex: 'unset' }}>{featured.excerpt}</p>
+                <div className="bi-featured-meta">{featured.readMins} min read</div>
+                <h2 className="blog-card-title bi-featured-title">{featured.h1}</h2>
+                <p className="blog-card-excerpt bi-featured-excerpt">{featured.excerpt}</p>
                 <ArrowReadMore label="Read the guide" />
               </div>
             </Link>
           )}
 
-          {/* ── GRID ── */}
+          {/* GRID */}
           <div className="blog-grid">
             {rest.map((post) => (
               <Link key={post.slug} href={`/blog/${post.slug}`} className="blog-card">
