@@ -170,6 +170,9 @@ export default async function ServicePage({ params }: Props) {
         </div>
       </div>
 
+      {/* VIDEO SHOWCASE — right after hero */}
+      <ServiceVideoShowcase serviceSlug={slug} serviceName={service.name} />
+
       {/* MAIN CONTENT */}
       <div className="theme-svc-body sp-body">
         <div className="svc-grid sp-grid">
@@ -216,9 +219,6 @@ export default async function ServicePage({ params }: Props) {
                 </a>
               </div>
             )}
-
-            {/* VIDEO SHOWCASE */}
-            <ServiceVideoShowcase serviceSlug={slug} serviceName={service.name} />
 
             {/* SERVICE AREAS */}
             <div>
