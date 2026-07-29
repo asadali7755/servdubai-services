@@ -320,6 +320,78 @@ A clean carpet is the foundation of a healthy UAE home. By investing in carpet c
         answer: 'Yes. Our carpet cleaning services cover Abu Dhabi, Sharjah, Ajman, RAK, Fujairah, and Umm Al Quwain. We provide carpet cleaning services near me across all 7 UAE Emirates with the same high standards.',
       },
     ],
+    contentSections: [
+      {
+        headingLevel: 'h2',
+        heading: 'Why UAE Carpets Need Professional Deep Cleaning',
+        text: 'Dubai and Abu Dhabi homes accumulate desert sand three times faster than homes in temperate climates. Standard vacuuming only removes surface debris — professional carpet cleaning services UAE use industrial hot-water extraction to flush out deep-settled sand, dust mites, and allergens that damage carpet fibers and reduce indoor air quality.',
+      },
+      {
+        headingLevel: 'h3',
+        heading: 'Desert Sand Damages Carpet Fibers Over Time',
+        text: 'Fine sand particles sink deep into carpet pile and act like microscopic sandpaper — grinding down fibers every time you walk. Our carpet cleaning services Dubai use commercial-grade extraction to remove this abrasive grit completely, preserving carpet texture and extending its lifespan by years.',
+      },
+      {
+        headingLevel: 'h3',
+        heading: 'Humidity Creates Mold and Dust Mite Breeding Grounds',
+        text: 'UAE coastal humidity traps moisture in thick carpet piles, creating ideal conditions for dust mites and mold growth. For residents with asthma or allergies, professional carpet cleaning services in Dubai is a health necessity — our high-temperature extraction kills dust mites and removes mold spores at the source.',
+      },
+      {
+        headingLevel: 'h2',
+        heading: 'Our Professional Carpet Cleaning Process',
+        text: 'Madinat Alhaya\'s carpet cleaning services UAE follow a multi-stage process designed specifically for UAE conditions — combining deep shampooing with hot-water extraction for maximum dirt and allergen removal.',
+      },
+      {
+        headingLevel: 'h3',
+        heading: 'Steam Extraction: The Gold Standard for UAE Carpets',
+        text: 'Hot-water extraction (steam cleaning) is the most effective carpet cleaning method for UAE homes. High-pressure hot water penetrates deep into carpet fibers, dissolving embedded sand, oils, and organic matter — then powerful suction extracts all contaminants along with 95% of the moisture. Carpets dry within 1–2 hours.',
+      },
+      {
+        headingLevel: 'h3',
+        heading: 'Carpet Shampooing for Surface Stain Removal',
+        text: 'For surface-level stains and carpet refreshing, our carpet shampooing uses a motorized brush and professional foam to lift dirt and brighten colors. Combined with steam extraction, this dual approach delivers results that neither method achieves alone.',
+      },
+      {
+        headingLevel: 'h3',
+        heading: 'Dry Carpet Cleaning for Delicate Rugs',
+        text: 'Silk carpets, antique Persian rugs, and delicate hand-woven textiles require our dry carpet cleaning services — low-moisture techniques that clean thoroughly without risking shrinkage, color bleeding, or fiber damage. Ideal for valuable rugs and quick-turnaround commercial spaces.',
+      },
+      {
+        headingLevel: 'h2',
+        heading: 'Carpet Cleaning Prices in Dubai',
+        text: 'Our carpet cleaning services Dubai pricing is fully transparent — no hidden charges, no estimates that change on arrival. Free quotes available via WhatsApp within minutes.',
+      },
+      {
+        headingLevel: 'h3',
+        heading: 'What Affects Carpet Cleaning Cost',
+        text: 'Carpet cleaning cost Dubai depends on carpet size (per square meter or flat rate for standard rugs), material type (synthetic vs wool vs silk), level of soiling, and whether additional treatments like stain protector or deodorization are required. Our affordable carpet cleaning services start from AED 75 for small rugs.',
+      },
+      {
+        headingLevel: 'h2',
+        heading: 'Serving Every Community Across Dubai and UAE',
+        text: 'Madinat Alhaya provides carpet cleaning services in Dubai Marina, Downtown Dubai, JBR, Palm Jumeirah, JLT, Business Bay, Al Barsha, Jumeirah, Mirdif, Arabian Ranches, Dubai Hills, Silicon Oasis, and all Dubai communities. Also covering carpet cleaning services in Abu Dhabi, Sharjah, Ajman, RAK, Fujairah, and UAQ.',
+      },
+      {
+        headingLevel: 'h2',
+        heading: 'Why Choose Madinat Alhaya for Carpet Cleaning in Dubai?',
+        text: 'Madinat Alhaya is the trusted carpet cleaning company Dubai — with certified technicians, industrial-grade equipment, eco-friendly products, and a 100% satisfaction guarantee across all 7 UAE Emirates.',
+      },
+      {
+        headingLevel: 'h3',
+        heading: 'Certified Technicians with Industrial Equipment',
+        text: 'All carpet cleaning technicians are trained, background-checked, and equipped with commercial-grade hot-water extraction machines — delivering results far beyond what any household carpet cleaner can achieve.',
+      },
+      {
+        headingLevel: 'h3',
+        heading: 'Eco-Friendly Products Safe for Children and Pets',
+        text: 'All carpet cleaning products are non-toxic, biodegradable, and safe for children, babies, and pets. Our eco-friendly carpet cleaning services leave zero chemical residue in carpet fibers.',
+      },
+      {
+        headingLevel: 'h3',
+        heading: 'Same-Day Service and Satisfaction Guarantee',
+        text: 'Need carpet cleaning services near me urgently? Same-day carpet cleaning Dubai available across most areas. Not satisfied? We re-clean at no extra charge — our 100% satisfaction guarantee covers every booking.',
+      },
+    ],
     images: ['/images/services/carpet-cleaning.webp'],
     availableInEmirates: ALL_EMIRATES,
     externalWebsite: { name: 'Carpet Cleaning Dubai', url: 'https://carpetcleaningdubai.com' },
@@ -942,6 +1014,53 @@ The service is available for single chairs or full dining sets, and we can also 
         answer: 'Yes. We offer a fabric protector treatment that creates an invisible barrier against spills and staining, making your chairs much easier to maintain between professional cleans.',
       },
     ],
+    contentSections: [
+      {
+        headingLevel: 'h2',
+        heading: 'Why Dining Chairs Need Professional Cleaning',
+        text: 'Dining chairs endure daily contact with food, grease, sauces, beverages, and body oils — creating a combination of staining and odor buildup that surface wiping cannot address. In Dubai\'s humid climate, food residue trapped in upholstery fibers becomes a breeding ground for bacteria within hours.',
+      },
+      {
+        headingLevel: 'h3',
+        heading: 'Food Stains Penetrate Deep Into Upholstery',
+        text: 'Cooking oil, coffee, wine, tomato sauce, and curry stains do not just sit on the surface — they penetrate deep into fabric fibers, bonding with the material over time. Our food-grade pre-treatment spray breaks down these organic bonds before hot-water extraction flushes all contaminants out completely.',
+      },
+      {
+        headingLevel: 'h3',
+        heading: 'Body Oils and Sweat Create Permanent Discoloration',
+        text: 'Headrests and armrests of dining chairs accumulate body oils and perspiration over months of daily use, creating visible darkening and a musty odor. Professional extraction removes these oils from deep within the fibers — restoring the original color and eliminating trapped odors.',
+      },
+      {
+        headingLevel: 'h2',
+        heading: 'Cleaning Methods for Every Chair Material',
+        text: 'Different dining chair materials require completely different cleaning approaches. Our technicians assess each chair\'s fabric type before starting — ensuring effective cleaning without damage to the upholstery or frame.',
+      },
+      {
+        headingLevel: 'h3',
+        heading: 'Fabric Dining Chair Deep Cleaning',
+        text: 'For fabric-upholstered dining chairs, we apply a food-grade pre-treatment to grease and stain areas, then perform hot-water extraction that removes food particles, oils, and bacteria from deep within the fibers. Result: fresh, odor-free fabric that looks and feels renewed.',
+      },
+      {
+        headingLevel: 'h3',
+        heading: 'Leather and Faux Leather Chair Care',
+        text: 'Leather dining chairs require pH-neutral cleaners that dissolve surface grime and body oils without stripping the finish. We follow with a conditioning treatment that restores suppleness and provides UV protection — essential for leather exposed to Dubai\'s sunlight through dining room windows.',
+      },
+      {
+        headingLevel: 'h3',
+        heading: 'Fabric Protector for Long-Term Stain Resistance',
+        text: 'After cleaning, we offer an optional fabric protector treatment that creates an invisible barrier on dining chair upholstery. Future spills bead up on the surface instead of soaking in — making cleanup quick and preventing permanent staining between professional cleans.',
+      },
+      {
+        headingLevel: 'h2',
+        heading: 'Full Dining Set Cleaning in One Visit',
+        text: 'We clean complete dining sets in a single visit — all chairs, matching benches, ottoman seating, and cushioned surfaces. A set of 6 chairs typically takes 1–2 hours to clean, with drying complete within 1–2 hours using our quick-dry equipment.',
+      },
+      {
+        headingLevel: 'h2',
+        heading: 'Safe, Non-Toxic Products for Your Dining Area',
+        text: 'All cleaning products used on dining chairs are food-safe and non-toxic — leaving zero residue that could transfer to food or hands. Completely safe for surfaces where your family eats daily. Available across all 7 UAE Emirates with same-day service in most Dubai areas.',
+      },
+    ],
     images: ['/images/services/dining-chair-cleaning.webp'],
     availableInEmirates: ALL_EMIRATES,
   },
@@ -1185,6 +1304,58 @@ All packages are available for studio apartments through to 4+ bedroom apartment
         answer: 'Not necessarily. Many clients provide a key or access code. We are fully insured and our team members are background-checked. You will receive a confirmation message when the clean is complete.',
       },
     ],
+    contentSections: [
+      {
+        headingLevel: 'h2',
+        heading: 'Apartment Cleaning Packages for Every Need',
+        text: 'Whether you need a regular maintenance clean, a comprehensive deep clean, or a move-in/move-out clean that restores the property to handover condition — Madinat Alhaya offers flexible apartment cleaning Dubai packages tailored to your requirements.',
+      },
+      {
+        headingLevel: 'h3',
+        heading: 'Regular Apartment Cleaning: Weekly & Fortnightly',
+        text: 'Our regular apartment cleaning covers dusting all surfaces, vacuuming carpets and rugs, mopping hard floors, cleaning bathroom surfaces, wiping kitchen counters and hob, emptying bins, cleaning mirrors, and general tidying. Ideal for weekly or fortnightly bookings — keeping your apartment fresh between deep cleans.',
+      },
+      {
+        headingLevel: 'h3',
+        heading: 'Deep Cleaning: Quarterly Intensive Service',
+        text: 'The deep cleaning package addresses everything in regular cleaning plus: full oven and refrigerator interior cleaning, kitchen cabinet interiors, bathroom descaling and grout scrubbing, window sill and track cleaning, balcony mopping, behind-appliance cleaning, light switches, sockets, and all door frames and handles. Recommended quarterly.',
+      },
+      {
+        headingLevel: 'h3',
+        heading: 'Move-In & Move-Out Cleaning Dubai',
+        text: 'Our move-in move-out cleaning Dubai is the most thorough level — designed to meet UAE tenancy agreement requirements. We deep-clean every surface, fixture, and fitting, providing a detailed checklist and completion report for landlord or agency sign-off. Essential for end of tenancy cleaning Dubai deposits.',
+      },
+      {
+        headingLevel: 'h2',
+        heading: 'All Apartment Sizes: Studio to Penthouse',
+        text: 'We clean all apartment types across Dubai — studios, 1BHK, 2BHK, 3BHK, 4BHK, penthouses, and duplexes. Our teams are trained to handle different configurations including open-plan living, split-level units, and maid\'s rooms. Pricing scales with apartment size and cleaning level selected.',
+      },
+      {
+        headingLevel: 'h2',
+        heading: 'Why Dubai Apartments Need Regular Professional Cleaning',
+        text: 'Dubai\'s desert climate pushes fine sand and dust into apartments through even the smallest gaps. AC systems circulate dust particles that settle on every surface. Without regular professional cleaning, this buildup affects indoor air quality, damages furnishings, and creates an environment that feels perpetually dusty despite daily efforts.',
+      },
+      {
+        headingLevel: 'h3',
+        heading: 'AC Duct Dust and Indoor Air Quality',
+        text: 'Dubai apartments run AC continuously for most of the year. Dust accumulates in vents and ducts, circulating allergens and fine particles throughout your home. Our deep cleaning includes vent exterior cleaning and surface sanitization — significantly improving the air quality in your living space.',
+      },
+      {
+        headingLevel: 'h3',
+        heading: 'Bathroom Limescale and Hard Water Buildup',
+        text: 'Dubai\'s hard water creates stubborn limescale deposits on bathroom fixtures, shower screens, and taps. Regular cleaning prevents this buildup from becoming permanent. Our deep clean uses professional descaling agents that remove limescale completely without damaging chrome or glass surfaces.',
+      },
+      {
+        headingLevel: 'h2',
+        heading: 'Trusted, Background-Checked Cleaning Teams',
+        text: 'All Madinat Alhaya apartment cleaners are background-checked, uniformed, and trained to our quality standards. Regular clients receive the same assigned team for consistency. We carry comprehensive liability insurance — and many clients provide key access, confident in our team\'s reliability.',
+      },
+      {
+        headingLevel: 'h2',
+        heading: 'Serving All Dubai Communities and UAE Emirates',
+        text: 'Apartment cleaning services available across Dubai Marina, Downtown, JLT, Business Bay, JBR, Palm Jumeirah, Al Barsha, Jumeirah, Mirdif, Silicon Oasis, JVC, Dubai Hills, and all Dubai communities. Also serving Abu Dhabi, Sharjah, Ajman, RAK, Fujairah, and UAQ with the same professional standards.',
+      },
+    ],
     images: ['/images/services/apartment-cleaning.webp'],
     availableInEmirates: ALL_EMIRATES,
   },
@@ -1249,6 +1420,58 @@ We hold comprehensive liability insurance and our cleaning teams undergo regular
         answer: 'All Madinat Alhaya cleaning staff are background-checked, reference-verified, uniformed, and trained to our quality standards before being deployed to client premises.',
       },
     ],
+    contentSections: [
+      {
+        headingLevel: 'h2',
+        heading: 'Why Professional Office Cleaning Matters in Dubai',
+        text: 'A clean office directly impacts employee productivity, health, and the impression you make on clients. In Dubai\'s dusty climate, offices accumulate sand and particles faster than in temperate regions — and post-COVID hygiene expectations have made professional workplace sanitization a business necessity, not a luxury.',
+      },
+      {
+        headingLevel: 'h3',
+        heading: 'Reducing Sick Days Through Workplace Hygiene',
+        text: 'Shared workspaces are breeding grounds for bacteria and viruses — desks, keyboards, phones, and door handles harbor more germs than a toilet seat. Our office cleaning services Dubai include targeted high-touch surface disinfection that reduces bacterial load and helps cut employee sick days.',
+      },
+      {
+        headingLevel: 'h3',
+        heading: 'First Impressions for Clients and Partners',
+        text: 'A spotless reception area, clean meeting rooms, and fresh-smelling bathrooms create a professional first impression. Clients judge your business by the environment they walk into. Our commercial cleaning services maintain that standard consistently, visit after visit.',
+      },
+      {
+        headingLevel: 'h2',
+        heading: 'Flexible Scheduling Around Your Business Hours',
+        text: 'We understand that cleaning cannot disrupt your operations. Our office cleaning Dubai teams work early mornings before staff arrive, evenings after the working day, or weekends — all scheduled to ensure a clean workspace greeting your team every morning.',
+      },
+      {
+        headingLevel: 'h3',
+        heading: 'Daily, Weekly, and Deep Cleaning Packages',
+        text: 'Choose from daily maintenance cleaning, 3-times-per-week, weekly service, or monthly deep cleaning — each with preferential rates for longer-term contracts. For large corporate clients, we assign a dedicated team and site supervisor who manages quality and scheduling continuously.',
+      },
+      {
+        headingLevel: 'h2',
+        heading: 'What Our Office Cleaning Service Includes',
+        text: 'Our standard office cleaning covers workstation surfaces, monitor and keyboard wiping with anti-static solutions, reception and shared areas, phone sanitization, kitchen and pantry cleaning, bathroom sanitization, waste management, floor care, glass partitions, and door handle disinfection.',
+      },
+      {
+        headingLevel: 'h3',
+        heading: 'Office Deep Cleaning: Beyond the Standard',
+        text: 'Our deep cleaning adds full carpet extraction, upholstered furniture cleaning, ceiling fan and air vent cleaning, light fixture cleaning, detailed behind-furniture cleaning, tile and grout scrubbing, and kitchen appliance interior cleaning. Recommended quarterly for all office types.',
+      },
+      {
+        headingLevel: 'h3',
+        heading: 'Enhanced Disinfection and Electrostatic Spraying',
+        text: 'For offices with high foot traffic or after illness outbreaks, our enhanced disinfection protocol uses hospital-grade disinfectant and electrostatic spraying — ensuring comprehensive coverage of all surfaces including vertical planes and undersides that manual wiping misses.',
+      },
+      {
+        headingLevel: 'h2',
+        heading: 'All Commercial Spaces Covered',
+        text: 'We clean small boutique offices, co-working spaces, large corporate floors, government offices, retail premises, medical clinics, and educational facilities across Dubai, Abu Dhabi, Sharjah, and all UAE Emirates. Comprehensive liability insurance and trained, vetted staff for every deployment.',
+      },
+      {
+        headingLevel: 'h2',
+        heading: 'Why Choose Madinat Alhaya for Office Cleaning?',
+        text: 'Background-checked and uniformed staff, commercial-grade equipment, flexible scheduling, dedicated site supervisors for large clients, and competitive contract pricing. Our office cleaning company Dubai delivers consistent, inspectable results — visit after visit, guaranteed.',
+      },
+    ],
     images: ['/images/services/office-cleaning.webp'],
     availableInEmirates: ALL_EMIRATES,
   },
@@ -1311,6 +1534,53 @@ Pricing is based on kitchen size and the extent of buildup. We recommend monthly
         answer: 'Restaurants, cafes, hotels, catering companies, school and hospital canteens, cloud kitchens, food manufacturing facilities, and supermarket food preparation areas.',
       },
     ],
+    contentSections: [
+      {
+        headingLevel: 'h2',
+        heading: 'Why Commercial Kitchens Need Professional Deep Cleaning',
+        text: 'Commercial kitchens generate extreme levels of grease, steam, and food residue daily. Without regular professional deep cleaning, grease accumulation in exhaust hoods and ducts creates serious fire hazards, hygiene compliance failures risk your trade license, and equipment deterioration accelerates — costing thousands in premature replacements.',
+      },
+      {
+        headingLevel: 'h3',
+        heading: 'Fire Hazard Prevention: Hood and Duct Degreasing',
+        text: 'Grease buildup inside exhaust hoods, ductwork, and extraction fans is the leading cause of commercial kitchen fires. Our kitchen deep cleaning Dubai includes full interior and exterior hood degreasing, ductwork cleaning to required access points, and extraction fan blade cleaning — significantly reducing fire risk and meeting insurance requirements.',
+      },
+      {
+        headingLevel: 'h3',
+        heading: 'UAE Municipality Hygiene Compliance',
+        text: 'Dubai Municipality and Abu Dhabi Food Safety regulations require documented evidence of regular professional kitchen cleaning. Failing an inspection can result in fines, temporary closure, or trade license suspension. Our hygiene compliance report documents all work completed — supporting your food safety management records.',
+      },
+      {
+        headingLevel: 'h2',
+        heading: 'Complete Commercial Kitchen Deep Cleaning Scope',
+        text: 'Our kitchen deep cleaning covers every surface and piece of equipment — from exhaust systems to floor drains. We use industrial-strength degreasers and specialist equipment that standard cleaning companies simply do not have.',
+      },
+      {
+        headingLevel: 'h3',
+        heading: 'Equipment Deep Cleaning: Ovens, Fryers, Grills',
+        text: 'Full fryer oil drain and deep clean, grill and griddle degreasing, oven and combi-oven deep clean including racks, glass, and door seals, range top and burner cleaning. We restore equipment to a hygienic, efficient operating condition — extending equipment life and improving cooking performance.',
+      },
+      {
+        headingLevel: 'h3',
+        heading: 'Surfaces, Floors, and Drainage Systems',
+        text: 'Stainless steel work surfaces degreased and polished, floor degreasing and sanitization including floor drain cleaning, wall tile and grout scrubbing, waste area sanitization. Every contact surface in your kitchen is left hygienically clean and inspection-ready.',
+      },
+      {
+        headingLevel: 'h3',
+        heading: 'Refrigeration and Cold Storage Cleaning',
+        text: 'Walk-in coolers, reach-in refrigerators, and freezer units cleaned externally and internally — including gasket sanitization. Proper refrigeration hygiene prevents cross-contamination and extends compressor life by ensuring unobstructed airflow.',
+      },
+      {
+        headingLevel: 'h2',
+        heading: 'All Food Service Operations Covered',
+        text: 'We serve fine dining restaurants, fast food outlets, hotel kitchens, catering facilities, school and hospital canteens, food manufacturing premises, cloud kitchens, and supermarket food preparation areas. From small cafe kitchens to large hotel operations — our team scales to any size.',
+      },
+      {
+        headingLevel: 'h2',
+        heading: 'Scheduling and Emergency Cleaning',
+        text: 'We work during your closed hours — late nights, early mornings, or rest days — ensuring zero impact on service. For kitchens facing imminent municipality inspection, we offer priority emergency deep cleaning with rapid turnaround. Monthly recommended for high-volume kitchens, quarterly for lower-volume operations.',
+      },
+    ],
     images: ['/images/services/restaurant-kitchen-cleaning.webp'],
     availableInEmirates: ALL_EMIRATES,
   },
@@ -1369,6 +1639,63 @@ We work on all marble surfaces — floors, walls, countertops, staircases, bathr
       {
         question: 'Do you work on marble countertops and bathroom surfaces?',
         answer: 'Yes. We polish and seal marble countertops, bathroom vanities, shower walls, and any other marble surface. These are treated using smaller, precision equipment appropriate for the space.',
+      },
+    ],
+    contentSections: [
+      {
+        headingLevel: 'h2',
+        heading: 'Why Marble Loses Its Shine in UAE Homes',
+        text: 'Marble is a calcium carbonate-based stone that is naturally porous and reactive to acids. In UAE homes, daily foot traffic, desert sand tracked indoors, acidic cleaning products, and spills from coffee, lemon, and vinegar all cause progressive dulling, etching, and surface damage. Professional marble polishing restores what daily wear takes away.',
+      },
+      {
+        headingLevel: 'h3',
+        heading: 'Foot Traffic and Abrasive Sand Damage',
+        text: 'Desert sand tracked into homes acts as an abrasive on marble surfaces — every footstep grinds fine particles into the stone, creating microscopic scratches that accumulate into a dull, hazy appearance. High-traffic areas like hallways, living rooms, and kitchen floors show this damage fastest.',
+      },
+      {
+        headingLevel: 'h3',
+        heading: 'Acid Etching from Common Household Substances',
+        text: 'Lemon juice, vinegar, tomato sauce, coffee, and even some commercial cleaning products contain acids that chemically react with marble — creating white, dull etch marks on the surface. These marks cannot be removed by cleaning alone; they require professional honing and polishing to eliminate.',
+      },
+      {
+        headingLevel: 'h2',
+        heading: 'Our Marble Polishing Process: Diamond Abrasive Technology',
+        text: 'Madinat Alhaya uses industrial diamond abrasive technology and professional polishing compounds to restore marble to its original factory finish — or better. The process is tailored to each floor\'s condition after a thorough initial assessment.',
+      },
+      {
+        headingLevel: 'h3',
+        heading: 'Marble Grinding: Removing Deep Damage',
+        text: 'For floors with deep scratches, lippage (uneven tile edges), or severe surface irregularities, diamond grinding levels the surface completely. Using progressively finer diamond pads on a planetary grinding machine, we remove all visible damage and create a perfectly even surface for polishing.',
+      },
+      {
+        headingLevel: 'h3',
+        heading: 'Honing and Polishing: Restoring the Mirror Finish',
+        text: 'Marble honing removes surface scratches and etch marks to produce a smooth base. Fine diamond pads and polishing compounds then build up the characteristic high-gloss mirror finish. The result: marble that looks better than when it was first installed.',
+      },
+      {
+        headingLevel: 'h3',
+        heading: 'Crystallization: Hardening and Shine Enhancement',
+        text: 'Crystallization uses heat and a chemical reaction to harden the marble surface layer, producing exceptional shine and increased scratch resistance. This treatment is ideal for high-traffic commercial and residential marble floors across Dubai and UAE.',
+      },
+      {
+        headingLevel: 'h3',
+        heading: 'Sealing: Long-Term Stain Protection',
+        text: 'After polishing, we apply a penetrating impregnator sealer that fills the marble\'s natural pores without altering its appearance. This dramatically reduces stain penetration from coffee, oil, wine, and other liquids — making daily maintenance significantly easier.',
+      },
+      {
+        headingLevel: 'h2',
+        heading: 'All Marble and Natural Stone Surfaces',
+        text: 'We polish and restore all marble surfaces — floors, walls, countertops, staircases, bathroom vanities, shower walls, and feature columns. We also handle travertine, limestone, onyx, terrazzo, and granite. Precision equipment is used for countertops and smaller surfaces.',
+      },
+      {
+        headingLevel: 'h2',
+        heading: 'Marble Polishing Prices in Dubai',
+        text: 'Pricing is based on floor area (per square meter), the type of marble, and the level of restoration required. Light polishing costs less than full grinding and restoration. We provide accurate pricing after an initial floor assessment — no hidden charges, free quotes via WhatsApp.',
+      },
+      {
+        headingLevel: 'h2',
+        heading: 'Why Choose Madinat Alhaya for Marble Polishing?',
+        text: 'Diamond abrasive technology, trained stone care technicians, competitive large-area pricing, and service across all 7 UAE Emirates. We restore marble in villas, apartments, hotels, offices, and retail spaces — delivering a finish that exceeds the original factory standard.',
       },
     ],
     images: ['/images/services/marble-polishing.webp'],
