@@ -101,11 +101,34 @@ const BASE_LOCAL_BUSINESS = {
   ],
   aggregateRating: {
     '@type': 'AggregateRating',
-    ratingValue: '4.5',
-    reviewCount: '12',
+    ratingValue: '4.3',
+    reviewCount: '76',
     bestRating: '5',
     worstRating: '1',
   },
+  review: [
+    {
+      '@type': 'Review',
+      author: { '@type': 'Person', name: 'Mohammed Muqtadir' },
+      datePublished: '2025-09-01',
+      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+      reviewBody: 'Got my car complete interior cleaning done and I must say their work was fabulous and it got done real quick at my place in a very reasonable price. Do prefer them for your car or home cleaning services.',
+    },
+    {
+      '@type': 'Review',
+      author: { '@type': 'Person', name: 'Hamza Muhammad Sheth' },
+      datePublished: '2025-06-01',
+      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+      reviewBody: 'Your team of Al Haya Cleaning has just finished the cleaning work. I am very happy and satisfied with the result. Your team has taken care everything and put all their efforts to get the result as I wanted.',
+    },
+    {
+      '@type': 'Review',
+      author: { '@type': 'Person', name: 'Ammatullah HM' },
+      datePublished: '2019-07-01',
+      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+      reviewBody: 'Excellent and professional service. They send a team to you and they put everything back in its place once they are done. Punctual and well-organized. They did a great job on my sofa and car seats. I would definitely recommend them.',
+    },
+  ],
 }
 
 export const buildLocalBusinessSchema = (options: {
