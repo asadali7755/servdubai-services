@@ -313,6 +313,41 @@ export default async function ServicePage({ params }: Props) {
                 ))}
               </div>
             )}
+
+            {/* Carpet cleaning gallery */}
+            {slug === 'carpet-cleaning' && (
+              <div className="ba-gallery">
+                <div className="ba-gallery-head">
+                  <div className="sp-sec-bar" />
+                  <h3 className="ba-gallery-title">Our Carpet Cleaning Work</h3>
+                </div>
+                {[
+                  { src: '/images/carpet-gallery/carpet-1.jpeg', alt: 'Carpet cleaning before and after result showing stain removal by Al Haya in Dubai' },
+                  { src: '/images/carpet-gallery/carpet-2.jpeg', alt: 'Professional carpet deep cleaning before and after comparison in Dubai home' },
+                  { src: '/images/carpet-gallery/carpet-3.jpeg', alt: 'Carpet stain removal results by Al Haya cleaning services UAE' },
+                  { src: '/images/carpet-gallery/carpet-4.jpeg', alt: 'Before and after carpet cleaning showing complete dirt removal in Dubai' },
+                  { src: '/images/carpet-gallery/carpet-5.jpeg', alt: 'Carpet cleaning before and after with professional stain treatment Dubai' },
+                  { src: '/images/carpet-gallery/carpet-6.jpeg', alt: 'Professional carpet steam cleaning in progress at Dubai residence' },
+                  { src: '/images/carpet-gallery/carpet-7.jpeg', alt: 'Professional rug cleaning with industrial equipment by Al Haya Dubai' },
+                  { src: '/images/carpet-gallery/carpet-8.jpeg', alt: 'Rug cleaning before and after results showing restored patterns Dubai' },
+                  { src: '/images/carpet-gallery/carpet-9.jpeg', alt: 'Carpet deep cleaning before and after stain extraction Dubai' },
+                  { src: '/images/carpet-gallery/carpet-10.jpeg', alt: 'Professional carpet cleaning technician using advanced extraction equipment Dubai' },
+                  { src: '/images/carpet-gallery/carpet-11.jpg', alt: 'Carpet stain remover treatment being applied to remove deep stains Dubai' },
+                  { src: '/images/carpet-gallery/carpet-13.webp', alt: 'Specialized rug care and professional cleaning services Dubai UAE' },
+                ].map((img, i) => (
+                  <div key={i} className="ba-img-wrap" style={{ marginBottom: '0.75rem' }}>
+                    <Image
+                      src={img.src}
+                      alt={img.alt}
+                      width={400}
+                      height={400}
+                      className="ba-img"
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
 
