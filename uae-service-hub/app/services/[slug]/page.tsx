@@ -398,6 +398,194 @@ export default async function ServicePage({ params }: Props) {
                 ))}
               </div>
             )}
+
+            {/* Marble polishing gallery */}
+            {slug === 'marble-polishing' && (
+              <div className="ba-gallery">
+                <div className="ba-gallery-head">
+                  <div className="sp-sec-bar" />
+                  <h3 className="ba-gallery-title">Our Marble Polishing Work</h3>
+                </div>
+                <div className="ba-pair">
+                  <div className="ba-img-wrap">
+                    <span className="ba-label ba-label-before">Before</span>
+                    <Image
+                      src="/images/marble-gallery/marble-before.png"
+                      alt="Marble floor before polishing showing dull scratched surface in Dubai property"
+                      width={400}
+                      height={300}
+                      className="ba-img"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="ba-img-wrap">
+                    <span className="ba-label ba-label-after">After</span>
+                    <Image
+                      src="/images/marble-gallery/marble-after.png"
+                      alt="Marble floor after professional polishing with mirror-like shine restored by Al Haya Dubai"
+                      width={400}
+                      height={300}
+                      className="ba-img"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+                {[
+                  { src: '/images/marble-gallery/marble-1.jpg', alt: 'Professional marble polishing services in Dubai with diamond grinding equipment by Al Haya' },
+                  { src: '/images/marble-gallery/marble-2.jpg', alt: 'Marble floor polishing in Marina Palm Jumeirah Emirates Hills Dubai by Al Haya' },
+                  { src: '/images/marble-gallery/marble-3.jpg', alt: 'Marble polishing and restoration work in progress at Dubai residence' },
+                  { src: '/images/marble-gallery/marble-4.jpg', alt: 'Professional marble floor grinding and polishing service in Dubai by Al Haya' },
+                  { src: '/images/marble-gallery/marble-5.jpg', alt: 'Marble polishing results showing restored shine on natural stone floor Dubai' },
+                  { src: '/images/marble-gallery/marble-6.jpg', alt: 'Marble floor polishing and crystallization service in Dubai UAE by Al Haya' },
+                  { src: '/images/marble-gallery/marble-7.jpg', alt: 'Marble polish Dubai professional floor restoration and polishing services' },
+                  { src: '/images/marble-gallery/marble-8.jpg', alt: 'Marble polishing in Dubai with industrial diamond polishing machine by Al Haya' },
+                  { src: '/images/marble-gallery/marble-9.jpg', alt: 'Crema Marfil marble polishing process in Dubai villa by Al Haya professionals' },
+                  { src: '/images/marble-gallery/marble-10.jpg', alt: 'Kitchen countertop marble polishing and restoration service Dubai by Al Haya' },
+                  { src: '/images/marble-gallery/marble-11.jpg', alt: 'Marble floor restoration process showing professional grinding technique Dubai' },
+                  { src: '/images/marble-gallery/marble-12.jpg', alt: 'Onyx marble polishing and finishing service in Dubai by Al Haya technicians' },
+                  { src: '/images/marble-gallery/marble-13.jpg', alt: 'Travertine floor polishing and sealing service in Dubai UAE by Al Haya' },
+                ].map((img, i) => (
+                  <div key={i} className="ba-img-wrap" style={{ marginBottom: '0.75rem' }}>
+                    <Image
+                      src={img.src}
+                      alt={img.alt}
+                      width={400}
+                      height={400}
+                      className="ba-img"
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {/* Villa cleaning gallery */}
+            {slug === 'villa-deep-cleaning' && (
+              <div className="ba-gallery">
+                <div className="ba-gallery-head">
+                  <div className="sp-sec-bar" />
+                  <h3 className="ba-gallery-title">Our Villa Cleaning Work</h3>
+                </div>
+                {[
+                  { src: '/images/villa-gallery/villa-1.jpg', alt: 'Villa deep cleaning service in progress at Dubai residential property by Al Haya' },
+                  { src: '/images/villa-gallery/villa-2.jpg', alt: 'Professional villa deep cleaning with industrial equipment in Dubai by Al Haya team' },
+                  { src: '/images/villa-gallery/villa-3.jpeg', alt: 'Villa deep cleaning Dubai Sharjah Ajman with professional team and equipment by Al Haya' },
+                  { src: '/images/villa-gallery/villa-4.jpeg', alt: 'Villa deep cleaning workers using floor polishing machine in Dubai residence by Al Haya' },
+                ].map((img, i) => (
+                  <div key={i} className="ba-img-wrap" style={{ marginBottom: '0.75rem' }}>
+                    <Image
+                      src={img.src}
+                      alt={img.alt}
+                      width={400}
+                      height={400}
+                      className="ba-img"
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {/* Office cleaning gallery */}
+            {slug === 'office-cleaning' && (
+              <div className="ba-gallery">
+                <div className="ba-gallery-head">
+                  <div className="sp-sec-bar" />
+                  <h3 className="ba-gallery-title">Our Office Cleaning Work</h3>
+                </div>
+                {[
+                  { src: '/images/office-gallery/office-1.jpg', alt: 'Professional office deep cleaning result in Dubai commercial space by Al Haya' },
+                  { src: '/images/office-gallery/office-2.jpg', alt: 'Office workstation and desk cleaning service in Dubai by Al Haya professionals' },
+                ].map((img, i) => (
+                  <div key={i} className="ba-img-wrap" style={{ marginBottom: '0.75rem' }}>
+                    <Image
+                      src={img.src}
+                      alt={img.alt}
+                      width={400}
+                      height={400}
+                      className="ba-img"
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {/* Kitchen cleaning gallery */}
+            {slug === 'restaurant-kitchen-cleaning' && (
+              <div className="ba-gallery">
+                <div className="ba-gallery-head">
+                  <div className="sp-sec-bar" />
+                  <h3 className="ba-gallery-title">Our Kitchen Cleaning Work</h3>
+                </div>
+                {[
+                  { src: '/images/kitchen-gallery/kitchen-1.jpg', alt: 'Kitchen floor tile deep cleaning service in Dubai residence by Al Haya professionals' },
+                  { src: '/images/kitchen-gallery/kitchen-2.jpg', alt: 'Restaurant kitchen deep cleaning and sanitization service in Dubai by Al Haya' },
+                ].map((img, i) => (
+                  <div key={i} className="ba-img-wrap" style={{ marginBottom: '0.75rem' }}>
+                    <Image
+                      src={img.src}
+                      alt={img.alt}
+                      width={400}
+                      height={400}
+                      className="ba-img"
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {/* Curtain cleaning gallery */}
+            {slug === 'curtain-cleaning' && (
+              <div className="ba-gallery">
+                <div className="ba-gallery-head">
+                  <div className="sp-sec-bar" />
+                  <h3 className="ba-gallery-title">Our Curtain Cleaning Work</h3>
+                </div>
+                {[
+                  { src: '/galary-images-pics/curtain/blinds-steam-cleaning-dubai-1-poster.jpg', alt: 'Blinds steam cleaning service in Dubai showing professional cleaning results by Al Haya' },
+                  { src: '/galary-images-pics/curtain/curtain-dry-steam-cleaning-dubai-2-poster.jpg', alt: 'Curtain dry steam cleaning service in progress at Dubai home by Al Haya professionals' },
+                  { src: '/galary-images-pics/curtain/kitchen-blinds-steam-cleaning-dubai-3-poster.jpg', alt: 'Kitchen blinds steam cleaning and sanitization service in Dubai by Al Haya' },
+                ].map((img, i) => (
+                  <div key={i} className="ba-img-wrap" style={{ marginBottom: '0.75rem' }}>
+                    <Image
+                      src={img.src}
+                      alt={img.alt}
+                      width={400}
+                      height={400}
+                      className="ba-img"
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {/* Car interior detailing gallery */}
+            {slug === 'car-interior-detailing' && (
+              <div className="ba-gallery">
+                <div className="ba-gallery-head">
+                  <div className="sp-sec-bar" />
+                  <h3 className="ba-gallery-title">Our Car Interior Detailing Work</h3>
+                </div>
+                {[
+                  { src: '/galary-images-pics/car/car-floor-mat-cleaning-dubai-poster.jpg', alt: 'Car floor mat deep cleaning and stain removal service in Dubai by Al Haya' },
+                  { src: '/galary-images-pics/car/car-interior-steam-cleaning-dubai-poster.jpg', alt: 'Car interior steam cleaning and sanitization service in Dubai by Al Haya professionals' },
+                ].map((img, i) => (
+                  <div key={i} className="ba-img-wrap" style={{ marginBottom: '0.75rem' }}>
+                    <Image
+                      src={img.src}
+                      alt={img.alt}
+                      width={400}
+                      height={400}
+                      className="ba-img"
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
 
