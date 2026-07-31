@@ -3907,6 +3907,22 @@ img { max-width: 100%; }
 .sp-sidebar-wa { display: flex; align-items: center; justify-content: center; gap: 0.5rem; width: 100%; padding: 0.9rem; background: linear-gradient(135deg, #25D366, #128C7E); color: #fff; font-weight: 700; border-radius: 6px; text-decoration: none; font-size: 1rem; margin-bottom: 0.75rem; }
 .sp-sidebar-call { display: flex; align-items: center; justify-content: center; gap: 0.5rem; width: 100%; padding: 0.75rem; background: transparent; border: 1px solid rgba(201,168,76,0.4); color: #c9a84c; font-weight: 600; border-radius: 6px; text-decoration: none; font-size: 1rem; }
 
+/* Before & After gallery */
+.ba-gallery { margin-top: 2rem; }
+.ba-gallery-head { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem; }
+.ba-gallery-title { font-size: 1.15rem; font-weight: 700; color: #c9a84c; margin: 0; }
+.ba-pair { margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; }
+.ba-img-wrap { position: relative; border-radius: 8px; overflow: hidden; border: 1px solid rgba(80,140,255,0.15); }
+.ba-img { width: 100%; height: auto; display: block; object-fit: cover; }
+.ba-label { position: absolute; top: 8px; left: 8px; padding: 3px 10px; border-radius: 4px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; z-index: 2; }
+.ba-label-before { background: rgba(229,62,62,0.85); color: #fff; }
+.ba-label-after { background: rgba(56,161,105,0.85); color: #fff; }
+
+[data-theme="light"] .ba-gallery-title { color: #8b6914; }
+[data-theme="light"] .ba-img-wrap { border-color: rgba(139,105,20,0.2); }
+[data-theme="light"] .ba-label-before { background: rgba(229,62,62,0.9); }
+[data-theme="light"] .ba-label-after { background: rgba(56,161,105,0.9); }
+
 .sp-faq-wrap { margin-top: 3rem; margin-bottom: 3rem; }
 .sp-faq-head { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
 .sp-faq-list { display: flex; flex-direction: column; gap: 0.75rem; }

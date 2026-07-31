@@ -277,6 +277,42 @@ export default async function ServicePage({ params }: Props) {
             <a href={`tel:${SITE_CONFIG.phone}`} className="sp-sidebar-call">
               Call {SITE_CONFIG.phone}
             </a>
+
+            {/* Before & After Gallery — sofa cleaning */}
+            {slug === 'sofa-cleaning' && (
+              <div className="ba-gallery">
+                <div className="ba-gallery-head">
+                  <div className="sp-sec-bar" />
+                  <h3 className="ba-gallery-title">Before &amp; After Results</h3>
+                </div>
+                {Array.from({ length: 7 }, (_, i) => i + 1).map((n) => (
+                  <div key={n} className="ba-pair">
+                    <div className="ba-img-wrap">
+                      <span className="ba-label ba-label-before">Before</span>
+                      <Image
+                        src={`/images/sofa-before-after/before-${n}.jpeg`}
+                        alt={`Sofa cleaning before - stained sofa cushions requiring professional deep cleaning in Dubai - Job ${n}`}
+                        width={400}
+                        height={300}
+                        className="ba-img"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div className="ba-img-wrap">
+                      <span className="ba-label ba-label-after">After</span>
+                      <Image
+                        src={`/images/sofa-before-after/after-${n}.jpeg`}
+                        alt={`Sofa cleaning after - professionally cleaned sofa with stains removed by Al Haya in Dubai - Job ${n}`}
+                        width={400}
+                        height={300}
+                        className="ba-img"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
 
