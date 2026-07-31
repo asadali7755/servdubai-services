@@ -348,6 +348,56 @@ export default async function ServicePage({ params }: Props) {
                 ))}
               </div>
             )}
+
+            {/* Mattress cleaning gallery */}
+            {slug === 'mattress-cleaning' && (
+              <div className="ba-gallery">
+                <div className="ba-gallery-head">
+                  <div className="sp-sec-bar" />
+                  <h3 className="ba-gallery-title">Our Mattress Cleaning Work</h3>
+                </div>
+                <div className="ba-pair">
+                  <div className="ba-img-wrap">
+                    <span className="ba-label ba-label-before">Before</span>
+                    <Image
+                      src="/images/mattress-gallery/mattress-before.jpeg"
+                      alt="Mattress before deep cleaning showing stains and dust mites accumulation in Dubai home"
+                      width={400}
+                      height={300}
+                      className="ba-img"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="ba-img-wrap">
+                    <span className="ba-label ba-label-after">After</span>
+                    <Image
+                      src="/images/mattress-gallery/mattress-after.jpeg"
+                      alt="Mattress after professional deep cleaning and sanitization by Al Haya showing restored freshness in Dubai"
+                      width={400}
+                      height={300}
+                      className="ba-img"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+                {[
+                  { src: '/images/mattress-gallery/mattress-1.webp', alt: 'Professional mattress cleaning service in Dubai with UV-C sanitization by Al Haya' },
+                  { src: '/images/mattress-gallery/mattress-2.webp', alt: 'Mattress deep cleaning and dust mite removal service across UAE by Al Haya' },
+                  { src: '/images/mattress-gallery/mattress-3.webp', alt: 'Professional mattress sanitization and stain removal in Dubai residence by Al Haya' },
+                ].map((img, i) => (
+                  <div key={i} className="ba-img-wrap" style={{ marginBottom: '0.75rem' }}>
+                    <Image
+                      src={img.src}
+                      alt={img.alt}
+                      width={400}
+                      height={400}
+                      className="ba-img"
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
 
