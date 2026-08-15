@@ -81,7 +81,7 @@ export default function BlogIndexPage() {
                 </p>
               </div>
               <div className="aig-shelf-grid">
-                {aiGuides.slice(0, 6).map((g) => (
+                {aiGuides.map((g) => (
                   <Link key={g.slug} href={`/blog/${g.slug}`} className="aig-shelf-card">
                     <div className="aig-shelf-img">
                       <Image src={g.image} alt={g.h1} fill unoptimized style={{ objectFit: 'cover' }} sizes="(max-width:640px) 100vw, 380px" loading="lazy" />
