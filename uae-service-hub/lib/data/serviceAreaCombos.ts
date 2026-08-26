@@ -38,6 +38,12 @@ const VILLA_AREAS = ['jumeirah', 'palm-jumeirah', 'al-barsha', 'bur-dubai']
 // Premium areas where marble polishing demand is highest
 const MARBLE_AREAS = ['downtown', 'jumeirah', 'palm-jumeirah', 'business-bay']
 
+// Search Console shows real, repeated demand for floor cleaning tied to these
+// two areas specifically ("floor cleaning company in mirdif", "floor cleaning
+// services umm suqeim") — the site was picking up impressions for them with no
+// matching page, so both areas and the service are new here.
+const FLOOR_AREAS = ['mirdif', 'umm-suqeim', 'al-barsha', 'bur-dubai']
+
 const build = (service: string, cities: string[]): ServiceAreaCombo[] =>
   cities.map((city) => ({ emirate: 'dubai', city, service }))
 
@@ -46,7 +52,8 @@ export const SERVICE_AREA_COMBOS: ServiceAreaCombo[] = [
   ...build('carpet-cleaning', UNIVERSAL_AREAS), // 8
   ...build('villa-deep-cleaning', VILLA_AREAS), // 4
   ...build('marble-polishing', MARBLE_AREAS), // 4
-] // = 24 curated combo pages
+  ...build('floor-cleaning', FLOOR_AREAS), // 4
+] // = 28 curated combo pages
 
 /** Is there a dedicated combo page for this exact (emirate, city, service)? */
 export const hasCombo = (emirate: string, city: string, service: string): boolean =>

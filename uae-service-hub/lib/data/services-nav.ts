@@ -12,4 +12,5 @@ export const servicesNav = [
   { id: 'office-cleaning',            name: 'Office Cleaning',           slug: 'office-cleaning' },
   { id: 'restaurant-kitchen-cleaning',name: 'Kitchen Cleaning',          slug: 'restaurant-kitchen-cleaning' },
   { id: 'marble-polishing',           name: 'Marble Polishing',          slug: 'marble-polishing' },
+  { id: 'floor-cleaning',             name: 'Floor Cleaning',            slug: 'floor-cleaning' },
 ]

@@ -10,6 +10,7 @@ const ALL_SERVICES = [
   'office-cleaning',
   'restaurant-kitchen-cleaning',
   'marble-polishing',
+  'floor-cleaning',
 ]
 
 export interface City {
@@ -55,6 +56,8 @@ export const emirates: Emirate[] = [
       makeCity('dubai', 'bur-dubai', 'Bur Dubai'),
       makeCity('dubai', 'silicon-oasis', 'Silicon Oasis'),
       makeCity('dubai', 'international-city', 'International City'),
+      makeCity('dubai', 'mirdif', 'Mirdif'),
+      makeCity('dubai', 'umm-suqeim', 'Umm Suqeim'),
     ],
   },
   {

@@ -1702,6 +1702,102 @@ We work on all marble surfaces — floors, walls, countertops, staircases, bathr
     availableInEmirates: ALL_EMIRATES,
     externalWebsite: { name: 'Marble Pro UAE', url: 'https://marblepro.ae' },
   },
+  {
+    id: 'floor-cleaning',
+    name: 'Floor Cleaning & Deep Scrubbing',
+    heroTitle: 'Floor Cleaning Services Dubai | Tile, Grout & Hard Floor Deep Cleaning',
+    heroSubtitle:
+      'Professional floor cleaning services across Dubai and all UAE. Machine scrubbing for ceramic, porcelain, vinyl and wooden floors, plus grout deep cleaning that restores tile lines to their original colour.',
+    slug: 'floor-cleaning',
+    category: 'specialized',
+    shortDescription:
+      'Floor cleaning company in Dubai for tile, porcelain, ceramic, vinyl and wooden floors. Rotary machine scrubbing, grout line deep cleaning, and post-construction floor cleaning across Mirdif, Umm Suqeim and all UAE.',
+    fullDescription: `Everyday mopping moves dirt around a floor; it does not lift what has settled into the surface. In UAE homes the problem compounds quickly, because fine desert dust is abrasive and works its way into grout lines, floor texture and the edges of every room. Within a year or two, floors that are cleaned regularly still look dull, and grout that started light grey turns brown. Our floor cleaning service exists for exactly that point - when a floor is clean but no longer looks clean.
+
+We work with rotary scrubbing machines and pressure extraction rather than mops and buckets. The machine agitates the surface with a pad or brush matched to your flooring, a suitable detergent lifts embedded soil, and the extraction unit removes the dirty solution instead of spreading it. The difference is most visible on grout: on tiled floors we run a separate grout pass with a narrow brush head, which is what actually restores the original colour of the lines between tiles.
+
+Different floors need different handling, and using the wrong method causes damage that is expensive to reverse. Ceramic and porcelain tolerate aggressive scrubbing and are the most straightforward. Vinyl and LVT need pH-neutral products and softer pads, because harsh alkaline cleaners break down the wear layer. Wooden and laminate floors are cleaned with minimal moisture and never flooded, since water penetration swells the boards from the edges. Natural stone - marble, travertine, limestone - should not be scrubbed with standard detergents at all: acidic and alkaline products etch the surface. If your floor is natural stone and has lost its shine, our marble polishing and restoration service is the correct treatment rather than this one, and we will tell you so during the assessment.
+
+We also handle post-construction and post-renovation floor cleaning, which is a different job again: cement haze, paint spots, adhesive residue and plaster dust need specific removal steps before any normal cleaning can begin. This is usually the service required after a fit-out, a move-in, or any building work in an apartment or villa.
+
+Floor cleaning is available across all seven Emirates. In Dubai we work regularly in Mirdif, Umm Suqeim, Al Barsha and Bur Dubai, alongside every other area we cover. Areas, floor sizes and floor types all affect the time a job takes, so we quote after understanding what you have rather than publishing a single flat rate.`,
+    contentSections: [
+      {
+        headingLevel: 'h2',
+        heading: 'Why UAE Floors Dull Faster Than They Should',
+        text: 'Desert dust is fine and abrasive. Tracked indoors, it acts like a mild sandpaper underfoot, wearing the surface finish while simultaneously packing into grout lines and floor texture. Air conditioning adds to it by circulating airborne dust continuously. This is why floors in Dubai homes often look tired within two years even with regular mopping - the issue is embedded soil and surface wear, neither of which a mop addresses.',
+      },
+      {
+        headingLevel: 'h2',
+        heading: 'Grout Cleaning: Where the Visible Difference Is',
+        text: 'On a tiled floor, most of what reads as dirty is the grout, not the tile. Grout is porous cement and absorbs everything that lands on it. We run a dedicated grout pass with narrow brush heads and a suitable grout cleaner, then extract, which lifts the absorbed soil rather than sealing it in. Where grout is damaged or permanently stained beyond cleaning, we will say so and can discuss re-grouting instead of overselling a clean that will not deliver.',
+      },
+      {
+        headingLevel: 'h2',
+        heading: 'Floor Types We Clean - and How the Method Changes',
+        text: 'Ceramic and porcelain: rotary scrubbing with an appropriate pad and full extraction. Vinyl and LVT: pH-neutral products with soft pads to protect the wear layer. Wood and laminate: low-moisture cleaning, never flooded. Concrete and terrazzo: heavier machine work depending on condition. Natural stone such as marble, travertine and limestone: not scrubbed with standard detergents - these need stone-specific restoration, which is a separate service.',
+      },
+      {
+        headingLevel: 'h2',
+        heading: 'Post-Construction and Move-In Floor Cleaning',
+        text: 'After a fit-out or renovation, floors carry cement haze, plaster dust, paint spots and adhesive residue. These need targeted removal before ordinary cleaning does anything useful. This is the service most people actually need after building work or before moving into a new villa or apartment, and it is worth booking it as post-construction cleaning rather than a standard clean.',
+      },
+    ],
+    benefits: [
+      'Rotary machine scrubbing and extraction, not mop-and-bucket cleaning',
+      'Dedicated grout line pass that restores original tile line colour',
+      'Method matched to your floor type so finishes are not damaged',
+      'Post-construction and move-in floor cleaning available',
+      'Floor cleaning company covering Mirdif, Umm Suqeim and all Dubai areas',
+      'Service across all 7 UAE Emirates',
+      'Honest assessment - we recommend stone restoration when that is what your floor needs',
+      'Quote based on floor size, type and condition after we see the job',
+    ],
+    process: [
+      'Assessment of floor type, finish and level of soiling',
+      'Clear the area and protect skirting, doors and adjacent surfaces',
+      'Dry removal of loose dust and grit',
+      'Apply the correct detergent for the floor type and allow dwell time',
+      'Rotary scrubbing with a pad or brush matched to the surface',
+      'Dedicated grout line pass on tiled floors',
+      'Extraction of dirty solution and a clean water rinse pass',
+      'Drying, inspection and walkthrough with you',
+    ],
+    faqs: [
+      {
+        question: 'What is the difference between floor cleaning and marble polishing?',
+        answer:
+          'Floor cleaning removes embedded dirt from the surface and grout of tile, porcelain, vinyl, wood and similar floors. Marble polishing is a restoration process for natural stone that repairs etching and scratches and brings back the shine mechanically. If your marble is clean but dull, cleaning it again will not help - it needs polishing. We will tell you which one your floor actually needs.',
+      },
+      {
+        question: 'Can you clean grout that has turned brown or black?',
+        answer:
+          'Usually yes. Grout is porous and absorbs soil over time, and a dedicated grout pass with the right cleaner and extraction lifts most of it. Results depend on how long the grout has been left and whether it is stained or physically damaged. Where grout is beyond cleaning, we will tell you rather than charge for a clean that will not show a difference.',
+      },
+      {
+        question: 'Do you provide floor cleaning in Mirdif and Umm Suqeim?',
+        answer:
+          'Yes. Both areas are part of our regular Dubai coverage, and each has its own service page with local detail. We also cover every other Dubai area and all seven Emirates. Contact us on WhatsApp with your area and floor type for a quote.',
+      },
+      {
+        question: 'Is machine scrubbing safe for wooden and vinyl floors?',
+        answer:
+          'It is safe when the method is correct for the material. Wood and laminate are cleaned with minimal moisture and never flooded, because water penetration swells the boards. Vinyl and LVT are cleaned with pH-neutral products and softer pads so the wear layer is not stripped. The damage people worry about comes from using tile methods on soft flooring, which is what the initial assessment is for.',
+      },
+      {
+        question: 'How long does floor cleaning take?',
+        answer:
+          'It depends on floor area, floor type and how much build-up there is. A single apartment is usually a few hours; a villa with extensive tiling and heavy grout soiling takes longer, and post-construction cleaning takes longest because residue removal comes first. We give a realistic time estimate with the quote.',
+      },
+      {
+        question: 'Do you clean floors after construction or renovation work?',
+        answer:
+          'Yes, and it is a different job from routine cleaning. Cement haze, plaster dust, paint spots and adhesive residue each need specific removal before normal cleaning achieves anything. Tell us that building work has been done when you request the quote so we schedule the right amount of time.',
+      },
+    ],
+    images: ['/images/services/marble-polishing.webp'],
+    availableInEmirates: ALL_EMIRATES,
+  },
 ]
 
 export const getServiceBySlug = (slug: string): Service | undefined =>

@@ -97,6 +97,20 @@ const cityCoordinates: Record<string, CityCoords> = {
     addressLocality: 'Dubai Silicon Oasis',
     addressRegion: 'Dubai',
   },
+  'dubai-mirdif': {
+    lat: 25.2167,
+    lng: 55.4181,
+    radiusMeters: 4000,
+    addressLocality: 'Mirdif',
+    addressRegion: 'Dubai',
+  },
+  'dubai-umm-suqeim': {
+    lat: 25.1413,
+    lng: 55.1900,
+    radiusMeters: 3500,
+    addressLocality: 'Umm Suqeim',
+    addressRegion: 'Dubai',
+  },
   'dubai-international-city': {
     lat: 25.1642,
     lng: 55.4151,

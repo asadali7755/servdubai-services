@@ -234,6 +234,56 @@ const cityLocalContent: Record<string, CityLocalContent> = {
     ],
   },
 
+  'dubai-mirdif': {
+    localDescription:
+      "Floor, sofa and full home cleaning across Mirdif's low-rise villa communities and family compounds - from the established streets around Mirdif City Centre to Uptown Mirdif and Mushrif Park. Mirdif is a settled, largely villa-based neighbourhood, so most of our work here is whole-home rather than single-room.",
+    landmarks: ['Mirdif City Centre', 'Uptown Mirdif', 'Mushrif Park', 'Ghoroob', 'Shorooq', 'Al Mizhar'],
+    propertyType: 'family villas, townhouses and low-rise compound homes',
+    areaNote:
+      "Mirdif sits on Dubai's eastern edge, close to open desert, and homes here take on more airborne sand than areas further into the city. It shows up first in tiled floors and grout lines rather than in the air, which is why floor deep cleaning is the service most requested by Mirdif residents.",
+    localFAQs: [
+      {
+        question: 'Do you provide floor cleaning in Mirdif?',
+        answer:
+          "Yes - Mirdif is one of the areas we cover most regularly for floor cleaning. We use rotary scrubbing machines with extraction and run a separate grout pass on tiled floors, which is what restores the original colour of the tile lines. Villa floors in Mirdif are usually large, so we quote after confirming floor area and type.",
+      },
+      {
+        question: 'Why do Mirdif floors get dusty so quickly?',
+        answer:
+          "Mirdif is on the eastern side of Dubai near open desert, so more fine sand reaches homes here than in central areas. That sand is abrasive and settles into grout and floor texture, where mopping cannot reach it. Machine scrubbing every six to twelve months keeps it from building up permanently.",
+      },
+      {
+        question: 'Can you clean a whole Mirdif villa in one visit?',
+        answer:
+          "Yes. Most Mirdif properties are villas or townhouses, and we send a team sized to the home so floors, sofas, carpets and the full deep clean are handled in a single visit rather than spread across days. Contact us on WhatsApp with the villa size for a combined quote.",
+      },
+    ],
+  },
+  'dubai-umm-suqeim': {
+    localDescription:
+      "Villa and floor cleaning across Umm Suqeim 1, 2 and 3 - the beachside residential belt running between Jumeirah and Al Sufouh, behind Umm Suqeim Beach and Burj Al Arab. The area is almost entirely established villas, many with extensive marble and tiled flooring.",
+    landmarks: ['Umm Suqeim 1', 'Umm Suqeim 2', 'Umm Suqeim 3', 'Umm Suqeim Beach', 'Burj Al Arab vicinity', 'Jumeirah Beach Road'],
+    propertyType: 'established beachside villas and large family homes',
+    areaNote:
+      "Umm Suqeim is close enough to the coast that salt-laden humidity reaches the homes here. On floors that means damp-set dust that dries into grout lines rather than brushing away, and on natural stone it accelerates dulling - so floors in Umm Suqeim typically need machine cleaning rather than mopping to look right.",
+    localFAQs: [
+      {
+        question: 'Do you offer floor cleaning services in Umm Suqeim?',
+        answer:
+          "Yes. Umm Suqeim villas usually have large tiled or stone floor areas, and we cover the area regularly. Tiled floors get rotary scrubbing plus a dedicated grout pass. If your floors are marble or another natural stone and have gone dull, that needs polishing rather than cleaning and we will tell you which one applies.",
+      },
+      {
+        question: 'Does being near the beach affect floors in Umm Suqeim?',
+        answer:
+          "It does. Coastal humidity means dust arrives damp and sets into grout instead of sweeping away, and salt in the air speeds up dulling on natural stone. Both are surface-level problems that respond well to proper machine cleaning, and to stone polishing where the floor is marble or travertine.",
+      },
+      {
+        question: 'Can you clean floors and sofas in the same Umm Suqeim visit?',
+        answer:
+          "Yes, and for villas it is usually the sensible way to book. One team covers floor scrubbing, sofa and carpet cleaning in a single visit, which costs less than separate appointments. Message us on WhatsApp with your villa size for a combined quote.",
+      },
+    ],
+  },
   'dubai-international-city': {
     localDescription: "Cost-effective professional cleaning for apartments across International City's themed clusters, including China Cluster, England Cluster, Spain Cluster, and Persia Cluster. Madinat Alhaya offers transparent, affordable cleaning packages tailored specifically for budget-conscious residents in this large residential community near Dragon Mart.",
     landmarks: ['China Cluster', 'England Cluster', 'Spain Cluster', 'Persia Cluster', 'France Cluster', 'Dragon Mart vicinity'],
