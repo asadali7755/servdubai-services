@@ -148,6 +148,13 @@ The **site is the source of truth.** The old `+971 54 719 9189` on legacy listin
 
 # PHASE 2 — Content: service × city combo pages (week 2–6) 🚀 biggest growth lever
 
+> **STATUS: First batch SHIPPED + LIVE (2026-06-01).** 24 curated Dubai combo pages at
+> `/[emirate]/[city]/[service]` (Sofa & Carpet × 8 areas, Villa × 4, Marble × 4). Each page unique
+> (city landmarks/FAQs + service content), full schema, sitemap + internal links, `dynamicParams=false`
+> so invalid combos 404. Verified: combos 200, single H1, correct title/canonical, sitemap shows 24.
+> **Next batch:** expand to more Dubai areas + replicate for Abu Dhabi/Sharjah once these start ranking.
+
+
 Today you have services and city pages, but **no "service in area" pages** — that's where low-competition,
 high-intent local searches live (e.g. *"sofa cleaning Dubai Marina"*, *"villa deep cleaning Arabian Ranches"*).
 

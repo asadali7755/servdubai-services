@@ -19,8 +19,8 @@ interface Props {
   totalServices: number
 }
 
-const CARD_WIDTH = 260   // px
-const CARD_GAP   = 16    // px
+const CARD_WIDTH = 260
+const CARD_GAP   = 16
 
 export default function CitySlider({ cities, emirateSlug, totalServices }: Props) {
   const [offset, setOffset] = useState(0)
@@ -62,38 +62,25 @@ export default function CitySlider({ cities, emirateSlug, totalServices }: Props
 
   return (
     <div
-      style={{ position: 'relative' }}
+      className="cs-wrap"
       onMouseEnter={() => { paused.current = true }}
       onMouseLeave={() => { paused.current = false }}
     >
-      {/* Slider viewport */}
-      <div style={{ overflow: 'hidden', borderRadius: '8px' }}>
+      <div className="cs-viewport">
         <div
+          className="cs-track"
           style={{
-            display: 'flex',
             gap: `${CARD_GAP}px`,
             transform: `translateX(-${offset}px)`,
-            transition: 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
           }}
         >
           {cities.map((city, i) => (
             <Link
               key={city.id}
               href={`/${emirateSlug}/${city.slug}`}
-              style={{
-                flexShrink: 0,
-                width: `${CARD_WIDTH}px`,
-                height: '200px',
-                borderRadius: '8px',
-                overflow: 'hidden',
-                display: 'block',
-                position: 'relative',
-                border: '1px solid rgba(201,168,76,0.15)',
-                textDecoration: 'none',
-              }}
-              className="emir-city-img-card"
+              className="cs-card emir-city-img-card"
+              style={{ width: `${CARD_WIDTH}px` }}
             >
-              {/* Background image */}
               <Image
                 src={CITY_IMAGES[i % CITY_IMAGES.length]}
                 alt={city.name}
@@ -101,51 +88,27 @@ export default function CitySlider({ cities, emirateSlug, totalServices }: Props
                 className="object-cover emir-city-img-inner"
                 sizes="260px"
               />
-              {/* Overlay */}
-              <div style={{
-                position: 'absolute', inset: 0,
-                background: 'linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.3) 55%, rgba(0,0,0,0.1) 100%)',
-              }} />
-              {/* Number badge */}
-              <div style={{
-                position: 'absolute', top: '0.75rem', left: '0.75rem',
-                fontFamily: 'var(--font-josefin)',
-                fontSize: '0.7rem', fontWeight: 700,
-                color: 'rgba(201,168,76,0.9)',
-                letterSpacing: '0.1em',
-              }}>
+              <div className="cs-overlay" />
+              <div className="cs-badge">
                 {String(i + 1).padStart(2, '0')}
               </div>
-              {/* Content bottom */}
-              <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '1rem' }}>
-                <div style={{
-                  fontFamily: 'var(--font-josefin)',
-                  fontSize: '1rem', fontWeight: 700,
-                  color: '#fff', marginBottom: '0.25rem',
-                }}>
-                  {city.name}
-                </div>
-                <div style={{ color: '#c9a84c', fontSize: '0.7rem', letterSpacing: '0.05em' }}>
-                  {totalServices} services available →
-                </div>
+              <div className="cs-bottom">
+                <div className="cs-city-name">{city.name}</div>
+                <div className="cs-city-svc">{totalServices} services available →</div>
               </div>
             </Link>
           ))}
         </div>
       </div>
 
-      {/* Prev button */}
       <button
         onClick={() => { goPrev(); resetTimer() }}
         aria-label="Previous"
         disabled={offset === 0}
+        className="cs-nav-btn cs-nav-prev"
         style={{
-          position: 'absolute', left: '-18px', top: '50%', transform: 'translateY(-50%)',
-          width: '36px', height: '36px', borderRadius: '50%',
           background: offset === 0 ? 'rgba(30,30,30,0.6)' : '#c9a84c',
-          border: 'none', cursor: offset === 0 ? 'default' : 'pointer',
-          display: 'flex', alignItems: 'center', justifyContent: 'center',
-          zIndex: 5, transition: 'background 0.2s',
+          cursor: offset === 0 ? 'default' : 'pointer',
         }}
       >
         <svg width="14" height="14" fill="none" stroke={offset === 0 ? '#555' : '#111'} strokeWidth="2.5" viewBox="0 0 24 24">
@@ -153,18 +116,14 @@ export default function CitySlider({ cities, emirateSlug, totalServices }: Props
         </svg>
       </button>
 
-      {/* Next button */}
       <button
         onClick={() => { goNext(); resetTimer() }}
         aria-label="Next"
         disabled={offset >= maxOffset}
+        className="cs-nav-btn cs-nav-next"
         style={{
-          position: 'absolute', right: '-18px', top: '50%', transform: 'translateY(-50%)',
-          width: '36px', height: '36px', borderRadius: '50%',
           background: offset >= maxOffset ? 'rgba(30,30,30,0.6)' : '#c9a84c',
-          border: 'none', cursor: offset >= maxOffset ? 'default' : 'pointer',
-          display: 'flex', alignItems: 'center', justifyContent: 'center',
-          zIndex: 5, transition: 'background 0.2s',
+          cursor: offset >= maxOffset ? 'default' : 'pointer',
         }}
       >
         <svg width="14" height="14" fill="none" stroke={offset >= maxOffset ? '#555' : '#111'} strokeWidth="2.5" viewBox="0 0 24 24">
@@ -172,8 +131,7 @@ export default function CitySlider({ cities, emirateSlug, totalServices }: Props
         </svg>
       </button>
 
-      {/* Dot indicators */}
-      <div style={{ display: 'flex', justifyContent: 'center', gap: '6px', marginTop: '1.25rem' }}>
+      <div className="cs-dots">
         {cities.map((_, i) => {
           const cardOffset = i * (CARD_WIDTH + CARD_GAP)
           const isActive = Math.abs(offset - cardOffset) < (CARD_WIDTH + CARD_GAP) / 2
@@ -182,12 +140,10 @@ export default function CitySlider({ cities, emirateSlug, totalServices }: Props
               key={i}
               onClick={() => { setOffset(Math.min(cardOffset, maxOffset)); resetTimer() }}
               aria-label={`Go to city ${i + 1}`}
+              className="cs-dot"
               style={{
-                width: isActive ? '20px' : '6px', height: '6px',
-                borderRadius: '3px',
+                width: isActive ? '20px' : '6px',
                 background: isActive ? '#c9a84c' : 'rgba(201,168,76,0.3)',
-                border: 'none', cursor: 'pointer', padding: 0,
-                transition: 'width 0.3s, background 0.3s',
               }}
             />
           )

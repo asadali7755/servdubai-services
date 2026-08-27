@@ -69,38 +69,38 @@ export default function HomeContent() {
       <Hero slides={heroSlides} badge={t.hero.badge} getFreeQuote={t.hero.getFreeQuote} learnMore={t.hero.learnMore} ourWebsites={t.hero.ourWebsites} isAr={isAr} />
 
       {/* 2. SERVICES */}
-      <section className="home-services-section" style={{ padding: '4.5rem 0' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
-          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-            <div style={{ fontSize: '0.7rem', color: '#c9a84c', letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>{t.home.servicesLabel}</div>
-            <h2 className="home-section-h2" style={{ textAlign: 'center' }}>{t.home.servicesTitle}</h2>
-            <p className="home-section-p" style={{ maxWidth: '640px', margin: '0 auto', textAlign: 'center' }}>{t.home.servicesSubtitle}</p>
+      <section className="home-services-section sec-pad">
+        <div className="container-xl">
+          <div className="sec-header">
+            <div className="gold-label">{t.home.servicesLabel}</div>
+            <h2 className="home-section-h2 text-center">{t.home.servicesTitle}</h2>
+            <p className="home-section-p max-w-640 mx-auto text-center">{t.home.servicesSubtitle}</p>
           </div>
 
           <div className="home-svc-grid">
             {t.home.mainCards.map((card, i) => (
               <div key={serviceSlugs[i]} className="home-svc-card">
-                <div style={{ position: 'relative', height: '190px', flexShrink: 0 }}>
+                <div className="svc-card-img">
                   <Image src={serviceImages[i]} alt={serviceAlts[i]} fill className="object-cover" sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 380px" loading="lazy" />
-                  <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(0,0,0,0.05), rgba(0,0,0,0.6))' }} />
+                  <div className="svc-card-overlay" />
                   <span className="home-svc-badge">{card.badge}</span>
                 </div>
-                <div style={{ padding: '1.4rem', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                <div className="svc-card-body">
                   <h2 className="home-svc-h2">{card.h2}</h2>
                   <h3 className="home-svc-h3">{card.h3}</h3>
-                  <p className="home-svc-p" style={{ flex: 1 }}>{card.p}</p>
+                  <p className="home-svc-p flex-1">{card.p}</p>
                   <div className="home-kw-row">
                     {serviceKws[i].map((kw) => <span key={kw} className="home-kw-tag">{kw}</span>)}
                   </div>
-                  <Link href={`/services/${serviceSlugs[i]}`} className="home-svc-link" style={{ marginTop: '0.5rem' }}>{t.home.viewService}</Link>
+                  <Link href={`/services/${serviceSlugs[i]}`} className="home-svc-link mt-sm">{t.home.viewService}</Link>
                 </div>
               </div>
             ))}
           </div>
 
-          <div style={{ marginTop: '2rem' }}>
-            <div style={{ textAlign: 'center', marginBottom: '1.25rem' }}>
-              <div style={{ fontSize: '0.7rem', color: '#c9a84c', letterSpacing: '0.2em', textTransform: 'uppercase' }}>{t.home.alsoAvailable}</div>
+          <div className="mt-md">
+            <div className="text-center mb-sm">
+              <div className="gold-label">{t.home.alsoAvailable}</div>
             </div>
             <div className="home-extra-grid">
               {t.home.extraServices.map((s, i) => (
@@ -119,53 +119,53 @@ export default function HomeContent() {
       <EmiratesSection emirates={emirates} />
 
       {/* 4. BOOK BY LOCATION */}
-      <section className="home-services-section" style={{ padding: '4.5rem 0' }}>
-        <div style={{ maxWidth: '1140px', margin: '0 auto', padding: '0 1.5rem' }}>
-          <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-            <div style={{ fontSize: '0.7rem', color: '#c9a84c', letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>{t.home.bookByLocationLabel}</div>
-            <h2 className="home-section-h2" style={{ textAlign: 'center' }}>{t.home.bookByLocationTitle}</h2>
-            <p className="home-section-p" style={{ maxWidth: '640px', margin: '0 auto', textAlign: 'center' }}>{t.home.bookByLocationSubtitle}</p>
+      <section className="home-services-section sec-pad">
+        <div className="container-lg">
+          <div className="sec-header-sm">
+            <div className="gold-label">{t.home.bookByLocationLabel}</div>
+            <h2 className="home-section-h2 text-center">{t.home.bookByLocationTitle}</h2>
+            <p className="home-section-p max-w-640 mx-auto text-center">{t.home.bookByLocationSubtitle}</p>
           </div>
           <PopularAreas />
-          <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+          <div className="text-center mt-md">
             <Link href="/areas" className="home-svc-link" style={{ fontWeight: 600 }}>{t.home.viewAllAreas}</Link>
           </div>
         </div>
       </section>
 
       {/* 5. BOOKING CTA */}
-      <section className="theme-cta" style={{ padding: '5rem 0', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', top: '-80px', right: '-80px', width: '320px', height: '320px', borderRadius: '50%', background: 'rgba(201,168,76,0.07)', pointerEvents: 'none' }} />
-        <div style={{ position: 'absolute', bottom: '-60px', left: '-60px', width: '220px', height: '220px', borderRadius: '50%', background: 'rgba(201,168,76,0.05)', pointerEvents: 'none' }} />
-        <div style={{ maxWidth: '1140px', margin: '0 auto', padding: '0 1.5rem', position: 'relative', zIndex: 1 }}>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap', marginBottom: '3rem' }}>
+      <section className="theme-cta sec-pad-lg relative overflow-hidden">
+        <div className="cta-circle-top" />
+        <div className="cta-circle-bottom" />
+        <div className="container-lg relative" style={{ zIndex: 1 }}>
+          <div className="cta-stats-row">
             {[
               { number: '11+', label: t.home.stats.services },
               { number: '7', label: t.home.stats.emirates },
               { number: '500+', label: t.home.stats.happyClients },
               { number: t.home.stats.sameDay, label: t.home.stats.availability },
             ].map((stat) => (
-              <div key={stat.label} style={{ textAlign: 'center', minWidth: '80px' }}>
-                <div className="cta-stat-number" style={{ fontSize: '1.9rem', fontWeight: 700, color: '#c9a84c', fontFamily: 'var(--font-josefin)', lineHeight: 1.1 }}>{stat.number}</div>
-                <div className="cta-stat-label" style={{ fontSize: '0.78rem', color: '#9aa3b2', textTransform: 'uppercase', letterSpacing: '0.1em', marginTop: '0.2rem' }}>{stat.label}</div>
+              <div key={stat.label} className="cta-stat-item">
+                <div className="cta-stat-number">{stat.number}</div>
+                <div className="cta-stat-label">{stat.label}</div>
               </div>
             ))}
           </div>
-          <div style={{ width: '50px', height: '2px', background: 'linear-gradient(90deg, #c9a84c, #25D366)', margin: '0 auto 2.25rem' }} />
-          <div style={{ maxWidth: '680px', margin: '0 auto', textAlign: 'center' }}>
-            <div style={{ fontSize: '0.7rem', color: '#c9a84c', letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.65rem' }}>{t.home.bookTodayLabel}</div>
-            <h2 className="home-section-h2" style={{ textAlign: 'center' }}>{t.home.bookTodayTitle}</h2>
-            <p className="home-section-p" style={{ maxWidth: '560px', margin: '0 auto 2.25rem', textAlign: 'center' }}>{t.home.bookTodaySubtitle}</p>
-            <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', justifyContent: 'center' }}>
-              <a href={getWhatsAppLink()} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', minWidth: '190px', justifyContent: 'center', padding: '0.95rem 1.85rem', background: 'linear-gradient(135deg,#25D366,#128C7E)', color: '#fff', fontWeight: 700, borderRadius: '500px', textDecoration: 'none', fontSize: '1rem', boxShadow: '0 4px 18px rgba(37,211,102,0.28)' }}>
+          <div className="gold-divider" />
+          <div className="container-sm text-center">
+            <div className="gold-label">{t.home.bookTodayLabel}</div>
+            <h2 className="home-section-h2 text-center">{t.home.bookTodayTitle}</h2>
+            <p className="home-section-p max-w-560 mx-auto mb-lg text-center">{t.home.bookTodaySubtitle}</p>
+            <div className="cta-btn-row">
+              <a href={getWhatsAppLink()} target="_blank" rel="noopener noreferrer" className="btn-wa-pill">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" /><path d="M12 0C5.373 0 0 5.373 0 12c0 2.116.553 4.103 1.523 5.83L.057 23.547a.5.5 0 00.612.611l5.718-1.466A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-5.032-1.386l-.36-.214-3.737.978.997-3.643-.235-.374A9.786 9.786 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z" /></svg>
                 {t.home.whatsappNow}
               </a>
-              <a href={`tel:${SITE_CONFIG.phone}`} style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', minWidth: '190px', justifyContent: 'center', padding: '0.95rem 1.85rem', background: 'transparent', color: '#c9a84c', fontWeight: 700, borderRadius: '500px', textDecoration: 'none', fontSize: '1rem', border: '2px solid #c9a84c' }}>
+              <a href={`tel:${SITE_CONFIG.phone}`} className="btn-gold-pill">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.29 21 3 13.71 3 4.5c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.24 1.02l-2.21 2.2z" /></svg>
                 {t.home.callPhone} {SITE_CONFIG.phone}
               </a>
-              <button onClick={openCallModal} style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', minWidth: '190px', justifyContent: 'center', padding: '0.95rem 1.85rem', background: 'transparent', color: '#c9a84c', fontWeight: 700, borderRadius: '500px', fontSize: '1rem', border: '2px solid #c9a84c', cursor: 'pointer' }}>
+              <button onClick={openCallModal} className="btn-gold-pill-btn">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
                 {isAr ? 'اطلب مكالمة' : 'Request a Call'}
               </button>
@@ -175,17 +175,17 @@ export default function HomeContent() {
       </section>
 
       {/* 6. WHY CHOOSE US */}
-      <section className="home-why-section" style={{ padding: '4.5rem 0' }}>
-        <div style={{ maxWidth: '1140px', margin: '0 auto', padding: '0 1.5rem' }}>
-          <div style={{ textAlign: 'center', marginBottom: '2.75rem' }}>
-            <div style={{ fontSize: '0.7rem', color: '#c9a84c', letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>{t.home.whyLabel}</div>
-            <h2 className="home-section-h2" style={{ textAlign: 'center' }}>{t.home.whyTitle}</h2>
-            <p className="home-section-p" style={{ maxWidth: '560px', margin: '0 auto', textAlign: 'center' }}>{t.home.whySubtitle}</p>
+      <section className="home-why-section sec-pad">
+        <div className="container-lg">
+          <div className="sec-header-lg">
+            <div className="gold-label">{t.home.whyLabel}</div>
+            <h2 className="home-section-h2 text-center">{t.home.whyTitle}</h2>
+            <p className="home-section-p max-w-560 mx-auto text-center">{t.home.whySubtitle}</p>
           </div>
           <div className="home-why-grid">
             {t.home.whyCards.map((item, i) => (
               <div key={i} className="home-why-card">
-                <div style={{ fontSize: '1.6rem', marginBottom: '0.65rem' }}>{whyIcons[i]}</div>
+                <div className="why-icon">{whyIcons[i]}</div>
                 <h3 className="home-why-h3">{item.title}</h3>
                 <p className="home-why-p">{item.desc}</p>
               </div>
@@ -195,14 +195,14 @@ export default function HomeContent() {
       </section>
 
       {/* 7. ABOUT */}
-      <section className="theme-about home-about-section" style={{ padding: '4.5rem 0' }}>
-        <div style={{ maxWidth: '1140px', margin: '0 auto', padding: '0 1.5rem' }}>
+      <section className="theme-about home-about-section sec-pad">
+        <div className="container-lg">
           <div className="home-about-grid">
             <div>
-              <div style={{ fontSize: '0.7rem', color: '#c9a84c', letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>{t.home.aboutLabel}</div>
+              <div className="gold-label">{t.home.aboutLabel}</div>
               <h2 className="home-section-h2">{t.home.aboutTitle}</h2>
               <p className="home-section-p">{t.home.aboutP1}</p>
-              <p className="home-section-p" style={{ marginBottom: '1.5rem' }}>{t.home.aboutP2}</p>
+              <p className="home-section-p mb-md">{t.home.aboutP2}</p>
               <ul className="home-checklist">
                 {t.home.aboutChecklist.map((item) => (
                   <li key={item} className="home-check-item">
@@ -211,12 +211,12 @@ export default function HomeContent() {
                   </li>
                 ))}
               </ul>
-              <div style={{ display: 'flex', gap: '0.875rem', flexWrap: 'wrap', marginTop: '1.75rem' }}>
+              <div className="home-cta-btns">
                 <a href={getWhatsAppLink()} target="_blank" rel="noopener noreferrer" className="p-btn-outline">{t.hero.getFreeQuote}</a>
                 <Link href="/about" className="p-btn-primary">{t.home.aboutUs}</Link>
               </div>
             </div>
-            <div className="p-about-img home-about-img" style={{ position: 'relative', borderRadius: '10px', overflow: 'hidden' }}>
+            <div className="p-about-img home-about-img relative overflow-hidden" style={{ borderRadius: '10px' }}>
               <Image src="/images/hero/villa-apartment-cleaning-services.webp" alt="Professional cleaning team Dubai villa — Madinat Alhaya deep cleaning UAE" fill className="object-cover" sizes="(max-width:768px) 100vw, 50vw" loading="lazy" />
             </div>
           </div>
@@ -224,16 +224,16 @@ export default function HomeContent() {
       </section>
 
       {/* 8. FAQ */}
-      <section className="home-faq-section" style={{ padding: '4.5rem 0' }}>
-        <div style={{ maxWidth: '820px', margin: '0 auto', padding: '0 1.5rem' }}>
-          <div style={{ textAlign: 'center', marginBottom: '2.75rem' }}>
-            <div style={{ fontSize: '0.7rem', color: '#c9a84c', letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>{t.home.faqLabel}</div>
-            <h2 className="home-section-h2" style={{ textAlign: 'center' }}>{t.home.faqTitle}</h2>
+      <section className="home-faq-section sec-pad">
+        <div className="container-md">
+          <div className="sec-header-lg">
+            <div className="gold-label">{t.home.faqLabel}</div>
+            <h2 className="home-section-h2 text-center">{t.home.faqTitle}</h2>
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+          <div className="faq-list">
             {t.home.faqs.map((faq, i) => (
               <details key={i} className="home-faq-item">
-                <summary className="home-faq-q">{faq.q}<span style={{ color: '#c9a84c', fontSize: '1.3rem', flexShrink: 0 }}>+</span></summary>
+                <summary className="home-faq-q">{faq.q}<span className="faq-toggle">+</span></summary>
                 <p className="home-faq-a">{faq.a}</p>
               </details>
             ))}
@@ -242,44 +242,44 @@ export default function HomeContent() {
       </section>
 
       {/* 9. MAP */}
-      <section className="home-map-section" style={{ padding: '5rem 0' }}>
-        <div style={{ maxWidth: '1140px', margin: '0 auto', padding: '0 1.5rem' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '3rem', alignItems: 'center' }}>
+      <section className="home-map-section sec-pad-lg">
+        <div className="container-lg">
+          <div className="map-grid">
             <div>
-              <div style={{ fontSize: '0.7rem', color: '#c9a84c', letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>{t.home.mapLabel}</div>
+              <div className="gold-label">{t.home.mapLabel}</div>
               <h2 className="home-section-h2">{t.home.mapTitle}</h2>
-              <p className="home-section-p" style={{ marginBottom: '1.5rem' }}>{t.home.mapSubtitle}</p>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.875rem', marginBottom: '1.75rem' }}>
+              <p className="home-section-p mb-md">{t.home.mapSubtitle}</p>
+              <div className="map-info-list">
                 {[
                   { label: t.home.mapPhone, value: '+971 55 127 5545', href: 'tel:+971551275545' },
                   { label: t.home.mapServiceArea, value: t.home.mapServiceAreaValue, href: null },
                   { label: t.home.mapHours, value: t.home.mapHoursValue, href: null },
                   { label: t.home.mapSameDay, value: t.home.mapSameDayValue, href: null },
                 ].map((item) => (
-                  <div key={item.label} style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
-                    <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#c9a84c', marginTop: '0.5rem', flexShrink: 0 }} />
+                  <div key={item.label} className="map-info-item">
+                    <div className="map-dot" />
                     <div>
-                      <div style={{ fontSize: '0.72rem', color: '#9aa3b2', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.15rem' }}>{item.label}</div>
+                      <div className="map-info-label">{item.label}</div>
                       {item.href ? (
-                        <a href={item.href} className="home-map-value" style={{ color: '#c9a84c', fontWeight: 600, fontSize: '1rem', textDecoration: 'none' }}>{item.value}</a>
+                        <a href={item.href} className="home-map-value map-info-link">{item.value}</a>
                       ) : (
-                        <div className="home-map-value" style={{ color: '#d1d5db', fontSize: '1rem', fontWeight: 500 }}>{item.value}</div>
+                        <div className="home-map-value map-info-value">{item.value}</div>
                       )}
                     </div>
                   </div>
                 ))}
               </div>
-              <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-                <a href={getWhatsAppLink()} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', padding: '0.8rem 1.6rem', background: 'linear-gradient(135deg,#25D366,#128C7E)', color: '#fff', fontWeight: 700, borderRadius: '500px', textDecoration: 'none', fontSize: '0.9rem' }}>{t.home.whatsappNow}</a>
-                <a href="https://maps.app.goo.gl/qAog9d6usteD2jsH6" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', padding: '0.8rem 1.6rem', background: 'rgba(201,168,76,0.1)', border: '1px solid rgba(201,168,76,0.3)', color: '#c9a84c', fontWeight: 700, borderRadius: '500px', textDecoration: 'none', fontSize: '0.9rem' }}>{t.home.viewOnMaps}</a>
-                <a href={SITE_CONFIG.googleReviewLink} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', padding: '0.8rem 1.6rem', background: 'rgba(201,168,76,0.1)', border: '1px solid rgba(201,168,76,0.3)', color: '#c9a84c', fontWeight: 700, borderRadius: '500px', textDecoration: 'none', fontSize: '0.9rem' }}>
+              <div className="map-btn-row">
+                <a href={getWhatsAppLink()} target="_blank" rel="noopener noreferrer" className="btn-wa-sm">{t.home.whatsappNow}</a>
+                <a href="https://maps.app.goo.gl/qAog9d6usteD2jsH6" target="_blank" rel="noopener noreferrer" className="btn-gold-accent-sm">{t.home.viewOnMaps}</a>
+                <a href={SITE_CONFIG.googleReviewLink} target="_blank" rel="noopener noreferrer" className="btn-gold-accent-sm">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 17.27l5.18 3.12-1.37-5.9L20.4 9.6l-6.05-.52L12 3.5 9.65 9.08 3.6 9.6l4.59 4.99-1.37 5.9z" /></svg>
                   {t.home.reviewOnGoogle}
                 </a>
               </div>
             </div>
             <div className="home-map-wrap">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d927577.8847531937!2d55.4692488!3d24.74914795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6dc22e5a8d45%3A0x5f56211bd03d48bd!2sMadinat%20Alhaya%20Building%20Cleaning%20Services!5e0!3m2!1sen!2s!4v1780844711725!5m2!1sen!2s" width="100%" height="380" style={{ border: 0, display: 'block', borderRadius: '12px' }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Madinat Alhaya Building Cleaning Services location on Google Maps Dubai" />
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d927577.8847531937!2d55.4692488!3d24.74914795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6dc22e5a8d45%3A0x5f56211bd03d48bd!2sMadinat%20Alhaya%20Building%20Cleaning%20Services!5e0!3m2!1sen!2s!4v1780844711725!5m2!1sen!2s" width="100%" height="380" className="map-iframe" allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Madinat Alhaya Building Cleaning Services location on Google Maps Dubai" />
             </div>
           </div>
         </div>

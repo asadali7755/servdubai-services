@@ -1,0 +1,48 @@
+name: Daily AI Blog Agents
+
+on:
+  schedule:
+    # 8 AM UAE time (UTC+4 = 4:00 AM UTC). Offset from the daily-content
+    # workflow's 3:00 AM UTC run so they don't overlap.
+    - cron: '0 4 * * *'
+
+  # Manual trigger also available (GitHub "Run workflow" button)
+  workflow_dispatch:
+
+jobs:
+  generate-blog-post:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+          cache-dependency-path: agents/requirements.txt
+
+      - name: Install Python dependencies
+        run: |
+          cd agents
+          pip install -r requirements.txt
+
+      - name: Run daily blog scheduler
+        env:
+          PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd agents
+          python blog_scheduler.py
+
+      - name: Commit and push new blog post
+        run: |
+          git config --local user.email "ai-agent@servedubai.com"
+          git config --local user.name "Al Haya AI Agent"
+          git add lib/data/generated-blog-posts.json agents/blog_topic_history.json
+          git diff --staged --quiet || git commit -m "🤖 New AI blog post $(date +'%Y-%m-%d')"
+          git push

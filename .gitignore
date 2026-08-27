@@ -46,3 +46,7 @@ coverage/
 # Misc
 *.tmp
 *.temp
+
+# Python bytecode (agents/)
+__pycache__/
+*.pyc

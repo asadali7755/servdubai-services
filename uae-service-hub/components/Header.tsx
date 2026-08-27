@@ -44,7 +44,7 @@ export default function Header() {
           <li className="dropdown">
             <span className="nav-link">
               {t.nav.services}
-              <svg style={{ display: 'inline', marginInlineStart: '5px', verticalAlign: 'middle' }} width="10" height="8" viewBox="0 0 10 6" fill="currentColor">
+              <svg className="nav-dropdown-caret" width="10" height="8" viewBox="0 0 10 6" fill="currentColor">
                 <path d="M0 0l5 6 5-6z" />
               </svg>
             </span>
@@ -61,7 +61,7 @@ export default function Header() {
           <li className="dropdown">
             <span className="nav-link">
               {t.nav.emirates}
-              <svg style={{ display: 'inline', marginInlineStart: '5px', verticalAlign: 'middle' }} width="10" height="8" viewBox="0 0 10 6" fill="currentColor">
+              <svg className="nav-dropdown-caret" width="10" height="8" viewBox="0 0 10 6" fill="currentColor">
                 <path d="M0 0l5 6 5-6z" />
               </svg>
             </span>
@@ -128,7 +128,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       <div className={`mobile-menu${mobileOpen ? ' open' : ''}`}>
-        <div style={{ padding: '0.5rem 1.5rem', borderBottom: '1px solid rgba(201,168,76,0.1)', marginBottom: '0.5rem' }}>
+        <div className="mobile-lang-wrap">
           <LanguageToggle />
         </div>
         <Link href="/" onClick={() => setMobileOpen(false)}>{t.nav.home}</Link>
@@ -148,13 +148,12 @@ export default function Header() {
         <Link href="/blog" onClick={() => setMobileOpen(false)}>{t.nav.blog}</Link>
         <Link href="/gallery" onClick={() => setMobileOpen(false)}>{t.nav.gallery}</Link>
         <Link href="/contact" onClick={() => setMobileOpen(false)}>{t.nav.contact}</Link>
-        <div style={{ padding: '0.75rem 1.5rem' }}>
+        <div className="mobile-cta-wrap">
           <a
             href={getWhatsAppLink()}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-btn-outline"
-            style={{ width: '100%', justifyContent: 'center', fontSize: '0.8rem' }}
+            className="p-btn-outline mobile-cta-btn"
             onClick={() => setMobileOpen(false)}
           >
             WhatsApp: {SITE_CONFIG.phone}

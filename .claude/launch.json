@@ -1,0 +1,50 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "uae-service-hub-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "uae-service-hub", "run", "dev"],
+      "port": 3000
+    },
+    {
+      "name": "nexagrow-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "E:/markiting-services-web", "run", "dev", "--", "-p", "3010"],
+      "port": 3010
+    },
+    {
+      "name": "marblepro-dev",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["--yes", "next", "dev", "-p", "3020"],
+      "port": 3020,
+      "cwd": "E:\\sheryar bhai projects\\marbleproWeb\\marblepro"
+    },
+    {
+      "name": "alhaya-seo-dashboard",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["dev"],
+      "port": 3100,
+      "cwd": "E:\\sheryar bhai projects\\seo-agents\\dashboard"
+    },
+    {
+      "name": "villadeepcleaning-dev",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["--yes", "next", "dev", "-p", "3030"],
+      "port": 3030,
+      "cwd": "E:\\sheryar bhai projects\\villa cleaning servies"
+    },
+    {
+      "name": "carpet-dev",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": ["/c", "cd /d \"E:\\sheryar bhai projects\\carpetcleaningdubai\" && npx next dev --turbopack -p 3040"],
+      "port": 3040
+    },
+    {
+      "name": "sofa-dev",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": ["/c", "cd /d E:\\sheryar\" \"bhai\" \"projects\\sofa-shampoing\\nextjs-app && npx next dev --turbopack -p 3050"],
+      "port": 3050
+    }
+  ]
+}
