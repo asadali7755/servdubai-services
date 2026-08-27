@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { blogPosts, type BlogPost } from '@/lib/data/blog'
 import { aiGuides } from '@/lib/data/aiGuides'
 import { buildMetadata, buildBreadcrumbSchema, buildLocalBusinessSchema } from '@/lib/utils/seo'
+import QuoteCard from '@/components/QuoteCard'
 
 export const metadata: Metadata = {
   ...buildMetadata({
@@ -159,6 +160,8 @@ export default function BlogIndexPage() {
               </Link>
             ))}
           </div>
+
+          <QuoteCard id="quote-blog" source="Blog index" className="page-quote-card" />
         </div>
       </div>
     </>

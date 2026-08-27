@@ -11,6 +11,7 @@ import { getCityContent } from '@/lib/data/cityContent'
 import { getCityCoords } from '@/lib/data/cityCoordinates'
 import { hasCombo } from '@/lib/data/serviceAreaCombos'
 import { SITE_CONFIG } from '@/lib/data/constants'
+import QuoteCard from '@/components/QuoteCard'
 
 type Props = { params: Promise<{ emirate: string; city: string }> }
 
@@ -314,6 +315,13 @@ export default async function CityPage({ params }: Props) {
                   <span>📞</span> {SITE_CONFIG.phone}
                 </a>
               </div>
+
+              <QuoteCard
+                id={`quote-${emirate.slug}-${city.slug}`}
+                source={`Area page — ${city.name}, ${emirate.name}`}
+                heading={`Get a free quote in ${city.name}.`}
+                className="page-quote-card"
+              />
             </div>
           )
         })()}

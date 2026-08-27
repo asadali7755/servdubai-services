@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import WhatsAppButton from '@/components/WhatsAppButton'
+import QuoteCard from '@/components/QuoteCard'
 import ServiceVideoShowcase from '@/components/ServiceVideoShowcase'
 import { services, getServiceBySlug } from '@/lib/data/services'
 import { emirates, getCityBySlug } from '@/lib/data/emirates'
@@ -248,6 +249,15 @@ export default async function ServicePage({ params }: Props) {
 
           {/* Right: sticky booking sidebar */}
           <div className="svc-sidebar">
+            {/* Same lead form as the home hero — this page had WhatsApp only */}
+            <QuoteCard
+              id={`quote-${slug}`}
+              defaultService={service.name}
+              source={`Service page — ${service.name}`}
+              heading="Get your free quote."
+              className="sp-sidebar-quote"
+            />
+
             <div className="sp-sidebar-label">Book Now</div>
             <h3 className="svc-content-h sp-sidebar-h3">{service.name}</h3>
 

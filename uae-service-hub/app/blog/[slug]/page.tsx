@@ -15,6 +15,7 @@ import {
 } from '@/lib/utils/seo'
 import { getWhatsAppLink } from '@/lib/utils/whatsapp'
 import { SITE_CONFIG } from '@/lib/data/constants'
+import QuoteCard from '@/components/QuoteCard'
 
 type Props = { params: Promise<{ slug: string }> }
 export const dynamicParams = false
@@ -159,6 +160,7 @@ export default async function BlogPostPage({ params }: Props) {
             <a href={getWhatsAppLink()} target="_blank" rel="noopener noreferrer" className="inline-block px-8 py-4 rounded-full font-semibold text-lg bp-cta-wa">WhatsApp Now</a>
             <a href={`tel:${SITE_CONFIG.phone}`} className="inline-block px-8 py-4 rounded-full font-semibold text-lg bp-cta-call">Call {SITE_CONFIG.phone}</a>
           </div>
+          <QuoteCard id="quote-blog-post" source={`Blog post — ${post.title}`} className="page-quote-card" />
         </div>
 
         {/* FAQ */}

@@ -4,6 +4,7 @@ import PopularAreas from '@/components/PopularAreas'
 import { buildMetadata, buildBreadcrumbSchema, buildLocalBusinessSchema } from '@/lib/utils/seo'
 import { getWhatsAppLink } from '@/lib/utils/whatsapp'
 import { SITE_CONFIG } from '@/lib/data/constants'
+import QuoteCard from '@/components/QuoteCard'
 
 export const metadata: Metadata = {
   ...buildMetadata({
@@ -64,6 +65,7 @@ export default function AreasPage() {
               Browse All Dubai Areas
             </Link>
           </div>
+          <QuoteCard id="quote-areas" source="Areas page" className="page-quote-card" />
         </div>
       </div>
     </>

@@ -21,6 +21,7 @@ import {
 } from '@/lib/utils/seo'
 import { getWhatsAppLink } from '@/lib/utils/whatsapp'
 import { SITE_CONFIG } from '@/lib/data/constants'
+import QuoteCard from '@/components/QuoteCard'
 
 type Props = { params: Promise<{ emirate: string; city: string; service: string }> }
 
@@ -290,6 +291,13 @@ export default async function ServiceAreaPage({ params }: Props) {
                 Call {SITE_CONFIG.phone}
               </a>
             </div>
+            <QuoteCard
+              id={`quote-${emirate.slug}-${city.slug}-${service.slug}`}
+              defaultService={service.name}
+              source={`${service.name} in ${city.name}`}
+              heading={`Get a free ${service.name.toLowerCase()} quote in ${city.name}.`}
+              className="page-quote-card"
+            />
           </div>
         </div>
       </div>
