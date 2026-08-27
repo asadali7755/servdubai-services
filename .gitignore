@@ -53,3 +53,8 @@ __pycache__/
 
 # Unrelated demo site that lives in this folder
 cr-sports-demo/
+
+# 79MB and unreferenced — past GitHub's 50MB warning and near its 100MB limit.
+# Other clips in this folder are used by lib/data/gallery.ts and are committed;
+# only this one is held back. Compress it before adding if it is ever needed.
+uae-service-hub/public/galary-images-pics/marblepolishingvid.mp4
