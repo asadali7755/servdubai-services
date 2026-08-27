@@ -50,3 +50,6 @@ coverage/
 # Python bytecode (agents/)
 __pycache__/
 *.pyc
+
+# Unrelated demo site that lives in this folder
+cr-sports-demo/
