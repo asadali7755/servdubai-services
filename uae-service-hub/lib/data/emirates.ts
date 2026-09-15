@@ -19,6 +19,8 @@ export interface City {
   slug: string
   emirateId: string
   availableServices: string[]
+  /** Optional real photo of this specific area, overriding the emirate-level banner */
+  image?: string
 }
 
 export interface Emirate {
@@ -71,7 +73,7 @@ export const emirates: Emirate[] = [
       makeCity('sharjah', 'al-qasimia', 'Al Qasimia'),
       makeCity('sharjah', 'al-majaz', 'Al Majaz'),
       makeCity('sharjah', 'al-khan', 'Al Khan'),
-      makeCity('sharjah', 'dibba-al-hisn', 'Dibba Al-Hisn'),
+      { ...makeCity('sharjah', 'dibba-al-hisn', 'Dibba Al-Hisn'), image: '/images/locations/dibba-al-hisn-corniche-pavilion.webp' },
     ],
   },
   {
@@ -115,7 +117,7 @@ export const emirates: Emirate[] = [
     image: '/images/emirates/fujairah.webp',
     cities: [
       makeCity('fujairah', 'fujairah-city', 'Fujairah City'),
-      makeCity('fujairah', 'dibba-al-fujairah', 'Dibba Al-Fujairah'),
+      { ...makeCity('fujairah', 'dibba-al-fujairah', 'Dibba Al-Fujairah'), image: '/images/locations/dibba-al-fujairah-aerial-coastal.webp' },
       makeCity('fujairah', 'kalba', 'Kalba'),
     ],
   },

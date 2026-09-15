@@ -50,6 +50,7 @@ export default async function CityPage({ params }: Props) {
   const emirateBannerSrc = emirateSlug === 'ras-al-khaimah'
     ? '/images/emirates/ras-al-khaimah2.webp'
     : `/images/emirates/${emirateSlug}.webp`
+  const bannerSrc = city.image ?? emirateBannerSrc
 
   const localSchema = buildLocalBusinessSchema({
     city: city.name,
@@ -89,7 +90,7 @@ export default async function CityPage({ params }: Props) {
         {/* CITY BANNER */}
         <div className="cp-banner">
           <Image
-            src={emirateBannerSrc}
+            src={bannerSrc}
             alt={`Professional cleaning services in ${city.name}, ${emirate.name} — Madinat Alhaya expert cleaning team serving ${city.name} homes, villas and apartments`}
             title={`Cleaning Services in ${city.name}, ${emirate.name} | Madinat Alhaya`}
             fill
