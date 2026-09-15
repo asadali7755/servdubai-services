@@ -386,6 +386,23 @@ const cityLocalContent: Record<string, CityLocalContent> = {
     ],
   },
 
+  'sharjah-dibba-al-hisn': {
+    localDescription: "Cleaning services for villas and apartments in Dibba Al-Hisn, Sharjah's enclave on the UAE's east coast - covering the town centre and surrounding residential streets. Sofa, carpet, and villa deep cleaning with the same standards we bring to the rest of Sharjah.",
+    landmarks: ['Dibba Al-Hisn town centre', 'Al Hisn Fort area', 'Dibba Al-Hisn Corniche'],
+    propertyType: 'villas and low-rise residential apartments',
+    areaNote: "Dibba Al-Hisn sits right beside Dibba Al-Fujairah on the same stretch of coast, so we serve both sides of the town on the same visit where useful for the customer.",
+    localFAQs: [
+      {
+        question: 'Do you clean villas and apartments in Dibba Al-Hisn, Sharjah?',
+        answer: "Yes. We cover Dibba Al-Hisn with sofa cleaning, carpet cleaning, and villa deep cleaning. We also serve Dibba Al-Fujairah on the Fujairah side of the same town - message us on WhatsApp to schedule either.",
+      },
+      {
+        question: 'How far is Dibba Al-Hisn from your other Sharjah coverage?',
+        answer: "Dibba Al-Hisn is on the east coast, a separate drive from central Sharjah, but it's within our regular UAE-wide coverage - contact us for same-day or next-day availability.",
+      },
+    ],
+  },
+
   /* ===========================================
      ABU DHABI
   =========================================== */
@@ -558,6 +575,10 @@ const cityLocalContent: Record<string, CityLocalContent> = {
       {
         question: 'Do you clean apartments and villas in Dibba Al-Fujairah?',
         answer: "Yes. We serve Dibba Al-Fujairah with sofa cleaning, carpet cleaning, and full villa deep cleaning. Contact us via WhatsApp for scheduling and a free quote.",
+      },
+      {
+        question: 'Do you also cover Dibba Al-Hisn on the Sharjah side?',
+        answer: "Yes. Dibba Al-Hisn and Dibba Al-Fujairah sit on the same stretch of coast - we cover both sides of the town, message us on WhatsApp to schedule either.",
       },
     ],
   },

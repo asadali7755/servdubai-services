@@ -157,6 +157,13 @@ const cityCoordinates: Record<string, CityCoords> = {
     addressLocality: 'Al Khan',
     addressRegion: 'Sharjah',
   },
+  'sharjah-dibba-al-hisn': {
+    lat: 25.6219,
+    lng: 56.2734,
+    radiusMeters: 4000,
+    addressLocality: 'Dibba Al-Hisn',
+    addressRegion: 'Sharjah',
+  },
 
   /* ===========================================
      ABU DHABI
