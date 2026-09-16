@@ -3960,7 +3960,7 @@ img { max-width: 100%; }
 }
 
 /* ── Service-Area combo page (sa-*) ── */
-.sa-main { padding-top: 120px; padding-left: 1rem; padding-right: 1rem; padding-bottom: 3rem; }
+.sa-main { padding-top: 120px; padding-left: 1rem; padding-right: 1rem; padding-bottom: 3rem; background: radial-gradient(circle at 20% 0%, rgba(201,168,76,0.05), transparent 45%), #0d0b08; }
 .sa-shell { max-width: 1360px; margin: 0 auto; }
 .sa-breadcrumb { color: #9ca3af; }
 .sa-breadcrumb a { color: #c9a84c; }
@@ -4015,7 +4015,7 @@ img { max-width: 100%; }
 /* Feed "post" cards */
 .sa-card {
   position: relative; overflow: hidden;
-  background: linear-gradient(165deg, #121935 0%, #0a0e1f 100%);
+  background: linear-gradient(165deg, #1c1712 0%, #0d0b08 100%);
   border: 1px solid rgba(255,255,255,0.07); border-radius: 18px; padding: 1.75rem 2rem;
   box-shadow: 0 10px 40px rgba(0,0,0,0.3);
   transition: transform 0.4s cubic-bezier(.2,.8,.2,1), box-shadow 0.4s, border-color 0.4s;
@@ -4105,7 +4105,7 @@ img { max-width: 100%; }
 .sa-parent-link { color: #9ca3af; text-decoration: underline; }
 
 .sa-cta-block {
-  background: radial-gradient(circle at 15% 15%, rgba(201,168,76,0.16), transparent 55%), linear-gradient(165deg, #121935 0%, #0a0e1f 100%);
+  background: radial-gradient(circle at 15% 15%, rgba(201,168,76,0.2), transparent 55%), linear-gradient(165deg, #1c1712 0%, #0d0b08 100%);
   border: 1px solid rgba(201,168,76,0.28);
 }
 .sa-cta-circle { position: absolute; top: -60px; right: -60px; width: 240px; height: 240px; border-radius: 50%; background: radial-gradient(circle, rgba(201,168,76,0.16), transparent 70%); pointer-events: none; animation: saCtaGlow 6s ease-in-out infinite; }

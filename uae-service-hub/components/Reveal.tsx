@@ -10,17 +10,38 @@ export default function Reveal({ children, className = '', delay = 0, id }: { ch
   useEffect(() => {
     const el = ref.current
     if (!el) return
+
+    let done = false
+    const reveal = () => {
+      if (done) return
+      done = true
+      setVisible(true)
+      obs.disconnect()
+      window.removeEventListener('scroll', checkPassed)
+    }
+
     const obs = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true)
-          obs.disconnect()
-        }
+        if (entry.isIntersecting) reveal()
       },
       { threshold: 0.12, rootMargin: '0px 0px -60px 0px' }
     )
     obs.observe(el)
-    return () => obs.disconnect()
+
+    // IntersectionObserver only fires on threshold crossings — an instant jump
+    // (anchor-link click, "End" key, scrollbar drag) can carry a card straight
+    // past the viewport without ever crossing zero, leaving it stuck invisible.
+    // A direct position check on scroll guarantees nothing stays hidden forever.
+    const checkPassed = () => {
+      if (el.getBoundingClientRect().bottom < 0) reveal()
+    }
+    window.addEventListener('scroll', checkPassed, { passive: true })
+    checkPassed()
+
+    return () => {
+      obs.disconnect()
+      window.removeEventListener('scroll', checkPassed)
+    }
   }, [])
 
   return (
