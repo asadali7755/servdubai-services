@@ -23,6 +23,7 @@ import { getWhatsAppLink } from '@/lib/utils/whatsapp'
 import { SITE_CONFIG } from '@/lib/data/constants'
 import QuoteCard from '@/components/QuoteCard'
 import StickyRail from '@/components/StickyRail'
+import Reveal from '@/components/Reveal'
 
 type Props = { params: Promise<{ emirate: string; city: string; service: string }> }
 
@@ -180,7 +181,7 @@ export default async function ServiceAreaPage({ params }: Props) {
             <main className="sa-feed">
 
               {/* HERO CARD */}
-              <div className="sa-card sa-card-hero" id="overview">
+              <Reveal id="overview" className="sa-card sa-card-hero" delay={0}>
                 <div className="sa-banner">
                   {service.images[0] && (
                     <Image
@@ -199,10 +200,10 @@ export default async function ServiceAreaPage({ params }: Props) {
                     <h1 className="sa-banner-h1">{service.name} in {city.name}</h1>
                   </div>
                 </div>
-              </div>
+              </Reveal>
 
               {/* INTRO CARD */}
-              <div className="sa-card">
+              <Reveal className="sa-card" delay={60}>
                 <CardHeader tag={`Serving ${city.name} · Licensed & insured`} />
                 <p className="sa-intro">
                   Looking for professional <strong>{service.name.toLowerCase()}</strong> in {city.name}? Madinat Alhaya
@@ -217,11 +218,11 @@ export default async function ServiceAreaPage({ params }: Props) {
                     📞 {SITE_CONFIG.phone}
                   </a>
                 </div>
-              </div>
+              </Reveal>
 
               {/* HYPER-LOCAL CONTEXT CARD */}
               {local && (
-                <div className="sa-card">
+                <Reveal className="sa-card">
                   <CardHeader tag={`${city.name} local knowledge`} />
                   <div className="sa-prop-badge">
                     <span className="sa-prop-icon">📍</span>
@@ -232,44 +233,44 @@ export default async function ServiceAreaPage({ params }: Props) {
                     <span className="sa-note-icon">💡</span>
                     <p className="sa-note-text">{local.areaNote}</p>
                   </div>
-                </div>
+                </Reveal>
               )}
 
               {/* WHAT'S INCLUDED CARD */}
               {service.benefits?.length > 0 && (
-                <div className="sa-card" id="included">
+                <Reveal id="included" className="sa-card">
                   <CardHeader tag="What you get" />
                   <h2 className="sa-sec-h2" style={{ marginBottom: '1.1rem' }}>{service.name} in {city.name} Includes</h2>
                   <div className="sa-benefit-grid">
                     {service.benefits.map((b, i) => (
-                      <div key={i} className="sa-benefit-item">
+                      <div key={i} className="sa-benefit-item" style={{ transitionDelay: `${i * 40}ms` }}>
                         <span className="sa-benefit-check">✓</span>
                         <span className="sa-benefit-text">{b}</span>
                       </div>
                     ))}
                   </div>
-                </div>
+                </Reveal>
               )}
 
               {/* OUR PROCESS CARD */}
               {service.process?.length > 0 && (
-                <div className="sa-card" id="process">
+                <Reveal id="process" className="sa-card">
                   <CardHeader tag="How it works" />
                   <h2 className="sa-sec-h2" style={{ marginBottom: '1.1rem' }}>Our {city.name} {shortService} Process</h2>
                   <div className="sa-process-list">
                     {service.process.map((step, i) => (
-                      <div key={i} className="sa-process-item">
+                      <div key={i} className="sa-process-item" style={{ transitionDelay: `${i * 40}ms` }}>
                         <span className="sa-process-num">{i + 1}</span>
                         <span className="sa-process-text">{step}</span>
                       </div>
                     ))}
                   </div>
-                </div>
+                </Reveal>
               )}
 
               {/* FAQ CARD */}
               {combinedFaqs.length > 0 && (
-                <div className="sa-card" id="faq">
+                <Reveal id="faq" className="sa-card">
                   <CardHeader tag="Common questions" />
                   <h2 className="sa-sec-h2-sm" style={{ marginBottom: '1.25rem' }}>{service.name} in {city.name} — FAQs</h2>
                   <div className="sa-faq-list">
@@ -282,11 +283,11 @@ export default async function ServiceAreaPage({ params }: Props) {
                       </div>
                     ))}
                   </div>
-                </div>
+                </Reveal>
               )}
 
               {/* FINAL CTA CARD */}
-              <div className="sa-card sa-cta-block" id="book">
+              <Reveal id="book" className="sa-card sa-cta-block">
                 <div className="sa-cta-circle" />
                 <div style={{ position: 'relative', zIndex: 1 }}>
                   <CardHeader tag="Ready to book?" />
@@ -305,7 +306,7 @@ export default async function ServiceAreaPage({ params }: Props) {
                     </a>
                   </div>
                 </div>
-              </div>
+              </Reveal>
 
               {/* PARENT LINKS */}
               <div className="sa-parent-links">
