@@ -15,7 +15,7 @@ import Hero from '@/components/Hero'
 import type { HeroSlide } from '@/components/Hero'
 
 const heroImages = [
-  { image: '/images/hero/cleaning-services-UAE.webp', imageAlt: 'Cleaning Services UAE — Al Haya provides professional cleaning solutions across all seven Emirates including Dubai, Abu Dhabi, Sharjah with expert team and eco-friendly products', imageTitle: 'Cleaning Services UAE | Al Haya Professional Cleaners' },
+  { image: '/images/hero/professional-cleaning-dubai-team.webp', imageAlt: 'Al Haya cleaning team servicing a luxury apartment in Dubai with the Burj Khalifa skyline in view — professional cleaning services across all seven UAE Emirates', imageTitle: 'Best Professional Cleaning Services in Dubai | Al Haya' },
   { image: '/images/hero/marble-polishing-dubai.webp', imageAlt: 'Marble Polishing Dubai — expert marble and floor polishing services restoring shine to marble, granite, and terrazzo using diamond polishing techniques by Al Haya', imageTitle: 'Marble Polishing Dubai | Professional Floor Restoration' },
   { image: '/images/hero/professional-cleaning-services-UAE.webp', imageAlt: 'Professional Cleaning Services UAE — comprehensive cleaning solutions for villas, apartments, and offices with deep cleaning, sanitization by Al Haya across UAE', imageTitle: 'Professional Cleaning Services UAE | Homes & Offices' },
   { image: '/images/hero/sofa-carpet-cleaning.webp', imageAlt: 'Sofa Carpet Cleaning — professional deep cleaning services for sofas and carpets removing stains, odors, and allergens with eco-friendly steam cleaning by Al Haya', imageTitle: 'Sofa Carpet Cleaning | Professional Deep Cleaning' },

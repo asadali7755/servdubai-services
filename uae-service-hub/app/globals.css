@@ -391,18 +391,18 @@ img { max-width: 100%; }
 /* Theme-aware hero overlay */
 .hero-overlay {
   background: linear-gradient(to bottom,
-    rgba(0,0,0,0.22) 0%,
-    rgba(0,0,0,0.52) 50%,
-    rgba(0,0,0,0.82) 100%
+    rgba(0,0,0,0.38) 0%,
+    rgba(0,0,0,0.62) 50%,
+    rgba(0,0,0,0.85) 100%
   );
   pointer-events: none;
 }
 
 [data-theme="light"] .hero-overlay {
   background: linear-gradient(to bottom,
-    rgba(255,255,255,0.18) 0%,
-    rgba(255,255,255,0.32) 50%,
-    rgba(255,255,255,0.50) 100%
+    rgba(255,255,255,0.32) 0%,
+    rgba(255,255,255,0.48) 50%,
+    rgba(255,255,255,0.65) 100%
   ) !important;
 }
 
