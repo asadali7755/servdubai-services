@@ -532,6 +532,14 @@ img { max-width: 100%; }
   margin-bottom: 0.3rem;
 }
 
+/* Slide 1's title ("Best Professional Cleaning Services in Dubai & All UAE")
+   is longer than every other slide's, so it needs a smaller size to still
+   fit without wrapping awkwardly — the other slides' h2 titles are fine
+   as-is and are left untouched. */
+.p-hero-caption .p-title-center h1.display-1 {
+  font-size: clamp(1.8rem, 5vw, 3.4rem);
+}
+
 .p-hero-caption .subtitle-text {
   font-size: clamp(1rem, 2.5vw, 1.25rem);
   color: rgba(255,255,255,0.85);
