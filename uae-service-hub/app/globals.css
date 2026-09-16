@@ -4128,6 +4128,8 @@ img { max-width: 100%; }
   border: 1px solid rgba(195,155,78,0.3);
 }
 .sa-cta-block .sa-card-brand, .sa-cta-block h2 { color: var(--sa-paper) !important; }
+.sa-cta-block .sa-card-tag { color: rgba(246,241,232,0.65) !important; }
+.sa-cta-block .sa-verified { color: var(--sa-gold) !important; }
 .sa-cta-block p { color: rgba(246,241,232,0.72) !important; }
 .sa-cta-circle { position: absolute; top: -60px; right: -60px; width: 240px; height: 240px; border-radius: 50%; background: radial-gradient(circle, rgba(195,155,78,0.22), transparent 70%); pointer-events: none; animation: saCtaGlow 6s ease-in-out infinite; }
 @keyframes saCtaGlow { 0%, 100% { opacity: 0.55; transform: scale(1); } 50% { opacity: 1; transform: scale(1.18); } }

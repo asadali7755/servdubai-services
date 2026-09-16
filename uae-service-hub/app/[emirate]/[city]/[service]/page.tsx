@@ -291,10 +291,10 @@ export default async function ServiceAreaPage({ params }: Props) {
                 <div className="sa-cta-circle" />
                 <div style={{ position: 'relative', zIndex: 1 }}>
                   <CardHeader tag="Ready to book?" />
-                  <h2 className="text-2xl font-bold text-white mb-2" style={{ fontFamily: 'var(--font-josefin)' }}>
+                  <h2 className="text-2xl font-bold mb-2" style={{ fontFamily: 'var(--font-josefin)' }}>
                     Book {service.name} in {city.name} Today
                   </h2>
-                  <p className="text-gray-400 mb-6">Same-day service · Free instant quote · Eco-friendly products</p>
+                  <p className="mb-6">Same-day service · Free instant quote · Eco-friendly products</p>
                   <div className="sa-cta-btns">
                     <a href={waLink} target="_blank" rel="noopener noreferrer"
                       className="inline-block px-8 py-4 rounded-full font-semibold text-lg sa-cta-wa">
