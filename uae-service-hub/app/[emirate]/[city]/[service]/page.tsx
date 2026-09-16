@@ -22,6 +22,7 @@ import {
 import { getWhatsAppLink } from '@/lib/utils/whatsapp'
 import { SITE_CONFIG } from '@/lib/data/constants'
 import QuoteCard from '@/components/QuoteCard'
+import StickyRail from '@/components/StickyRail'
 
 type Props = { params: Promise<{ emirate: string; city: string; service: string }> }
 
@@ -54,6 +55,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   })
 }
 
+/** Small "post header" row repeated at the top of every feed card — brand mark + name + a per-card tag. */
+function CardHeader({ tag }: { tag: string }) {
+  return (
+    <div className="sa-card-header">
+      <div className="sa-avatar">M</div>
+      <div className="sa-card-header-text">
+        <span className="sa-card-brand">Madinat Alhaya <span className="sa-verified">✓</span></span>
+        <span className="sa-card-tag">{tag}</span>
+      </div>
+    </div>
+  )
+}
+
 export default async function ServiceAreaPage({ params }: Props) {
   const { emirate: eSlug, city: cSlug, service: sSlug } = await params
   const emirate = getEmirateBySlug(eSlug)
@@ -74,6 +88,10 @@ export default async function ServiceAreaPage({ params }: Props) {
     .filter((s) => s !== sSlug)
     .map((s) => getServiceBySlug(s))
     .filter(Boolean) as NonNullable<ReturnType<typeof getServiceBySlug>>[]
+
+  const siblingCities = emirate.cities
+    .filter((c) => c.slug !== city.slug)
+    .slice(0, 6)
 
   const localSchema = buildLocalBusinessSchema({
     service: service.name,
@@ -97,6 +115,7 @@ export default async function ServiceAreaPage({ params }: Props) {
   const faqSchema = combinedFaqs.length > 0 ? buildFAQSchema(combinedFaqs) : null
 
   const waLink = getWhatsAppLink(service.name, city.name)
+  const shortService = service.name.split(' ')[0]
 
   return (
     <>
@@ -107,197 +126,229 @@ export default async function ServiceAreaPage({ params }: Props) {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       )}
 
-      <div className="city-main max-w-5xl mx-auto px-4 py-12 sa-main">
+      <div className="sa-main">
+        <div className="sa-shell">
 
-        {/* BREADCRUMB */}
-        <nav className="text-sm mb-8 sa-breadcrumb" aria-label="Breadcrumb">
-          <a href="/">Home</a>
-          <span className="mx-2 sa-breadcrumb-sep">/</span>
-          <a href={`/${emirate.slug}`}>{emirate.name}</a>
-          <span className="mx-2 sa-breadcrumb-sep">/</span>
-          <a href={`/${emirate.slug}/${city.slug}`}>{city.name}</a>
-          <span className="mx-2 sa-breadcrumb-sep">/</span>
-          <span className="text-white city-crumb-cur">{service.name}</span>
-        </nav>
+          {/* BREADCRUMB */}
+          <nav className="text-sm mb-8 sa-breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            <span className="mx-2 sa-breadcrumb-sep">/</span>
+            <a href={`/${emirate.slug}`}>{emirate.name}</a>
+            <span className="mx-2 sa-breadcrumb-sep">/</span>
+            <a href={`/${emirate.slug}/${city.slug}`}>{city.name}</a>
+            <span className="mx-2 sa-breadcrumb-sep">/</span>
+            <span className="text-white city-crumb-cur">{service.name}</span>
+          </nav>
 
-        {/* HERO BANNER */}
-        <div className="sa-banner">
-          {service.images[0] && (
-            <Image
-              src={service.images[0]}
-              alt={`${service.name} in ${city.name}, ${emirate.name} — professional ${service.name.toLowerCase()} by Madinat Alhaya for ${local?.propertyType ?? 'homes and offices'}`}
-              title={`${service.name} in ${city.name} | Madinat Alhaya`}
-              fill
-              priority
-              style={{ objectFit: 'cover', objectPosition: 'center' }}
-              sizes="(max-width: 768px) 100vw, 1024px"
-            />
-          )}
-          <div className="sa-banner-overlay" />
-          <div className="sa-banner-bottom">
-            <div className="sa-banner-tag">{emirate.name} · {city.name}</div>
-            <h1 className="sa-banner-h1">{service.name} in {city.name}</h1>
-          </div>
-        </div>
+          <div className="sa-layout">
 
-        {/* INTRO + CTA */}
-        <p className="sa-intro">
-          Looking for professional <strong>{service.name.toLowerCase()}</strong> in {city.name}? Madinat Alhaya
-          provides expert, same-day {service.name.toLowerCase()} for {local?.propertyType ?? 'homes, villas and offices'} across {city.name}, {emirate.name}.
-          Our certified technicians use eco-friendly products and bring all equipment to your door — with transparent pricing and a 100% satisfaction guarantee.
-        </p>
-
-        <div className="sa-cta-row">
-          <a href={waLink} target="_blank" rel="noopener noreferrer" className="sa-wa-btn">
-            Book {service.name.split(' ')[0]} in {city.name} — Free Quote
-          </a>
-          <a href={`tel:${SITE_CONFIG.phone}`} className="sa-call-btn">
-            📞 {SITE_CONFIG.phone}
-          </a>
-        </div>
-
-        {/* HYPER-LOCAL CONTEXT */}
-        {local && (
-          <div className="sa-local-block">
-            <div className="sa-prop-badge">
-              <span className="sa-prop-icon">📍</span>
-              <span className="sa-prop-text">{local.propertyType}</span>
-            </div>
-            <p className="sa-local-desc">{local.localDescription}</p>
-            <div>
-              <div className="sa-lm-label">Areas &amp; Landmarks We Cover in {city.name}</div>
-              <div className="sa-lm-wrap">
-                {local.landmarks.map((lm) => (
-                  <span key={lm} className="sa-lm-tag">{lm}</span>
-                ))}
+            {/* LEFT RAIL — page nav + local-area internal links */}
+            <StickyRail className="sa-rail-left" innerClassName="sa-rail">
+              <div className="sa-rail-card">
+                <div className="sa-rail-title">On This Page</div>
+                <a href="#overview" className="sa-rail-link">Overview</a>
+                {service.benefits?.length > 0 && <a href="#included" className="sa-rail-link">What&apos;s Included</a>}
+                {service.process?.length > 0 && <a href="#process" className="sa-rail-link">How It Works</a>}
+                {combinedFaqs.length > 0 && <a href="#faq" className="sa-rail-link">FAQ</a>}
+                <a href="#book" className="sa-rail-link">Book Now</a>
               </div>
-            </div>
-            <div className="sa-note">
-              <span className="sa-note-icon">💡</span>
-              <p className="sa-note-text">{local.areaNote}</p>
-            </div>
-          </div>
-        )}
 
-        {/* WHAT'S INCLUDED */}
-        {service.benefits?.length > 0 && (
-          <div className="sa-mb">
-            <div className="sa-sec-head">
-              <div className="sa-sec-bar" />
-              <div>
-                <div className="sa-sec-label">What You Get</div>
-                <h2 className="sa-sec-h2">{service.name} in {city.name} Includes</h2>
-              </div>
-            </div>
-            <div className="sa-benefit-grid">
-              {service.benefits.map((b, i) => (
-                <div key={i} className="sa-benefit-item">
-                  <span className="sa-benefit-check">✓</span>
-                  <span className="sa-benefit-text">{b}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* OUR PROCESS */}
-        {service.process?.length > 0 && (
-          <div className="sa-mb">
-            <div className="sa-sec-head">
-              <div className="sa-sec-bar" />
-              <div>
-                <div className="sa-sec-label">How It Works</div>
-                <h2 className="sa-sec-h2">Our {city.name} {service.name.split(' ')[0]} Process</h2>
-              </div>
-            </div>
-            <div className="sa-process-list">
-              {service.process.map((step, i) => (
-                <div key={i} className="sa-process-item">
-                  <span className="sa-process-num">{i + 1}</span>
-                  <span className="sa-process-text">{step}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* FAQ */}
-        {combinedFaqs.length > 0 && (
-          <div className="sa-faq-block">
-            <div className="sa-sec-head" style={{ marginBottom: '1.5rem' }}>
-              <div className="sa-sec-bar" />
-              <div>
-                <div className="sa-sec-label">Common Questions</div>
-                <h2 className="sa-sec-h2-sm">{service.name} in {city.name} — FAQs</h2>
-              </div>
-            </div>
-            <div className="sa-faq-list">
-              {combinedFaqs.map((faq, i) => (
-                <div key={i} className="sa-faq-item">
-                  <div className="sa-faq-q">
-                    <span className="sa-faq-q-mark">Q</span>{faq.question}
+              {local && local.landmarks.length > 0 && (
+                <div className="sa-rail-card">
+                  <div className="sa-rail-title">Areas We Cover in {city.name}</div>
+                  <div className="sa-rail-pills">
+                    {local.landmarks.map((lm) => (
+                      <span key={lm} className="sa-rail-pill">{lm}</span>
+                    ))}
                   </div>
-                  <p className="sa-faq-a">{faq.answer}</p>
                 </div>
-              ))}
-            </div>
-          </div>
-        )}
+              )}
 
-        {/* INTERNAL LINKS */}
-        {siblingServices.length > 0 && (
-          <div className="sa-links-block">
-            <div className="sa-sec-head" style={{ marginBottom: '1rem' }}>
-              <div className="sa-sec-bar" />
-              <div>
-                <div className="sa-sec-label">More in {city.name}</div>
-                <h2 className="sa-sec-h2-xs">Other Services We Offer in {city.name}</h2>
+              {siblingCities.length > 0 && (
+                <div className="sa-rail-card">
+                  <div className="sa-rail-title">Other Areas in {emirate.name}</div>
+                  {siblingCities.map((c) => (
+                    <Link key={c.slug} href={`/${emirate.slug}/${c.slug}`} className="sa-rail-link">
+                      {c.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </StickyRail>
+
+            {/* CENTER FEED */}
+            <main className="sa-feed">
+
+              {/* HERO CARD */}
+              <div className="sa-card sa-card-hero" id="overview">
+                <div className="sa-banner">
+                  {service.images[0] && (
+                    <Image
+                      src={service.images[0]}
+                      alt={`${service.name} in ${city.name}, ${emirate.name} — professional ${service.name.toLowerCase()} by Madinat Alhaya for ${local?.propertyType ?? 'homes and offices'}`}
+                      title={`${service.name} in ${city.name} | Madinat Alhaya`}
+                      fill
+                      priority
+                      style={{ objectFit: 'cover', objectPosition: 'center' }}
+                      sizes="(max-width: 768px) 100vw, 700px"
+                    />
+                  )}
+                  <div className="sa-banner-overlay" />
+                  <div className="sa-banner-bottom">
+                    <div className="sa-banner-tag">{emirate.name} · {city.name}</div>
+                    <h1 className="sa-banner-h1">{service.name} in {city.name}</h1>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="sa-links-pills">
-              {siblingServices.map((s) => (
-                <Link key={s.id} href={`/${emirate.slug}/${city.slug}/${s.slug}`} className="sa-link-pill">
-                  <span className="sa-link-arrow">→</span>{s.name}
-                </Link>
-              ))}
-            </div>
-            <div className="sa-parent-links">
-              <Link href={`/services/${service.slug}`} className="sa-parent-link">
-                About {service.name} (all areas)
-              </Link>
-              <Link href={`/${emirate.slug}/${city.slug}`} className="sa-parent-link">
-                All cleaning services in {city.name}
-              </Link>
-            </div>
-          </div>
-        )}
 
-        {/* BOTTOM CTA */}
-        <div className="city-cta-block rounded-xl p-8 text-center sa-cta-block">
-          <div className="sa-cta-circle" />
-          <div style={{ position: 'relative', zIndex: 1 }}>
-            <div className="sa-cta-label">Ready to Book?</div>
-            <h2 className="text-2xl font-bold text-white mb-2" style={{ fontFamily: 'var(--font-josefin)' }}>
-              Book {service.name} in {city.name} Today
-            </h2>
-            <p className="text-gray-400 mb-6">Same-day service · Free instant quote · Eco-friendly products</p>
-            <div className="sa-cta-btns">
-              <a href={waLink} target="_blank" rel="noopener noreferrer"
-                className="inline-block px-8 py-4 rounded-full font-semibold text-lg sa-cta-wa">
-                WhatsApp Now
-              </a>
-              <a href={`tel:${SITE_CONFIG.phone}`}
-                className="inline-block px-8 py-4 rounded-full font-semibold text-lg sa-cta-call">
-                Call {SITE_CONFIG.phone}
-              </a>
-            </div>
-            <QuoteCard
-              id={`quote-${emirate.slug}-${city.slug}-${service.slug}`}
-              defaultService={service.name}
-              source={`${service.name} in ${city.name}`}
-              heading={`Get a free ${service.name.toLowerCase()} quote in ${city.name}.`}
-              className="page-quote-card"
-            />
+              {/* INTRO CARD */}
+              <div className="sa-card">
+                <CardHeader tag={`Serving ${city.name} · Licensed & insured`} />
+                <p className="sa-intro">
+                  Looking for professional <strong>{service.name.toLowerCase()}</strong> in {city.name}? Madinat Alhaya
+                  provides expert, same-day {service.name.toLowerCase()} for {local?.propertyType ?? 'homes, villas and offices'} across {city.name}, {emirate.name}.
+                  Our certified technicians use eco-friendly products and bring all equipment to your door — with transparent pricing and a 100% satisfaction guarantee.
+                </p>
+                <div className="sa-cta-row">
+                  <a href={waLink} target="_blank" rel="noopener noreferrer" className="sa-wa-btn">
+                    Book {shortService} in {city.name} — Free Quote
+                  </a>
+                  <a href={`tel:${SITE_CONFIG.phone}`} className="sa-call-btn">
+                    📞 {SITE_CONFIG.phone}
+                  </a>
+                </div>
+              </div>
+
+              {/* HYPER-LOCAL CONTEXT CARD */}
+              {local && (
+                <div className="sa-card">
+                  <CardHeader tag={`${city.name} local knowledge`} />
+                  <div className="sa-prop-badge">
+                    <span className="sa-prop-icon">📍</span>
+                    <span className="sa-prop-text">{local.propertyType}</span>
+                  </div>
+                  <p className="sa-local-desc">{local.localDescription}</p>
+                  <div className="sa-note">
+                    <span className="sa-note-icon">💡</span>
+                    <p className="sa-note-text">{local.areaNote}</p>
+                  </div>
+                </div>
+              )}
+
+              {/* WHAT'S INCLUDED CARD */}
+              {service.benefits?.length > 0 && (
+                <div className="sa-card" id="included">
+                  <CardHeader tag="What you get" />
+                  <h2 className="sa-sec-h2" style={{ marginBottom: '1.1rem' }}>{service.name} in {city.name} Includes</h2>
+                  <div className="sa-benefit-grid">
+                    {service.benefits.map((b, i) => (
+                      <div key={i} className="sa-benefit-item">
+                        <span className="sa-benefit-check">✓</span>
+                        <span className="sa-benefit-text">{b}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* OUR PROCESS CARD */}
+              {service.process?.length > 0 && (
+                <div className="sa-card" id="process">
+                  <CardHeader tag="How it works" />
+                  <h2 className="sa-sec-h2" style={{ marginBottom: '1.1rem' }}>Our {city.name} {shortService} Process</h2>
+                  <div className="sa-process-list">
+                    {service.process.map((step, i) => (
+                      <div key={i} className="sa-process-item">
+                        <span className="sa-process-num">{i + 1}</span>
+                        <span className="sa-process-text">{step}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* FAQ CARD */}
+              {combinedFaqs.length > 0 && (
+                <div className="sa-card" id="faq">
+                  <CardHeader tag="Common questions" />
+                  <h2 className="sa-sec-h2-sm" style={{ marginBottom: '1.25rem' }}>{service.name} in {city.name} — FAQs</h2>
+                  <div className="sa-faq-list">
+                    {combinedFaqs.map((faq, i) => (
+                      <div key={i} className="sa-faq-item">
+                        <div className="sa-faq-q">
+                          <span className="sa-faq-q-mark">Q</span>{faq.question}
+                        </div>
+                        <p className="sa-faq-a">{faq.answer}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* FINAL CTA CARD */}
+              <div className="sa-card sa-cta-block" id="book">
+                <div className="sa-cta-circle" />
+                <div style={{ position: 'relative', zIndex: 1 }}>
+                  <CardHeader tag="Ready to book?" />
+                  <h2 className="text-2xl font-bold text-white mb-2" style={{ fontFamily: 'var(--font-josefin)' }}>
+                    Book {service.name} in {city.name} Today
+                  </h2>
+                  <p className="text-gray-400 mb-6">Same-day service · Free instant quote · Eco-friendly products</p>
+                  <div className="sa-cta-btns">
+                    <a href={waLink} target="_blank" rel="noopener noreferrer"
+                      className="inline-block px-8 py-4 rounded-full font-semibold text-lg sa-cta-wa">
+                      WhatsApp Now
+                    </a>
+                    <a href={`tel:${SITE_CONFIG.phone}`}
+                      className="inline-block px-8 py-4 rounded-full font-semibold text-lg sa-cta-call">
+                      Call {SITE_CONFIG.phone}
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* PARENT LINKS */}
+              <div className="sa-parent-links">
+                <Link href={`/services/${service.slug}`} className="sa-parent-link">
+                  About {service.name} (all areas)
+                </Link>
+                <Link href={`/${emirate.slug}/${city.slug}`} className="sa-parent-link">
+                  All cleaning services in {city.name}
+                </Link>
+              </div>
+            </main>
+
+            {/* RIGHT RAIL — persistent quote box + trust + related services */}
+            <StickyRail className="sa-rail-right" innerClassName="sa-rail">
+              <QuoteCard
+                id={`rail-quote-${emirate.slug}-${city.slug}-${service.slug}`}
+                defaultService={service.name}
+                source={`${service.name} in ${city.name} (sidebar)`}
+                heading={`Get a free ${service.name.toLowerCase()} quote in ${city.name}.`}
+                className="sa-rail-quote"
+              />
+
+              <div className="sa-rail-card">
+                <div className="sa-rail-title">Why Madinat Alhaya</div>
+                <div className="sa-trust-list">
+                  <div className="sa-trust-item"><span className="sa-trust-check">✓</span>Licensed and insured</div>
+                  <div className="sa-trust-item"><span className="sa-trust-check">✓</span>Eco-friendly products</div>
+                  <div className="sa-trust-item"><span className="sa-trust-check">✓</span>Certified technicians</div>
+                </div>
+              </div>
+
+              {siblingServices.length > 0 && (
+                <div className="sa-rail-card">
+                  <div className="sa-rail-title">Other Services in {city.name}</div>
+                  {siblingServices.map((s) => (
+                    <Link key={s.id} href={`/${emirate.slug}/${city.slug}/${s.slug}`} className="sa-rail-link">
+                      {s.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </StickyRail>
+
           </div>
         </div>
       </div>
