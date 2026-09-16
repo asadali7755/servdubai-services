@@ -1,9 +1,9 @@
 'use client'
 
-import { useEffect, useRef, useState, type ReactNode } from 'react'
+import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react'
 
 /** Fades + slides a block in the first time it scrolls into view. */
-export default function Reveal({ children, className = '', delay = 0, id }: { children: ReactNode; className?: string; delay?: number; id?: string }) {
+export default function Reveal({ children, className = '', delay = 0, id, style }: { children: ReactNode; className?: string; delay?: number; id?: string; style?: CSSProperties }) {
   const ref = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState(false)
 
@@ -49,7 +49,7 @@ export default function Reveal({ children, className = '', delay = 0, id }: { ch
       ref={ref}
       id={id}
       className={`sa-reveal ${visible ? 'sa-reveal-in' : ''} ${className}`.trim()}
-      style={{ transitionDelay: `${delay}ms`, scrollMarginTop: 110 }}
+      style={{ transitionDelay: `${delay}ms`, scrollMarginTop: 110, ...style }}
     >
       {children}
     </div>

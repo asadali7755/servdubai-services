@@ -13,7 +13,7 @@ import {
 } from '@/lib/data/serviceAreaCombos'
 import { getCityContent } from '@/lib/data/cityContent'
 import { getCityCoords } from '@/lib/data/cityCoordinates'
-import { getCityGradient } from '@/lib/data/cityGradients'
+import { getSectionGradients } from '@/lib/data/cityGradients'
 import {
   buildMetadata,
   buildLocalBusinessSchema,
@@ -129,7 +129,10 @@ export default async function ServiceAreaPage({ params }: Props) {
 
   const waLink = getWhatsAppLink(service.name, city.name)
   const shortService = service.name.split(' ')[0]
-  const cityGradient = getCityGradient(city.slug)
+  // Each feed card gets its own color, not one flat tone repeated down the page —
+  // fixed slots (intro/local/benefits/process/faq/cta) so a section's color stays
+  // consistent card-to-card, offset per city so pages don't all start on the same hue.
+  const [introGrad, localGrad, benefitsGrad, processGrad, faqGrad, ctaGrad] = getSectionGradients(city.slug, 6)
 
   return (
     <>
@@ -140,7 +143,7 @@ export default async function ServiceAreaPage({ params }: Props) {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       )}
 
-      <div className={`sa-main ${fraunces.variable}`} style={{ '--sa-city-grad': cityGradient } as React.CSSProperties}>
+      <div className={`sa-main ${fraunces.variable}`}>
         <div className="sa-shell">
 
           {/* BREADCRUMB */}
@@ -216,7 +219,7 @@ export default async function ServiceAreaPage({ params }: Props) {
               </Reveal>
 
               {/* INTRO CARD */}
-              <Reveal className="sa-card" delay={60}>
+              <Reveal className="sa-card" delay={60} style={{ '--sa-city-grad': introGrad } as React.CSSProperties}>
                 <CardHeader tag={`Serving ${city.name} · Licensed & insured`} />
                 <p className="sa-intro">
                   Looking for professional <strong>{service.name.toLowerCase()}</strong> in {city.name}? Madinat Alhaya
@@ -235,7 +238,7 @@ export default async function ServiceAreaPage({ params }: Props) {
 
               {/* HYPER-LOCAL CONTEXT CARD */}
               {local && (
-                <Reveal className="sa-card">
+                <Reveal className="sa-card" style={{ '--sa-city-grad': localGrad } as React.CSSProperties}>
                   <CardHeader tag={`${city.name} local knowledge`} />
                   <div className="sa-prop-badge">
                     <span className="sa-prop-icon">📍</span>
@@ -251,7 +254,7 @@ export default async function ServiceAreaPage({ params }: Props) {
 
               {/* WHAT'S INCLUDED CARD */}
               {service.benefits?.length > 0 && (
-                <Reveal id="included" className="sa-card">
+                <Reveal id="included" className="sa-card" style={{ '--sa-city-grad': benefitsGrad } as React.CSSProperties}>
                   <CardHeader tag="What you get" />
                   <h2 className="sa-sec-h2" style={{ marginBottom: '1.1rem' }}>{service.name} in {city.name} Includes</h2>
                   <div className="sa-benefit-grid">
@@ -267,7 +270,7 @@ export default async function ServiceAreaPage({ params }: Props) {
 
               {/* OUR PROCESS CARD */}
               {service.process?.length > 0 && (
-                <Reveal id="process" className="sa-card">
+                <Reveal id="process" className="sa-card" style={{ '--sa-city-grad': processGrad } as React.CSSProperties}>
                   <CardHeader tag="How it works" />
                   <h2 className="sa-sec-h2" style={{ marginBottom: '1.1rem' }}>Our {city.name} {shortService} Process</h2>
                   <div className="sa-process-list">
@@ -283,7 +286,7 @@ export default async function ServiceAreaPage({ params }: Props) {
 
               {/* FAQ CARD */}
               {combinedFaqs.length > 0 && (
-                <Reveal id="faq" className="sa-card">
+                <Reveal id="faq" className="sa-card" style={{ '--sa-city-grad': faqGrad } as React.CSSProperties}>
                   <CardHeader tag="Common questions" />
                   <h2 className="sa-sec-h2-sm" style={{ marginBottom: '1.25rem' }}>{service.name} in {city.name} — FAQs</h2>
                   <div className="sa-faq-list">
@@ -300,7 +303,7 @@ export default async function ServiceAreaPage({ params }: Props) {
               )}
 
               {/* FINAL CTA CARD */}
-              <Reveal id="book" className="sa-card sa-cta-block">
+              <Reveal id="book" className="sa-card sa-cta-block" style={{ '--sa-city-grad': ctaGrad } as React.CSSProperties}>
                 <div className="sa-cta-circle" />
                 <div style={{ position: 'relative', zIndex: 1 }}>
                   <CardHeader tag="Ready to book?" />
