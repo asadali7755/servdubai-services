@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { Fraunces } from 'next/font/google'
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
@@ -12,6 +13,7 @@ import {
 } from '@/lib/data/serviceAreaCombos'
 import { getCityContent } from '@/lib/data/cityContent'
 import { getCityCoords } from '@/lib/data/cityCoordinates'
+import { getCityGradient } from '@/lib/data/cityGradients'
 import {
   buildMetadata,
   buildLocalBusinessSchema,
@@ -24,6 +26,16 @@ import { SITE_CONFIG } from '@/lib/data/constants'
 import QuoteCard from '@/components/QuoteCard'
 import StickyRail from '@/components/StickyRail'
 import Reveal from '@/components/Reveal'
+
+// Elegant serif display font for this page's headings only — mirrors the
+// marblepro.ae reference look without touching the sitewide Josefin Sans font.
+const fraunces = Fraunces({
+  subsets: ['latin'],
+  variable: '--font-fraunces',
+  weight: ['300', '400', '500'],
+  style: ['normal', 'italic'],
+  display: 'swap',
+})
 
 type Props = { params: Promise<{ emirate: string; city: string; service: string }> }
 
@@ -117,6 +129,7 @@ export default async function ServiceAreaPage({ params }: Props) {
 
   const waLink = getWhatsAppLink(service.name, city.name)
   const shortService = service.name.split(' ')[0]
+  const cityGradient = getCityGradient(city.slug)
 
   return (
     <>
@@ -127,7 +140,7 @@ export default async function ServiceAreaPage({ params }: Props) {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       )}
 
-      <div className="sa-main">
+      <div className={`sa-main ${fraunces.variable}`}>
         <div className="sa-shell">
 
           {/* BREADCRUMB */}
@@ -194,6 +207,7 @@ export default async function ServiceAreaPage({ params }: Props) {
                       sizes="(max-width: 768px) 100vw, 700px"
                     />
                   )}
+                  <div className="sa-banner-tint" style={{ background: cityGradient }} />
                   <div className="sa-banner-overlay" />
                   <div className="sa-banner-bottom">
                     <div className="sa-banner-tag">{emirate.name} · {city.name}</div>
@@ -291,7 +305,7 @@ export default async function ServiceAreaPage({ params }: Props) {
                 <div className="sa-cta-circle" />
                 <div style={{ position: 'relative', zIndex: 1 }}>
                   <CardHeader tag="Ready to book?" />
-                  <h2 className="text-2xl font-bold mb-2" style={{ fontFamily: 'var(--font-josefin)' }}>
+                  <h2 className="text-2xl font-bold mb-2">
                     Book {service.name} in {city.name} Today
                   </h2>
                   <p className="mb-6">Same-day service · Free instant quote · Eco-friendly products</p>
