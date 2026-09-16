@@ -138,7 +138,7 @@ export default async function ServiceAreaPage({ params }: Props) {
             <span className="mx-2 sa-breadcrumb-sep">/</span>
             <a href={`/${emirate.slug}/${city.slug}`}>{city.name}</a>
             <span className="mx-2 sa-breadcrumb-sep">/</span>
-            <span className="text-white city-crumb-cur">{service.name}</span>
+            <span className="city-crumb-cur">{service.name}</span>
           </nav>
 
           <div className="sa-layout">
