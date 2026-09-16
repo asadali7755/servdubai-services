@@ -4030,35 +4030,38 @@ img { max-width: 100%; }
 
 @keyframes saSheen { 0% { background-position: -200% center; } 100% { background-position: 200% center; } }
 
-/* Feed "post" cards */
+/* Feed "post" cards — each page's own per-city gradient (--sa-city-grad, set inline on .sa-main
+   from lib/data/cityGradients.ts), same idea as marblepro.ae's per-city banner colors, carried
+   all the way down the feed rather than just the hero. Cream text throughout since these are
+   now dark-toned cards, not the light paper surface (.sa-rail-* keeps the light paper look). */
 .sa-card {
   position: relative; overflow: hidden;
-  background: var(--sa-paper);
-  border: 1px solid var(--sa-line); border-radius: 18px; padding: 1.75rem 2rem;
-  box-shadow: 0 10px 40px rgba(11,11,11,0.06);
+  background: var(--sa-city-grad, var(--sa-ink));
+  border: 1px solid rgba(255,255,255,0.14); border-radius: 18px; padding: 1.75rem 2rem;
+  box-shadow: 0 10px 40px rgba(11,11,11,0.22);
   transition: transform 0.4s cubic-bezier(.2,.8,.2,1), box-shadow 0.4s, border-color 0.4s;
 }
 .sa-card::after {
   content: ''; position: absolute; top: -120px; right: -120px; width: 280px; height: 280px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(195,155,78,0.12), transparent 70%); pointer-events: none;
+  background: radial-gradient(circle, rgba(255,255,255,0.14), transparent 70%); pointer-events: none;
 }
-.sa-card:hover { border-color: rgba(195,155,78,0.35); box-shadow: 0 18px 50px rgba(11,11,11,0.1); }
+.sa-card:hover { border-color: rgba(255,255,255,0.28); box-shadow: 0 18px 50px rgba(11,11,11,0.3); }
 .sa-card-hero { padding: 0; overflow: hidden; }
 .sa-card-header { display: flex; align-items: center; gap: 0.65rem; margin-bottom: 1.25rem; position: relative; z-index: 1; }
 .sa-avatar {
   width: 38px; height: 38px; border-radius: 50%; background: linear-gradient(135deg, #f0d98a, var(--sa-gold) 45%, #8a6d2f);
   display: flex; align-items: center; justify-content: center; font-weight: 800; color: #14101c; font-family: var(--font-josefin);
-  flex-shrink: 0; box-shadow: 0 0 0 3px rgba(195,155,78,0.16); transition: box-shadow 0.3s;
+  flex-shrink: 0; box-shadow: 0 0 0 3px rgba(255,255,255,0.2); transition: box-shadow 0.3s;
 }
 .sa-card:hover .sa-avatar { animation: saAvatarGlow 1.6s ease-in-out infinite; }
 @keyframes saAvatarGlow {
-  0%, 100% { box-shadow: 0 0 0 3px rgba(195,155,78,0.16); }
-  50%       { box-shadow: 0 0 0 6px rgba(195,155,78,0.3); }
+  0%, 100% { box-shadow: 0 0 0 3px rgba(255,255,255,0.2); }
+  50%       { box-shadow: 0 0 0 6px rgba(255,255,255,0.32); }
 }
 .sa-card-header-text { display: flex; flex-direction: column; }
-.sa-card-brand { display: flex; align-items: center; gap: 0.3rem; color: var(--sa-ink); font-weight: 700; font-size: 0.95rem; }
-.sa-verified { color: var(--sa-gold); font-size: 0.8rem; }
-.sa-card-tag { color: var(--sa-muted); font-size: 0.78rem; }
+.sa-card-brand { display: flex; align-items: center; gap: 0.3rem; color: var(--sa-paper); font-weight: 700; font-size: 0.95rem; }
+.sa-verified { color: #f0d98a; font-size: 0.8rem; }
+.sa-card-tag { color: rgba(246,241,232,0.65); font-size: 0.78rem; }
 
 /* Scroll-reveal entrance for feed cards */
 .sa-reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s cubic-bezier(.2,.7,.2,1), transform 0.7s cubic-bezier(.2,.7,.2,1); }
@@ -4075,68 +4078,64 @@ img { max-width: 100%; }
 
 .sa-banner { position: relative; height: 260px; border-radius: 12px; overflow: hidden; margin-bottom: 1.75rem; }
 .sa-card-hero .sa-banner { height: 340px; border-radius: 16px; margin-bottom: 0; }
-/* Per-city colored diagonal, tinting the hero photo — mix-blend-mode:color keeps the photo's detail/luminance while taking on the gradient's hue, same effect as marblepro.ae's per-city banners. */
-.sa-banner-tint { position: absolute; inset: 0; mix-blend-mode: color; opacity: 0.92; }
-.sa-banner-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11,11,11,0.3) 0%, rgba(11,11,11,0.55) 60%, rgba(11,11,11,0.85) 100%); }
+/* Real photo, untouched — just a bottom scrim so the caption stays legible. */
+.sa-banner-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11,11,11,0.32) 0%, rgba(11,11,11,0.6) 60%, rgba(11,11,11,0.88) 100%); }
 .sa-banner-bottom { position: absolute; bottom: 1.5rem; left: 1.75rem; right: 1.5rem; z-index: 2; }
-.sa-banner-tag { font-size: 0.65rem; color: var(--sa-gold); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.4rem; }
+.sa-banner-tag { font-size: 0.65rem; color: #f0d98a; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.4rem; }
 .sa-banner-h1 { color: var(--sa-paper); font-size: clamp(1.9rem, 4.6vw, 2.9rem); font-weight: 500; font-family: var(--font-fraunces), var(--font-josefin), serif; letter-spacing: -0.01em; line-height: 1.08; text-shadow: 0 2px 16px rgba(0,0,0,0.45); }
 
-.sa-intro { color: var(--sa-ink); opacity: 0.82; font-size: 1.05rem; line-height: 1.7; margin-bottom: 1rem; }
-.sa-intro strong { color: var(--sa-amber-d); opacity: 1; }
+.sa-intro { color: var(--sa-paper); opacity: 0.88; font-size: 1.05rem; line-height: 1.7; margin-bottom: 1rem; }
+.sa-intro strong { color: #f0d98a; opacity: 1; }
 .sa-cta-row { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
 .sa-wa-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.6rem; background: linear-gradient(135deg, #25D366, #128C7E); color: #fff; font-weight: 700; border-radius: 500px; text-decoration: none; font-size: 1rem; transition: transform 0.25s, box-shadow 0.25s; }
 .sa-wa-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(37,211,102,0.3); }
-.sa-call-btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.8rem 1.4rem; border: 1px solid var(--sa-ink); color: var(--sa-ink); font-weight: 600; border-radius: 500px; text-decoration: none; font-size: 1rem; transition: transform 0.25s, background 0.25s, color 0.25s; }
-.sa-call-btn:hover { transform: translateY(-2px); background: var(--sa-ink); color: var(--sa-paper); }
+.sa-call-btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.8rem 1.4rem; border: 1px solid var(--sa-paper); color: var(--sa-paper); font-weight: 600; border-radius: 500px; text-decoration: none; font-size: 1rem; transition: transform 0.25s, background 0.25s, color 0.25s; }
+.sa-call-btn:hover { transform: translateY(-2px); background: var(--sa-paper); color: var(--sa-ink); }
 
-.sa-prop-badge { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.3rem 0.85rem; background: rgba(195,155,78,0.12); border: 1px solid rgba(195,155,78,0.3); border-radius: 500px; margin-bottom: 1rem; }
-.sa-prop-icon { color: var(--sa-amber-d); font-size: 0.65rem; }
-.sa-prop-text { color: var(--sa-amber-d); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
-.sa-local-desc { color: var(--sa-ink); opacity: 0.82; font-size: 1rem; line-height: 1.75; margin-bottom: 1.25rem; font-weight: 400; }
-.sa-note { margin-top: 1.25rem; padding-top: 1.1rem; border-top: 1px solid var(--sa-line); display: flex; gap: 0.75rem; align-items: flex-start; }
-.sa-note-icon { color: var(--sa-gold); font-size: 1rem; flex-shrink: 0; margin-top: 0.05rem; }
-.sa-note-text { color: var(--sa-muted); font-size: 0.95rem; line-height: 1.65; font-weight: 400; margin: 0; }
+.sa-prop-badge { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.3rem 0.85rem; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.28); border-radius: 500px; margin-bottom: 1rem; }
+.sa-prop-icon { color: #f0d98a; font-size: 0.65rem; }
+.sa-prop-text { color: #f0d98a; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.sa-local-desc { color: var(--sa-paper); opacity: 0.88; font-size: 1rem; line-height: 1.75; margin-bottom: 1.25rem; font-weight: 400; }
+.sa-note { margin-top: 1.25rem; padding-top: 1.1rem; border-top: 1px solid rgba(255,255,255,0.18); display: flex; gap: 0.75rem; align-items: flex-start; }
+.sa-note-icon { color: #f0d98a; font-size: 1rem; flex-shrink: 0; margin-top: 0.05rem; }
+.sa-note-text { color: rgba(246,241,232,0.7); font-size: 0.95rem; line-height: 1.65; font-weight: 400; margin: 0; }
 
-.sa-sec-h2 { font-family: var(--font-fraunces), var(--font-josefin), serif; font-size: 1.5rem; font-weight: 500; color: var(--sa-ink); line-height: 1.2; }
-.sa-sec-h2-sm { font-family: var(--font-fraunces), var(--font-josefin), serif; font-size: 1.4rem; font-weight: 500; color: var(--sa-ink); line-height: 1.2; }
+.sa-sec-h2 { font-family: var(--font-fraunces), var(--font-josefin), serif; font-size: 1.5rem; font-weight: 500; color: var(--sa-paper); line-height: 1.2; }
+.sa-sec-h2-sm { font-family: var(--font-fraunces), var(--font-josefin), serif; font-size: 1.4rem; font-weight: 500; color: var(--sa-paper); line-height: 1.2; }
 
 .sa-benefit-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0.6rem; }
-.sa-benefit-item { display: flex; gap: 0.65rem; align-items: flex-start; padding: 0.75rem 1rem; background: var(--sa-paper2); border: 1px solid var(--sa-line); border-radius: 8px; transition: transform 0.25s, border-color 0.25s, background 0.25s; }
-.sa-benefit-item:hover { transform: translateX(4px); border-color: rgba(195,155,78,0.4); background: rgba(195,155,78,0.08); }
-.sa-benefit-check { color: #1a8f4c; font-size: 0.88rem; font-weight: 800; flex-shrink: 0; margin-top: 0.1rem; }
-.sa-benefit-text { color: var(--sa-ink); opacity: 0.82; font-size: 0.98rem; line-height: 1.55; }
+.sa-benefit-item { display: flex; gap: 0.65rem; align-items: flex-start; padding: 0.75rem 1rem; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.16); border-radius: 8px; transition: transform 0.25s, border-color 0.25s, background 0.25s; }
+.sa-benefit-item:hover { transform: translateX(4px); border-color: rgba(255,255,255,0.32); background: rgba(255,255,255,0.14); }
+.sa-benefit-check { color: #6fe0a0; font-size: 0.88rem; font-weight: 800; flex-shrink: 0; margin-top: 0.1rem; }
+.sa-benefit-text { color: var(--sa-paper); opacity: 0.88; font-size: 0.98rem; line-height: 1.55; }
 
 .sa-process-list { display: flex; flex-direction: column; gap: 0.6rem; }
-.sa-process-item { display: flex; gap: 0.85rem; align-items: flex-start; padding: 0.85rem 1rem; background: var(--sa-paper2); border: 1px solid var(--sa-line); border-radius: 8px; transition: transform 0.25s, border-color 0.25s, background 0.25s; }
-.sa-process-item:hover { transform: translateX(4px); border-color: rgba(195,155,78,0.4); background: rgba(195,155,78,0.08); }
-.sa-process-num { flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: rgba(195,155,78,0.2); color: var(--sa-amber-d); font-size: 0.75rem; font-weight: 700; display: flex; align-items: center; justify-content: center; transition: background 0.25s, color 0.25s; }
+.sa-process-item { display: flex; gap: 0.85rem; align-items: flex-start; padding: 0.85rem 1rem; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.16); border-radius: 8px; transition: transform 0.25s, border-color 0.25s, background 0.25s; }
+.sa-process-item:hover { transform: translateX(4px); border-color: rgba(255,255,255,0.32); background: rgba(255,255,255,0.14); }
+.sa-process-num { flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: rgba(255,255,255,0.16); color: #f0d98a; font-size: 0.75rem; font-weight: 700; display: flex; align-items: center; justify-content: center; transition: background 0.25s, color 0.25s; }
 .sa-process-item:hover .sa-process-num { background: var(--sa-gold); color: var(--sa-ink); }
-.sa-process-text { color: var(--sa-ink); opacity: 0.82; font-size: 0.98rem; line-height: 1.55; }
+.sa-process-text { color: var(--sa-paper); opacity: 0.88; font-size: 0.98rem; line-height: 1.55; }
 
 .sa-faq-list { display: flex; flex-direction: column; gap: 1rem; }
-.sa-faq-item { background: var(--sa-paper2); border: 1px solid var(--sa-line); border-radius: 8px; padding: 1.25rem 1.5rem; transition: border-color 0.25s, background 0.25s; }
-.sa-faq-item:hover { border-color: rgba(195,155,78,0.35); background: rgba(195,155,78,0.06); }
-.sa-faq-q { font-family: var(--font-fraunces), var(--font-josefin), serif; font-size: 1.15rem; font-weight: 500; color: var(--sa-ink); margin-bottom: 0.6rem; display: flex; gap: 0.6rem; align-items: flex-start; }
-.sa-faq-q-mark { color: var(--sa-gold); flex-shrink: 0; }
-.sa-faq-a { color: var(--sa-ink); opacity: 0.75; font-size: 0.98rem; line-height: 1.7; padding-left: 1.3rem; font-weight: 400; margin: 0; }
+.sa-faq-item { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.16); border-radius: 8px; padding: 1.25rem 1.5rem; transition: border-color 0.25s, background 0.25s; }
+.sa-faq-item:hover { border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.13); }
+.sa-faq-q { font-family: var(--font-fraunces), var(--font-josefin), serif; font-size: 1.15rem; font-weight: 500; color: var(--sa-paper); margin-bottom: 0.6rem; display: flex; gap: 0.6rem; align-items: flex-start; }
+.sa-faq-q-mark { color: #f0d98a; flex-shrink: 0; }
+.sa-faq-a { color: rgba(246,241,232,0.8); font-size: 0.98rem; line-height: 1.7; padding-left: 1.3rem; font-weight: 400; margin: 0; }
 
 .sa-parent-links { margin-top: 0.5rem; display: flex; flex-wrap: wrap; gap: 1.25rem; font-size: 0.95rem; }
 .sa-parent-link { color: var(--sa-muted); text-decoration: underline; }
 
-/* Final CTA — inverted "ink" card for punch, matching marblepro's own .loc-body .stats treatment inside an otherwise light page */
+/* Final CTA — same per-city gradient as every other card, "end tak" consistent, with a gold glow accent to mark it as the last stop. */
 .sa-cta-block {
-  background: radial-gradient(circle at 15% 15%, rgba(195,155,78,0.25), transparent 55%), linear-gradient(165deg, var(--sa-ink2) 0%, var(--sa-ink) 100%);
-  border: 1px solid rgba(195,155,78,0.3);
+  background: radial-gradient(circle at 15% 15%, rgba(255,255,255,0.16), transparent 55%), var(--sa-city-grad, var(--sa-ink));
+  border: 1px solid rgba(255,255,255,0.2);
 }
-.sa-cta-block .sa-card-brand, .sa-cta-block h2 { color: var(--sa-paper) !important; }
-.sa-cta-block h2 { font-family: var(--font-fraunces), var(--font-josefin), serif; font-weight: 500; }
-.sa-cta-block .sa-card-tag { color: rgba(246,241,232,0.65) !important; }
-.sa-cta-block .sa-verified { color: var(--sa-gold) !important; }
-.sa-cta-block p { color: rgba(246,241,232,0.72) !important; }
-.sa-cta-circle { position: absolute; top: -60px; right: -60px; width: 240px; height: 240px; border-radius: 50%; background: radial-gradient(circle, rgba(195,155,78,0.22), transparent 70%); pointer-events: none; animation: saCtaGlow 6s ease-in-out infinite; }
+.sa-cta-block h2 { color: var(--sa-paper) !important; font-family: var(--font-fraunces), var(--font-josefin), serif; font-weight: 500; }
+.sa-cta-block p { color: rgba(246,241,232,0.8) !important; }
+.sa-cta-circle { position: absolute; top: -60px; right: -60px; width: 240px; height: 240px; border-radius: 50%; background: radial-gradient(circle, rgba(255,255,255,0.2), transparent 70%); pointer-events: none; animation: saCtaGlow 6s ease-in-out infinite; }
 @keyframes saCtaGlow { 0%, 100% { opacity: 0.55; transform: scale(1); } 50% { opacity: 1; transform: scale(1.18); } }
-.sa-cta-label { font-size: 0.65rem; color: var(--sa-gold); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.75rem; }
+.sa-cta-label { font-size: 0.65rem; color: #f0d98a; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.75rem; }
 .sa-cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 .sa-cta-wa { background: #25D366; color: #082b13; transition: transform 0.25s, box-shadow 0.25s; }
 .sa-cta-wa:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(37,211,102,0.35); }

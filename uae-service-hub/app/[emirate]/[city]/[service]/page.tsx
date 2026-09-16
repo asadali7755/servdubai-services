@@ -140,7 +140,7 @@ export default async function ServiceAreaPage({ params }: Props) {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       )}
 
-      <div className={`sa-main ${fraunces.variable}`}>
+      <div className={`sa-main ${fraunces.variable}`} style={{ '--sa-city-grad': cityGradient } as React.CSSProperties}>
         <div className="sa-shell">
 
           {/* BREADCRUMB */}
@@ -207,7 +207,6 @@ export default async function ServiceAreaPage({ params }: Props) {
                       sizes="(max-width: 768px) 100vw, 700px"
                     />
                   )}
-                  <div className="sa-banner-tint" style={{ background: cityGradient }} />
                   <div className="sa-banner-overlay" />
                   <div className="sa-banner-bottom">
                     <div className="sa-banner-tag">{emirate.name} · {city.name}</div>
