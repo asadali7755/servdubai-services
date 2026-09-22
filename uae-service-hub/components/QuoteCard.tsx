@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { useRequestCall } from '@/components/RequestCallModal'
+import { SITE_CONFIG } from '@/lib/data/constants'
 
 const SERVICES = [
   'Villa Deep Cleaning',
@@ -99,13 +100,19 @@ export default function QuoteCard({
     setTimeout(() => setQSent(false), 3000)
   }
 
+  const waPhotoHref = `https://wa.me/${SITE_CONFIG.whatsappNumber.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(
+    isAr
+      ? 'مرحباً، أرغب في عرض سعر مجاني. سأرسل صوراً لما يحتاج إلى تنظيف.'
+      : "Hi, I'd like a free quote — here are photos of what needs cleaning:"
+  )}`
+
   return (
     <aside className={`hero-quote-card ${className}`.trim()} id={id}>
       <span className="hqc-label">
-        {isAr ? 'طلب عرض سعر مجاني' : 'FREE QUOTE REQUEST'}
+        {isAr ? 'طلب زيارة مجانية' : 'FREE VISIT REQUEST'}
       </span>
       <h2 className="hqc-heading">
-        {heading ?? (isAr ? 'احصل على عرض سعر مجاني.' : 'Get your free quote.')}
+        {heading ?? (isAr ? 'احصل على زيارة مجانية.' : 'Get your free visit.')}
       </h2>
       <div className="hqc-form">
         <select
@@ -140,7 +147,7 @@ export default function QuoteCard({
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
             {qSent
               ? (isAr ? 'تم الإرسال!' : 'Sent!')
-              : (isAr ? 'إرسال الاستفسار' : 'SEND ENQUIRY')}
+              : (isAr ? 'طلب زيارة' : 'REQUEST VISIT')}
           </button>
           <button
             className="hqc-call"
@@ -153,8 +160,27 @@ export default function QuoteCard({
         </div>
         <p className="he-form-note">
           {isAr
-            ? '"إرسال" يرسل استفسارك مباشرة. "اطلب مكالمة" — سنتصل بك.'
-            : '"Send" submits your enquiry directly. "Request a call" — we\'ll dial you back.'}
+            ? '"طلب زيارة" يرسل طلبك مباشرة. "اطلب مكالمة" — سنتصل بك.'
+            : '"Request visit" submits your request directly. "Request a call" — we\'ll dial you back.'}
+        </p>
+        <p className="he-form-note">
+          {isAr ? (
+            <>
+              لا تريد زيارة؟{' '}
+              <a href={waPhotoHref} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>
+                أرسل صوراً على واتساب
+              </a>{' '}
+              للحصول على عرض سعر مجاني.
+            </>
+          ) : (
+            <>
+              Don&apos;t want a visit?{' '}
+              <a href={waPhotoHref} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>
+                WhatsApp us photos
+              </a>{' '}
+              of what needs cleaning for a free quote instead.
+            </>
+          )}
         </p>
       </div>
     </aside>
