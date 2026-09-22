@@ -357,7 +357,7 @@ const handWrittenBlogPosts: BlogPost[] = [
   },
 
   {
-    slug: 'marble-polishing-dubai-guide',
+    slug: 'marble-polishing-dubai-cost-process',
     title: 'Marble Polishing in Dubai: Cost & Process',
     h1: 'Marble Polishing in Dubai: Cost, Process & Restoring Shine',
     description:
