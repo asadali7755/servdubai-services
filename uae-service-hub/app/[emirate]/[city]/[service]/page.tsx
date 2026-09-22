@@ -59,10 +59,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const shortService = service.name.split(/[&]/)[0].trim()
   return buildMetadata({
     title: `${shortService} in ${city.name} | Madinat Alhaya`,
-    description: `Professional ${service.name.toLowerCase()} in ${city.name}, ${emirate.name}. Same-day service, certified technicians, eco-friendly products. Free quote — call ${SITE_CONFIG.phone}.`.slice(
-      0,
-      158
-    ),
+    description: `Professional ${service.name.toLowerCase()} in ${city.name}, ${emirate.name}. Same-day service, certified technicians, eco-friendly products. Free quote — call ${SITE_CONFIG.phone}.`,
     path: `/${eSlug}/${cSlug}/${sSlug}`,
     imageUrl: service.images[0] ? `https://servedubai.ae${service.images[0]}` : undefined,
   })
