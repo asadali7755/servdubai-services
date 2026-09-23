@@ -2495,7 +2495,17 @@ img { max-width: 100%; }
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  transition: transform .45s cubic-bezier(.2,.7,.2,1), box-shadow .45s, border-color .45s;
+  will-change: transform;
 }
+.home-svc-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(201,168,76,0.55);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.45);
+}
+.home-svc-card .svc-card-img img { transition: transform .8s cubic-bezier(.2,.7,.2,1); }
+.home-svc-card:hover .svc-card-img img { transform: scale(1.1); }
+.home-svc-card:hover .home-svc-h2 { color: #ecca6e; }
 .home-svc-badge {
   position: absolute;
   top: 0.75rem;
@@ -2515,6 +2525,7 @@ img { max-width: 100%; }
   color: #fff;
   margin: 0 0 0.45rem;
   line-height: 1.25;
+  transition: color .3s;
 }
 .home-svc-h3 { font-size: 0.98rem; color: #d9b85c; font-weight: 600; margin: 0 0 0.7rem; }
 .home-svc-p { color: #c3cad6; font-size: 1rem; line-height: 1.7; margin-bottom: 0.7rem; }
@@ -2611,6 +2622,7 @@ img { max-width: 100%; }
   box-shadow: 0 2px 12px rgba(0,0,0,0.06) !important;
 }
 [data-theme="light"] .home-svc-h2 { color: #1a1510 !important; }
+[data-theme="light"] .home-svc-card:hover .home-svc-h2 { color: #9a7d2e !important; }
 [data-theme="light"] .home-svc-p { color: #5a4e3a !important; }
 [data-theme="light"] .home-kw-tag {
   background: rgba(201,168,76,0.12) !important;
@@ -3329,7 +3341,7 @@ img { max-width: 100%; }
 .home-cta-btns { display: flex; gap: 0.875rem; flex-wrap: wrap; margin-top: 1.75rem; }
 
 /* Service card inner layout */
-.svc-card-img { position: relative; height: 190px; flex-shrink: 0; }
+.svc-card-img { position: relative; height: 190px; flex-shrink: 0; overflow: hidden; }
 .svc-card-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.05), rgba(0,0,0,0.6)); }
 .svc-card-body { padding: 1.4rem; flex: 1; display: flex; flex-direction: column; }
 
