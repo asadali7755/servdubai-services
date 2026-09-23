@@ -1,6 +1,7 @@
 'use client'
 
 import * as React from 'react'
+import { createPortal } from 'react-dom'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -13,10 +14,18 @@ interface HoverImageLinkProps {
 }
 
 /** A link that shows a small floating photo preview next to the cursor on hover — used
- *  for keyword links (service × area) so each one previews its own real work-photo. */
+ *  for keyword links (service × area) so each one previews its own real work-photo.
+ *  The preview is portaled to document.body: several places this link is used sit
+ *  inside cards with their own `:hover { transform }` (e.g. .sa-rail-card lifting on
+ *  hover), and a `position: fixed` descendant of a transformed ancestor stops being
+ *  fixed to the viewport — it becomes fixed to that ancestor instead, breaking the
+ *  cursor-follow effect. Portaling to body sidesteps that entirely. */
 export function HoverImageLink({ href, image, alt, className, children }: HoverImageLinkProps) {
   const [hovered, setHovered] = React.useState(false)
   const [pos, setPos] = React.useState({ x: 0, y: 0 })
+  const [mounted, setMounted] = React.useState(false)
+
+  React.useEffect(() => setMounted(true), [])
 
   if (!image) {
     return (
@@ -38,10 +47,11 @@ export function HoverImageLink({ href, image, alt, className, children }: HoverI
       onMouseLeave={() => setHovered(false)}
     >
       {children}
-      {hovered && (
+      {mounted && hovered && createPortal(
         <span className="hil-preview" style={{ left: pos.x + 18, top: pos.y - 100 }} aria-hidden="true">
           <Image src={image} alt={alt} width={168} height={126} className="hil-preview-img" />
-        </span>
+        </span>,
+        document.body,
       )}
     </Link>
   )
