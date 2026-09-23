@@ -8,6 +8,23 @@
   --color-muted: #9ca3af;
   --font-heading: var(--font-josefin), sans-serif;
   --font-body: var(--font-work), sans-serif;
+
+  /* shadcn/ui tokens — mapped onto the site's existing dark + gold palette */
+  --color-primary: #c9a84c;
+  --color-primary-foreground: #17140b;
+  --color-secondary: #343a40;
+  --color-secondary-foreground: #ffffff;
+  --color-destructive: #dc2626;
+  --color-destructive-foreground: #ffffff;
+  --color-muted-foreground: #9ca3af;
+  --color-accent-foreground: #17140b;
+  --color-popover: #1a1d21;
+  --color-popover-foreground: #ffffff;
+  --color-card: #1a1d21;
+  --color-card-foreground: #ffffff;
+  --color-border: rgba(201, 168, 76, 0.18);
+  --color-input: rgba(201, 168, 76, 0.25);
+  --color-ring: #c9a84c;
 }
 
 :root {

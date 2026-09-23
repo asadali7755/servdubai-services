@@ -11,8 +11,7 @@ import PopularAreas from '@/components/PopularAreas'
 import GoogleReviews from '@/components/GoogleReviews'
 import { useRequestCall } from '@/components/RequestCallModal'
 import EmiratesSection from '@/components/EmiratesSection'
-import Hero from '@/components/Hero'
-import type { HeroSlide } from '@/components/Hero'
+import { SiteHero } from '@/components/ui/site-hero'
 
 const heroImages = [
   { image: '/images/hero/professional-cleaning-dubai-team.webp', imageAlt: 'Al Haya cleaning team servicing a luxury apartment in Dubai with the Burj Khalifa skyline in view — professional cleaning services across all seven UAE Emirates', imageTitle: 'Best Professional Cleaning Services in Dubai | Al Haya' },
@@ -58,15 +57,22 @@ export default function HomeContent() {
   const isAr = locale === 'ar'
   const { open: openCallModal } = useRequestCall()
 
-  const heroSlides: HeroSlide[] = t.hero.slides.map((s, i) => ({
-    ...heroImages[i],
-    title: s.title,
-    subtitle: s.subtitle,
-  }))
+  const heroSlide = t.hero.slides[0]
 
   return (
     <>
-      <Hero slides={heroSlides} badge={t.hero.badge} getFreeQuote={t.hero.getFreeQuote} learnMore={t.hero.learnMore} ourWebsites={t.hero.ourWebsites} isAr={isAr} />
+      <SiteHero
+        badge={t.hero.badge}
+        title={heroSlide.title}
+        subtitle={heroSlide.subtitle}
+        backgroundImage={heroImages[0].image}
+        backgroundAlt={heroImages[0].imageAlt}
+        getFreeQuoteLabel={t.hero.getFreeQuote}
+        learnMoreLabel={t.hero.learnMore}
+        ourWebsitesLabel={t.hero.ourWebsites}
+        contactInfo={{ website: 'servedubai.ae', phone: SITE_CONFIG.phoneDisplay, address: 'Serving all 7 UAE Emirates' }}
+        isAr={isAr}
+      />
 
       {/* 2. SERVICES */}
       <section className="home-services-section sec-pad">
