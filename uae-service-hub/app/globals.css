@@ -1830,30 +1830,39 @@ img { max-width: 100%; }
    PAGE HERO SECTIONS ΓÇö light theme (service, emirate, about)
    .hero-overlay already handled above; these rules handle text
 ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */
-[data-theme="light"] .page-hero-wrap h1 {
+[data-theme="light"] .page-hero-wrap:not(.ep-hero) h1 {
   color: #000 !important;
   text-shadow: 0 1px 6px rgba(255,255,255,0.6) !important;
   font-weight: 700 !important;
 }
-[data-theme="light"] .page-hero-wrap h2 {
+[data-theme="light"] .page-hero-wrap:not(.ep-hero) h2 {
   color: #000 !important;
   text-shadow: 0 1px 4px rgba(255,255,255,0.5) !important;
   font-weight: 700 !important;
 }
-[data-theme="light"] .page-hero-wrap p {
+[data-theme="light"] .page-hero-wrap:not(.ep-hero) p {
   color: #000 !important;
   font-weight: 700 !important;
 }
 /* breadcrumb span text */
-[data-theme="light"] .page-hero-wrap nav > span {
+[data-theme="light"] .page-hero-wrap:not(.ep-hero) nav > span {
   color: #000 !important;
   font-weight: 600 !important;
 }
 /* "Call" button (white border/text) in emirate hero */
-[data-theme="light"] .page-hero-wrap a[href^="tel"] {
+[data-theme="light"] .page-hero-wrap:not(.ep-hero) a[href^="tel"] {
   color: #2a1a00 !important;
   border-color: rgba(42,26,0,0.5) !important;
 }
+/* .ep-hero (emirate page) has its own dark-bottom overlay gradient
+   (.ep-hero-overlay) built for white text — the black-text rules above
+   fought that overlay and made the heading unreadable at the bottom
+   where the gradient is darkest. Keep .ep-hero-h1/.ep-hero-desc's own
+   white colors here instead. */
+[data-theme="light"] .ep-hero .ep-hero-h1 { color: #fff !important; }
+[data-theme="light"] .ep-hero .ep-hero-desc { color: #d1d5db !important; }
+[data-theme="light"] .ep-hero .ep-breadcrumb-cur,
+[data-theme="light"] .ep-hero .ep-breadcrumb a { color: #fff !important; }
 /* side vignette ΓÇö lighter in light mode */
 [data-theme="light"] .hero-overlay-side {
   background: linear-gradient(to right, rgba(255,255,255,0.45) 0%, transparent 65%) !important;
