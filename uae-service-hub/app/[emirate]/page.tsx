@@ -169,7 +169,7 @@ export default async function EmiratePage({ params }: Props) {
             Cleaning Services<br />in {emirate.name}
           </h1>
           <p className="ep-hero-desc">
-            Best professional cleaning company in {emirate.name} — villa deep cleaning, sofa cleaning, carpet cleaning, marble polishing & office cleaning across {emirate.cities.length} areas. Same-day service available.
+            Best professional cleaning company in {emirate.name} — villa deep cleaning, sofa cleaning, carpet cleaning, marble polishing & office cleaning across {emirate.name}. Same-day service available.
           </p>
 
           <div className="ep-hero-btns">

@@ -2206,10 +2206,12 @@ img { max-width: 100%; }
 [data-theme="light"] .theme-sites h3 { color: #1a1510 !important; }
 [data-theme="light"] .theme-sites p { color: #5a4e3a !important; }
 
-/* Keep image-overlay text WHITE (text on dark images) */
+/* Keep image-overlay text WHITE (text on dark images).
+   emir-city-img-card / emir-svc-card set their own explicit white/gold
+   colors per element (.ep-city-name, .ep-svc-name, .ep-svc-desc, .ep-city-svc)
+   — "color: inherit" here outranked those on specificity and pulled in the
+   light-theme body text color instead, making the overlay text unreadable. */
 [data-theme="light"] .about-emir-card div,
-[data-theme="light"] .emir-city-img-card div,
-[data-theme="light"] .emir-svc-card div,
 [data-theme="light"] .svc-area-card div { color: inherit; }
 
 /* Why row h3 */
