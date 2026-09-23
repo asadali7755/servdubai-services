@@ -32,19 +32,19 @@ const serviceImages = [
 ]
 const serviceAlts = [
   'Villa deep cleaning Dubai — professional residential cleaning UAE',
-  'Sofa cleaning Dubai — professional upholstery and couch deep cleaning UAE',
-  'Carpet cleaning Dubai — professional steam extraction and rug cleaning UAE',
-  'Marble polishing Dubai — professional floor restoration and re-crystallization UAE',
-  'Mattress cleaning Dubai — UV-C sanitization and deep cleaning UAE',
-  'Office cleaning Dubai — professional commercial workspace cleaning UAE',
+  'Sofa cleaning Abu Dhabi — professional upholstery and couch deep cleaning UAE',
+  'Carpet cleaning Sharjah — professional steam extraction and rug cleaning UAE',
+  'Marble polishing Ajman — professional floor restoration and re-crystallization UAE',
+  'Mattress cleaning Ras Al Khaimah — UV-C sanitization and deep cleaning UAE',
+  'Office cleaning Fujairah — professional commercial workspace cleaning UAE',
 ]
 const serviceKws = [
   ['villa cleaning Dubai', 'move-in cleaning', 'deep cleaning villa Dubai', 'professional house cleaning UAE'],
-  ['sofa cleaning Dubai', 'couch cleaning service', 'upholstery cleaning UAE', 'leather sofa cleaning'],
-  ['carpet cleaning Dubai', 'rug cleaning services UAE', 'steam carpet cleaning', 'professional carpet cleaners'],
-  ['marble polishing Dubai', 'floor polishing services', 'marble restoration UAE', 'stone polishing UAE'],
-  ['mattress cleaning Dubai', 'mattress sanitization UAE', 'dust mite removal', 'UV-C mattress cleaning'],
-  ['office cleaning Dubai', 'commercial cleaning UAE', 'workspace sanitization Dubai', 'office deep clean'],
+  ['sofa cleaning Abu Dhabi', 'couch cleaning service', 'upholstery cleaning Abu Dhabi', 'leather sofa cleaning'],
+  ['carpet cleaning Sharjah', 'rug cleaning services Sharjah', 'steam carpet cleaning', 'professional carpet cleaners'],
+  ['marble polishing Ajman', 'floor polishing services Ajman', 'marble restoration UAE', 'stone polishing UAE'],
+  ['mattress cleaning Ras Al Khaimah', 'mattress sanitization UAE', 'dust mite removal', 'UV-C mattress cleaning'],
+  ['office cleaning Fujairah', 'commercial cleaning UAE', 'workspace sanitization Fujairah', 'office deep clean'],
 ]
 
 const extraSlugs = ['curtain-cleaning', 'dining-chair-cleaning', 'car-interior-detailing', 'apartment-cleaning', 'restaurant-kitchen-cleaning']
