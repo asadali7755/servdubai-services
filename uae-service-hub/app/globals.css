@@ -4554,3 +4554,20 @@ img { max-width: 100%; }
 @media (min-width: 1024px) {
   .site-hero-2-image-wrap { width: 40%; }
 }
+
+/* =============================================
+   SITE HEADER 2 — always-dark navbar (independent of the site's
+   light/dark theme and scroll state). Before this fix the header was
+   transparent until scrolled, so at the top of the page it revealed
+   the page's light-theme cream body background behind white nav text
+   — unreadable. Solid dark bg here matches the new dark hero panel.
+============================================= */
+.site-header-2 {
+  background: rgba(33, 37, 41, 0.97);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.18);
+}
+.site-header-2-scrolled {
+  background: rgba(23, 26, 29, 0.98);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+}

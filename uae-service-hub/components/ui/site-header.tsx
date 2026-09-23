@@ -59,10 +59,7 @@ export function SiteHeader({ onOpenMobile, mobileOpen }: { onOpenMobile: () => v
 
   return (
     <header
-      className={cn(
-        'sticky top-0 z-50 w-full border-b border-transparent transition-colors',
-        scrolled && 'bg-background/95 supports-[backdrop-filter]:bg-background/80 border-border backdrop-blur-lg',
-      )}
+      className={cn('site-header-2 sticky top-0 z-50 w-full transition-shadow', scrolled && 'site-header-2-scrolled')}
     >
       <nav className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-4 lg:px-8">
         <div className="flex items-center gap-6">
