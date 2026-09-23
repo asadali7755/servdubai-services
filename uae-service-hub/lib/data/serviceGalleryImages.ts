@@ -15,6 +15,8 @@ const SERVICE_GALLERY_IMAGES: Record<string, string[]> = {
     '/images/sofa-before-after/after-6.jpeg',
     '/images/sofa-before-after/after-7.jpeg',
   ],
+  // carpet-8.jpeg dropped — has an illegible small watermark in the corner that
+  // couldn't be confirmed clean.
   'carpet-cleaning': [
     '/images/carpet-gallery/carpet-1.jpeg',
     '/images/carpet-gallery/carpet-2.jpeg',
@@ -23,33 +25,22 @@ const SERVICE_GALLERY_IMAGES: Record<string, string[]> = {
     '/images/carpet-gallery/carpet-5.jpeg',
     '/images/carpet-gallery/carpet-6.jpeg',
     '/images/carpet-gallery/carpet-7.jpeg',
-    '/images/carpet-gallery/carpet-8.jpeg',
     '/images/carpet-gallery/carpet-9.jpeg',
     '/images/carpet-gallery/carpet-10.jpeg',
     '/images/carpet-gallery/carpet-11.jpg',
     '/images/carpet-gallery/carpet-13.webp',
   ],
+  // villa-3/villa-4 dropped — branded "Villa Deep Cleaning" graphics with a
+  // phone number that isn't this site's own (a sister-site promo asset).
   'villa-deep-cleaning': [
     '/images/villa-gallery/villa-1.jpg',
     '/images/villa-gallery/villa-2.jpg',
-    '/images/villa-gallery/villa-3.jpeg',
-    '/images/villa-gallery/villa-4.jpeg',
   ],
-  'marble-polishing': [
-    '/images/marble-gallery/marble-1.jpg',
-    '/images/marble-gallery/marble-2.jpg',
-    '/images/marble-gallery/marble-3.jpg',
-    '/images/marble-gallery/marble-4.jpg',
-    '/images/marble-gallery/marble-5.jpg',
-    '/images/marble-gallery/marble-6.jpg',
-    '/images/marble-gallery/marble-7.jpg',
-    '/images/marble-gallery/marble-8.jpg',
-    '/images/marble-gallery/marble-9.jpg',
-    '/images/marble-gallery/marble-10.jpg',
-    '/images/marble-gallery/marble-11.jpg',
-    '/images/marble-gallery/marble-12.jpg',
-    '/images/marble-gallery/marble-13.jpg',
-  ],
+  // marble-gallery has no entry: every image in that folder turned out to be a
+  // "Marble Pro" (marblepro.ae) branded ad graphic with their own phone number
+  // and logo — a different client site's marketing asset, not a real
+  // servedubai photo. Falls back to the single clean marble-polishing.webp
+  // listing photo instead (see getServiceHoverImage below).
 }
 
 /** Simple deterministic string hash — same (service, seed) always picks the same image. */
