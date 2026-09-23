@@ -1,8 +1,9 @@
-import Link from 'next/link'
 import { emirates } from '@/lib/data/emirates'
 import { SERVICE_AREA_COMBOS, hasCombo } from '@/lib/data/serviceAreaCombos'
 import { getServiceBySlug } from '@/lib/data/services'
 import { getCityBySlug } from '@/lib/data/emirates'
+import { getServiceHoverImage } from '@/lib/data/serviceGalleryImages'
+import { HoverImageLink } from '@/components/ui/hover-image-link'
 
 // Core services shown for every emirate — the ones customers actually search
 // per-area for (sofa / carpet / villa / marble), matching the site's main
@@ -61,10 +62,16 @@ export default function PopularAreas() {
                           ? `/${emirate.slug}/${citySlug}/${slug}`
                           : `/${emirate.slug}/${citySlug}`
                         return (
-                          <Link key={`${emirate.slug}-${citySlug}`} href={href} className="pa-pill">
+                          <HoverImageLink
+                            key={`${emirate.slug}-${citySlug}`}
+                            href={href}
+                            image={getServiceHoverImage(slug, citySlug)}
+                            alt={`${shortName} in ${city.name}, ${emirate.name}`}
+                            className="pa-pill"
+                          >
                             <span className="pa-pill-arrow">→</span>
                             {shortName} in {city.name}
-                          </Link>
+                          </HoverImageLink>
                         )
                       })}
                     </div>

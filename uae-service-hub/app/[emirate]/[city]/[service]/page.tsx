@@ -14,6 +14,8 @@ import {
 import { getCityContent } from '@/lib/data/cityContent'
 import { getCityCoords } from '@/lib/data/cityCoordinates'
 import { getSectionGradients } from '@/lib/data/cityGradients'
+import { getServiceHoverImage } from '@/lib/data/serviceGalleryImages'
+import { HoverImageLink } from '@/components/ui/hover-image-link'
 import {
   buildMetadata,
   buildLocalBusinessSchema,
@@ -182,9 +184,15 @@ export default async function ServiceAreaPage({ params }: Props) {
                 <div className="sa-rail-card">
                   <div className="sa-rail-title">Other Areas in {emirate.name}</div>
                   {siblingCities.map((c) => (
-                    <Link key={c.slug} href={`/${emirate.slug}/${c.slug}`} className="sa-rail-link">
+                    <HoverImageLink
+                      key={c.slug}
+                      href={`/${emirate.slug}/${c.slug}`}
+                      image={getServiceHoverImage(service.slug, c.slug)}
+                      alt={`${service.name} in ${c.name}, ${emirate.name}`}
+                      className="sa-rail-link"
+                    >
                       {c.name}
-                    </Link>
+                    </HoverImageLink>
                   ))}
                 </div>
               )}
@@ -355,9 +363,15 @@ export default async function ServiceAreaPage({ params }: Props) {
                 <div className="sa-rail-card">
                   <div className="sa-rail-title">Other Services in {city.name}</div>
                   {siblingServices.map((s) => (
-                    <Link key={s.id} href={`/${emirate.slug}/${city.slug}/${s.slug}`} className="sa-rail-link">
+                    <HoverImageLink
+                      key={s.id}
+                      href={`/${emirate.slug}/${city.slug}/${s.slug}`}
+                      image={getServiceHoverImage(s.slug, city.slug)}
+                      alt={`${s.name} in ${city.name}, ${emirate.name}`}
+                      className="sa-rail-link"
+                    >
                       {s.name}
-                    </Link>
+                    </HoverImageLink>
                   ))}
                 </div>
               )}
