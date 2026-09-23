@@ -8,18 +8,17 @@ import QuoteCard from '@/components/QuoteCard'
 
 export const metadata: Metadata = {
   ...buildMetadata({
-    title: 'Cleaning Services Near Me Dubai | All Dubai Areas & Neighbourhoods',
+    title: 'Cleaning Services Near Me UAE | All Emirates, Cities & Neighbourhoods',
     description:
-      'Find the best cleaning services near me in Dubai — villa cleaning, sofa cleaning, carpet cleaning & marble polishing in Dubai Marina, Downtown, JBR, Palm Jumeirah, Arabian Ranches, JLT & more. Same-day service.',
+      'Find the best cleaning services near me across the UAE — villa cleaning, sofa cleaning, carpet cleaning & marble polishing in Dubai, Sharjah, Abu Dhabi, Ajman, RAK, Fujairah & Umm Al Quwain. Same-day service.',
     path: '/areas',
   }),
   keywords: [
-    'cleaning services near me Dubai', 'cleaning services Dubai Marina', 'cleaning services Downtown Dubai',
-    'cleaning services JBR', 'cleaning services Palm Jumeirah', 'cleaning services Arabian Ranches',
-    'cleaning services JLT', 'cleaning services Business Bay', 'cleaning services Al Barsha',
-    'cleaning services Jumeirah', 'cleaning services Deira', 'cleaning services Mirdif',
-    'cleaning services JVC', 'cleaning services Silicon Oasis', 'cleaning services DIFC',
-    'villa deep cleaning Dubai Marina', 'sofa cleaning Downtown Dubai', 'carpet cleaning Palm Jumeirah',
+    'cleaning services near me UAE', 'cleaning services Dubai', 'cleaning services Sharjah',
+    'cleaning services Abu Dhabi', 'cleaning services Ajman', 'cleaning services Ras Al Khaimah',
+    'cleaning services Fujairah', 'cleaning services Umm Al Quwain',
+    'sofa cleaning UAE', 'carpet cleaning UAE', 'villa deep cleaning UAE', 'marble polishing UAE',
+    'cleaning services Dubai Marina', 'cleaning services Downtown Dubai', 'cleaning services JBR',
   ],
 }
 
@@ -43,11 +42,11 @@ export default function AreasPage() {
         </nav>
 
         <div className="ar-gold-label">Cleaning Services Near You</div>
-        <h1 className="city-page-h1 ar-h1">Cleaning Services by Area in Dubai</h1>
+        <h1 className="city-page-h1 ar-h1">Cleaning Services by Area in UAE</h1>
         <p className="city-page-sub ar-sub">
-          Madinat Alhaya provides professional, same-day cleaning across Dubai&rsquo;s top neighbourhoods. Choose your service and
-          area below for local specialists who know your building and community — from high-rise apartments in Dubai Marina
-          to luxury villas in Palm Jumeirah. Free quotes via WhatsApp — call {SITE_CONFIG.phone}.
+          Madinat Alhaya provides professional, same-day cleaning across the UAE&rsquo;s top neighbourhoods — from Dubai to
+          Sharjah, Abu Dhabi, Ajman, Ras Al Khaimah, Fujairah and Umm Al Quwain. Choose your service and area below for local
+          specialists who know your building and community. Free quotes via WhatsApp — call {SITE_CONFIG.phone}.
         </p>
 
         <PopularAreas />
@@ -62,7 +61,7 @@ export default function AreasPage() {
               WhatsApp Now
             </a>
             <Link href="/dubai" className="inline-block px-8 py-4 rounded-full font-semibold text-lg ar-cta-browse">
-              Browse All Dubai Areas
+              Browse All Areas
             </Link>
           </div>
           <QuoteCard id="quote-areas" source="Areas page" className="page-quote-card" />
