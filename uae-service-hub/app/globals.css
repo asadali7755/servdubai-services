@@ -4480,3 +4480,77 @@ img { max-width: 100%; }
   .page-quote-card,
   .gallery-quote-card { margin-top: 1.25rem; }
 }
+
+/* =============================================
+   HOMEPAGE HERO 2 — split panel, fixed dark/gold palette
+   (independent of the site's light/dark toggle, same reasoning as
+   .ep-hero on emirate pages: the panel has its own dark background,
+   so it always needs light text regardless of site theme)
+============================================= */
+@keyframes siteHero2Reveal {
+  from { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); }
+  to   { clip-path: polygon(25% 0, 100% 0, 100% 100%, 0% 100%); }
+}
+@keyframes siteHero2FadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.site-hero-2 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+  background: #212529;
+  color: #ffffff;
+}
+@media (min-width: 768px) {
+  .site-hero-2 { flex-direction: row; min-height: 600px; }
+}
+.site-hero-2-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  padding: 2.5rem 1.5rem;
+  animation: siteHero2FadeUp 0.6s ease both;
+}
+@media (min-width: 768px) {
+  .site-hero-2-left { width: 55%; padding: 3rem; }
+}
+@media (min-width: 1024px) {
+  .site-hero-2-left { width: 60%; padding: 4rem; }
+}
+.site-hero-2-badge { display: inline-block; margin-bottom: 0.75rem; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.2em; color: #c9a84c; }
+.site-hero-2-title { font-family: var(--font-josefin), sans-serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; line-height: 1.1; color: #ffffff; margin: 0; }
+.site-hero-2-rule { margin: 1.5rem 0; height: 4px; width: 5rem; background: #c9a84c; }
+.site-hero-2-subtitle { max-width: 32rem; margin-bottom: 2rem; font-size: 1rem; color: #9ca3af; line-height: 1.6; }
+.site-hero-2-cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem; }
+.site-hero-2-cta-primary { font-size: 1rem; font-weight: 700; letter-spacing: 0.02em; color: #c9a84c; background: none; border: none; cursor: pointer; padding: 0; }
+.site-hero-2-cta-primary:hover { color: #e3c674; }
+.site-hero-2-cta-link { font-size: 1rem; font-weight: 700; letter-spacing: 0.02em; color: rgba(255,255,255,0.8); background: none; border: none; cursor: pointer; padding: 0; text-decoration: none; }
+.site-hero-2-cta-link:hover { color: #ffffff; }
+.site-hero-2-quote { margin-top: 2rem; max-width: 24rem; color: #1a1510; }
+.site-hero-2-footer { margin-top: 3rem; width: 100%; }
+.site-hero-2-footer-item { display: flex; align-items: center; font-size: 0.75rem; color: #9ca3af; margin-bottom: 0.75rem; }
+@media (min-width: 640px) {
+  .site-hero-2-footer { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  .site-hero-2-footer-item { margin-bottom: 0; }
+}
+.site-hero-2-image-wrap {
+  position: relative;
+  width: 100%;
+  min-height: 280px;
+  overflow: hidden;
+  clip-path: polygon(25% 0, 100% 0, 100% 100%, 0% 100%);
+}
+@media (min-width: 768px) {
+  .site-hero-2-image-wrap {
+    width: 45%;
+    min-height: 100%;
+    animation: siteHero2Reveal 1s cubic-bezier(0.16,1,0.3,1) both;
+  }
+}
+@media (min-width: 1024px) {
+  .site-hero-2-image-wrap { width: 40%; }
+}
