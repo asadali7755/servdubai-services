@@ -91,9 +91,13 @@ export default async function ServiceAreaPage({ params }: Props) {
   const coords = getCityCoords(eSlug, cSlug)
   const path = `/${eSlug}/${cSlug}/${sSlug}`
 
+  // Favor local FAQs over the generic service-wide ones -- the local
+  // questions are what actually differ page to page; the generic ones are
+  // identical wording on every city for this service, so keeping the FAQ
+  // block mostly local reduces how repetitive two city pages read.
   const combinedFaqs = [
-    ...(local?.localFAQs ?? []).slice(0, 2),
-    ...service.faqs.slice(0, 3),
+    ...(local?.localFAQs ?? []).slice(0, 4),
+    ...service.faqs.slice(0, 2),
   ]
 
   const siblingServices = combosForCity(eSlug, cSlug)
