@@ -506,6 +506,84 @@ const cityLocalContent: Record<string, CityLocalContent> = {
     ],
   },
 
+  'ajman-al-jerf': {
+    localDescription: "Reliable sofa, carpet, and villa cleaning in Al Jerf, Ajman - a waterfront district home to both industrial businesses and residential communities near Ajman Port. Madinat Alhaya's teams bring all equipment on-site for fast, same-day service.",
+    landmarks: ['Al Jerf 1', 'Al Jerf 2', 'Ajman Port vicinity', 'Ajman Free Zone'],
+    propertyType: 'residential apartments and villas near the port and free zone',
+    areaNote: "Al Jerf's mix of port-adjacent industry and residential streets means many households deal with extra dust and airborne particles - our deep steam cleaning is especially effective at cutting through that buildup.",
+    localFAQs: [
+      {
+        question: 'Do you provide cleaning services in Al Jerf, Ajman?',
+        answer: "Yes. We cover Al Jerf 1 and Al Jerf 2 in Ajman, including apartments near Ajman Port and the Free Zone. Free quotes via WhatsApp, with same-day service usually available.",
+      },
+    ],
+  },
+
+  'ajman-al-rawda': {
+    localDescription: "Professional sofa, carpet, and villa deep cleaning in Al Rawda, Ajman - a large, family-oriented residential district known for its villa compounds and spacious apartment buildings. Same-day booking with transparent, upfront pricing.",
+    landmarks: ['Al Rawda 1', 'Al Rawda 2', 'Al Rawda 3', 'Sheikh Ammar Bin Humaid Street'],
+    propertyType: 'villa compounds and mid-rise residential apartments',
+    areaNote: "Al Rawda's popularity with families means larger homes and more furniture to cover - our teams are used to scheduling full villa deep cleans here without disrupting a busy household's day.",
+    localFAQs: [
+      {
+        question: 'Do you clean villas and apartments in Al Rawda?',
+        answer: "Yes. We cover Al Rawda 1, 2 and 3 in Ajman for sofa cleaning, carpet cleaning and full villa deep cleaning. WhatsApp us for a free quote and same-day availability.",
+      },
+    ],
+  },
+
+  'ajman-al-hamidiya': {
+    localDescription: "Trusted sofa, carpet, and apartment cleaning in Al Hamidiya, Ajman - a busy, centrally located residential and commercial area close to Ajman's main roads. Fast response times and eco-friendly products for every booking.",
+    landmarks: ['Al Hamidiya 1', 'Al Hamidiya 2', 'Ajman Corniche Road'],
+    propertyType: 'dense residential apartments with ground-floor retail',
+    areaNote: "Al Hamidiya's central location and heavy foot traffic mean carpets and sofas here pick up dust and grime faster than in quieter suburbs - we recommend more frequent deep cleans for households in this area.",
+    localFAQs: [
+      {
+        question: 'Do you offer cleaning services in Al Hamidiya, Ajman?',
+        answer: "Yes. We cover Al Hamidiya 1 and 2 in Ajman. Sofa and carpet cleaning, plus full apartment deep cleaning, with free WhatsApp quotes and same-day service where possible.",
+      },
+    ],
+  },
+
+  'ajman-al-zahya': {
+    localDescription: "Premium sofa, carpet, and villa cleaning for Al Zahya, Ajman - one of the emirate's newer, upscale gated communities. Madinat Alhaya matches the area's standards with careful, detail-oriented service for modern villas and townhouses.",
+    landmarks: ['Al Zahya Gate', 'Sheikh Ammar Bin Humaid Street', 'Al Zahya City Centre vicinity'],
+    propertyType: 'modern gated-community villas and townhouses',
+    areaNote: "Al Zahya's newer villas often have premium flooring and upholstery that benefit from careful, product-appropriate cleaning rather than one-size-fits-all methods - our technicians check fabric and surface type before starting.",
+    localFAQs: [
+      {
+        question: 'Do you cover Al Zahya in Ajman?',
+        answer: "Yes. We provide sofa cleaning, carpet cleaning and villa deep cleaning across Al Zahya's gated communities in Ajman. Contact us on WhatsApp for a free quote.",
+      },
+    ],
+  },
+
+  'ajman-al-mowaihat': {
+    localDescription: "Reliable sofa, carpet, and villa cleaning in Al Mowaihat, Ajman - a growing residential district on the Ajman-Sharjah border with a mix of villas and low-rise apartments. Same-day service with all equipment brought to your door.",
+    landmarks: ['Al Mowaihat 1', 'Al Mowaihat 2', 'Al Mowaihat 3', 'Ajman-Sharjah border road'],
+    propertyType: 'villas and low-rise residential apartments',
+    areaNote: "Al Mowaihat's steady residential growth means many households are moving in or renovating - our move-in and move-out deep cleaning packages are popular here.",
+    localFAQs: [
+      {
+        question: 'Do you clean homes in Al Mowaihat, Ajman?',
+        answer: "Yes. We cover Al Mowaihat 1, 2 and 3 in Ajman for sofa, carpet and villa deep cleaning, including move-in/move-out cleans. Free quotes via WhatsApp.",
+      },
+    ],
+  },
+
+  'ajman-musherief': {
+    localDescription: "Professional sofa, carpet, and villa cleaning in Musherief, Ajman - a quieter residential area popular with families for its villa compounds and lower density compared to central Ajman. Transparent pricing and same-day availability.",
+    landmarks: ['Musherief', 'Al Mowaihat vicinity', 'Ajman Academy area'],
+    propertyType: 'family villa compounds and townhouses',
+    areaNote: "Musherief's quieter, more spread-out villa layout means our teams often handle larger jobs in a single visit - full villa deep cleans covering multiple bedrooms, majlis areas and outdoor spaces.",
+    localFAQs: [
+      {
+        question: 'Do you provide villa cleaning in Musherief, Ajman?',
+        answer: "Yes. We cover Musherief and nearby areas in Ajman for sofa cleaning, carpet cleaning and full villa deep cleaning. WhatsApp us for a free quote and same-day booking.",
+      },
+    ],
+  },
+
   /* ===========================================
      RAS AL KHAIMAH
   =========================================== */
