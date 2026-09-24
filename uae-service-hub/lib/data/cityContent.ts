@@ -702,6 +702,91 @@ const cityLocalContent: Record<string, CityLocalContent> = {
     ],
   },
 
+  'abu-dhabi-mohamed-bin-zayed-city': {
+    localDescription: "Reliable sofa, carpet, and villa cleaning in Mohamed Bin Zayed City (MBZ City), Abu Dhabi - a large, family-oriented residential district known for its spacious villa compounds. Madinat Alhaya brings the same professional standard used across the capital to MBZ City households.",
+    landmarks: ['MBZ City villa compounds', 'MBZ City souq area'],
+    propertyType: 'spacious family villa compounds',
+    areaNote: "MBZ City's popularity with larger families means bigger homes with more furniture to cover - our teams are used to scheduling full villa deep cleans here in a single visit without disrupting a busy household.",
+    localFAQs: [
+      {
+        question: 'Do you provide cleaning services in Mohamed Bin Zayed City?',
+        answer: "Yes. We cover MBZ City for sofa cleaning, carpet cleaning, villa deep cleaning and marble polishing. Free quotes via WhatsApp, with same-day service usually available.",
+      },
+      {
+        question: 'Can you handle a full villa clean in one visit in MBZ City?',
+        answer: "Yes. We size the team to the property, so a full MBZ City villa - kitchen, bathrooms, AC vents, floors and upholstery - is typically completed in a single visit. Message us your villa size for a quote.",
+      },
+    ],
+  },
+
+  'abu-dhabi-al-shamkha': {
+    localDescription: "Professional sofa, carpet, and villa deep cleaning in Al Shamkha, Abu Dhabi - one of the capital's newer residential districts with a growing mix of villa compounds. Transparent pricing and same-day booking for Al Shamkha residents.",
+    landmarks: ['Al Shamkha villa communities'],
+    propertyType: 'newer villa compounds',
+    areaNote: "Al Shamkha's steady residential growth means many households are moving in or settling a newly built villa - our move-in cleaning and full deep-clean packages are popular here.",
+    localFAQs: [
+      {
+        question: 'Do you clean villas in Al Shamkha, Abu Dhabi?',
+        answer: "Yes. We cover Al Shamkha for villa deep cleaning, sofa cleaning, carpet cleaning and marble polishing, including move-in cleans for newly built homes. WhatsApp us for a free quote.",
+      },
+      {
+        question: 'Do you offer move-in cleaning for new villas in Al Shamkha?',
+        answer: "Yes. Move-in deep cleaning - covering kitchen, bathrooms, floors and every room - is one of our most requested services in Al Shamkha given the area's newer housing stock.",
+      },
+    ],
+  },
+
+  'abu-dhabi-shakhbout-city': {
+    localDescription: "Trusted sofa, carpet, and villa cleaning in Shakhbout City, Abu Dhabi - a well-planned residential district with a consistent villa layout across the community. Reliable same-day service for Shakhbout City households.",
+    landmarks: ['Shakhbout City residential district'],
+    propertyType: 'planned villa compounds',
+    areaNote: "Shakhbout City's consistent villa layouts mean our teams know exactly what to expect on arrival, which helps us quote accurately and complete full deep cleans efficiently.",
+    localFAQs: [
+      {
+        question: 'Do you cover Shakhbout City for villa cleaning?',
+        answer: "Yes. We provide sofa cleaning, carpet cleaning, marble polishing and full villa deep cleaning across Shakhbout City. Contact us via WhatsApp for a free quote and same-day booking.",
+      },
+      {
+        question: 'How much does villa deep cleaning cost in Shakhbout City?',
+        answer: "Villa deep cleaning in Shakhbout City starts from around AED 750 for a 2-bedroom property and scales with size. Message us your villa size on WhatsApp for an exact quote.",
+      },
+    ],
+  },
+
+  'abu-dhabi-baniyas': {
+    localDescription: "Reliable sofa, carpet, and villa deep cleaning in Baniyas, Abu Dhabi - one of the capital's long-established residential districts with a broad mix of villa sizes. Same-day service with all equipment brought to your door.",
+    landmarks: ['Baniyas North', 'Baniyas residential district'],
+    propertyType: 'established villa compounds',
+    areaNote: "Baniyas' long-established housing stock means we regularly handle both routine maintenance cleans and more intensive restoration-style deep cleans for older villas in the area.",
+    localFAQs: [
+      {
+        question: 'Do you provide cleaning services in Baniyas, Abu Dhabi?',
+        answer: "Yes. We cover Baniyas and Baniyas North for sofa cleaning, carpet cleaning, villa deep cleaning and marble polishing. Free WhatsApp quotes, same-day service usually available.",
+      },
+      {
+        question: 'Can you restore older marble floors in Baniyas villas?',
+        answer: "Yes. Many Baniyas villas have marble that's never had a professional restoration - we assess condition first, then apply grinding, honing and polishing as needed to bring back the shine.",
+      },
+    ],
+  },
+
+  'abu-dhabi-al-reef': {
+    localDescription: "Professional sofa, carpet, and villa cleaning in Al Reef, Abu Dhabi - a large, popular villa community close to Khalifa City known for its gated compounds and consistent Mediterranean and desert-style villa layouts. Reliable same-day service for Al Reef residents.",
+    landmarks: ['Al Reef Villas', 'Al Reef Downtown'],
+    propertyType: 'gated villa compounds',
+    areaNote: "Al Reef's gated-community layout means coordinating access through community security is common - we build that into scheduling so appointments run smoothly without delays.",
+    localFAQs: [
+      {
+        question: 'Do you clean villas in Al Reef, Abu Dhabi?',
+        answer: "Yes. We cover Al Reef Villas and Al Reef Downtown for sofa cleaning, carpet cleaning, villa deep cleaning and marble polishing. WhatsApp us for a free quote and same-day availability.",
+      },
+      {
+        question: 'How do you handle gated-community access in Al Reef?',
+        answer: "We coordinate directly with Al Reef's community security or your registered access list ahead of the visit - just share the gate details when you book and we'll handle the rest.",
+      },
+    ],
+  },
+
   /* ===========================================
      AJMAN
   =========================================== */

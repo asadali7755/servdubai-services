@@ -108,6 +108,26 @@ const comboIntros: Record<string, ComboIntro> = {
     intro: "Yas Island's serviced apartments and villas in communities like Yas Acres, Ansam and Waters Edge are furnished to a premium standard, and the upholstery reflects that — designer fabrics and leather that need product-appropriate handling rather than a standard shampoo pass. Our sofa cleaning on Yas Island begins with a fabric assessment, then hot-water extraction or leather conditioning depending on the piece, finished with professional air-movers so the sofa is usable again within a few hours. Concierge or key-holder access is common for Yas Acres and Ansam residents, and we only need someone reachable by phone during the visit. Same-day slots are usually available.",
     metaDescription: "Sofa cleaning on Yas Island — fabric-appropriate cleaning for premium serviced apartments and villas. Same-day WhatsApp booking available.",
   },
+  'abu-dhabi-mohamed-bin-zayed-city-sofa-cleaning': {
+    intro: "MBZ City's spacious family villas typically have more seating to cover than a standard apartment — full sectionals, majlis seating and multiple sofas across different rooms — so our teams size the job accordingly rather than quoting a flat rate. Hot-water extraction and pre-treatment spray apply across fabric types, with leather conditioning for premium pieces. The sofa is usable again within 3-4 hours. Bundling with a villa deep clean is popular here. Contact us on WhatsApp with your villa size for a quote.",
+    metaDescription: "Sofa cleaning in Mohamed Bin Zayed City — full-villa upholstery cleaning, bundles with deep cleaning. Free WhatsApp quote.",
+  },
+  'abu-dhabi-al-shamkha-sofa-cleaning': {
+    intro: "Al Shamkha's newer villa compounds often mean fresh, recently-purchased sofas that need routine maintenance cleaning rather than heavy stain removal, and we price and treat them accordingly. Standard hot-water extraction and pre-treatment spray apply, with the sofa dry and usable again within 3-4 hours. Move-in cleaning packages that include a first sofa clean are popular for newly settled Al Shamkha households. WhatsApp us your sofa size and location for a free quote.",
+    metaDescription: "Sofa cleaning in Al Shamkha, Abu Dhabi — routine care for newer villa furniture, move-in packages available.",
+  },
+  'abu-dhabi-shakhbout-city-sofa-cleaning': {
+    intro: "Shakhbout City's consistent villa layouts mean our teams know the typical seating setup before they even arrive, which helps us quote accurately over WhatsApp without needing an in-person visit first. Hot-water extraction and pre-treatment spray cover fabric sofas, with leather conditioning available for premium pieces. The sofa is usable again within 3-4 hours of the visit. Same-day appointments are usually available. Message us your sofa details for a free quote.",
+    metaDescription: "Sofa cleaning in Shakhbout City, Abu Dhabi — accurate WhatsApp quotes, same-day service available.",
+  },
+  'abu-dhabi-baniyas-sofa-cleaning': {
+    intro: "Baniyas' long-established villas often have furniture that's been in place for years, and our technicians check fabric condition carefully before choosing hot-water extraction or a gentler method for older or delicate pieces. Pre-treatment spray lifts embedded dirt before the main clean, and the sofa is dry and usable within 3-4 hours. Same-day service is usually available across Baniyas and Baniyas North. Contact us on WhatsApp for a free, no-obligation quote.",
+    metaDescription: "Sofa cleaning in Baniyas, Abu Dhabi — fabric-appropriate care for established homes. Free WhatsApp quote.",
+  },
+  'abu-dhabi-al-reef-sofa-cleaning': {
+    intro: "Al Reef's gated villa community means we coordinate access through community security ahead of every visit, so appointments run smoothly without delays at the gate. Once inside, our sofa cleaning follows the standard hot-water extraction and pre-treatment process, with leather conditioning for premium pieces common in Al Reef's villas. The sofa is usable again within 3-4 hours. Share your gate access details when you WhatsApp us to book.",
+    metaDescription: "Sofa cleaning in Al Reef, Abu Dhabi — gated-community access coordinated ahead of your visit. Free WhatsApp quote.",
+  },
   'ajman-ajman-city-sofa-cleaning': {
     intro: "Ajman City's mix of Corniche apartments, Al Rashidiya buildings and Al Nuaimiya residential blocks means most of our sofa cleaning work here comes from tenants who want the same professional standard as Dubai without Dubai pricing. We deliver it from AED 120 for a standard 3-seater — hot-water extraction, pre-treatment spray for embedded grime, and quick-dry air movers so the sofa is back in use within a few hours. Leather and sectional pieces are quoted by seating count after a short fabric check. Same-day service is often available across Ajman City, and every quote is confirmed by WhatsApp before we start.",
     metaDescription: "Sofa cleaning in Ajman City from AED 120 — same professional standard as Dubai, transparent pricing. Free WhatsApp quote, same-day service.",
@@ -261,6 +281,26 @@ const comboIntros: Record<string, ComboIntro> = {
     intro: "Yas Island's serviced apartments and villas across Yas Acres, Ansam and Waters Edge are furnished to a standard that expects carpets to look immaculate between guests, not just clean. Our carpet cleaning on Yas Island uses hot-water steam extraction as standard, with the carpet speed-dried and ready again within 1-2 hours rather than left damp for a full day. We cover both smaller decorative rugs and full-room carpeting, and concierge or key-holder access is common for residents who aren't home during the visit. Same-day service is available for most Yas Island carpet cleaning requests via WhatsApp booking.",
     metaDescription: "Carpet cleaning on Yas Island — fast-dry steam extraction for premium serviced apartments and villas. Same-day booking via WhatsApp.",
   },
+  'abu-dhabi-mohamed-bin-zayed-city-carpet-cleaning': {
+    intro: "MBZ City's spacious villas often have larger wall-to-wall carpeting across multiple rooms, and our hot-water steam extraction is sized for that — a dry-vacuum first pass lifts loose dust, then steam extraction pulls out what's embedded, followed by spot treatment for stains. Carpets are usable again within 1-2 hours. Bundling carpet cleaning with sofa cleaning in the same visit is common for MBZ City households. WhatsApp us your carpet area for a quote.",
+    metaDescription: "Carpet cleaning in Mohamed Bin Zayed City — steam extraction sized for larger villa carpets. Free WhatsApp quote.",
+  },
+  'abu-dhabi-al-shamkha-carpet-cleaning': {
+    intro: "Al Shamkha's newer villas typically have carpets that need routine steam cleaning to stay fresh rather than intensive stain removal. Our hot-water extraction process, with a dry-vacuum pass first, keeps carpets looking new and usable again within 1-2 hours. Move-in cleaning packages that include carpet care are popular for recently settled Al Shamkha households. Contact us on WhatsApp with your carpet size for a free quote.",
+    metaDescription: "Carpet cleaning in Al Shamkha, Abu Dhabi — routine steam cleaning for newer villas, move-in packages available.",
+  },
+  'abu-dhabi-shakhbout-city-carpet-cleaning': {
+    intro: "Shakhbout City's planned villa layouts mean we can usually quote carpet cleaning accurately over WhatsApp before we arrive, based on typical room sizes across the community. Hot-water steam extraction lifts embedded dust and grime, with spot treatment for stubborn marks and carpets usable again within 1-2 hours. Same-day service is usually available. Message us your carpet details for a free quote.",
+    metaDescription: "Carpet cleaning in Shakhbout City, Abu Dhabi — accurate WhatsApp quotes, same-day service available.",
+  },
+  'abu-dhabi-baniyas-carpet-cleaning': {
+    intro: "Baniyas' established villas often have carpets that have been in place for years, so our technicians assess fibre type and condition before choosing hot-water steam extraction or a gentler low-moisture method. Embedded dust and grime are lifted in a single pass, with the carpet dry within 1-2 hours. Same-day service is usually available across Baniyas and Baniyas North. WhatsApp us for a free, no-obligation quote.",
+    metaDescription: "Carpet cleaning in Baniyas, Abu Dhabi — fabric-appropriate steam extraction for established homes.",
+  },
+  'abu-dhabi-al-reef-carpet-cleaning': {
+    intro: "Al Reef's gated villa community means we schedule carpet cleaning visits with community security coordination built in, so there's no delay at the gate on the day. Once inside, our hot-water steam extraction lifts embedded dust and grime from villa carpets, with spot treatment for stains and a dry time of 1-2 hours. Share your gate access details when you WhatsApp us to book a free quote.",
+    metaDescription: "Carpet cleaning in Al Reef, Abu Dhabi — gated-community access coordinated ahead of your visit. Free WhatsApp quote.",
+  },
   'ajman-ajman-city-carpet-cleaning': {
     intro: "Ajman City's mix of Corniche apartments and residential blocks across Al Rashidiya and Al Nuaimiya gets the same hot-water steam extraction process we run across the UAE, priced competitively for the emirate. Carpet cleaning removes embedded desert sand that regular vacuuming can't reach, with a dedicated spot-treatment pass for stubborn marks and professional speed-drying that has the carpet usable again within 1-2 hours. Free quotes are sent over WhatsApp, and same-day service is often available across Ajman City. Bundling carpet cleaning with sofa cleaning is a popular combination for Ajman households looking for a full living-room refresh.",
     metaDescription: "Carpet cleaning in Ajman City — steam extraction covering Corniche and Al Rashidiya areas. Free WhatsApp quote, same-day service.",
@@ -398,6 +438,26 @@ const comboIntros: Record<string, ComboIntro> = {
     intro: "Yas Island's villas across communities like Yas Acres and Ansam are held to the same premium standard as the island's serviced apartments, and our villa deep cleaning here reflects that — full kitchen degreasing, bathroom steam disinfection, AC grille sanitization, window cleaning and floor restoration, using Dubai Municipality-approved products throughout. Marble and luxury sofa cleaning are commonly booked alongside the deep clean for Yas Island's premium interiors. Access is often coordinated through concierge or a trusted key-holder, and same-day service is available for most requests. Contact us via WhatsApp for a quote tailored to your Yas Island villa.",
     metaDescription: "Villa deep cleaning on Yas Island — full-property service with marble and luxury sofa care available. Free WhatsApp quote.",
   },
+  'abu-dhabi-mohamed-bin-zayed-city-villa-deep-cleaning': {
+    intro: "MBZ City's spacious family villas get the full deep-cleaning scope from our teams — kitchen degreasing, bathroom disinfection, AC vents, window tracks and floor care — with a team sized to match the property. Multi-room, multi-bathroom villas are routine here rather than the exception. Pricing is confirmed after we know villa size and scope. WhatsApp us your property details for a free quote and same-day or next-day availability.",
+    metaDescription: "Villa deep cleaning in Mohamed Bin Zayed City — full-property service for spacious family homes. Free WhatsApp quote.",
+  },
+  'abu-dhabi-al-shamkha-villa-deep-cleaning': {
+    intro: "Al Shamkha's newer villa compounds are a regular source of move-in deep cleaning bookings for us — kitchen, bathrooms, AC vents, window tracks and floors covered before a family settles in, or a full refresh once they're already living there. Pricing is confirmed after we know villa size and scope. Contact us on WhatsApp with your property details for a free quote.",
+    metaDescription: "Villa deep cleaning in Al Shamkha, Abu Dhabi — full-property service, popular for move-in cleans. Free WhatsApp quote.",
+  },
+  'abu-dhabi-shakhbout-city-villa-deep-cleaning': {
+    intro: "Shakhbout City's consistent villa layouts across the community mean we can quote deep cleaning fairly accurately before arriving, based on the typical property size here. The full scope covers kitchen degreasing, bathroom disinfection, AC vents, window tracks and floor care in one visit. WhatsApp us your property details for a free quote and to check same-day availability.",
+    metaDescription: "Villa deep cleaning in Shakhbout City, Abu Dhabi — full-property service, accurate WhatsApp quotes.",
+  },
+  'abu-dhabi-baniyas-villa-deep-cleaning': {
+    intro: "Baniyas' established villas sometimes need a more intensive deep clean than newer properties, given years of ordinary wear, and our teams assess each home's specific condition before starting. The full scope covers kitchen, bathrooms, AC vents, window tracks and floors. Pricing is confirmed after we know property size and scope. Contact us on WhatsApp for a free quote covering Baniyas and Baniyas North.",
+    metaDescription: "Villa deep cleaning in Baniyas, Abu Dhabi — full-property service for established homes. Free WhatsApp quote.",
+  },
+  'abu-dhabi-al-reef-villa-deep-cleaning': {
+    intro: "Al Reef's gated villa community means our deep-cleaning visits are scheduled with community security access coordinated in advance, so there's no delay on the day. Once inside, the full scope covers kitchen degreasing, bathroom disinfection, AC vents, window tracks and floor care. Pricing is confirmed after we know villa size and scope. WhatsApp us your gate access details and property size for a free quote.",
+    metaDescription: "Villa deep cleaning in Al Reef, Abu Dhabi — full-property service with gated-community access coordinated.",
+  },
   'ajman-ajman-city-villa-deep-cleaning': {
     intro: "Ajman City's villas across the Corniche, Al Rashidiya and Al Nuaimiya areas get the same full deep cleaning scope we run across the UAE — kitchen, bathrooms, AC vents, windows and floors — covered in a single visit by a team sized to your property. Pricing depends on villa size, and we confirm an exact quote after understanding the property, keeping in line with Ajman-friendly rates rather than Dubai pricing. Move-in, move-out and post-construction deep cleaning are all available, and Ajman's rapid residential growth means we handle a steady stream of these bookings. Contact us via WhatsApp for a free quote.",
     metaDescription: "Villa deep cleaning in Ajman City — full-property service at Ajman-friendly pricing. Move-in/move-out available, free WhatsApp quote.",
@@ -534,6 +594,26 @@ const comboIntros: Record<string, ComboIntro> = {
   'abu-dhabi-yas-island-marble-polishing': {
     intro: "Yas Island's luxury villas and serviced apartments across Yas Acres, Ansam and Waters Edge are exactly where our specialist marble polishing gets the most demand, since the island's premium residential standard means dulled or scratched marble stands out more than it would elsewhere. Pricing here is based on floor area and the level of restoration needed — light polishing costs less than full grinding and restoration, and we provide an accurate quote only after assessing the floor in person. Crystallization is available for high-traffic entryways and living rooms that need a longer-lasting glossy finish. Same-day assessment visits can usually be arranged.",
     metaDescription: "Marble polishing on Yas Island — assessed restoration for premium villas and serviced apartments. Free quote, same-day visits.",
+  },
+  'abu-dhabi-mohamed-bin-zayed-city-marble-polishing': {
+    intro: "MBZ City's family villas often have marble entryways and living areas that dull from years of foot traffic across a large household. We assess floor condition on-site, then apply diamond abrasive grinding, honing and polishing as needed, with sealing recommended to protect the finish afterward. Pricing depends on floor area and restoration level. Contact us on WhatsApp for a free assessment and quote.",
+    metaDescription: "Marble polishing in Mohamed Bin Zayed City — diamond abrasive restoration for family villas. Free WhatsApp quote.",
+  },
+  'abu-dhabi-al-shamkha-marble-polishing': {
+    intro: "Al Shamkha's newer villas usually just need routine polishing to maintain factory shine rather than heavy grinding, since the marble hasn't had years to dull. We assess the floor first, then apply the right diamond-pad treatment and finish with sealing if recommended. Pricing depends on floor area and condition. WhatsApp us for a free estimate and to arrange a visit.",
+    metaDescription: "Marble polishing in Al Shamkha, Abu Dhabi — routine and restoration polishing for newer villas.",
+  },
+  'abu-dhabi-shakhbout-city-marble-polishing': {
+    intro: "Shakhbout City's consistent villa layouts mean marble floor areas are usually similar across the community, which helps us give a fair initial estimate before an on-site assessment confirms the final price. Diamond abrasive grinding, honing and polishing are applied based on condition, with crystallization available for a longer-lasting high-gloss finish. Contact us on WhatsApp for a free quote.",
+    metaDescription: "Marble polishing in Shakhbout City, Abu Dhabi — assessed restoration, free WhatsApp estimate.",
+  },
+  'abu-dhabi-baniyas-marble-polishing': {
+    intro: "Baniyas' established villas often have marble that's never had a professional restoration since it was installed, and years of ordinary wear usually explain the lost shine. Our process — grinding, honing, polishing, with sealing where useful — brings the floor back to a genuine finish rather than a temporary buff. Pricing depends on floor area and condition, confirmed on-site. WhatsApp us for a free quote covering Baniyas and Baniyas North.",
+    metaDescription: "Marble polishing in Baniyas, Abu Dhabi — full restoration for established villa flooring. Free WhatsApp quote.",
+  },
+  'abu-dhabi-al-reef-marble-polishing': {
+    intro: "Al Reef's gated villa compounds have marble entryways and floors that respond well to routine diamond-pad polishing to keep the community's consistent, well-kept look. We assess condition on-site — access coordinated through community security in advance — then apply grinding, honing or polishing as needed. Pricing depends on floor area and restoration level. Contact us on WhatsApp for a free assessment.",
+    metaDescription: "Marble polishing in Al Reef, Abu Dhabi — assessed restoration with gated-community access coordinated.",
   },
   'ajman-ajman-city-marble-polishing': {
     intro: "Ajman City's villas across the Corniche, Al Rashidiya and Al Nuaimiya areas often have marble flooring that's never had a professional restoration since it was laid, and dulling from years of ordinary use is usually the reason it no longer shines. Our marble polishing uses diamond abrasive pads through grinding, honing and polishing stages depending on the marble's condition, priced competitively for Ajman rather than at Dubai rates. We assess the floor on-site before confirming a quote, since the right treatment genuinely depends on how deteriorated the stone is. Free estimates are available via WhatsApp for any Ajman City property.",

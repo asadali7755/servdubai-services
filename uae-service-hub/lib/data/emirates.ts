@@ -91,6 +91,11 @@ export const emirates: Emirate[] = [
       makeCity('abu-dhabi', 'al-ain', 'Al Ain'),
       makeCity('abu-dhabi', 'khalifa-city', 'Khalifa City'),
       makeCity('abu-dhabi', 'yas-island', 'Yas Island'),
+      makeCity('abu-dhabi', 'mohamed-bin-zayed-city', 'Mohamed Bin Zayed City'),
+      makeCity('abu-dhabi', 'al-shamkha', 'Al Shamkha'),
+      makeCity('abu-dhabi', 'shakhbout-city', 'Shakhbout City'),
+      makeCity('abu-dhabi', 'baniyas', 'Baniyas'),
+      makeCity('abu-dhabi', 'al-reef', 'Al Reef'),
     ],
   },
   {
