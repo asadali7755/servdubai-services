@@ -2344,7 +2344,8 @@ img { max-width: 100%; }
   background: #f5f0e5 !important;
 }
 
-[data-theme="light"] .about-value-card {
+[data-theme="light"] .about-value-card,
+[data-theme="light"] .about-values .pg-card {
   background: #ffffff !important;
   border-color: rgba(201,168,76,0.2) !important;
   box-shadow: 0 2px 12px rgba(0,0,0,0.06) !important;
@@ -2356,6 +2357,17 @@ img { max-width: 100%; }
 
 [data-theme="light"] .about-value-p {
   color: #5a4e3a !important;
+}
+
+/* "What Makes Us Different" cards (.pg-card, current markup) were left
+   with their always-dark navy background from .pg-card while the section
+   itself flips to a cream background in light theme — combined with the
+   broad .about-values h3/p dark-text override above, that made the card
+   text invisible (dark text on a navy card). Card bg now matches the
+   section, and the description text is darkened + bolded for readability. */
+[data-theme="light"] .about-values .pg-card-p {
+  color: #3a3020 !important;
+  font-weight: 500;
 }
 
 [data-theme="light"] .about-services {
