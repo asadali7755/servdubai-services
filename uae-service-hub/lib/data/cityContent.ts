@@ -75,7 +75,7 @@ const cityLocalContent: Record<string, CityLocalContent> = {
   },
 
   'dubai-downtown': {
-    localDescription: "Expert cleaning services for luxury apartments and penthouses in Downtown Dubai, including The Address Residences, Burj Khalifa district, Opera District, and Boulevard Point. We specialize in care for premium interiors in Emaar's flagship community - offering marble polishing, sofa deep cleaning, and full villa deep cleans using eco-friendly products safe for high-end finishes.",
+    localDescription: "Expert cleaning services for luxury apartments and penthouses in Downtown Dubai, including The Address Residences, Burj Khalifa district, Opera District, and Boulevard Point. We specialize in care for premium interiors in Emaar's flagship community - offering marble polishing, sofa cleaning, and full villa deep cleans using eco-friendly products safe for high-end finishes.",
     landmarks: ['Burj Khalifa', 'The Address Residences', 'Boulevard Point', 'Opera District', 'Vida Residences'],
     propertyType: 'luxury apartments, penthouses and branded residences',
     areaNote: "Downtown Dubai's premium residences feature high-end marble flooring, designer furniture, and luxury fabrics that require specialist cleaning techniques - not standard domestic methods - to maintain their value and appearance.",

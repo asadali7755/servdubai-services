@@ -7,7 +7,7 @@ blog_agent_trending.py never drift out of sync.
 SERVICES = [
     {
         "slug":   "sofa-cleaning",
-        "name":   "Sofa Deep Cleaning & Shampooing",
+        "name":   "Sofa Cleaning & Shampooing",
         "image":  "/images/services/leather-sofa-cleaning-dubai.webp",
         "topics": [
             "professional sofa cleaning Dubai 2025 new trends",

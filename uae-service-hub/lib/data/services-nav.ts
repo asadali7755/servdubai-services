@@ -1,7 +1,7 @@
 // Lightweight nav-only data — used by Header & Footer on every page
 // Avoids importing the full 1374-line services.ts
 export const servicesNav = [
-  { id: 'sofa-cleaning',              name: 'Sofa Deep Cleaning',       slug: 'sofa-cleaning' },
+  { id: 'sofa-cleaning',              name: 'Sofa Cleaning',            slug: 'sofa-cleaning' },
   { id: 'carpet-cleaning',            name: 'Carpet Cleaning',           slug: 'carpet-cleaning' },
   { id: 'mattress-cleaning',          name: 'Mattress Cleaning',         slug: 'mattress-cleaning' },
   { id: 'curtain-cleaning',           name: 'Curtain Cleaning',          slug: 'curtain-cleaning' },

@@ -21,7 +21,7 @@ export async function generateStaticParams(): Promise<{ slug: string }[]> {
 const serviceKeywords: Record<string, string[]> = {
   'sofa-cleaning': [
     'sofa cleaning Dubai', 'sofa cleaning Abu Dhabi', 'sofa cleaning Sharjah', 'sofa cleaning Ajman', 'sofa cleaning RAK', 'sofa cleaning Fujairah', 'sofa cleaning Umm Al Quwain',
-    'sofa cleaning services Dubai', 'sofa deep cleaning Dubai', 'best sofa cleaning Dubai', 'sofa shampooing Dubai', 'upholstery cleaning Dubai', 'leather sofa cleaning Dubai',
+    'sofa cleaning services Dubai', 'best sofa cleaning Dubai', 'sofa shampooing Dubai', 'upholstery cleaning Dubai', 'leather sofa cleaning Dubai',
     'sofa cleaning near me', 'sofa cleaning price Dubai', 'professional sofa cleaning UAE', 'sofa steam cleaning Dubai', 'couch cleaning Dubai',
   ],
   'carpet-cleaning': [

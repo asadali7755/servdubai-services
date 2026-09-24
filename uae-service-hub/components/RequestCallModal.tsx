@@ -109,7 +109,7 @@ function RequestCallModal({ onClose, onSent }: { onClose: () => void; onSent: (m
             className="rcm-select"
           >
             <option value="">Select a service (optional)</option>
-            <option value="Sofa Deep Cleaning">Sofa Deep Cleaning</option>
+            <option value="Sofa Cleaning">Sofa Cleaning</option>
             <option value="Carpet Cleaning">Carpet Cleaning</option>
             <option value="Villa Deep Cleaning">Villa Deep Cleaning</option>
             <option value="Marble Polishing">Marble Polishing</option>

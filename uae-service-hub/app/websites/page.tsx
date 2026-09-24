@@ -38,7 +38,7 @@ const sites = [
   {
     id: 'sofa',
     name: 'Sofa Shampooing Dubai',
-    tagline: 'Dubai\'s Leading Sofa Deep Cleaning Experts',
+    tagline: 'Dubai\'s Leading Sofa Cleaning Experts',
     url: 'https://sofashampooingdubai.com',
     urlLabel: 'sofashampooingdubai.com',
     image: '/images/hero/sofa-carpet-cleaning.webp',

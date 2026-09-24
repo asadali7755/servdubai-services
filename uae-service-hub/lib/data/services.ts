@@ -39,8 +39,8 @@ const ALL_EMIRATES = ['dubai', 'sharjah', 'abu-dhabi', 'ajman', 'ras-al-khaimah'
 export const services: Service[] = [
   {
     id: 'sofa-cleaning',
-    name: 'Sofa Deep Cleaning & Shampooing',
-    heroTitle: 'Sofa Deep Cleaning Services',
+    name: 'Sofa Cleaning & Shampooing',
+    heroTitle: 'Sofa Cleaning Services',
     heroSubtitle: 'Looking for the best sofa cleaning services Dubai has to offer? Our professional upholstery service removes stains, allergens, and odors using advanced pH-balanced technology. Book now!',
     slug: 'sofa-cleaning',
     category: 'domestic',
@@ -49,7 +49,7 @@ export const services: Service[] = [
 
 In a city like Dubai, where golden sands and desert winds are part of daily life, our homes often bear the brunt of the environment. While we focus on floors and windows, one of the most used items in any household — the sofa — is often the most neglected.
 
-Whether you are dealing with dust from a summer sandstorm, coffee spills, or just general wear and tear, professional sofa deep cleaning and shampooing in Dubai is no longer a luxury; it is a necessity for a healthy, dust-free home.
+Whether you are dealing with dust from a summer sandstorm, coffee spills, or just general wear and tear, professional sofa cleaning and shampooing in Dubai is no longer a luxury; it is a necessity for a healthy, dust-free home.
 
 Why Your Sofa Needs More Than Just a Surface Vacuum
 
@@ -206,7 +206,7 @@ We handle all sofa types: L-shaped, sectional, 3-seater, corner sofas, fabric re
       },
       {
         headingLevel: 'h2',
-        heading: 'Why Choose Madinat Alhaya for Sofa Deep Cleaning in Dubai?',
+        heading: 'Why Choose Madinat Alhaya for Sofa Cleaning in Dubai?',
         text: 'Madinat Alhaya is the trusted sofa cleaning services Dubai provider with 500+ satisfied residential and commercial clients across UAE.',
       },
       {

@@ -24,7 +24,7 @@ const translations = {
       allRightsReserved: 'All Rights Reserved.',
     },
     serviceNames: {
-      'sofa-cleaning': 'Sofa Deep Cleaning',
+      'sofa-cleaning': 'Sofa Cleaning',
       'carpet-cleaning': 'Carpet Cleaning',
       'mattress-cleaning': 'Mattress Cleaning',
       'curtain-cleaning': 'Curtain Cleaning',
@@ -62,7 +62,7 @@ const translations = {
         },
         {
           title: 'Professional Sofa & Carpet Cleaning Services Dubai',
-          subtitle: 'Affordable sofa deep cleaning & eco-friendly carpet cleaning company in Dubai. Steam cleaning for fabric, leather & luxury rugs — book online today.',
+          subtitle: 'Affordable sofa cleaning & eco-friendly carpet cleaning company in Dubai. Steam cleaning for fabric, leather & luxury rugs — book online today.',
         },
         {
           title: 'Villa & Apartment Deep Cleaning Services Dubai',
@@ -82,7 +82,7 @@ const translations = {
       viewArrow: 'View →',
       mainCards: [
         { badge: 'VILLA', h2: 'Villa Deep Cleaning Services in Dubai', h3: 'Best Villa Deep Cleaning Company in Dubai Marina, Arabian Ranches & All Areas', p: "Looking for the best villa deep cleaning service in Dubai? Our professional villa cleaning covers every corner of your 3–8 bedroom villa — bathrooms, kitchens, AC vents, window tracks, pool decks and sand removal. Book villa deep cleaning online in Dubai today." },
-        { badge: 'SOFA', h2: 'Professional Sofa Cleaning Services Abu Dhabi', h3: 'Affordable Sofa Deep Cleaning & Upholstery Cleaning in Abu Dhabi', p: "If you are looking for affordable, premium sofa cleaning services in Abu Dhabi, Madinat Alhaya features eco-friendly steam cleaning for all fabric types — velvet, silk, and leather sofa cleaning. Professional sofa deep cleaning services starting from AED 250." },
+        { badge: 'SOFA', h2: 'Professional Sofa Cleaning Services Abu Dhabi', h3: 'Affordable Sofa Cleaning & Upholstery Cleaning in Abu Dhabi', p: "If you are looking for affordable, premium sofa cleaning services in Abu Dhabi, Madinat Alhaya features eco-friendly steam cleaning for all fabric types — velvet, silk, and leather sofa cleaning. Professional sofa cleaning services starting from AED 250." },
         { badge: 'CARPET', h2: 'Carpet Cleaning Services Sharjah', h3: 'Eco-Friendly Carpet Cleaning Company in Sharjah & UAE', p: "Hire certified carpet cleaners in Sharjah for professional steam carpet cleaning that removes deep sand, stains, and allergens. Our eco-friendly carpet cleaning company serves Al Nahda, Al Majaz, Sharjah City and all UAE areas." },
         { badge: 'MARBLE', h2: 'Marble Polishing Services Ajman', h3: 'Professional Marble Polishing & Crystallization Company in Ajman', p: "Restore the premium mirror finish of your floors with our specialized marble polishing services in Ajman. We offer marble crystallization, diamond grinding, and professional floor polishing for homes and offices across UAE." },
         { badge: 'MATTRESS', h2: 'Mattress Cleaning Services Ras Al Khaimah', h3: 'Professional Mattress Deep Cleaning & Sanitization RAK', p: "How often should you deep clean your mattress in the UAE? We recommend every 6 months. Our professional mattress cleaning service in Ras Al Khaimah uses UV-C sanitization and HEPA extraction to remove dust mites, sweat, and allergens for healthier sleep." },
@@ -174,7 +174,7 @@ const translations = {
       interestedIn: "I'm interested in",
       myNumber: 'My number:',
       serviceOptions: [
-        'Sofa Deep Cleaning & Shampooing',
+        'Sofa Cleaning & Shampooing',
         'Carpet Cleaning & Shampooing',
         'Mattress Deep Cleaning',
         'Curtain Cleaning',
