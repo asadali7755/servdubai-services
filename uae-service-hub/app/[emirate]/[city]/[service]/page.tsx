@@ -15,6 +15,7 @@ import { getCityContent } from '@/lib/data/cityContent'
 import { getCityCoords } from '@/lib/data/cityCoordinates'
 import { getSectionGradients } from '@/lib/data/cityGradients'
 import { getServiceHoverImage } from '@/lib/data/serviceGalleryImages'
+import { getComboIntro } from '@/lib/data/comboIntros'
 import { HoverImageLink } from '@/components/ui/hover-image-link'
 import {
   buildMetadata,
@@ -231,9 +232,13 @@ export default async function ServiceAreaPage({ params }: Props) {
               <Reveal className="sa-card" delay={60} style={{ '--sa-city-grad': introGrad } as React.CSSProperties}>
                 <CardHeader tag={`Serving ${city.name} · Licensed & insured`} />
                 <p className="sa-intro">
-                  Looking for professional <strong>{service.name.toLowerCase()}</strong> in {city.name}? Madinat Alhaya
-                  provides expert, same-day {service.name.toLowerCase()} for {local?.propertyType ?? 'homes, villas and offices'} across {city.name}, {emirate.name}.
-                  Our certified technicians use eco-friendly products and bring all equipment to your door — with transparent pricing and a 100% satisfaction guarantee.
+                  {getComboIntro(eSlug, cSlug, sSlug) ?? (
+                    <>
+                      Looking for professional <strong>{service.name.toLowerCase()}</strong> in {city.name}? Madinat Alhaya
+                      provides expert, same-day {service.name.toLowerCase()} for {local?.propertyType ?? 'homes, villas and offices'} across {city.name}, {emirate.name}.
+                      Our certified technicians use eco-friendly products and bring all equipment to your door — with transparent pricing and a 100% satisfaction guarantee.
+                    </>
+                  )}
                 </p>
                 <div className="sa-cta-row">
                   <a href={waLink} target="_blank" rel="noopener noreferrer" className="sa-wa-btn">
