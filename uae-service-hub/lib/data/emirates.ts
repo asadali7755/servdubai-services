@@ -124,6 +124,11 @@ export const emirates: Emirate[] = [
       makeCity('ras-al-khaimah', 'rak-city', 'RAK City'),
       makeCity('ras-al-khaimah', 'al-hamra', 'Al Hamra'),
       makeCity('ras-al-khaimah', 'al-nakheel', 'Al Nakheel'),
+      makeCity('ras-al-khaimah', 'al-dhait', 'Al Dhait'),
+      makeCity('ras-al-khaimah', 'mina-al-arab', 'Mina Al Arab'),
+      makeCity('ras-al-khaimah', 'al-rams', 'Al Rams'),
+      makeCity('ras-al-khaimah', 'digdaga', 'Digdaga'),
+      makeCity('ras-al-khaimah', 'khatt', 'Khatt'),
     ],
   },
   {
@@ -135,6 +140,11 @@ export const emirates: Emirate[] = [
       makeCity('fujairah', 'fujairah-city', 'Fujairah City'),
       { ...makeCity('fujairah', 'dibba-al-fujairah', 'Dibba Al-Fujairah'), image: '/images/locations/dibba-al-fujairah-aerial-coastal.webp' },
       makeCity('fujairah', 'kalba', 'Kalba'),
+      makeCity('fujairah', 'al-faseel', 'Al Faseel'),
+      makeCity('fujairah', 'al-sharyah', 'Al Sharyah'),
+      makeCity('fujairah', 'madab', 'Madab'),
+      makeCity('fujairah', 'merashid', 'Merashid'),
+      makeCity('fujairah', 'qidfa', 'Qidfa'),
     ],
   },
   {
@@ -145,6 +155,10 @@ export const emirates: Emirate[] = [
     cities: [
       makeCity('umm-al-quwain', 'uaq-city', 'UAQ City'),
       makeCity('umm-al-quwain', 'falaj-al-mualla', 'Falaj Al Mualla'),
+      makeCity('umm-al-quwain', 'al-salamah', 'Al Salamah'),
+      makeCity('umm-al-quwain', 'al-ramlah', 'Al Ramlah'),
+      makeCity('umm-al-quwain', 'al-humrah', 'Al Humrah'),
+      makeCity('umm-al-quwain', 'khor-al-beidah', 'Khor Al Beidah'),
     ],
   },
 ]

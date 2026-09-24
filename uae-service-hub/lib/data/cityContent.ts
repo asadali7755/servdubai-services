@@ -1095,6 +1095,99 @@ const cityLocalContent: Record<string, CityLocalContent> = {
     ],
   },
 
+  'ras-al-khaimah-al-dhait': {
+    localDescription: "Reliable cleaning for the sprawling Al Dhait North and South districts of RAK - one of the emirate's largest residential zones, packed with mid-rise apartment blocks and family villas between the E11 highway and Sheikh Mohammed Bin Zayed Road. We handle sofa, carpet and full villa cleaning for both the older Al Dhait South streets and the newer Al Dhait North extensions.",
+    landmarks: ['Al Dhait North', 'Al Dhait South', 'RAK Central Souq vicinity', 'Sheikh Mohammed Bin Zayed Road'],
+    propertyType: 'mid-rise apartment blocks and detached family villas',
+    areaNote: "Al Dhait is RAK's most densely populated residential district, so most of our bookings here come through word-of-mouth between neighbouring buildings on the same street.",
+    localFAQs: [
+      {
+        question: 'Do you cover both Al Dhait North and Al Dhait South?',
+        answer: "Yes, both. Al Dhait is one continuous residential belt and our RAK team works it daily - tell us your building or villa number on WhatsApp and we'll confirm the nearest available slot.",
+      },
+      {
+        question: 'How much does sofa cleaning cost in Al Dhait?',
+        answer: "A standard 3-seater fabric sofa in Al Dhait starts from around AED 150, the same rate as the rest of RAK. Larger L-shaped or leather sofas are quoted after a quick WhatsApp photo.",
+      },
+      {
+        question: 'Is same-day service available in Al Dhait?',
+        answer: "Usually yes, since Al Dhait sits close to our RAK route. Message early in the day for the best chance of a same-day slot; next-day is otherwise guaranteed.",
+      },
+    ],
+  },
+
+  'ras-al-khaimah-mina-al-arab': {
+    localDescription: "Specialist cleaning for the waterfront villas, townhouses and beachfront apartments of Mina Al Arab, RAK's master-planned lagoon community. Our team is used to the mangrove-adjacent humidity here, which settles into upholstery and marble faster than in inland RAK districts.",
+    landmarks: ['Mina Al Arab Lagoons', 'Hayat Island', 'Flamingo Villas', 'RAK mangrove reserve'],
+    propertyType: 'waterfront townhouses, lagoon-facing villas and beachfront apartments',
+    areaNote: "Mina Al Arab's lagoon-and-mangrove setting means salt air and higher humidity than most of RAK - we recommend marble polishing and sofa cleaning slightly more often here, every 3-4 months rather than 4-6.",
+    localFAQs: [
+      {
+        question: 'Do you handle marble polishing for Mina Al Arab villas?',
+        answer: "Yes. Mina Al Arab's lagoon-facing marble floors pick up a hazy film faster than inland RAK because of the salt air - our diamond-pad polishing restores the shine and we can set up a recurring schedule.",
+      },
+      {
+        question: 'Do you clean waterfront apartments on Hayat Island?',
+        answer: "Yes, Hayat Island and the surrounding Mina Al Arab lagoon buildings are part of our regular RAK route. WhatsApp your building name for a free quote.",
+      },
+      {
+        question: 'How often should sofas be cleaned in a lagoon-facing home?',
+        answer: "Every 3-4 months is ideal in Mina Al Arab - the higher ambient humidity near the mangroves and lagoons traps moisture in fabric faster than drier inland RAK areas.",
+      },
+    ],
+  },
+
+  'ras-al-khaimah-al-rams': {
+    localDescription: "Cleaning services for the fishing-village-turned-residential community of Al Rams, on RAK's northern coast near the Musandam border. We serve the traditional villas and newer housing developments along the Al Rams Corniche with sofa, carpet and villa cleaning.",
+    landmarks: ['Al Rams Corniche', 'Al Rams fishing harbour', 'Golden Beach Motel vicinity'],
+    propertyType: 'traditional coastal villas and low-rise family homes',
+    areaNote: "Al Rams is RAK's northernmost town and one of the quieter emirate districts to service - most bookings here are villa deep cleans for large extended-family homes.",
+    localFAQs: [
+      {
+        question: 'Do you travel as far as Al Rams for cleaning jobs?',
+        answer: "Yes. Al Rams is on our regular northern RAK route alongside Al Jazirah Al Hamra. Message us on WhatsApp a day ahead to lock in a convenient slot.",
+      },
+      {
+        question: 'How much does villa deep cleaning cost in Al Rams?',
+        answer: "Villa deep cleaning in Al Rams starts from around AED 750 for a 2-bedroom home, scaling up for the larger traditional family villas common in this area.",
+      },
+    ],
+  },
+
+  'ras-al-khaimah-digdaga': {
+    localDescription: "Professional cleaning for the villa communities and government housing scheme homes in Digdaga, one of RAK's established inland districts near the Digdaga Agricultural Centre. We cover sofa cleaning, carpet shampooing and full villa deep cleans for this quieter residential belt.",
+    landmarks: ['Digdaga Agricultural Centre', 'Sheikh Zayed Mosque Digdaga', 'RAK Airport road'],
+    propertyType: 'government-scheme villas and inland family homes',
+    areaNote: "Digdaga's inland, drier climate means less humidity-related upholstery wear than RAK's coastal areas, but dust from the surrounding agricultural land makes regular carpet cleaning especially worthwhile.",
+    localFAQs: [
+      {
+        question: 'Do you offer carpet cleaning in Digdaga?',
+        answer: "Yes. Digdaga's inland location near agricultural land means dust settles into carpets faster than in coastal RAK - we recommend cleaning every 3-4 months and our team covers the area regularly.",
+      },
+      {
+        question: 'Is Digdaga covered for same-day booking?',
+        answer: "Next-day service is the safer guarantee for Digdaga since it sits slightly off our main RAK City route, but same-day is often possible if you message early.",
+      },
+    ],
+  },
+
+  'ras-al-khaimah-khatt': {
+    localDescription: "Cleaning services for the villas and mountain-view homes of Khatt, RAK's hot-springs town at the foot of the Hajar Mountains. We serve the low-density residential streets around Khatt Springs with sofa, carpet and villa deep cleaning.",
+    landmarks: ['Khatt Hot Springs', 'Hajar Mountains foothills', 'Khatt Heritage area'],
+    propertyType: 'low-density mountain-view villas',
+    areaNote: "Khatt is one of the most spread-out communities we serve in RAK - villa deep cleaning is by far the most requested service here, often booked alongside seasonal spring-cleaning ahead of family gatherings.",
+    localFAQs: [
+      {
+        question: 'Do you cover Khatt near the hot springs?',
+        answer: "Yes. Khatt is part of our RAK coverage area - villa deep cleaning is the most common request here given the larger, spread-out properties. WhatsApp us to schedule.",
+      },
+      {
+        question: 'How much does villa deep cleaning cost in Khatt?',
+        answer: "Villa deep cleaning in Khatt starts from around AED 750 for a 2-bedroom home and scales up for the larger mountain-view villas typical of this area.",
+      },
+    ],
+  },
+
   /* ===========================================
      FUJAIRAH
   =========================================== */
@@ -1174,6 +1267,91 @@ const cityLocalContent: Record<string, CityLocalContent> = {
     ],
   },
 
+  'fujairah-al-faseel': {
+    localDescription: "Cleaning services for the beachfront apartment towers and villas of Al Faseel, Fujairah City's premium northern coastal district facing the Gulf of Oman. We handle sofa, carpet and marble care for the high-rise residences along the Al Faseel corniche strip.",
+    landmarks: ['Al Faseel Corniche', 'Fujairah Beach', 'AlSharq Hospital vicinity'],
+    propertyType: 'beachfront apartment towers and coastal villas',
+    areaNote: "Al Faseel's direct Gulf of Oman beach frontage means salt-air exposure is higher here than anywhere else in Fujairah City - we use marine-grade sealants when polishing marble in this district.",
+    localFAQs: [
+      {
+        question: 'Do you clean beachfront apartments in Al Faseel?',
+        answer: "Yes. Al Faseel's corniche towers are part of our regular Fujairah City route - we bring all equipment up to your apartment, no need to use the lobby or lifts for anything but us.",
+      },
+      {
+        question: 'Does the sea air affect marble floors in Al Faseel?',
+        answer: "Yes, salt air causes marble in Al Faseel to dull faster than inland Fujairah. Our polishing includes a protective seal specifically to slow that process.",
+      },
+    ],
+  },
+
+  'fujairah-al-sharyah': {
+    localDescription: "Professional cleaning for the residential neighbourhoods of Al Sharyah, one of Fujairah City's established inland districts near the main hospital and government offices. We cover sofa cleaning, carpet shampooing and villa deep cleaning for this central residential belt.",
+    landmarks: ['Al Sharyah residential district', 'AlSharq Hospital', 'Fujairah government offices'],
+    propertyType: 'mid-density apartments and family villas',
+    areaNote: "Al Sharyah sits right in the administrative heart of Fujairah City, so many of our clients here are government and hospital staff booking around shift schedules - we offer early-morning and evening slots to fit.",
+    localFAQs: [
+      {
+        question: 'Do you offer evening appointments in Al Sharyah?',
+        answer: "Yes. Given how many Al Sharyah residents work shifts at the nearby hospital and government offices, we regularly book early-morning and evening slots - just let us know your preferred window on WhatsApp.",
+      },
+      {
+        question: 'How much does sofa cleaning cost in Al Sharyah?',
+        answer: "Sofa cleaning in Al Sharyah starts from around AED 150 for a standard 3-seater, the same transparent pricing across Fujairah City.",
+      },
+    ],
+  },
+
+  'fujairah-madab': {
+    localDescription: "Cleaning services for the villa community of Madab, an established residential district on the northern edge of Fujairah City near Madhab Park and the Heritage Village. We serve family villas here with sofa, carpet and full deep cleaning.",
+    landmarks: ['Madhab Park', 'Heritage Village and Madhab Park', 'Fujairah Fort vicinity'],
+    propertyType: 'established family villas',
+    areaNote: "Madab's proximity to Madhab Park and the Heritage Village makes it one of Fujairah's more established, greener residential pockets - villa deep cleaning bookings here often coincide with garden and outdoor-area maintenance too.",
+    localFAQs: [
+      {
+        question: 'Do you cover Madab near Madhab Park?',
+        answer: "Yes. Madab is part of our Fujairah City coverage - villa deep cleaning is the most requested service in this leafier, established district. WhatsApp us to book.",
+      },
+      {
+        question: 'How much does villa deep cleaning cost in Madab?',
+        answer: "Villa deep cleaning in Madab starts from around AED 750 for a 2-bedroom home and scales up for larger family villas, confirmed with a free quote before we start.",
+      },
+    ],
+  },
+
+  'fujairah-merashid': {
+    localDescription: "Cleaning services for the residential streets of Merashid, on the eastern side of Fujairah City closer to the Corniche and Fujairah Port. We handle sofa cleaning, carpet shampooing and apartment deep cleans for this mixed low- and mid-rise district.",
+    landmarks: ['Fujairah Corniche', 'Fujairah Port vicinity', 'Al Bahar Hotel area'],
+    propertyType: 'mixed low-rise and mid-rise apartments',
+    areaNote: "Merashid's location near the port means a fair number of our clients here are company-housed staff and long-term expat renters - we handle move-in and move-out cleaning here often.",
+    localFAQs: [
+      {
+        question: 'Do you do move-out cleaning in Merashid?',
+        answer: "Yes. Given how many Merashid tenants are on company housing with fixed lease turnovers, move-in and move-out deep cleaning is one of our most common bookings in this district.",
+      },
+      {
+        question: 'Is same-day service available in Merashid?',
+        answer: "Usually yes, since Merashid sits close to our Fujairah City base. Message us in the morning for the best chance of a same-day appointment.",
+      },
+    ],
+  },
+
+  'fujairah-qidfa': {
+    localDescription: "Cleaning services for the coastal town of Qidfa, north of Fujairah City on the road toward Dibba. We serve the villas and low-rise homes scattered along this quieter stretch of Gulf of Oman coastline with sofa, carpet and villa cleaning.",
+    landmarks: ['Qidfa Corniche', 'Qidfa fishing harbour', 'Fujairah-Dibba coastal road'],
+    propertyType: 'coastal villas and low-rise family homes',
+    areaNote: "Qidfa is one of the more spread-out coastal towns on our east-coast route, so we usually combine it with nearby Dibba or Fujairah City bookings on the same day - flexible scheduling gets the fastest response here.",
+    localFAQs: [
+      {
+        question: 'Do you travel to Qidfa for cleaning jobs?',
+        answer: "Yes, Qidfa is on our regular east-coast route alongside Dibba and Fujairah City. Next-day service is reliably available; message early for a chance at same-day.",
+      },
+      {
+        question: 'What services are most requested in Qidfa?',
+        answer: "Villa deep cleaning and sofa cleaning are the most common bookings in Qidfa, given the town's mostly villa and low-rise housing stock.",
+      },
+    ],
+  },
+
   /* ===========================================
      UMM AL QUWAIN
   =========================================== */
@@ -1224,6 +1402,74 @@ const cityLocalContent: Record<string, CityLocalContent> = {
       {
         question: 'How long does a sofa cleaning appointment take in Falaj Al Mualla?',
         answer: "A standard 3-seater sofa takes around 1-2 hours to clean in Falaj Al Mualla, and is dry and ready to use again within 3-4 hours.",
+      },
+    ],
+  },
+
+  'umm-al-quwain-al-salamah': {
+    localDescription: "Cleaning services for the villa neighbourhoods of Al Salamah, one of UAQ's growing residential districts inland from the Corniche. We cover sofa cleaning, carpet shampooing and villa deep cleaning for families across this developing community.",
+    landmarks: ['Al Salamah residential area', 'Sheikh Khalifa General Hospital vicinity', 'UAQ inland road'],
+    propertyType: 'newer family villas and townhouses',
+    areaNote: "Al Salamah is one of UAQ's newer villa developments, so many bookings here are post-handover deep cleans before families move in.",
+    localFAQs: [
+      {
+        question: 'Do you offer post-handover cleaning in Al Salamah?',
+        answer: "Yes. Post-handover deep cleaning is one of our most common bookings in Al Salamah given how many villas here are newly completed - we clean construction dust from every surface before you move in.",
+      },
+      {
+        question: 'How much does villa deep cleaning cost in Al Salamah?',
+        answer: "Villa deep cleaning in Al Salamah starts from around AED 750 for a 2-bedroom home, scaling up for larger new-build villas.",
+      },
+    ],
+  },
+
+  'umm-al-quwain-al-ramlah': {
+    localDescription: "Professional cleaning for the residential streets of Al Ramlah, a quiet UAQ neighbourhood near the emirate's inland waterfront developments. We provide sofa, carpet and apartment cleaning for this low-density community.",
+    landmarks: ['Al Ramlah residential area', 'Ajmal Makan waterfront vicinity'],
+    propertyType: 'low-density villas and apartments',
+    areaNote: "Al Ramlah is one of the quieter districts on our UAQ route, and most clients here book recurring seasonal cleaning ahead of the cooler winter months when families entertain more at home.",
+    localFAQs: [
+      {
+        question: 'Do you cover Al Ramlah in UAQ?',
+        answer: "Yes, Al Ramlah is part of our regular UAQ coverage. WhatsApp us for a free quote and to check same-day or next-day availability.",
+      },
+      {
+        question: 'How much does sofa cleaning cost in Al Ramlah?',
+        answer: "Sofa cleaning in Al Ramlah starts from around AED 130 for a standard 3-seater, in line with our UAQ-wide pricing.",
+      },
+    ],
+  },
+
+  'umm-al-quwain-al-humrah': {
+    localDescription: "Cleaning services for Al Humrah, a residential district near the UAQ Beach and mangrove-lined coastline. We serve the villas and apartments here with sofa, carpet and villa deep cleaning, using humidity-appropriate products for this coastal community.",
+    landmarks: ['UAQ Beach vicinity', 'Umm Al Quwain mangroves', 'Al Hadeetha area'],
+    propertyType: 'coastal villas and low-rise apartments',
+    areaNote: "Al Humrah's proximity to UAQ's mangrove coastline means slightly higher humidity than the inland parts of the emirate - we recommend sofa and carpet cleaning every 3-4 months here.",
+    localFAQs: [
+      {
+        question: 'Does coastal humidity affect sofas in Al Humrah?',
+        answer: "Yes, Al Humrah's proximity to the mangroves and beach means upholstery picks up moisture faster than inland UAQ areas - we suggest cleaning every 3-4 months to prevent musty odours.",
+      },
+      {
+        question: 'Do you cover Al Humrah for villa cleaning?',
+        answer: "Yes. Villa deep cleaning is available throughout Al Humrah, covering every room plus upholstery in a single visit. Contact us via WhatsApp for a free quote.",
+      },
+    ],
+  },
+
+  'umm-al-quwain-khor-al-beidah': {
+    localDescription: "Cleaning services for the villas and homes near Khor Al Beidah, UAQ's protected lagoon and mangrove reserve on the emirate's southern coast. We handle sofa, carpet and villa cleaning for residential properties around this scenic wetland area.",
+    landmarks: ['Khor Al Beidah lagoon', 'UAQ mangrove reserve', 'Al Salamah border'],
+    propertyType: 'low-density villas near the wetland reserve',
+    areaNote: "Khor Al Beidah is one of the most spread-out districts we cover in UAQ - we recommend booking a day ahead so we can route the visit alongside nearby Al Salamah or UAQ City jobs.",
+    localFAQs: [
+      {
+        question: 'Do you travel to Khor Al Beidah for cleaning?',
+        answer: "Yes, Khor Al Beidah is part of our UAQ coverage, though its more spread-out location means next-day service is the safer bet over same-day. Message us a day ahead to lock in a slot.",
+      },
+      {
+        question: 'What products do you use near the Khor Al Beidah wetlands?',
+        answer: "We use eco-friendly, biodegradable cleaning products throughout UAQ, which is especially relevant for homes near the protected Khor Al Beidah mangrove and lagoon reserve.",
       },
     ],
   },

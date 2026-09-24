@@ -16,9 +16,9 @@ const EMIRATE_SHOWCASE_CITIES: Record<string, string[]> = {
   sharjah: ['sharjah-city', 'al-nahda', 'al-majaz', 'al-qasimia', 'al-khan', 'al-taawun', 'muwaileh', 'abu-shagara', 'al-yarmook', 'al-nabba'],
   'abu-dhabi': ['abu-dhabi-city', 'khalifa-city', 'yas-island', 'mohamed-bin-zayed-city', 'al-shamkha', 'shakhbout-city', 'baniyas', 'al-reef'],
   ajman: ['ajman-city', 'al-nuaimiya', 'al-rashidiya', 'al-jerf', 'al-rawda', 'al-hamidiya', 'al-zahya', 'al-mowaihat', 'musherief'],
-  'ras-al-khaimah': ['rak-city', 'al-hamra', 'al-nakheel'],
-  fujairah: ['fujairah-city', 'kalba'],
-  'umm-al-quwain': ['uaq-city', 'falaj-al-mualla'],
+  'ras-al-khaimah': ['rak-city', 'al-hamra', 'al-nakheel', 'al-dhait', 'mina-al-arab', 'al-rams', 'digdaga', 'khatt'],
+  fujairah: ['fujairah-city', 'kalba', 'al-faseel', 'al-sharyah', 'madab', 'merashid', 'qidfa'],
+  'umm-al-quwain': ['uaq-city', 'falaj-al-mualla', 'al-salamah', 'al-ramlah', 'al-humrah', 'khor-al-beidah'],
 }
 
 export default function PopularAreas() {

@@ -192,6 +192,62 @@ const comboIntros: Record<string, ComboIntro> = {
     intro: "Falaj Al Mualla's growing residential community, near the Umm Al Quwain Equestrian Club, is increasingly booking professional sofa cleaning as more villas and apartments fill out this part of UAQ. We use the standard hot-water extraction and pre-treatment process across fabric and leather sofas alike, with the sofa ready to use again within 3-4 hours of drying. Same-day or next-day service is available depending on our schedule in the emirate that day, and every job is quoted transparently before we start. Message us on WhatsApp with your address and sofa details for a free estimate.",
     metaDescription: "Sofa cleaning in Falaj Al Mualla, UAQ — same-day or next-day service for this growing residential community. Free WhatsApp estimate.",
   },
+  'ras-al-khaimah-al-dhait-sofa-cleaning': {
+    intro: "Al Dhait is RAK's most densely populated residential belt, stretching across Al Dhait North and South between the E11 and Sheikh Mohammed Bin Zayed Road, and most of our sofa cleaning bookings here spread by word of mouth between neighbouring buildings on the same street. The process stays the same wherever you are in Al Dhait — pre-treatment spray, hot-water extraction, air-mover drying — priced from AED 150 for a standard 3-seater fabric sofa. Given how built-up this district is, same-day slots are usually easy to arrange. Message your building or villa number on WhatsApp for a free quote.",
+    metaDescription: "Sofa cleaning in Al Dhait, RAK from AED 150 — same-day service across this dense residential belt. Free WhatsApp quote today.",
+  },
+  'ras-al-khaimah-mina-al-arab-sofa-cleaning': {
+    intro: "Mina Al Arab's lagoon-and-mangrove setting brings noticeably more salt air and humidity than inland RAK, and that shows up in upholstery faster — fabric traps moisture sooner near the water. We recommend sofa cleaning every 3-4 months for Mina Al Arab's waterfront villas and Hayat Island apartments, rather than the standard 4-6 month cycle, using the same hot-water extraction and pH-neutral products throughout. Leather and designer fabrics common in this master-planned community are conditioned, not just cleaned. WhatsApp your building or villa for a free, no-obligation quote.",
+    metaDescription: "Sofa cleaning in Mina Al Arab, RAK — extra-frequent care for this lagoon-facing waterfront community. Free WhatsApp quote today.",
+  },
+  'ras-al-khaimah-al-rams-sofa-cleaning': {
+    intro: "Al Rams, RAK's northernmost fishing-village-turned-residential town near the Musandam border, gets the same full-service sofa cleaning as anywhere else in the emirate — hot-water extraction after a pre-treatment spray, finished with air-mover drying so the sofa is usable within 3-4 hours. Most jobs here are for the traditional, larger family villas along the Al Rams Corniche, often booked alongside carpet or full villa deep cleaning in the same visit. We recommend messaging a day ahead since Al Rams sits on our regular but less frequent northern RAK route. Free quotes via WhatsApp.",
+    metaDescription: "Sofa cleaning in Al Rams, RAK — full-service extraction cleaning for this northern coastal town. Free WhatsApp quote, book a day ahead.",
+  },
+  'ras-al-khaimah-digdaga-sofa-cleaning': {
+    intro: "Digdaga's inland location near the Agricultural Centre means less humidity-related fabric wear than coastal RAK districts, but the surrounding farmland kicks up more dust that settles into upholstery over time. Our sofa cleaning here uses the standard hot-water extraction process, with a slightly heavier pre-treatment pass for dust and soil buildup where needed. Government-scheme villas and family homes across Digdaga are covered, with next-day service reliably available and same-day possible with an early message. Free quotes confirmed over WhatsApp before we start.",
+    metaDescription: "Sofa cleaning in Digdaga, RAK — extraction cleaning built for this dustier inland district. Free WhatsApp quote, next-day service.",
+  },
+  'ras-al-khaimah-khatt-sofa-cleaning': {
+    intro: "Khatt's spread-out, mountain-view villas near the Hot Springs are some of the largest properties on our RAK route, and sofa cleaning here is usually booked alongside a full villa deep clean rather than on its own — often timed ahead of family gatherings at the foot of the Hajar Mountains. The process doesn't change with the setting: pre-treatment spray, hot-water extraction, quick-dry air movers, priced by seating count. Both fabric and leather majlis seating common in Khatt's larger homes are covered. WhatsApp us your villa details for a free quote.",
+    metaDescription: "Sofa cleaning in Khatt, RAK — often bundled with villa deep cleaning for this mountain-view hot-springs town. Free WhatsApp quote.",
+  },
+  'fujairah-al-faseel-sofa-cleaning': {
+    intro: "Al Faseel's beachfront towers along the Fujairah City corniche face the Gulf of Oman directly, so salt-air exposure here is higher than anywhere else in the city — upholstery in these apartments picks up moisture and odour faster than inland Fujairah homes. Our sofa cleaning uses hot-water extraction with quick-dry air movers to flush trapped moisture rather than mask it, and we bring every piece of equipment up to your apartment ourselves. Both fabric and leather sofas in Al Faseel's corniche towers are covered. Free WhatsApp quotes, with same-day or next-day service depending on our coastal route that day.",
+    metaDescription: "Sofa cleaning in Al Faseel, Fujairah — extraction cleaning built for this beachfront corniche district. Free WhatsApp quote today.",
+  },
+  'fujairah-al-sharyah-sofa-cleaning': {
+    intro: "Al Sharyah sits in the administrative heart of Fujairah City, near the main hospital and government offices, and a lot of our sofa cleaning clients here are hospital and government staff booking around shift schedules. We keep early-morning and evening slots open specifically for this district, using the standard hot-water extraction and pre-treatment process regardless of the time of day. A standard 3-seater fabric sofa starts from around AED 150 and is dry within 3-4 hours. Message us on WhatsApp with your preferred window for a free quote.",
+    metaDescription: "Sofa cleaning in Al Sharyah, Fujairah from AED 150 — early-morning and evening slots for shift-working residents. Free WhatsApp quote.",
+  },
+  'fujairah-madab-sofa-cleaning': {
+    intro: "Madab, on the leafier northern edge of Fujairah City near Madhab Park and the Heritage Village, is one of the city's more established villa districts, and sofa cleaning bookings here often come bundled with outdoor and garden-area maintenance during the same visit. We use the standard hot-water extraction and pre-treatment spray process, with leather conditioning available where needed. Both single sofas and full majlis seating sets across Madab's family villas are covered. WhatsApp us your villa details and seating count for a free, transparent quote.",
+    metaDescription: "Sofa cleaning in Madab, Fujairah — full majlis and single-sofa cleaning for this established villa district. Free WhatsApp quote.",
+  },
+  'fujairah-merashid-sofa-cleaning': {
+    intro: "Merashid, on the eastern side of Fujairah City near the port and Corniche, has a lot of company-housed staff and long-term expat renters, so we handle a fair number of move-in and move-out sofa cleanings alongside regular bookings here. The process is the same hot-water extraction and quick-dry air-mover finish used across Fujairah, with the sofa ready to use again within a few hours. Both apartments and villas in Merashid's mixed low- and mid-rise streets are covered. Free WhatsApp quotes, with same-day service usually available given the district's central location.",
+    metaDescription: "Sofa cleaning in Merashid, Fujairah — move-in and move-out cleaning for this port-side district. Free WhatsApp quote, same-day service.",
+  },
+  'fujairah-qidfa-sofa-cleaning': {
+    intro: "Qidfa, a quieter coastal town north of Fujairah City on the road toward Dibba, is one of the more spread-out stops on our east-coast route, so we usually combine Qidfa visits with nearby Fujairah City or Dibba bookings on the same day. Sofa cleaning here uses the standard hot-water extraction process, with fabric and leather pieces in Qidfa's villas and low-rise homes both covered. Next-day service is reliably available; message early on WhatsApp for a chance at same-day. Free, transparent quotes before any work begins.",
+    metaDescription: "Sofa cleaning in Qidfa, Fujairah — extraction cleaning for this coastal town on the Dibba road. Free WhatsApp quote, next-day service.",
+  },
+  'umm-al-quwain-al-salamah-sofa-cleaning': {
+    intro: "Al Salamah is one of UAQ's newer villa developments, so a large share of our sofa cleaning work here is post-handover — flushing out construction dust and protective coatings from brand-new upholstery before a family's first day in the home. We also handle regular maintenance cleaning for already-settled Al Salamah households using the same hot-water extraction process, priced from around AED 130 for a standard 3-seater. Both scenarios get the same pre-treatment spray and quick-dry finish. WhatsApp us your move-in date or cleaning needs for a free quote.",
+    metaDescription: "Sofa cleaning in Al Salamah, UAQ from AED 130 — including post-handover cleaning for new villas. Free WhatsApp quote today.",
+  },
+  'umm-al-quwain-al-ramlah-sofa-cleaning': {
+    intro: "Al Ramlah is one of the quieter neighbourhoods on our UAQ route, near the emirate's inland waterfront developments, and a lot of residents here book sofa cleaning seasonally — ahead of the cooler winter months when families entertain more at home. The process is the standard hot-water extraction and pre-treatment spray used across UAQ, priced from around AED 130 for a 3-seater fabric sofa. Both villas and apartments in Al Ramlah are covered, with same-day or next-day service depending on our schedule that week. Free quotes via WhatsApp.",
+    metaDescription: "Sofa cleaning in Al Ramlah, UAQ from AED 130 — popular for seasonal, pre-winter bookings. Free WhatsApp quote today.",
+  },
+  'umm-al-quwain-al-humrah-sofa-cleaning': {
+    intro: "Al Humrah sits close to UAQ Beach and the emirate's mangrove coastline, and that proximity brings noticeably higher humidity than inland UAQ districts — upholstery here picks up moisture faster, so we recommend a clean every 3-4 months rather than the standard 4-6. The process itself doesn't change: hot-water extraction after a pre-treatment spray, with air-mover drying so the sofa is usable again within a few hours. Both fabric and leather sofas in Al Humrah's coastal villas and apartments are covered. Free quotes via WhatsApp.",
+    metaDescription: "Sofa cleaning in Al Humrah, UAQ — extra-frequent care recommended for this mangrove-coastal district. Free WhatsApp quote today.",
+  },
+  'umm-al-quwain-khor-al-beidah-sofa-cleaning': {
+    intro: "Khor Al Beidah, around UAQ's protected lagoon and mangrove reserve, is one of the most spread-out districts we cover in the emirate, so we recommend booking a day ahead so the visit can be routed alongside nearby Al Salamah or UAQ City jobs. Sofa cleaning here uses the same hot-water extraction and eco-friendly, biodegradable products we use across all of UAQ — particularly relevant this close to a protected wetland reserve. Both villas and low-rise homes near Khor Al Beidah are covered. WhatsApp us a day ahead for a free quote.",
+    metaDescription: "Sofa cleaning in Khor Al Beidah, UAQ — eco-friendly extraction cleaning near the protected lagoon reserve. Free WhatsApp quote.",
+  },
 
   /* ===========================================
      CARPET CLEANING
@@ -365,6 +421,62 @@ const comboIntros: Record<string, ComboIntro> = {
     intro: "Falaj Al Mualla's growing residential community near the Umm Al Quwain Equestrian Club is seeing more villas and apartments filling out the area, and carpet cleaning demand has grown alongside it. We use the standard hot-water steam extraction process across fabric and synthetic carpets alike, with the carpet ready to walk on again within 1-2 hours of drying. Same-day or next-day service is available depending on our schedule in the emirate, and every job is quoted transparently before we begin. Message us on WhatsApp with your address and carpet size for a free estimate.",
     metaDescription: "Carpet cleaning in Falaj Al Mualla, UAQ — same-day or next-day steam extraction for this growing community. Free WhatsApp estimate.",
   },
+  'ras-al-khaimah-al-dhait-carpet-cleaning': {
+    intro: "Al Dhait's dense apartment blocks and villas between the E11 and Sheikh Mohammed Bin Zayed Road generate a steady stream of carpet cleaning bookings, most arriving by word of mouth between neighbours on the same street. Hot-water steam extraction removes embedded sand and dust from both small rugs and full-room carpets, priced from AED 75 for small rugs with larger carpets priced per square metre. The carpet is walkable again within 1-2 hours. Given how built-up Al Dhait is, same-day slots are usually easy to arrange. WhatsApp your building or villa number for a free quote.",
+    metaDescription: "Carpet cleaning in Al Dhait, RAK from AED 75 — steam extraction with easy same-day scheduling. Free WhatsApp quote today.",
+  },
+  'ras-al-khaimah-mina-al-arab-carpet-cleaning': {
+    intro: "Mina Al Arab's lagoon-facing villas and Hayat Island apartments often feature premium area rugs that need fibre-specific care — wool and silk pieces get a gentler low-moisture clean, while synthetic carpets get full hot-water steam extraction. The higher coastal humidity here means rugs can trap moisture and odour faster than inland RAK, so we assess each piece before choosing a method. Pricing is confirmed on-site after that assessment. Both full carpeting and decorative rugs across Mina Al Arab's waterfront properties are covered. WhatsApp us for a free assessment and quote.",
+    metaDescription: "Carpet cleaning in Mina Al Arab, RAK — fibre-matched care for rugs in this lagoon-facing community. Free on-site assessment.",
+  },
+  'ras-al-khaimah-al-rams-carpet-cleaning': {
+    intro: "Al Rams' traditional family villas along the Corniche near RAK's northern fishing harbour often have larger carpeted majlis areas, and our carpet cleaning here uses the standard hot-water steam extraction process — priced from AED 75 for small rugs, with larger carpets priced per square metre. Jobs in Al Rams are frequently combined with sofa or full villa deep cleaning in the same visit, since it sits on a less frequent stop along our northern RAK route. We recommend messaging a day ahead to lock in a convenient slot. Free quotes via WhatsApp.",
+    metaDescription: "Carpet cleaning in Al Rams, RAK from AED 75 — steam extraction for this northern coastal town. Free WhatsApp quote, book ahead.",
+  },
+  'ras-al-khaimah-digdaga-carpet-cleaning': {
+    intro: "Digdaga's inland location near the Agricultural Centre means carpets here pick up more airborne dust and soil from the surrounding farmland than coastal RAK homes — which makes carpet cleaning especially worthwhile every 3-4 months rather than the standard 4-6. Our hot-water steam extraction pulls that embedded dust out of the pile in a single pass, priced from AED 75 for small rugs. Government-scheme villas and family homes across Digdaga are covered, with next-day service reliably available. Free quotes confirmed over WhatsApp.",
+    metaDescription: "Carpet cleaning in Digdaga, RAK — extra-frequent steam extraction for this dustier inland district. Free WhatsApp quote.",
+  },
+  'ras-al-khaimah-khatt-carpet-cleaning': {
+    intro: "Khatt's larger, spread-out villas near the Hot Springs often have substantial carpeted majlis and living areas, and carpet cleaning here is usually booked alongside a full villa deep clean rather than as a standalone job. Hot-water steam extraction removes embedded dust and soil from the pile, priced by carpet size and confirmed before work begins. Both fabric and synthetic carpets common in Khatt's mountain-view homes are covered. WhatsApp us your villa details for a free quote ahead of your next family gathering.",
+    metaDescription: "Carpet cleaning in Khatt, RAK — often bundled with villa deep cleaning for this mountain-view hot-springs town. Free WhatsApp quote.",
+  },
+  'fujairah-al-faseel-carpet-cleaning': {
+    intro: "Al Faseel's beachfront apartments along the Fujairah City corniche deal with more airborne salt and moisture than inland carpets, which can dull fibres and trap odour faster if left untreated. Our carpet cleaning here uses hot-water steam extraction to pull both moisture and embedded dirt from the pile in one pass, with the carpet usable again within 1-2 hours. Both small rugs and full-room carpets in Al Faseel's corniche towers are covered, priced from AED 75 for small rugs. Free WhatsApp quotes, with same-day or next-day service depending on our coastal route.",
+    metaDescription: "Carpet cleaning in Al Faseel, Fujairah from AED 75 — steam extraction for this beachfront corniche district. Free WhatsApp quote.",
+  },
+  'fujairah-al-sharyah-carpet-cleaning': {
+    intro: "Al Sharyah's central location near Fujairah's main hospital and government offices means a lot of our carpet cleaning clients here are shift workers booking around unusual hours, and we keep early-morning and evening slots open specifically for this district. The process is standard hot-water steam extraction, priced from AED 75 for small rugs with larger carpets priced per square metre, and the carpet is walkable again within 1-2 hours. Message us on WhatsApp with your preferred time window for a free quote.",
+    metaDescription: "Carpet cleaning in Al Sharyah, Fujairah from AED 75 — early-morning and evening slots for shift-working residents. Free WhatsApp quote.",
+  },
+  'fujairah-madab-carpet-cleaning': {
+    intro: "Madab's established villas near Madhab Park and the Heritage Village often have larger carpeted living and majlis spaces, and carpet cleaning here is frequently paired with sofa cleaning or garden maintenance during the same visit. Hot-water steam extraction removes embedded dust and soil from the pile, priced from AED 75 for small rugs with larger carpets priced per square metre. Both synthetic and natural-fibre carpets across Madab's family villas are covered. WhatsApp us your carpet size and villa details for a free, transparent quote.",
+    metaDescription: "Carpet cleaning in Madab, Fujairah from AED 75 — steam extraction for this established, leafier villa district. Free WhatsApp quote.",
+  },
+  'fujairah-merashid-carpet-cleaning': {
+    intro: "Merashid, near Fujairah's port and Corniche, has a lot of company-housed and long-term expat tenants, so we handle a fair number of move-in and move-out carpet cleanings here alongside regular bookings. The process is the standard hot-water steam extraction used across Fujairah, priced from AED 75 for small rugs, with the carpet dry and walkable within 1-2 hours. Both apartments and villas in Merashid's mixed low- and mid-rise streets are covered. Free WhatsApp quotes, with same-day service usually available given the district's central location.",
+    metaDescription: "Carpet cleaning in Merashid, Fujairah from AED 75 — move-in and move-out cleaning for this port-side district. Free WhatsApp quote.",
+  },
+  'fujairah-qidfa-carpet-cleaning': {
+    intro: "Qidfa, a quieter coastal town north of Fujairah City toward Dibba, is one of the more spread-out stops on our east-coast route, so we usually combine Qidfa carpet cleaning visits with nearby Fujairah City or Dibba bookings on the same day. Hot-water steam extraction removes embedded dust and coastal moisture from carpets in Qidfa's villas and low-rise homes, priced from AED 75 for small rugs. Next-day service is reliably available; message early on WhatsApp for a chance at same-day. Free, transparent quotes before any work begins.",
+    metaDescription: "Carpet cleaning in Qidfa, Fujairah from AED 75 — steam extraction for this coastal town on the Dibba road. Free WhatsApp quote.",
+  },
+  'umm-al-quwain-al-salamah-carpet-cleaning': {
+    intro: "Al Salamah's newer villa developments mean a large share of our carpet cleaning work here is post-handover — clearing construction dust from brand-new carpets before a family's first day in the home. We also handle regular maintenance carpet cleaning for already-settled Al Salamah households, using the same hot-water steam extraction process priced from around AED 75 for small rugs. Both scenarios get the same thorough pass and quick-dry finish. WhatsApp us your move-in date or cleaning needs for a free quote.",
+    metaDescription: "Carpet cleaning in Al Salamah, UAQ from AED 75 — including post-handover cleaning for new villas. Free WhatsApp quote today.",
+  },
+  'umm-al-quwain-al-ramlah-carpet-cleaning': {
+    intro: "Al Ramlah, one of UAQ's quieter neighbourhoods near the emirate's inland waterfront developments, sees a lot of seasonal carpet cleaning bookings — ahead of the cooler winter months when families entertain more at home. Hot-water steam extraction removes embedded sand and allergens from the pile, priced from around AED 75 for small rugs with larger carpets priced per square metre. Both villas and apartments in Al Ramlah are covered, with same-day or next-day service depending on our schedule that week. Free quotes via WhatsApp.",
+    metaDescription: "Carpet cleaning in Al Ramlah, UAQ from AED 75 — popular for seasonal, pre-winter bookings. Free WhatsApp quote today.",
+  },
+  'umm-al-quwain-al-humrah-carpet-cleaning': {
+    intro: "Al Humrah's proximity to UAQ Beach and the emirate's mangrove coastline brings higher humidity than inland UAQ, and that moisture settles into carpet fibres faster than in drier districts — we recommend cleaning every 3-4 months here rather than the standard 4-6. Hot-water steam extraction pulls both moisture and embedded dirt from the pile, priced from around AED 75 for small rugs. Both fabric and synthetic carpets in Al Humrah's coastal villas and apartments are covered. Free quotes via WhatsApp.",
+    metaDescription: "Carpet cleaning in Al Humrah, UAQ — extra-frequent steam extraction for this mangrove-coastal district. Free WhatsApp quote today.",
+  },
+  'umm-al-quwain-khor-al-beidah-carpet-cleaning': {
+    intro: "Khor Al Beidah, around UAQ's protected lagoon and mangrove reserve, is one of the most spread-out districts we cover, so we recommend booking a day ahead so the visit can be routed alongside nearby Al Salamah or UAQ City jobs. Carpet cleaning here uses the same hot-water steam extraction and eco-friendly, biodegradable products we use across all of UAQ — particularly relevant this close to a protected wetland reserve. Both villas and low-rise homes near Khor Al Beidah are covered. WhatsApp us a day ahead for a free quote.",
+    metaDescription: "Carpet cleaning in Khor Al Beidah, UAQ — eco-friendly steam extraction near the protected lagoon reserve. Free WhatsApp quote.",
+  },
 
   /* ===========================================
      VILLA DEEP CLEANING
@@ -522,6 +634,62 @@ const comboIntros: Record<string, ComboIntro> = {
     intro: "Falaj Al Mualla's growing residential community, near the Umm Al Quwain Equestrian Club, is seeing more villas move from move-in condition to established family homes, and our deep cleaning bookings here reflect that mix. Pricing starts from around AED 750 for a 2-bedroom property and scales up for larger homes — contact us via WhatsApp for an exact quote based on your villa. The process covers kitchen degreasing, bathroom disinfection, AC grille sanitization and floor restoration, and marble polishing is available for villas with flooring that has dulled from everyday use.",
     metaDescription: "Villa deep cleaning in Falaj Al Mualla, UAQ from AED 750 — full-property service, marble polishing available. Free quote.",
   },
+  'ras-al-khaimah-al-dhait-villa-deep-cleaning': {
+    intro: "Al Dhait's mid-rise apartment blocks and detached villas across Al Dhait North and South get the full room-by-room deep clean — kitchen degreasing, bathroom steam disinfection, AC grille cleaning and internal windows — priced from AED 750 for a 2-bedroom property and scaling with size. Given how densely built this district is, we regularly work multiple bookings on the same street in one day, keeping scheduling flexible. Sofa and carpet cleaning bundle easily into the same visit. WhatsApp your villa or apartment size for an exact quote.",
+    metaDescription: "Villa deep cleaning in Al Dhait, RAK from AED 750 — full room-by-room service across this dense district. Free WhatsApp quote.",
+  },
+  'ras-al-khaimah-mina-al-arab-villa-deep-cleaning': {
+    intro: "Mina Al Arab's waterfront villas and Hayat Island townhouses combine natural stone flooring, designer upholstery and multiple bathrooms, and our deep cleaning here accounts for the extra humidity this lagoon-and-mangrove setting brings — floors and grout need closer attention than inland RAK properties. The service covers kitchen degreasing, steam disinfection, AC vents, windows and a floor assessment for marble care where needed. Pricing starts from AED 750 and scales with villa size. Contact us via WhatsApp for a full estimate for your Mina Al Arab property.",
+    metaDescription: "Villa deep cleaning in Mina Al Arab, RAK from AED 750 — humidity-aware full-property service for this lagoon community. Free quote.",
+  },
+  'ras-al-khaimah-al-rams-villa-deep-cleaning': {
+    intro: "Al Rams' traditional, often larger extended-family villas along the northern RAK Corniche are exactly the kind of property where a deep clean genuinely covers every room — kitchen, all bathrooms, AC vents, windows and floors — rather than a surface tidy. Pricing starts from AED 750 for a 2-bedroom home and scales up for Al Rams' bigger family villas. This is our most-booked service in Al Rams, often combined with sofa and carpet cleaning in the same visit. WhatsApp us your villa size for an exact quote.",
+    metaDescription: "Villa deep cleaning in Al Rams, RAK from AED 750 — full-property service for this northern coastal town. Free WhatsApp quote.",
+  },
+  'ras-al-khaimah-digdaga-villa-deep-cleaning': {
+    intro: "Digdaga's government-scheme villas near the Agricultural Centre benefit from a deep clean that specifically targets the extra dust this inland, farmland-adjacent district collects — every room gets attention, from kitchen degreasing to AC vent cleaning to floor and carpet care, not just the usual maintenance touch-up. Pricing starts from AED 750 for a 2-bedroom home and scales with size. Next-day service is reliably available for Digdaga bookings. Contact us via WhatsApp for a free, itemised quote.",
+    metaDescription: "Villa deep cleaning in Digdaga, RAK from AED 750 — dust-focused full-property service for this inland district. Free WhatsApp quote.",
+  },
+  'ras-al-khaimah-khatt-villa-deep-cleaning': {
+    intro: "Khatt's larger, spread-out mountain-view villas near the Hot Springs are RAK's biggest properties on our route, and villa deep cleaning is by far the most requested service here — usually booked ahead of family gatherings at the foot of the Hajar Mountains. The service covers every room: kitchen degreasing, bathroom steam disinfection, AC vents, windows and floor care, with sofa and carpet cleaning easily bundled in. Pricing starts from AED 750 and scales with the size of Khatt's larger homes. WhatsApp your villa details for an exact quote.",
+    metaDescription: "Villa deep cleaning in Khatt, RAK from AED 750 — full-property service for this mountain-view hot-springs town. Free WhatsApp quote.",
+  },
+  'fujairah-al-faseel-villa-deep-cleaning': {
+    intro: "Al Faseel's beachfront villas and townhouses along the Fujairah City corniche deal with more salt-air buildup on surfaces than inland properties, and our deep cleaning here pays particular attention to that — kitchen degreasing, bathroom steam disinfection, AC grille cleaning, and a floor assessment for marble that's dulled from coastal exposure. Pricing starts from AED 750 for a 2-bedroom property and scales with size. Contact us via WhatsApp for a full estimate for your Al Faseel home.",
+    metaDescription: "Villa deep cleaning in Al Faseel, Fujairah from AED 750 — full-property service for this beachfront district. Free WhatsApp quote.",
+  },
+  'fujairah-al-sharyah-villa-deep-cleaning': {
+    intro: "Al Sharyah's family villas near Fujairah's hospital and government district get the same thorough room-by-room service as anywhere else — kitchen, every bathroom, AC vents, windows and floors — with scheduling built around the shift patterns common among residents here. Pricing starts from AED 750 for a 2-bedroom home and scales with property size. Early-morning and evening appointment slots are available specifically for this district. WhatsApp us your preferred time and villa size for a free quote.",
+    metaDescription: "Villa deep cleaning in Al Sharyah, Fujairah from AED 750 — full-property service with flexible shift-friendly scheduling. Free quote.",
+  },
+  'fujairah-madab-villa-deep-cleaning': {
+    intro: "Madab's established family villas near Madhab Park and the Heritage Village are some of Fujairah City's greener, more settled properties, and deep cleaning here often gets bundled with outdoor and garden-area tidying during the same visit. The service covers kitchen degreasing, bathroom steam disinfection, AC vents, windows and floor care, priced from AED 750 for a 2-bedroom home and scaling with size. WhatsApp us your villa details for an exact quote ahead of your next family occasion.",
+    metaDescription: "Villa deep cleaning in Madab, Fujairah from AED 750 — full-property service for this established, leafier district. Free WhatsApp quote.",
+  },
+  'fujairah-merashid-villa-deep-cleaning': {
+    intro: "Merashid's mixed housing near Fujairah's port and Corniche includes a lot of company-let properties, so move-in and move-out deep cleaning is one of our most common bookings here — every room covered, from kitchen degreasing to bathroom steam disinfection to AC vents and windows, ready for handover inspection. Pricing starts from AED 750 for a 2-bedroom home and scales with size. Same-day service is usually available given Merashid's central location. WhatsApp us your move date for an exact quote.",
+    metaDescription: "Villa deep cleaning in Merashid, Fujairah from AED 750 — move-in and move-out ready service. Free WhatsApp quote, same-day availability.",
+  },
+  'fujairah-qidfa-villa-deep-cleaning': {
+    intro: "Qidfa's coastal villas and low-rise homes on the road toward Dibba get the full deep-cleaning treatment — kitchen degreasing, bathroom steam disinfection, AC vents, windows and floors — usually scheduled alongside nearby Fujairah City or Dibba bookings on the same route day. Pricing starts from AED 750 for a 2-bedroom property and scales with size. Next-day service is reliably available for Qidfa; message early on WhatsApp for a chance at same-day. Free, itemised quotes before we start.",
+    metaDescription: "Villa deep cleaning in Qidfa, Fujairah from AED 750 — full-property service for this coastal Dibba-road town. Free WhatsApp quote.",
+  },
+  'umm-al-quwain-al-salamah-villa-deep-cleaning': {
+    intro: "Al Salamah's newer villa developments mean post-handover deep cleaning is one of our busiest services here — flushing construction dust and protective film from every surface before a family's first day, covering kitchen degreasing, bathroom disinfection, AC vents, windows and floors. We also handle regular deep cleans for already-settled households. Pricing starts from AED 750 for a 2-bedroom home and scales with size. WhatsApp us your move-in date or cleaning needs for a free quote.",
+    metaDescription: "Villa deep cleaning in Al Salamah, UAQ from AED 750 — including post-handover cleaning for new villas. Free WhatsApp quote today.",
+  },
+  'umm-al-quwain-al-ramlah-villa-deep-cleaning': {
+    intro: "Al Ramlah's low-density villas near UAQ's inland waterfront developments are often booked in for deep cleaning seasonally, ahead of the cooler winter months when families host more at home. The service covers kitchen degreasing, bathroom steam disinfection, AC vents, windows and floor care, priced from AED 750 for a 2-bedroom home and scaling with property size. Same-day or next-day service is available depending on our schedule that week. Free quotes via WhatsApp.",
+    metaDescription: "Villa deep cleaning in Al Ramlah, UAQ from AED 750 — popular for seasonal, pre-winter bookings. Free WhatsApp quote today.",
+  },
+  'umm-al-quwain-al-humrah-villa-deep-cleaning': {
+    intro: "Al Humrah's coastal villas near UAQ Beach and the mangrove reserve need closer attention to humidity-prone areas during a deep clean — bathrooms, AC vents and grout in particular. The service also covers kitchen degreasing, full bathroom steam disinfection, windows and floor care, priced from AED 750 for a 2-bedroom home and scaling with size. Contact us via WhatsApp for a full estimate for your Al Humrah property.",
+    metaDescription: "Villa deep cleaning in Al Humrah, UAQ from AED 750 — humidity-aware full-property service. Free WhatsApp quote today.",
+  },
+  'umm-al-quwain-khor-al-beidah-villa-deep-cleaning': {
+    intro: "Khor Al Beidah's low-density villas near UAQ's protected lagoon and mangrove reserve get the full deep-cleaning service — kitchen degreasing, bathroom steam disinfection, AC vents, windows and floors — using the same eco-friendly, biodegradable products we use throughout UAQ, particularly relevant this close to a wetland reserve. Given how spread out this district is, we recommend booking a day ahead so the visit can be routed alongside nearby jobs. Pricing starts from AED 750 and scales with property size. WhatsApp us a day ahead for a free quote.",
+    metaDescription: "Villa deep cleaning in Khor Al Beidah, UAQ from AED 750 — eco-friendly full-property service near the lagoon reserve. Free quote.",
+  },
 
   /* ===========================================
      MARBLE POLISHING
@@ -678,6 +846,62 @@ const comboIntros: Record<string, ComboIntro> = {
   'umm-al-quwain-falaj-al-mualla-marble-polishing': {
     intro: "Falaj Al Mualla's residential villas, near the Umm Al Quwain Equestrian Club, include marble flooring that's dulled from everyday use rather than any deeper damage in most cases we see here. Our marble polishing restores shine using diamond abrasive pads and polishing compounds, with an on-site assessment determining whether your floor needs light polishing or a fuller grinding pass. Marble polishing is available for Falaj Al Mualla's residential villas, and villa deep cleaning can be booked in the same visit. Contact us via WhatsApp for a free quote and to arrange same-day or next-day service.",
     metaDescription: "Marble polishing in Falaj Al Mualla, UAQ — restoration for residential villas, bundled deep cleaning available. Free quote.",
+  },
+  'ras-al-khaimah-al-dhait-marble-polishing': {
+    intro: "Al Dhait's mid-rise apartment lobbies and villa floors across this dense district see heavy daily foot traffic, which dulls marble faster than in quieter RAK areas. Our diamond-pad polishing restores the shine in stages, working from a coarser grit to a fine polish depending on how worn the surface is, finished with a protective seal. Both apartment building common areas and private villa floors in Al Dhait are covered. Pricing is confirmed after an on-site assessment of floor area and condition. WhatsApp us to schedule a free assessment.",
+    metaDescription: "Marble polishing in Al Dhait, RAK — diamond-pad restoration for this high-traffic residential district. Free on-site assessment.",
+  },
+  'ras-al-khaimah-mina-al-arab-marble-polishing': {
+    intro: "Mina Al Arab's lagoon-facing villas see marble dull faster than inland RAK properties because of the salt air rolling off the water — a hazy film builds up on floors that ordinary mopping can't remove. Our marble polishing uses diamond abrasive pads to strip that film and restore the natural shine, finished with a marine-grade protective seal built for this exact humidity. We recommend polishing every 12-18 months for Mina Al Arab's waterfront properties, closer to the shorter end than typical inland RAK homes. WhatsApp us for a free on-site assessment.",
+    metaDescription: "Marble polishing in Mina Al Arab, RAK — salt-air-resistant restoration for this lagoon-facing community. Free assessment.",
+  },
+  'ras-al-khaimah-al-rams-marble-polishing': {
+    intro: "Al Rams' traditional villas along the northern RAK Corniche often have marble entryways and living areas that have dulled over years of daily use, and our polishing restores that shine using diamond abrasive pads and a protective sealant finish. This service is frequently booked alongside a full villa deep clean for Al Rams' larger family homes. Pricing is confirmed after we assess the floor area and current condition on-site. WhatsApp us your villa details for a free assessment and quote.",
+    metaDescription: "Marble polishing in Al Rams, RAK — restoration for traditional villa floors in this northern coastal town. Free assessment.",
+  },
+  'ras-al-khaimah-digdaga-marble-polishing': {
+    intro: "Digdaga's inland villas near the Agricultural Centre collect more dust in floor grout lines than coastal RAK homes, and our marble polishing addresses both the surface shine and the embedded grit in seams and edges using diamond abrasive pads before sealing the surface. This service pairs well with a full villa deep clean for Digdaga's government-scheme homes. Pricing is confirmed after an on-site assessment of floor area and condition. WhatsApp us to schedule.",
+    metaDescription: "Marble polishing in Digdaga, RAK — restoration addressing dust buildup for this inland district. Free on-site assessment.",
+  },
+  'ras-al-khaimah-khatt-marble-polishing': {
+    intro: "Khatt's larger mountain-view villas near the Hot Springs often have extensive marble flooring across multiple living areas, and our polishing service works room-by-room with diamond abrasive pads to restore an even shine throughout, finished with a protective seal. This is commonly booked alongside villa deep cleaning ahead of family gatherings in Khatt's bigger homes. Pricing is confirmed after we assess the total floor area on-site. WhatsApp us your villa details for a free assessment.",
+    metaDescription: "Marble polishing in Khatt, RAK — full-property restoration for this mountain-view hot-springs town. Free on-site assessment.",
+  },
+  'fujairah-al-faseel-marble-polishing': {
+    intro: "Al Faseel's beachfront towers along the Fujairah City corniche face the Gulf of Oman directly, and marble floors here dull from salt-air exposure faster than anywhere else in the city. Our polishing uses diamond abrasive pads to strip the hazy film and restore shine, finished with a marine-grade protective seal specifically chosen for this level of coastal exposure. We recommend polishing every 12-18 months for Al Faseel properties. WhatsApp us for a free on-site assessment.",
+    metaDescription: "Marble polishing in Al Faseel, Fujairah — salt-air-resistant restoration for this beachfront corniche district. Free assessment.",
+  },
+  'fujairah-al-sharyah-marble-polishing': {
+    intro: "Al Sharyah's villas and apartments near Fujairah's hospital and government district get the same diamond-pad polishing process used across the emirate, restoring shine to floors dulled by years of daily foot traffic. We work around shift-based schedules common among residents here, with early-morning and evening appointment slots available. Pricing is confirmed after an on-site assessment of floor area and condition. WhatsApp us your preferred time for a free assessment.",
+    metaDescription: "Marble polishing in Al Sharyah, Fujairah — diamond-pad restoration with flexible scheduling. Free on-site assessment.",
+  },
+  'fujairah-madab-marble-polishing': {
+    intro: "Madab's established villas near Madhab Park and the Heritage Village often have marble entryways and living spaces that have dulled gradually over years, and our polishing restores the shine using diamond abrasive pads finished with a protective seal. This service pairs naturally with villa deep cleaning for Madab's larger, settled family homes. Pricing is confirmed after we assess the floor area on-site. WhatsApp us your villa details for a free assessment and quote.",
+    metaDescription: "Marble polishing in Madab, Fujairah — restoration for this established, leafier villa district. Free on-site assessment.",
+  },
+  'fujairah-merashid-marble-polishing': {
+    intro: "Merashid's villas and apartment lobbies near Fujairah's port and Corniche often need marble restoration ahead of move-out inspections or handover, and our diamond-pad polishing brings floors back to their original shine before sealing the surface. Given how many Merashid properties are company-let, this is frequently booked alongside move-out deep cleaning. Pricing is confirmed after an on-site assessment. WhatsApp us to schedule a free assessment.",
+    metaDescription: "Marble polishing in Merashid, Fujairah — restoration ahead of move-out inspections for this port-side district. Free assessment.",
+  },
+  'fujairah-qidfa-marble-polishing': {
+    intro: "Qidfa's coastal villas on the road toward Dibba deal with salt-air exposure that dulls marble floors over time, and our diamond-pad polishing restores the shine before sealing the surface against further coastal wear. This service is usually scheduled alongside nearby Fujairah City or Dibba bookings on the same route day. Pricing is confirmed after an on-site assessment of floor area and condition. WhatsApp us for a free quote.",
+    metaDescription: "Marble polishing in Qidfa, Fujairah — coastal-wear restoration for this Dibba-road town. Free on-site assessment.",
+  },
+  'umm-al-quwain-al-salamah-marble-polishing': {
+    intro: "Al Salamah's newer villas often need their marble floors polished for the first time as part of post-handover preparation, removing construction residue and establishing an even shine from day one. We also restore floors that have dulled in already-settled Al Salamah homes, using diamond abrasive pads finished with a protective seal in both cases. Pricing is confirmed after an on-site assessment. WhatsApp us your move-in date or floor details for a free quote.",
+    metaDescription: "Marble polishing in Al Salamah, UAQ — including first-polish service for new villas. Free on-site assessment.",
+  },
+  'umm-al-quwain-al-ramlah-marble-polishing': {
+    intro: "Al Ramlah's villas near UAQ's inland waterfront developments often have marble floors that have gradually dulled from everyday use, and our polishing restores an even shine using diamond abrasive pads finished with a protective seal. This service is commonly booked ahead of the cooler winter months when Al Ramlah families entertain more at home. Pricing is confirmed after an on-site assessment. WhatsApp us for a free quote.",
+    metaDescription: "Marble polishing in Al Ramlah, UAQ — seasonal restoration ahead of the winter entertaining months. Free on-site assessment.",
+  },
+  'umm-al-quwain-al-humrah-marble-polishing': {
+    intro: "Al Humrah's coastal villas near UAQ Beach and the mangrove reserve see marble dull faster than inland UAQ homes due to the higher humidity here, and our polishing addresses that with diamond abrasive pads and a protective seal built for coastal exposure. We recommend polishing every 12-18 months for Al Humrah properties, on the shorter end of the typical range. Pricing is confirmed after an on-site assessment. WhatsApp us for a free quote.",
+    metaDescription: "Marble polishing in Al Humrah, UAQ — humidity-resistant restoration for this coastal district. Free on-site assessment.",
+  },
+  'umm-al-quwain-khor-al-beidah-marble-polishing': {
+    intro: "Khor Al Beidah's villas near UAQ's protected lagoon and mangrove reserve get the same diamond-pad polishing process used throughout the emirate, restoring shine to floors affected by the area's wetland humidity and finished with a protective seal. Given how spread out this district is, we recommend booking a day ahead so the visit can be routed alongside nearby jobs. Pricing is confirmed after an on-site assessment. WhatsApp us a day ahead for a free quote.",
+    metaDescription: "Marble polishing in Khor Al Beidah, UAQ — restoration near the protected lagoon reserve. Free on-site assessment.",
   },
 
   /* ===========================================
