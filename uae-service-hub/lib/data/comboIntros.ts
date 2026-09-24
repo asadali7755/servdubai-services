@@ -11,9 +11,16 @@
  * Key format: `${emirateSlug}-${citySlug}-${serviceSlug}`, e.g. 'dubai-marina-sofa-cleaning'.
  */
 
-const comboIntros: Record<string, string> = {}
+export interface ComboIntro {
+  /** ~70-120 word intro paragraph for the combo page's intro card. */
+  intro: string
+  /** ~150-160 char meta description for <meta name="description"> — also unique per combo. */
+  metaDescription: string
+}
 
-export const getComboIntro = (emirateSlug: string, citySlug: string, serviceSlug: string): string | undefined =>
+const comboIntros: Record<string, ComboIntro> = {}
+
+export const getComboIntro = (emirateSlug: string, citySlug: string, serviceSlug: string): ComboIntro | undefined =>
   comboIntros[`${emirateSlug}-${citySlug}-${serviceSlug}`]
 
 export default comboIntros

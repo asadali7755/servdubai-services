@@ -60,9 +60,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!emirate || !city || !service) return {}
 
   const shortService = service.name.split(/[&]/)[0].trim()
+  const comboIntro = getComboIntro(eSlug, cSlug, sSlug)
   return buildMetadata({
     title: `${shortService} in ${city.name} | Madinat Alhaya`,
-    description: `Professional ${service.name.toLowerCase()} in ${city.name}, ${emirate.name}. Same-day service, certified technicians, eco-friendly products. Free quote — call ${SITE_CONFIG.phone}.`,
+    description: comboIntro?.metaDescription ??
+      `Professional ${service.name.toLowerCase()} in ${city.name}, ${emirate.name}. Same-day service, certified technicians, eco-friendly products. Free quote — call ${SITE_CONFIG.phone}.`,
     path: `/${eSlug}/${cSlug}/${sSlug}`,
     imageUrl: service.images[0] ? `https://servedubai.ae${service.images[0]}` : undefined,
   })
@@ -232,7 +234,7 @@ export default async function ServiceAreaPage({ params }: Props) {
               <Reveal className="sa-card" delay={60} style={{ '--sa-city-grad': introGrad } as React.CSSProperties}>
                 <CardHeader tag={`Serving ${city.name} · Licensed & insured`} />
                 <p className="sa-intro">
-                  {getComboIntro(eSlug, cSlug, sSlug) ?? (
+                  {getComboIntro(eSlug, cSlug, sSlug)?.intro ?? (
                     <>
                       Looking for professional <strong>{service.name.toLowerCase()}</strong> in {city.name}? Madinat Alhaya
                       provides expert, same-day {service.name.toLowerCase()} for {local?.propertyType ?? 'homes, villas and offices'} across {city.name}, {emirate.name}.
