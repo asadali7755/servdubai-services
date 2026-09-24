@@ -74,6 +74,11 @@ export const emirates: Emirate[] = [
       makeCity('sharjah', 'al-majaz', 'Al Majaz'),
       makeCity('sharjah', 'al-khan', 'Al Khan'),
       { ...makeCity('sharjah', 'dibba-al-hisn', 'Dibba Al-Hisn'), image: '/images/locations/dibba-al-hisn-corniche-pavilion.webp' },
+      makeCity('sharjah', 'al-taawun', 'Al Taawun'),
+      makeCity('sharjah', 'muwaileh', 'Muwaileh'),
+      makeCity('sharjah', 'abu-shagara', 'Abu Shagara'),
+      makeCity('sharjah', 'al-yarmook', 'Al Yarmook'),
+      makeCity('sharjah', 'al-nabba', 'Al Nabba'),
     ],
   },
   {

@@ -68,6 +68,34 @@ const comboIntros: Record<string, ComboIntro> = {
     intro: "Al Majaz's waterfront apartments along Buhaira Corniche sit in a humid microclimate similar to Dubai Marina, and that moisture is exactly what shortens the life of untreated sofa fabric near the lagoon. Sofa cleaning in Al Majaz starts from around AED 150 for a standard 3-seater, using quick-dry extraction rather than standard shampooing to stop humidity settling back into the fibres after cleaning. We recommend a clean every 5-6 months for waterfront residences here, closer to the shorter end for ground-floor and lower-level apartments nearer the water. Villas near Al Majaz Amphitheatre are covered on the same visit basis if needed.",
     metaDescription: "Sofa cleaning in Al Majaz, Sharjah from AED 150 — quick-dry extraction built for Buhaira Corniche waterfront humidity. Free WhatsApp quote.",
   },
+  'sharjah-al-qasimia-sofa-cleaning': {
+    intro: "Al Qasimia sits close to Sharjah's city centre, and most of our sofa cleaning bookings here come from dense apartment buildings where a fast, tidy visit matters as much as the clean itself. We use the same hot-water extraction and pre-treatment process citywide, from AED 130 for a standard 3-seater, with the fabric usable again in 3-4 hours. Leather and sectional sofas are quoted after a quick fabric check. Same-day appointments are usually available, and every price is confirmed over WhatsApp before we start work.",
+    metaDescription: "Sofa cleaning in Al Qasimia, Sharjah from AED 130 — fast apartment-friendly service, same-day booking via WhatsApp.",
+  },
+  'sharjah-al-khan-sofa-cleaning': {
+    intro: "Al Khan's beachfront towers face the same humidity challenge as Al Majaz further along the Corniche, which is why our sofa cleaning here leans on quick-dry extraction rather than standard shampooing — it stops moisture settling back into the fabric after the visit. Pricing starts from AED 150 for a standard 3-seater, with leather conditioning available for premium pieces common in Al Khan's newer towers. We recommend a clean every 5-6 months for waterfront apartments here. Message us on WhatsApp for a free quote and same-day availability.",
+    metaDescription: "Sofa cleaning in Al Khan, Sharjah from AED 150 — quick-dry extraction for beachfront tower humidity. Free WhatsApp quote.",
+  },
+  'sharjah-al-taawun-sofa-cleaning': {
+    intro: "Al Taawun's mix of apartments and townhouses along the busy Al Taawun Road means many of our customers here commute to Dubai daily and want appointment times built around that schedule, not the other way round. We offer early-morning, evening and weekend sofa cleaning slots, using the standard hot-water extraction and pre-treatment process at AED 130 upward for a 3-seater. Fabric is dry and usable within 3-4 hours. Contact us on WhatsApp with your preferred time and we'll confirm a slot that fits your commute.",
+    metaDescription: "Sofa cleaning in Al Taawun, Sharjah — flexible early-morning and evening slots for commuters. Free WhatsApp quote from AED 130.",
+  },
+  'sharjah-muwaileh-sofa-cleaning': {
+    intro: "Muwaileh's growth around University City means our sofa cleaning jobs here range from full family-villa sectionals to smaller student apartment sofas, and we price each accordingly rather than a flat rate. Standard hot-water extraction and pre-treatment spray apply across fabric types, from AED 120 for a compact 3-seater. Villas near Muwaileh Commercial are covered on the same visit basis as smaller units nearby. Same-day service is usually available — message us on WhatsApp with your sofa size and location for an exact quote.",
+    metaDescription: "Sofa cleaning in Muwaileh, Sharjah from AED 120 — covers family villas and student apartments near University City.",
+  },
+  'sharjah-abu-shagara-sofa-cleaning': {
+    intro: "Abu Shagara's central location near King Faisal Street means apartments here see more foot traffic and airborne dust than quieter suburbs, so we generally recommend sofa cleaning every 4-6 months rather than the standard 6-12 month interval. Our hot-water extraction and pre-treatment process starts from AED 130 for a 3-seater, with the sofa ready to use again within 3-4 hours. Same-day appointments are usually available in this busy, central part of Sharjah. WhatsApp us your address for a free, no-obligation quote.",
+    metaDescription: "Sofa cleaning in Abu Shagara, Sharjah from AED 130 — recommended every 4-6 months for this busy central district.",
+  },
+  'sharjah-al-yarmook-sofa-cleaning': {
+    intro: "Al Yarmook's established mix of villas and apartment blocks means many of our sofa cleaning customers here have owned the same furniture for years, and want careful, fabric-appropriate treatment rather than an aggressive standard clean. We assess fabric type first, then apply hot-water extraction or leather conditioning as needed, from AED 130 for a standard 3-seater. Bundling with a villa deep clean is popular for Al Yarmook's family homes. Contact us on WhatsApp with your requirements for a free quote.",
+    metaDescription: "Sofa cleaning in Al Yarmook, Sharjah from AED 130 — fabric-appropriate care for long-owned furniture, bundles with villa cleaning.",
+  },
+  'sharjah-al-nabba-sofa-cleaning': {
+    intro: "Al Nabba's older central buildings near Rolla and the Sharjah Corniche mean our technicians often find a wider mix of fabric types and ages than in newer districts, so we check each sofa before choosing hot-water extraction or a gentler low-moisture method. Pricing starts from AED 130 for a standard 3-seater fabric sofa, with the piece dry and usable again within 3-4 hours. Same-day service is usually available across Al Nabba and nearby Rolla. WhatsApp us for a free, no-obligation quote.",
+    metaDescription: "Sofa cleaning in Al Nabba, Sharjah from AED 130 — fabric-appropriate cleaning for central Sharjah's older buildings.",
+  },
   'abu-dhabi-abu-dhabi-city-sofa-cleaning': {
     intro: "Abu Dhabi City spans everything from Corniche-facing apartments to spacious inland villas around Muroor and Hamdan Street, so our sofa cleaning teams carry the full range of fabric-care products rather than a single generic solution. Pricing follows the same transparent, service-based structure we use in Dubai rather than charging more for the emirate — hot-water extraction and pre-treatment spray for fabric sofas, conditioning for leather. You don't need to be home for the whole visit; many Al Khalidiyah residents arrange access through building security. We recommend a clean every 4-6 months to keep up with everyday household dust.",
     metaDescription: "Sofa cleaning in Abu Dhabi City — same transparent pricing as Dubai, covering Corniche apartments to inland villas. Free WhatsApp quote today.",
@@ -193,6 +221,34 @@ const comboIntros: Record<string, ComboIntro> = {
     intro: "Al Majaz's waterfront apartments near Khalid Lagoon face the same humid microclimate that affects sofas here, and carpets absorb that moisture just as readily — which is why we recommend carpet cleaning every 6 months for Al Majaz residences rather than the usual annual cycle. Hot-water steam extraction pulls both moisture and embedded dust out of the pile in one pass, with the carpet dry and usable within 1-2 hours afterward. Buhaira Corniche apartments and villas near the Al Majaz Amphitheatre are all covered, and carpet cleaning can be paired with sofa cleaning in the same visit for a better combined rate.",
     metaDescription: "Carpet cleaning in Al Majaz, Sharjah — recommended every 6 months for waterfront humidity near Khalid Lagoon. Free WhatsApp quote.",
   },
+  'sharjah-al-qasimia-carpet-cleaning': {
+    intro: "Al Qasimia's dense apartment buildings near Sharjah's city centre generate carpets that need regular steam extraction to stay allergen-free, especially with the desert dust that settles fast in this central location. Our hot-water steam extraction pulls embedded sand and grime from the pile in a single pass, dry-vacuumed first, with spot treatment for stubborn marks. Carpets are usable again within 1-2 hours. Same-day service is usually available, and we offer a combined rate when booked with sofa cleaning on the same visit.",
+    metaDescription: "Carpet cleaning in Al Qasimia, Sharjah — steam extraction for dense central apartments, same-day WhatsApp booking.",
+  },
+  'sharjah-al-khan-carpet-cleaning': {
+    intro: "Al Khan's beachfront towers deal with the same coastal humidity that shortens carpet life along the rest of the Sharjah Corniche, so we recommend cleaning every 6 months here rather than annually. Hot-water steam extraction removes both embedded dust and trapped moisture in one pass, followed by quick-dry techniques suited to the humid microclimate near the water. Carpets in Al Khan's residential towers are usually dry and usable within 1-2 hours. Message us on WhatsApp for a free quote and to check same-day availability.",
+    metaDescription: "Carpet cleaning in Al Khan, Sharjah — humidity-appropriate steam extraction, recommended every 6 months near the coast.",
+  },
+  'sharjah-al-taawun-carpet-cleaning': {
+    intro: "Al Taawun's apartments and townhouses along Al Taawun Road get regular carpet cleaning bookings from residents who commute to Dubai and want the job done around their schedule. We offer early-morning, evening and weekend slots, using hot-water steam extraction with a dry-vacuum first pass to lift embedded dust before the wet clean. Carpets are dry and usable within 1-2 hours. WhatsApp us your preferred time and carpet size for a free quote and to lock in a same-day or next available slot.",
+    metaDescription: "Carpet cleaning in Al Taawun, Sharjah — flexible timing for commuters, steam extraction with fast drying.",
+  },
+  'sharjah-muwaileh-carpet-cleaning': {
+    intro: "Muwaileh's mix of family villas and smaller apartments near University City means our carpet cleaning jobs range from large wall-to-wall villa carpets to compact bedroom rugs, priced by size and coverage rather than a flat fee. Hot-water steam extraction is our standard method, with spot treatment for stubborn stains and quick-dry techniques so the carpet is usable within 1-2 hours. Muwaileh Commercial area businesses are also covered for office carpet cleaning. Contact us on WhatsApp with your carpet size for an accurate quote.",
+    metaDescription: "Carpet cleaning in Muwaileh, Sharjah — sized pricing for villas, apartments and offices near University City.",
+  },
+  'sharjah-abu-shagara-carpet-cleaning': {
+    intro: "Abu Shagara's central, high-traffic apartments near King Faisal Street collect dust and grime faster than quieter districts, so we generally suggest carpet cleaning every 6 months rather than waiting for a visible stain. Hot-water steam extraction lifts embedded dirt in a single pass, followed by spot treatment where needed, and the carpet is dry within 1-2 hours. Same-day service is usually available in this busy, central part of Sharjah. WhatsApp us your address and carpet details for a free, no-obligation quote.",
+    metaDescription: "Carpet cleaning in Abu Shagara, Sharjah — recommended every 6 months for this busy central district. Free WhatsApp quote.",
+  },
+  'sharjah-al-yarmook-carpet-cleaning': {
+    intro: "Al Yarmook's established villas and apartment blocks often have larger, longer-owned carpets that benefit from careful assessment before cleaning — we check fibre type and condition first, then apply hot-water steam extraction or a gentler method as needed. Pricing is based on carpet size and coverage, with stubborn stains treated separately. Bundling carpet cleaning with a villa deep clean is common for Al Yarmook's family homes, saving a separate visit. Contact us on WhatsApp with your requirements for a free quote.",
+    metaDescription: "Carpet cleaning in Al Yarmook, Sharjah — fabric-appropriate care for established homes, bundles with villa cleaning.",
+  },
+  'sharjah-al-nabba-carpet-cleaning': {
+    intro: "Al Nabba's older buildings near Rolla and the Sharjah Corniche often have carpets with a wider range of ages and fibre types than newer districts, so our technicians assess each one before choosing hot-water steam extraction or a lower-moisture method. Embedded dust and grime are lifted in a single pass, with the carpet usable again within 1-2 hours. Same-day service is usually available across Al Nabba and nearby Rolla. WhatsApp us for a free, no-obligation quote.",
+    metaDescription: "Carpet cleaning in Al Nabba, Sharjah — fabric-appropriate steam extraction for central Sharjah's older buildings.",
+  },
   'abu-dhabi-abu-dhabi-city-carpet-cleaning': {
     intro: "Abu Dhabi City's carpets range from smaller area rugs in Corniche apartments to large wall-to-wall carpeting in inland Muroor and Hamdan Street villas, and our teams carry the equipment for both jobs on the same visit. Pricing is based on service type and property size rather than emirate, so Abu Dhabi carpet cleaning costs the same as it does in Dubai for an equivalent job — hot-water steam extraction, dry vacuum first pass, and spot treatment for stubborn stains. Free quotes are sent over WhatsApp, and same-day service is available for most bookings across Al Khalidiyah and Al Bateen.",
     metaDescription: "Carpet cleaning in Abu Dhabi City — steam extraction for apartments and villas, same pricing as Dubai. Free WhatsApp quote, same-day service.",
@@ -302,6 +358,34 @@ const comboIntros: Record<string, ComboIntro> = {
     intro: "Al Majaz's upscale villas along the Buhaira Corniche waterfront combine the standard deep cleaning scope — kitchen degreasing, bathroom disinfection, AC grilles, window cleaning — with extra attention to upholstery, since waterfront humidity affects fabric and marble surfaces faster than it does further inland. Our teams handle full villa deep cleaning alongside marble care for premium interiors in this prestigious community, using quick-dry techniques where humidity is a concern. Pricing is confirmed after an assessment of villa size and scope. Contact us via WhatsApp for a quote covering your Al Majaz waterfront property.",
     metaDescription: "Villa deep cleaning in Al Majaz, Sharjah — full-property service with marble care for waterfront villas. Free WhatsApp quote.",
   },
+  'sharjah-al-qasimia-villa-deep-cleaning': {
+    intro: "Al Qasimia's mixed residential and commercial buildings include a number of standalone villas among the apartment blocks, and our villa deep cleaning here covers the full scope — kitchen degreasing, bathroom disinfection, AC vents, window tracks and floor care — in one visit. Central Sharjah's dust accumulates quickly indoors, so we pay particular attention to window tracks and AC grilles during the clean. Pricing is confirmed after we know villa size and scope. WhatsApp us with your property details for a free quote.",
+    metaDescription: "Villa deep cleaning in Al Qasimia, Sharjah — full-property service for central Sharjah villas. Free WhatsApp quote.",
+  },
+  'sharjah-al-khan-villa-deep-cleaning': {
+    intro: "Al Khan's beachfront villas face the same coastal humidity as its apartment towers, which means our deep cleaning teams pay extra attention to marble and tiled surfaces prone to dulling near the water, alongside the standard kitchen, bathroom, AC and window scope. Quick-dry techniques help limit moisture buildup after wet-cleaning steps. Villa size and scope determine the final price, confirmed after a quick assessment. Contact us on WhatsApp for a quote covering your Al Khan property.",
+    metaDescription: "Villa deep cleaning in Al Khan, Sharjah — full-property service built for beachfront humidity. Free WhatsApp quote.",
+  },
+  'sharjah-al-taawun-villa-deep-cleaning': {
+    intro: "Al Taawun's townhouses and villas along Al Taawun Road get the full deep-cleaning scope from our teams — kitchen degreasing, bathroom disinfection, AC vents, window tracks, and floor care — with flexible scheduling for residents who commute to Dubai daily. Early-morning and weekend appointments are available on request. Final pricing depends on property size, confirmed after a quick assessment. Message us on WhatsApp with your villa details and preferred time for a free quote.",
+    metaDescription: "Villa deep cleaning in Al Taawun, Sharjah — full-property service with flexible commuter-friendly scheduling.",
+  },
+  'sharjah-muwaileh-villa-deep-cleaning': {
+    intro: "Muwaileh's family villa compounds near University City are a regular booking for our full deep-cleaning service — kitchen, bathrooms, AC vents, window tracks and floors covered in a single visit by a team sized to the property. Move-in and move-out cleaning is especially popular here given the area's ongoing growth. Pricing is confirmed after we know villa size and scope. WhatsApp us with your property details for a free quote and to check same-day or next-day availability.",
+    metaDescription: "Villa deep cleaning in Muwaileh, Sharjah — full-property service, popular for move-in/move-out. Free WhatsApp quote.",
+  },
+  'sharjah-abu-shagara-villa-deep-cleaning': {
+    intro: "Abu Shagara has fewer standalone villas than Sharjah's outer suburbs, but the ones we service get the same full scope as anywhere else — kitchen degreasing, bathroom disinfection, AC vents, window tracks and floor care in one visit. Central Sharjah's dust levels mean we pay close attention to window tracks and AC grilles during the clean. Final pricing depends on property size and condition, confirmed after a quick assessment. Contact us on WhatsApp for a free quote.",
+    metaDescription: "Villa deep cleaning in Abu Shagara, Sharjah — full-property service for central Sharjah homes. Free WhatsApp quote.",
+  },
+  'sharjah-al-yarmook-villa-deep-cleaning': {
+    intro: "Al Yarmook's established family villas are some of our most regular deep-cleaning bookings in Sharjah, often paired with a sofa and carpet cleaning visit on the same day for long-term residents who prefer one team handling everything at once. The full scope covers kitchen, bathrooms, AC vents, window tracks and floors. Pricing is confirmed after we know property size and scope. WhatsApp us with your villa details for a free, combined quote.",
+    metaDescription: "Villa deep cleaning in Al Yarmook, Sharjah — full-property service, often bundled with sofa and carpet cleaning.",
+  },
+  'sharjah-al-nabba-villa-deep-cleaning': {
+    intro: "Al Nabba's older residential stock near Rolla and the Sharjah Corniche includes a mix of villas alongside its apartment buildings, and our deep-cleaning teams assess each property's specific condition before starting — older fittings and surfaces sometimes need a gentler approach than newer builds. The full scope covers kitchen, bathrooms, AC vents, window tracks and floors. Contact us on WhatsApp with your property details for a free quote.",
+    metaDescription: "Villa deep cleaning in Al Nabba, Sharjah — full-property service tailored to central Sharjah's older homes.",
+  },
   'abu-dhabi-abu-dhabi-city-villa-deep-cleaning': {
     intro: "Abu Dhabi City's inland villas, larger and more spread out than the Corniche-facing apartments closer to the water, typically need a full villa deep clean every 3-6 months to stay ahead of everyday dust — with sofa and carpet cleaning recommended on the shorter 4-6 month cycle in between. Our process covers kitchen degreasing, steam disinfection in every bathroom, AC grille and vent sanitization, and internal window cleaning, using the same Dubai Municipality-approved products we use across the UAE. Pricing is based on villa size and scope, not emirate, so Abu Dhabi rates match what we charge in Dubai. Free quotes via WhatsApp.",
     metaDescription: "Villa deep cleaning in Abu Dhabi City — full-property service, same pricing as Dubai. Free WhatsApp quote, recommended every 3-6 months.",
@@ -410,6 +494,34 @@ const comboIntros: Record<string, ComboIntro> = {
   'sharjah-al-majaz-marble-polishing': {
     intro: "Al Majaz's upscale villas along the Buhaira Corniche waterfront often feature natural stone flooring that dulls faster here than further inland, since the humid microclimate near Khalid Lagoon accelerates the etching process on unsealed marble. Our marble polishing service in Al Majaz includes grinding for deeper scratches, honing and polishing for the finish, and a penetrating sealer specifically recommended for waterfront properties to slow future humidity damage. We work on floors, staircases and bathroom surfaces throughout this prestigious community, alongside full villa cleaning where needed. Contact us via WhatsApp for an assessment and quote for your Al Majaz property.",
     metaDescription: "Marble polishing in Al Majaz, Sharjah — restoration with sealing recommended for waterfront humidity. Free WhatsApp quote.",
+  },
+  'sharjah-al-qasimia-marble-polishing': {
+    intro: "Al Qasimia's older apartment buildings and villas near central Sharjah often have marble that's dulled from years of foot traffic without professional attention. We assess the floor first, then apply diamond abrasive grinding, honing and polishing as the condition requires, finishing with a sealer to slow future staining. Pricing depends on floor area and restoration level, confirmed after an on-site look. WhatsApp us for a free assessment and quote.",
+    metaDescription: "Marble polishing in Al Qasimia, Sharjah — diamond abrasive restoration, free on-site assessment via WhatsApp.",
+  },
+  'sharjah-al-khan-marble-polishing': {
+    intro: "Al Khan's beachfront towers and villas see marble dull faster than inland properties due to coastal humidity and salt air, which is why we usually recommend sealing as part of the restoration here, not just polishing. Diamond abrasive pads handle grinding and honing for scratched or etched floors, finishing with a high-gloss polish. Final pricing depends on floor area and condition, assessed on-site. Contact us on WhatsApp for a free quote.",
+    metaDescription: "Marble polishing in Al Khan, Sharjah — restoration with sealing recommended for coastal humidity. Free WhatsApp quote.",
+  },
+  'sharjah-al-taawun-marble-polishing': {
+    intro: "Al Taawun's mixed residential and commercial properties along Al Taawun Road include marble entryways and floors that benefit from periodic diamond-pad polishing to maintain their shine, especially in higher-traffic commercial units. We assess condition first, then choose grinding, honing or straight polishing accordingly. Pricing depends on floor area and restoration needed. Message us on WhatsApp for a free assessment and quote, with flexible appointment times available.",
+    metaDescription: "Marble polishing in Al Taawun, Sharjah — diamond abrasive restoration for homes and commercial units. Free WhatsApp quote.",
+  },
+  'sharjah-muwaileh-marble-polishing': {
+    intro: "Muwaileh's newer villa compounds near University City often have marble that just needs routine polishing to maintain its factory shine, rather than the heavier grinding older properties sometimes need. We assess the floor on-site, then apply the appropriate diamond-pad treatment and finish with sealing if recommended. Pricing depends on floor area and condition. Contact us on WhatsApp for a free estimate and to arrange a visit.",
+    metaDescription: "Marble polishing in Muwaileh, Sharjah — routine and restoration polishing for newer villa compounds. Free WhatsApp quote.",
+  },
+  'sharjah-abu-shagara-marble-polishing': {
+    intro: "Abu Shagara's older central buildings often have marble flooring that hasn't been professionally restored in years, with visible dulling from foot traffic near King Faisal Street. Our diamond abrasive process handles grinding, honing and polishing depending on the floor's condition, assessed on-site before we confirm a price. Crystallization is available for a longer-lasting glossy finish in high-traffic areas. WhatsApp us for a free assessment.",
+    metaDescription: "Marble polishing in Abu Shagara, Sharjah — assessed restoration for central Sharjah's older buildings. Free WhatsApp quote.",
+  },
+  'sharjah-al-yarmook-marble-polishing': {
+    intro: "Al Yarmook's established villas often have marble that's original to the property and due for its first professional restoration in years. We assess the floor's condition on-site, then apply grinding, honing and polishing as needed, with sealing recommended to protect the finish going forward. Pricing depends on floor area and restoration level. Contact us on WhatsApp for a free quote and assessment visit.",
+    metaDescription: "Marble polishing in Al Yarmook, Sharjah — restoration for established villa flooring. Free on-site WhatsApp quote.",
+  },
+  'sharjah-al-nabba-marble-polishing': {
+    intro: "Al Nabba's older residential buildings near Rolla and the Sharjah Corniche often have marble that's never had professional attention since it was installed, and our restoration process — grinding, honing, polishing, with sealing where useful — brings it back to a genuine shine rather than a temporary buff. Floor area and condition determine the final price, confirmed after an on-site assessment. WhatsApp us for a free quote.",
+    metaDescription: "Marble polishing in Al Nabba, Sharjah — full restoration for central Sharjah's older marble flooring.",
   },
   'abu-dhabi-abu-dhabi-city-marble-polishing': {
     intro: "Abu Dhabi City's premium apartments near the Corniche and larger inland villas around Muroor and Hamdan Street both feature marble flooring at a scale that ranges from a single entryway to a full living area. Our marble polishing uses diamond abrasive technology across grinding, honing, polishing and sealing stages, chosen based on an on-site assessment of the marble's current condition rather than a one-size-fits-all treatment. Pricing follows the same structure we use in Dubai — based on floor area and condition, not emirate. Same-day assessment visits are available across Al Khalidiyah, Al Bateen and the wider city. Free quotes via WhatsApp.",

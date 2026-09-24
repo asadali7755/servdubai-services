@@ -13,7 +13,7 @@ const CORE_SERVICES = ['sofa-cleaning', 'carpet-cleaning', 'villa-deep-cleaning'
 /** Cities (from emirates.ts) whose keyword pills we surface for each emirate's card. */
 const EMIRATE_SHOWCASE_CITIES: Record<string, string[]> = {
   dubai: [], // Dubai pulls its real curated combo cities from SERVICE_AREA_COMBOS below
-  sharjah: ['sharjah-city', 'al-nahda', 'al-majaz'],
+  sharjah: ['sharjah-city', 'al-nahda', 'al-majaz', 'al-qasimia', 'al-khan', 'al-taawun', 'muwaileh', 'abu-shagara', 'al-yarmook', 'al-nabba'],
   'abu-dhabi': ['abu-dhabi-city', 'khalifa-city', 'yas-island'],
   ajman: ['ajman-city', 'al-nuaimiya', 'al-rashidiya', 'al-jerf', 'al-rawda', 'al-hamidiya', 'al-zahya', 'al-mowaihat', 'musherief'],
   'ras-al-khaimah': ['rak-city', 'al-hamra', 'al-nakheel'],

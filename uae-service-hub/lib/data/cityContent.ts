@@ -513,6 +513,91 @@ const cityLocalContent: Record<string, CityLocalContent> = {
     ],
   },
 
+  'sharjah-al-taawun': {
+    localDescription: "Reliable sofa, carpet, and villa cleaning in Al Taawun, Sharjah - a mixed residential and commercial district along Al Taawun Road, close to the Sharjah-Dubai border. Same-day service with all equipment brought to your door.",
+    landmarks: ['Al Taawun Road', 'Sharjah Golf & Shooting Club vicinity', 'Al Taawun Mall'],
+    propertyType: 'mixed apartments, townhouses and commercial units',
+    areaNote: "Al Taawun's location right on the Sharjah-Dubai commute route means many residents work in Dubai and want fast, flexible scheduling - we offer early-morning and evening appointments to fit around that.",
+    localFAQs: [
+      {
+        question: 'Do you provide cleaning services in Al Taawun, Sharjah?',
+        answer: "Yes. We cover Al Taawun for sofa cleaning, carpet cleaning, villa cleaning and marble polishing. Free quotes via WhatsApp, with same-day service usually available.",
+      },
+      {
+        question: 'Can you schedule around a work commute to Dubai?',
+        answer: "Yes. Many Al Taawun residents commute to Dubai, so we offer early-morning, evening, and weekend appointment slots. Just mention your preferred time when you WhatsApp us.",
+      },
+    ],
+  },
+
+  'sharjah-muwaileh': {
+    localDescription: "Professional sofa, carpet, and villa deep cleaning in Muwaileh, Sharjah - a fast-growing residential district near the University City area, popular with families and students alike. Transparent pricing and same-day booking.",
+    landmarks: ['Muwaileh Commercial', 'University City vicinity', 'Sharjah Research Technology and Innovation Park'],
+    propertyType: 'villa compounds and student/family apartment buildings',
+    areaNote: "Muwaileh's mix of family villas and apartments near University City means a wide range of cleaning needs on any given day - from full villa deep cleans to quicker turnaround jobs for smaller student apartments.",
+    localFAQs: [
+      {
+        question: 'Do you clean villas and apartments in Muwaileh?',
+        answer: "Yes. We cover Muwaileh, including areas near University City, for sofa cleaning, carpet cleaning, and full villa deep cleaning. WhatsApp us for a free quote and same-day availability.",
+      },
+      {
+        question: 'Do you offer quicker cleans for smaller apartments near University City?',
+        answer: "Yes. Smaller studio and 1-bedroom apartments near University City typically take less time than a full villa clean, and we price accordingly - message us your apartment size for an accurate quote.",
+      },
+    ],
+  },
+
+  'sharjah-abu-shagara': {
+    localDescription: "Trusted sofa, carpet, and apartment cleaning in Abu Shagara, Sharjah - a busy, centrally located residential area close to King Faisal Street and the city centre. Fast response times and eco-friendly products for every booking.",
+    landmarks: ['King Faisal Street', 'Abu Shagara Park', 'Sharjah city centre vicinity'],
+    propertyType: 'dense residential apartment buildings',
+    areaNote: "Abu Shagara's central, high-traffic location means apartments here pick up dust and grime faster than in quieter suburbs - we recommend more frequent sofa and carpet cleaning for households in this area.",
+    localFAQs: [
+      {
+        question: 'Do you offer cleaning services in Abu Shagara, Sharjah?',
+        answer: "Yes. We cover Abu Shagara for sofa cleaning, carpet cleaning and full apartment deep cleaning. Free WhatsApp quotes, with same-day service where possible.",
+      },
+      {
+        question: 'How often should I clean my sofa living in central Sharjah?',
+        answer: "For busy, central areas like Abu Shagara, we recommend sofa cleaning every 4-6 months to keep up with faster dust and grime buildup compared to quieter suburbs.",
+      },
+    ],
+  },
+
+  'sharjah-al-yarmook': {
+    localDescription: "Professional sofa, carpet, and villa cleaning in Al Yarmook, Sharjah - a well-established residential neighbourhood with a mix of villas and apartment blocks. Reliable same-day service for all Al Yarmook residents.",
+    landmarks: ['Al Yarmook Street', 'Al Yarmook Park'],
+    propertyType: 'mixed villas and apartment blocks',
+    areaNote: "Al Yarmook's established residential character means many long-term family homes - we regularly handle full villa deep cleans alongside routine sofa and carpet maintenance for the same households.",
+    localFAQs: [
+      {
+        question: 'Do you cover Al Yarmook in Sharjah?',
+        answer: "Yes. We provide sofa cleaning, carpet cleaning and villa deep cleaning across Al Yarmook. Contact us via WhatsApp for a free quote and same-day booking.",
+      },
+      {
+        question: 'Do you offer a combined villa and carpet cleaning package in Al Yarmook?',
+        answer: "Yes. One team can handle both villa deep cleaning and carpet/sofa cleaning in a single visit for Al Yarmook homes, which saves time and cost compared to booking separately.",
+      },
+    ],
+  },
+
+  'sharjah-al-nabba': {
+    localDescription: "Reliable sofa, carpet, and apartment cleaning in Al Nabba, Sharjah - a central residential district close to Rolla and the Sharjah Corniche area. Same-day service with all equipment brought to your door.",
+    landmarks: ['Rolla vicinity', 'Sharjah Corniche', 'Al Nabba Street'],
+    propertyType: 'dense residential apartment buildings',
+    areaNote: "Al Nabba's central, older residential buildings often have a mix of fabric types and finishes - our technicians assess each sofa or carpet before choosing the right cleaning method rather than a one-size-fits-all approach.",
+    localFAQs: [
+      {
+        question: 'Do you provide cleaning services in Al Nabba, Sharjah?',
+        answer: "Yes. We cover Al Nabba and the nearby Rolla area for sofa cleaning, carpet cleaning and apartment deep cleaning. Free quotes via WhatsApp, same-day service usually available.",
+      },
+      {
+        question: 'Can you clean older sofas and carpets in central Sharjah apartments?',
+        answer: "Yes. Our technicians check fabric type and condition first, which matters more in older central Sharjah buildings like those in Al Nabba, then choose the safest effective cleaning method.",
+      },
+    ],
+  },
+
   /* ===========================================
      ABU DHABI
   =========================================== */

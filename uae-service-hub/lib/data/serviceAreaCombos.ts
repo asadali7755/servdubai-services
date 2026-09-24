@@ -58,7 +58,7 @@ const CORE_SERVICES = ['sofa-cleaning', 'carpet-cleaning', 'villa-deep-cleaning'
 // focused 2-3 per emirate for the same reason Dubai's list is curated, not
 // exhaustive: quality over a huge set of thin near-duplicate pages.
 const OTHER_EMIRATE_CITIES: Record<string, string[]> = {
-  sharjah: ['sharjah-city', 'al-nahda', 'al-majaz'],
+  sharjah: ['sharjah-city', 'al-nahda', 'al-majaz', 'al-qasimia', 'al-khan', 'al-taawun', 'muwaileh', 'abu-shagara', 'al-yarmook', 'al-nabba'],
   'abu-dhabi': ['abu-dhabi-city', 'khalifa-city', 'yas-island'],
   ajman: ['ajman-city', 'al-nuaimiya', 'al-rashidiya', 'al-jerf', 'al-rawda', 'al-hamidiya', 'al-zahya', 'al-mowaihat', 'musherief'],
   'ras-al-khaimah': ['rak-city', 'al-hamra', 'al-nakheel'],
