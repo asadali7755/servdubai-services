@@ -4600,12 +4600,37 @@ img { max-width: 100%; }
    the page's light-theme cream body background behind white nav text
    — unreadable. Solid dark bg here matches the new dark hero panel.
 ============================================= */
+/* Light-themed navbar — always a light/cream background with dark text,
+   independent of the site's dark/light theme toggle (matches the fixed-dark
+   approach used before, just flipped). Tailwind v4's `@theme inline` bakes
+   each token's literal value straight into every utility at build time (e.g.
+   `text-foreground` compiles to `color:#fff`, not `color:var(--color-foreground)`),
+   so redefining the CSS custom properties on `.site-header-2` has no effect on
+   already-compiled utilities — every text/border/bg token utility used in the
+   header has to be overridden by its exact class name instead. */
 .site-header-2 {
-  background: rgba(33, 37, 41, 0.97);
+  background: rgba(253, 252, 248, 0.97);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(201, 168, 76, 0.18);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.3);
 }
 .site-header-2-scrolled {
-  background: rgba(23, 26, 29, 0.98);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+  background: rgba(253, 252, 248, 0.99);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+.site-header-2 .text-foreground,
+.site-header-2 .text-foreground\/90,
+.site-header-2 .text-foreground\/70 {
+  color: #1a1510 !important;
+}
+.site-header-2 .border-border {
+  border-color: rgba(201, 168, 76, 0.35) !important;
+}
+.site-header-2 .bg-popover {
+  background-color: #ffffff !important;
+}
+.site-header-2 .text-popover-foreground {
+  color: #1a1510 !important;
+}
+.site-header-2 .bg-background\/60 {
+  background-color: rgba(253, 252, 248, 0.8) !important;
 }
