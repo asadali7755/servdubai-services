@@ -110,6 +110,10 @@ Rules:
 - Write in English
 - Focus on UAE/Dubai market
 - Make it helpful and informative
+- Do NOT use the phrase "deep cleaning" unless it's part of the service's own
+  official name (e.g. Villa Deep Cleaning, Mattress Deep Cleaning). For every
+  other service, use plain "cleaning" (e.g. "sofa cleaning", not "sofa deep
+  cleaning") -- "deep cleaning" gets meaningfully less real search volume.
 - Return ONLY valid JSON, no extra text, no markdown
 """
 

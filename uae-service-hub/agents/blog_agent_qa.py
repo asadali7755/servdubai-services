@@ -12,6 +12,7 @@ Al Haya's own name on servedubai.com.
 from datetime import datetime
 
 from blog_common import (
+    KEYWORD_PHRASING_RULE,
     NO_EXTERNAL_MENTIONS_RULE,
     call_gemini,
     call_perplexity,
@@ -42,6 +43,7 @@ Research (background only — do not cite it, do not name any source):
 {research}
 
 {NO_EXTERNAL_MENTIONS_RULE}
+{KEYWORD_PHRASING_RULE}
 
 Return ONLY valid JSON (no markdown, no extra text) matching exactly this \
 shape:

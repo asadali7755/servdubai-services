@@ -47,7 +47,7 @@ SERVICES = [
         "image":  "/images/services/car-interior-detailing.jpg",
         "topics": [
             "car interior detailing Dubai 2025 professional",
-            "car deep cleaning tips UAE summer heat",
+            "car cleaning tips UAE summer heat",
         ],
     },
     {
@@ -73,7 +73,7 @@ SERVICES = [
         "name":   "Apartment Cleaning",
         "image":  "/images/services/apartment-cleaning.webp",
         "topics": [
-            "apartment deep cleaning Dubai 2025 professional",
+            "apartment cleaning Dubai 2025 professional",
             "studio apartment cleaning tips UAE tenants",
         ],
     },
@@ -91,7 +91,7 @@ SERVICES = [
         "name":   "Restaurant Kitchen Cleaning",
         "image":  "/images/services/restaurant-kitchen-cleaning.jpg",
         "topics": [
-            "restaurant kitchen deep cleaning Dubai 2025",
+            "restaurant kitchen cleaning Dubai 2025",
             "commercial kitchen hygiene standards UAE health",
         ],
     },
@@ -111,6 +111,6 @@ HOME_TOPICS = [
     "eco-friendly cleaning products UAE homes 2025",
     "cleaning hacks UAE expats villa apartment",
     "best cleaning service reviews Dubai 2025",
-    "seasonal deep cleaning checklist UAE summer",
+    "seasonal cleaning checklist UAE summer",
     "move out cleaning tips UAE tenants deposit",
 ]

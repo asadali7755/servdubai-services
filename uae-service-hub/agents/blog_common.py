@@ -61,6 +61,25 @@ STRICT RULE — this content is for Al Haya Cleaning Services' own website only:
 - Write entirely in Al Haya Cleaning Services' own voice, for its own UAE audience.
 """
 
+# Client feedback (2026): "deep cleaning" gets noticeably less real search
+# volume than plain "cleaning" for services like sofa/carpet/apartment/car
+# cleaning — stop titling and keywording new articles around it. Established,
+# genuinely distinct service categories (e.g. "Villa Deep Cleaning", "Mattress
+# Deep Cleaning" — real site services with that exact name) are NOT covered by
+# this rule; it only applies to how new articles are titled/keyworded for
+# services where "cleaning" alone is the natural, higher-volume phrase.
+KEYWORD_PHRASING_RULE = """
+KEYWORD RULE — title, h1, description and headings must NOT use the phrase
+"deep cleaning" unless the service's own official name already contains it
+(e.g. Villa Deep Cleaning, Mattress Deep Cleaning). For every other service —
+sofa, carpet, apartment, car interior, dining chair, office, restaurant
+kitchen, marble polishing, curtain — use plain "cleaning" (e.g. "sofa
+cleaning", not "sofa deep cleaning"; "apartment cleaning", not "apartment deep
+cleaning"). "Deep cleaning" gets meaningfully less real search volume for
+these services than plain "cleaning" — write for the term people actually
+search.
+"""
+
 
 def contains_banned_mention(text: str) -> bool:
     lowered = text.lower()
