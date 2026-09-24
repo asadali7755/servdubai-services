@@ -3753,7 +3753,7 @@ img { max-width: 100%; }
 /* Popular Areas */
 .pa-container { display: flex; flex-direction: column; gap: 1rem; }
 .pa-emirate-group { margin-bottom: 2.5rem; }
-.pa-emirate-title { font-family: var(--font-josefin); font-size: 1.5rem; font-weight: 700; color: #ffffff; margin-bottom: 1.25rem; padding-bottom: 0.6rem; border-bottom: 1px solid rgba(201,168,76,0.25); }
+.pa-emirate-title { font-family: var(--font-josefin); font-size: 1.5rem; font-weight: 700; color: #1a1510; margin-bottom: 1.25rem; padding-bottom: 0.6rem; border-bottom: 1px solid rgba(201,168,76,0.25); }
 .pa-emirate-services { gap: 1rem; }
 .pa-group { border: 1px solid rgba(201,168,76,0.22); border-radius: 12px; padding: 1.25rem 1.5rem; background: rgba(201,168,76,0.04); }
 .pa-group-title { font-family: var(--font-josefin); font-size: 1rem; font-weight: 700; color: #c9a84c; margin-bottom: 0.85rem; letter-spacing: 0.02em; }
