@@ -66,7 +66,14 @@ export default function StickyRail({ children, className = '', innerClassName = 
 
       const viewportTop = window.scrollY + topOffset
 
-      if (placeholderTop > viewportTop) {
+      // If the rail's own content is taller than the viewport has room for
+      // (below topOffset), pinning it with `position: fixed` would push its
+      // bottom off-screen with no way to scroll to it — fixed elements don't
+      // scroll with the page. Stay in normal flow instead so everything
+      // stays reachable by scrolling the page like anything else on it.
+      const availableViewportHeight = window.innerHeight - topOffset - 20
+
+      if (placeholderTop > viewportTop || railHeight > availableViewportHeight) {
         setMode('static')
       } else if (boundaryBottom < viewportTop + railHeight) {
         setMode('bottom')
