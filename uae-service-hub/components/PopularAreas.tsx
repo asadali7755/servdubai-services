@@ -15,7 +15,7 @@ const EMIRATE_SHOWCASE_CITIES: Record<string, string[]> = {
   dubai: [], // Dubai pulls its real curated combo cities from SERVICE_AREA_COMBOS below
   sharjah: ['sharjah-city', 'al-nahda', 'al-majaz'],
   'abu-dhabi': ['abu-dhabi-city', 'khalifa-city', 'yas-island'],
-  ajman: ['ajman-city', 'al-nuaimiya', 'al-rashidiya'],
+  ajman: ['ajman-city', 'al-nuaimiya', 'al-rashidiya', 'al-jerf', 'al-rawda', 'al-hamidiya', 'al-zahya', 'al-mowaihat', 'musherief'],
   'ras-al-khaimah': ['rak-city', 'al-hamra', 'al-nakheel'],
   fujairah: ['fujairah-city', 'kalba'],
   'umm-al-quwain': ['uaq-city', 'falaj-al-mualla'],
