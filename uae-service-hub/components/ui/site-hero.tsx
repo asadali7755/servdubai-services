@@ -41,6 +41,10 @@ interface SiteHeroProps {
   contactInfo: { website: string; phone: string; address: string }
   isAr?: boolean
   className?: string
+  /** Where the "Learn More" link points — defaults to /about. Pages that
+   *  already ARE the about page (or want a more relevant destination) can
+   *  override this instead of linking to themselves. */
+  learnMoreHref?: string
 }
 
 /** Split hero: dark content panel (fixed dark/gold palette, independent of the
@@ -50,6 +54,7 @@ interface SiteHeroProps {
 export function SiteHero({
   badge, title, subtitle, backgroundImage, backgroundAlt,
   getFreeQuoteLabel, learnMoreLabel, ourWebsitesLabel, contactInfo, isAr, className,
+  learnMoreHref = '/about',
 }: SiteHeroProps) {
   const { open: openCallModal } = useRequestCall()
 
@@ -69,7 +74,7 @@ export function SiteHero({
             <button type="button" onClick={openCallModal} className="site-hero-2-cta-link">
               Request a Call
             </button>
-            <a href="/about" className="site-hero-2-cta-link">{learnMoreLabel}</a>
+            <a href={learnMoreHref} className="site-hero-2-cta-link">{learnMoreLabel}</a>
             <a href="/websites" className="site-hero-2-cta-link">{ourWebsitesLabel}</a>
           </div>
 

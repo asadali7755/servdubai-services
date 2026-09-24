@@ -8,6 +8,7 @@ import { buildMetadata, buildLocalBusinessSchema } from '@/lib/utils/seo'
 import { getWhatsAppLink } from '@/lib/utils/whatsapp'
 import { SITE_CONFIG } from '@/lib/data/constants'
 import QuoteCard from '@/components/QuoteCard'
+import { SiteHero } from '@/components/ui/site-hero'
 
 export const metadata: Metadata = {
   ...buildMetadata({
@@ -48,23 +49,18 @@ export default function AboutPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* HERO */}
-      <div className="page-hero-wrap pg-hero">
-        <Image src="/images/hero/professional-cleaning-services-UAE.webp" alt="About Madinat Alhaya — professional cleaning services Dubai UAE" fill priority className="object-cover" sizes="100vw" />
-        <div className="pg-hero-overlay" />
-        <div className="pg-hero-content">
-          <div className="pg-hero-line-wrap">
-            <div className="pg-hero-line" />
-            <span className="pg-hero-label">UAE Cleaning Experts</span>
-            <div className="pg-hero-line" />
-          </div>
-          <h1 className="pg-hero-h1">
-            About Madinat Alhaya Building Cleaning Services
-          </h1>
-          <p className="pg-hero-desc">
-            Professional cleaning services across Dubai &amp; all 7 UAE Emirates — certified technicians, eco-friendly solutions, same-day availability.
-          </p>
-        </div>
-      </div>
+      <SiteHero
+        badge="UAE Cleaning Experts"
+        title="About Madinat Alhaya Building Cleaning Services"
+        subtitle="Professional cleaning services across Dubai & all 7 UAE Emirates — certified technicians, eco-friendly solutions, same-day availability."
+        backgroundImage="/images/hero/professional-cleaning-services-UAE.webp"
+        backgroundAlt="About Madinat Alhaya — professional cleaning services Dubai UAE"
+        getFreeQuoteLabel="Get Free Quote"
+        learnMoreLabel="Our Services"
+        learnMoreHref="/services/sofa-cleaning"
+        ourWebsitesLabel="Our Websites ↗"
+        contactInfo={{ website: 'servedubai.ae', phone: SITE_CONFIG.phoneDisplay, address: 'Serving all 7 UAE Emirates' }}
+      />
 
       {/* STATS BAR */}
       <div className="pg-stats-bar">

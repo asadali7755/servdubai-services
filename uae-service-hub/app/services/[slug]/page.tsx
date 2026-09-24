@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import QuoteCard from '@/components/QuoteCard'
 import ServiceVideoShowcase from '@/components/ServiceVideoShowcase'
+import { SiteHero } from '@/components/ui/site-hero'
 import { services, getServiceBySlug } from '@/lib/data/services'
 import { emirates, getCityBySlug } from '@/lib/data/emirates'
 import { combosForService } from '@/lib/data/serviceAreaCombos'
@@ -132,32 +133,17 @@ export default async function ServicePage({ params }: Props) {
       )}
 
       {/* FULL-WIDTH HERO */}
-      <div className="page-hero-wrap sp-hero">
-        <Image
-          src={service.images[0]}
-          alt={service.name}
-          fill
-          priority
-          className="object-cover"
-          sizes="100vw"
-        />
-        <div className="hero-overlay sp-hero-overlay" />
-
-        <nav className="sp-hero-breadcrumb" aria-label="Breadcrumb">
-          <Link href="/">Home</Link>
-          <span className="sp-hero-breadcrumb-sep">/</span>
-          <span className="sp-hero-breadcrumb-cur">{service.name}</span>
-        </nav>
-
-        <div className="sp-hero-badge-wrap">
-          <span className="sp-hero-badge">{service.category}</span>
-        </div>
-
-        <div className="sp-hero-bottom">
-          <h1 className="sp-hero-h1">{service.heroTitle ?? service.name}</h1>
-          <p className="sp-hero-sub">{service.heroSubtitle ?? service.shortDescription}</p>
-        </div>
-      </div>
+      <SiteHero
+        badge={service.category}
+        title={service.heroTitle ?? service.name}
+        subtitle={service.heroSubtitle ?? service.shortDescription}
+        backgroundImage={service.images[0]}
+        backgroundAlt={service.name}
+        getFreeQuoteLabel="Get Free Quote"
+        learnMoreLabel="About Us"
+        ourWebsitesLabel="Our Websites ↗"
+        contactInfo={{ website: 'servedubai.ae', phone: SITE_CONFIG.phoneDisplay, address: `${availableEmirates.length} Emirates Covered` }}
+      />
 
       {/* STATS BAR */}
       <div className="svc-stats-bar sp-stats-bar">

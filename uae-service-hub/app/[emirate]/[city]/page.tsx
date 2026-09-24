@@ -12,6 +12,7 @@ import { getCityCoords } from '@/lib/data/cityCoordinates'
 import { hasCombo } from '@/lib/data/serviceAreaCombos'
 import { SITE_CONFIG } from '@/lib/data/constants'
 import QuoteCard from '@/components/QuoteCard'
+import { SiteHero } from '@/components/ui/site-hero'
 
 type Props = { params: Promise<{ emirate: string; city: string }> }
 
@@ -76,42 +77,29 @@ export default async function CityPage({ params }: Props) {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       )}
 
-      <div className="city-main max-w-6xl mx-auto px-4 py-12 cp-main">
+      {/* BREADCRUMB */}
+      <nav className="text-sm text-gray-400 max-w-6xl mx-auto px-4 pt-6 pb-2 cp-breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span className="mx-2 cp-breadcrumb-sep">/</span>
+        <a href={`/${emirate.slug}`}>{emirate.name}</a>
+        <span className="mx-2 cp-breadcrumb-sep">/</span>
+        <span className="text-white city-crumb-cur">{city.name}</span>
+      </nav>
 
-        {/* BREADCRUMB */}
-        <nav className="text-sm text-gray-400 mb-8 cp-breadcrumb" aria-label="Breadcrumb">
-          <a href="/">Home</a>
-          <span className="mx-2 cp-breadcrumb-sep">/</span>
-          <a href={`/${emirate.slug}`}>{emirate.name}</a>
-          <span className="mx-2 cp-breadcrumb-sep">/</span>
-          <span className="text-white city-crumb-cur">{city.name}</span>
-        </nav>
+      {/* HERO */}
+      <SiteHero
+        badge={`${emirate.name} · ${city.name}`}
+        title={`Cleaning Services in ${city.name}`}
+        subtitle={`${emirate.name} · Professional cleaning — same-day service · Call ${SITE_CONFIG.phoneDisplay}`}
+        backgroundImage={bannerSrc}
+        backgroundAlt={`Professional cleaning services in ${city.name}, ${emirate.name} — Madinat Alhaya expert cleaning team serving ${city.name} homes, villas and apartments`}
+        getFreeQuoteLabel="Get Free Quote"
+        learnMoreLabel="About Us"
+        ourWebsitesLabel="Our Websites ↗"
+        contactInfo={{ website: 'servedubai.ae', phone: SITE_CONFIG.phoneDisplay, address: `${emirate.name}, UAE` }}
+      />
 
-        {/* CITY BANNER */}
-        <div className="cp-banner">
-          <Image
-            src={bannerSrc}
-            alt={`Professional cleaning services in ${city.name}, ${emirate.name} — Madinat Alhaya expert cleaning team serving ${city.name} homes, villas and apartments`}
-            title={`Cleaning Services in ${city.name}, ${emirate.name} | Madinat Alhaya`}
-            fill
-            style={{ objectFit: 'cover', objectPosition: 'center' }}
-            priority
-            sizes="(max-width: 768px) 100vw, 1152px"
-          />
-          <div className="cp-banner-overlay" />
-          <div className="cp-banner-bottom">
-            <div className="cp-banner-tag">{emirate.name} · {city.name}</div>
-            <div className="cp-banner-title">Professional Cleaning Services</div>
-          </div>
-        </div>
-
-        {/* PAGE HEADING */}
-        <h1 className="city-page-h1 text-3xl md:text-4xl font-bold text-white mb-3" style={{ fontFamily: 'var(--font-josefin)' }}>
-          Cleaning Services in {city.name}
-        </h1>
-        <p className="city-page-sub text-gray-400 mb-6 text-lg" style={{ fontWeight: 400 }}>
-          {emirate.name} · Professional cleaning — same-day service · Call {SITE_CONFIG.phone}
-        </p>
+      <div className="city-main max-w-6xl mx-auto px-4 py-12">
 
         {/* LOCAL INTRO */}
         {localContent && (
