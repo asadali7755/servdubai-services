@@ -96,6 +96,23 @@ const stats = [
   { number: 'Eco', label: 'Friendly' },
 ]
 
+// Real buyer-search phrasing varies a lot by query ("villa cleaning company
+// Ajman", "best villa deep cleaning Sharjah", "villa deep cleaning near me
+// Fujairah") — repeating the exact same "{service} in {city}" text on every
+// single pill looked templated and only ever matched one keyword pattern.
+// Cycling through these templates gives each pill its own distinct phrasing
+// so the set covers more of the real search variety per city.
+const AREA_PILL_TEMPLATES: ((service: string, city: string) => string)[] = [
+  (s, c) => `${s} in ${c}`,
+  (s, c) => `${s} Services ${c}`,
+  (s, c) => `${s} Company ${c}`,
+  (s, c) => `Best ${s} ${c}`,
+  (s, c) => `Professional ${s} ${c}`,
+  (s, c) => `${s} Near ${c}`,
+  (s, c) => `Affordable ${s} ${c}`,
+  (s, c) => `${s} Experts ${c}`,
+]
+
 export default async function ServicePage({ params }: Props) {
   const { slug } = await params
   const service = getServiceBySlug(slug)
@@ -606,22 +623,26 @@ export default async function ServicePage({ params }: Props) {
           </div>
         )}
 
-        {/* AVAILABLE IN THESE DUBAI AREAS */}
+        {/* AVAILABLE IN THESE UAE AREAS */}
         {serviceAreas.length > 0 && (
           <div className="sp-mt-3">
             <div className="sp-sec-head">
               <div className="sp-sec-bar" />
               <h2 className="svc-content-h sp-sec-h2-sm">
-                {service.name.split(/[&]/)[0].trim()} — Available in These Dubai Areas
+                {service.name.split(/[&]/)[0].trim()} — Available in These UAE Areas
               </h2>
             </div>
             <div className="sp-combo-pills">
-              {serviceAreas.map(({ emirate, c }) => (
-                <Link key={`${emirate}-${c.slug}`} href={`/${emirate}/${c.slug}/${service.slug}`} className="sp-combo-pill">
-                  <span className="sp-combo-arrow">→</span>
-                  {service.name.split(/[&]/)[0].trim()} in {c.name}
-                </Link>
-              ))}
+              {serviceAreas.map(({ emirate, c }, i) => {
+                const shortName = service.name.split(/[&]/)[0].trim()
+                const label = AREA_PILL_TEMPLATES[i % AREA_PILL_TEMPLATES.length](shortName, c.name)
+                return (
+                  <Link key={`${emirate}-${c.slug}`} href={`/${emirate}/${c.slug}/${service.slug}`} className="sp-combo-pill">
+                    <span className="sp-combo-arrow">→</span>
+                    {label}
+                  </Link>
+                )
+              })}
             </div>
           </div>
         )}
