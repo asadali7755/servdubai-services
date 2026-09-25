@@ -10,6 +10,7 @@ import { getWhatsAppLink } from '@/lib/utils/whatsapp'
 import { getEmirateCoords } from '@/lib/data/cityCoordinates'
 import { SITE_CONFIG } from '@/lib/data/constants'
 import QuoteCard from '@/components/QuoteCard'
+import { SiteHero } from '@/components/ui/site-hero'
 
 type Props = { params: Promise<{ emirate: string }> }
 
@@ -145,44 +146,25 @@ export default async function EmiratePage({ params }: Props) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
+      {/* BREADCRUMB */}
+      <nav className="text-sm text-gray-400 max-w-6xl mx-auto px-4 pt-6 pb-2 cp-breadcrumb" aria-label="Breadcrumb">
+        <Link href="/">Home</Link>
+        <span className="mx-2 cp-breadcrumb-sep">/</span>
+        <span className="text-white">{emirate.name}</span>
+      </nav>
+
       {/* HERO */}
-      <div className="page-hero-wrap ep-hero">
-        <div className="ep-hero-img">
-          <Image src={emirate.image} alt={emirate.name} fill priority className="object-cover" sizes="100vw" />
-        </div>
-        <div className="ep-hero-overlay" />
-        <div className="ep-hero-side" />
-
-        <nav className="ep-breadcrumb">
-          <Link href="/">Home</Link>
-          <span className="ep-breadcrumb-sep">/</span>
-          <span className="ep-breadcrumb-cur">{emirate.name}</span>
-        </nav>
-
-        <div className="ep-hero-bottom">
-          <div className="ep-hero-tag">
-            <div className="ep-hero-tag-line" />
-            <span className="ep-hero-tag-text">Madinat Alhaya Cleaning</span>
-          </div>
-
-          <h1 className="ep-hero-h1">
-            Cleaning Services<br />in {emirate.name}
-          </h1>
-          <p className="ep-hero-desc">
-            Best professional cleaning company in {emirate.name} — villa deep cleaning {emirate.name}, sofa cleaning {emirate.name}, carpet cleaning {emirate.name}, marble polishing & office cleaning {emirate.name}. Same-day service available.
-          </p>
-
-          <div className="ep-hero-btns">
-            <a href={getWhatsAppLink(undefined, emirate.name)} target="_blank" rel="noopener noreferrer" className="ep-wa-btn">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.116.553 4.103 1.523 5.83L.057 23.547a.5.5 0 00.612.611l5.718-1.466A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-5.032-1.386l-.36-.214-3.737.978.997-3.643-.235-.374A9.786 9.786 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/></svg>
-              Get Free Quote
-            </a>
-            <a href={`tel:${SITE_CONFIG.phone}`} className="ep-call-btn">
-              Call {SITE_CONFIG.phone}
-            </a>
-          </div>
-        </div>
-      </div>
+      <SiteHero
+        badge="Madinat Alhaya Cleaning"
+        title={`Cleaning Services in ${emirate.name}`}
+        subtitle={`Best professional cleaning company in ${emirate.name} — villa deep cleaning, sofa cleaning, carpet cleaning, marble polishing & office cleaning. Same-day service available.`}
+        backgroundImage={emirate.image}
+        backgroundAlt={`Professional cleaning services in ${emirate.name} by Madinat Alhaya`}
+        getFreeQuoteLabel="Get Free Quote"
+        learnMoreLabel="About Us"
+        ourWebsitesLabel="Our Websites ↗"
+        contactInfo={{ website: 'servedubai.ae', phone: SITE_CONFIG.phoneDisplay, address: `${emirate.cities.length} Areas Covered` }}
+      />
 
       {/* STATS BAR */}
       <div className="ep-stats">
