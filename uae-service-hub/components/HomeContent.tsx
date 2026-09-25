@@ -12,6 +12,7 @@ import GoogleReviews from '@/components/GoogleReviews'
 import { useRequestCall } from '@/components/RequestCallModal'
 import EmiratesSection from '@/components/EmiratesSection'
 import { SiteHero } from '@/components/ui/site-hero'
+import { WebsitesShowcase } from '@/components/ui/websites-showcase'
 
 const heroImages = [
   { image: '/images/hero/professional-cleaning-dubai-team.webp', imageAlt: 'Al Haya cleaning team servicing a luxury apartment in Dubai with the Burj Khalifa skyline in view — professional cleaning services across all seven UAE Emirates', imageTitle: 'Best Professional Cleaning Services in Dubai | Al Haya' },
@@ -123,6 +124,9 @@ export default function HomeContent() {
 
       {/* 3. EMIRATES */}
       <EmiratesSection emirates={emirates} />
+
+      {/* 3b. OUR OTHER WEBSITES */}
+      <WebsitesShowcase />
 
       {/* 4. BOOK BY LOCATION */}
       <section className="home-services-section sec-pad">

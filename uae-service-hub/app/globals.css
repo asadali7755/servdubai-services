@@ -4661,3 +4661,46 @@ img { max-width: 100%; }
 .site-header-2 .bg-background\/60 {
   background-color: rgba(253, 252, 248, 0.8) !important;
 }
+
+/* =============================================
+   WEBSITES SHOWCASE — homepage "Our Network" section.
+   Fixed dark/gold panel, independent of the site's light/dark theme
+   toggle (same pattern as SiteHero and EmiratesSection), since this
+   codebase's [data-theme] toggle isn't wired to Tailwind's `dark:`
+   variant.
+============================================= */
+.wss-section { background: #14100a; padding: 5rem 1.5rem; overflow: hidden; }
+.wss-inner { max-width: 1200px; margin: 0 auto; }
+.wss-header { text-align: center; margin-bottom: 3rem; }
+.wss-label { display: inline-block; margin-bottom: 0.75rem; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.2em; color: #c9a84c; }
+.wss-h2 { font-family: var(--font-josefin), sans-serif; font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700; color: #ffffff; margin: 0 0 0.75rem; }
+.wss-sub { max-width: 42rem; margin: 0 auto; color: #9ca3af; font-size: 1rem; line-height: 1.6; }
+
+.wss-interactive { display: flex; flex-direction: column; align-items: center; justify-content: space-between; gap: 2.5rem; }
+@media (min-width: 768px) { .wss-interactive { flex-direction: row; gap: 1.5rem; } }
+
+.wss-menu-col { width: 100%; }
+@media (min-width: 768px) { .wss-menu-col { width: 50%; } }
+.wss-menu-list { display: flex; flex-direction: column; gap: 1.75rem; list-style: none; margin: 0; padding: 0; }
+.wss-menu-item { cursor: pointer; }
+.wss-menu-link { text-decoration: none; display: block; }
+.wss-menu-row { display: flex; align-items: flex-start; gap: 1.25rem; }
+.wss-num { font-size: 1.25rem; font-weight: 700; font-family: var(--font-josefin); margin-top: 0.2rem; color: #52525b; transition: color 0.4s, transform 0.4s; flex-shrink: 0; }
+.wss-num-active { color: #c9a84c; transform: scale(1.1); }
+.wss-name { font-family: var(--font-josefin); font-weight: 800; letter-spacing: -0.01em; line-height: 1.15; margin: 0 0 0.3rem; font-size: clamp(1.35rem, 3vw, 1.9rem); transition: color 0.5s, opacity 0.5s; }
+.wss-name-inactive { color: #52525b; opacity: 0.6; }
+.wss-name-active { color: #ffffff; opacity: 1; }
+.wss-tagline { margin: 0; font-size: 0.85rem; color: #9ca3af; max-height: 0; opacity: 0; overflow: hidden; transition: max-height 0.4s ease, opacity 0.4s ease, margin 0.4s ease; }
+.wss-tagline-active { max-height: 3rem; opacity: 1; margin-bottom: 0.35rem; }
+.wss-url { display: none; font-size: 0.8rem; font-weight: 600; color: #c9a84c; }
+.wss-url-active { display: inline-block; }
+
+.wss-visual-col { position: relative; width: 100%; display: flex; align-items: center; justify-content: center; }
+@media (min-width: 768px) { .wss-visual-col { width: 50%; } }
+.wss-glow { position: absolute; width: 120%; height: 120%; background: rgba(201,168,76,0.06); filter: blur(120px); border-radius: 999px; }
+.wss-svg { width: 100%; max-width: 420px; height: auto; position: relative; z-index: 1; filter: drop-shadow(0 20px 60px rgba(0,0,0,0.7)); }
+.wss-tile { fill: #14100a; }
+
+.wss-cta-row { text-align: center; margin-top: 3rem; }
+.wss-cta-link { color: #c9a84c; font-weight: 700; text-decoration: none; font-size: 0.95rem; letter-spacing: 0.02em; }
+.wss-cta-link:hover { color: #e3c674; }
