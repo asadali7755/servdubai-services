@@ -2240,6 +2240,14 @@ img { max-width: 100%; }
 [data-theme="light"] .about-emir-card div,
 [data-theme="light"] .svc-area-card div { color: inherit; }
 
+/* The rule above resolves `color: inherit` up through .sp-area-inner /
+   .sp-area-bottom to the light-theme body text color (dark) — but
+   .sp-area-name/.sp-area-count sit on the same dark photo+gradient overlay
+   as everywhere else on this card, so they need to stay explicitly white/gold
+   regardless of theme, same as .sp-area-name's own (now-overridden) color:#fff. */
+[data-theme="light"] .sp-area-name { color: #fff !important; }
+[data-theme="light"] .sp-area-count { color: #c9a84c !important; }
+
 /* Why row h3 */
 [data-theme="light"] .why-row h3 {
   color: #1a1510 !important;
