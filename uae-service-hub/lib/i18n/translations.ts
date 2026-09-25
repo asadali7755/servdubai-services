@@ -49,8 +49,8 @@ const translations = {
       badge: 'Best Cleaning Company Dubai',
       slides: [
         {
-          title: 'Best Professional Cleaning Services in Dubai & All UAE',
-          subtitle: 'Book villa deep cleaning, sofa cleaning, carpet cleaning & marble polishing in Dubai, Abu Dhabi, Sharjah — same-day service across all 7 UAE Emirates.',
+          title: 'Professional Cleaning Services in Dubai & All UAE',
+          subtitle: 'Book villa deep cleaning, sofa cleaning, carpet cleaning & marble polishing in Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Fujairah & Umm Al Quwain — same-day service across all 7 UAE Emirates.',
         },
         {
           title: 'Marble Polishing & Crystallization Services Dubai',
@@ -249,8 +249,8 @@ const translations = {
       badge: 'أفضل شركة تنظيف في دبي',
       slides: [
         {
-          title: 'أفضل خدمات التنظيف المهنية في دبي والإمارات',
-          subtitle: 'احجز تنظيف فلل، تنظيف كنب، تنظيف سجاد وتلميع رخام في دبي وأبوظبي والشارقة — خدمة في نفس اليوم في جميع الإمارات السبع.',
+          title: 'خدمات التنظيف المهنية في دبي والإمارات',
+          subtitle: 'احجز تنظيف فلل، تنظيف كنب، تنظيف سجاد وتلميع رخام في دبي وأبوظبي والشارقة وعجمان ورأس الخيمة والفجيرة وأم القيوين — خدمة في نفس اليوم في جميع الإمارات السبع.',
         },
         {
           title: 'خدمات تلميع الرخام والتبلور في دبي',
