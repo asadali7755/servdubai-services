@@ -98,18 +98,23 @@ const stats = [
 
 // Real buyer-search phrasing varies a lot by query ("villa cleaning company
 // Ajman", "best villa deep cleaning Sharjah", "villa deep cleaning near me
-// Fujairah") — repeating the exact same "{service} in {city}" text on every
-// single pill looked templated and only ever matched one keyword pattern.
-// Cycling through these templates gives each pill its own distinct phrasing
-// so the set covers more of the real search variety per city.
+// Fujairah", "villa deep cleaning cost Ajman") — repeating the exact same
+// "{service} in {city}" text on every single pill looked templated and only
+// ever matched one keyword pattern. Cycling through these templates (all
+// genuinely high-search-volume modifiers for local service queries, and the
+// kind of phrasing AI assistants echo back when asked "who does X near me")
+// gives each pill its own distinct phrasing across all 12 service pages,
+// since this template is shared by every /services/[slug] page.
 const AREA_PILL_TEMPLATES: ((service: string, city: string) => string)[] = [
   (s, c) => `${s} in ${c}`,
-  (s, c) => `${s} Services ${c}`,
+  (s, c) => `${s} Near Me ${c}`,
   (s, c) => `${s} Company ${c}`,
   (s, c) => `Best ${s} ${c}`,
+  (s, c) => `${s} Cost ${c}`,
   (s, c) => `Professional ${s} ${c}`,
-  (s, c) => `${s} Near ${c}`,
+  (s, c) => `${s} Services ${c}`,
   (s, c) => `Affordable ${s} ${c}`,
+  (s, c) => `${s} Price ${c}`,
   (s, c) => `${s} Experts ${c}`,
 ]
 
@@ -444,19 +449,10 @@ export default async function ServicePage({ params }: Props) {
                   </div>
                 </div>
                 {[
-                  { src: '/images/marble-gallery/marble-1.jpg', alt: 'Professional marble polishing services in Dubai with diamond grinding equipment by Al Haya' },
-                  { src: '/images/marble-gallery/marble-2.jpg', alt: 'Marble floor polishing in Marina Palm Jumeirah Emirates Hills Dubai by Al Haya' },
-                  { src: '/images/marble-gallery/marble-3.jpg', alt: 'Marble polishing and restoration work in progress at Dubai residence' },
-                  { src: '/images/marble-gallery/marble-4.jpg', alt: 'Professional marble floor grinding and polishing service in Dubai by Al Haya' },
-                  { src: '/images/marble-gallery/marble-5.jpg', alt: 'Marble polishing results showing restored shine on natural stone floor Dubai' },
-                  { src: '/images/marble-gallery/marble-6.jpg', alt: 'Marble floor polishing and crystallization service in Dubai UAE by Al Haya' },
-                  { src: '/images/marble-gallery/marble-7.jpg', alt: 'Marble polish Dubai professional floor restoration and polishing services' },
-                  { src: '/images/marble-gallery/marble-8.jpg', alt: 'Marble polishing in Dubai with industrial diamond polishing machine by Al Haya' },
                   { src: '/images/marble-gallery/marble-9.jpg', alt: 'Crema Marfil marble polishing process in Dubai villa by Al Haya professionals' },
                   { src: '/images/marble-gallery/marble-10.jpg', alt: 'Kitchen countertop marble polishing and restoration service Dubai by Al Haya' },
                   { src: '/images/marble-gallery/marble-11.jpg', alt: 'Marble floor restoration process showing professional grinding technique Dubai' },
                   { src: '/images/marble-gallery/marble-12.jpg', alt: 'Onyx marble polishing and finishing service in Dubai by Al Haya technicians' },
-                  { src: '/images/marble-gallery/marble-13.jpg', alt: 'Travertine floor polishing and sealing service in Dubai UAE by Al Haya' },
                 ].map((img, i) => (
                   <div key={i} className="ba-img-wrap" style={{ marginBottom: '0.75rem' }}>
                     <Image
@@ -482,8 +478,6 @@ export default async function ServicePage({ params }: Props) {
                 {[
                   { src: '/images/villa-gallery/villa-1.jpg', alt: 'Villa deep cleaning service in progress at Dubai residential property by Al Haya' },
                   { src: '/images/villa-gallery/villa-2.jpg', alt: 'Professional villa deep cleaning with industrial equipment in Dubai by Al Haya team' },
-                  { src: '/images/villa-gallery/villa-3.jpeg', alt: 'Villa deep cleaning Dubai Sharjah Ajman with professional team and equipment by Al Haya' },
-                  { src: '/images/villa-gallery/villa-4.jpeg', alt: 'Villa deep cleaning workers using floor polishing machine in Dubai residence by Al Haya' },
                 ].map((img, i) => (
                   <div key={i} className="ba-img-wrap" style={{ marginBottom: '0.75rem' }}>
                     <Image
