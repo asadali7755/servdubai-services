@@ -10,6 +10,17 @@ interface Props {
   serviceName: string
 }
 
+// The underlying video titles were all recorded/named with "Dubai" baked in
+// (e.g. "Sofa Steam Cleaning Result Dubai — Before & After"), so every one of
+// the 4 cards shown per service page read as Dubai-only even though the same
+// process, equipment and same-day service runs across all 7 Emirates. Swap
+// the city name shown per card (title, video chip, description) rather than
+// rewriting the source data in lib/data/gallery.ts, which stays untouched for
+// the standalone /gallery page.
+const EMIRATE_ROTATION = ['Dubai', 'Abu Dhabi', 'Sharjah', 'Ajman', 'Ras Al Khaimah', 'Fujairah', 'Umm Al Quwain']
+
+const withRotatedEmirate = (title: string, emirate: string) => title.replace(/Dubai/g, emirate)
+
 const SERVICES = [
   'Villa Deep Cleaning',
   'Sofa Cleaning',
@@ -117,6 +128,8 @@ export default function ServiceVideoShowcase({ serviceSlug, serviceName }: Props
     <>
       {displayVideos.map((vid, i) => {
         const reversed = i % 2 !== 0
+        const emirate = EMIRATE_ROTATION[i % EMIRATE_ROTATION.length]
+        const displayTitle = withRotatedEmirate(vid.title, emirate)
         return (
           <section
             key={i}
@@ -126,16 +139,16 @@ export default function ServiceVideoShowcase({ serviceSlug, serviceName }: Props
               {/* Text + Quote side */}
               <div className="svs-text">
                 <span className="svs-eyebrow">— Real Results · Before &amp; After</span>
-                <h2 className="svs-heading">{vid.title}</h2>
+                <h2 className="svs-heading">{displayTitle}</h2>
                 <p className="svs-desc">
-                  Watch real {serviceName.split(/[&]/)[0].trim().toLowerCase()} results from our recent jobs across Dubai &amp; UAE.
+                  Watch real {serviceName.split(/[&]/)[0].trim().toLowerCase()} results from our recent jobs across {emirate} &amp; the UAE.
                   Our certified technicians deliver professional results using advanced equipment and eco-friendly products.
                 </p>
                 <QuoteCard defaultService={serviceName} />
               </div>
 
               {/* Video side */}
-              <div className="svs-vid-wrap" onClick={() => setActiveVideo({ src: vid.src, title: vid.title })}>
+              <div className="svs-vid-wrap" onClick={() => setActiveVideo({ src: vid.src, title: displayTitle })}>
                 <video
                   ref={(el) => { videoRefs.current[i] = el }}
                   src={vid.src}
@@ -153,7 +166,7 @@ export default function ServiceVideoShowcase({ serviceSlug, serviceName }: Props
                   </svg>
                 </div>
                 <div className="svs-vid-chip">
-                  <span>{serviceName.split(/[&]/)[0].trim()} · Dubai · UAE</span>
+                  <span>{serviceName.split(/[&]/)[0].trim()} · {emirate} · UAE</span>
                 </div>
               </div>
             </div>
