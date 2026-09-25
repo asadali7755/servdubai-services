@@ -3674,17 +3674,48 @@ img { max-width: 100%; }
 .cp-sec-h2-sm { font-family: var(--font-josefin); font-size: 1.25rem; font-weight: 700; color: #fff; line-height: 1.2; }
 
 /* Local block */
-.cp-local-block { background: linear-gradient(135deg, #0e1635 0%, #1c2f58 100%); border: 1px solid rgba(201,168,76,0.18); border-radius: 12px; padding: 1.75rem 2rem; margin-bottom: 2.5rem; }
-.cp-prop-badge { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.3rem 0.85rem; background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.25); border-radius: 500px; margin-bottom: 1rem; }
+.cp-local-block { background: linear-gradient(135deg, #0e1635 0%, #1c2f58 100%); border: 1px solid rgba(201,168,76,0.18); border-radius: 12px; padding: 1.75rem 2rem; margin-bottom: 2.5rem; position: relative; overflow: hidden; opacity: 0; animation: cpBlockIn 0.7s ease 0.05s both; }
+.cp-local-block::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 15% 20%, rgba(201,168,76,0.12), transparent 55%); pointer-events: none; }
+.cp-prop-badge { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.3rem 0.85rem; background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.25); border-radius: 500px; margin-bottom: 1rem; position: relative; z-index: 1; opacity: 0; animation: cpFadeUp 0.5s ease 0.15s both; }
 .cp-prop-icon { color: #c9a84c; font-size: 0.65rem; }
 .cp-prop-text { color: #c9a84c; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
-.cp-local-desc { color: #d1d5db; font-size: 1rem; line-height: 1.75; margin-bottom: 1.25rem; font-weight: 400; }
-.cp-lm-label { font-size: 0.6rem; color: #6b7280; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.6rem; }
-.cp-lm-wrap { display: flex; flex-wrap: wrap; gap: 0.45rem; }
-.cp-lm-tag { padding: 0.3rem 0.75rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); color: #9ca3af; border-radius: 4px; font-size: 0.75rem; font-weight: 500; }
-.cp-note { margin-top: 1.25rem; padding-top: 1.1rem; border-top: 1px solid rgba(255,255,255,0.06); display: flex; gap: 0.75rem; align-items: flex-start; }
+.cp-local-desc { color: #d1d5db; font-size: 1rem; line-height: 1.75; margin-bottom: 1.25rem; font-weight: 400; position: relative; z-index: 1; opacity: 0; animation: cpFadeUp 0.5s ease 0.25s both; }
+.cp-lm-label { font-size: 0.6rem; color: #9ca3af; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.6rem; position: relative; z-index: 1; }
+.cp-lm-wrap { display: flex; flex-wrap: wrap; gap: 0.45rem; position: relative; z-index: 1; }
+.cp-lm-tag {
+  padding: 0.3rem 0.75rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);
+  color: #d1d5db; border-radius: 4px; font-size: 0.75rem; font-weight: 500;
+  opacity: 0; animation: cpFadeUp 0.4s ease both;
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+.cp-lm-tag:hover { background: rgba(201,168,76,0.14); border-color: rgba(201,168,76,0.4); color: #f0d896; transform: translateY(-2px); }
+.cp-lm-tag:nth-child(1) { animation-delay: 0.32s; }
+.cp-lm-tag:nth-child(2) { animation-delay: 0.38s; }
+.cp-lm-tag:nth-child(3) { animation-delay: 0.44s; }
+.cp-lm-tag:nth-child(4) { animation-delay: 0.5s; }
+.cp-lm-tag:nth-child(5) { animation-delay: 0.56s; }
+.cp-lm-tag:nth-child(n+6) { animation-delay: 0.6s; }
+.cp-note { margin-top: 1.25rem; padding-top: 1.1rem; border-top: 1px solid rgba(255,255,255,0.06); display: flex; gap: 0.75rem; align-items: flex-start; position: relative; z-index: 1; opacity: 0; animation: cpFadeUp 0.5s ease 0.65s both; }
 .cp-note-icon { color: #c9a84c; font-size: 1rem; flex-shrink: 0; margin-top: 0.05rem; }
-.cp-note-text { color: #6b7280; font-size: 0.95rem; line-height: 1.65; font-weight: 400; margin: 0; }
+.cp-note-text { color: #9ca3af; font-size: 0.95rem; line-height: 1.65; font-weight: 400; margin: 0; }
+
+@keyframes cpBlockIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes cpFadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* This block is a permanently-dark navy gradient card, independent of the
+   site's light/dark theme toggle (same pattern as SiteHero) -- but
+   .cp-local-desc and .cp-note-text are <p> tags, so the broad light-theme
+   rule "[data-theme=light] .city-main p { color: #5a4e3a !important }"
+   was overriding their light text with dark brown, making them unreadable
+   against the dark card. */
+[data-theme="light"] .cp-local-block p.cp-local-desc,
+[data-theme="light"] .cp-local-block p.cp-note-text { color: #d1d5db !important; }
 
 /* Service card */
 .cp-svc-card { background: #1e1e1e; border: 1px solid rgba(255,255,255,0.05); }
