@@ -96,7 +96,7 @@ const BASE_LOCAL_BUSINESS = {
   },
   sameAs: [
     'https://maps.app.goo.gl/qAog9d6usteD2jsH6',
-    'https://www.facebook.com/alhayacleandubai/',
+    'https://www.facebook.com/profile.php?id=61580600685390',
     'https://www.linkedin.com/in/madinat-al-haya-building-cleaning-services-70a3363b4/',
   ],
   aggregateRating: {
