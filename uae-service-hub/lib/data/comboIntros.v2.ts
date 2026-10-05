@@ -22,7 +22,7 @@ export const COMBO_INTROS_V2: Record<string, ComboIntro> = {
     metaDescription: "Car wash at home in International City Dubai — we come to your cluster parking. Clear price on WhatsApp, several cars in one visit.",
   },
   'dubai-mirdif-car-wash-at-home': {
-    intro: "Most Mirdif homes are villas with their own driveway, and being on Dubai's desert edge means cars pick up a fine layer of sand almost daily. Our car wash at home in Mirdif washes the family cars on your driveway or in the garage — exterior, wheels, glass and interior vacuum — so nobody has to give up a weekend at the car wash. Several cars per visit is common here, and many households keep a weekly or fortnightly slot. We can also add interior deep cleaning or polishing on the same day.",
+    intro: "Most Mirdif homes are villas with their own driveway, and being on Dubai's desert edge means cars pick up a fine layer of sand almost daily. Our car wash at home in Mirdif washes the family cars on your driveway or in the garage — exterior, wheels, glass and interior vacuum — so nobody has to give up a weekend at the car wash. Several cars per visit is common here, and many households keep a weekly or fortnightly slot. We can also add interior deep cleaning or AC odour removal on the same day.",
     metaDescription: "Car wash at home in Mirdif — family cars washed on your villa driveway. Weekly plans, multiple cars per visit. Free WhatsApp quote.",
   },
   'dubai-al-barsha-car-wash-at-home': {
@@ -46,7 +46,7 @@ export const COMBO_INTROS_V2: Record<string, ComboIntro> = {
     metaDescription: "Car wash at home in Al Jerf, Ajman — homes and company cars near the port and free zone. Regular plans available.",
   },
   'abu-dhabi-khalifa-city-car-wash-at-home': {
-    intro: "Khalifa City A and B are full of large family villas, usually with two or more cars in the driveway. Our car wash at home in Khalifa City washes all of them in one visit — exterior, wheels and tyres, glass and interior vacuum — so the family never has to queue at a car wash. Weekly slots are popular here, and polishing or interior deep cleaning can be added when a car needs more than a wash.",
+    intro: "Khalifa City A and B are full of large family villas, usually with two or more cars in the driveway. Our car wash at home in Khalifa City washes all of them in one visit — exterior, wheels and tyres, glass and interior vacuum — so the family never has to queue at a car wash. Weekly slots are popular here, and interior deep cleaning or odour removal can be added when a car needs more than a wash.",
     metaDescription: "Car wash at home in Khalifa City, Abu Dhabi — all the family cars washed on your villa driveway. Weekly plans. WhatsApp for a quote.",
   },
   'abu-dhabi-al-ain-car-wash-at-home': {

@@ -18,7 +18,6 @@ const SERVICES = [
   'Apartment Cleaning',
   'Car Wash at Home',
   'Car Interior Cleaning',
-  'Car Polishing & Ceramic Coating',
   'Car AC & Odor Removal',
 ]
 

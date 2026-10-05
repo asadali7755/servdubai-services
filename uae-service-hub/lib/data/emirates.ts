@@ -5,7 +5,6 @@ const ALL_SERVICES = [
   'curtain-cleaning',
   'car-interior-detailing',
   'car-wash-at-home',
-  'car-polishing-ceramic-coating',
   'car-ac-odor-sanitization',
   'dining-chair-cleaning',
   'villa-deep-cleaning',

@@ -33,7 +33,6 @@ const SERVICE_ICONS: Record<string, typeof Sparkles> = {
   'curtain-cleaning': Blinds,
   'car-interior-detailing': Car,
   'car-wash-at-home': Car,
-  'car-polishing-ceramic-coating': Car,
   'car-ac-odor-sanitization': Car,
   'dining-chair-cleaning': UtensilsCrossed,
   'villa-deep-cleaning': HomeIcon,

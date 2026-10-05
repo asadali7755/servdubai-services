@@ -53,7 +53,7 @@ export const COMBO_EXTRAS_V2: Record<string, ComboExtra> = {
     focus: [
       'Driveway or garage washing for Mirdif villas and Uptown Mirdif.',
       'Several family cars done in one visit.',
-      'Easy add-ons: interior deep clean or polish on the same day.',
+      'Easy add-ons: interior deep clean or AC odour removal on the same day.',
     ],
     faqs: [
       { question: 'Can you wash cars parked outside the villa gate?', answer: 'Yes, as long as the car is safely parked and reachable. Let us know where it will be when you book.' },
@@ -131,7 +131,7 @@ export const COMBO_EXTRAS_V2: Record<string, ComboExtra> = {
     focus: [
       'Khalifa City A and B villas covered.',
       'Multi-car families booked as one job.',
-      'Polish or interior deep clean added when a car needs more.',
+      'Interior deep clean or odour removal added when a car needs more.',
     ],
     faqs: [
       { question: 'Do you cover Khalifa City B and nearby compounds?', answer: 'Yes. Share the sector and villa number when you book.' },

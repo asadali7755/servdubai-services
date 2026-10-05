@@ -24,6 +24,8 @@ const nextConfig: NextConfig = {
   // Expand this list from GSC -> Pages -> "Not found (404)" as more old URLs surface.
   async redirects() {
     return [
+      // Car polishing/ceramic page was live briefly (Oct 2026) but the service is not offered.
+      { source: '/services/car-polishing-ceramic-coating', destination: '/services/car-wash-at-home', permanent: true },
       // .com domain -> canonical .ae (keeps SEO equity on one domain)
       {
         source: '/:path*',

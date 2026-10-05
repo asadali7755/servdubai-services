@@ -7,7 +7,6 @@ export const servicesNav = [
   { id: 'curtain-cleaning',           name: 'Curtain Cleaning',          slug: 'curtain-cleaning' },
   { id: 'car-interior-detailing',     name: 'Car Interior Detailing',    slug: 'car-interior-detailing' },
   { id: 'car-wash-at-home',           name: 'Car Wash at Home',          slug: 'car-wash-at-home' },
-  { id: 'car-polishing-ceramic-coating', name: 'Car Polish & Ceramic',   slug: 'car-polishing-ceramic-coating' },
   { id: 'car-ac-odor-sanitization',   name: 'Car AC & Odor Removal',     slug: 'car-ac-odor-sanitization' },
   { id: 'dining-chair-cleaning',      name: 'Dining Chair Cleaning',     slug: 'dining-chair-cleaning' },
   { id: 'villa-deep-cleaning',        name: 'Villa Deep Cleaning',       slug: 'villa-deep-cleaning' },

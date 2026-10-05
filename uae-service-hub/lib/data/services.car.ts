@@ -1,8 +1,8 @@
 import type { Service } from './services'
 
 /**
- * Car services added Oct 2026 (client confirmed: car wash at home, polish /
- * ceramic / detailing, AC & odour sanitisation — across all 7 emirates).
+ * Car services added Oct 2026 (client confirmed: car wash at home and AC & odour
+ * sanitisation across all 7 emirates). Car polishing/ceramic is NOT offered — do not add it.
  * Car seat / interior cleaning already exists as 'car-interior-detailing'.
  * No prices are stated here on purpose — quotes are confirmed on WhatsApp.
  */
@@ -31,9 +31,9 @@ One Car or a Whole Family Fleet
 
 Many households book two or three cars in the same visit, and some businesses book their company cars on a weekly or fortnightly schedule. Washing several cars in one stop is the easiest way to keep every vehicle clean without anyone losing an evening.
 
-Add Interior or Polish When You Need It
+Add Interior Cleaning When You Need It
 
-A wash keeps the car looking clean week to week. When the seats need more than a vacuum, add our car interior deep cleaning; when the paint looks dull, add polishing. You can mix services in one booking.
+A wash keeps the car looking clean week to week. When the seats need more than a vacuum, add our car interior deep cleaning, or AC and odour treatment if the cabin smells. You can mix services in one booking.
 
 Across All 7 Emirates
 
@@ -70,68 +70,6 @@ Madinat Alhaya offers car wash at home in Dubai, Sharjah, Ajman, Abu Dhabi, Ras 
       { question: 'Do I need to be there during the wash?', answer: 'Not always. If the car is accessible and you leave the key with security or a family member, we can wash it and send photos when done.' },
     ],
     images: ['/images/car/car-wash-foam-garage.webp', '/images/car/car-wash-foam-brush.webp'],
-    availableInEmirates: ALL_EMIRATES,
-  },
-  {
-    id: 'car-polishing-ceramic-coating',
-    name: 'Car Polishing & Ceramic Coating',
-    heroTitle: 'Car Polishing, Detailing & Ceramic Coating UAE',
-    heroSubtitle:
-      'Bring back the shine on sun-faded paint with machine polishing, and protect it with ceramic coating — done at your home or office across the UAE.',
-    slug: 'car-polishing-ceramic-coating',
-    category: 'specialized',
-    shortDescription:
-      'Machine car polishing, full detailing and ceramic coating at your home or office in the UAE. Restores shine and protects paint from sun and sand.',
-    fullDescription: `Why UAE Paint Loses Its Shine
-
-Strong sun, fine sand and frequent washing slowly dull a car's clear coat. Light swirl marks from automatic car washes and wiping dusty paint make the surface look hazy, especially on dark colours. Polishing removes a very thin layer of that damaged surface so the paint reflects light evenly again.
-
-Machine Polishing
-
-We start with a wash and decontamination so no grit is trapped under the pad, then polish panel by panel with a machine polisher. Light swirls and haze usually improve a lot; deep scratches that go through the clear coat cannot be polished out, and we tell you honestly which is which before we start.
-
-Ceramic Coating
-
-After polishing, a ceramic coating adds a hard protective layer on top of the paint. Coated cars are easier to wash, water and dust slide off more easily, and the paint is better protected from the sun. We explain the coating options and how to care for them when we quote.
-
-Full Detailing Packages
-
-Polishing and coating can be combined with interior deep cleaning, glass treatment and tyre dressing for a complete detail — useful before selling a car or after buying a used one.
-
-Mobile, Across the UAE
-
-The work is done at your villa, building parking or office in all 7 emirates. Polishing and coating need shade and a dry surface, so we agree the location and timing with you when booking.`,
-    contentSections: [
-      { headingLevel: 'h2', heading: 'Polish, coat or both?', text: 'Polishing fixes how the paint looks today. Ceramic coating protects it going forward. Most cars benefit from polishing first, then coating to keep the result longer.' },
-      { headingLevel: 'h3', heading: 'Before selling a car', text: 'A polish and interior detail can make a used car present much better for photos and viewings.' },
-      { headingLevel: 'h3', heading: 'After buying a used car', text: 'A full detail removes the previous owner’s wear and gives you a clean starting point.' },
-    ],
-    benefits: [
-      'Machine polishing for swirl marks and haze',
-      'Paint decontamination before polishing',
-      'Ceramic coating for long-lasting protection',
-      'Headlight restoration on request',
-      'Full interior + exterior detailing packages',
-      'Honest check of what can and cannot be polished out',
-      'Done at your home or office',
-      'All 7 emirates covered',
-    ],
-    process: [
-      'Paint inspection and agreement on the result to expect',
-      'Wash and decontamination',
-      'Machine polishing panel by panel',
-      'Wipe-down and inspection under light',
-      'Ceramic coating application (if booked)',
-      'Aftercare advice for the coating',
-    ],
-    faqs: [
-      { question: 'Can polishing remove all scratches?', answer: 'No. Light swirls and haze usually improve a lot, but scratches that go through the clear coat cannot be polished away. We check the paint and tell you what to expect before starting.' },
-      { question: 'Is ceramic coating worth it in the UAE?', answer: 'For many owners, yes: it makes washing easier and helps protect paint from sun and sand. We explain the options so you can decide.' },
-      { question: 'Can polishing be done in my building parking?', answer: 'Often yes, if there is shade and space around the car. Share your parking details and we confirm.' },
-      { question: 'How long does polishing take?', answer: 'It depends on the car size and condition. We give a time estimate with the quote.' },
-      { question: 'Do you restore cloudy headlights?', answer: 'Yes, headlight restoration can be added to a polishing or detailing booking.' },
-    ],
-    images: ['/images/car/car-polish-machine-black.webp', '/images/car/car-polish-detailer.webp'],
     availableInEmirates: ALL_EMIRATES,
   },
   {

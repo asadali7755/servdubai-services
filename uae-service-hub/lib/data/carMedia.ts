@@ -39,14 +39,6 @@ export const CAR_MEDIA: Record<string, CarMedia> = {
     ],
     video: { src: '/videos/car/car-wash-sponge.mp4', poster: '/videos/car/car-wash-sponge-poster.webp', title: 'Hand wash with a soft sponge', source: V(6872477, 'person-washing-black-car'), portrait: true },
   },
-  'car-polishing-ceramic-coating': {
-    photos: [
-      { src: '/images/car/car-polish-machine-black.webp', alt: 'Machine polisher on black car paint', source: P(6870296, 'a-person-buffing-a-car') },
-      { src: '/images/car/car-polish-detailer.webp', alt: 'Detailer machine-polishing a car panel', source: P(11139239, 'man-buffing-the-paint-of-the-car') },
-      { src: '/images/car/car-polish-bonnet.webp', alt: 'Polishing pad on a car bonnet', source: P(5233259, 'a-person-polishing-the-black-car') },
-    ],
-    video: { src: '/videos/car/car-polish-machine.mp4', poster: '/videos/car/car-polish-machine-poster.webp', title: 'Machine polishing, panel by panel', source: V(6157906, 'person-polishing-the-car') },
-  },
   'car-ac-odor-sanitization': {
     photos: [
       { src: '/images/car/car-interior-steering-wipe.webp', alt: 'Steering wheel and dashboard being wiped clean', source: P(6873015, 'a-man-in-a-black-sweater-wiping-the-steering-wheel-of-a-car') },
