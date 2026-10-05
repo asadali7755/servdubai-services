@@ -47,17 +47,45 @@ const FLOOR_AREAS = ['mirdif', 'umm-suqeim', 'al-barsha', 'bur-dubai']
 const build = (service: string, cities: string[], emirate = 'dubai'): ServiceAreaCombo[] =>
   cities.map((city) => ({ emirate, city, service }))
 
-// Core services shown per non-Dubai emirate on /areas — mirrors the site's
-// main service lineup (sofa / carpet / villa / marble) rather than the full
-// 12-service list, so each emirate gets its own dedicated combo pages using
-// the same "Facebook look" template as the Dubai pages instead of falling
-// back to the generic city hub page.
-const CORE_SERVICES = ['sofa-cleaning', 'carpet-cleaning', 'villa-deep-cleaning', 'marble-polishing']
+// Non-Dubai emirates — pruned (Oct 2026) from 192 auto-generated pages
+// (every city x 4 services) down to the main residential hubs only. The old
+// set was ~75% identical text page-to-page, which reads as doorway content.
+// Every removed URL 301s to its city page (see PRUNED_COMBOS + next.config.ts).
+const OTHER_EMIRATE_COMBOS: ServiceAreaCombo[] = [
+  { emirate: 'sharjah', city: 'sharjah-city', service: 'sofa-cleaning' },
+  { emirate: 'sharjah', city: 'sharjah-city', service: 'carpet-cleaning' },
+  { emirate: 'sharjah', city: 'al-nahda', service: 'sofa-cleaning' },
+  { emirate: 'sharjah', city: 'al-nahda', service: 'carpet-cleaning' },
+  { emirate: 'sharjah', city: 'al-majaz', service: 'sofa-cleaning' },
+  { emirate: 'abu-dhabi', city: 'abu-dhabi-city', service: 'sofa-cleaning' },
+  { emirate: 'abu-dhabi', city: 'abu-dhabi-city', service: 'carpet-cleaning' },
+  { emirate: 'abu-dhabi', city: 'abu-dhabi-city', service: 'marble-polishing' },
+  { emirate: 'abu-dhabi', city: 'khalifa-city', service: 'villa-deep-cleaning' },
+  { emirate: 'abu-dhabi', city: 'khalifa-city', service: 'sofa-cleaning' },
+  { emirate: 'abu-dhabi', city: 'mohamed-bin-zayed-city', service: 'villa-deep-cleaning' },
+  { emirate: 'ajman', city: 'ajman-city', service: 'sofa-cleaning' },
+  { emirate: 'ajman', city: 'ajman-city', service: 'carpet-cleaning' },
+  { emirate: 'ajman', city: 'al-nuaimiya', service: 'sofa-cleaning' },
+  { emirate: 'ras-al-khaimah', city: 'rak-city', service: 'sofa-cleaning' },
+  { emirate: 'ras-al-khaimah', city: 'rak-city', service: 'carpet-cleaning' },
+  { emirate: 'ras-al-khaimah', city: 'al-hamra', service: 'villa-deep-cleaning' },
+  { emirate: 'fujairah', city: 'fujairah-city', service: 'sofa-cleaning' },
+  { emirate: 'fujairah', city: 'fujairah-city', service: 'carpet-cleaning' },
+  { emirate: 'umm-al-quwain', city: 'uaq-city', service: 'sofa-cleaning' },
+]
 
-// Representative cities per emirate (from lib/data/emirates.ts) — kept to a
-// focused 2-3 per emirate for the same reason Dubai's list is curated, not
-// exhaustive: quality over a huge set of thin near-duplicate pages.
-const OTHER_EMIRATE_CITIES: Record<string, string[]> = {
+export const SERVICE_AREA_COMBOS: ServiceAreaCombo[] = [
+  ...build('sofa-cleaning', UNIVERSAL_AREAS), // 8
+  ...build('carpet-cleaning', UNIVERSAL_AREAS), // 8
+  ...build('villa-deep-cleaning', VILLA_AREAS), // 4
+  ...build('marble-polishing', MARBLE_AREAS), // 4
+  ...build('floor-cleaning', FLOOR_AREAS), // 4
+  ...OTHER_EMIRATE_COMBOS, // 20
+] // = 48 combo pages
+
+// ---- Removed combos (kept only so their old URLs can 301 to the city page) ----
+const OLD_CORE_SERVICES = ['sofa-cleaning', 'carpet-cleaning', 'villa-deep-cleaning', 'marble-polishing']
+const OLD_OTHER_EMIRATE_CITIES: Record<string, string[]> = {
   sharjah: ['sharjah-city', 'al-nahda', 'al-majaz', 'al-qasimia', 'al-khan', 'al-taawun', 'muwaileh', 'abu-shagara', 'al-yarmook', 'al-nabba'],
   'abu-dhabi': ['abu-dhabi-city', 'khalifa-city', 'yas-island', 'mohamed-bin-zayed-city', 'al-shamkha', 'shakhbout-city', 'baniyas', 'al-reef'],
   ajman: ['ajman-city', 'al-nuaimiya', 'al-rashidiya', 'al-jerf', 'al-rawda', 'al-hamidiya', 'al-zahya', 'al-mowaihat', 'musherief'],
@@ -66,18 +94,17 @@ const OTHER_EMIRATE_CITIES: Record<string, string[]> = {
   'umm-al-quwain': ['uaq-city', 'falaj-al-mualla', 'al-salamah', 'al-ramlah', 'al-humrah', 'khor-al-beidah'],
 }
 
-const otherEmirateCombos: ServiceAreaCombo[] = Object.entries(OTHER_EMIRATE_CITIES).flatMap(
-  ([emirate, cities]) => CORE_SERVICES.flatMap((service) => build(service, cities, emirate))
-)
-
-export const SERVICE_AREA_COMBOS: ServiceAreaCombo[] = [
-  ...build('sofa-cleaning', UNIVERSAL_AREAS), // 8
-  ...build('carpet-cleaning', UNIVERSAL_AREAS), // 8
-  ...build('villa-deep-cleaning', VILLA_AREAS), // 4
-  ...build('marble-polishing', MARBLE_AREAS), // 4
-  ...build('floor-cleaning', FLOOR_AREAS), // 4
-  ...otherEmirateCombos, // 16 x 4 services = 64 (Sharjah, Abu Dhabi, Ajman, RAK, Fujairah, UAQ)
-] // = 92 curated combo pages
+/** Old combo URLs that no longer have a page — each 301s to /[emirate]/[city]. */
+export const PRUNED_COMBOS: ServiceAreaCombo[] = Object.entries(OLD_OTHER_EMIRATE_CITIES)
+  .flatMap(([emirate, cities]) =>
+    OLD_CORE_SERVICES.flatMap((service) => cities.map((city) => ({ emirate, city, service })))
+  )
+  .filter(
+    (old) =>
+      !OTHER_EMIRATE_COMBOS.some(
+        (k) => k.emirate === old.emirate && k.city === old.city && k.service === old.service
+      )
+  )
 
 /** Is there a dedicated combo page for this exact (emirate, city, service)? */
 export const hasCombo = (emirate: string, city: string, service: string): boolean =>

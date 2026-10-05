@@ -65,3 +65,11 @@ export function getServiceHoverImage(serviceSlug: string, seed: string): string 
   }
   return getServiceBySlug(serviceSlug)?.images[0]
 }
+
+/** All curated real work-photos for a service (falls back to its listing photo). */
+export function getServiceGallery(serviceSlug: string): string[] {
+  const gallery = SERVICE_GALLERY_IMAGES[serviceSlug]
+  if (gallery && gallery.length > 0) return gallery
+  const img = getServiceBySlug(serviceSlug)?.images[0]
+  return img ? [img] : []
+}

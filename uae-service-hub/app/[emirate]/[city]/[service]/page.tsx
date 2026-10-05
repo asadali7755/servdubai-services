@@ -1,55 +1,54 @@
 import type { Metadata } from 'next'
-import { Fraunces } from 'next/font/google'
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import type { ReactNode } from 'react'
 import WhatsAppButton from '@/components/WhatsAppButton'
+import Reveal from '@/components/Reveal'
+import DnaHero from '@/components/dna/Hero'
+import BeforeAfter from '@/components/dna/BeforeAfter'
+import Pointer3D from '@/components/dna/Pointer3D'
+import { SectionHead, FaqBlock, CtaBlock, StickyBar, LandmarksBlock } from '@/components/dna/Blocks'
 import { getEmirateBySlug, getCityBySlug } from '@/lib/data/emirates'
 import { getServiceBySlug } from '@/lib/data/services'
-import {
-  SERVICE_AREA_COMBOS,
-  hasCombo,
-  combosForCity,
-} from '@/lib/data/serviceAreaCombos'
+import { SERVICE_AREA_COMBOS, hasCombo, combosForCity, combosForService } from '@/lib/data/serviceAreaCombos'
 import { getCityContent } from '@/lib/data/cityContent'
 import { getCityCoords } from '@/lib/data/cityCoordinates'
-import { getSectionGradients } from '@/lib/data/cityGradients'
-import { getServiceHoverImage } from '@/lib/data/serviceGalleryImages'
+import { getServiceGallery } from '@/lib/data/serviceGalleryImages'
 import { getComboIntro } from '@/lib/data/comboIntros'
-import { HoverImageLink } from '@/components/ui/hover-image-link'
-import {
-  buildMetadata,
-  buildLocalBusinessSchema,
-  buildServiceSchema,
-  buildBreadcrumbSchema,
-  buildFAQSchema,
-} from '@/lib/utils/seo'
+import { getComboExtra } from '@/lib/data/comboExtras'
+import { buildMetadata, buildServiceSchema, buildBreadcrumbSchema, buildFAQSchema, shortServiceName } from '@/lib/utils/seo'
 import { getWhatsAppLink } from '@/lib/utils/whatsapp'
 import { SITE_CONFIG } from '@/lib/data/constants'
-import QuoteCard from '@/components/QuoteCard'
-import StickyRail from '@/components/StickyRail'
-import Reveal from '@/components/Reveal'
-
-// Elegant serif display font for this page's headings only — mirrors the
-// marblepro.ae reference look without touching the sitewide Josefin Sans font.
-const fraunces = Fraunces({
-  subsets: ['latin'],
-  variable: '--font-fraunces',
-  weight: ['300', '400', '500'],
-  style: ['normal', 'italic'],
-  display: 'swap',
-})
+import { makeDna, dnaStyle, hash } from '@/lib/design/dna'
+import { fraunces } from '@/lib/design/fonts'
+import '../../../dna.css'
 
 type Props = { params: Promise<{ emirate: string; city: string; service: string }> }
 
 export const dynamicParams = false
 
+const BA_PAIRS = [2, 4, 5, 6, 7]
+
+const T = {
+  focus: [
+    (s: string, c: string) => `How we handle ${s.toLowerCase()} in ${c}`,
+    (s: string, c: string) => `What is different about ${c}`,
+    (_s: string, c: string) => `Built around ${c} homes`,
+    (s: string, c: string) => `${c} ${s.toLowerCase()}: our approach`,
+  ],
+  process: ['The visit, step by step', 'From arrival to finish', 'What happens on the day', 'Our process'],
+  faq: [
+    (c: string) => `Questions from ${c}`,
+    (c: string) => `Before you book in ${c}`,
+    () => 'Quick answers',
+    (c: string) => `${c} FAQ`,
+  ],
+  proof: ['Real result from one of our jobs', 'Slide to compare', 'Before and after', 'Our own work, unedited'],
+}
+
 export async function generateStaticParams() {
-  return SERVICE_AREA_COMBOS.map((c) => ({
-    emirate: c.emirate,
-    city: c.city,
-    service: c.service,
-  }))
+  return SERVICE_AREA_COMBOS.map((c) => ({ emirate: c.emirate, city: c.city, service: c.service }))
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -58,29 +57,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const city = getCityBySlug(eSlug, cSlug)
   const service = getServiceBySlug(sSlug)
   if (!emirate || !city || !service) return {}
-
   const shortService = service.name.split(/[&]/)[0].trim()
   const comboIntro = getComboIntro(eSlug, cSlug, sSlug)
   return buildMetadata({
     title: `${shortService} in ${city.name} | Madinat Alhaya`,
-    description: comboIntro?.metaDescription ??
-      `Professional ${service.name.toLowerCase()} in ${city.name}, ${emirate.name}. Same-day service, certified technicians, eco-friendly products. Free quote — call ${SITE_CONFIG.phone}.`,
+    description:
+      comboIntro?.metaDescription ??
+      `Professional ${service.name.toLowerCase()} in ${city.name}, ${emirate.name}. Free quote — call ${SITE_CONFIG.phone}.`,
     path: `/${eSlug}/${cSlug}/${sSlug}`,
     imageUrl: service.images[0] ? `https://servedubai.ae${service.images[0]}` : undefined,
   })
-}
-
-/** Small "post header" row repeated at the top of every feed card — brand mark + name + a per-card tag. */
-function CardHeader({ tag }: { tag: string }) {
-  return (
-    <div className="sa-card-header">
-      <div className="sa-avatar">M</div>
-      <div className="sa-card-header-text">
-        <span className="sa-card-brand">Madinat Alhaya <span className="sa-verified">✓</span></span>
-        <span className="sa-card-tag">{tag}</span>
-      </div>
-    </div>
-  )
 }
 
 export default async function ServiceAreaPage({ params }: Props) {
@@ -92,36 +78,35 @@ export default async function ServiceAreaPage({ params }: Props) {
 
   const local = getCityContent(eSlug, cSlug)
   const coords = getCityCoords(eSlug, cSlug)
+  const intro = getComboIntro(eSlug, cSlug, sSlug)
+  const extra = getComboExtra(eSlug, cSlug, sSlug)
   const path = `/${eSlug}/${cSlug}/${sSlug}`
+  const idx = Math.max(0, SERVICE_AREA_COMBOS.findIndex((c) => c.emirate === eSlug && c.city === cSlug && c.service === sSlug))
+  const dna = makeDna('combo', idx)
+  const v = idx % 4
+  const shortService = shortServiceName(service.name)
 
-  // Favor local FAQs over the generic service-wide ones -- the local
-  // questions are what actually differ page to page; the generic ones are
-  // identical wording on every city for this service, so keeping the FAQ
-  // block mostly local reduces how repetitive two city pages read.
-  const combinedFaqs = [
-    ...(local?.localFAQs ?? []).slice(0, 4),
-    ...service.faqs.slice(0, 2),
-  ]
+  const gallery = getServiceGallery(service.slug)
+  const g0 = hash(path)
+  const heroImage = gallery.length > 1 ? gallery[g0 % gallery.length] : service.images[0]
+  const extraImages = gallery.length > 2 ? [gallery[(g0 + 1) % gallery.length], gallery[(g0 + 2) % gallery.length]] : [service.images[0]]
+
+  const faqs = extra?.faqs ?? service.faqs.slice(0, 3)
+  const waLink = getWhatsAppLink(service.name, city.name)
+  const waMessage = `Hi Madinat Alhaya, I want to book ${service.name} in ${city.name}. Please share pricing and available time slots.`
 
   const siblingServices = combosForCity(eSlug, cSlug)
     .filter((s) => s !== sSlug)
     .map((s) => getServiceBySlug(s))
     .filter(Boolean) as NonNullable<ReturnType<typeof getServiceBySlug>>[]
+  const sameServiceAreas = combosForService(sSlug)
+    .filter((c) => !(c.emirate === eSlug && c.city === cSlug))
+    .map((c) => ({ ...c, name: getCityBySlug(c.emirate, c.city)?.name ?? c.city }))
+    .slice(0, 10)
 
-  const siblingCities = emirate.cities
-    .filter((c) => c.slug !== city.slug)
-    .slice(0, 6)
-
-  const localSchema = buildLocalBusinessSchema({
-    service: service.name,
-    city: city.name,
-    emirate: emirate.name,
-    path,
-    coords: coords ?? undefined,
-  })
   const serviceSchema = buildServiceSchema({
-    serviceName: service.name,
-    description: `${service.shortDescription} Available in ${city.name}, ${emirate.name}.`,
+    serviceName: `${service.name} in ${city.name}`,
+    description: intro?.metaDescription ?? `${service.shortDescription} Available in ${city.name}, ${emirate.name}.`,
     url: path,
     emirate: emirate.name,
   })
@@ -131,265 +116,179 @@ export default async function ServiceAreaPage({ params }: Props) {
     { name: city.name, url: `/${emirate.slug}/${city.slug}` },
     { name: service.name, url: path },
   ])
-  const faqSchema = combinedFaqs.length > 0 ? buildFAQSchema(combinedFaqs) : null
+  const faqSchema = faqs.length ? buildFAQSchema(faqs) : null
 
-  const waLink = getWhatsAppLink(service.name, city.name)
-  const shortService = service.name.split(' ')[0]
-  // Each feed card gets its own color, not one flat tone repeated down the page —
-  // fixed slots (intro/local/benefits/process/faq/cta) so a section's color stays
-  // consistent card-to-card, offset per city so pages don't all start on the same hue.
-  const [introGrad, localGrad, benefitsGrad, processGrad, faqGrad, ctaGrad] = getSectionGradients(city.slug, 6)
+  const crumb = (
+    <nav className={`dn-crumb ${dna.hero === 'fullbleed' || dna.hero === 'mapgrid' ? 'dn-crumb-light' : ''}`} aria-label="Breadcrumb">
+      <Link href="/">Home</Link><span aria-hidden="true">/</span>
+      <Link href={`/${emirate.slug}`}>{emirate.name}</Link><span aria-hidden="true">/</span>
+      <Link href={`/${emirate.slug}/${city.slug}`}>{city.name}</Link><span aria-hidden="true">/</span>
+      <span>{shortService}</span>
+    </nav>
+  )
+
+  /* ---------------- sections ---------------- */
+  const introSec: ReactNode = (
+    <section className="dn-sec" key="intro">
+      <div className="dn-wrap dn-2col" style={{ alignItems: 'start' }}>
+        <Reveal>
+          <div className="dn-eyebrow">{shortService} · {city.name}</div>
+          <p className="dn-p dn-dropcap" style={{ fontSize: '1.08rem' }}>{intro?.intro ?? service.shortDescription}</p>
+        </Reveal>
+        {extra && (
+          <Reveal delay={80}>
+            <Pointer3D className="dn-cta-card" style={{ transform: undefined }}>
+              <div className="dn-eyebrow" style={{ color: 'rgba(255,255,255,.75)' }}>{city.name}</div>
+              <h2 className="dn-h dn-h3" style={{ color: '#fff', marginBottom: '1rem', fontSize: '1.5rem' }}>{T.focus[v](shortService, city.name)}</h2>
+              <ul className="dn-check" style={{ gap: 10 }}>
+                {extra.focus.map((f) => (
+                  <li key={f} style={{ background: 'rgba(255,255,255,.07)', borderColor: 'rgba(255,255,255,.14)', color: '#fff' }}><span>{f}</span></li>
+                ))}
+              </ul>
+            </Pointer3D>
+          </Reveal>
+        )}
+      </div>
+    </section>
+  )
+
+  const proofSec: ReactNode = (
+    <section className={`dn-sec ${v === 1 ? 'dn-dark' : ''}`} key="proof">
+      <div className="dn-wrap dn-2col">
+        <Reveal>
+          {service.slug === 'sofa-cleaning' ? (
+            <BeforeAfter
+              before={`/images/sofa-before-after/before-${BA_PAIRS[g0 % BA_PAIRS.length]}.jpeg`}
+              after={`/images/sofa-before-after/after-${BA_PAIRS[g0 % BA_PAIRS.length]}.jpeg`}
+              alt={`Sofa cleaning by Madinat Alhaya — the same process used in ${city.name}`}
+            />
+          ) : (
+            <div className="dn-ba" style={{ aspectRatio: '4/3' }}>
+              <Image src={extraImages[0] ?? heroImage} alt={`${service.name} work by Madinat Alhaya, as offered in ${city.name}`} fill sizes="(max-width: 860px) 100vw, 560px" style={{ objectFit: 'cover' }} />
+            </div>
+          )}
+        </Reveal>
+        <Reveal delay={80}>
+          <div className="dn-eyebrow">{T.proof[v]}</div>
+          <h2 className="dn-h dn-h2" style={{ marginBottom: '1.2rem' }}>{T.process[(v + 1) % 4]}</h2>
+          <ol className="dn-tl">
+            {service.process.slice(0, 5).map((step, i) => (
+              <li key={i}><b>Step {i + 1}</b>{step}</li>
+            ))}
+          </ol>
+        </Reveal>
+      </div>
+    </section>
+  )
+
+  const areaSec: ReactNode = local ? (
+    <section className="dn-sec-tight" key="area">
+      {dna.landmarks === 'marquee' ? (
+        <LandmarksBlock style="marquee" items={local.landmarks} />
+      ) : (
+        <div className="dn-wrap">
+          <div className="dn-eyebrow">Covered in {city.name}</div>
+          <LandmarksBlock style={dna.landmarks} items={local.landmarks} />
+        </div>
+      )}
+    </section>
+  ) : null
+
+  const faqSec: ReactNode = (
+    <section className="dn-sec" key="faq">
+      <div className="dn-wrap">
+        <SectionHead eyebrow="FAQ" title={T.faq[(v + 2) % 4](city.name)} />
+        <FaqBlock style={dna.faq} faqs={faqs} />
+      </div>
+    </section>
+  )
+
+  const ctaSec: ReactNode = (
+    <section className="dn-sec" key="cta">
+      <div className="dn-wrap">
+        <CtaBlock
+          style={dna.cta}
+          title={`Book ${shortService.toLowerCase()} in ${city.name}`}
+          text={`Send a photo and your location in ${city.name} — we confirm the price on WhatsApp before booking.`}
+          waLink={waLink}
+          waMessage={waMessage}
+          phone={SITE_CONFIG.phone}
+          phoneDisplay={SITE_CONFIG.phoneDisplay}
+          quoteId={`quote-${emirate.slug}-${city.slug}-${service.slug}`}
+          quoteSource={`${service.name} in ${city.name}`}
+          quoteHeading={`${shortService} quote · ${city.name}`}
+          defaultService={service.name}
+        />
+      </div>
+    </section>
+  )
+
+  const ORDERS: ReactNode[][] = [
+    [introSec, proofSec, areaSec, faqSec, ctaSec],
+    [introSec, areaSec, proofSec, ctaSec, faqSec],
+    [areaSec, introSec, faqSec, proofSec, ctaSec],
+    [introSec, faqSec, proofSec, areaSec, ctaSec],
+  ]
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      {faqSchema && (
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      )}
+      {faqSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />}
 
-      <div className={`sa-main ${fraunces.variable}`}>
-        <div className="sa-shell">
+      <div className={`dn-page dn-f-${dna.font} ${fraunces.variable}`} style={dnaStyle(dna)} data-dna={`${dna.hero}-${dna.palette.name}-${dna.order}`}>
+        <DnaHero
+          style={dna.hero}
+          badge={`${emirate.name} · ${city.name}`}
+          title={`${service.name} in ${city.name}`}
+          highlight={city.name}
+          tagline={extra?.headline ?? service.shortDescription}
+          image={heroImage}
+          imageAlt={`${service.name} in ${city.name}, ${emirate.name} — Madinat Alhaya`}
+          extraImages={extraImages}
+          chips={local?.landmarks ?? [city.name]}
+          waLink={waLink}
+          phone={SITE_CONFIG.phone}
+          phoneDisplay={SITE_CONFIG.phoneDisplay}
+          meta={[
+            { value: 'Free', label: 'quote from a photo' },
+            { value: city.name, label: 'covered' },
+          ]}
+          coords={coords ? { lat: coords.lat, lng: coords.lng } : undefined}
+          crumb={crumb}
+          seed={path}
+        />
 
-          {/* BREADCRUMB */}
-          <nav className="text-sm mb-8 sa-breadcrumb" aria-label="Breadcrumb">
-            <a href="/">Home</a>
-            <span className="mx-2 sa-breadcrumb-sep">/</span>
-            <a href={`/${emirate.slug}`}>{emirate.name}</a>
-            <span className="mx-2 sa-breadcrumb-sep">/</span>
-            <a href={`/${emirate.slug}/${city.slug}`}>{city.name}</a>
-            <span className="mx-2 sa-breadcrumb-sep">/</span>
-            <span className="city-crumb-cur">{service.name}</span>
-          </nav>
+        {ORDERS[dna.order]}
 
-          <div className="sa-layout">
-
-            {/* LEFT RAIL — page nav + local-area internal links */}
-            <StickyRail className="sa-rail-left" innerClassName="sa-rail">
-              <div className="sa-rail-card">
-                <div className="sa-rail-title">On This Page</div>
-                <a href="#overview" className="sa-rail-link">Overview</a>
-                {service.benefits?.length > 0 && <a href="#included" className="sa-rail-link">What&apos;s Included</a>}
-                {service.process?.length > 0 && <a href="#process" className="sa-rail-link">How It Works</a>}
-                {combinedFaqs.length > 0 && <a href="#faq" className="sa-rail-link">FAQ</a>}
-                <a href="#book" className="sa-rail-link">Book Now</a>
-              </div>
-
-              {local && local.landmarks.length > 0 && (
-                <div className="sa-rail-card">
-                  <div className="sa-rail-title">Areas We Cover in {city.name}</div>
-                  <div className="sa-rail-pills">
-                    {local.landmarks.map((lm) => (
-                      <span key={lm} className="sa-rail-pill">{lm}</span>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {siblingCities.length > 0 && (
-                <div className="sa-rail-card">
-                  <div className="sa-rail-title">Other Areas in {emirate.name}</div>
-                  {siblingCities.map((c) => (
-                    <HoverImageLink
-                      key={c.slug}
-                      href={`/${emirate.slug}/${c.slug}`}
-                      image={getServiceHoverImage(service.slug, c.slug)}
-                      alt={`${service.name} in ${c.name}, ${emirate.name}`}
-                      className="sa-rail-link"
-                    >
-                      {c.name}
-                    </HoverImageLink>
-                  ))}
-                </div>
-              )}
-            </StickyRail>
-
-            {/* CENTER FEED */}
-            <main className="sa-feed">
-
-              {/* HERO CARD */}
-              <Reveal id="overview" className="sa-card sa-card-hero" delay={0}>
-                <div className="sa-banner">
-                  {service.images[0] && (
-                    <Image
-                      src={service.images[0]}
-                      alt={`${service.name} in ${city.name}, ${emirate.name} — professional ${service.name.toLowerCase()} by Madinat Alhaya for ${local?.propertyType ?? 'homes and offices'}`}
-                      title={`${service.name} in ${city.name} | Madinat Alhaya`}
-                      fill
-                      priority
-                      style={{ objectFit: 'cover', objectPosition: 'center' }}
-                      sizes="(max-width: 768px) 100vw, 700px"
-                    />
-                  )}
-                  <div className="sa-banner-overlay" />
-                  <div className="sa-banner-bottom">
-                    <div className="sa-banner-tag">{emirate.name} · {city.name}</div>
-                    <h1 className="sa-banner-h1">{service.name} in {city.name}</h1>
-                  </div>
-                </div>
-              </Reveal>
-
-              {/* INTRO CARD */}
-              <Reveal className="sa-card" delay={60} style={{ '--sa-city-grad': introGrad } as React.CSSProperties}>
-                <CardHeader tag={`Serving ${city.name} · Licensed & insured`} />
-                <p className="sa-intro">
-                  {getComboIntro(eSlug, cSlug, sSlug)?.intro ?? (
-                    <>
-                      Looking for professional <strong>{service.name.toLowerCase()}</strong> in {city.name}? Madinat Alhaya
-                      provides expert, same-day {service.name.toLowerCase()} for {local?.propertyType ?? 'homes, villas and offices'} across {city.name}, {emirate.name}.
-                      Our certified technicians use eco-friendly products and bring all equipment to your door — with transparent pricing and a 100% satisfaction guarantee.
-                    </>
-                  )}
-                </p>
-                <div className="sa-cta-row">
-                  <a href={waLink} target="_blank" rel="noopener noreferrer" className="sa-wa-btn">
-                    Book {shortService} in {city.name} — Free Quote
-                  </a>
-                  <a href={`tel:${SITE_CONFIG.phone}`} className="sa-call-btn">
-                    📞 {SITE_CONFIG.phone}
-                  </a>
-                </div>
-              </Reveal>
-
-              {/* HYPER-LOCAL CONTEXT CARD */}
-              {local && (
-                <Reveal className="sa-card" style={{ '--sa-city-grad': localGrad } as React.CSSProperties}>
-                  <CardHeader tag={`${city.name} local knowledge`} />
-                  <div className="sa-prop-badge">
-                    <span className="sa-prop-icon">📍</span>
-                    <span className="sa-prop-text">{local.propertyType}</span>
-                  </div>
-                  <p className="sa-local-desc">{local.localDescription}</p>
-                  <div className="sa-note">
-                    <span className="sa-note-icon">💡</span>
-                    <p className="sa-note-text">{local.areaNote}</p>
-                  </div>
-                </Reveal>
-              )}
-
-              {/* WHAT'S INCLUDED CARD */}
-              {service.benefits?.length > 0 && (
-                <Reveal id="included" className="sa-card" style={{ '--sa-city-grad': benefitsGrad } as React.CSSProperties}>
-                  <CardHeader tag="What you get" />
-                  <h2 className="sa-sec-h2" style={{ marginBottom: '1.1rem' }}>{service.name} in {city.name} Includes</h2>
-                  <div className="sa-benefit-grid">
-                    {service.benefits.map((b, i) => (
-                      <div key={i} className="sa-benefit-item" style={{ transitionDelay: `${i * 40}ms` }}>
-                        <span className="sa-benefit-check">✓</span>
-                        <span className="sa-benefit-text">{b}</span>
-                      </div>
-                    ))}
-                  </div>
-                </Reveal>
-              )}
-
-              {/* OUR PROCESS CARD */}
-              {service.process?.length > 0 && (
-                <Reveal id="process" className="sa-card" style={{ '--sa-city-grad': processGrad } as React.CSSProperties}>
-                  <CardHeader tag="How it works" />
-                  <h2 className="sa-sec-h2" style={{ marginBottom: '1.1rem' }}>Our {city.name} {shortService} Process</h2>
-                  <div className="sa-process-list">
-                    {service.process.map((step, i) => (
-                      <div key={i} className="sa-process-item" style={{ transitionDelay: `${i * 40}ms` }}>
-                        <span className="sa-process-num">{i + 1}</span>
-                        <span className="sa-process-text">{step}</span>
-                      </div>
-                    ))}
-                  </div>
-                </Reveal>
-              )}
-
-              {/* FAQ CARD */}
-              {combinedFaqs.length > 0 && (
-                <Reveal id="faq" className="sa-card" style={{ '--sa-city-grad': faqGrad } as React.CSSProperties}>
-                  <CardHeader tag="Common questions" />
-                  <h2 className="sa-sec-h2-sm" style={{ marginBottom: '1.25rem' }}>{service.name} in {city.name} — FAQs</h2>
-                  <div className="sa-faq-list">
-                    {combinedFaqs.map((faq, i) => (
-                      <div key={i} className="sa-faq-item">
-                        <div className="sa-faq-q">
-                          <span className="sa-faq-q-mark">Q</span>{faq.question}
-                        </div>
-                        <p className="sa-faq-a">{faq.answer}</p>
-                      </div>
-                    ))}
-                  </div>
-                </Reveal>
-              )}
-
-              {/* FINAL CTA CARD */}
-              <Reveal id="book" className="sa-card sa-cta-block" style={{ '--sa-city-grad': ctaGrad } as React.CSSProperties}>
-                <div className="sa-cta-circle" />
-                <div style={{ position: 'relative', zIndex: 1 }}>
-                  <CardHeader tag="Ready to book?" />
-                  <h2 className="text-2xl font-bold mb-2">
-                    Book {service.name} in {city.name} Today
-                  </h2>
-                  <p className="mb-6">Same-day service · Free instant quote · Eco-friendly products</p>
-                  <div className="sa-cta-btns">
-                    <a href={waLink} target="_blank" rel="noopener noreferrer"
-                      className="inline-block px-8 py-4 rounded-full font-semibold text-lg sa-cta-wa">
-                      WhatsApp Now
-                    </a>
-                    <a href={`tel:${SITE_CONFIG.phone}`}
-                      className="inline-block px-8 py-4 rounded-full font-semibold text-lg sa-cta-call">
-                      Call {SITE_CONFIG.phone}
-                    </a>
-                  </div>
-                </div>
-              </Reveal>
-
-              {/* PARENT LINKS */}
-              <div className="sa-parent-links">
-                <Link href={`/services/${service.slug}`} className="sa-parent-link">
-                  About {service.name} (all areas)
-                </Link>
-                <Link href={`/${emirate.slug}/${city.slug}`} className="sa-parent-link">
-                  All cleaning services in {city.name}
-                </Link>
-              </div>
-            </main>
-
-            {/* RIGHT RAIL — persistent quote box + trust + related services */}
-            <StickyRail className="sa-rail-right" innerClassName="sa-rail">
-              <QuoteCard
-                id={`rail-quote-${emirate.slug}-${city.slug}-${service.slug}`}
-                defaultService={service.name}
-                source={`${service.name} in ${city.name} (sidebar)`}
-                heading={`Get a free ${service.name.toLowerCase()} quote in ${city.name}.`}
-                className="sa-rail-quote"
-              />
-
-              <div className="sa-rail-card">
-                <div className="sa-rail-title">Why Madinat Alhaya</div>
-                <div className="sa-trust-list">
-                  <div className="sa-trust-item"><span className="sa-trust-check">✓</span>Licensed and insured</div>
-                  <div className="sa-trust-item"><span className="sa-trust-check">✓</span>Eco-friendly products</div>
-                  <div className="sa-trust-item"><span className="sa-trust-check">✓</span>Certified technicians</div>
-                </div>
-              </div>
-
-              {siblingServices.length > 0 && (
-                <div className="sa-rail-card">
-                  <div className="sa-rail-title">Other Services in {city.name}</div>
+        <section className="dn-sec dn-sec-tight" style={{ paddingTop: 0 }}>
+          <div className="dn-wrap" style={{ display: 'grid', gap: 22 }}>
+            {siblingServices.length > 0 && (
+              <div>
+                <div className="dn-eyebrow">More in {city.name}</div>
+                <div className="dn-areas">
                   {siblingServices.map((s) => (
-                    <HoverImageLink
-                      key={s.id}
-                      href={`/${emirate.slug}/${city.slug}/${s.slug}`}
-                      image={getServiceHoverImage(s.slug, city.slug)}
-                      alt={`${s.name} in ${city.name}, ${emirate.name}`}
-                      className="sa-rail-link"
-                    >
-                      {s.name}
-                    </HoverImageLink>
+                    <Link key={s.slug} href={`/${emirate.slug}/${city.slug}/${s.slug}`}>{shortServiceName(s.name)}</Link>
                   ))}
+                  <Link href={`/${emirate.slug}/${city.slug}`}>All services in {city.name} →</Link>
                 </div>
-              )}
-            </StickyRail>
-
+              </div>
+            )}
+            {sameServiceAreas.length > 0 && (
+              <div>
+                <div className="dn-eyebrow">{shortService} in other areas</div>
+                <div className="dn-areas">
+                  {sameServiceAreas.map((c) => (
+                    <Link key={`${c.emirate}-${c.city}`} href={`/${c.emirate}/${c.city}/${sSlug}`}>{c.name}</Link>
+                  ))}
+                  <Link href={`/services/${service.slug}`}>About {shortService.toLowerCase()} →</Link>
+                </div>
+              </div>
+            )}
           </div>
-        </div>
+        </section>
+
+        <StickyBar waLink={waLink} phone={SITE_CONFIG.phone} />
       </div>
 
       <WhatsAppButton service={service.name} city={city.name} />

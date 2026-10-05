@@ -1,20 +1,96 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import type { ReactNode } from 'react'
 import WhatsAppButton from '@/components/WhatsAppButton'
+import Reveal from '@/components/Reveal'
+import DnaHero from '@/components/dna/Hero'
+import BeforeAfter from '@/components/dna/BeforeAfter'
+import { SectionHead, ServicesBlock, TipsBlock, FaqBlock, LandmarksBlock, CtaBlock, StickyBar } from '@/components/dna/Blocks'
 import { emirates, getEmirateBySlug, getCityBySlug } from '@/lib/data/emirates'
 import { services, getServiceBySlug } from '@/lib/data/services'
-import { buildMetadata, buildLocalBusinessSchema, buildBreadcrumbSchema, buildFAQSchema } from '@/lib/utils/seo'
+import { buildMetadata, buildLocalBusinessSchema, buildBreadcrumbSchema, buildFAQSchema, shortServiceName } from '@/lib/utils/seo'
 import { getWhatsAppLink } from '@/lib/utils/whatsapp'
 import { getCityContent } from '@/lib/data/cityContent'
+import { getCityProfile } from '@/lib/data/cityProfiles'
 import { getCityCoords } from '@/lib/data/cityCoordinates'
 import { hasCombo } from '@/lib/data/serviceAreaCombos'
+import { getServiceHoverImage } from '@/lib/data/serviceGalleryImages'
 import { SITE_CONFIG } from '@/lib/data/constants'
-import QuoteCard from '@/components/QuoteCard'
-import { SiteHero } from '@/components/ui/site-hero'
+import { makeDna, dnaStyle, hash } from '@/lib/design/dna'
+import { fraunces } from '@/lib/design/fonts'
+import '../../dna.css'
 
 type Props = { params: Promise<{ emirate: string; city: string }> }
+
+const ALL_CITIES = emirates.flatMap((e) => e.cities.map((c) => `${e.slug}/${c.slug}`))
+
+// Real before/after job photos with matching framing (see public/images/sofa-before-after)
+const BA_PAIRS = [2, 4, 5, 6, 7]
+
+// Section-title pools — rotated per page so headings don't repeat word-for-word site-wide
+const T = {
+  story: [
+    (c: string) => `What homes in ${c} actually need`,
+    (c: string) => `Cleaning in ${c}, the local way`,
+    (c: string) => `Inside a typical ${c} visit`,
+    (c: string) => `${c} homes, up close`,
+  ],
+  services: [
+    (c: string) => `Most-booked in ${c}`,
+    (c: string) => `Where to start in ${c}`,
+    (c: string) => `Three jobs ${c} residents ask for most`,
+    (c: string) => `Our top picks for ${c}`,
+  ],
+  tips: [
+    (c: string) => `Keeping a ${c} home fresh between visits`,
+    (c: string) => `Local care tips for ${c}`,
+    (c: string) => `Small habits that help in ${c}`,
+    (c: string) => `${c}: what we tell our clients`,
+  ],
+  faq: [
+    (c: string) => `${c} questions, answered`,
+    (c: string) => `Asked by ${c} residents`,
+    (c: string) => `Before you book in ${c}`,
+    (c: string) => `Good to know in ${c}`,
+  ],
+  servicesLead: [
+    (c: string, pt: string) => `Every service is available in ${c}. These three make the biggest difference for ${pt}.`,
+    (c: string, pt: string) => `Picked for ${pt} — the jobs we are booked for most often in ${c}.`,
+    (c: string) => `If you only book one thing this season in ${c}, start here.`,
+    (c: string, pt: string) => `Based on the ${pt} we clean every week in ${c}.`,
+  ],
+  tipsLead: [
+    'Practical habits that keep fabric, floors and air fresher for longer.',
+    'Simple things our technicians suggest after cleaning homes in this area.',
+    'None of these replace a deep clean — but they stretch the time between one and the next.',
+    'Small changes, noticeable difference — especially in the hotter months.',
+  ],
+  proofText: [
+    'Send a photo of the sofa, rug or room on WhatsApp and you get a price back before anyone visits. The team brings its own machines and cleaning products.',
+    'Pricing is confirmed on WhatsApp from a quick photo, so there are no surprises on the day. Equipment and products come with the team.',
+    'No site survey needed for most jobs — a photo and the room size are enough for a quote. We bring everything with us.',
+    'Message a picture, get a clear quote, pick a time. Machines, products and drop sheets all arrive with the team.',
+  ],
+  ctaTitle: [
+    (c: string) => `Get a price for your ${c} home today`,
+    (c: string) => `Ready for a cleaner home in ${c}?`,
+    (c: string) => `Book your ${c} visit in two minutes`,
+    (c: string) => `Free quote for ${c} — no obligation`,
+  ],
+  ctaText: [
+    (c: string) => `Tell us what needs cleaning and where in ${c} — we reply with a clear price and the next available slot.`,
+    (c: string) => `Send your area in ${c} and what you need cleaned. You will get a price and a time slot back on WhatsApp.`,
+    (c: string) => `Leave your number or message us directly — we confirm the price before booking anything in ${c}.`,
+    (c: string) => `A photo and your building name in ${c} are all we need to quote.`,
+  ],
+  proof: [
+    'Real job, real result',
+    'Slide to see the difference',
+    'One of our recent sofa jobs',
+    'Before and after — no filters',
+  ],
+}
 
 export async function generateStaticParams(): Promise<{ emirate: string; city: string }[]> {
   return emirates.flatMap((e) => e.cities.map((c) => ({ emirate: e.slug, city: c.slug })))
@@ -41,343 +117,227 @@ export default async function CityPage({ params }: Props) {
   const city = getCityBySlug(emirateSlug, citySlug)
   if (!emirate || !city) notFound()
 
-  const cityServices = city.availableServices
+  const local = getCityContent(emirateSlug, citySlug)
+  const profile = getCityProfile(emirateSlug, citySlug)
+  const coords = getCityCoords(emirateSlug, citySlug)
+  const idx = Math.max(0, ALL_CITIES.indexOf(`${emirateSlug}/${citySlug}`))
+  const dna = makeDna('city', idx)
+  const v = idx % 4
+  const path = `/${emirateSlug}/${citySlug}`
+
+  const serviceHref = (slug: string) =>
+    hasCombo(emirate.slug, city.slug, slug) ? `/${emirate.slug}/${city.slug}/${slug}` : `/services/${slug}`
+
+  const pickSlugs = profile?.picks.map((p) => p.service) ?? ['sofa-cleaning', 'carpet-cleaning', 'villa-deep-cleaning']
+  const pickItems = (profile?.picks ?? []).map((p) => {
+    const s = getServiceBySlug(p.service)!
+    return {
+      name: s.name,
+      href: serviceHref(s.slug),
+      why: p.why,
+      image: getServiceHoverImage(s.slug, city.slug) ?? s.images[0],
+    }
+  })
+  const otherServices = (city.availableServices
     .map((id) => getServiceBySlug(id))
-    .filter(Boolean) as typeof services
+    .filter(Boolean) as typeof services)
+    .filter((s) => !pickSlugs.includes(s.slug))
+    .map((s) => ({ name: shortServiceName(s.name), href: serviceHref(s.slug) }))
 
   const siblingCities = emirate.cities.filter((c) => c.slug !== city.slug)
-  const localContent = getCityContent(emirateSlug, citySlug)
-  const coords = getCityCoords(emirateSlug, citySlug)
-  const emirateBannerSrc = emirateSlug === 'ras-al-khaimah'
-    ? '/images/emirates/ras-al-khaimah2.webp'
-    : `/images/emirates/${emirateSlug}.webp`
-  const bannerSrc = city.image ?? emirateBannerSrc
+  const emirateBanner = emirate.image
+  const heroImage = city.image ?? emirateBanner
+  const landmarks = local?.landmarks ?? [city.name]
+  const waLink = getWhatsAppLink(undefined, city.name)
+  const waMessage = `Hi Madinat Alhaya, I want to book a cleaning service in ${city.name}. Please share your services and pricing.`
+  const pair = BA_PAIRS[hash(city.slug) % BA_PAIRS.length]
 
-  const localSchema = buildLocalBusinessSchema({
-    city: city.name,
-    emirate: emirate.name,
-    path: `/${emirateSlug}/${citySlug}`,
-    coords: coords ?? undefined,
-  })
+  const localSchema = buildLocalBusinessSchema({ city: city.name, emirate: emirate.name, path, coords: coords ?? undefined })
   const breadcrumbSchema = buildBreadcrumbSchema([
     { name: 'Home', url: '/' },
     { name: emirate.name, url: `/${emirate.slug}` },
-    { name: city.name, url: `/${emirate.slug}/${city.slug}` },
+    { name: city.name, url: path },
   ])
-  const faqSchema =
-    localContent?.localFAQs && localContent.localFAQs.length > 0
-      ? buildFAQSchema(localContent.localFAQs)
-      : null
+  const faqSchema = local?.localFAQs?.length ? buildFAQSchema(local.localFAQs) : null
+
+  const crumb = (
+    <nav className={`dn-crumb ${dna.hero === 'fullbleed' || dna.hero === 'mapgrid' ? 'dn-crumb-light' : ''}`} aria-label="Breadcrumb">
+      <Link href="/">Home</Link><span aria-hidden="true">/</span>
+      <Link href={`/${emirate.slug}`}>{emirate.name}</Link><span aria-hidden="true">/</span>
+      <span>{city.name}</span>
+    </nav>
+  )
+
+  /* ---------------- sections ---------------- */
+  const story: ReactNode = profile && local && (
+    <section className="dn-sec" key="story">
+      <div className="dn-wrap dn-story">
+        <Reveal>
+          <div className="dn-eyebrow">{emirate.name} · {city.name}</div>
+          <h2 className="dn-h dn-h2" style={{ marginBottom: '1.4rem' }}>{T.story[v](city.name)}</h2>
+          <div className="dn-story-quote">
+            {local.areaNote}
+            <small>Local note · {city.name}</small>
+          </div>
+        </Reveal>
+        <Reveal delay={80}>
+          <span className="dn-prop">📍 {local.propertyType}</span>
+          <p className="dn-p dn-dropcap">{local.localDescription}</p>
+          <p className="dn-p">{profile.story[0]}</p>
+          <p className="dn-p">{profile.story[1]}</p>
+        </Reveal>
+      </div>
+    </section>
+  )
+
+  const servicesSec: ReactNode = (
+    <section className={`dn-sec ${v === 2 ? 'dn-dark' : ''}`} key="services">
+      <div className="dn-wrap">
+        <SectionHead
+          eyebrow="Recommended here"
+          title={T.services[(v + 1) % 4](city.name)}
+          lead={T.servicesLead[(v + 2) % 4](city.name, local?.propertyType ?? 'homes here')}
+        />
+        <ServicesBlock style={dna.services} items={pickItems} others={otherServices} othersLabel={`Also available in ${city.name}:`} />
+      </div>
+    </section>
+  )
+
+  const proof: ReactNode = (
+    <section className="dn-sec dn-sec-tight" key="proof">
+      <div className="dn-wrap dn-2col">
+        <Reveal>
+          <BeforeAfter
+            before={`/images/sofa-before-after/before-${pair}.jpeg`}
+            after={`/images/sofa-before-after/after-${pair}.jpeg`}
+            alt={`Sofa cleaning result by Madinat Alhaya, a job similar to what we do in ${city.name}`}
+          />
+        </Reveal>
+        <Reveal delay={80}>
+          <div className="dn-eyebrow">{T.proof[v]}</div>
+          <h2 className="dn-h dn-h2" style={{ marginBottom: '1rem' }}>Booking a visit in {city.name}</h2>
+          {profile && (
+            <div className="dn-visit">
+              <span aria-hidden="true">🚐</span>
+              <div><strong>Before we arrive</strong>{profile.visit}</div>
+            </div>
+          )}
+          <p className="dn-p" style={{ marginTop: '1rem' }}>
+            {T.proofText[(v + 3) % 4]}
+          </p>
+        </Reveal>
+      </div>
+    </section>
+  )
+
+  const tipLabels = dna.tips === 'timeline' ? ['Daily', 'Monthly', 'Seasonal'] : undefined
+  const tips: ReactNode = profile && (
+    <section className={`dn-sec ${v === 0 || v === 3 ? 'dn-dark' : ''}`} key="tips">
+      <div className="dn-wrap dn-2col" style={{ alignItems: 'start' }}>
+        <Reveal>
+          <SectionHead eyebrow="Care between visits" title={T.tips[(v + 2) % 4](city.name)} lead={T.tipsLead[(v + 1) % 4]} />
+        </Reveal>
+        <Reveal delay={80}>
+          <TipsBlock style={dna.tips} tips={profile.tips} labels={tipLabels} />
+        </Reveal>
+      </div>
+    </section>
+  )
+
+  const landmarkSec: ReactNode = (
+    <section className={dna.landmarks === 'marquee' ? 'dn-sec-tight' : 'dn-sec dn-sec-tight'} key="landmarks">
+      {dna.landmarks === 'marquee' ? (
+        <LandmarksBlock style="marquee" items={landmarks} />
+      ) : (
+        <div className="dn-wrap">
+          <div className="dn-eyebrow">Streets &amp; buildings we cover in {city.name}</div>
+          <LandmarksBlock style={dna.landmarks} items={landmarks} />
+        </div>
+      )}
+    </section>
+  )
+
+  const faqSec: ReactNode = local?.localFAQs?.length ? (
+    <section className="dn-sec" key="faq">
+      <div className="dn-wrap">
+        <SectionHead eyebrow="FAQ" title={T.faq[(v + 3) % 4](city.name)} />
+        <FaqBlock style={dna.faq} faqs={local.localFAQs} />
+      </div>
+    </section>
+  ) : null
+
+  const cta: ReactNode = (
+    <section className="dn-sec" key="cta">
+      <div className="dn-wrap">
+        <CtaBlock
+          style={dna.cta}
+          title={T.ctaTitle[(v + 1) % 4](city.name)}
+          text={T.ctaText[(v + 2) % 4](city.name)}
+          waLink={waLink}
+          waMessage={waMessage}
+          phone={SITE_CONFIG.phone}
+          phoneDisplay={SITE_CONFIG.phoneDisplay}
+          quoteId={`quote-${emirate.slug}-${city.slug}`}
+          quoteSource={`Area page — ${city.name}, ${emirate.name}`}
+          quoteHeading={`Free quote in ${city.name}`}
+        />
+      </div>
+    </section>
+  )
+
+  const ORDERS: ReactNode[][] = [
+    [story, servicesSec, landmarkSec, proof, tips, faqSec, cta],
+    [servicesSec, story, proof, tips, landmarkSec, cta, faqSec],
+    [landmarkSec, story, tips, servicesSec, faqSec, proof, cta],
+    [story, proof, servicesSec, faqSec, landmarkSec, tips, cta],
+  ]
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      {faqSchema && (
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      )}
+      {faqSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />}
 
-      {/* BREADCRUMB */}
-      <nav className="text-sm text-gray-400 max-w-6xl mx-auto px-4 pt-6 pb-2 cp-breadcrumb" aria-label="Breadcrumb">
-        <a href="/">Home</a>
-        <span className="mx-2 cp-breadcrumb-sep">/</span>
-        <a href={`/${emirate.slug}`}>{emirate.name}</a>
-        <span className="mx-2 cp-breadcrumb-sep">/</span>
-        <span className="text-white city-crumb-cur">{city.name}</span>
-      </nav>
+      <div className={`dn-page dn-f-${dna.font} ${fraunces.variable}`} style={dnaStyle(dna)} data-dna={`${dna.hero}-${dna.palette.name}-${dna.order}`}>
+        <DnaHero
+          style={dna.hero}
+          badge={`${emirate.name} · ${city.name}`}
+          title={`Cleaning Services in ${city.name}`}
+          highlight={city.name}
+          tagline={profile?.tagline ?? `Professional cleaning across ${city.name}.`}
+          image={heroImage}
+          imageAlt={`${city.name}, ${emirate.name} — area served by Madinat Alhaya cleaning services`}
+          extraImages={pickItems.map((p) => p.image)}
+          chips={landmarks}
+          waLink={waLink}
+          phone={SITE_CONFIG.phone}
+          phoneDisplay={SITE_CONFIG.phoneDisplay}
+          meta={[
+            { value: 'Same-day', label: 'slots when available' },
+            { value: 'Free', label: 'WhatsApp quote' },
+          ]}
+          coords={coords ? { lat: coords.lat, lng: coords.lng } : undefined}
+          crumb={crumb}
+          seed={city.slug}
+        />
 
-      {/* HERO */}
-      <SiteHero
-        badge={`${emirate.name} · ${city.name}`}
-        title={`Cleaning Services in ${city.name}`}
-        subtitle={`${emirate.name} · Professional cleaning — same-day service · Call ${SITE_CONFIG.phoneDisplay}`}
-        backgroundImage={bannerSrc}
-        backgroundAlt={`Professional cleaning services in ${city.name}, ${emirate.name} — Madinat Alhaya expert cleaning team serving ${city.name} homes, villas and apartments`}
-        getFreeQuoteLabel="Get Free Quote"
-        learnMoreLabel="About Us"
-        ourWebsitesLabel="Our Websites ↗"
-        contactInfo={{ website: 'servedubai.ae', phone: SITE_CONFIG.phoneDisplay, address: `${emirate.name}, UAE` }}
-      />
+        {ORDERS[dna.order]}
 
-      <div className="city-main max-w-6xl mx-auto px-4 py-12">
-
-        {/* LOCAL INTRO */}
-        {localContent && (
-          <div className="cp-local-block">
-            <div className="cp-prop-badge">
-              <span className="cp-prop-icon">📍</span>
-              <span className="cp-prop-text">{localContent.propertyType}</span>
-            </div>
-            <p className="cp-local-desc">{localContent.localDescription}</p>
-            <div>
-              <div className="cp-lm-label">Key Areas &amp; Landmarks We Cover</div>
-              <div className="cp-lm-wrap">
-                {localContent.landmarks.map((lm) => (
-                  <span key={lm} className="cp-lm-tag">{lm}</span>
-                ))}
-              </div>
-            </div>
-            <div className="cp-note">
-              <span className="cp-note-icon">💡</span>
-              <p className="cp-note-text">{localContent.areaNote}</p>
-            </div>
-          </div>
-        )}
-
-        {/* SERVICES */}
-        <div style={{ marginBottom: '2.5rem' }}>
-          <div className="cp-sec-head">
-            <div className="cp-sec-bar" />
-            <div>
-              <div className="cp-sec-label">What We Offer</div>
-              <h2 className="cp-sec-h2">Services Available in {city.name}</h2>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {cityServices.map((service) => (
-              <div key={service.id} className="city-svc-card rounded-xl overflow-hidden cp-svc-card">
-                {service.images[0] && (
-                  <div className="cp-svc-img">
-                    <Image
-                      src={service.images[0]}
-                      alt={`${service.name} in ${city.name}, ${emirate.name} — professional ${service.name.toLowerCase()} by Madinat Alhaya cleaning services`}
-                      title={`${service.name} in ${city.name} | Madinat Alhaya`}
-                      fill
-                      style={{ objectFit: 'cover' }}
-                      loading="lazy"
-                      sizes="(max-width: 640px) 100vw, 50vw"
-                    />
-                    <div className="cp-svc-img-overlay" />
-                    <span className="cp-svc-cat">{service.category}</span>
-                  </div>
-                )}
-                <div className="p-5">
-                  <div className="flex items-start justify-between mb-3">
-                    <h3 className="text-white font-bold" style={{ fontFamily: 'var(--font-josefin)', fontSize: '1rem' }}>
-                      {service.name}
-                    </h3>
-                  </div>
-                  <p className="text-gray-400 text-sm mb-4 leading-relaxed">{service.shortDescription}</p>
-                  <div className="flex flex-col sm:flex-row gap-2">
-                    <a
-                      href={getWhatsAppLink(service.name, city.name)}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 text-center px-4 py-2 rounded-lg text-sm font-semibold cp-wa-book"
-                    >
-                      Book via WhatsApp
-                    </a>
-                    <Link
-                      href={
-                        hasCombo(emirate.slug, city.slug, service.slug)
-                          ? `/${emirate.slug}/${city.slug}/${service.slug}`
-                          : `/services/${service.slug}`
-                      }
-                      className="city-view-btn flex-1 text-center px-4 py-2 rounded-lg text-sm font-semibold cp-view-btn"
-                    >
-                      {hasCombo(emirate.slug, city.slug, service.slug)
-                        ? `View ${city.name} Details`
-                        : 'View Details'}
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* FAQ */}
-        {localContent?.localFAQs && localContent.localFAQs.length > 0 && (
-          <div className="cp-faq-block">
-            <div className="cp-sec-head" style={{ marginBottom: '1.5rem' }}>
-              <div className="cp-sec-bar" />
-              <div>
-                <div className="cp-sec-label">Common Questions</div>
-                <h2 className="cp-sec-h2-sm">FAQs — Cleaning in {city.name}</h2>
-              </div>
-            </div>
-            <div className="cp-faq-list">
-              {localContent.localFAQs.map((faq, i) => (
-                <div key={i} className="cp-faq-item">
-                  <div className="cp-faq-q">
-                    <span className="cp-faq-q-mark">Q</span>
-                    {faq.question}
-                  </div>
-                  <p className="cp-faq-a">{faq.answer}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* TRUST */}
-        {(() => {
-          const pt = localContent?.propertyType ?? ''
-          const isHighRise = /high.rise|tower|apartment/i.test(pt)
-          const isVilla    = /villa|townhouse|residential/i.test(pt)
-          const isWaterfront = /waterfront|beach|coastal|island/i.test(pt)
-          const isCommercial = /commercial|office|business/i.test(pt)
-
-          let trustBullets: string[]
-          if (isWaterfront && isVilla) {
-            trustBullets = [
-              `Specialist care for luxury villas and beachfront residences in ${city.name}`,
-              'Fast-dry extraction protects upholstery against coastal humidity',
-              'Marble polishing and premium surface restoration available',
-              'Discrete, premium service with full satisfaction guarantee',
-            ]
-          } else if (isHighRise) {
-            trustBullets = [
-              `Experienced with high-rise tower access and lift logistics in ${city.name}`,
-              'Quick-dry method — sofa dry in 3-4 hrs, minimal disruption to daily life',
-              'Trained for all apartment floor types — tile, carpet, hardwood',
-              'Same-day and weekend slots available across all towers',
-            ]
-          } else if (isVilla) {
-            trustBullets = [
-              `Full villa deep cleaning for all property sizes in ${city.name}`,
-              'Teams of 3-6 trained technicians for comprehensive villa coverage',
-              'Marble, stone, and luxury surface specialist treatment included',
-              'Free re-clean guarantee — we return at no charge if not satisfied',
-            ]
-          } else if (isCommercial) {
-            trustBullets = [
-              `Office and commercial space cleaning available in ${city.name}`,
-              'Flexible scheduling — evenings, weekends, minimal disruption',
-              'Carpet extraction, sofa sanitization, and full office deep clean',
-              '100% satisfaction guaranteed for all commercial bookings',
-            ]
-          } else {
-            trustBullets = [
-              `Serving residential and commercial clients across ${city.name}`,
-              'Same-day service available — book by phone or WhatsApp',
-              'Eco-friendly, non-toxic products safe for children and pets',
-              '100% satisfaction guarantee — re-clean at no extra charge',
-            ]
-          }
-
-          return (
-            <div className="cp-trust-block">
-              <div className="cp-trust-circle" />
-              <div className="cp-sec-head" style={{ marginBottom: '1.5rem' }}>
-                <div className="cp-sec-bar" />
-                <div>
-                  <div className="cp-sec-label">Local Trust</div>
-                  <h2 className="cp-sec-h2-sm">Why {city.name} Residents Choose Madinat Alhaya</h2>
-                </div>
-              </div>
-
-              <div className="cp-stats-row city-stats-row">
-                {[
-                  { icon: '👥', value: '500+', label: 'UAE Clients' },
-                  { icon: '⚡', value: 'Same-Day', label: 'Service Available' },
-                  { icon: '✅', value: '100%', label: 'Satisfaction Guarantee' },
-                  { icon: '⭐', value: '5-Star', label: 'Rated Service' },
-                ].map((stat) => (
-                  <div key={stat.label} className="cp-stat-item">
-                    <div className="cp-stat-emoji">{stat.icon}</div>
-                    <div className="cp-stat-val">{stat.value}</div>
-                    <div className="cp-stat-lbl">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="cp-bullets">
-                {trustBullets.map((bullet, i) => (
-                  <div key={i} className="cp-bullet city-trust-bullet">
-                    <span className="cp-bullet-check">✓</span>
-                    <span className="cp-bullet-text city-trust-txt">{bullet}</span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="cp-cta-row">
-                <a href={getWhatsAppLink(undefined, city.name)} target="_blank" rel="noopener noreferrer" className="ep-wa-btn">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-                    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.116.553 4.103 1.523 5.83L.057 23.547a.5.5 0 00.612.611l5.718-1.466A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-5.032-1.386l-.36-.214-3.737.978.997-3.643-.235-.374A9.786 9.786 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/>
-                  </svg>
-                  Book in {city.name} — Free Quote
-                </a>
-                <a href={`tel:${SITE_CONFIG.phone}`} className="cp-call-link">
-                  <span>📞</span> {SITE_CONFIG.phone}
-                </a>
-              </div>
-
-              <QuoteCard
-                id={`quote-${emirate.slug}-${city.slug}`}
-                source={`Area page — ${city.name}, ${emirate.name}`}
-                heading={`Get a free quote in ${city.name}.`}
-                className="page-quote-card"
-              />
-            </div>
-          )
-        })()}
-
-        {/* OTHER AREAS */}
         {siblingCities.length > 0 && (
-          <div className="cp-areas-block">
-            <div className="cp-sec-head" style={{ marginBottom: '0.5rem' }}>
-              <div className="cp-sec-bar" />
-              <div>
-                <div className="cp-sec-label">Service Coverage</div>
-                <h2 className="cp-sec-h2-sm">Other Areas We Serve in {emirate.name}</h2>
+          <section className="dn-sec dn-sec-tight" style={{ paddingTop: 0 }}>
+            <div className="dn-wrap">
+              <div className="dn-eyebrow">Nearby in {emirate.name}</div>
+              <div className="dn-areas">
+                {siblingCities.map((c) => (
+                  <Link key={c.id} href={`/${emirate.slug}/${c.slug}`}>{c.name}</Link>
+                ))}
+                <Link href={`/${emirate.slug}`}>All of {emirate.name} →</Link>
               </div>
             </div>
-            <p className="cp-areas-sub">
-              Madinat Alhaya provides professional cleaning across all areas of {emirate.name} — same-day service available.
-            </p>
-            <div className="cp-areas-pills">
-              {siblingCities.map((c) => (
-                <Link key={c.id} href={`/${emirate.slug}/${c.slug}`} className="cp-area-pill">
-                  <span className="cp-area-arrow">→</span>
-                  {c.name}
-                </Link>
-              ))}
-            </div>
-          </div>
+          </section>
         )}
 
-        {/* CTA */}
-        <div className="city-cta-block rounded-xl p-8 text-center cp-cta-block">
-          <div className="cp-cta-circle" />
-          <div style={{ position: 'relative', zIndex: 1 }}>
-            <div className="ep-cta-label">Ready to Book?</div>
-            <h2 className="text-2xl font-bold text-white mb-2" style={{ fontFamily: 'var(--font-josefin)' }}>
-              Book a Cleaning in {city.name} Today
-            </h2>
-            <p className="text-gray-400 mb-2">Same-day service available · Free instant quote</p>
-            <div className="cp-cta-preview city-cta-preview">
-              "Hi Madinat Alhaya, I want to book a cleaning service in {city.name}..."
-            </div>
-            <div className="ep-cta-btns">
-              <a href={getWhatsAppLink(undefined, city.name)} target="_blank" rel="noopener noreferrer"
-                className="inline-block px-8 py-4 rounded-full font-semibold text-lg cp-cta-wa">
-                WhatsApp Now
-              </a>
-              <a href={`tel:${SITE_CONFIG.phone}`}
-                className="inline-block px-8 py-4 rounded-full font-semibold text-lg cp-cta-call">
-                Call {SITE_CONFIG.phone}
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* STICKY MOBILE BAR */}
-        <div className="city-sticky-bar cp-sticky">
-          <a href={getWhatsAppLink(undefined, city.name)} target="_blank" rel="noopener noreferrer" className="cp-sticky-wa">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-              <path d="M12 0C5.373 0 0 5.373 0 12c0 2.116.553 4.103 1.523 5.83L.057 23.547a.5.5 0 00.612.611l5.718-1.466A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-5.032-1.386l-.36-.214-3.737.978.997-3.643-.235-.374A9.786 9.786 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/>
-            </svg>
-            Book in {city.name}
-          </a>
-          <a href={`tel:${SITE_CONFIG.phone}`} className="cp-sticky-call">
-            📞 Call Now
-          </a>
-        </div>
-
+        <StickyBar waLink={waLink} phone={SITE_CONFIG.phone} />
       </div>
 
       <WhatsAppButton city={city.name} />

@@ -9,6 +9,7 @@ export interface SeoOptions {
 }
 
 const SITE_URL = 'https://servedubai.ae'
+export const BUSINESS_ID = `${SITE_URL}/#business`
 
 export const buildMetadata = (options: SeoOptions): Metadata => {
   const { title, description, path, imageUrl } = options
@@ -99,36 +100,10 @@ const BASE_LOCAL_BUSINESS = {
     'https://www.facebook.com/profile.php?id=61580600685390',
     'https://www.linkedin.com/in/madinat-al-haya-building-cleaning-services-70a3363b4/',
   ],
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '4.3',
-    reviewCount: '76',
-    bestRating: '5',
-    worstRating: '1',
-  },
-  review: [
-    {
-      '@type': 'Review',
-      author: { '@type': 'Person', name: 'Mohammed Muqtadir' },
-      datePublished: '2025-09-01',
-      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-      reviewBody: 'Got my car complete interior cleaning done and I must say their work was fabulous and it got done real quick at my place in a very reasonable price. Do prefer them for your car or home cleaning services.',
-    },
-    {
-      '@type': 'Review',
-      author: { '@type': 'Person', name: 'Hamza Muhammad Sheth' },
-      datePublished: '2025-06-01',
-      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-      reviewBody: 'Your team of Al Haya Cleaning has just finished the cleaning work. I am very happy and satisfied with the result. Your team has taken care everything and put all their efforts to get the result as I wanted.',
-    },
-    {
-      '@type': 'Review',
-      author: { '@type': 'Person', name: 'Ammatullah HM' },
-      datePublished: '2019-07-01',
-      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-      reviewBody: 'Excellent and professional service. They send a team to you and they put everything back in its place once they are done. Punctual and well-organized. They did a great job on my sofa and car seats. I would definitely recommend them.',
-    },
-  ],
+  // NOTE: no aggregateRating / review markup on purpose. Google's review-snippet
+  // rules don't allow a business to mark up its own reviews (self-serving), and
+  // reviews copied from Google Maps can't be re-used as on-site review markup.
+  // The visible Google-reviews widget stays on the homepage; the schema stays clean.
 }
 
 export const buildLocalBusinessSchema = (options: {
@@ -158,30 +133,42 @@ export const buildLocalBusinessSchema = (options: {
         (n) => ({ '@type': 'State', name: n })
       )
 
-  // City-specific overrides — precise geo + tight serviceArea radius
-  const geoOverride = options.coords
-    ? {
-        '@type': 'GeoCoordinates',
-        latitude: options.coords.lat,
-        longitude: options.coords.lng,
-      }
-    : BASE_LOCAL_BUSINESS.geo
-
   const pageUrl = options.path ? `${SITE_URL}${options.path}` : SITE_URL
 
+  // Root / generic pages -> the one canonical business entity (same @id everywhere,
+  // so Google sees ONE business, not 300 near-identical LocalBusiness copies).
+  if (!options.service && !options.city && !options.emirate) {
+    return {
+      ...BASE_LOCAL_BUSINESS,
+      '@id': BUSINESS_ID,
+      url: SITE_URL,
+      description:
+        'Professional cleaning and restoration services across all 7 UAE Emirates — sofa, carpet, villa, office, marble and more.',
+      areaServed,
+    }
+  }
+
+  // Location / service pages -> a Service node that points at the single business.
   return {
-    ...BASE_LOCAL_BUSINESS,
-    '@id': pageUrl,
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': `${pageUrl}#service`,
     url: pageUrl,
-    ...(options.name ? { name: options.name } : {}),
-    description: options.service
-      ? `Professional ${options.service} service in ${options.city ?? 'UAE'} — certified technicians, eco-friendly products, same-day service.`
-      : options.city
-      ? `Professional cleaning services in ${options.city}, ${options.emirate ?? 'UAE'} — sofa, carpet, villa, office & marble. Same-day service available.`
-      : 'Professional cleaning and restoration services across all 7 UAE Emirates — sofa, carpet, villa, office, marble and more.',
-    geo: geoOverride,
-    address: BASE_LOCAL_BUSINESS.address,
-    areaServed,
+    name: options.service
+      ? `${options.service}${options.city ? ` in ${options.city}` : ''}`
+      : `Cleaning services in ${options.city ?? options.emirate}`,
+    serviceType: options.service ?? 'Cleaning services',
+    provider: { '@type': 'LocalBusiness', '@id': BUSINESS_ID, name: BASE_LOCAL_BUSINESS.name, telephone: BASE_LOCAL_BUSINESS.telephone, url: SITE_URL },
+    areaServed: options.coords
+      ? [
+          ...areaServed,
+          {
+            '@type': 'GeoCircle',
+            geoMidpoint: { '@type': 'GeoCoordinates', latitude: options.coords.lat, longitude: options.coords.lng },
+            geoRadius: options.coords.radiusMeters,
+          },
+        ]
+      : areaServed,
   }
 }
 
@@ -198,6 +185,7 @@ export const buildServiceSchema = (options: {
   url: `https://servedubai.ae${options.url}`,
   provider: {
     '@type': 'LocalBusiness',
+    '@id': BUSINESS_ID,
     name: 'Madinat Alhaya Building Cleaning Services',
     telephone: '+971551275545',
     url: 'https://servedubai.ae',
@@ -292,3 +280,9 @@ export const buildArticleSchema = (options: {
     logo: { '@type': 'ImageObject', url: `${SITE_URL}/images/hero/professional-cleaning-services-UAE.webp` },
   },
 })
+
+/** "Sofa Cleaning & Shampooing" -> "Sofa Cleaning"; keeps names whose first part is a single word ("Restaurant & Kitchen Cleaning"). */
+export const shortServiceName = (name: string): string => {
+  const first = name.split(' & ')[0].trim()
+  return first.includes(' ') ? first : name
+}

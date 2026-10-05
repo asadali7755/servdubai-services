@@ -1,5 +1,6 @@
 import type { NextConfig } from 'next'
 import path from 'path'
+import { PRUNED_COMBOS } from './lib/data/serviceAreaCombos'
 
 const nextConfig: NextConfig = {
   turbopack: {
@@ -36,6 +37,20 @@ const nextConfig: NextConfig = {
         destination: 'https://servedubai.ae/:path*',
         permanent: true,
       },
+      // www.servedubai.ae -> servedubai.ae (one canonical host; www was serving a
+      // full duplicate 200 copy of every page and Google had indexed some of them)
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'www.servedubai.ae' }],
+        destination: 'https://servedubai.ae/:path*',
+        permanent: true,
+      },
+      // Pruned service x area pages (Oct 2026) -> their area page
+      ...PRUNED_COMBOS.map((c) => ({
+        source: `/${c.emirate}/${c.city}/${c.service}`,
+        destination: `/${c.emirate}/${c.city}`,
+        permanent: true,
+      })),
       // Old singular /service/* -> new plural /services/*
       { source: '/service/:slug', destination: '/services/:slug', permanent: true },
       // Common old WordPress page slugs

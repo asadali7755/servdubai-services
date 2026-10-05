@@ -73,7 +73,7 @@ Madinat Alhaya provides sofa cleaning Dubai, sofa cleaning Abu Dhabi, sofa clean
 
 We handle all sofa types: L-shaped, sectional, 3-seater, corner sofas, fabric recliners, velvet sofas, leather sofas, and modular configurations, from Fujairah's Gulf of Oman coastline to Ajman's growing residential districts. Our quick-dry technology means your sofa is ready to use within 3–4 hours after our professional sofa cleaning at home.`,
     benefits: [
-      '#1 sofa cleaning services Dubai & Abu Dhabi — trusted by 500+ clients',
+      'Sofa cleaning across Dubai, Abu Dhabi & all UAE — at your home',
       'Professional sofa cleaning services at home — we come to you',
       'Removes deep stains, odors, dust mites & allergens',
       'Safe for all fabrics — velvet, microfiber, leather, cotton',

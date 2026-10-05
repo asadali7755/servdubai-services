@@ -66,7 +66,8 @@ export const emirates: Emirate[] = [
     id: 'sharjah',
     name: 'Sharjah',
     slug: 'sharjah',
-    image: '/images/emirates/sharjah.webp',
+    // was emirates/sharjah.webp — a third-party photo with a photographer's watermark
+    image: '/images/locations/dibba-al-hisn-corniche-pavilion.webp',
     cities: [
       makeCity('sharjah', 'sharjah-city', 'Sharjah City'),
       makeCity('sharjah', 'al-nahda', 'Al Nahda'),
@@ -135,7 +136,8 @@ export const emirates: Emirate[] = [
     id: 'fujairah',
     name: 'Fujairah',
     slug: 'fujairah',
-    image: '/images/emirates/fujairah.webp',
+    // was emirates/fujairah.webp — that file is a photo of Berlin's Brandenburg Gate, not Fujairah
+    image: '/images/locations/dibba-al-fujairah-aerial-coastal.webp',
     cities: [
       makeCity('fujairah', 'fujairah-city', 'Fujairah City'),
       { ...makeCity('fujairah', 'dibba-al-fujairah', 'Dibba Al-Fujairah'), image: '/images/locations/dibba-al-fujairah-aerial-coastal.webp' },
@@ -151,7 +153,8 @@ export const emirates: Emirate[] = [
     id: 'umm-al-quwain',
     name: 'Umm Al Quwain',
     slug: 'umm-al-quwain',
-    image: '/images/emirates/umm-al-quwain.webp',
+    // was emirates/umm-al-quwain.webp — a sea-cliff photo that is not UAQ; replace with a real UAQ photo when available
+    image: '/images/hero/professional-cleaning-dubai-team.webp',
     cities: [
       makeCity('umm-al-quwain', 'uaq-city', 'UAQ City'),
       makeCity('umm-al-quwain', 'falaj-al-mualla', 'Falaj Al Mualla'),

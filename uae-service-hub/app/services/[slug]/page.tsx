@@ -2,16 +2,23 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import type { ReactNode } from 'react'
 import WhatsAppButton from '@/components/WhatsAppButton'
-import QuoteCard from '@/components/QuoteCard'
 import ServiceVideoShowcase from '@/components/ServiceVideoShowcase'
-import { SiteHero } from '@/components/ui/site-hero'
+import Reveal from '@/components/Reveal'
+import DnaHero from '@/components/dna/Hero'
+import BeforeAfter from '@/components/dna/BeforeAfter'
+import Pointer3D from '@/components/dna/Pointer3D'
+import { SectionHead, FaqBlock, CtaBlock, StickyBar } from '@/components/dna/Blocks'
 import { services, getServiceBySlug } from '@/lib/data/services'
 import { emirates, getCityBySlug } from '@/lib/data/emirates'
 import { combosForService } from '@/lib/data/serviceAreaCombos'
-import { buildMetadata, buildLocalBusinessSchema, buildServiceSchema, buildBreadcrumbSchema, buildFAQSchema } from '@/lib/utils/seo'
+import { buildMetadata, buildServiceSchema, buildBreadcrumbSchema, buildFAQSchema, shortServiceName } from '@/lib/utils/seo'
 import { getWhatsAppLink } from '@/lib/utils/whatsapp'
 import { SITE_CONFIG } from '@/lib/data/constants'
+import { makeDna, dnaStyle } from '@/lib/design/dna'
+import { fraunces } from '@/lib/design/fonts'
+import '../../dna.css'
 
 type Props = { params: Promise<{ slug: string }> }
 
@@ -19,647 +26,269 @@ export async function generateStaticParams(): Promise<{ slug: string }[]> {
   return services.map((s) => ({ slug: s.slug }))
 }
 
-const serviceKeywords: Record<string, string[]> = {
-  'sofa-cleaning': [
-    'sofa cleaning Dubai', 'sofa cleaning Abu Dhabi', 'sofa cleaning Sharjah', 'sofa cleaning Ajman', 'sofa cleaning RAK', 'sofa cleaning Fujairah', 'sofa cleaning Umm Al Quwain',
-    'sofa cleaning services Dubai', 'best sofa cleaning Dubai', 'sofa shampooing Dubai', 'upholstery cleaning Dubai', 'leather sofa cleaning Dubai',
-    'sofa cleaning near me', 'sofa cleaning price Dubai', 'professional sofa cleaning UAE', 'sofa steam cleaning Dubai', 'couch cleaning Dubai',
-  ],
-  'carpet-cleaning': [
-    'carpet cleaning Dubai', 'carpet cleaning Abu Dhabi', 'carpet cleaning Sharjah', 'carpet cleaning Ajman', 'carpet cleaning Ras Al Khaimah', 'carpet cleaning Fujairah', 'carpet cleaning UAQ',
-    'carpet cleaning services Dubai', 'best carpet cleaning Dubai', 'carpet shampooing Dubai', 'steam carpet cleaning Dubai', 'rug cleaning Dubai',
-    'carpet cleaning near me', 'carpet cleaning price Dubai', 'professional carpet cleaners UAE', 'eco-friendly carpet cleaning Dubai',
-  ],
-  'mattress-cleaning': [
-    'mattress cleaning Dubai', 'mattress cleaning Abu Dhabi', 'mattress cleaning Sharjah', 'mattress cleaning Ajman', 'mattress cleaning RAK', 'mattress cleaning Fujairah', 'mattress cleaning UAQ',
-    'mattress deep cleaning Dubai', 'mattress sanitization Dubai', 'mattress cleaning services Dubai', 'bed cleaning Dubai',
-    'dust mite removal Dubai', 'mattress steam cleaning Dubai', 'mattress cleaning near me', 'mattress cleaning price Dubai',
-  ],
+/**
+ * Real work photos per service. Marble-gallery images are deliberately NOT used:
+ * they are another brand's ad graphics (own logo + phone number), which would
+ * put a different business's contact details on this site.
+ */
+const GALLERY: Record<string, { src: string; alt: string }[]> = {
+  'carpet-cleaning': [1, 2, 3, 4, 5, 6].map((n) => ({ src: `/images/carpet-gallery/carpet-${n}.jpeg`, alt: `Carpet cleaning job ${n} by Madinat Alhaya` })),
+  'mattress-cleaning': [1, 2, 3].map((n) => ({ src: `/images/mattress-gallery/mattress-${n}.webp`, alt: `Mattress cleaning job ${n} by Madinat Alhaya` })),
+  'villa-deep-cleaning': [1, 2].map((n) => ({ src: `/images/villa-gallery/villa-${n}.jpg`, alt: `Villa deep cleaning job ${n} by Madinat Alhaya` })),
+  'office-cleaning': [1, 2].map((n) => ({ src: `/images/office-gallery/office-${n}.jpg`, alt: `Office cleaning job ${n} by Madinat Alhaya` })),
+  'restaurant-kitchen-cleaning': [1, 2].map((n) => ({ src: `/images/kitchen-gallery/kitchen-${n}.jpg`, alt: `Kitchen deep cleaning job ${n} by Madinat Alhaya` })),
   'curtain-cleaning': [
-    'curtain cleaning Dubai', 'curtain cleaning Abu Dhabi', 'curtain cleaning Sharjah', 'curtain cleaning Ajman', 'curtain cleaning RAK', 'curtain cleaning Fujairah', 'curtain cleaning UAQ',
-    'curtain cleaning services Dubai', 'curtain steam cleaning Dubai', 'blinds cleaning Dubai', 'curtain cleaning near me', 'professional curtain cleaning UAE', 'on-site curtain cleaning Dubai',
+    { src: '/galary-images-pics/curtain/blinds-steam-cleaning-dubai-1-poster.jpg', alt: 'Blinds steam cleaning by Madinat Alhaya' },
+    { src: '/galary-images-pics/curtain/curtain-dry-steam-cleaning-dubai-2-poster.jpg', alt: 'Curtain dry steam cleaning by Madinat Alhaya' },
+    { src: '/galary-images-pics/curtain/kitchen-blinds-steam-cleaning-dubai-3-poster.jpg', alt: 'Kitchen blinds cleaning by Madinat Alhaya' },
   ],
-  'car-seat-cleaning': [
-    'car interior cleaning Dubai', 'car seat cleaning Dubai', 'car seat cleaning Abu Dhabi', 'car seat cleaning Sharjah', 'car seat cleaning Ajman',
-    'car detailing Dubai', 'car upholstery cleaning Dubai', 'car seat shampooing Dubai', 'car interior detailing UAE', 'car cleaning services Dubai', 'auto detailing Dubai',
+  'car-interior-detailing': [
+    { src: '/galary-images-pics/car/car-floor-mat-cleaning-dubai-poster.jpg', alt: 'Car floor mat cleaning by Madinat Alhaya' },
+    { src: '/galary-images-pics/car/car-interior-steam-cleaning-dubai-poster.jpg', alt: 'Car interior steam cleaning by Madinat Alhaya' },
   ],
-  'dining-chair-cleaning': [
-    'dining chair cleaning Dubai', 'dining chair cleaning Abu Dhabi', 'dining chair cleaning Sharjah', 'dining chair cleaning Ajman',
-    'chair cleaning services Dubai', 'furniture cleaning Dubai', 'dining chair steam cleaning Dubai', 'restaurant chair cleaning UAE', 'upholstery cleaning Dubai',
-  ],
-  'villa-cleaning': [
-    'villa cleaning Dubai', 'villa cleaning Abu Dhabi', 'villa cleaning Sharjah', 'villa cleaning Ajman', 'villa cleaning RAK', 'villa cleaning Fujairah', 'villa cleaning UAQ',
-    'villa deep cleaning Dubai', 'best villa cleaning Dubai', 'villa cleaning services Dubai', 'house cleaning Dubai', 'home deep cleaning Dubai',
-    'move in move out cleaning Dubai', 'villa cleaning near me', 'villa cleaning price Dubai',
-  ],
-  'apartment-cleaning': [
-    'apartment cleaning Dubai', 'apartment cleaning Abu Dhabi', 'apartment cleaning Sharjah', 'apartment cleaning Ajman', 'apartment cleaning RAK', 'apartment cleaning Fujairah',
-    'apartment deep cleaning Dubai', 'flat cleaning Dubai', 'apartment cleaning services Dubai', 'move in cleaning Dubai', 'move out cleaning Dubai',
-    'end of tenancy cleaning Dubai', 'apartment cleaning near me', 'studio cleaning Dubai',
-  ],
-  'office-cleaning': [
-    'office cleaning Dubai', 'office cleaning Abu Dhabi', 'office cleaning Sharjah', 'office cleaning Ajman', 'office cleaning RAK', 'office cleaning Fujairah', 'office cleaning UAQ',
-    'office cleaning services Dubai', 'commercial cleaning Dubai', 'workplace cleaning Dubai', 'office cleaning company Dubai',
-    'corporate office cleaning Dubai', 'janitorial services Dubai', 'office cleaning contract Dubai',
-  ],
-  'restaurant-kitchen-cleaning': [
-    'kitchen cleaning Dubai', 'kitchen cleaning Abu Dhabi', 'kitchen cleaning Sharjah', 'kitchen cleaning Ajman',
-    'restaurant kitchen cleaning Dubai', 'commercial kitchen cleaning Dubai', 'kitchen deep cleaning Dubai',
-    'hood cleaning Dubai', 'grease trap cleaning Dubai', 'kitchen cleaning services UAE', 'restaurant cleaning Dubai',
-  ],
-  'marble-polishing': [
-    'marble polishing Dubai', 'marble polishing Abu Dhabi', 'marble polishing Sharjah', 'marble polishing Ajman', 'marble polishing RAK', 'marble polishing Fujairah', 'marble polishing UAQ',
-    'marble floor polishing Dubai', 'marble crystallization Dubai', 'marble restoration Dubai', 'stone polishing Dubai',
-    'floor polishing Dubai', 'marble polishing near me', 'marble polishing price Dubai', 'terrazzo polishing Dubai',
-  ],
+}
+
+const BEFORE_AFTER: Record<string, { before: string; after: string }> = {
+  'sofa-cleaning': { before: '/images/sofa-before-after/before-4.jpeg', after: '/images/sofa-before-after/after-4.jpeg' },
+  'mattress-cleaning': { before: '/images/mattress-gallery/mattress-before.jpeg', after: '/images/mattress-gallery/mattress-after.jpeg' },
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   const service = getServiceBySlug(slug)
   if (!service) return {}
-  const seoTitle = service.heroTitle || `${service.name} Dubai | Professional ${service.name} Services UAE`
-  return {
-    ...buildMetadata({
-      title: seoTitle,
-      description: service.shortDescription,
-      path: `/services/${slug}`,
-    }),
-    keywords: serviceKeywords[slug] || [`${service.name} Dubai`, `${service.name} UAE`, `professional ${service.name} services Dubai`],
-  }
+  return buildMetadata({
+    title: service.heroTitle || `${service.name} in Dubai & UAE`,
+    description: service.shortDescription,
+    path: `/services/${slug}`,
+    imageUrl: service.images[0] ? `https://servedubai.ae${service.images[0]}` : undefined,
+  })
 }
 
-const stats = [
-  { number: '7', label: 'Emirates' },
-  { number: 'Same Day', label: 'Service' },
-  { number: 'Free', label: 'Quote' },
-  { number: 'Eco', label: 'Friendly' },
-]
-
-// Real buyer-search phrasing varies a lot by query ("villa cleaning company
-// Ajman", "best villa deep cleaning Sharjah", "villa deep cleaning near me
-// Fujairah", "villa deep cleaning cost Ajman") — repeating the exact same
-// "{service} in {city}" text on every single pill looked templated and only
-// ever matched one keyword pattern. Cycling through these templates (all
-// genuinely high-search-volume modifiers for local service queries, and the
-// kind of phrasing AI assistants echo back when asked "who does X near me")
-// gives each pill its own distinct phrasing across all 12 service pages,
-// since this template is shared by every /services/[slug] page.
-const AREA_PILL_TEMPLATES: ((service: string, city: string) => string)[] = [
-  (s, c) => `${s} in ${c}`,
-  (s, c) => `${s} Near Me ${c}`,
-  (s, c) => `${s} Company ${c}`,
-  (s, c) => `Best ${s} ${c}`,
-  (s, c) => `${s} Cost ${c}`,
-  (s, c) => `Professional ${s} ${c}`,
-  (s, c) => `${s} Services ${c}`,
-  (s, c) => `Affordable ${s} ${c}`,
-  (s, c) => `${s} Price ${c}`,
-  (s, c) => `${s} Experts ${c}`,
-]
+/** fullDescription mixes short heading lines and paragraphs — split them. */
+function parseDescription(text: string): { type: 'h' | 'p'; text: string }[] {
+  return text
+    .split('\n\n')
+    .map((t) => t.trim())
+    .filter(Boolean)
+    .map((t) => ({ type: t.length < 90 && !/[.!?:]$/.test(t) ? 'h' : 'p', text: t }))
+}
 
 export default async function ServicePage({ params }: Props) {
   const { slug } = await params
   const service = getServiceBySlug(slug)
   if (!service) notFound()
 
-  const availableEmirates = emirates.filter((e) =>
-    service.availableInEmirates.includes(e.id)
-  )
-
-  const serviceAreas = combosForService(slug)
+  const idx = services.findIndex((s) => s.slug === slug)
+  const dna = makeDna('service', idx)
+  const v = idx % 4
+  const blocks = parseDescription(service.fullDescription)
+  const titleBlock = blocks[0]?.type === 'h' ? blocks.shift() : undefined
+  const availableEmirates = emirates.filter((e) => service.availableInEmirates.includes(e.id))
+  const areaPages = combosForService(slug)
     .map(({ emirate, city }) => ({ emirate, c: getCityBySlug(emirate, city) }))
     .filter((x) => x.c) as { emirate: string; c: NonNullable<ReturnType<typeof getCityBySlug>> }[]
+  const gallery = GALLERY[slug] ?? []
+  const ba = BEFORE_AFTER[slug]
+  const heroImage = service.images[0]
+  const extraImages = gallery.length ? gallery.slice(0, 2).map((g) => g.src) : [heroImage]
+  const waLink = getWhatsAppLink(service.name)
+  const waMessage = `Hi Madinat Alhaya, I want to book ${service.name}. Please share your pricing and available slots.`
+  const shortName = shortServiceName(service.name)
 
-  const localBusinessSchema = buildLocalBusinessSchema({ service: service.name, path: `/services/${service.slug}` })
-  const serviceSchema = buildServiceSchema({
-    serviceName: service.name,
-    description: service.shortDescription,
-    url: `/services/${slug}`,
-  })
+  const serviceSchema = buildServiceSchema({ serviceName: service.name, description: service.shortDescription, url: `/services/${slug}` })
   const breadcrumbSchema = buildBreadcrumbSchema([
     { name: 'Home', url: '/' },
-    { name: 'Services', url: '/services' },
     { name: service.name, url: `/services/${slug}` },
   ])
   const faqSchema = service.faqs.length > 0 ? buildFAQSchema(service.faqs) : null
-  const paragraphs = service.fullDescription.split('\n\n').map((p) => p.trim()).filter(Boolean)
 
-  return (
-    <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      {faqSchema && (
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      )}
+  const crumb = (
+    <nav className={`dn-crumb ${dna.hero === 'fullbleed' || dna.hero === 'mapgrid' ? 'dn-crumb-light' : ''}`} aria-label="Breadcrumb">
+      <Link href="/">Home</Link><span aria-hidden="true">/</span><span>{shortName}</span>
+    </nav>
+  )
 
-      {/* FULL-WIDTH HERO */}
-      <SiteHero
-        badge={service.category}
-        title={service.heroTitle ?? service.name}
-        subtitle={service.heroSubtitle ?? service.shortDescription}
-        backgroundImage={service.images[0]}
-        backgroundAlt={service.name}
-        getFreeQuoteLabel="Get Free Quote"
-        learnMoreLabel="About Us"
-        ourWebsitesLabel="Our Websites ↗"
-        contactInfo={{ website: 'servedubai.ae', phone: SITE_CONFIG.phoneDisplay, address: `${availableEmirates.length} Emirates Covered` }}
-      />
-
-      {/* STATS BAR */}
-      <div className="svc-stats-bar sp-stats-bar">
-        <div className="sp-stats-inner">
-          {stats.map((s) => (
-            <div key={s.label} className="svc-stat-card">
-              <div className="svc-stat-number sp-stat-num">{s.number}</div>
-              <div className="sp-stat-lbl">{s.label}</div>
+  /* ---------------- sections ---------------- */
+  const aboutSec: ReactNode = (
+    <section className="dn-sec" key="about">
+      <div className="dn-wrap" style={{ maxWidth: 860 }}>
+        <Reveal>
+          <div className="dn-eyebrow">About this service</div>
+          <h2 className="dn-h dn-h2" style={{ marginBottom: '1.4rem' }}>{titleBlock?.text ?? `About ${shortName}`}</h2>
+        </Reveal>
+        {blocks.map((b, i) =>
+          b.type === 'h' ? (
+            <h3 key={i} className="dn-h dn-h3" style={{ margin: '2rem 0 .7rem' }}>{b.text}</h3>
+          ) : (
+            <p key={i} className={`dn-p ${i === 0 ? 'dn-dropcap' : ''}`}>{b.text}</p>
+          )
+        )}
+        {service.contentSections?.map((s, i) => (
+          <div key={`cs-${i}`}>
+            {s.heading && (s.headingLevel === 'h2'
+              ? <h2 className="dn-h dn-h2" style={{ margin: '2.6rem 0 1rem', fontSize: 'clamp(1.4rem, 2.6vw, 1.9rem)' }}>{s.heading}</h2>
+              : <h3 className="dn-h dn-h3" style={{ margin: '1.6rem 0 .6rem' }}>{s.heading}</h3>)}
+            {s.text && <p className="dn-p">{s.text}</p>}
+          </div>
+        ))}
+        {service.externalWebsite && (
+          <div className="dn-visit" style={{ marginTop: '2rem' }}>
+            <span aria-hidden="true">↗</span>
+            <div>
+              <strong>Specialist site</strong>
+              More on this service at{' '}
+              <a href={service.externalWebsite.url} target="_blank" rel="noopener" style={{ color: 'var(--d-a2)', fontWeight: 600 }}>{service.externalWebsite.name}</a>.
             </div>
+          </div>
+        )}
+      </div>
+    </section>
+  )
+
+  const benefitsSec: ReactNode = service.benefits.length > 0 && (
+    <section className={`dn-sec ${v % 2 === 0 ? 'dn-dark' : ''}`} key="benefits">
+      <div className="dn-wrap dn-2col" style={{ alignItems: 'start' }}>
+        <Reveal>
+          <SectionHead eyebrow="What you get" title={['Included with every booking', 'What the service covers', 'Why clients choose this', 'The essentials'][v]} />
+          {ba ? (
+            <BeforeAfter before={ba.before} after={ba.after} alt={`${service.name} result by Madinat Alhaya`} />
+          ) : (
+            <Pointer3D className="dn-frame3d">
+              <div className="dn-frame3d-inner" style={{ aspectRatio: '4/3' }}>
+                <Image src={extraImages[0]} alt={`${service.name} by Madinat Alhaya`} fill sizes="(max-width: 860px) 100vw, 520px" style={{ objectFit: 'cover' }} />
+              </div>
+            </Pointer3D>
+          )}
+        </Reveal>
+        <Reveal delay={80}>
+          <ul className="dn-check">
+            {service.benefits.map((b) => <li key={b}><span>{b}</span></li>)}
+          </ul>
+        </Reveal>
+      </div>
+    </section>
+  )
+
+  const processSec: ReactNode = service.process.length > 0 && (
+    <section className="dn-sec" key="process">
+      <div className="dn-wrap">
+        <SectionHead eyebrow="How it works" title={['Step by step', 'From booking to finish', 'Our process', 'What happens on the day'][(v + 1) % 4]} />
+        <ol className="dn-notes" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(230px, 1fr))' }}>
+          {service.process.map((p, i) => <li key={i}><b>STEP {i + 1}</b>{p}</li>)}
+        </ol>
+      </div>
+    </section>
+  )
+
+  const gallerySec: ReactNode = gallery.length > 0 && (
+    <section className="dn-sec dn-sec-tight" key="gallery">
+      <div className="dn-wrap">
+        <div className="dn-eyebrow">Our own work</div>
+        <div className="dn-bento" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))' }}>
+          {gallery.map((g) => (
+            <Pointer3D key={g.src} className="dn-bento-cell" style={{ gridColumn: 'auto', gridRow: 'auto' }}>
+              <div className="dn-bento-card" style={{ minHeight: 220 }}>
+                <Image src={g.src} alt={g.alt} fill sizes="(max-width: 760px) 100vw, 300px" />
+              </div>
+            </Pointer3D>
           ))}
         </div>
       </div>
+    </section>
+  )
 
-      {/* VIDEO SHOWCASE — right after hero */}
-      <ServiceVideoShowcase serviceSlug={slug} serviceName={service.name} />
-
-      {/* MAIN CONTENT */}
-      <div className="theme-svc-body sp-body">
-        <div className="svc-grid sp-grid">
-
-          {/* Left: description */}
+  const areasSec: ReactNode = (
+    <section className="dn-sec dn-sec-tight" key="areas">
+      <div className="dn-wrap" style={{ display: 'grid', gap: 22 }}>
+        <div>
+          <div className="dn-eyebrow">Available across {availableEmirates.length} emirates</div>
+          <div className="dn-areas">
+            {availableEmirates.map((e) => <Link key={e.slug} href={`/${e.slug}`}>{e.name}</Link>)}
+          </div>
+        </div>
+        {areaPages.length > 0 && (
           <div>
-            <div className="svc-desc-card sp-desc-mb">
-              <h2 className="svc-content-h sp-content-h2">About {service.heroTitle ?? service.name}</h2>
-              {paragraphs.map((para, i) => (
-                <p key={i} className="svc-content-p sp-content-p">{para}</p>
-              ))}
-            </div>
-
-            {/* Rich content sections */}
-            {service.contentSections && service.contentSections.length > 0 && (
-              <div className="svc-desc-card sp-desc-mb">
-                {service.contentSections.map((section, i) => (
-                  <div key={i} className="sp-section-mb" style={i === 0 ? undefined : undefined}>
-                    {section.heading && section.headingLevel === 'h2' && (
-                      <h2 className="sp-section-h2" style={i === 0 ? { marginTop: 0 } : { marginTop: '1.5rem' }}>
-                        {section.heading}
-                      </h2>
-                    )}
-                    {section.heading && section.headingLevel === 'h3' && (
-                      <h3 className="sp-section-h3">{section.heading}</h3>
-                    )}
-                    {section.text && (
-                      <p className="sp-section-p">{section.text}</p>
-                    )}
-                  </div>
-                ))}
-              </div>
-            )}
-
-            {/* Specialist site banner */}
-            {service.externalWebsite && (
-              <div className="svc-specialist-card sp-specialist">
-                <div>
-                  <div className="sp-specialist-label">Specialist Site</div>
-                  <div className="svc-content-h sp-specialist-name">{service.externalWebsite.name}</div>
-                </div>
-                <a href={service.externalWebsite.url} target="_blank" rel="noopener noreferrer" className="sp-specialist-link">
-                  Visit Site ↗
-                </a>
-              </div>
-            )}
-
-            {/* SERVICE AREAS */}
-            <div>
-              <div className="sp-sec-head">
-                <div className="sp-sec-bar" />
-                <h2 className="svc-content-h sp-sec-h2">Service Areas</h2>
-              </div>
-
-              <div className="sp-area-grid">
-                {availableEmirates.map((emirate) => (
-                  <a key={emirate.id} href={`/${emirate.slug}`} className="svc-area-card sp-area-card">
-                    <div className="sp-area-inner">
-                      <div className="svc-area-img sp-area-img">
-                        <Image src={emirate.image} alt={emirate.name} fill className="object-cover" sizes="180px" />
-                      </div>
-                      <div className="sp-area-overlay" />
-                      <div className="sp-area-bottom">
-                        <div className="sp-area-name">{emirate.name}</div>
-                        <div className="sp-area-count">{emirate.cities.length} areas →</div>
-                      </div>
-                    </div>
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Right: sticky booking sidebar */}
-          <div className="svc-sidebar">
-            {/* Same lead form as the home hero — this page had WhatsApp only */}
-            <QuoteCard
-              id={`quote-${slug}`}
-              defaultService={service.name}
-              source={`Service page — ${service.name}`}
-              heading="Get your free quote."
-              className="sp-sidebar-quote"
-            />
-
-            <div className="sp-sidebar-label">Book Now</div>
-            <h3 className="svc-content-h sp-sidebar-h3">{service.name}</h3>
-
-            <div className="svc-sidebar-divider sp-sidebar-divider">
-              {[
-                'Free instant quote',
-                'Same-day service available',
-                'All 7 UAE Emirates covered',
-                'Certified technicians',
-                'Eco-friendly products',
-              ].map((feat) => (
-                <div key={feat} className="sp-sidebar-feat">
-                  <div className="sp-sidebar-dot" />
-                  <span className="svc-feat-txt sp-sidebar-feat-txt">{feat}</span>
-                </div>
-              ))}
-            </div>
-
-            <a href={getWhatsAppLink(service.name)} target="_blank" rel="noopener noreferrer" className="svc-book-btn sp-sidebar-wa">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-                <path d="M12 0C5.373 0 0 5.373 0 12c0 2.116.553 4.103 1.523 5.83L.057 23.547a.5.5 0 00.612.611l5.718-1.466A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-5.032-1.386l-.36-.214-3.737.978.997-3.643-.235-.374A9.786 9.786 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/>
-              </svg>
-              Book via WhatsApp
-            </a>
-
-            <a href={`tel:${SITE_CONFIG.phone}`} className="sp-sidebar-call">
-              Call {SITE_CONFIG.phone}
-            </a>
-
-            {/* Before & After Gallery — sofa cleaning */}
-            {slug === 'sofa-cleaning' && (
-              <div className="ba-gallery">
-                <div className="ba-gallery-head">
-                  <div className="sp-sec-bar" />
-                  <h3 className="ba-gallery-title">Before &amp; After Results</h3>
-                </div>
-                {Array.from({ length: 7 }, (_, i) => i + 1).map((n) => (
-                  <div key={n} className="ba-pair">
-                    <div className="ba-img-wrap">
-                      <span className="ba-label ba-label-before">Before</span>
-                      <Image
-                        src={`/images/sofa-before-after/before-${n}.jpeg`}
-                        alt={`Sofa cleaning before - stained sofa cushions requiring professional deep cleaning in Dubai - Job ${n}`}
-                        width={400}
-                        height={300}
-                        className="ba-img"
-                        loading="lazy"
-                      />
-                    </div>
-                    <div className="ba-img-wrap">
-                      <span className="ba-label ba-label-after">After</span>
-                      <Image
-                        src={`/images/sofa-before-after/after-${n}.jpeg`}
-                        alt={`Sofa cleaning after - professionally cleaned sofa with stains removed by Al Haya in Dubai - Job ${n}`}
-                        width={400}
-                        height={300}
-                        className="ba-img"
-                        loading="lazy"
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
-
-            {/* Carpet cleaning gallery */}
-            {slug === 'carpet-cleaning' && (
-              <div className="ba-gallery">
-                <div className="ba-gallery-head">
-                  <div className="sp-sec-bar" />
-                  <h3 className="ba-gallery-title">Our Carpet Cleaning Work</h3>
-                </div>
-                {[
-                  { src: '/images/carpet-gallery/carpet-1.jpeg', alt: 'Carpet cleaning before and after result showing stain removal by Al Haya in Dubai' },
-                  { src: '/images/carpet-gallery/carpet-2.jpeg', alt: 'Professional carpet deep cleaning before and after comparison in Dubai home' },
-                  { src: '/images/carpet-gallery/carpet-3.jpeg', alt: 'Carpet stain removal results by Al Haya cleaning services UAE' },
-                  { src: '/images/carpet-gallery/carpet-4.jpeg', alt: 'Before and after carpet cleaning showing complete dirt removal in Dubai' },
-                  { src: '/images/carpet-gallery/carpet-5.jpeg', alt: 'Carpet cleaning before and after with professional stain treatment Dubai' },
-                  { src: '/images/carpet-gallery/carpet-6.jpeg', alt: 'Professional carpet steam cleaning in progress at Dubai residence' },
-                  { src: '/images/carpet-gallery/carpet-7.jpeg', alt: 'Professional rug cleaning with industrial equipment by Al Haya Dubai' },
-                  { src: '/images/carpet-gallery/carpet-8.jpeg', alt: 'Rug cleaning before and after results showing restored patterns Dubai' },
-                  { src: '/images/carpet-gallery/carpet-9.jpeg', alt: 'Carpet deep cleaning before and after stain extraction Dubai' },
-                  { src: '/images/carpet-gallery/carpet-10.jpeg', alt: 'Professional carpet cleaning technician using advanced extraction equipment Dubai' },
-                  { src: '/images/carpet-gallery/carpet-11.jpg', alt: 'Carpet stain remover treatment being applied to remove deep stains Dubai' },
-                  { src: '/images/carpet-gallery/carpet-13.webp', alt: 'Specialized rug care and professional cleaning services Dubai UAE' },
-                ].map((img, i) => (
-                  <div key={i} className="ba-img-wrap" style={{ marginBottom: '0.75rem' }}>
-                    <Image
-                      src={img.src}
-                      alt={img.alt}
-                      width={400}
-                      height={400}
-                      className="ba-img"
-                      loading="lazy"
-                    />
-                  </div>
-                ))}
-              </div>
-            )}
-
-            {/* Mattress cleaning gallery */}
-            {slug === 'mattress-cleaning' && (
-              <div className="ba-gallery">
-                <div className="ba-gallery-head">
-                  <div className="sp-sec-bar" />
-                  <h3 className="ba-gallery-title">Our Mattress Cleaning Work</h3>
-                </div>
-                <div className="ba-pair">
-                  <div className="ba-img-wrap">
-                    <span className="ba-label ba-label-before">Before</span>
-                    <Image
-                      src="/images/mattress-gallery/mattress-before.jpeg"
-                      alt="Mattress before deep cleaning showing stains and dust mites accumulation in Dubai home"
-                      width={400}
-                      height={300}
-                      className="ba-img"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="ba-img-wrap">
-                    <span className="ba-label ba-label-after">After</span>
-                    <Image
-                      src="/images/mattress-gallery/mattress-after.jpeg"
-                      alt="Mattress after professional deep cleaning and sanitization by Al Haya showing restored freshness in Dubai"
-                      width={400}
-                      height={300}
-                      className="ba-img"
-                      loading="lazy"
-                    />
-                  </div>
-                </div>
-                {[
-                  { src: '/images/mattress-gallery/mattress-1.webp', alt: 'Professional mattress cleaning service in Dubai with UV-C sanitization by Al Haya' },
-                  { src: '/images/mattress-gallery/mattress-2.webp', alt: 'Mattress deep cleaning and dust mite removal service across UAE by Al Haya' },
-                  { src: '/images/mattress-gallery/mattress-3.webp', alt: 'Professional mattress sanitization and stain removal in Dubai residence by Al Haya' },
-                ].map((img, i) => (
-                  <div key={i} className="ba-img-wrap" style={{ marginBottom: '0.75rem' }}>
-                    <Image
-                      src={img.src}
-                      alt={img.alt}
-                      width={400}
-                      height={400}
-                      className="ba-img"
-                      loading="lazy"
-                    />
-                  </div>
-                ))}
-              </div>
-            )}
-
-            {/* Marble polishing gallery */}
-            {slug === 'marble-polishing' && (
-              <div className="ba-gallery">
-                <div className="ba-gallery-head">
-                  <div className="sp-sec-bar" />
-                  <h3 className="ba-gallery-title">Our Marble Polishing Work</h3>
-                </div>
-                <div className="ba-pair">
-                  <div className="ba-img-wrap">
-                    <span className="ba-label ba-label-before">Before</span>
-                    <Image
-                      src="/images/marble-gallery/marble-before.png"
-                      alt="Marble floor before polishing showing dull scratched surface in Dubai property"
-                      width={400}
-                      height={300}
-                      className="ba-img"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="ba-img-wrap">
-                    <span className="ba-label ba-label-after">After</span>
-                    <Image
-                      src="/images/marble-gallery/marble-after.png"
-                      alt="Marble floor after professional polishing with mirror-like shine restored by Al Haya Dubai"
-                      width={400}
-                      height={300}
-                      className="ba-img"
-                      loading="lazy"
-                    />
-                  </div>
-                </div>
-                {[
-                  { src: '/images/marble-gallery/marble-9.jpg', alt: 'Crema Marfil marble polishing process in Dubai villa by Al Haya professionals' },
-                  { src: '/images/marble-gallery/marble-10.jpg', alt: 'Kitchen countertop marble polishing and restoration service Dubai by Al Haya' },
-                  { src: '/images/marble-gallery/marble-11.jpg', alt: 'Marble floor restoration process showing professional grinding technique Dubai' },
-                  { src: '/images/marble-gallery/marble-12.jpg', alt: 'Onyx marble polishing and finishing service in Dubai by Al Haya technicians' },
-                ].map((img, i) => (
-                  <div key={i} className="ba-img-wrap" style={{ marginBottom: '0.75rem' }}>
-                    <Image
-                      src={img.src}
-                      alt={img.alt}
-                      width={400}
-                      height={400}
-                      className="ba-img"
-                      loading="lazy"
-                    />
-                  </div>
-                ))}
-              </div>
-            )}
-
-            {/* Villa cleaning gallery */}
-            {slug === 'villa-deep-cleaning' && (
-              <div className="ba-gallery">
-                <div className="ba-gallery-head">
-                  <div className="sp-sec-bar" />
-                  <h3 className="ba-gallery-title">Our Villa Cleaning Work</h3>
-                </div>
-                {[
-                  { src: '/images/villa-gallery/villa-1.jpg', alt: 'Villa deep cleaning service in progress at Dubai residential property by Al Haya' },
-                  { src: '/images/villa-gallery/villa-2.jpg', alt: 'Professional villa deep cleaning with industrial equipment in Dubai by Al Haya team' },
-                ].map((img, i) => (
-                  <div key={i} className="ba-img-wrap" style={{ marginBottom: '0.75rem' }}>
-                    <Image
-                      src={img.src}
-                      alt={img.alt}
-                      width={400}
-                      height={400}
-                      className="ba-img"
-                      loading="lazy"
-                    />
-                  </div>
-                ))}
-              </div>
-            )}
-
-            {/* Office cleaning gallery */}
-            {slug === 'office-cleaning' && (
-              <div className="ba-gallery">
-                <div className="ba-gallery-head">
-                  <div className="sp-sec-bar" />
-                  <h3 className="ba-gallery-title">Our Office Cleaning Work</h3>
-                </div>
-                {[
-                  { src: '/images/office-gallery/office-1.jpg', alt: 'Professional office deep cleaning result in Dubai commercial space by Al Haya' },
-                  { src: '/images/office-gallery/office-2.jpg', alt: 'Office workstation and desk cleaning service in Dubai by Al Haya professionals' },
-                ].map((img, i) => (
-                  <div key={i} className="ba-img-wrap" style={{ marginBottom: '0.75rem' }}>
-                    <Image
-                      src={img.src}
-                      alt={img.alt}
-                      width={400}
-                      height={400}
-                      className="ba-img"
-                      loading="lazy"
-                    />
-                  </div>
-                ))}
-              </div>
-            )}
-
-            {/* Kitchen cleaning gallery */}
-            {slug === 'restaurant-kitchen-cleaning' && (
-              <div className="ba-gallery">
-                <div className="ba-gallery-head">
-                  <div className="sp-sec-bar" />
-                  <h3 className="ba-gallery-title">Our Kitchen Cleaning Work</h3>
-                </div>
-                {[
-                  { src: '/images/kitchen-gallery/kitchen-1.jpg', alt: 'Kitchen floor tile deep cleaning service in Dubai residence by Al Haya professionals' },
-                  { src: '/images/kitchen-gallery/kitchen-2.jpg', alt: 'Restaurant kitchen deep cleaning and sanitization service in Dubai by Al Haya' },
-                ].map((img, i) => (
-                  <div key={i} className="ba-img-wrap" style={{ marginBottom: '0.75rem' }}>
-                    <Image
-                      src={img.src}
-                      alt={img.alt}
-                      width={400}
-                      height={400}
-                      className="ba-img"
-                      loading="lazy"
-                    />
-                  </div>
-                ))}
-              </div>
-            )}
-
-            {/* Curtain cleaning gallery */}
-            {slug === 'curtain-cleaning' && (
-              <div className="ba-gallery">
-                <div className="ba-gallery-head">
-                  <div className="sp-sec-bar" />
-                  <h3 className="ba-gallery-title">Our Curtain Cleaning Work</h3>
-                </div>
-                {[
-                  { src: '/galary-images-pics/curtain/blinds-steam-cleaning-dubai-1-poster.jpg', alt: 'Blinds steam cleaning service in Dubai showing professional cleaning results by Al Haya' },
-                  { src: '/galary-images-pics/curtain/curtain-dry-steam-cleaning-dubai-2-poster.jpg', alt: 'Curtain dry steam cleaning service in progress at Dubai home by Al Haya professionals' },
-                  { src: '/galary-images-pics/curtain/kitchen-blinds-steam-cleaning-dubai-3-poster.jpg', alt: 'Kitchen blinds steam cleaning and sanitization service in Dubai by Al Haya' },
-                ].map((img, i) => (
-                  <div key={i} className="ba-img-wrap" style={{ marginBottom: '0.75rem' }}>
-                    <Image
-                      src={img.src}
-                      alt={img.alt}
-                      width={400}
-                      height={400}
-                      className="ba-img"
-                      loading="lazy"
-                    />
-                  </div>
-                ))}
-              </div>
-            )}
-
-            {/* Car interior detailing gallery */}
-            {slug === 'car-interior-detailing' && (
-              <div className="ba-gallery">
-                <div className="ba-gallery-head">
-                  <div className="sp-sec-bar" />
-                  <h3 className="ba-gallery-title">Our Car Interior Detailing Work</h3>
-                </div>
-                {[
-                  { src: '/galary-images-pics/car/car-floor-mat-cleaning-dubai-poster.jpg', alt: 'Car floor mat deep cleaning and stain removal service in Dubai by Al Haya' },
-                  { src: '/galary-images-pics/car/car-interior-steam-cleaning-dubai-poster.jpg', alt: 'Car interior steam cleaning and sanitization service in Dubai by Al Haya professionals' },
-                ].map((img, i) => (
-                  <div key={i} className="ba-img-wrap" style={{ marginBottom: '0.75rem' }}>
-                    <Image
-                      src={img.src}
-                      alt={img.alt}
-                      width={400}
-                      height={400}
-                      className="ba-img"
-                      loading="lazy"
-                    />
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-        </div>
-
-        {/* FAQ SECTION */}
-        {service.faqs && service.faqs.length > 0 && (
-          <div className="sp-faq-wrap">
-            <div className="sp-faq-head">
-              <div className="sp-sec-bar" />
-              <h2 className="sp-sec-h2-normal">Frequently Asked Questions</h2>
-            </div>
-            <div className="sp-faq-list">
-              {service.faqs.map((faq, i) => (
-                <details key={i} className="sp-faq-item">
-                  <summary className="sp-faq-summary">
-                    {faq.question}
-                    <span className="sp-faq-plus">+</span>
-                  </summary>
-                  <div className="sp-faq-answer">{faq.answer}</div>
-                </details>
+            <div className="dn-eyebrow">{shortName} by area</div>
+            <div className="dn-areas">
+              {areaPages.map(({ emirate, c }) => (
+                <Link key={`${emirate}-${c.slug}`} href={`/${emirate}/${c.slug}/${service.slug}`}>{c.name}</Link>
               ))}
             </div>
           </div>
         )}
-
-        {/* AVAILABLE IN THESE UAE AREAS */}
-        {serviceAreas.length > 0 && (
-          <div className="sp-mt-3">
-            <div className="sp-sec-head">
-              <div className="sp-sec-bar" />
-              <h2 className="svc-content-h sp-sec-h2-sm">
-                {service.name.split(/[&]/)[0].trim()} — Available in These UAE Areas
-              </h2>
-            </div>
-            <div className="sp-combo-pills">
-              {serviceAreas.map(({ emirate, c }, i) => {
-                const shortName = service.name.split(/[&]/)[0].trim()
-                const label = AREA_PILL_TEMPLATES[i % AREA_PILL_TEMPLATES.length](shortName, c.name)
-                return (
-                  <Link key={`${emirate}-${c.slug}`} href={`/${emirate}/${c.slug}/${service.slug}`} className="sp-combo-pill">
-                    <span className="sp-combo-arrow">→</span>
-                    {label}
-                  </Link>
-                )
-              })}
-            </div>
-          </div>
-        )}
-
-        {/* BOTTOM CTA BANNER */}
-        <div className="svc-cta-banner sp-cta-banner">
-          <div className="sp-cta-circle-tr" />
-          <div className="sp-cta-circle-bl" />
-          <div style={{ position: 'relative', zIndex: 1 }}>
-            <h2 className="sp-cta-h2">Ready to Book {service.name}?</h2>
-            <p className="sp-cta-sub">Same-day service across all UAE Emirates — free quote in minutes.</p>
-            <div className="sp-cta-btns">
-              <a href={getWhatsAppLink(service.name)} target="_blank" rel="noopener noreferrer" className="svc-book-btn sp-cta-wa">
-                WhatsApp Now
-              </a>
-              <a href={`tel:${SITE_CONFIG.phone}`} className="sp-cta-call">
-                Call {SITE_CONFIG.phone}
-              </a>
-            </div>
-          </div>
-        </div>
       </div>
+    </section>
+  )
 
+  const faqSec: ReactNode = service.faqs.length > 0 && (
+    <section className="dn-sec" key="faq">
+      <div className="dn-wrap">
+        <SectionHead eyebrow="FAQ" title={`${shortName}: your questions`} />
+        <FaqBlock style={dna.faq} faqs={service.faqs} />
+      </div>
+    </section>
+  )
+
+  const ctaSec: ReactNode = (
+    <section className="dn-sec" key="cta">
+      <div className="dn-wrap">
+        <CtaBlock
+          style={dna.cta}
+          title={`Book ${shortName.toLowerCase()} today`}
+          text="Send a photo and your area on WhatsApp — we reply with a clear price and the next available slot."
+          waLink={waLink}
+          waMessage={waMessage}
+          phone={SITE_CONFIG.phone}
+          phoneDisplay={SITE_CONFIG.phoneDisplay}
+          quoteId={`quote-${slug}`}
+          quoteSource={`Service page — ${service.name}`}
+          quoteHeading={`Free ${shortName.toLowerCase()} quote`}
+          defaultService={service.name}
+        />
+      </div>
+    </section>
+  )
+
+  const videoSec: ReactNode = <ServiceVideoShowcase key="video" serviceSlug={slug} serviceName={service.name} />
+
+  const ORDERS: ReactNode[][] = [
+    [benefitsSec, processSec, videoSec, aboutSec, gallerySec, faqSec, ctaSec, areasSec],
+    [benefitsSec, videoSec, aboutSec, gallerySec, processSec, ctaSec, faqSec, areasSec],
+    [processSec, benefitsSec, videoSec, aboutSec, faqSec, gallerySec, ctaSec, areasSec],
+    [benefitsSec, gallerySec, processSec, videoSec, aboutSec, faqSec, ctaSec, areasSec],
+  ]
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      {faqSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />}
+
+      <div className={`dn-page dn-f-${dna.font} ${fraunces.variable}`} style={dnaStyle(dna)} data-dna={`${dna.hero}-${dna.palette.name}-${dna.order}`}>
+        <DnaHero
+          style={dna.hero}
+          badge={`${service.category} · all 7 emirates`}
+          title={(service.heroTitle ?? service.name).split('|')[0].trim()}
+          highlight={shortName.split(' ')[0]}
+          tagline={service.heroSubtitle ?? service.shortDescription}
+          image={heroImage}
+          imageAlt={`${service.name} by Madinat Alhaya`}
+          extraImages={extraImages}
+          chips={availableEmirates.map((e) => e.name)}
+          waLink={waLink}
+          phone={SITE_CONFIG.phone}
+          phoneDisplay={SITE_CONFIG.phoneDisplay}
+          meta={[
+            { value: String(availableEmirates.length), label: 'emirates' },
+            { value: 'Free', label: 'quote from a photo' },
+          ]}
+          crumb={crumb}
+          seed={slug}
+        />
+        {ORDERS[dna.order]}
+        <StickyBar waLink={waLink} phone={SITE_CONFIG.phone} />
+      </div>
       <WhatsAppButton service={service.name} />
     </>
   )

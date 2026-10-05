@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useRequestCall } from '@/components/RequestCallModal'
 import { SITE_CONFIG } from '@/lib/data/constants'
+import { trackLead } from '@/lib/utils/track'
 
 const SERVICES = [
   'Villa Deep Cleaning',
@@ -77,6 +78,7 @@ export default function QuoteCard({
     }
     setQErr('')
     setQSent(true)
+    trackLead('quote_form', { form_source: source ?? '' })
     const svc = service || (isAr ? 'خدمات التنظيف' : 'Cleaning services')
     try {
       await fetch('/api/contact', {

@@ -5,6 +5,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { RequestCallProvider } from '@/components/RequestCallModal'
 import Fab from '@/components/Fab'
+import LeadTracker from '@/components/LeadTracker'
 import './globals.css'
 
 const josefin = Josefin_Sans({
@@ -115,6 +116,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <main className="flex-1">{children}</main>
           <Footer />
           <Fab />
+          <LeadTracker />
         </RequestCallProvider>
       </body>
     </html>

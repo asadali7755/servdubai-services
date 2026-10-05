@@ -1,5 +1,6 @@
 'use client'
 import { createContext, useContext, useState, useEffect, useRef, type ReactNode } from 'react'
+import { trackLead } from '@/lib/utils/track'
 import { SITE_CONFIG } from '@/lib/data/constants'
 import { getWhatsAppLink } from '@/lib/utils/whatsapp'
 
@@ -77,6 +78,7 @@ function RequestCallModal({ onClose, onSent }: { onClose: () => void; onSent: (m
     if (!phone.trim()) { setErr('Phone number is required'); return }
     setErr('')
     setLoading(true)
+    trackLead('callback_form', { form_service: service || '' })
     try {
       await fetch('/api/contact', {
         method: 'POST',

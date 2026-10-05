@@ -10,7 +10,9 @@ import { aiGuides } from '@/lib/data/aiGuides'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = 'https://servedubai.ae'
-  const now = new Date()
+  // Fixed date of the last real content change. A lastmod that changes on every
+  // request (new Date()) is ignored by Google; bump this when pages actually change.
+  const now = new Date('2026-10-05')
 
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: base, lastModified: now, changeFrequency: 'weekly', priority: 1.0 },
