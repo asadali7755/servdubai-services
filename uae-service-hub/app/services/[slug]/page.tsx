@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
+import StockMedia from '@/components/dna/StockMedia'
+import { getCarMedia } from '@/lib/data/carMedia'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import type { ReactNode } from 'react'
@@ -91,7 +93,8 @@ export default async function ServicePage({ params }: Props) {
   const gallery = GALLERY[slug] ?? []
   const ba = BEFORE_AFTER[slug]
   const heroImage = service.images[0]
-  const extraImages = gallery.length ? gallery.slice(0, 2).map((g) => g.src) : [heroImage]
+  const stockPhotos = getCarMedia(slug)?.photos.map((p) => p.src).filter((src) => src !== heroImage) ?? []
+  const extraImages = gallery.length ? gallery.slice(0, 2).map((g) => g.src) : stockPhotos.length ? stockPhotos.slice(0, 2) : [heroImage]
   const waLink = getWhatsAppLink(service.name)
   const waMessage = `Hi Madinat Alhaya, I want to book ${service.name}. Please share your pricing and available slots.`
   const shortName = shortServiceName(service.name)
@@ -252,11 +255,16 @@ export default async function ServicePage({ params }: Props) {
 
   const videoSec: ReactNode = <ServiceVideoShowcase key="video" serviceSlug={slug} serviceName={service.name} />
 
+  const carMedia = getCarMedia(slug)
+  const stockSec: ReactNode = carMedia && (
+    <StockMedia key="stock" media={carMedia} eyebrow="How it looks" heading={`What ${shortName.toLowerCase()} involves`} dark={dna.order % 2 === 1} />
+  )
+
   const ORDERS: ReactNode[][] = [
-    [benefitsSec, processSec, videoSec, aboutSec, gallerySec, faqSec, ctaSec, areasSec],
-    [benefitsSec, videoSec, aboutSec, gallerySec, processSec, ctaSec, faqSec, areasSec],
-    [processSec, benefitsSec, videoSec, aboutSec, faqSec, gallerySec, ctaSec, areasSec],
-    [benefitsSec, gallerySec, processSec, videoSec, aboutSec, faqSec, ctaSec, areasSec],
+    [benefitsSec, processSec, videoSec, stockSec, aboutSec, gallerySec, faqSec, ctaSec, areasSec],
+    [benefitsSec, videoSec, stockSec, aboutSec, gallerySec, processSec, ctaSec, faqSec, areasSec],
+    [processSec, benefitsSec, videoSec, stockSec, aboutSec, faqSec, gallerySec, ctaSec, areasSec],
+    [benefitsSec, gallerySec, processSec, videoSec, stockSec, aboutSec, faqSec, ctaSec, areasSec],
   ]
 
   return (

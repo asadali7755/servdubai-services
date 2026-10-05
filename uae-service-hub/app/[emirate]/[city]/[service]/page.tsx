@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
+import LazyVideo from '@/components/dna/LazyVideo'
+import { getCarMedia } from '@/lib/data/carMedia'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import type { ReactNode } from 'react'
@@ -44,6 +46,7 @@ const T = {
     () => 'Quick answers',
     (c: string) => `${c} FAQ`,
   ],
+  // only used above the sofa before/after slider
   proof: ['Real result from one of our jobs', 'Slide to compare', 'Before and after', 'Our own work, unedited'],
 }
 
@@ -60,7 +63,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const shortService = service.name.split(/[&]/)[0].trim()
   const comboIntro = getComboIntro(eSlug, cSlug, sSlug)
   return buildMetadata({
-    title: `${shortService} in ${city.name} | Madinat Alhaya`,
+    // CTR: lead with the exact query ("<service> in <area>"), add the offer when it still fits ~60 chars
+    title: `${shortService} in ${city.name}${`${shortService} in ${city.name} | Free Quote | Madinat Alhaya`.length <= 62 ? ' | Free Quote' : ''} | Madinat Alhaya`,
     description:
       comboIntro?.metaDescription ??
       `Professional ${service.name.toLowerCase()} in ${city.name}, ${emirate.name}. Free quote — call ${SITE_CONFIG.phone}.`,
@@ -86,7 +90,9 @@ export default async function ServiceAreaPage({ params }: Props) {
   const v = idx % 4
   const shortService = shortServiceName(service.name)
 
-  const gallery = getServiceGallery(service.slug)
+  const carMedia = getCarMedia(service.slug)
+  // car services only have stock (Pexels) media so far — rotate it per page, and never caption it as our own work
+  const gallery = carMedia ? carMedia.photos.map((p) => p.src) : getServiceGallery(service.slug)
   const g0 = hash(path)
   const heroImage = gallery.length > 1 ? gallery[g0 % gallery.length] : service.images[0]
   const extraImages = gallery.length > 2 ? [gallery[(g0 + 1) % gallery.length], gallery[(g0 + 2) % gallery.length]] : [service.images[0]]
@@ -162,6 +168,19 @@ export default async function ServiceAreaPage({ params }: Props) {
               after={`/images/sofa-before-after/after-${BA_PAIRS[g0 % BA_PAIRS.length]}.jpeg`}
               alt={`Sofa cleaning by Madinat Alhaya — the same process used in ${city.name}`}
             />
+          ) : carMedia?.ownPhoto ? (
+            <div className="dn-ba" style={{ aspectRatio: '4/3' }}>
+              <Image src={carMedia.ownPhoto.src} alt={`${carMedia.ownPhoto.alt} — the same service offered in ${city.name}`} fill sizes="(max-width: 860px) 100vw, 560px" style={{ objectFit: 'cover' }} />
+            </div>
+          ) : carMedia?.video ? (
+            <figure style={{ margin: 0 }}>
+              <div className="dn-ba" style={{ aspectRatio: carMedia.video.portrait ? '4/5' : '4/3', maxHeight: 560, marginInline: 'auto' }}>
+                <LazyVideo src={carMedia.video.src} poster={carMedia.video.poster} label={`${carMedia.video.title} — ${service.name}`} className="dn-ba-vid" />
+              </div>
+              <figcaption className="dn-stock-credit">
+                {carMedia.video.title}. Illustrative stock clip (<a href={carMedia.video.source} target="_blank" rel="noopener nofollow">Pexels</a>), not one of our jobs.
+              </figcaption>
+            </figure>
           ) : (
             <div className="dn-ba" style={{ aspectRatio: '4/3' }}>
               <Image src={extraImages[0] ?? heroImage} alt={`${service.name} work by Madinat Alhaya, as offered in ${city.name}`} fill sizes="(max-width: 860px) 100vw, 560px" style={{ objectFit: 'cover' }} />
@@ -169,7 +188,7 @@ export default async function ServiceAreaPage({ params }: Props) {
           )}
         </Reveal>
         <Reveal delay={80}>
-          <div className="dn-eyebrow">{T.proof[v]}</div>
+          <div className="dn-eyebrow">{service.slug === 'sofa-cleaning' ? T.proof[v] : carMedia && !carMedia.ownPhoto ? 'How it looks' : ['How we work', 'On the job', 'The process', 'What to expect'][v]}</div>
           <h2 className="dn-h dn-h2" style={{ marginBottom: '1.2rem' }}>{T.process[(v + 1) % 4]}</h2>
           <ol className="dn-tl">
             {service.process.slice(0, 5).map((step, i) => (
@@ -244,7 +263,7 @@ export default async function ServiceAreaPage({ params }: Props) {
           highlight={city.name}
           tagline={extra?.headline ?? service.shortDescription}
           image={heroImage}
-          imageAlt={`${service.name} in ${city.name}, ${emirate.name} — Madinat Alhaya`}
+          imageAlt={carMedia ? (carMedia.photos.find((p) => p.src === heroImage)?.alt ?? `${service.name} in ${city.name}`) : `${service.name} in ${city.name}, ${emirate.name} — Madinat Alhaya`}
           extraImages={extraImages}
           chips={local?.landmarks ?? [city.name]}
           waLink={waLink}

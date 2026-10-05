@@ -16,6 +16,10 @@ const SERVICES = [
   'Office Cleaning',
   'Kitchen Cleaning',
   'Apartment Cleaning',
+  'Car Wash at Home',
+  'Car Interior Cleaning',
+  'Car Polishing & Ceramic Coating',
+  'Car AC & Odor Removal',
 ]
 
 export interface QuoteCardProps {

@@ -7,9 +7,9 @@ const SPAM_QUERY_PATTERNS = [/products\//i, /\.php/i, /categoryindex/i, /ctg\//i
 
 export const metadata: Metadata = {
   ...buildMetadata({
-    title: 'Cleaning Services Dubai & UAE | Best Cleaning Company Dubai',
+    title: 'Cleaning & Car Wash at Home in Dubai & UAE',
     description:
-      'Best cleaning services Dubai, Abu Dhabi & Sharjah — villa deep cleaning, sofa cleaning, carpet cleaning, marble polishing, office cleaning & more. Professional cleaning company near me across all 7 UAE Emirates. Same-day service!',
+      'Sofa, carpet, villa and marble cleaning plus car wash, interior cleaning and polishing at your door across all 7 UAE emirates. Free WhatsApp quote.',
     path: '/',
   }),
   keywords: [

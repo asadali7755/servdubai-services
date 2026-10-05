@@ -34,6 +34,8 @@ export interface Service {
   externalWebsite?: ExternalWebsite
 }
 
+import { CAR_SERVICES } from './services.car'
+
 const ALL_EMIRATES = ['dubai', 'sharjah', 'abu-dhabi', 'ajman', 'ras-al-khaimah', 'fujairah', 'umm-al-quwain']
 
 export const services: Service[] = [
@@ -1792,6 +1794,7 @@ Floor cleaning is available across all seven Emirates. In Dubai we work regularl
     images: ['/images/services/marble-polishing.webp'],
     availableInEmirates: ALL_EMIRATES,
   },
+  ...CAR_SERVICES,
 ]
 
 export const getServiceBySlug = (slug: string): Service | undefined =>

@@ -6,6 +6,7 @@
  * lists and the area FAQs that used to be repeated across many URLs.
  */
 import { DUBAI_COMBO_EXTRAS } from './comboExtras.dubai'
+import { COMBO_EXTRAS_V2 } from './comboExtras.v2'
 
 export interface ComboExtra {
   headline: string
@@ -287,7 +288,7 @@ const OTHER: Record<string, ComboExtra> = {
   },
 }
 
-const ALL: Record<string, ComboExtra> = { ...DUBAI_COMBO_EXTRAS, ...OTHER }
+const ALL: Record<string, ComboExtra> = { ...DUBAI_COMBO_EXTRAS, ...OTHER, ...COMBO_EXTRAS_V2 }
 
 export const getComboExtra = (emirate: string, city: string, service: string): ComboExtra | undefined =>
   ALL[`${emirate}-${city}-${service}`]

@@ -42,7 +42,7 @@ const MARBLE_AREAS = ['downtown', 'jumeirah', 'palm-jumeirah', 'business-bay']
 // two areas specifically ("floor cleaning company in mirdif", "floor cleaning
 // services umm suqeim") — the site was picking up impressions for them with no
 // matching page, so both areas and the service are new here.
-const FLOOR_AREAS = ['mirdif', 'umm-suqeim', 'al-barsha', 'bur-dubai']
+const FLOOR_AREAS = ['mirdif', 'umm-suqeim', 'al-barsha', 'bur-dubai', 'palm-jumeirah']
 
 const build = (service: string, cities: string[], emirate = 'dubai'): ServiceAreaCombo[] =>
   cities.map((city) => ({ emirate, city, service }))
@@ -72,6 +72,32 @@ const OTHER_EMIRATE_COMBOS: ServiceAreaCombo[] = [
   { emirate: 'fujairah', city: 'fujairah-city', service: 'sofa-cleaning' },
   { emirate: 'fujairah', city: 'fujairah-city', service: 'carpet-cleaning' },
   { emirate: 'umm-al-quwain', city: 'uaq-city', service: 'sofa-cleaning' },
+  // Restored Oct 2026 — Search Console still showed impressions for these after pruning
+  { emirate: 'sharjah', city: 'al-qasimia', service: 'sofa-cleaning' },
+  { emirate: 'sharjah', city: 'al-qasimia', service: 'carpet-cleaning' },
+  { emirate: 'sharjah', city: 'al-majaz', service: 'carpet-cleaning' },
+  { emirate: 'abu-dhabi', city: 'abu-dhabi-city', service: 'villa-deep-cleaning' },
+  { emirate: 'abu-dhabi', city: 'baniyas', service: 'carpet-cleaning' },
+  { emirate: 'abu-dhabi', city: 'khalifa-city', service: 'carpet-cleaning' },
+  { emirate: 'abu-dhabi', city: 'mohamed-bin-zayed-city', service: 'sofa-cleaning' },
+  { emirate: 'ajman', city: 'ajman-city', service: 'villa-deep-cleaning' },
+  { emirate: 'ajman', city: 'al-rashidiya', service: 'carpet-cleaning' },
+  { emirate: 'umm-al-quwain', city: 'al-salamah', service: 'carpet-cleaning' },
+]
+
+// Car services (Oct 2026) — lower-competition sub-areas across all 7 emirates.
+const CAR_COMBOS: ServiceAreaCombo[] = [
+  ...build('car-wash-at-home', ['silicon-oasis', 'international-city', 'mirdif', 'al-barsha']),
+  ...build('car-wash-at-home', ['muwaileh', 'al-nahda'], 'sharjah'),
+  ...build('car-wash-at-home', ['al-rashidiya', 'al-jerf'], 'ajman'),
+  ...build('car-wash-at-home', ['khalifa-city', 'al-ain'], 'abu-dhabi'),
+  ...build('car-wash-at-home', ['rak-city'], 'ras-al-khaimah'),
+  ...build('car-wash-at-home', ['fujairah-city'], 'fujairah'),
+  ...build('car-wash-at-home', ['uaq-city'], 'umm-al-quwain'),
+  { emirate: 'dubai', city: 'jlt', service: 'car-interior-detailing' },
+  { emirate: 'sharjah', city: 'sharjah-city', service: 'car-interior-detailing' },
+  { emirate: 'ajman', city: 'ajman-city', service: 'car-interior-detailing' },
+  { emirate: 'abu-dhabi', city: 'abu-dhabi-city', service: 'car-interior-detailing' },
 ]
 
 export const SERVICE_AREA_COMBOS: ServiceAreaCombo[] = [
@@ -79,9 +105,10 @@ export const SERVICE_AREA_COMBOS: ServiceAreaCombo[] = [
   ...build('carpet-cleaning', UNIVERSAL_AREAS), // 8
   ...build('villa-deep-cleaning', VILLA_AREAS), // 4
   ...build('marble-polishing', MARBLE_AREAS), // 4
-  ...build('floor-cleaning', FLOOR_AREAS), // 4
-  ...OTHER_EMIRATE_COMBOS, // 20
-] // = 48 combo pages
+  ...build('floor-cleaning', FLOOR_AREAS), // 5
+  ...OTHER_EMIRATE_COMBOS, // 30
+  ...CAR_COMBOS, // 17
+] // = 76 combo pages
 
 // ---- Removed combos (kept only so their old URLs can 301 to the city page) ----
 const OLD_CORE_SERVICES = ['sofa-cleaning', 'carpet-cleaning', 'villa-deep-cleaning', 'marble-polishing']

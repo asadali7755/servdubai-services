@@ -14,7 +14,9 @@ import { getWhatsAppLink } from '@/lib/utils/whatsapp'
 import { getCityContent } from '@/lib/data/cityContent'
 import { getCityProfile } from '@/lib/data/cityProfiles'
 import { getCityCoords } from '@/lib/data/cityCoordinates'
-import { hasCombo } from '@/lib/data/serviceAreaCombos'
+import { hasCombo, combosForCity } from '@/lib/data/serviceAreaCombos'
+import { getComboExtra } from '@/lib/data/comboExtras'
+import { getCarMedia } from '@/lib/data/carMedia'
 import { getServiceHoverImage } from '@/lib/data/serviceGalleryImages'
 import { SITE_CONFIG } from '@/lib/data/constants'
 import { makeDna, dnaStyle, hash } from '@/lib/design/dna'
@@ -103,7 +105,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!emirate || !city) return {}
   const localContent = getCityContent(emirateSlug, citySlug)
   return buildMetadata({
-    title: `Cleaning Services in ${city.name}, ${emirate.name} | Madinat Alhaya`,
+    title: (() => {
+      const hasCar = combosForCity(emirateSlug, citySlug).some((x) => x.startsWith('car-'))
+      const base = `${hasCar ? 'Cleaning & Car Wash' : 'Cleaning Services'} in ${city.name}`
+      const withEmirate = `${base}, ${emirate.name}`
+      const suffix = ' | Madinat Alhaya'
+      if (`${withEmirate} | Free Quote${suffix}`.length <= 64) return `${withEmirate} | Free Quote${suffix}`
+      if (`${withEmirate}${suffix}`.length <= 64) return `${withEmirate}${suffix}`
+      return `${base}${suffix}`
+    })(),
     description:
       localContent?.localDescription.slice(0, 155) ??
       `Professional cleaning in ${city.name}, ${emirate.name}. Sofa, carpet, villa & more. Same-day service. Call ${SITE_CONFIG.phone}.`,
@@ -138,6 +148,14 @@ export default async function CityPage({ params }: Props) {
       image: getServiceHoverImage(s.slug, city.slug) ?? s.images[0],
     }
   })
+  // car combos in this area get a featured card too (the area title mentions car wash)
+  for (const carSlug of combosForCity(emirateSlug, citySlug).filter((x) => x.startsWith('car-') && !pickSlugs.includes(x))) {
+    const s = getServiceBySlug(carSlug)
+    const extra = getComboExtra(emirateSlug, citySlug, carSlug)
+    if (!s || !extra) continue
+    pickSlugs.push(carSlug)
+    pickItems.push({ name: s.name, href: serviceHref(carSlug), why: extra.headline, image: getCarMedia(carSlug)?.photos[idx % 3]?.src ?? s.images[0] })
+  }
   const otherServices = (city.availableServices
     .map((id) => getServiceBySlug(id))
     .filter(Boolean) as typeof services)

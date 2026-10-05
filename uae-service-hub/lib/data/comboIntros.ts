@@ -1,3 +1,4 @@
+import { COMBO_INTROS_V2 } from './comboIntros.v2'
 /**
  * Unique intro-paragraph copy per (emirate, city, service) combo page.
  *
@@ -927,7 +928,9 @@ const comboIntros: Record<string, ComboIntro> = {
 
 }
 
-export const getComboIntro = (emirateSlug: string, citySlug: string, serviceSlug: string): ComboIntro | undefined =>
-  comboIntros[`${emirateSlug}-${citySlug}-${serviceSlug}`]
+export const getComboIntro = (emirateSlug: string, citySlug: string, serviceSlug: string): ComboIntro | undefined => {
+  const key = `${emirateSlug}-${citySlug}-${serviceSlug}`
+  return COMBO_INTROS_V2[key] ?? comboIntros[key]
+}
 
 export default comboIntros
