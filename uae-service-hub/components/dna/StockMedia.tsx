@@ -10,6 +10,7 @@ import type { CarMedia } from '@/lib/data/carMedia'
  */
 export default function StockMedia({ media, heading, eyebrow, dark }: { media: CarMedia; heading: string; eyebrow: string; dark?: boolean }) {
   const { photos, video } = media
+  const credits = [...photos.map((p) => p.source), video?.source].filter((u): u is string => !!u)
   return (
     <section className={`dn-sec ${dark ? 'dn-dark' : ''}`}>
       <div className="dn-wrap">
@@ -34,16 +35,16 @@ export default function StockMedia({ media, heading, eyebrow, dark }: { media: C
             </Pointer3D>
           ))}
         </div>
-        <p className="dn-stock-credit">
-          Illustrative stock photos &amp; video from Pexels (
-          {[...photos.map((p) => p.source), ...(video ? [video.source] : [])].map((u, i, a) => (
+        {credits.length > 0 && <p className="dn-stock-credit">
+          Some photos{video ? ' and the video' : ''} are illustrative stock from Pexels (
+          {credits.map((u, i, a) => (
             <span key={u + i}>
               <a href={u} target="_blank" rel="noopener nofollow">{i + 1}</a>
               {i < a.length - 1 ? ', ' : ''}
             </span>
           ))}
           ) — not photos of our own jobs. Ask us on WhatsApp for real before/after photos.
-        </p>
+        </p>}
       </div>
     </section>
   )

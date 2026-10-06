@@ -7,15 +7,19 @@ import { emirates } from '@/lib/data/emirates'
 import { SERVICE_AREA_COMBOS } from '@/lib/data/serviceAreaCombos'
 import { blogPosts } from '@/lib/data/blog'
 import { aiGuides } from '@/lib/data/aiGuides'
+import { CAR_SHOWCASE } from '@/lib/data/carShowcase'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = 'https://servedubai.ae'
   // Fixed date of the last real content change. A lastmod that changes on every
   // request (new Date()) is ignored by Google; bump this when pages actually change.
-  const now = new Date('2026-10-05')
+  const now = new Date('2026-10-06')
+  // Image sitemap entries: helps Google Images index the car showcase photos
+  const carImgs = (filter?: string) =>
+    CAR_SHOWCASE.filter((i) => !filter || i.service === filter).map((i) => `${base}${i.src}`)
 
   const staticRoutes: MetadataRoute.Sitemap = [
-    { url: base, lastModified: now, changeFrequency: 'weekly', priority: 1.0 },
+    { url: base, lastModified: now, changeFrequency: 'weekly', priority: 1.0, images: carImgs() },
     { url: `${base}/about`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${base}/contact`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${base}/areas`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
@@ -43,6 +47,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: now,
     changeFrequency: 'monthly' as const,
     priority: 0.8,
+    ...(s.slug.startsWith('car-') && carImgs(s.slug).length ? { images: carImgs(s.slug) } : {}),
   }))
 
   const emirateRoutes: MetadataRoute.Sitemap = emirates.map((e) => ({

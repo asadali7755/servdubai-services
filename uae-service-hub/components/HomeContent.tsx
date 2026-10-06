@@ -11,6 +11,7 @@ import PopularAreas from '@/components/PopularAreas'
 import GoogleReviews from '@/components/GoogleReviews'
 import { useRequestCall } from '@/components/RequestCallModal'
 import EmiratesSection from '@/components/EmiratesSection'
+import CarShowcase from '@/components/car/CarShowcase'
 import { SiteHero } from '@/components/ui/site-hero'
 import { WebsitesShowcase } from '@/components/ui/websites-showcase'
 
@@ -121,6 +122,12 @@ export default function HomeContent() {
           </div>
         </div>
       </section>
+
+      {/* 2b. CAR CARE */}
+      <CarShowcase
+        heading="Car Wash at Home in Dubai & across the UAE"
+        intro="We come to your villa driveway, building parking or office with everything needed — foam wash, wheels, glass, interior vacuum, plus interior deep cleaning and AC odour removal when the car needs more. Available in all 7 emirates."
+      />
 
       {/* 3. EMIRATES */}
       <EmiratesSection emirates={emirates} />

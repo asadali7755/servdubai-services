@@ -69,7 +69,7 @@ Madinat Alhaya offers car wash at home in Dubai, Sharjah, Ajman, Abu Dhabi, Ras 
       { question: 'Do you offer a weekly car wash plan?', answer: 'Yes. You can book the same day and time every week or every two weeks.' },
       { question: 'Do I need to be there during the wash?', answer: 'Not always. If the car is accessible and you leave the key with security or a family member, we can wash it and send photos when done.' },
     ],
-    images: ['/images/car/car-wash-foam-garage.webp', '/images/car/car-wash-foam-brush.webp'],
+    images: ['/images/car-services/snow-foam-car-wash-at-home-dubai.webp', '/images/car-services/car-wheel-rim-cleaning-car-wash-at-home.webp'],
     availableInEmirates: ALL_EMIRATES,
   },
   {
@@ -129,7 +129,7 @@ The work is done where the car is parked â€” home, building parking or office â€
       { question: 'Is the treatment safe for children and pets?', answer: 'We air the car out after treatment and tell you when it is ready to use. Let us know about anyone with allergies when booking.' },
       { question: 'Do you replace the cabin air filter?', answer: 'We check it and tell you if it needs replacing. Let us know if you want us to arrange the filter.' },
     ],
-    images: ['/images/car/car-interior-steering-wipe.webp', '/images/car/car-interior-seat-wipe.webp'],
+    images: ['/images/car-services/car-ac-vent-cleaning-odor-removal.webp', '/images/car/car-interior-steering-wipe.webp'],
     availableInEmirates: ALL_EMIRATES,
   },
 ]

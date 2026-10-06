@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import StockMedia from '@/components/dna/StockMedia'
+import CarShowcase from '@/components/car/CarShowcase'
+import { showcaseFor } from '@/lib/data/carShowcase'
 import { getCarMedia } from '@/lib/data/carMedia'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
@@ -105,6 +107,23 @@ export default async function ServicePage({ params }: Props) {
     { name: service.name, url: `/services/${slug}` },
   ])
   const faqSchema = service.faqs.length > 0 ? buildFAQSchema(service.faqs) : null
+  const carImgs = slug.startsWith('car-') ? showcaseFor(slug as Parameters<typeof showcaseFor>[0]) : []
+  const imageSchema = carImgs.length
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'ImageGallery',
+        name: `${service.name} — photos`,
+        url: `https://servedubai.ae/services/${slug}`,
+        associatedMedia: carImgs.map((i) => ({
+          '@type': 'ImageObject',
+          contentUrl: `https://servedubai.ae${i.src}`,
+          name: i.title,
+          description: i.alt,
+          width: i.width,
+          height: i.height,
+        })),
+      }
+    : null
 
   const crumb = (
     <nav className={`dn-crumb ${dna.hero === 'fullbleed' || dna.hero === 'mapgrid' ? 'dn-crumb-light' : ''}`} aria-label="Breadcrumb">
@@ -256,7 +275,16 @@ export default async function ServicePage({ params }: Props) {
   const videoSec: ReactNode = <ServiceVideoShowcase key="video" serviceSlug={slug} serviceName={service.name} />
 
   const carMedia = getCarMedia(slug)
-  const stockSec: ReactNode = carMedia && (
+  const stockSec: ReactNode = slug === 'car-wash-at-home' ? (
+    <CarShowcase
+      key="stock"
+      id="doorstep-car-wash"
+      eyebrow="How a doorstep car wash looks"
+      heading="Doorstep Car Wash in Dubai, Sharjah, Abu Dhabi & all UAE"
+      intro="Foam pre-wash, hand wash with soft mitts, wheels and arches rinsed, glass inside and out, and a full interior vacuum — done where your car is parked."
+      currentService="car-wash-at-home"
+    />
+  ) : carMedia && (
     <StockMedia key="stock" media={carMedia} eyebrow="How it looks" heading={`What ${shortName.toLowerCase()} involves`} dark={dna.order % 2 === 1} />
   )
 
@@ -272,6 +300,7 @@ export default async function ServicePage({ params }: Props) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       {faqSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />}
+      {imageSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(imageSchema) }} />}
 
       <div className={`dn-page dn-f-${dna.font} ${fraunces.variable}`} style={dnaStyle(dna)} data-dna={`${dna.hero}-${dna.palette.name}-${dna.order}`}>
         <DnaHero
