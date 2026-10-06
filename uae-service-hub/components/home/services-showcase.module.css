@@ -84,10 +84,27 @@
 .divider { display: flex; align-items: center; gap: 16px; margin: clamp(28px, 3.5vw, 44px) 0 clamp(18px, 2vw, 26px); }
 .divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, transparent, rgba(212, 175, 90, .45), transparent); }
 
-/* ---------- phones & small tablets: vertical accordion ---------- */
+/* hints in the count line */
+.hintMob { display: none; }
+
+/* desktop: the pin wrapper is a plain block */
+.pin { --pin-top: 0px; position: relative; }
+
+/* ---------- phones & small tablets ---------- */
 @media (max-width: 900px) {
+  /* overflow:hidden (here and on html/body in globals.css) makes a scroll container and
+     breaks position:sticky. While the deck is on, switch those to overflow:clip — same
+     visual guard against sideways scroll, but sticky works. Scoped to this page only, and
+     the header keeps its current (non-sticky) behaviour. */
+  .wrap:has(.pinOn) { overflow: clip; }
+  :global(html):has(.pinOn), :global(html):has(.pinOn) :global(body) { overflow-x: clip; }
+  :global(html):has(.pinOn) :global(.site-header-2) { position: relative; }
+  .hintDesk { display: none; }
+  .hintMob { display: inline; }
+
+  /* fallback before hydration: simple stacked accordion */
   .row { flex-direction: column; height: auto; gap: 10px; }
-  .panel { flex: none; min-width: 0; height: 84px; border-radius: 18px; transition: height .65s cubic-bezier(.65, 0, .25, 1), box-shadow .5s ease; }
+  .panel { flex: none; min-width: 0; height: 84px; border-radius: 18px; }
   .panel.on { height: min(560px, 132vw); }
   .panel:not(.on):hover { transform: none; }
   .face { flex-direction: row; padding: 0 18px; }
@@ -95,8 +112,49 @@
   .desc { -webkit-line-clamp: 5; font-size: .88rem; }
   .title { font-size: 1.22rem; }
   .num { font-size: 2.4rem; }
+
+  /* ===== scroll-locked deck ===== */
+  .pinOn .stage {
+    position: sticky; top: var(--pin-top);
+    height: calc(100svh - var(--pin-top));
+    display: flex; flex-direction: column; gap: 12px;
+    padding: 12px 0 16px;
+  }
+  .pinOn .cards { position: relative; flex: 1; min-height: 0; border-radius: 22px; overflow: hidden; }
+  .pinOn .row { display: block; height: auto; }
+  .pinOn .divider { display: none; }
+  .pinOn .panel {
+    position: absolute; inset: 0; height: auto; border-radius: 22px; cursor: default;
+    transition: transform .8s cubic-bezier(.22, .9, .3, 1), opacity .7s ease, box-shadow .6s ease;
+    will-change: transform, opacity; backface-visibility: hidden;
+  }
+  .pinOn .face { display: none; }
+  .pinOn .deckOn { transform: none; opacity: 1; z-index: 3; }
+  .pinOn .deckPast { transform: translateY(-5%) scale(.9); opacity: 0; z-index: 1; pointer-events: none; }
+  .pinOn .deckNext { transform: translateY(104%); opacity: 1; z-index: 4; pointer-events: none; }
+  /* photo fills the top of the card, copy sits on the dark lower part — avoids
+     over-cropping / over-enlarging the landscape photos on a tall phone card */
+  .pinOn .img { height: 62% !important; bottom: auto !important; transform-origin: 50% 0;
+    transition: transform 1.6s cubic-bezier(.2, .7, .2, 1), filter .9s ease; }
+  .pinOn .panel { background: #0d0f12; }
+  .pinOn .on .veil, .pinOn .veil { background: linear-gradient(180deg, rgba(5, 6, 8, 0) 0%, rgba(5, 6, 8, .15) 30%, rgba(13, 15, 18, .85) 52%, #0d0f12 62%); }
+  .pinOn .on .body { transition-delay: .28s; transition-duration: .55s, .75s; }
+  .pinOn .body { padding: 20px 18px 22px; }
+  .pinOn .desc { -webkit-line-clamp: 6; }
+
+  /* progress bar above the cards */
+  .deckBar { display: grid; grid-template-columns: auto 1fr; grid-template-rows: auto auto; column-gap: 12px; row-gap: 8px; align-items: center; }
+  .deckCount { font: 600 .82rem/1 var(--font-josefin), sans-serif; color: var(--muted); letter-spacing: .06em; }
+  .deckCount b { font-size: 1.35rem; color: var(--gold); font-weight: 800; margin-right: 2px; }
+  .deckName { justify-self: end; font-size: .7rem; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; color: #fff; animation: nameIn .45s ease both; }
+  @keyframes nameIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+  .segs { grid-column: 1 / -1; display: flex; gap: 4px; }
+  .segs i { flex: 1; height: 4px; border-radius: 4px; background: rgba(255, 255, 255, .16); cursor: pointer; transition: background .45s ease; position: relative; }
+  .segs i::after { content: ''; position: absolute; inset: -8px 0; }
+  .segs i.segOn { background: linear-gradient(90deg, var(--gold), var(--gold-l)); }
 }
 @media (prefers-reduced-motion: reduce) {
   .aurora, .h, .label i, .cta::after { animation: none !important; }
   .panel, .img, .body { transition: none !important; }
+  .deckName { animation: none !important; }
 }
