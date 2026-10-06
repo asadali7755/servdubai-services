@@ -10,7 +10,7 @@ import { Resend } from 'resend'
  * Note: Resend's shared sender onboarding@resend.dev can only deliver to the
  * Resend account owner's own address — other recipients need a verified domain.
  */
-const TO = process.env.LEAD_ALERT_EMAIL || 'leoali851@gmail.com'
+const TO = process.env.LEAD_ALERT_EMAIL || 'marbleprodxb@gmail.com'
 const FROM = process.env.RESEND_FROM || 'ServeDubai Alerts <onboarding@resend.dev>'
 const BOT = /bot|crawl|spider|slurp|preview|lighthouse|headless|facebookexternalhit|whatsapp\//i
 const recent = new Map<string, number>() // per-instance de-dupe of rapid repeat taps
