@@ -59,7 +59,7 @@ const faqs = [
   { q: 'Is your marble polishing process dust-free?', a: 'Yes, we use a wet polishing method and advanced Italian machinery that ensures a dust-free environment. Whether you choose standard polishing or re-crystallization, your home remains clean throughout the restoration process.' },
   { q: 'How long does it take for carpets to dry after a professional clean?', a: 'Using our industrial-grade steam extraction or dry shampooing methods, most carpets are dry and ready to walk on within 3 to 6 hours, depending on the material and ventilation in the room.' },
   { q: 'Are the cleaning chemicals safe for children and pets?', a: 'Absolutely. We prioritize eco-friendly, non-toxic, and biodegradable cleaning solutions that are powerful against stains but completely safe for your family and pets.' },
-  { q: 'How much does professional sofa cleaning cost in Dubai?', a: 'Prices typically range from AED 250 for a small sofa to AED 450+ for larger sectionals, depending on the material (fabric vs. leather) and cleaning method used.' },
+  { q: 'How much does professional sofa cleaning cost in Dubai?', a: 'It depends on the sofa size, the fabric (fabric, leather or velvet) and how soiled it is. Send a photo on WhatsApp and we confirm the price before booking.' },
   { q: 'What is the difference between marble polishing and crystallization?', a: "Standard polishing removes scratches and stains to restore the stone's surface, while crystallization is a chemical process that adds a high-gloss, protective mirror finish to the marble." },
 ]
 

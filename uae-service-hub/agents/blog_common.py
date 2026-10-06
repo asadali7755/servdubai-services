@@ -59,7 +59,18 @@ STRICT RULE — this content is for Al Haya Cleaning Services' own website only:
   present every insight as Al Haya's own original expertise and experience.
 - Do not include any URLs or links to external sites.
 - Write entirely in Al Haya Cleaning Services' own voice, for its own UAE audience.
+
+NO PRICES — the client confirms every price personally on WhatsApp:
+- Never write any price, rate, fee, cost figure or currency amount (no "AED",
+  "Dhs", "dirham" or numbers attached to money), not even ranges or examples.
+- When a reader asks about cost, explain what affects the price (size, material,
+  condition, extras) and tell them to send a photo on WhatsApp for a free quote.
+- Do not invent warranties, insurance amounts, discounts, loyalty schemes or
+  case-study figures.
 """
+
+# Safety net: any money amount in a generated post means it is discarded.
+PRICE_PATTERN = re.compile(r"(?:AED|Dhs|dirhams?)\s?\d|\d[\d,.]*\s?(?:AED|dirhams?)\b", re.I)
 
 # Client feedback (2026): "deep cleaning" gets noticeably less real search
 # volume than plain "cleaning" for services like sofa/carpet/apartment/car
@@ -269,6 +280,10 @@ def save_generated_post(post: dict) -> bool:
     flat_text = json.dumps(post, ensure_ascii=False)
     if contains_banned_mention(flat_text):
         print("   ❌ Generated post contains a banned external mention, discarding.")
+        return False
+
+    if PRICE_PATTERN.search(flat_text):
+        print("   ❌ Generated post mentions a price (AED/Dhs), discarding — prices are quoted on WhatsApp only.")
         return False
 
     post["slug"] = unique_slug(slugify(post["slug"]))

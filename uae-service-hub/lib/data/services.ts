@@ -188,8 +188,8 @@ We handle all sofa types: L-shaped, sectional, 3-seater, corner sofas, fabric re
       },
       {
         headingLevel: 'h3',
-        heading: 'Current Price Guide for Fabric and Leather Sofas',
-        text: 'Sofa cleaning services Dubai starts from AED 150 for a 3-seater fabric sofa. Leather sofas, L-shaped, and sectional sofas are priced based on seating count. Our sofa cleaning services Abu Dhabi and Sharjah follow the same competitive pricing structure.',
+        heading: 'How Your Sofa Cleaning Quote Is Worked Out',
+        text: 'The quote depends on the sofa size and fabric — leather sofas, L-shaped and sectional sofas are priced based on seating count. Our sofa cleaning services Abu Dhabi and Sharjah follow the same competitive pricing structure.',
       },
       {
         headingLevel: 'h2',
@@ -267,7 +267,7 @@ We also offer sofa carpet cleaning as a combined package, saving you time and co
 
 A clean carpet is the foundation of a healthy UAE home, wherever you live between the seven Emirates. Book our carpet cleaning services today and experience the difference a professional carpet cleaner makes.`,
     benefits: [
-      'Best carpet cleaning services in Dubai from AED 75 — affordable carpet cleaning services',
+      'Best carpet cleaning services in Dubai — affordable carpet cleaning services',
       'Trusted carpet cleaner Dubai — 500+ satisfied clients',
       'Professional carpet cleaning services in Sharjah, Abu Dhabi & all UAE',
       'Sofa carpet cleaning Dubai & carpet and sofa cleaning Dubai packages',
@@ -287,7 +287,7 @@ A clean carpet is the foundation of a healthy UAE home, wherever you live betwee
     faqs: [
       {
         question: 'How much does carpet cleaning cost in Dubai?',
-        answer: 'Professional carpet cleaning in Dubai typically starts from AED 30 per square meter or flat rates beginning at AED 75 for small rugs. Prices vary based on the carpet material (silk vs. synthetic) and the level of staining. We provide free quotes for all carpet cleaning services Dubai.',
+        answer: 'Send a photo on WhatsApp and we confirm the price first. Prices vary based on the carpet material (silk vs. synthetic) and the level of staining. We provide free quotes for all carpet cleaning services Dubai.',
       },
       {
         question: 'What is the best carpet cleaning method for the UAE climate?',
@@ -366,7 +366,7 @@ A clean carpet is the foundation of a healthy UAE home, wherever you live betwee
       {
         headingLevel: 'h3',
         heading: 'What Affects Carpet Cleaning Cost',
-        text: 'Carpet cleaning cost Dubai depends on carpet size (per square meter or flat rate for standard rugs), material type (synthetic vs wool vs silk), level of soiling, and whether additional treatments like stain protector or deodorization are required. Our affordable carpet cleaning services start from AED 75 for small rugs.',
+        text: 'Carpet cleaning cost Dubai depends on carpet size (per square meter or flat rate for standard rugs), material type (synthetic vs wool vs silk), level of soiling, and whether additional treatments like stain protector or deodorization are required. Message us on WhatsApp for a free quote.',
       },
       {
         headingLevel: 'h2',
@@ -405,7 +405,7 @@ A clean carpet is the foundation of a healthy UAE home, wherever you live betwee
     heroSubtitle: 'Top-rated mattress cleaning services Dubai — eliminates dust mites, allergens & bacteria. Expert mattress cleaning services Dubai available near me across all UAE. Safe for kids & pets. Book today!',
     slug: 'mattress-cleaning',
     category: 'domestic',
-    shortDescription: 'Best mattress cleaning services across the UAE — eliminate 99.9% dust mites, bacteria & stains. Professional mattress cleaning from AED 150. Book your sanitization today!',
+    shortDescription: 'Best mattress cleaning services across the UAE — eliminate 99.9% dust mites, bacteria & stains. The price is confirmed on WhatsApp before we start. Book your sanitization today!',
     fullDescription: `The Ultimate Guide to a Healthier Sleep Across the UAE
 
 In cities as vibrant and fast-paced as Dubai and Abu Dhabi, quality sleep is your most valuable asset. However, while you might diligently wash your linens, the mattress beneath them often becomes a forgotten reservoir for allergens and debris. With the UAE's unique combination of fine desert dust, high humidity, and constant AC usage, a standard vacuum is not enough to maintain a truly hygienic sleep environment anywhere from a Sharjah apartment to a Fujairah coastal villa. Professional mattress deep cleaning is no longer a luxury — it is a health necessity. Whether you are searching for mattress cleaning Dubai, mattress cleaning Abu Dhabi, or a trusted mattress deep cleaner in Ajman, Madinat Alhaya delivers results.
@@ -432,11 +432,11 @@ Our mattress deep cleaning service follows a rigorous four-step protocol: indust
 
 Frequency and Pricing Across the UAE
 
-For optimal health, professional mattress deep cleaning every 6 months is recommended. Madinat Alhaya provides mattress deep cleaning across all 7 UAE Emirates — Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Fujairah, and Umm Al Quwain — with transparent, consistent pricing from AED 150 to AED 250 depending on size, regardless of which Emirate you call home.
+For optimal health, professional mattress deep cleaning every 6 months is recommended. Madinat Alhaya provides mattress deep cleaning across all 7 UAE Emirates — Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Fujairah, and Umm Al Quwain — with the same service and a clear quote on WhatsApp, whichever Emirate you call home.
 
 Investing in mattress deep cleaning is an investment in your long-term respiratory health and sleep quality, wherever in the UAE you live. By removing millions of microscopic irritants, you transform your bedroom back into the sanctuary it was meant to be.`,
     benefits: [
-      'Mattress deep cleaning Dubai from AED 150 — transparent pricing',
+      'Mattress deep cleaning Dubai — transparent pricing',
       'Sofa and mattress deep cleaning package — save on combined booking',
       'Industrial mattress deep cleaning machine with HEPA filtration',
       'Deep cleaning mattress vacuum removes 0.3 micron particles',
@@ -460,7 +460,7 @@ Investing in mattress deep cleaning is an investment in your long-term respirato
       },
       {
         question: 'How much do mattress cleaning services Dubai cost?',
-        answer: 'Mattress cleaning services Dubai range from AED 150 for a single bed to AED 250 for a king-size bed, depending on sanitization level and stain treatment required. Pricing is fully transparent — free quotes via WhatsApp.',
+        answer: 'It depends on the mattress size, the level of sanitisation and any stain treatment needed. Message us on WhatsApp and we confirm the price before booking.',
       },
       {
         question: 'How long does it take for a mattress to dry after steam cleaning?',
@@ -586,7 +586,7 @@ Investing in mattress deep cleaning is an investment in your long-term respirato
     name: 'Curtain Cleaning',
     slug: 'curtain-cleaning',
     category: 'domestic',
-    heroTitle: 'Professional Curtain Cleaning Services in Dubai | Starting AED 15/sqm',
+    heroTitle: 'Professional Curtain Cleaning Services in Dubai & UAE',
     heroSubtitle: 'Top-rated curtain cleaning across the UAE — on-site steam & off-site dry cleaning for all fabrics. Professional curtain cleaning near me in Dubai, Sharjah & Abu Dhabi. Book today!',
     shortDescription: 'Looking for professional curtain cleaning across the UAE? Expert on-site steam cleaning and off-site dry cleaning for all fabrics. Free pickup & delivery with 99% stain removal. Book your refresh today!',
     fullDescription: `The Ultimate Guide to a Dust-Free Home Across the UAE
@@ -613,7 +613,7 @@ Dust mites and pet dander hide in curtain folds — professional steam kills bac
 
 How Much Does Curtain Cleaning Cost?
 
-Our curtain cleaning pricing is competitive and transparent across all Emirates: AED 12 to AED 30 per square meter depending on fabric and method, or a flat rate of AED 50 to AED 100 per curtain panel. Free on-site inspection and quote available via WhatsApp.
+Message us on WhatsApp for a free quote. Free on-site inspection and quote available via WhatsApp.
 
 Madinat Alhaya is the curtain cleaning company covering curtain cleaning Dubai, curtain cleaning Abu Dhabi, curtain cleaning Sharjah, curtain cleaning Ajman, curtain cleaning Ras Al Khaimah, curtain cleaning Fujairah, and curtain cleaning Umm Al Quwain — homes, villas, hotels, and commercial premises across all 7 UAE Emirates. Book our professional curtain cleaning services today and breathe easier tomorrow.`,
     benefits: [
@@ -622,7 +622,7 @@ Madinat Alhaya is the curtain cleaning company covering curtain cleaning Dubai, 
       'Curtain dry cleaning near me for silk, velvet & delicate fabrics',
       'Home curtain cleaning services — we come to you',
       'Curtain cleaning Abu Dhabi & curtain cleaning Sharjah covered',
-      'Best curtain cleaning in Dubai from AED 50 per panel',
+      'Best curtain cleaning in Dubai',
       'Pressing and re-hanging included — trusted curtain cleaner',
       'Cleaning shower curtain liners & all bathroom drapes available',
     ],
@@ -649,7 +649,7 @@ Madinat Alhaya is the curtain cleaning company covering curtain cleaning Dubai, 
       },
       {
         question: 'How much does professional curtain cleaning cost in Dubai?',
-        answer: 'Curtain cleaning in Dubai ranges from AED 12 to AED 30 per square meter or AED 50–100 per panel. Our professional curtain cleaning services in Dubai include free pickup and delivery for off-site orders.',
+        answer: 'Pricing depends on size and condition, and is confirmed on WhatsApp. Our professional curtain cleaning services in Dubai include free pickup and delivery for off-site orders.',
       },
       {
         question: 'How long does off-site curtain cleaning take?',
@@ -665,7 +665,7 @@ Madinat Alhaya is the curtain cleaning company covering curtain cleaning Dubai, 
       },
       {
         question: 'How do you calculate the price of curtain cleaning?',
-        answer: 'Price is calculated by multiplying the height by the width of the curtain to find total square meters, then multiplying by the rate per sqm. Our curtain cleaning services Dubai starts from AED 15/sqm — free quote via WhatsApp.',
+        answer: 'Price is calculated by multiplying the height by the width of the curtain to find total square meters, then multiplying by the rate per sqm. Send the sizes on WhatsApp for a free quote.',
       },
       {
         question: 'Is it worth getting curtains professionally cleaned?',
@@ -724,13 +724,13 @@ Madinat Alhaya is the curtain cleaning company covering curtain cleaning Dubai, 
       },
       {
         headingLevel: 'h3',
-        heading: 'Competitive Rates per Square Meter',
-        text: 'Our curtain cleaning services Dubai rates start from AED 15 per square meter — among the most competitive professional curtain cleaning rates in Dubai. Standard market rates range from AED 12 to AED 30/sqm depending on fabric and method.',
+        heading: 'Quotes Based on Your Curtains',
+        text: 'Every curtain is different — fabric, size, lining and whether it is cleaned on-site or off-site all change the job. Send a photo and the window sizes on WhatsApp and we confirm the price before booking.',
       },
       {
         headingLevel: 'h3',
-        heading: 'Affordable Flat-Rate Packages for Homes and Offices',
-        text: 'For standard curtain panels, our home curtain cleaning services offer flat rates from AED 50 to AED 100 per panel. Studio apartments and small villas can access package deals — contact us for a customized quote for your property.',
+        heading: 'Packages for Homes and Offices',
+        text: 'For standard curtain panels, we can quote per panel. Studio apartments and small villas can access package deals — contact us for a customized quote for your property.',
       },
       {
         headingLevel: 'h3',
@@ -833,7 +833,7 @@ Madinat Alhaya provides car seats cleaning services across all 7 UAE Emirates �
     faqs: [
       {
         question: 'How much does car seat cleaning cost in Dubai?',
-        answer: 'Car seat cleaning Dubai starts from AED 100 for basic interiors. Comprehensive deep cleaning and sanitization packages for SUVs or luxury vehicles range between AED 250 and AED 500. Car seats cleaning Sharjah and car seats cleaning Abu Dhabi follow the same pricing. Free quotes via WhatsApp.',
+        answer: 'It depends on the car size, seat material and how soiled the interior is. Send a photo on WhatsApp and we confirm the price first. Car seats cleaning Sharjah and car seats cleaning Abu Dhabi follow the same pricing. Free quotes via WhatsApp.',
       },
       {
         question: 'Can steam cleaning remove milk and coffee stains from car seats?',
@@ -946,8 +946,8 @@ Madinat Alhaya provides car seats cleaning services across all 7 UAE Emirates �
       },
       {
         headingLevel: 'h3',
-        heading: 'Transparent Pricing & Same-Day Service',
-        text: 'Car seats cleaning services Dubai start from AED 99. Car seat cleaning near me same-day service available across most UAE areas. Free quotes via WhatsApp — transparent car seats cleaning products pricing, no hidden charges.',
+        heading: 'Clear Quotes & Same-Day Service',
+        text: 'Message us on WhatsApp for a free quote. Car seat cleaning near me same-day service available across most UAE areas. Free quotes via WhatsApp — transparent car seats cleaning products pricing, no hidden charges.',
       },
     ],
     images: ['/images/services/car-interior-detailing.webp'],
@@ -1104,7 +1104,7 @@ Investing in professional villa deep cleaning twice a year offers more than aest
 
 Madinat Alhaya provides villa deep cleaning Dubai, villa deep cleaning Abu Dhabi, villa deep cleaning Sharjah, villa deep cleaning Ajman, villa deep cleaning Ras Al Khaimah, villa deep cleaning Fujairah, and villa deep cleaning Umm Al Quwain — serving all villa types across all 7 UAE Emirates with Dubai Municipality approved protocols and eco-friendly, biodegradable products.`,
     benefits: [
-      'Best villa deep cleaning services Dubai from AED 399',
+      'Best villa deep cleaning services Dubai',
       'Villa deep cleaning Dubai, Abu Dhabi & Sharjah covered',
       'Move-in, move-out & post-construction villa deep cleaning UAE',
       'Commercial deep cleaning service in villa — offices & commercial villas',
@@ -1128,7 +1128,7 @@ Madinat Alhaya provides villa deep cleaning Dubai, villa deep cleaning Abu Dhabi
       },
       {
         question: 'How much does villa deep cleaning cost in Dubai?',
-        answer: 'Villa deep cleaning services Dubai price starts from AED 750 for a 2-bedroom villa and up to AED 1,500+ for 5-bedroom luxury villas. Villa deep cleaning Abu Dhabi and Sharjah follow the same transparent pricing structure. Free estimates via WhatsApp.',
+        answer: 'It depends on the number of bedrooms, the villa size and its condition. Send your villa details on WhatsApp for a free estimate — the same applies in Abu Dhabi, Sharjah and every other emirate.',
       },
       {
         question: 'How long does villa deep cleaning take?',

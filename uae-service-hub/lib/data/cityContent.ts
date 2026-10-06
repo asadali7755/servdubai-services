@@ -144,7 +144,7 @@ const cityLocalContent: Record<string, CityLocalContent> = {
       },
       {
         question: 'How much does villa deep cleaning cost in Jumeirah?',
-        answer: "Villa deep cleaning in Jumeirah starts from around AED 750 for a 2-bedroom property and scales up for larger 4-6 bedroom beachside villas along Jumeirah Beach Road. Message us on WhatsApp with your villa size for an exact quote.",
+        answer: "We share a clear quote on WhatsApp before booking. Message us on WhatsApp with your villa size for an exact quote.",
       },
     ],
   },
@@ -215,7 +215,7 @@ const cityLocalContent: Record<string, CityLocalContent> = {
       },
       {
         question: 'How much does villa deep cleaning cost in Al Barsha?',
-        answer: "Villa deep cleaning in Al Barsha starts from AED 750 for a 2-bedroom villa and varies based on property size and scope. We offer transparent, fixed pricing - contact us via WhatsApp for a free quote specific to your Al Barsha property.",
+        answer: "The price is confirmed on WhatsApp before we start. We offer transparent, fixed pricing - contact us via WhatsApp for a free quote specific to your Al Barsha property.",
       },
       {
         question: 'How often should sofas be cleaned in Al Barsha homes?',
@@ -240,11 +240,11 @@ const cityLocalContent: Record<string, CityLocalContent> = {
       },
       {
         question: 'Do you offer sofa cleaning in Bur Dubai at affordable prices?',
-        answer: "Yes. Sofa cleaning in Bur Dubai starts from AED 150 for a standard 3-seater. We offer some of the most competitive pricing in the area, with transparent quotes - no hidden charges. Book via WhatsApp for a free estimate.",
+        answer: "Yes. Send a photo on WhatsApp and we confirm the price first. We offer some of the most competitive pricing in the area, with transparent quotes - no hidden charges. Book via WhatsApp for a free estimate.",
       },
       {
         question: 'Do you offer carpet cleaning in Bur Dubai?',
-        answer: "Yes. Carpet cleaning in Bur Dubai starts from around AED 75 for small rugs, with larger carpets priced per square meter. We cover Karama, Mankhool, Meena Bazaar, and Al Fahidi with free WhatsApp quotes.",
+        answer: "Yes. Message us on WhatsApp for a free quote. We cover Karama, Mankhool, Meena Bazaar, and Al Fahidi with free WhatsApp quotes.",
       },
     ],
   },
@@ -346,7 +346,7 @@ const cityLocalContent: Record<string, CityLocalContent> = {
       },
       {
         question: 'Do you offer affordable sofa cleaning in International City?',
-        answer: "Yes. Sofa cleaning in International City starts from AED 120 for a standard 3-seater - among the most affordable rates in Dubai. We offer transparent pricing with no hidden charges and free quotes via WhatsApp.",
+        answer: "Yes. We share a clear quote on WhatsApp before booking. We offer transparent pricing with no hidden charges and free quotes via WhatsApp.",
       },
       {
         question: 'Can you do a full apartment deep clean for move-out in International City?',
@@ -354,7 +354,7 @@ const cityLocalContent: Record<string, CityLocalContent> = {
       },
       {
         question: 'Do you offer carpet cleaning in International City?',
-        answer: "Yes. Carpet cleaning in International City starts from around AED 75 for small rugs. We cover China Cluster, England Cluster, Spain Cluster, and every other cluster in the development with the same transparent pricing.",
+        answer: "Yes. Send a photo on WhatsApp and we confirm the price first. We cover China Cluster, England Cluster, Spain Cluster, and every other cluster in the development with the same transparent pricing.",
       },
     ],
   },
@@ -371,7 +371,7 @@ const cityLocalContent: Record<string, CityLocalContent> = {
     localFAQs: [
       {
         question: 'Do you provide sofa cleaning services in Sharjah City?',
-        answer: "Yes. Sofa cleaning in Sharjah City starts from AED 130 for a standard 3-seater. We cover all areas of central Sharjah - Al Majaz, Al Nahda, Al Qasimia, and all surrounding districts. Same-day service available.",
+        answer: "Yes. The price is confirmed on WhatsApp before we start. We cover all areas of central Sharjah - Al Majaz, Al Nahda, Al Qasimia, and all surrounding districts. Same-day service available.",
       },
       {
         question: 'Are your Sharjah cleaning prices different from Dubai?',
@@ -400,7 +400,7 @@ const cityLocalContent: Record<string, CityLocalContent> = {
       },
       {
         question: 'How much does apartment cleaning cost in Al Nahda?',
-        answer: "Full apartment deep cleaning in Al Nahda starts from AED 250 for a studio and varies by property size. Sofa cleaning starts from AED 130. Contact us via WhatsApp for a free, no-obligation quote.",
+        answer: "Pricing depends on size and condition, and is confirmed on WhatsApp. We share a clear quote on WhatsApp before booking. Contact us via WhatsApp for a free, no-obligation quote.",
       },
       {
         question: 'Do I need to be home for the appointment in Al Nahda?',
@@ -450,7 +450,7 @@ const cityLocalContent: Record<string, CityLocalContent> = {
       },
       {
         question: 'How much does sofa cleaning cost in Al Majaz?',
-        answer: "Sofa cleaning in Al Majaz starts from around AED 150 for a standard 3-seater fabric sofa, with leather and sectional sofas priced by seating count. Contact us on WhatsApp for a free quote specific to your Buhaira Corniche apartment.",
+        answer: "We share a clear quote on WhatsApp before booking. Contact us on WhatsApp for a free quote specific to your Buhaira Corniche apartment.",
       },
       {
         question: 'Do you offer villa cleaning near Buhaira Corniche?',
@@ -504,7 +504,7 @@ const cityLocalContent: Record<string, CityLocalContent> = {
       },
       {
         question: 'How much does villa deep cleaning cost in Dibba Al-Hisn?',
-        answer: "Villa deep cleaning in Dibba Al-Hisn starts from around AED 750 for a 2-bedroom property, similar to our pricing across the rest of Sharjah and Fujairah's east coast. Message us on WhatsApp for an exact quote based on villa size.",
+        answer: "Pricing depends on size and condition, and is confirmed on WhatsApp. Message us on WhatsApp for an exact quote based on villa size.",
       },
       {
         question: 'Do you offer same-day service in Dibba Al-Hisn?',
@@ -639,7 +639,7 @@ const cityLocalContent: Record<string, CityLocalContent> = {
       },
       {
         question: 'How much does sofa cleaning cost in Al Ain?',
-        answer: "Sofa cleaning in Al Ain starts from around AED 150 for a standard 3-seater fabric sofa, the same transparent pricing we offer across the UAE. Contact us via WhatsApp for a free quote.",
+        answer: "Send a photo on WhatsApp and we confirm the price first. Contact us via WhatsApp for a free quote.",
       },
       {
         question: 'Do you offer villa deep cleaning packages in Al Ain?',
@@ -664,7 +664,7 @@ const cityLocalContent: Record<string, CityLocalContent> = {
       },
       {
         question: 'How much does villa deep cleaning cost in Khalifa City?',
-        answer: "Villa deep cleaning in Khalifa City starts from around AED 750 for a 2-bedroom property and scales up for the larger 4-6 bedroom villas common in Khalifa City A and B. WhatsApp us your villa size for an exact quote.",
+        answer: "The price is confirmed on WhatsApp before we start. WhatsApp us your villa size for an exact quote.",
       },
       {
         question: 'Do you offer marble polishing for Khalifa City villas?',
@@ -748,7 +748,7 @@ const cityLocalContent: Record<string, CityLocalContent> = {
       },
       {
         question: 'How much does villa deep cleaning cost in Shakhbout City?',
-        answer: "Villa deep cleaning in Shakhbout City starts from around AED 750 for a 2-bedroom property and scales with size. Message us your villa size on WhatsApp for an exact quote.",
+        answer: "Pricing depends on size and condition, and is confirmed on WhatsApp. Message us your villa size on WhatsApp for an exact quote.",
       },
     ],
   },
@@ -803,7 +803,7 @@ const cityLocalContent: Record<string, CityLocalContent> = {
       },
       {
         question: 'How much does sofa cleaning cost in Ajman City?',
-        answer: "Sofa cleaning in Ajman City starts from around AED 120 for a standard 3-seater, among the most competitive rates we offer. Free quotes via WhatsApp for Corniche, Al Rashidiya, and Al Nuaimiya addresses.",
+        answer: "The price is confirmed on WhatsApp before we start. Free quotes via WhatsApp for Corniche, Al Rashidiya, and Al Nuaimiya addresses.",
       },
       {
         question: 'Do you offer villa deep cleaning in Ajman City?',
@@ -824,7 +824,7 @@ const cityLocalContent: Record<string, CityLocalContent> = {
     localFAQs: [
       {
         question: 'Do you clean apartments in Al Nuaimiya Ajman?',
-        answer: "Yes. We cover Al Nuaimiya 1, 2, and 3 in Ajman. Sofa cleaning starts from AED 120, carpet cleaning from AED 70. Free quotes via WhatsApp - same-day service usually available.",
+        answer: "Yes. We cover Al Nuaimiya 1, 2, and 3 in Ajman. We share a clear quote on WhatsApp before booking. Free quotes via WhatsApp - same-day service usually available.",
       },
       {
         question: 'Do I need to be home during the cleaning in Al Nuaimiya?',
@@ -853,7 +853,7 @@ const cityLocalContent: Record<string, CityLocalContent> = {
       },
       {
         question: 'How much does villa deep cleaning cost in Al Rashidiya?',
-        answer: "Villa deep cleaning in Al Rashidiya starts from around AED 750 for a 2-bedroom villa, with larger villa compounds priced after we understand the property size. Free quotes via WhatsApp.",
+        answer: "Send a photo on WhatsApp and we confirm the price first. Free quotes via WhatsApp.",
       },
       {
         question: 'Do you offer marble polishing in Al Rashidiya villas?',
@@ -903,7 +903,7 @@ const cityLocalContent: Record<string, CityLocalContent> = {
       },
       {
         question: 'How much does villa deep cleaning cost in Al Rawda?',
-        answer: "Villa deep cleaning in Al Rawda starts from around AED 750 for a 2-bedroom villa and scales up for the larger family villas common in Al Rawda 1, 2, and 3. WhatsApp us your villa size for an exact quote.",
+        answer: "We share a clear quote on WhatsApp before booking. WhatsApp us your villa size for an exact quote.",
       },
       {
         question: 'How long does a villa deep clean take for a typical Al Rawda home?',
@@ -953,7 +953,7 @@ const cityLocalContent: Record<string, CityLocalContent> = {
       },
       {
         question: 'How much does villa deep cleaning cost in Al Zahya?',
-        answer: "Villa deep cleaning in Al Zahya starts from around AED 750 for a 2-bedroom townhouse and scales up for larger gated-community villas. Contact us on WhatsApp for a quote matched to your property.",
+        answer: "We share a clear quote on WhatsApp before booking. Contact us on WhatsApp for a quote matched to your property.",
       },
       {
         question: 'Do you offer marble polishing for Al Zahya villas?',
@@ -1003,7 +1003,7 @@ const cityLocalContent: Record<string, CityLocalContent> = {
       },
       {
         question: 'How much does villa deep cleaning cost in Musherief?',
-        answer: "Villa deep cleaning in Musherief starts from around AED 750 for a 2-bedroom home and scales up based on the larger villa compounds typical of this quieter district. WhatsApp us for an exact quote.",
+        answer: "We share a clear quote on WhatsApp before booking. WhatsApp us for an exact quote.",
       },
       {
         question: 'How long does a full villa deep clean take in Musherief?',
@@ -1032,7 +1032,7 @@ const cityLocalContent: Record<string, CityLocalContent> = {
       },
       {
         question: 'How much does sofa cleaning cost in RAK City?',
-        answer: "Sofa cleaning in RAK City starts from around AED 150 for a standard 3-seater fabric sofa, the same transparent pricing as the rest of the UAE. Free quotes via WhatsApp.",
+        answer: "Pricing depends on size and condition, and is confirmed on WhatsApp. Free quotes via WhatsApp.",
       },
       {
         question: 'Do you offer villa deep cleaning in RAK City?',
@@ -1082,7 +1082,7 @@ const cityLocalContent: Record<string, CityLocalContent> = {
       },
       {
         question: 'How much does carpet cleaning cost in Al Nakheel?',
-        answer: "Carpet cleaning in Al Nakheel starts from around AED 75 for small rugs, with larger carpets priced per square meter. Contact us via WhatsApp for a free quote.",
+        answer: "Pricing depends on size and condition, and is confirmed on WhatsApp. Contact us via WhatsApp for a free quote.",
       },
       {
         question: 'Do you offer same-day service in Al Nakheel?',
@@ -1107,7 +1107,7 @@ const cityLocalContent: Record<string, CityLocalContent> = {
       },
       {
         question: 'How much does sofa cleaning cost in Al Dhait?',
-        answer: "A standard 3-seater fabric sofa in Al Dhait starts from around AED 150, the same rate as the rest of RAK. Larger L-shaped or leather sofas are quoted after a quick WhatsApp photo.",
+        answer: "We share a clear quote on WhatsApp before booking. Larger L-shaped or leather sofas are quoted after a quick WhatsApp photo.",
       },
       {
         question: 'Is same-day service available in Al Dhait?',
@@ -1149,7 +1149,7 @@ const cityLocalContent: Record<string, CityLocalContent> = {
       },
       {
         question: 'How much does villa deep cleaning cost in Al Rams?',
-        answer: "Villa deep cleaning in Al Rams starts from around AED 750 for a 2-bedroom home, scaling up for the larger traditional family villas common in this area.",
+        answer: "Pricing depends on size and condition, and is confirmed on WhatsApp.",
       },
     ],
   },
@@ -1183,7 +1183,7 @@ const cityLocalContent: Record<string, CityLocalContent> = {
       },
       {
         question: 'How much does villa deep cleaning cost in Khatt?',
-        answer: "Villa deep cleaning in Khatt starts from around AED 750 for a 2-bedroom home and scales up for the larger mountain-view villas typical of this area.",
+        answer: "We share a clear quote on WhatsApp before booking.",
       },
     ],
   },
@@ -1204,7 +1204,7 @@ const cityLocalContent: Record<string, CityLocalContent> = {
       },
       {
         question: 'How much does villa deep cleaning cost in Fujairah City?',
-        answer: "Villa deep cleaning in Fujairah City starts from around AED 750 for a 2-bedroom property and scales up based on villa size. Contact us via WhatsApp for a free quote.",
+        answer: "The price is confirmed on WhatsApp before we start. Contact us via WhatsApp for a free quote.",
       },
       {
         question: 'Do you offer marble polishing in Fujairah City?',
@@ -1233,7 +1233,7 @@ const cityLocalContent: Record<string, CityLocalContent> = {
       },
       {
         question: 'How much does sofa cleaning cost in Dibba Al-Fujairah?',
-        answer: "Sofa cleaning in Dibba Al-Fujairah starts from around AED 150 for a standard 3-seater, the same transparent pricing we offer across the UAE. Free quotes via WhatsApp.",
+        answer: "Pricing depends on size and condition, and is confirmed on WhatsApp. Free quotes via WhatsApp.",
       },
       {
         question: 'Do you offer same-day service in Dibba Al-Fujairah?',
@@ -1254,7 +1254,7 @@ const cityLocalContent: Record<string, CityLocalContent> = {
       },
       {
         question: 'How much does carpet cleaning cost in Kalba?',
-        answer: "Carpet cleaning in Kalba starts from around AED 75 for small rugs, with larger carpets priced per square meter. Contact us via WhatsApp for a free quote.",
+        answer: "Send a photo on WhatsApp and we confirm the price first. Contact us via WhatsApp for a free quote.",
       },
       {
         question: 'Do you use eco-friendly products safe for kids and pets in Kalba?',
@@ -1296,7 +1296,7 @@ const cityLocalContent: Record<string, CityLocalContent> = {
       },
       {
         question: 'How much does sofa cleaning cost in Al Sharyah?',
-        answer: "Sofa cleaning in Al Sharyah starts from around AED 150 for a standard 3-seater, the same transparent pricing across Fujairah City.",
+        answer: "We share a clear quote on WhatsApp before booking.",
       },
     ],
   },
@@ -1313,7 +1313,7 @@ const cityLocalContent: Record<string, CityLocalContent> = {
       },
       {
         question: 'How much does villa deep cleaning cost in Madab?',
-        answer: "Villa deep cleaning in Madab starts from around AED 750 for a 2-bedroom home and scales up for larger family villas, confirmed with a free quote before we start.",
+        answer: "Message us on WhatsApp for a free quote.",
       },
     ],
   },
@@ -1368,7 +1368,7 @@ const cityLocalContent: Record<string, CityLocalContent> = {
       },
       {
         question: 'How much does sofa cleaning cost in UAQ City?',
-        answer: "Sofa cleaning in UAQ City starts from around AED 130 for a standard 3-seater, competitively priced for this quieter emirate. Free quotes via WhatsApp.",
+        answer: "Pricing depends on size and condition, and is confirmed on WhatsApp. Free quotes via WhatsApp.",
       },
       {
         question: 'Do you offer villa deep cleaning in Umm Al Quwain?',
@@ -1393,7 +1393,7 @@ const cityLocalContent: Record<string, CityLocalContent> = {
       },
       {
         question: 'How much does villa deep cleaning cost in Falaj Al Mualla?',
-        answer: "Villa deep cleaning in Falaj Al Mualla starts from around AED 750 for a 2-bedroom property and scales up for larger homes. Contact us via WhatsApp for an exact quote.",
+        answer: "Message us on WhatsApp for a free quote. Contact us via WhatsApp for an exact quote.",
       },
       {
         question: 'Do you offer marble polishing in Falaj Al Mualla?',
@@ -1418,7 +1418,7 @@ const cityLocalContent: Record<string, CityLocalContent> = {
       },
       {
         question: 'How much does villa deep cleaning cost in Al Salamah?',
-        answer: "Villa deep cleaning in Al Salamah starts from around AED 750 for a 2-bedroom home, scaling up for larger new-build villas.",
+        answer: "Pricing depends on size and condition, and is confirmed on WhatsApp.",
       },
     ],
   },
@@ -1435,7 +1435,7 @@ const cityLocalContent: Record<string, CityLocalContent> = {
       },
       {
         question: 'How much does sofa cleaning cost in Al Ramlah?',
-        answer: "Sofa cleaning in Al Ramlah starts from around AED 130 for a standard 3-seater, in line with our UAQ-wide pricing.",
+        answer: "Pricing depends on size and condition, and is confirmed on WhatsApp.",
       },
     ],
   },

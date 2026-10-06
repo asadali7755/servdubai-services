@@ -75,17 +75,6 @@ const handWrittenBlogPosts: BlogPost[] = [
         ],
       },
     ],
-    costTable: {
-      title: 'Approximate sofa cleaning prices in Dubai (2026)',
-      rows: [
-        { label: '1-seater / armchair', price: 'AED 60 – 100' },
-        { label: '3-seater sofa (fabric)', price: 'AED 250 – 350' },
-        { label: 'L-shaped / corner sofa', price: 'AED 350 – 500' },
-        { label: 'Leather sofa (per seat)', price: 'AED 90 – 150' },
-        { label: 'Sofa + carpet bundle', price: 'Discounted package — ask on WhatsApp' },
-      ],
-      note: 'Prices are indicative for 2026 and vary with size, material and condition. Get an exact free quote on WhatsApp.',
-    },
     faqs: [
       {
         question: 'Is professional sofa cleaning worth it in Dubai?',
@@ -145,16 +134,6 @@ const handWrittenBlogPosts: BlogPost[] = [
         ],
       },
     ],
-    costTable: {
-      title: 'Approximate villa deep cleaning prices in Dubai (2026)',
-      rows: [
-        { label: '2-bedroom villa / townhouse', price: 'AED 600 – 900' },
-        { label: '3–4 bedroom villa', price: 'AED 900 – 1,500' },
-        { label: '5+ bedroom villa', price: 'AED 1,500 – 2,500+' },
-        { label: 'Post-renovation deep clean', price: 'Custom — request a survey' },
-      ],
-      note: 'Indicative 2026 ranges. Final price depends on size, condition and add-ons. Free quote on WhatsApp.',
-    },
     faqs: [
       {
         question: 'How long does villa deep cleaning take?',
@@ -331,16 +310,6 @@ const handWrittenBlogPosts: BlogPost[] = [
         ],
       },
     ],
-    costTable: {
-      title: 'Approximate carpet & rug cleaning prices in Dubai (2026)',
-      rows: [
-        { label: 'Small rug (up to 5 m²)', price: 'AED 80 – 150' },
-        { label: 'Medium carpet (per m²)', price: 'AED 8 – 15 / m²' },
-        { label: 'Wool / Persian rug (per m²)', price: 'AED 20 – 35 / m²' },
-        { label: 'Carpet + sofa bundle', price: 'Discounted — ask on WhatsApp' },
-      ],
-      note: 'Indicative 2026 ranges; final price depends on size, fibre and condition. Free quote on WhatsApp.',
-    },
     faqs: [
       {
         question: 'How long does carpet take to dry after cleaning?',
@@ -394,16 +363,6 @@ const handWrittenBlogPosts: BlogPost[] = [
         ],
       },
     ],
-    costTable: {
-      title: 'Approximate marble polishing prices in Dubai (2026)',
-      rows: [
-        { label: 'Standard polishing (per m²)', price: 'AED 12 – 25 / m²' },
-        { label: 'Re-crystallization (per m²)', price: 'AED 20 – 40 / m²' },
-        { label: 'Stain / etch mark removal', price: 'Custom — request a survey' },
-        { label: 'Full villa floor restoration', price: 'Custom package' },
-      ],
-      note: 'Indicative 2026 ranges; price depends on area, stone condition and finish. Free site survey available.',
-    },
     faqs: [
       {
         question: 'Can dull, scratched marble really be restored?',
