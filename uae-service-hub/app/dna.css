@@ -439,3 +439,23 @@
   .dn-stock-wide { grid-column: span 2; }
 }
 .dn-ba-vid { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+/* ---------- phone hero photo (car pages) ---------- */
+.dn-hero-mimg { display: none; }
+@media (max-width: 760px) {
+  .dn-has-mimg .dn-hero-mimg {
+    display: block; position: relative; width: 100%; aspect-ratio: 3 / 2; margin: 14px 0 6px; border-radius: 20px; overflow: hidden;
+    box-shadow: 0 22px 44px -22px rgba(0, 0, 0, .55); border: 3px solid rgba(255, 255, 255, .85);
+    animation: dnMimgIn .7s cubic-bezier(.2, .7, .2, 1) both;
+  }
+  .dn-has-mimg .dn-hero-mimg img { object-fit: cover; animation: dnMimgZoom 9s ease-out both; }
+  /* desktop-only visuals step aside on phones so the real photo is what people see */
+  .dn-has-mimg .dn-map, .dn-has-mimg .dn-orbit, .dn-has-mimg .dn-polaroids,
+  .dn-has-mimg .dn-frame3d, .dn-has-mimg .dn-stack { display: none; }
+  .dn-has-mimg.dn-h-fullbleed { min-height: 0; }
+  .dn-has-mimg.dn-h-fullbleed > .dn-wrap { width: 100%; box-sizing: border-box; }
+  .dn-has-mimg.dn-h-fullbleed .dn-hero-body { padding-top: 18px; }
+}
+@keyframes dnMimgIn { from { opacity: 0; transform: translateY(12px) scale(.98); } to { opacity: 1; transform: none; } }
+@keyframes dnMimgZoom { from { transform: scale(1.12); } to { transform: scale(1); } }
+@media (prefers-reduced-motion: reduce) { .dn-hero-mimg, .dn-hero-mimg img { animation: none !important; } }

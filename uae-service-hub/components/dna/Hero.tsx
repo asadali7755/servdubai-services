@@ -24,6 +24,9 @@ export interface HeroProps {
   coords?: { lat: number; lng: number }
   crumb?: ReactNode
   seed: string
+  /** Shown only on phones: a full, uncropped photo card at the top of the hero
+   *  (desktop visuals like maps / orbits / dark full-bleed photos hide it there). */
+  mobileImage?: { src: string; alt: string }
 }
 
 function TitleText({ title, highlight, mode }: { title: string; highlight?: string; mode: 'grad' | 'ul' | 'plain' }) {
@@ -63,16 +66,27 @@ function Meta({ meta }: { meta?: HeroProps['meta'] }) {
   )
 }
 
+function MobileImage({ img }: { img?: HeroProps['mobileImage'] }) {
+  if (!img) return null
+  return (
+    <div className="dn-hero-mimg">
+      <Image src={img.src} alt={img.alt} fill sizes="(max-width: 760px) 92vw, 1px" loading="eager" fetchPriority="high" />
+    </div>
+  )
+}
+
 export default function DnaHero(p: HeroProps) {
   const chips = p.chips.slice(0, 6)
+  const mimg = <MobileImage img={p.mobileImage} />
+  const mcls = p.mobileImage ? ' dn-has-mimg' : ''
   const imgs = [p.image, ...(p.extraImages ?? [])]
 
   switch (p.style) {
     case 'fullbleed':
       return (
-        <Pointer3D as="header" className="dn-hero dn-h-fullbleed">
+        <Pointer3D as="header" className={`dn-hero dn-h-fullbleed${mcls}`}>
           <div className="dn-bg"><Image src={p.image} alt={p.imageAlt} fill priority sizes="100vw" /></div>
-          <div className="dn-wrap">{p.crumb}</div>
+          <div className="dn-wrap">{p.crumb}{mimg}</div>
           <div className="dn-wrap dn-hero-body">
             <span className="dn-hero-badge"><i />{p.badge}</span>
             <h1 className="dn-h dn-hero-h1" style={{ maxWidth: '16ch' }}>{p.title}</h1>
@@ -85,8 +99,8 @@ export default function DnaHero(p: HeroProps) {
 
     case 'typo':
       return (
-        <Pointer3D as="header" className="dn-hero dn-h-typo">
-          <div className="dn-wrap">{p.crumb}</div>
+        <Pointer3D as="header" className={`dn-hero dn-h-typo${mcls}`}>
+          <div className="dn-wrap">{p.crumb}{mimg}</div>
           <div className="dn-wrap dn-hero-grid" style={{ marginTop: 24 }}>
             <div>
               <span className="dn-hero-badge"><i />{p.badge}</span>
@@ -109,8 +123,8 @@ export default function DnaHero(p: HeroProps) {
 
     case 'stack':
       return (
-        <Pointer3D as="header" className="dn-hero dn-h-stack">
-          <div className="dn-wrap" style={{ textAlign: 'left' }}>{p.crumb}</div>
+        <Pointer3D as="header" className={`dn-hero dn-h-stack${mcls}`}>
+          <div className="dn-wrap" style={{ textAlign: 'left' }}>{p.crumb}{mimg}</div>
           <div className="dn-wrap" style={{ marginTop: 20 }}>
             <span className="dn-hero-badge"><i />{p.badge}</span>
             <h1 className="dn-h dn-hero-h1" style={{ maxWidth: '20ch', marginInline: 'auto' }}><TitleText title={p.title} highlight={p.highlight} mode="ul" /></h1>
@@ -130,8 +144,8 @@ export default function DnaHero(p: HeroProps) {
     case 'orbit': {
       const n = Math.min(chips.length, 6)
       return (
-        <Pointer3D as="header" className="dn-hero dn-h-orbit">
-          <div className="dn-wrap">{p.crumb}</div>
+        <Pointer3D as="header" className={`dn-hero dn-h-orbit${mcls}`}>
+          <div className="dn-wrap">{p.crumb}{mimg}</div>
           <div className="dn-wrap dn-hero-grid" style={{ marginTop: 20 }}>
             <div>
               <span className="dn-hero-badge"><i />{p.badge}</span>
@@ -158,8 +172,8 @@ export default function DnaHero(p: HeroProps) {
     case 'mapgrid': {
       const h = hash(p.seed)
       return (
-        <Pointer3D as="header" className="dn-hero dn-h-mapgrid">
-          <div className="dn-wrap">{p.crumb}</div>
+        <Pointer3D as="header" className={`dn-hero dn-h-mapgrid${mcls}`}>
+          <div className="dn-wrap">{p.crumb}{mimg}</div>
           <div className="dn-wrap dn-hero-grid" style={{ marginTop: 20 }}>
             <div>
               <span className="dn-hero-badge"><i />{p.badge}</span>
@@ -194,8 +208,8 @@ export default function DnaHero(p: HeroProps) {
     case 'split3d':
     default:
       return (
-        <Pointer3D as="header" className="dn-hero dn-h-split3d">
-          <div className="dn-wrap">{p.crumb}</div>
+        <Pointer3D as="header" className={`dn-hero dn-h-split3d${mcls}`}>
+          <div className="dn-wrap">{p.crumb}{mimg}</div>
           <div className="dn-wrap dn-hero-grid" style={{ marginTop: 20 }}>
             <div>
               <span className="dn-hero-badge"><i />{p.badge}</span>

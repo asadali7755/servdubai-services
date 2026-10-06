@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import StockMedia from '@/components/dna/StockMedia'
 import CarShowcase from '@/components/car/CarShowcase'
-import { showcaseFor } from '@/lib/data/carShowcase'
+import { showcaseFor, CAR_SHOWCASE } from '@/lib/data/carShowcase'
 import { getCarMedia } from '@/lib/data/carMedia'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
@@ -95,6 +95,8 @@ export default async function ServicePage({ params }: Props) {
   const gallery = GALLERY[slug] ?? []
   const ba = BEFORE_AFTER[slug]
   const heroImage = service.images[0]
+  // car heroes use illustrative photos — describe the photo, don't claim it as our job
+  const heroAlt = (slug.startsWith('car-') && (CAR_SHOWCASE.find((i) => i.src === heroImage)?.alt ?? getCarMedia(slug)?.photos.find((ph) => ph.src === heroImage)?.alt)) || `${service.name} by Madinat Alhaya`
   const stockPhotos = getCarMedia(slug)?.photos.map((p) => p.src).filter((src) => src !== heroImage) ?? []
   const extraImages = gallery.length ? gallery.slice(0, 2).map((g) => g.src) : stockPhotos.length ? stockPhotos.slice(0, 2) : [heroImage]
   const waLink = getWhatsAppLink(service.name)
@@ -310,8 +312,9 @@ export default async function ServicePage({ params }: Props) {
           highlight={shortName.split(' ')[0]}
           tagline={service.heroSubtitle ?? service.shortDescription}
           image={heroImage}
-          imageAlt={`${service.name} by Madinat Alhaya`}
+          imageAlt={heroAlt}
           extraImages={extraImages}
+          mobileImage={slug.startsWith('car-') ? { src: heroImage, alt: heroAlt } : undefined}
           chips={availableEmirates.map((e) => e.name)}
           waLink={waLink}
           phone={SITE_CONFIG.phone}

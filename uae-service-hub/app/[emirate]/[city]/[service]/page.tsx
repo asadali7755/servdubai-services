@@ -265,6 +265,7 @@ export default async function ServiceAreaPage({ params }: Props) {
           image={heroImage}
           imageAlt={carMedia ? (carMedia.photos.find((p) => p.src === heroImage)?.alt ?? `${service.name} in ${city.name}`) : `${service.name} in ${city.name}, ${emirate.name} — Madinat Alhaya`}
           extraImages={extraImages}
+          mobileImage={carMedia ? { src: heroImage, alt: carMedia.photos.find((ph) => ph.src === heroImage)?.alt ?? `${service.name} in ${city.name}` } : undefined}
           chips={local?.landmarks ?? [city.name]}
           waLink={waLink}
           phone={SITE_CONFIG.phone}
