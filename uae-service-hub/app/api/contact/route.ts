@@ -1,41 +1,31 @@
 import { NextResponse } from 'next/server'
 import { Resend } from 'resend'
-import { createClient } from '@supabase/supabase-js'
 
-// Clients are created per request (not at import time) so `next build` does not
-// crash in environments where these env vars are missing (e.g. Vercel Preview).
+// Leads are delivered by email only (the old Supabase database was removed Oct 2026).
+// The client is created per request so `next build` works without env vars (e.g. Vercel Preview).
+const esc = (v: unknown) =>
+  String(v ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]!))
+
 export async function POST(req: Request) {
-  const supabase = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL ?? '',
-    process.env.SUPABASE_SERVICE_ROLE_KEY ?? ''
-  )
   const resend = new Resend(process.env.RESEND_API_KEY ?? '')
   try {
     const body = await req.json()
-    const { name, phone, service, message } = body
-
-    if (!name || !phone || !service || !message) {
-      return NextResponse.json(
-        { error: 'All fields are required' },
-        { status: 400 }
-      )
+    const raw = body as Record<string, unknown>
+    if (!raw.name || !raw.phone || !raw.service || !raw.message) {
+      return NextResponse.json({ error: 'All fields are required' }, { status: 400 })
     }
+    // escape everything that goes into the email HTML
+    const name = esc(raw.name).slice(0, 200)
+    const phone = esc(raw.phone).slice(0, 40)
+    const service = esc(raw.service).slice(0, 120)
+    const message = esc(raw.message).slice(0, 2000)
 
     const timestamp = new Date().toLocaleString('en-AE', { timeZone: 'Asia/Dubai' })
-
-    // Save to Supabase
-    const { error: dbError } = await supabase
-      .from('contacts')
-      .insert([{ name, phone, service, message }])
-
-    if (dbError) {
-      console.error('Supabase insert error:', dbError)
-    }
 
     // Send email via Resend
     try {
       // resend.emails.send() reports failures in `error` instead of throwing — log them
-      const { error: sendError } = await resend.emails.send({
+      const { data: sent, error: sendError } = await resend.emails.send({
         from: 'ServeDubai Website <onboarding@resend.dev>',
         to: 'marbleprodxb@gmail.com',
         subject: `New Lead — ${service} | ServeDubai.ae`,
@@ -85,6 +75,7 @@ export async function POST(req: Request) {
         `,
       })
       if (sendError) console.error('Resend email error:', sendError)
+      else console.log('Lead email sent:', sent?.id, '|', service)
     } catch (emailErr) {
       console.error('Resend email error:', emailErr)
     }
