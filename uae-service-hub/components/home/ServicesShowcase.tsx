@@ -1,6 +1,6 @@
 'use client'
 
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, type ReactNode } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import s from './services-showcase.module.css'
@@ -32,168 +32,145 @@ interface Props {
   viewArrow: string
 }
 
-const AUTOPLAY_MS = 6500
-const EXTRA_ICONS = ['🪟', '🪑', '🚗', '🏢', '🍳']
+interface Panel {
+  key: string
+  badge: string
+  title: string
+  /** main services keep their h2 + h3; the extra five keep their h3 (unchanged SEO structure) */
+  titleTag: 'h2' | 'h3'
+  sub?: string
+  desc: string
+  kws: string[]
+  slug: string
+  img: string
+  alt: string
+}
+
+const EXTRA_META: Record<string, { badge: string; img: string; alt: string }> = {
+  'curtain-cleaning': { badge: 'CURTAIN', img: '/images/services/curtain-cleaning.webp', alt: 'Curtain and blinds cleaning in Dubai' },
+  'dining-chair-cleaning': { badge: 'CHAIRS', img: '/images/services/dining-chair-cleaning.webp', alt: 'Dining chair and upholstery cleaning in Dubai' },
+  'car-interior-detailing': { badge: 'CAR', img: '/images/services/car-interior-detailing.webp', alt: 'Car interior detailing and AC vent cleaning in Dubai' },
+  'apartment-cleaning': { badge: 'APARTMENT', img: '/images/services/apartment-cleaning.webp', alt: 'Apartment deep cleaning team in a Dubai apartment' },
+  'restaurant-kitchen-cleaning': { badge: 'KITCHEN', img: '/images/services/restaurant-kitchen-cleaning.webp', alt: 'Restaurant kitchen cleaning in Dubai' },
+}
+
+const AUTOPLAY_MS = 5200
+
+function Heading({ tag, className, children }: { tag: 'h2' | 'h3'; className: string; children: ReactNode }) {
+  return tag === 'h2' ? <h2 className={className}>{children}</h2> : <h3 className={className}>{children}</h3>
+}
+
+/** One row of expanding panels. Hover / tap / keyboard opens a panel; idle rows auto-advance. */
+function PanelRow({ panels, offset, viewService, delay }: { panels: Panel[]; offset: number; viewService: string; delay: number }) {
+  const [open, setOpen] = useState(0)
+  const [hold, setHold] = useState(false)
+  const [tick, setTick] = useState(0)
+  const ref = useRef<HTMLDivElement>(null)
+  const [visible, setVisible] = useState(false)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const io = new IntersectionObserver(([e]) => setVisible(e.isIntersecting), { threshold: 0.25 })
+    io.observe(el)
+    return () => io.disconnect()
+  }, [])
+
+  useEffect(() => {
+    if (hold || !visible || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    const t = setTimeout(() => { setOpen((o) => (o + 1) % panels.length); setTick((x) => x + 1) }, AUTOPLAY_MS + (tick === 0 ? delay : 0))
+    return () => clearTimeout(t)
+  }, [open, hold, visible, panels.length, tick, delay])
+
+  const pick = (i: number) => { setOpen(i); setTick((x) => x + 1) }
+
+  return (
+    <div
+      ref={ref}
+      className={s.row}
+      onMouseEnter={() => setHold(true)}
+      onMouseLeave={() => setHold(false)}
+      onFocus={() => setHold(true)}
+      onBlur={() => setHold(false)}
+    >
+      {panels.map((p, i) => {
+        const on = i === open
+        const n = String(offset + i + 1).padStart(2, '0')
+        return (
+          <article
+            key={p.key}
+            className={`${s.panel} ${on ? s.on : ''}`}
+            onMouseEnter={() => pick(i)}
+            onClick={() => pick(i)}
+            style={{ transitionDelay: on ? '0ms' : '40ms' }}
+          >
+            <Image src={p.img} alt={p.alt} fill sizes="(max-width: 900px) 100vw, 46vw" className={s.img} loading="lazy" />
+            <div className={s.veil} aria-hidden="true" />
+
+            {/* collapsed face */}
+            <button type="button" className={s.face} aria-expanded={on} onClick={() => pick(i)} onFocus={() => pick(i)}>
+              <span className={s.faceNum}>{n}</span>
+              <span className={s.faceTitle}>{p.badge}</span>
+              <span className={s.plus} aria-hidden="true">+</span>
+            </button>
+
+            {/* open content */}
+            <div className={s.body} aria-hidden={!on}>
+              <div className={s.topline}>
+                <span className={s.badge}>{p.badge}</span>
+                <span className={s.num}>{n}</span>
+              </div>
+              <Heading tag={p.titleTag} className={s.title}>{p.title}</Heading>
+              {p.sub && <h3 className={s.sub}>{p.sub}</h3>}
+              <p className={s.desc}>{p.desc}</p>
+              {p.kws.length > 0 && (
+                <div className={s.kws}>{p.kws.map((k) => <span key={k}>{k}</span>)}</div>
+              )}
+              <Link href={`/services/${p.slug}`} className={s.cta} tabIndex={on ? 0 : -1}>
+                {viewService}
+              </Link>
+            </div>
+
+            {on && !hold && visible && <span key={tick} className={s.timer} style={{ animationDuration: `${AUTOPLAY_MS}ms` }} aria-hidden="true" />}
+          </article>
+        )
+      })}
+    </div>
+  )
+}
 
 /**
- * "Service studio" for the homepage. Same copy as before (every h2/h3/p/keyword
- * stays in the DOM for SEO) — only the presentation changed:
- *  • desktop: cinematic image stage + expanding service tabs with an autoplay progress bar
- *  • phones: swipeable snap carousel with dots, arrows and autoplay
+ * Homepage "Our Cleaning Services": all 11 services as one family of expanding
+ * photo panels (2 rows on desktop, an accordion stack on phones). Copy, headings
+ * and keywords are unchanged and stay in the DOM.
  */
 export default function ServicesShowcase(p: Props) {
-  const n = p.cards.length
-  const [active, setActive] = useState(0)
-  const [paused, setPaused] = useState(false)
-  const [tick, setTick] = useState(0) // restarts the progress-bar animation
-  const rail = useRef<HTMLDivElement>(null)
-  const reduced = useRef(false)
-
-  const go = useCallback((i: number, fromUser = false) => {
-    const next = (i + n) % n
-    setActive(next)
-    setTick((t) => t + 1)
-    if (fromUser) setPaused(true)
-    // keep the phone carousel in sync
-    const el = rail.current?.children[next] as HTMLElement | undefined
-    if (el && rail.current && getComputedStyle(rail.current).overflowX !== 'visible') {
-      rail.current.scrollTo({ left: el.offsetLeft - rail.current.offsetLeft - 16, behavior: reduced.current ? 'auto' : 'smooth' })
-    }
-  }, [n])
-
-  useEffect(() => {
-    reduced.current = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-  }, [])
-
-  useEffect(() => {
-    if (paused || reduced.current) return
-    const t = setTimeout(() => go(active + 1), AUTOPLAY_MS)
-    return () => clearTimeout(t)
-  }, [active, paused, go, tick])
-
-  // phone: when the user swipes, the card closest to the left edge becomes active
-  useEffect(() => {
-    const r = rail.current
-    if (!r) return
-    let raf = 0
-    const onScroll = () => {
-      cancelAnimationFrame(raf)
-      raf = requestAnimationFrame(() => {
-        if (getComputedStyle(r).overflowX === 'visible') return
-        const kids = Array.from(r.children) as HTMLElement[]
-        const x = r.scrollLeft
-        let best = 0
-        kids.forEach((k, i) => { if (Math.abs(k.offsetLeft - r.offsetLeft - x) < Math.abs(kids[best].offsetLeft - r.offsetLeft - x)) best = i })
-        setActive((cur) => (cur === best ? cur : best))
-      })
-    }
-    const onTouch = () => setPaused(true)
-    r.addEventListener('scroll', onScroll, { passive: true })
-    r.addEventListener('touchstart', onTouch, { passive: true })
-    return () => { r.removeEventListener('scroll', onScroll); r.removeEventListener('touchstart', onTouch) }
-  }, [])
+  const main: Panel[] = p.cards.map((c, i) => ({
+    key: p.slugs[i], badge: c.badge, title: c.h2, titleTag: 'h2', sub: c.h3, desc: c.p,
+    kws: p.keywords[i] ?? [], slug: p.slugs[i], img: p.images[i], alt: p.alts[i],
+  }))
+  const extra: Panel[] = p.extras.map((x, i) => {
+    const slug = p.extraSlugs[i]
+    const m = EXTRA_META[slug] ?? { badge: 'SERVICE', img: p.images[0], alt: x.name }
+    return { key: slug, badge: m.badge, title: x.name, titleTag: 'h3', desc: x.desc, kws: [], slug, img: m.img, alt: m.alt }
+  })
 
   return (
     <section className={s.wrap} aria-labelledby="home-services-h">
-      <div className={s.blobA} aria-hidden="true" />
-      <div className={s.blobB} aria-hidden="true" />
-
+      <div className={s.aurora} aria-hidden="true" />
       <div className={s.inner}>
         <header className={s.head}>
           <span className={s.label}><i />{p.label}</span>
-          <h2 id="home-services-h" className={s.title}>{p.title}</h2>
-          <p className={s.subtitle}>{p.subtitle}</p>
+          <h2 id="home-services-h" className={s.h}>{p.title}</h2>
+          <p className={s.lead}>{p.subtitle}</p>
+          <div className={s.count} aria-hidden="true">
+            <b>{main.length + extra.length}</b> services · <b>7</b> emirates · tap or hover a card to open it
+          </div>
         </header>
 
-        <div className={s.studio} onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
-          {/* desktop image stage */}
-          <div className={s.stage}>
-            {p.images.map((src, i) => (
-              <div key={src} className={`${s.frame} ${i === active ? s.frameOn : ''}`} aria-hidden={i !== active}>
-                <Image src={src} alt={p.alts[i]} fill sizes="(max-width: 1023px) 1px, 640px" className={s.img} loading={i === 0 ? 'eager' : 'lazy'} />
-              </div>
-            ))}
-            <div className={s.shade} aria-hidden="true" />
-            <span className={s.bigNum} aria-hidden="true" key={`n${active}`}>{String(active + 1).padStart(2, '0')}</span>
-            <div className={s.stageCard} key={`c${active}`}>
-              <span className={s.badge}>{p.cards[active].badge}</span>
-              <p className={s.stageH3}>{p.cards[active].h3}</p>
-              <Link href={`/services/${p.slugs[active]}`} className={s.stageBtn}>{p.viewService}</Link>
-            </div>
-            <div className={s.thumbs}>
-              {p.images.map((src, i) => (
-                <button key={src} type="button" className={`${s.thumb} ${i === active ? s.thumbOn : ''}`} onClick={() => go(i, true)} aria-label={p.cards[i].h2}>
-                  <Image src={src} alt="" fill sizes="64px" className={s.img} />
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* service list — tabs on desktop, swipe cards on phones */}
-          <div className={s.rail} ref={rail}>
-            {p.cards.map((c, i) => {
-              const on = i === active
-              return (
-                <article key={p.slugs[i]} className={`${s.item} ${on ? s.itemOn : ''}`}>
-                  <div className={s.mImg} aria-hidden="true">
-                    <Image src={p.images[i]} alt="" fill sizes="(max-width: 1023px) 86vw, 1px" className={s.img} loading="lazy" />
-                    <span className={s.mBadge}>{c.badge}</span>
-                    <span className={s.mNum}>{String(i + 1).padStart(2, '0')}</span>
-                  </div>
-                  <div
-                    role="button"
-                    tabIndex={0}
-                    aria-expanded={on}
-                    className={s.tab}
-                    onClick={() => go(i, true)}
-                    onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(i, true) } }}
-                  >
-                    <span className={s.num}>{String(i + 1).padStart(2, '0')}</span>
-                    <div className={s.tabText}>
-                      <span className={s.tabBadge}>{c.badge}</span>
-                      <h2 className={s.h2}>{c.h2}</h2>
-                    </div>
-                    <span className={s.chev} aria-hidden="true">›</span>
-                  </div>
-                  <div className={s.more}>
-                    <div className={s.moreIn}>
-                      <h3 className={s.h3}>{c.h3}</h3>
-                      <p className={s.p}>{c.p}</p>
-                      <div className={s.kws}>
-                        {p.keywords[i].map((kw) => <span key={kw} className={s.kw}>{kw}</span>)}
-                      </div>
-                      <Link href={`/services/${p.slugs[i]}`} className={s.link}>{p.viewService}</Link>
-                    </div>
-                  </div>
-                  {on && !paused && <span className={s.progress} key={`p${tick}`} style={{ animationDuration: `${AUTOPLAY_MS}ms` }} aria-hidden="true" />}
-                </article>
-              )
-            })}
-          </div>
-
-          {/* phone controls */}
-          <div className={s.ctrl}>
-            <button type="button" className={s.arrow} onClick={() => go(active - 1, true)} aria-label="Previous service">‹</button>
-            <div className={s.dots}>
-              {p.cards.map((c, i) => (
-                <button key={i} type="button" className={`${s.dot} ${i === active ? s.dotOn : ''}`} onClick={() => go(i, true)} aria-label={c.badge} />
-              ))}
-            </div>
-            <button type="button" className={s.arrow} onClick={() => go(active + 1, true)} aria-label="Next service">›</button>
-          </div>
-        </div>
-
-        <div className={s.extrasHead}><span className={s.label}><i />{p.alsoAvailable}</span></div>
-        <div className={s.extras}>
-          {p.extras.map((x, i) => (
-            <Link key={p.extraSlugs[i]} href={`/services/${p.extraSlugs[i]}`} className={s.extra} style={{ animationDelay: `${i * 90}ms` }}>
-              <span className={s.extraIcon} aria-hidden="true">{EXTRA_ICONS[i] ?? '✨'}</span>
-              <h3 className={s.extraH3}>{x.name}</h3>
-              <p className={s.extraP}>{x.desc}</p>
-              <span className={s.extraArrow}>{p.viewArrow}</span>
-            </Link>
-          ))}
-        </div>
+        <PanelRow panels={main} offset={0} viewService={p.viewService} delay={0} />
+        <div className={s.divider}><span className={s.label}><i />{p.alsoAvailable}</span></div>
+        <PanelRow panels={extra} offset={main.length} viewService={p.viewService} delay={2400} />
       </div>
     </section>
   )
