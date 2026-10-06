@@ -34,7 +34,8 @@ export async function POST(req: Request) {
 
     // Send email via Resend
     try {
-      await resend.emails.send({
+      // resend.emails.send() reports failures in `error` instead of throwing — log them
+      const { error: sendError } = await resend.emails.send({
         from: 'ServeDubai Website <onboarding@resend.dev>',
         to: 'marbleprodxb@gmail.com',
         subject: `New Lead — ${service} | ServeDubai.ae`,
@@ -83,6 +84,7 @@ export async function POST(req: Request) {
           </div>
         `,
       })
+      if (sendError) console.error('Resend email error:', sendError)
     } catch (emailErr) {
       console.error('Resend email error:', emailErr)
     }
