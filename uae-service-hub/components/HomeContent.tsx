@@ -12,6 +12,7 @@ import GoogleReviews from '@/components/GoogleReviews'
 import { useRequestCall } from '@/components/RequestCallModal'
 import EmiratesSection from '@/components/EmiratesSection'
 import CarShowcase from '@/components/car/CarShowcase'
+import ServicesShowcase from '@/components/home/ServicesShowcase'
 import { SiteHero } from '@/components/ui/site-hero'
 import { WebsitesShowcase } from '@/components/ui/websites-showcase'
 
@@ -77,51 +78,21 @@ export default function HomeContent() {
       />
 
       {/* 2. SERVICES */}
-      <section className="home-services-section sec-pad">
-        <div className="container-xl">
-          <div className="sec-header">
-            <div className="gold-label">{t.home.servicesLabel}</div>
-            <h2 className="home-section-h2 text-center">{t.home.servicesTitle}</h2>
-            <p className="home-section-p max-w-640 mx-auto text-center">{t.home.servicesSubtitle}</p>
-          </div>
-
-          <div className="home-svc-grid">
-            {t.home.mainCards.map((card, i) => (
-              <div key={serviceSlugs[i]} className="home-svc-card">
-                <div className="svc-card-img">
-                  <Image src={serviceImages[i]} alt={serviceAlts[i]} fill className="object-cover" sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 380px" loading="lazy" />
-                  <div className="svc-card-overlay" />
-                  <span className="home-svc-badge">{card.badge}</span>
-                </div>
-                <div className="svc-card-body">
-                  <h2 className="home-svc-h2">{card.h2}</h2>
-                  <h3 className="home-svc-h3">{card.h3}</h3>
-                  <p className="home-svc-p flex-1">{card.p}</p>
-                  <div className="home-kw-row">
-                    {serviceKws[i].map((kw) => <span key={kw} className="home-kw-tag">{kw}</span>)}
-                  </div>
-                  <Link href={`/services/${serviceSlugs[i]}`} className="home-svc-link mt-sm">{t.home.viewService}</Link>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-md">
-            <div className="text-center mb-sm">
-              <div className="gold-label">{t.home.alsoAvailable}</div>
-            </div>
-            <div className="home-extra-grid">
-              {t.home.extraServices.map((s, i) => (
-                <Link key={extraSlugs[i]} href={`/services/${extraSlugs[i]}`} className="home-extra-card">
-                  <h3 className="home-extra-h3">{s.name}</h3>
-                  <p className="home-extra-p">{s.desc}</p>
-                  <span className="home-extra-arrow">{t.home.viewArrow}</span>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServicesShowcase
+        label={t.home.servicesLabel}
+        title={t.home.servicesTitle}
+        subtitle={t.home.servicesSubtitle}
+        cards={t.home.mainCards}
+        slugs={serviceSlugs}
+        images={serviceImages}
+        alts={serviceAlts}
+        keywords={serviceKws}
+        viewService={t.home.viewService}
+        alsoAvailable={t.home.alsoAvailable}
+        extras={t.home.extraServices}
+        extraSlugs={extraSlugs}
+        viewArrow={t.home.viewArrow}
+      />
 
       {/* 2b. CAR CARE */}
       <CarShowcase
