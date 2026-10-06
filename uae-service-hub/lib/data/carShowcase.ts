@@ -2,8 +2,8 @@
  * Car-care showcase images supplied by the client (Oct 2026), converted to WebP
  * with keyword file names. They illustrate the service — alt text describes what
  * is in the photo and never claims it is a specific job of ours.
- * (Two supplied images were left out: one carried a Dreamstime watermark, the
- * other another company's logo.)
+ * (Three supplied images were left out: one carried a Dreamstime watermark, one
+ * another company's logo, and Rectangle-37-1 had an unknown source.)
  */
 export interface ShowcaseImage {
   src: string
@@ -48,13 +48,6 @@ export const CAR_SHOWCASE: ShowcaseImage[] = [
     width: 1600, height: 1067, service: 'car-wash-at-home',
   },
   {
-    src: `${P}car-hand-wash-tyre-cleaning-mitt.webp`,
-    alt: 'Hand washing a car tyre and wheel with a wash mitt',
-    title: 'Hand wash with a soft mitt',
-    caption: 'Hand wash with a soft mitt',
-    width: 459, height: 459, service: 'car-wash-at-home',
-  },
-  {
     src: `${P}car-interior-vacuum-cleaning-dubai.webp`,
     alt: 'Technician vacuuming leather car seats during car interior cleaning in Dubai',
     title: 'Car interior vacuum and seat cleaning — Dubai',
@@ -71,3 +64,5 @@ export const CAR_SHOWCASE: ShowcaseImage[] = [
 ]
 
 export const showcaseFor = (service: ShowcaseImage['service']) => CAR_SHOWCASE.filter((i) => i.service === service)
+
+export const showcaseImg = (file: string) => CAR_SHOWCASE.find((i) => i.src.endsWith(file))!

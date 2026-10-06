@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import Pointer3D from '@/components/dna/Pointer3D'
-import { CAR_SHOWCASE, type ShowcaseImage } from '@/lib/data/carShowcase'
+import { CAR_SHOWCASE, showcaseImg, type ShowcaseImage } from '@/lib/data/carShowcase'
 import { getWhatsAppLink } from '@/lib/utils/whatsapp'
 import s from './car-showcase.module.css'
 
@@ -15,7 +15,14 @@ const SERVICES = [
 ]
 
 /** phone screen rotation — foam, wheel, interior, AC */
-const SCREEN = [CAR_SHOWCASE[0], CAR_SHOWCASE[1], CAR_SHOWCASE[5], CAR_SHOWCASE[6]]
+const SCREEN = [
+  'snow-foam-car-wash-at-home-dubai.webp',
+  'car-wheel-rim-cleaning-car-wash-at-home.webp',
+  'car-interior-vacuum-cleaning-dubai.webp',
+  'car-ac-vent-cleaning-odor-removal.webp',
+].map(showcaseImg)
+const FLOAT_A = showcaseImg('car-pressure-wash-wheel-arch-mud-removal.webp')
+const FLOAT_B = showcaseImg('foam-car-wash-exterior-detailing-uae.webp')
 
 export interface CarShowcaseProps {
   id?: string
@@ -84,10 +91,10 @@ export default function CarShowcase({ id = 'car-care', eyebrow = 'Car care at yo
 
         <Pointer3D className={s.stage}>
           <figure className={`${s.float} ${s.floatA}`}>
-            <Shot img={CAR_SHOWCASE[3]} sizes="240px" className={s.cover} />
+            <Shot img={FLOAT_A} sizes="240px" className={s.cover} />
           </figure>
           <figure className={`${s.float} ${s.floatB}`}>
-            <Shot img={CAR_SHOWCASE[2]} sizes="240px" className={s.cover} />
+            <Shot img={FLOAT_B} sizes="240px" className={s.cover} />
           </figure>
 
           <div className={s.phone}>
