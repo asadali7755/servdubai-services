@@ -90,9 +90,8 @@ const BASE_LOCAL_BUSINESS = {
       'https://schema.org/Thursday',
       'https://schema.org/Friday',
       'https://schema.org/Saturday',
-      'https://schema.org/Sunday',
     ],
-    opens: '08:00',
+    opens: '09:00',
     closes: '22:00',
   },
   sameAs: [

@@ -371,7 +371,7 @@
         "question": "What information should I have ready when I call to book a sofa cleaning service?"
       },
       {
-        "answer": "Our call centre operates from 8:00 am to 8:00 pm, Sunday through Thursday. WhatsApp messages are monitored during the same hours, and we aim to reply within five minutes on business days. On Fridays and Saturdays we respond by the start of the next business day, typically before 10:00 am.",
+        "answer": "We answer calls Monday to Saturday, from 9:00 am to 10:00 pm. WhatsApp messages are monitored during the same hours, and we aim to reply within five minutes on business days. On Fridays and Saturdays we respond by the start of the next business day, typically before 10:00 am.",
         "question": "What are your operating hours for phone calls and WhatsApp inquiries?"
       },
       {
@@ -459,7 +459,7 @@
             "name": "What are your operating hours for phone calls and WhatsApp inquiries?",
             "@type": "Question",
             "acceptedAnswer": {
-              "text": "Our call centre operates from 8:00 am to 8:00 pm, Sunday through Thursday. WhatsApp messages are monitored during the same hours, and we aim to reply within five minutes on business days. On Fridays and Saturdays we respond by the start of the next business day, typically before 10:00 am.",
+              "text": "We answer calls Monday to Saturday, from 9:00 am to 10:00 pm. WhatsApp messages are monitored during the same hours, and we aim to reply within five minutes on business days. On Fridays and Saturdays we respond by the start of the next business day, typically before 10:00 am.",
               "@type": "Answer"
             }
           },
@@ -1592,7 +1592,7 @@
         "question": "What is the best way to contact Madinat Al Haya for a floor cleaning quote?"
       },
       {
-        "answer": "Madinat Al Haya's customer service team is available for phone support during regular business hours, typically Monday to Saturday, from 8:00 AM to 6:00 PM. We understand the importance of timely assistance. For the most precise and up-to-date operating hours, please visit the 'Contact Us' section on our official website or connect with us via WhatsApp.",
+        "answer": "Madinat Al Haya's customer service team is available for phone support during regular business hours, Monday to Saturday, from 9:00 AM to 10:00 PM. We understand the importance of timely assistance. For the most precise and up-to-date operating hours, please visit the 'Contact Us' section on our official website or connect with us via WhatsApp.",
         "question": "What are your customer service operating hours for phone support?"
       },
       {
@@ -1680,7 +1680,7 @@
             "name": "What are your customer service operating hours for phone support?",
             "@type": "Question",
             "acceptedAnswer": {
-              "text": "Madinat Al Haya's customer service team is available for phone support during regular business hours, typically Monday to Saturday, from 8:00 AM to 6:00 PM. We understand the importance of timely assistance. For the most precise and up-to-date operating hours, please visit the 'Contact Us' section on our official website or connect with us via WhatsApp.",
+              "text": "Madinat Al Haya's customer service team is available for phone support during regular business hours, Monday to Saturday, from 9:00 AM to 10:00 PM. We understand the importance of timely assistance. For the most precise and up-to-date operating hours, please visit the 'Contact Us' section on our official website or connect with us via WhatsApp.",
               "@type": "Answer"
             }
           },

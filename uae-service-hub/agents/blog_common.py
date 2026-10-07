@@ -67,7 +67,22 @@ NO PRICES — the client confirms every price personally on WhatsApp:
   condition, extras) and tell them to send a photo on WhatsApp for a free quote.
 - Do not invent warranties, insurance amounts, discounts, loyalty schemes or
   case-study figures.
+
+NO UNVERIFIED PROMISES (client decision, Oct 2026):
+- Opening hours are Monday to Saturday, 9:00 AM to 10:00 PM. Never say 24/7,
+  round-the-clock, "7 days a week", an emergency hotline or a call centre.
+- Never promise a satisfaction guarantee, a free re-clean, a money-back offer,
+  insurance cover or a dedicated account manager.
+- Never call the company "the best", "#1" or "the only one" in Dubai/UAE.
 """
+
+# Safety net: unverified promises in a generated post mean it is discarded.
+CLAIM_PATTERN = re.compile(
+    r"satisfaction guarantee|100\s?% satisf|24/7|round[- ]the[- ]clock|\bre[-\u2011]?clean\w*[^.]{0,60}?"
+    r"(?:no (?:additional|extra) (?:charge|cost)|free of charge|at no (?:extra |additional )?(?:charge|cost))"
+    r"|account manager|best cleaning company|only one in (?:dubai|the uae)",
+    re.I,
+)
 
 # Safety net: any money amount in a generated post means it is discarded.
 PRICE_PATTERN = re.compile(r"(?:AED|Dhs|dirhams?)\s?\d|\d[\d,.]*\s?(?:AED|dirhams?)\b", re.I)
@@ -280,6 +295,10 @@ def save_generated_post(post: dict) -> bool:
     flat_text = json.dumps(post, ensure_ascii=False)
     if contains_banned_mention(flat_text):
         print("   ❌ Generated post contains a banned external mention, discarding.")
+        return False
+
+    if CLAIM_PATTERN.search(flat_text):
+        print("   ❌ Generated post makes an unverified promise (24/7, guarantee, re-clean…), discarding.")
         return False
 
     if PRICE_PATTERN.search(flat_text):

@@ -71,7 +71,7 @@ The UAE's heat can lead to trapped moisture and musty smells within sofa cushion
 
 Our Sofa Cleaning Services Cover All 7 UAE Emirates
 
-Madinat Alhaya provides sofa cleaning Dubai, sofa cleaning Abu Dhabi, sofa cleaning Sharjah, sofa cleaning Ajman, sofa cleaning RAK, sofa cleaning Fujairah, and sofa cleaning UAQ — every one of the seven Emirates, seven days a week, with same-day booking. We offer carpet sofa cleaning as a package deal, covering both your sofas and carpets in a single visit, whether you're in a UAQ City villa or a RAK City apartment near the Corniche. Our sofa cleaning cost is transparent — no hidden charges, free quotes via WhatsApp.
+Madinat Alhaya provides sofa cleaning Dubai, sofa cleaning Abu Dhabi, sofa cleaning Sharjah, sofa cleaning Ajman, sofa cleaning RAK, sofa cleaning Fujairah, and sofa cleaning UAQ — every one of the seven Emirates, Monday to Saturday, with same-day booking where available. We offer carpet sofa cleaning as a package deal, covering both your sofas and carpets in a single visit, whether you're in a UAQ City villa or a RAK City apartment near the Corniche. Our sofa cleaning cost is transparent — no hidden charges, free quotes via WhatsApp.
 
 We handle all sofa types: L-shaped, sectional, 3-seater, corner sofas, fabric recliners, velvet sofas, leather sofas, and modular configurations, from Fujairah's Gulf of Oman coastline to Ajman's growing residential districts. Our quick-dry technology means your sofa is ready to use within 3–4 hours after our professional sofa cleaning at home.`,
     benefits: [
@@ -218,8 +218,8 @@ We handle all sofa types: L-shaped, sectional, 3-seater, corner sofas, fabric re
       },
       {
         headingLevel: 'h3',
-        heading: '100% Satisfaction Guarantee or Re-Clean',
-        text: 'Not satisfied with your sofa cleaning services? We come back and re-clean at no extra charge. Our 100% satisfaction guarantee applies to every sofa cleaning service Dubai, Abu Dhabi, and Sharjah booking.',
+        heading: 'Free Quote on WhatsApp Before Booking',
+        text: 'Send a photo of your sofa on WhatsApp — fabric, leather or L-shape — and we confirm the cleaning method and the price before booking, for sofa cleaning services in Dubai, Abu Dhabi and Sharjah.',
       },
       {
         headingLevel: 'h3',
@@ -376,7 +376,7 @@ A clean carpet is the foundation of a healthy UAE home, wherever you live betwee
       {
         headingLevel: 'h2',
         heading: 'Why Choose Madinat Alhaya for Carpet Cleaning in Dubai?',
-        text: 'Madinat Alhaya is the trusted carpet cleaning company Dubai — with certified technicians, industrial-grade equipment, eco-friendly products, and a 100% satisfaction guarantee across all 7 UAE Emirates.',
+        text: 'Madinat Alhaya is the trusted carpet cleaning company Dubai — with trained technicians, industrial-grade equipment and eco-friendly products across all 7 UAE Emirates.',
       },
       {
         headingLevel: 'h3',
@@ -390,8 +390,8 @@ A clean carpet is the foundation of a healthy UAE home, wherever you live betwee
       },
       {
         headingLevel: 'h3',
-        heading: 'Same-Day Service and Satisfaction Guarantee',
-        text: 'Need carpet cleaning services near me urgently? Same-day carpet cleaning Dubai available across most areas. Not satisfied? We re-clean at no extra charge — our 100% satisfaction guarantee covers every booking.',
+        heading: 'Same-Day Carpet Cleaning Service',
+        text: 'Need carpet cleaning services near me urgently? Same-day carpet cleaning Dubai is often available across most areas — send a WhatsApp message with a photo and we confirm a time.',
       },
     ],
     images: ['/images/services/carpet-cleaning.webp'],

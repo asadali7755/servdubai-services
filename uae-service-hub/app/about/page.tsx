@@ -12,9 +12,9 @@ import { SiteHero } from '@/components/ui/site-hero'
 
 export const metadata: Metadata = {
   ...buildMetadata({
-    title: 'About Madinat Alhaya | Best Cleaning Company Dubai & UAE',
+    title: 'About Madinat Alhaya | Professional Cleaning Company Dubai & UAE',
     description:
-      'Madinat Alhaya — best cleaning company in Dubai serving all 7 UAE Emirates. Professional villa deep cleaning, sofa cleaning, carpet cleaning, marble polishing & office cleaning. Trained professionals, eco-friendly products, same-day service. Free quotes.',
+      'Madinat Alhaya — professional cleaning company in Dubai serving all 7 UAE Emirates. Professional villa deep cleaning, sofa cleaning, carpet cleaning, marble polishing & office cleaning. Trained professionals, eco-friendly products, same-day service. Free quotes.',
     path: '/about',
   }),
   keywords: [
@@ -38,7 +38,6 @@ const faqSchema = {
     { '@type': 'Question', name: 'Are Madinat Alhaya\'s cleaning products safe for children and pets?', acceptedAnswer: { '@type': 'Answer', text: 'Absolutely. We use only eco-friendly, non-toxic, and biodegradable cleaning solutions that are completely safe for children, pets, and family members with sensitivities. All products meet international safety standards.' } },
     { '@type': 'Question', name: 'Does Madinat Alhaya offer same-day cleaning services?', acceptedAnswer: { '@type': 'Answer', text: 'Yes, Madinat Alhaya offers same-day cleaning services based on availability. Contact us via WhatsApp or phone, describe your requirement, and we will deploy a team the same day whenever possible across Dubai and UAE.' } },
     { '@type': 'Question', name: 'How does Madinat Alhaya handle Dubai\'s sand and dust problems?', acceptedAnswer: { '@type': 'Answer', text: 'We use HEPA-filtered vacuums that capture fine sand particles, industrial extraction for carpets and upholstery, and specialized AC vent cleaning. We recommend post-sandstorm deep cleans to remove the fine desert dust that settles on every surface.' } },
-    { '@type': 'Question', name: 'What is Madinat Alhaya\'s satisfaction guarantee?', acceptedAnswer: { '@type': 'Answer', text: 'We offer a 100% satisfaction guarantee on all services. If you are not completely satisfied with any aspect of our work, we will return to address your concerns at no additional charge.' } },
   ],
 }
 
@@ -171,7 +170,7 @@ export default function AboutPage() {
               { n: '02', title: 'Advanced Commercial-Grade Equipment', desc: 'We invest in truck-mounted carpet cleaners, hospital-grade HEPA vacuum systems, Italian diamond marble polishing machines, and industrial steam cleaners — not basic portable units.' },
               { n: '03', title: '100% Eco-Friendly & Non-Toxic Solutions', desc: 'Our biodegradable, non-toxic cleaning products are powerful on stains but completely safe for children, pets, and allergy sufferers. Zero harsh chemicals — zero compromise on results.' },
               { n: '04', title: 'Transparent Pricing with No Hidden Fees', desc: 'Every quote is detailed and final. No surprise charges after the job. No add-on fees you weren\'t told about. Just honest, upfront pricing with professional results.' },
-              { n: '05', title: 'Comprehensive Insurance & Satisfaction Guarantee', desc: 'Madinat Alhaya carries full liability insurance on all services. Not satisfied? We return at no extra charge. Your peace of mind is our standard practice — not an exception.' },
+              { n: '05', title: 'Evening Bookings, Monday to Saturday', desc: 'We work Monday to Saturday from 9 AM to 10 PM, so a deep clean or sofa wash can be booked around your day — including evenings after work.' },
               { n: '06', title: 'International-Standard Cleaning Techniques', desc: 'We follow globally recognized professional standards for carpet cleaning, sofa cleaning, upholstery care, and water damage restoration — delivering results that meet the highest industry benchmarks in Dubai and UAE.' },
             ].map((v) => (
               <div key={v.n} className="pg-card pg-card-row">
@@ -262,7 +261,6 @@ export default function AboutPage() {
               { q: 'Are your cleaning products safe for children and pets?', a: 'Absolutely. We use only eco-friendly, non-toxic, biodegradable cleaning solutions. All products meet international safety standards and are completely safe for children, pets, and allergy sufferers.' },
               { q: 'Does Madinat Alhaya offer same-day cleaning services?', a: 'Yes, same-day services are available based on availability. Contact us via WhatsApp or phone, describe your requirement, and we will deploy a team the same day whenever possible.' },
               { q: 'How does Madinat Alhaya handle Dubai\'s sand and dust problems?', a: 'We use HEPA-filtered vacuums, industrial extraction for carpets and upholstery, and specialized AC vent cleaning. Post-sandstorm deep cleans are recommended to remove fine desert dust from every surface.' },
-              { q: 'What is your satisfaction guarantee?', a: 'We offer a 100% satisfaction guarantee. If you are not completely satisfied with any aspect of our work, we will return to address your concerns at no additional charge — no questions asked.' },
             ].map((faq, i) => (
               <details key={i} className="pg-faq-item">
                 <summary className="pg-faq-summary">
@@ -284,7 +282,7 @@ export default function AboutPage() {
             Ready to Experience the Madinat Alhaya Difference?
           </h2>
           <p className="pg-cta-p">
-            Free instant quote via WhatsApp. Same-day service available across Dubai and all 7 UAE Emirates. We respond in minutes — 7 days a week.
+            Free instant quote via WhatsApp. Same-day service available across Dubai and all 7 UAE Emirates. We work Monday to Saturday, 9 AM – 10 PM.
           </p>
           <div className="pg-cta-btns">
             <a href={getWhatsAppLink()} target="_blank" rel="noopener noreferrer" className="pg-wa-btn">
