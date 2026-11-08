@@ -3,10 +3,17 @@ import path from 'path'
 import { PRUNED_COMBOS } from './lib/data/serviceAreaCombos'
 
 const nextConfig: NextConfig = {
+  // Static export for Cloudflare Pages (Vercel Hobby was paused on 7 Nov 2026,
+  // mostly from this site's proxy running on every request). /api/contact and
+  // /api/lead-click run as Pages Functions (functions/api/), the spam 410s and
+  // host redirects in functions/_middleware.js, and redirects() is written to
+  // public/_redirects by scripts/cf-redirects.ts.
+  output: 'export',
   turbopack: {
     root: path.resolve(__dirname),
   },
   images: {
+    unoptimized: true,
     formats: ['image/avif', 'image/webp'],
     qualities: [75, 80, 85, 90],
     minimumCacheTTL: 604800,
