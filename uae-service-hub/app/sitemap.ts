@@ -1,5 +1,5 @@
-// Generated once at build time (static export for Cloudflare Pages).
-export const dynamic = 'force-static';
+export const revalidate = 0
+export const dynamic = 'force-dynamic'
 
 import type { MetadataRoute } from 'next'
 import { services } from '@/lib/data/services'
