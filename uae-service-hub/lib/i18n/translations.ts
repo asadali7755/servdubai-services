@@ -49,7 +49,7 @@ const translations = {
       badge: 'Professional Cleaning Company Dubai',
       slides: [
         {
-          title: 'Professional Cleaning Services in Dubai & All UAE',
+          title: 'Cleaning Services in Dubai & All UAE',
           subtitle: 'Book villa deep cleaning, sofa cleaning, carpet cleaning & marble polishing in Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Fujairah & Umm Al Quwain — same-day service across all 7 UAE Emirates.',
         },
         {

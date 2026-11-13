@@ -60,7 +60,19 @@ export default async function EmiratePage({ params }: Props) {
     { name: 'Home', url: '/' },
     { name: emirate.name, url: `/${emirateSlug}` },
   ])
-  const faqSchema = profile ? buildFAQSchema(profile.faqs) : null
+  // "sofa/carpet cleaning <emirate>" and "... price" are the most-searched
+  // queries for these pages (GSC, Aug-Nov 2026): answer them here too.
+  const popular = [
+    { slug: 'sofa-cleaning', title: `Sofa cleaning in ${emirate.name}`, text: `Fabric, leather and velvet sofas are shampooed and steam-extracted at your home in ${emirate.name}. Stains, odours and pet hair are treated in the same visit, and the sofa is usually dry in a few hours.` },
+    { slug: 'carpet-cleaning', title: `Carpet cleaning in ${emirate.name}`, text: `Wall-to-wall carpets and rugs are deep cleaned on site in ${emirate.name} with hot-water extraction, which lifts the fine sand and dust that vacuuming leaves behind.` },
+    { slug: 'villa-deep-cleaning', title: `Villa and home deep cleaning in ${emirate.name}`, text: `Full deep cleans for villas and apartments in ${emirate.name}: kitchens, bathrooms, floors, windows and furniture, including move-in and move-out cleans.` },
+  ]
+  const priceFaqs = [
+    { question: `How much does sofa cleaning cost in ${emirate.name}?`, answer: `It depends on the number of seats, the fabric and how stained the sofa is. Send a photo on WhatsApp and we reply with a free quote for your sofa in ${emirate.name}.` },
+    { question: `How much does carpet cleaning cost in ${emirate.name}?`, answer: `It depends on the carpet's size, its fibre and how dirty it is. Send a photo and the rough size on WhatsApp for a free quote.` },
+  ]
+  const allFaqs = profile ? [...priceFaqs, ...profile.faqs] : priceFaqs
+  const faqSchema = buildFAQSchema(allFaqs)
   const heroImage = emirate.image
   const waLink = getWhatsAppLink(undefined, emirate.name)
   const waMessage = `Hi Madinat Alhaya, I want to book a cleaning service in ${emirate.name}. Please share your services and pricing.`
@@ -132,6 +144,23 @@ export default async function EmiratePage({ params }: Props) {
     </section>
   )
 
+  const popularSec: ReactNode = (
+    <section className="dn-sec" key="popular">
+      <div className="dn-wrap">
+        <SectionHead eyebrow={`Most booked in ${emirate.name}`} title={`Sofa, carpet and villa cleaning in ${emirate.name}`} />
+        <div className="dn-qcards">
+          {popular.map((p) => (
+            <div key={p.slug} className="dn-qcard" style={{ paddingRight: 24 }}>
+              <h3 className="dn-h">{p.title}</h3>
+              <p>{p.text}</p>
+              <p><Link href={`/services/${p.slug}`}>{p.title.replace(` in ${emirate.name}`, '')} details →</Link></p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+
   const servicesSec: ReactNode = (
     <section className="dn-sec dn-sec-tight" key="services">
       <div className="dn-wrap">
@@ -145,11 +174,11 @@ export default async function EmiratePage({ params }: Props) {
     </section>
   )
 
-  const faqSec: ReactNode = profile && (
+  const faqSec: ReactNode = (
     <section className="dn-sec" key="faq">
       <div className="dn-wrap">
         <SectionHead eyebrow="FAQ" title={`${emirate.name}: common questions`} />
-        <FaqBlock style={dna.faq} faqs={profile.faqs} />
+        <FaqBlock style={dna.faq} faqs={allFaqs} />
       </div>
     </section>
   )
@@ -174,17 +203,17 @@ export default async function EmiratePage({ params }: Props) {
   )
 
   const ORDERS: ReactNode[][] = [
-    [areasSec, aboutSec, highlightsSec, servicesSec, faqSec, ctaSec],
-    [aboutSec, areasSec, servicesSec, highlightsSec, ctaSec, faqSec],
-    [aboutSec, highlightsSec, areasSec, faqSec, servicesSec, ctaSec],
-    [areasSec, highlightsSec, aboutSec, ctaSec, servicesSec, faqSec],
+    [areasSec, popularSec, aboutSec, highlightsSec, servicesSec, faqSec, ctaSec],
+    [aboutSec, popularSec, areasSec, servicesSec, highlightsSec, ctaSec, faqSec],
+    [aboutSec, popularSec, highlightsSec, areasSec, faqSec, servicesSec, ctaSec],
+    [areasSec, popularSec, highlightsSec, aboutSec, ctaSec, servicesSec, faqSec],
   ]
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      {faqSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <div className={`dn-page dn-f-${dna.font} ${fraunces.variable}`} style={dnaStyle(dna)} data-dna={`${dna.hero}-${dna.palette.name}-${dna.order}`}>
         <DnaHero

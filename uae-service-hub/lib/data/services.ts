@@ -42,7 +42,7 @@ export const services: Service[] = [
   {
     id: 'sofa-cleaning',
     name: 'Sofa Cleaning & Shampooing',
-    heroTitle: 'Sofa Cleaning Services',
+    heroTitle: 'Sofa Cleaning Services in Dubai & UAE',
     heroSubtitle: 'Looking for professional sofa cleaning services across the UAE? Our upholstery service removes stains, allergens, and odors using advanced pH-balanced technology — serving Dubai, Abu Dhabi, Sharjah and beyond. Book now!',
     slug: 'sofa-cleaning',
     category: 'domestic',
@@ -234,7 +234,7 @@ We handle all sofa types: L-shaped, sectional, 3-seater, corner sofas, fabric re
   {
     id: 'carpet-cleaning',
     name: 'Carpet Cleaning & Shampooing',
-    heroTitle: 'Professional Carpet Cleaning Services UAE & Dubai',
+    heroTitle: 'Carpet Cleaning Services in Dubai & UAE',
     heroSubtitle: 'Our carpet cleaning services UAE use deep steam extraction to remove desert sand, allergens & tough stains. Book carpet cleaning services in Dubai, Abu Dhabi & Sharjah — eco-friendly, safe for kids & pets. Same-day service available!',
     slug: 'carpet-cleaning',
     category: 'domestic',
@@ -401,7 +401,7 @@ A clean carpet is the foundation of a healthy UAE home, wherever you live betwee
   {
     id: 'mattress-cleaning',
     name: 'Mattress Deep Cleaning',
-    heroTitle: 'Professional Mattress Cleaning in Dubai | Top-Rated Deep Cleaning',
+    heroTitle: 'Mattress Cleaning in Dubai | Deep Clean for Dust Mites & Stains',
     heroSubtitle: 'Top-rated mattress cleaning services Dubai — eliminates dust mites, allergens & bacteria. Expert mattress cleaning services Dubai available near me across all UAE. Safe for kids & pets. Book today!',
     slug: 'mattress-cleaning',
     category: 'domestic',
@@ -586,7 +586,7 @@ Investing in mattress deep cleaning is an investment in your long-term respirato
     name: 'Curtain Cleaning',
     slug: 'curtain-cleaning',
     category: 'domestic',
-    heroTitle: 'Professional Curtain Cleaning Services in Dubai & UAE',
+    heroTitle: 'Curtain Cleaning Services in Dubai & UAE',
     heroSubtitle: 'Top-rated curtain cleaning across the UAE — on-site steam & off-site dry cleaning for all fabrics. Professional curtain cleaning near me in Dubai, Sharjah & Abu Dhabi. Book today!',
     shortDescription: 'Looking for professional curtain cleaning across the UAE? Expert on-site steam cleaning and off-site dry cleaning for all fabrics. Free pickup & delivery with 99% stain removal. Book your refresh today!',
     fullDescription: `The Ultimate Guide to a Dust-Free Home Across the UAE
@@ -784,7 +784,7 @@ Madinat Alhaya is the curtain cleaning company covering curtain cleaning Dubai, 
   {
     id: 'car-interior-detailing',
     name: 'Car Interior Detailing',
-    heroTitle: 'Professional Car Seat Cleaning Dubai | Deep Steam Sanitization & Stain Removal',
+    heroTitle: 'Car Seat Cleaning Dubai | Steam Cleaning & Stain Removal',
     heroSubtitle: 'Expert car seats cleaning Dubai, Sharjah & Abu Dhabi — fabric & leather car seats cleaning near me. Car seat steam cleaner, stain removal & odor elimination. Mobile service at your location!',
     slug: 'car-interior-detailing',
     category: 'domestic',
@@ -956,7 +956,7 @@ Madinat Alhaya provides car seats cleaning services across all 7 UAE Emirates �
   {
     id: 'dining-chair-cleaning',
     name: 'Dining Chair Cleaning',
-    heroTitle: 'Professional Dining Chair Cleaning Dubai | Food Stain & Grease Removal',
+    heroTitle: 'Dining Chair Cleaning Dubai | Food Stain & Grease Removal',
     heroSubtitle: 'Best dining chair cleaning services Dubai, Abu Dhabi & Sharjah — fabric, leather & faux leather dining chairs. Deep stain removal, deodorizing & fabric protection. Same-day service across UAE!',
     slug: 'dining-chair-cleaning',
     category: 'domestic',
@@ -1065,7 +1065,7 @@ The service is available for single chairs or full dining sets, and we can also 
   {
     id: 'villa-deep-cleaning',
     name: 'Villa Deep Cleaning',
-    heroTitle: 'Villa Deep Cleaning Services Dubai | Top-Rated & Eco-Friendly',
+    heroTitle: 'Villa Deep Cleaning Services Dubai | Move-In, Move-Out & Regular',
     heroSubtitle: 'Best villa deep cleaning services Dubai, Abu Dhabi & Sharjah — move-in, move-out, post-construction & periodic deep clean. Eco-friendly villa deep cleaning UAE. Book today!',
     slug: 'villa-deep-cleaning',
     category: 'commercial',
