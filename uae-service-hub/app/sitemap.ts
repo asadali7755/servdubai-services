@@ -13,7 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const base = 'https://servedubai.ae'
   // Fixed date of the last real content change. A lastmod that changes on every
   // request (new Date()) is ignored by Google; bump this when pages actually change.
-  const now = new Date('2026-10-06')
+  const now = new Date('2026-11-13')
   // Image sitemap entries: helps Google Images index the car showcase photos
   const carImgs = (filter?: string) =>
     CAR_SHOWCASE.filter((i) => !filter || i.service === filter).map((i) => `${base}${i.src}`)

@@ -141,6 +141,13 @@ const nextConfig: NextConfig = {
       })),
       // Old singular /service/* -> new plural /services/*
       { source: '/service/:slug', destination: '/services/:slug', permanent: true },
+      // Root-level service URLs (old site, and links the blog agents sometimes
+      // write, e.g. /sofa-cleaning) -> /services/* instead of a 404
+      {
+        source: '/:slug(sofa-cleaning|carpet-cleaning|mattress-cleaning|curtain-cleaning|dining-chair-cleaning|villa-deep-cleaning|apartment-cleaning|office-cleaning|marble-polishing|floor-cleaning)',
+        destination: '/services/:slug',
+        permanent: true,
+      },
       // Common old WordPress page slugs
       { source: '/contact-us', destination: '/contact', permanent: true },
       { source: '/about-us', destination: '/about', permanent: true },

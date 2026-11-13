@@ -1,6 +1,6 @@
 'use client'
 import { createContext, useContext, useState, useEffect, useRef, type ReactNode } from 'react'
-import { trackLead } from '@/lib/utils/track'
+import { sendEnquiry, ENQUIRY_FAILED_MSG } from '@/lib/utils/enquiry'
 import { SITE_CONFIG } from '@/lib/data/constants'
 import { getWhatsAppLink } from '@/lib/utils/whatsapp'
 
@@ -78,20 +78,22 @@ function RequestCallModal({ onClose, onSent }: { onClose: () => void; onSent: (m
     if (!phone.trim()) { setErr('Phone number is required'); return }
     setErr('')
     setLoading(true)
-    trackLead('callback_form', { form_service: service || '' })
-    try {
-      await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: 'Callback Request',
-          phone,
-          service: service || 'General enquiry',
-          message: `Callback requested via website — ${new Date().toLocaleString('en-AE', { timeZone: 'Asia/Dubai' })}`,
-        }),
-      })
-    } catch {}
+    const ok = await sendEnquiry(
+      {
+        name: 'Callback Request',
+        phone,
+        service: service || 'General enquiry',
+        message: `Callback requested via website — ${new Date().toLocaleString('en-AE', { timeZone: 'Asia/Dubai' })}`,
+      },
+      'callback_form',
+      { form_service: service || '' },
+    )
     setLoading(false)
+    if (!ok) {
+      // keep the number in the box and point to WhatsApp/call
+      setErr(ENQUIRY_FAILED_MSG)
+      return
+    }
     onSent('We got your number! Expect a call back shortly.')
   }
 

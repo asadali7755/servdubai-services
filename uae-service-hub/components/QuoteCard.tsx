@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { useRequestCall } from '@/components/RequestCallModal'
 import { SITE_CONFIG } from '@/lib/data/constants'
-import { trackLead } from '@/lib/utils/track'
+import { sendEnquiry, ENQUIRY_FAILED_MSG } from '@/lib/utils/enquiry'
 
 const SERVICES = [
   'Villa Deep Cleaning',
@@ -81,20 +81,23 @@ export default function QuoteCard({
     }
     setQErr('')
     setQSent(true)
-    trackLead('quote_form', { form_source: source ?? '' })
     const svc = service || (isAr ? 'خدمات التنظيف' : 'Cleaning services')
-    try {
-      await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: `Quote Request (${source})`,
-          phone,
-          service: svc,
-          message: `Quote requested from ${source} — ${new Date().toLocaleString('en-AE', { timeZone: 'Asia/Dubai' })}`,
-        }),
-      })
-    } catch {}
+    const ok = await sendEnquiry(
+      {
+        name: `Quote Request (${source})`,
+        phone,
+        service: svc,
+        message: `Quote requested from ${source} — ${new Date().toLocaleString('en-AE', { timeZone: 'Asia/Dubai' })}`,
+      },
+      'quote_form',
+      { form_source: source ?? '' },
+    )
+    if (!ok) {
+      // keep the number in the box and point to WhatsApp/call
+      setQSent(false)
+      setQErr(isAr ? `لم يتم الإرسال. راسلنا على واتساب أو اتصل ${SITE_CONFIG.phoneDisplay}` : ENQUIRY_FAILED_MSG)
+      return
+    }
     showToast(
       isAr
         ? 'تم إرسال طلبك! سنتصل بك قريباً.'

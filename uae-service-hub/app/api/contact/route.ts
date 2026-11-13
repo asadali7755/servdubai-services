@@ -76,10 +76,15 @@ export async function POST(req: Request) {
           </div>
         `,
       })
-      if (sendError) console.error('Resend email error:', sendError)
-      else console.log('Lead email sent:', sent?.id, '|', service)
+      if (sendError) {
+        console.error('Resend email error:', sendError)
+        // Tell the form the lead was NOT delivered so it shows WhatsApp/call instead
+        return NextResponse.json({ error: 'Email failed' }, { status: 502 })
+      }
+      console.log('Lead email sent:', sent?.id, '|', service)
     } catch (emailErr) {
       console.error('Resend email error:', emailErr)
+      return NextResponse.json({ error: 'Email failed' }, { status: 502 })
     }
 
     return NextResponse.json(

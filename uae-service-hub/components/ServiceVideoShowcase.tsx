@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import { galleryData } from '@/lib/data/gallery'
 import { useRequestCall } from '@/components/RequestCallModal'
+import { sendEnquiry, ENQUIRY_FAILED_MSG } from '@/lib/utils/enquiry'
 
 interface Props {
   serviceSlug: string
@@ -43,18 +44,22 @@ function QuoteCard({ defaultService }: { defaultService: string }) {
     if (!phone.trim()) { setErr('Please enter your phone number'); return }
     setErr('')
     setSent(true)
-    try {
-      await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: 'Quote Request (Service Video Section)',
-          phone,
-          service: service || 'Cleaning services',
-          message: `Quote requested via service video section — ${new Date().toLocaleString('en-AE', { timeZone: 'Asia/Dubai' })}`,
-        }),
-      })
-    } catch {}
+    const ok = await sendEnquiry(
+      {
+        name: 'Quote Request (Service Video Section)',
+        phone,
+        service: service || 'Cleaning services',
+        message: `Quote requested via service video section — ${new Date().toLocaleString('en-AE', { timeZone: 'Asia/Dubai' })}`,
+      },
+      'quote_form',
+      { form_source: 'service_video' },
+    )
+    if (!ok) {
+      // keep the number in the box and point to WhatsApp/call
+      setSent(false)
+      setErr(ENQUIRY_FAILED_MSG)
+      return
+    }
     showToast('Request sent! We\'ll get back to you shortly.')
     setPhone('')
     setTimeout(() => setSent(false), 3000)

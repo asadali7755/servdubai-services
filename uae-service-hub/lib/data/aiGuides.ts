@@ -129,7 +129,15 @@ export const aiGuides: AiGuide[] = (guides as AiGuide[]).map((g) => {
     ? (s.schema as Record<string, unknown>[]).map((it) =>
         it['@type'] === 'FAQPage' && Array.isArray(it.mainEntity)
           ? { ...it, mainEntity: cleanFaqs(it.mainEntity as { name?: string; acceptedAnswer?: { text?: string } }[]) }
-          : it,
+          : it['@type'] === 'Article'
+            ? {
+                // The agents' Article schema has no image or datePublished;
+                // Google lists both for Article rich results.
+                image: s.image.startsWith('http') ? s.image : `https://servedubai.ae${s.image}`,
+                datePublished: s.datePublished,
+                ...it,
+              }
+            : it,
       )
     : s.schema
   return { ...s, faqs: cleanFaqs(s.faqs), schema }
