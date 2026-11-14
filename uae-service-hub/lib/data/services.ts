@@ -209,11 +209,11 @@ We handle all sofa types: L-shaped, sectional, 3-seater, corner sofas, fabric re
       {
         headingLevel: 'h2',
         heading: 'Why Choose Madinat Alhaya for Sofa Cleaning in Dubai?',
-        text: 'Madinat Alhaya is the trusted sofa cleaning services Dubai provider with 500+ satisfied residential and commercial clients across UAE.',
+        text: 'Madinat Alhaya cleans sofas at homes and offices across Dubai and the UAE, at your place, with a free quote on WhatsApp.',
       },
       {
         headingLevel: 'h3',
-        heading: 'Certified Technicians and Advanced Equipment',
+        heading: 'Trained Technicians and Advanced Equipment',
         text: 'All Madinat Alhaya sofa cleaning technicians are trained, background-checked, and equipped with industrial-grade hot-water extraction machines and professional sofa cleaning products — far beyond any household cleaning method.',
       },
       {
@@ -268,7 +268,7 @@ We also offer sofa carpet cleaning as a combined package, saving you time and co
 A clean carpet is the foundation of a healthy UAE home, wherever you live between the seven Emirates. Book our carpet cleaning services today and experience the difference a professional carpet cleaner makes.`,
     benefits: [
       'Carpet cleaning services in Dubai — affordable carpet cleaning services',
-      'Trusted carpet cleaner Dubai — 500+ satisfied clients',
+      'Carpet cleaning at your home across Dubai',
       'Professional carpet cleaning services in Sharjah, Abu Dhabi & all UAE',
       'Sofa carpet cleaning Dubai & carpet and sofa cleaning Dubai packages',
       'Dry carpet cleaning services for delicate rugs & quick turnaround',
@@ -380,7 +380,7 @@ A clean carpet is the foundation of a healthy UAE home, wherever you live betwee
       },
       {
         headingLevel: 'h3',
-        heading: 'Certified Technicians with Industrial Equipment',
+        heading: 'Trained Technicians with Industrial Equipment',
         text: 'All carpet cleaning technicians are trained, background-checked, and equipped with commercial-grade hot-water extraction machines — delivering results far beyond what any household carpet cleaner can achieve.',
       },
       {
@@ -1117,7 +1117,7 @@ Madinat Alhaya provides villa deep cleaning in Dubai, Abu Dhabi, Sharjah, Ajman,
       'Walkthrough assessment and villa deep cleaning scope agreement',
       'Top-to-bottom room-by-room systematic clean',
       'Kitchen full degreasing, appliances & cabinet sanitization',
-      'Bathroom steam disinfection — 99.9% germ removal',
+      'Bathroom steam disinfection',
       'AC grilles, windows, fixtures & furniture detailing',
       'Floor restoration, balcony & terrace power cleaning',
     ],
@@ -1228,7 +1228,7 @@ Madinat Alhaya provides villa deep cleaning in Dubai, Abu Dhabi, Sharjah, Ajman,
       },
       {
         headingLevel: 'h3',
-        heading: 'Dubai Municipality Approved & Eco-Friendly',
+        heading: 'Eco-Friendly Products',
         text: 'For villa deep cleaning we offer eco-friendly "Green Cleaning" using non-toxic, biodegradable detergents — essential for homes with children and pets.',
       },
       {

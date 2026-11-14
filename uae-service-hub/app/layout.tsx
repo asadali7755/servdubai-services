@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     'cleaning services Abu Dhabi', 'cleaning services Sharjah', 'home cleaning services Dubai',
     'villa deep cleaning Dubai', 'sofa cleaning Dubai', 'carpet cleaning Dubai',
     'marble polishing Dubai', 'office cleaning Dubai', 'apartment cleaning Dubai',
-    'mattress cleaning Dubai', 'curtain cleaning Dubai', 'cleaning services near me Dubai',
+    'mattress cleaning Dubai', 'curtain cleaning Dubai',
     'house cleaning Dubai', 'move in move out cleaning Dubai', 'same-day cleaning Dubai',
     'cleaning services Ajman', 'cleaning services RAK', 'cleaning services Fujairah',
     'cleaning services Umm Al Quwain', 'eco-friendly cleaning Dubai', 'cleaning services UAE',

@@ -41,7 +41,7 @@ export default function AiGuideArticle({ guide }: { guide: AiGuide }) {
             <span className="aig-badge"><span className="aig-badge-dot" />AI-Researched Deep Guide</span>
             <h1 className="aig-title">{guide.h1}</h1>
             <div className="aig-meta">
-              <span>Madinat Al Haya</span><span className="sep">•</span>
+              <span>Madinat Alhaya</span><span className="sep">•</span>
               <span>{dateLabel}</span><span className="sep">•</span>
               <span>{guide.readMins} min read</span>
               {guide.primaryKeyword && <span className="aig-kw">◆ {guide.primaryKeyword}</span>}
