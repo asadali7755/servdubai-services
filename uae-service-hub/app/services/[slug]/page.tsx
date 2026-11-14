@@ -1,3 +1,4 @@
+import TopicSections from '@/components/dna/TopicSections'
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import StockMedia from '@/components/dna/StockMedia'
@@ -333,6 +334,7 @@ export default async function ServicePage({ params }: Props) {
           seed={slug}
         />
         {ORDERS[dna.order]}
+        <TopicSections path={`/services/${service.slug}`} />
         <StickyBar waLink={waLink} phone={SITE_CONFIG.phone} />
       </div>
       <WhatsAppButton service={service.name} />

@@ -1,3 +1,4 @@
+import TopicSections from '@/components/dna/TopicSections'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
@@ -342,6 +343,7 @@ export default async function CityPage({ params }: Props) {
         />
 
         {ORDERS[dna.order]}
+        <TopicSections path={`/${emirate.slug}/${city.slug}`} />
 
         {siblingCities.length > 0 && (
           <section className="dn-sec dn-sec-tight" style={{ paddingTop: 0 }}>

@@ -75,7 +75,7 @@ const translations = {
     },
     home: {
       servicesLabel: 'Our Cleaning Services',
-      servicesTitle: 'Best Cleaning Services in Dubai — Villa, Sofa, Carpet & Marble Polishing',
+      servicesTitle: 'Cleaning Services in Dubai — Villa, Sofa, Carpet & Marble Polishing',
       servicesSubtitle: 'If you are looking for affordable, premium cleaning services in Dubai, Madinat Alhaya offers villa deep cleaning, sofa cleaning, carpet cleaning, marble polishing & office cleaning across Dubai, Abu Dhabi, Sharjah and all 7 UAE Emirates.',
       viewService: 'View Service →',
       alsoAvailable: 'Also Available',
@@ -275,7 +275,7 @@ const translations = {
     },
     home: {
       servicesLabel: 'كيف نساعدك',
-      servicesTitle: 'أفضل خدمات التنظيف في دبي — فلل، كنب، سجاد وتلميع رخام',
+      servicesTitle: 'خدمات التنظيف في دبي — فلل، كنب، سجاد وتلميع رخام',
       servicesSubtitle: 'خدمات تنظيف عميق احترافية في دبي وأبوظبي والشارقة — تنظيف فلل، كنب، سجاد، تلميع رخام وتنظيف مكاتب في جميع إمارات الدولة السبع.',
       viewService: '← عرض الخدمة',
       alsoAvailable: 'متاح أيضاً',

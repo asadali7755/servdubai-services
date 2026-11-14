@@ -1,3 +1,4 @@
+import TopicSections from '@/components/dna/TopicSections'
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import LazyVideo from '@/components/dna/LazyVideo'
@@ -281,6 +282,7 @@ export default async function ServiceAreaPage({ params }: Props) {
         />
 
         {ORDERS[dna.order]}
+        <TopicSections path={`/${emirate.slug}/${city.slug}/${sSlug}`} />
 
         <section className="dn-sec dn-sec-tight" style={{ paddingTop: 0 }}>
           <div className="dn-wrap" style={{ display: 'grid', gap: 22 }}>

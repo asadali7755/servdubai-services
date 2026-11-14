@@ -1,3 +1,4 @@
+import TopicSections from '@/components/dna/TopicSections'
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -245,6 +246,7 @@ export default async function EmiratePage({ params }: Props) {
           seed={emirate.slug}
         />
         {ORDERS[dna.order]}
+        <TopicSections path={`/${emirate.slug}`} />
         <StickyBar waLink={waLink} phone={SITE_CONFIG.phone} />
       </div>
       <WhatsAppButton />
