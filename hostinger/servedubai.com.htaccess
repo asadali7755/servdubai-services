@@ -1,0 +1,20 @@
+# servedubai.com (retired, hacked WordPress history)
+#
+# ONLY the homepage moves to servedubai.ae. Nothing else from .com is sent to .ae:
+# every other URL (hacked *.php, /?products/..., /products/, /ctg/, old WordPress
+# pages, archives, files) gets 410 Gone here, so Google drops it and never sees
+# it on .ae. The homepage redirect never carries a query string or path.
+# Set 14 Nov 2026. Source copy: servedubai-live/hostinger/servedubai.com.htaccess
+
+RewriteEngine On
+
+# Keep SSL renewal working (Let's Encrypt / Hostinger)
+RewriteRule ^\.well-known/ - [L]
+
+# Homepage only: plain, or with ad tracking (utm/fbclid/gclid). Query is dropped.
+RewriteCond %{QUERY_STRING} ^$ [OR]
+RewriteCond %{QUERY_STRING} ^(utm_[a-z]+|fbclid|gclid)=[^/]*$ [NC]
+RewriteRule ^$ https://servedubai.ae/? [R=301,L]
+
+# Everything else -> 410 Gone
+RewriteRule ^ - [G,L]
