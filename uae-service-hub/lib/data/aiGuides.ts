@@ -67,9 +67,41 @@ const CLAIM = new RegExp(
     '24/7 (?:[\\w-]+ ){0,2}(?:support|availability|emergency|hotline|call|line|response|service|booking|cleaning|team|crew)',
     '(?:available|reachable|open|respond|answer|operates?) 24/7', 'round[- ]the[- ]clock', '(?:our|the) (?:uae |dedicated )?call[-\u2011 ]?cent(?:er|re)', '24/7 call',
     'best cleaning company', 'only one in dubai', 'account manager',
+    // Not confirmed by the client (content audit, 14 Nov 2026): certification,
+    // insurance/licence, municipality approval, lab-style kill rates, rankings
+    // and experience/customer counts.
+    '\\bcertifi(?:ed|cation)', '\\binsured\\b', 'liability insurance', '\\blicen[sc]ed\\b', 'municipality[- ]approved',
+    '99\\.9', '(?:hospital|medical)[- ]grade', 'completion certificate', 'unparalleled', 'unmatched', 'top[- ]rated', 'top[- ]notch', '#1\\b', 'number one',
+    '\\b\\d+\\+? years? of (?:experience|expertise|service)', '\\b\\d[\\d,]*\\+ (?:happy |satisfied )?(?:clients|customers|homes|villas|families|jobs|projects)',
   ].join('|'),
   'i',
 )
+
+/*
+ * Short fields (title, h1, description, keyword) must never be emptied by the
+ * sentence filter, so they only lose the ranking words themselves.
+ */
+const SHORT_KEYS = new Set(['title', 'h1', 'description', 'excerpt', 'headline'])
+/** Identifiers and URLs are never rewritten */
+const KEEP_KEYS = new Set(['slug', 'image', 'url', 'item', '@id', '@type', '@context', 'datePublished', 'dateModified', 'generatedBy', 'primaryKeyword'])
+function softClaimText(text: string): string {
+  return text
+    .replace(/\b(?:the )?best(?:-in-class)? (?=[a-z])/gi, (m) => (/^the /i.test(m) ? m.slice(0, 4) : ''))
+    .replace(/\b(?:top[- ]rated|leading|certified|unparalleled|unmatched|top[- ]notch) /gi, '')
+    .replace(/\s{2,}/g, ' ')
+    .replace(/^([a-z])/, (c) => c.toUpperCase())
+    .trim()
+}
+
+/** One brand spelling everywhere ("Madinat Al Haya" -> "Madinat Alhaya") */
+const brand = (s: string) => s.replace(/Madinat Al[- ]Haya/g, 'Madinat Alhaya')
+
+/** The bot sometimes leaves Markdown links in the HTML: [text](url) -> <a> */
+const mdLinks = (html: string) =>
+  html.replace(/\[([^\]]{2,120})\]\((https?:\/\/[^\s)]+|\/[^\s)]*)\)/g, (_m, t: string, u: string) => {
+    const href = u.replace(/^https?:\/\/(?:www\.)?servedubai\.ae/, '') || '/'
+    return `<a href="${href}">${t}</a>`
+  })
 const plain = (h: string) => h.replace(/<[^>]+>/g, ' ')
 
 function stripClaimHtml(html: string): string {
@@ -114,7 +146,10 @@ function cleanFaqs<T extends { question?: string; answer?: string; name?: string
 
 function deepStrip<T>(v: T, key = ''): T {
   if (typeof v === 'string') {
-    return (key === 'bodyHtml' ? stripClaimHtml(stripPriceHtml(v)) : stripClaimText(stripPriceText(v))) as T
+    if (KEEP_KEYS.has(key)) return v
+    if (key === 'bodyHtml') return brand(stripClaimHtml(stripPriceHtml(mdLinks(v)))) as T
+    if (SHORT_KEYS.has(key)) return brand(softClaimText(v)) as T
+    return brand(stripClaimText(stripPriceText(v))) as T
   }
   if (Array.isArray(v)) return v.map((x) => deepStrip(x, key)) as T
   if (v && typeof v === 'object') {

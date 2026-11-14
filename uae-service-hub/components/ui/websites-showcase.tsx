@@ -128,7 +128,7 @@ export function WebsitesShowcase() {
           <span className="wss-label">Our Network</span>
           <h2 className="wss-h2">Explore Our Specialist Cleaning Websites</h2>
           <p className="wss-sub">
-            Madinat Alhaya also runs 4 dedicated specialist sites — each focused entirely on one service, backed by the same certified team across UAE.
+            Madinat Alhaya also runs 4 dedicated specialist sites — each focused entirely on one service, backed by the same team across UAE.
           </p>
         </div>
 

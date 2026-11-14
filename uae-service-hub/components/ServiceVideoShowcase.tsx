@@ -147,7 +147,7 @@ export default function ServiceVideoShowcase({ serviceSlug, serviceName }: Props
                 <h2 className="svs-heading">{displayTitle}</h2>
                 <p className="svs-desc">
                   Watch real {serviceName.split(/[&]/)[0].trim().toLowerCase()} results from our recent jobs across {emirate} &amp; the UAE.
-                  Our certified technicians deliver professional results using advanced equipment and eco-friendly products.
+                  Our technicians deliver professional results using advanced equipment and eco-friendly products.
                 </p>
                 <QuoteCard defaultService={serviceName} />
               </div>

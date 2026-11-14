@@ -78,7 +78,7 @@ const sites = [
     url: 'https://marblepro.ae',
     urlLabel: 'marblepro.ae',
     image: '/images/hero/marble-polishing-dubai.webp',
-    description: 'Marble Pro UAE is our dedicated specialist site for marble polishing, restoration, and sealing services across the UAE. Marble requires expert care to maintain its natural luster and prevent damage from etching, scratching, and staining. Our certified technicians use diamond abrasive pads and professional polishing compounds to restore your marble to factory finish.',
+    description: 'Marble Pro UAE is our dedicated specialist site for marble polishing, restoration, and sealing services across the UAE. Marble requires expert care to maintain its natural luster and prevent damage from etching, scratching, and staining. Our technicians use diamond abrasive pads and professional polishing compounds to restore your marble to factory finish.',
     features: [
       'Diamond grinding for deep scratches',
       'Honing to remove surface etch marks',
@@ -108,7 +108,7 @@ export default function WebsitesPage() {
           </div>
           <h1 className="ws-hero-h1">Our Specialist Websites</h1>
           <h2 className="ws-hero-sub">
-            4 dedicated websites. Each one a specialist in its field. All backed by Madinat Alhaya's certified cleaning professionals across UAE.
+            4 dedicated websites. Each one a specialist in its field. All backed by Madinat Alhaya's cleaning professionals across UAE.
           </h2>
           <div className="ws-hero-dots">
             {sites.map((s) => (

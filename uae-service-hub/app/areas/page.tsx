@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   ...buildMetadata({
     title: 'Cleaning Services Near Me UAE | All Emirates, Cities & Neighbourhoods',
     description:
-      'Find the best cleaning services near me across the UAE — villa cleaning, sofa cleaning, carpet cleaning & marble polishing in Dubai, Sharjah, Abu Dhabi, Ajman, RAK, Fujairah & Umm Al Quwain. Same-day service.',
+      'Find cleaning services across the UAE — villa cleaning, sofa cleaning, carpet cleaning & marble polishing in Dubai, Sharjah, Abu Dhabi, Ajman, RAK, Fujairah & Umm Al Quwain. Same-day service.',
     path: '/areas',
   }),
   keywords: [

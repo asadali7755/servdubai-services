@@ -18,11 +18,11 @@ export const metadata: Metadata = {
     path: '/about',
   }),
   keywords: [
-    'best cleaning company Dubai', 'cleaning company UAE', 'Madinat Alhaya cleaning services',
+    'cleaning company Dubai', 'cleaning company UAE', 'Madinat Alhaya cleaning services',
     'professional cleaning services Dubai', 'cleaning company near me Dubai',
     'villa cleaning company Dubai', 'sofa cleaning company Dubai', 'carpet cleaning company Dubai',
     'marble polishing company Dubai', 'office cleaning company Dubai',
-    'eco-friendly cleaning company UAE', 'certified professional cleaners Dubai',
+    'eco-friendly cleaning company UAE', 'professional cleaners Dubai',
     'cleaning services Abu Dhabi', 'cleaning services Sharjah', 'cleaning services all Emirates',
   ],
 }
@@ -51,7 +51,7 @@ export default function AboutPage() {
       <SiteHero
         badge="UAE Cleaning Experts"
         title="About Madinat Alhaya Building Cleaning Services"
-        subtitle="Professional cleaning services across Dubai & all 7 UAE Emirates — certified technicians, eco-friendly solutions, same-day availability."
+        subtitle="Professional cleaning services across Dubai & all 7 UAE Emirates — trained technicians, eco-friendly solutions, same-day availability."
         backgroundImage="/images/hero/professional-cleaning-services-UAE.webp"
         backgroundAlt="About Madinat Alhaya — professional cleaning services Dubai UAE"
         getFreeQuoteLabel="Get Free Quote"
@@ -89,7 +89,7 @@ export default function AboutPage() {
                 Madinat Alhaya Building Cleaning Services was built on a simple belief — that every home and business in Dubai deserves a truly professional clean. In a city where desert sand, hard water, and high humidity create unique cleaning challenges, we developed services that go far beyond standard dusting and mopping.
               </p>
               <p className="pg-body-last">
-                Today, Madinat Alhaya serves thousands of residential and commercial clients across all 7 UAE Emirates — from luxury villas in Arabian Ranches to high-rise apartments in Dubai Marina. Our certified, background-checked technicians bring professional-grade equipment, eco-friendly solutions, and genuine care to every job.
+                Today, Madinat Alhaya serves thousands of residential and commercial clients across all 7 UAE Emirates — from luxury villas in Arabian Ranches to high-rise apartments in Dubai Marina. Our background-checked technicians bring professional-grade equipment, eco-friendly solutions, and genuine care to every job.
               </p>
               <div className="pg-feat-grid">
                 {['11 professional services','All 7 UAE Emirates','Same-day availability','Eco-friendly products','Trained professionals','Free instant quote'].map((feat) => (
@@ -167,7 +167,7 @@ export default function AboutPage() {
           <div className="pg-grid-3col">
             {[
               { n: '01', title: 'Experienced & Background-Checked Professionals', desc: 'Every Madinat Alhaya technician passes rigorous background verification and comprehensive training before servicing any property. We don\'t learn on your home — our staff arrives fully prepared.' },
-              { n: '02', title: 'Advanced Commercial-Grade Equipment', desc: 'We invest in truck-mounted carpet cleaners, hospital-grade HEPA vacuum systems, Italian diamond marble polishing machines, and industrial steam cleaners — not basic portable units.' },
+              { n: '02', title: 'Advanced Commercial-Grade Equipment', desc: 'We invest in truck-mounted carpet cleaners, HEPA vacuum systems, Italian diamond marble polishing machines, and industrial steam cleaners — not basic portable units.' },
               { n: '03', title: '100% Eco-Friendly & Non-Toxic Solutions', desc: 'Our biodegradable, non-toxic cleaning products are powerful on stains but completely safe for children, pets, and allergy sufferers. Zero harsh chemicals — zero compromise on results.' },
               { n: '04', title: 'Transparent Pricing with No Hidden Fees', desc: 'Every quote is detailed and final. No surprise charges after the job. No add-on fees you weren\'t told about. Just honest, upfront pricing with professional results.' },
               { n: '05', title: 'Evening Bookings, Monday to Saturday', desc: 'We work Monday to Saturday from 9 AM to 10 PM, so a deep clean or sofa wash can be booked around your day — including evenings after work.' },

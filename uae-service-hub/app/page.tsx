@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   }),
   keywords: [
     'cleaning services Dubai', 'cleaning company Dubai', 'deep cleaning Dubai', 'cleaning services UAE',
-    'best cleaning company Dubai', 'professional cleaning services Dubai', 'cleaning services near me',
+    'cleaning company Dubai', 'professional cleaning services Dubai', 'cleaning services near me',
     // Service + Dubai
     'sofa cleaning Dubai', 'carpet cleaning Dubai', 'marble polishing Dubai', 'mattress cleaning Dubai',
     'curtain cleaning Dubai', 'villa cleaning Dubai', 'villa deep cleaning Dubai', 'apartment cleaning Dubai',

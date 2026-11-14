@@ -25,7 +25,7 @@ const cityLocalContent: Record<string, CityLocalContent> = {
   =========================================== */
 
   'dubai-marina': {
-    localDescription: "We provide premium sofa shampooing, carpet deep cleaning, and villa services for high-rise apartments in Dubai Marina. Our certified technicians cover all major residential towers along Marina Walk - including Marina Diamonds, Torch Tower, Princess Tower, and Ocean Heights - and extend full coverage to JBR (Jumeirah Beach Residence).",
+    localDescription: "We provide premium sofa shampooing, carpet deep cleaning, and villa services for high-rise apartments in Dubai Marina. Our technicians cover all major residential towers along Marina Walk - including Marina Diamonds, Torch Tower, Princess Tower, and Ocean Heights - and extend full coverage to JBR (Jumeirah Beach Residence).",
     landmarks: ['Marina Diamonds', 'Torch Tower', 'Princess Tower', 'Ocean Heights', 'Marina Walk', 'JBR'],
     propertyType: 'high-rise waterfront apartments and luxury towers',
     areaNote: "Dubai Marina's dense high-rise environment means shared facilities and frequent resident turnover - making regular professional cleaning essential for maintaining hygiene standards and rental property value.",
@@ -603,7 +603,7 @@ const cityLocalContent: Record<string, CityLocalContent> = {
   =========================================== */
 
   'abu-dhabi-abu-dhabi-city': {
-    localDescription: "Premium cleaning services for apartments, villas, and offices in Abu Dhabi City, covering Corniche, Al Khalidiyah, Muroor, and Hamdan Street communities. Our certified teams bring the same professional standards we deliver across Dubai to Abu Dhabi's prestigious residential and commercial properties.",
+    localDescription: "Premium cleaning services for apartments, villas, and offices in Abu Dhabi City, covering Corniche, Al Khalidiyah, Muroor, and Hamdan Street communities. Our teams bring the same professional standards we deliver across Dubai to Abu Dhabi's prestigious residential and commercial properties.",
     landmarks: ['Abu Dhabi Corniche', 'Al Khalidiyah', 'Muroor Road', 'Hamdan Street', 'Al Bateen'],
     propertyType: 'premium apartments, villas and government district offices',
     areaNote: "Abu Dhabi City's mix of luxury apartments near the Corniche and spacious family villas inland means our teams are experienced with the full spectrum of property types - from studio apartments to 6-bedroom villas.",

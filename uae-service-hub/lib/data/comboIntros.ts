@@ -488,7 +488,7 @@ const comboIntros: Record<string, ComboIntro> = {
     metaDescription: "Villa deep cleaning in Jumeirah — full room-by-room service for beachside villas. Free WhatsApp quote, bundled packages.",
   },
   'dubai-palm-jumeirah-villa-deep-cleaning': {
-    intro: "Palm Jumeirah's frond villas combine natural stone flooring, designer upholstery and multiple bathrooms, and our villa deep cleaning here is built around that scale — teams of 3-6 technicians covering kitchen degreasing, steam disinfection, AC grilles, windows and floor restoration in a single scheduled visit. Marble care is assessed alongside the deep clean, since many Palm villas benefit from polishing as a separate add-on where floors have dulled. We work with the discretion Palm Jumeirah residences expect, using Dubai Municipality-approved, biodegradable products throughout. We share a clear quote on WhatsApp before booking.",
+    intro: "Palm Jumeirah's frond villas combine natural stone flooring, designer upholstery and multiple bathrooms, and our villa deep cleaning here is built around that scale — teams of 3-6 technicians covering kitchen degreasing, steam disinfection, AC grilles, windows and floor restoration in a single scheduled visit. Marble care is assessed alongside the deep clean, since many Palm villas benefit from polishing as a separate add-on where floors have dulled. We work with the discretion Palm Jumeirah residences expect, using biodegradable products throughout. We share a clear quote on WhatsApp before booking.",
     metaDescription: "Villa deep cleaning on Palm Jumeirah — full-property service with marble care assessed alongside. Free WhatsApp estimate.",
   },
   'dubai-al-barsha-villa-deep-cleaning': {
@@ -540,7 +540,7 @@ const comboIntros: Record<string, ComboIntro> = {
     metaDescription: "Villa deep cleaning in Al Nabba, Sharjah — full-property service tailored to central Sharjah's older homes.",
   },
   'abu-dhabi-abu-dhabi-city-villa-deep-cleaning': {
-    intro: "Abu Dhabi City's inland villas, larger and more spread out than the Corniche-facing apartments closer to the water, typically need a full villa deep clean every 3-6 months to stay ahead of everyday dust — with sofa and carpet cleaning recommended on the shorter 4-6 month cycle in between. Our process covers kitchen degreasing, steam disinfection in every bathroom, AC grille and vent sanitization, and internal window cleaning, using the same Dubai Municipality-approved products we use across the UAE. Pricing is based on villa size and scope, not emirate, so Abu Dhabi rates match what we charge in Dubai. Free quotes via WhatsApp.",
+    intro: "Abu Dhabi City's inland villas, larger and more spread out than the Corniche-facing apartments closer to the water, typically need a full villa deep clean every 3-6 months to stay ahead of everyday dust — with sofa and carpet cleaning recommended on the shorter 4-6 month cycle in between. Our process covers kitchen degreasing, steam disinfection in every bathroom, AC grille and vent sanitization, and internal window cleaning, using the same products we use across the UAE. Pricing is based on villa size and scope, not emirate, so Abu Dhabi rates match what we charge in Dubai. Free quotes via WhatsApp.",
     metaDescription: "Villa deep cleaning in Abu Dhabi City — full-property service, same pricing as Dubai. Free WhatsApp quote, recommended every 3-6 months.",
   },
   'abu-dhabi-khalifa-city-villa-deep-cleaning': {
@@ -548,7 +548,7 @@ const comboIntros: Record<string, ComboIntro> = {
     metaDescription: "Villa deep cleaning in Khalifa City — full-property service for large family villas. Marble add-on available, free quote.",
   },
   'abu-dhabi-yas-island-villa-deep-cleaning': {
-    intro: "Yas Island's villas across communities like Yas Acres and Ansam are held to the same premium standard as the island's serviced apartments, and our villa deep cleaning here reflects that — full kitchen degreasing, bathroom steam disinfection, AC grille sanitization, window cleaning and floor restoration, using Dubai Municipality-approved products throughout. Marble and luxury sofa cleaning are commonly booked alongside the deep clean for Yas Island's premium interiors. Access is often coordinated through concierge or a trusted key-holder, and same-day service is available for most requests. Contact us via WhatsApp for a quote tailored to your Yas Island villa.",
+    intro: "Yas Island's villas across communities like Yas Acres and Ansam are held to the same premium standard as the island's serviced apartments, and our villa deep cleaning here reflects that — full kitchen degreasing, bathroom steam disinfection, AC grille sanitization, window cleaning and floor restoration, using products throughout. Marble and luxury sofa cleaning are commonly booked alongside the deep clean for Yas Island's premium interiors. Access is often coordinated through concierge or a trusted key-holder, and same-day service is available for most requests. Contact us via WhatsApp for a quote tailored to your Yas Island villa.",
     metaDescription: "Villa deep cleaning on Yas Island — full-property service with marble and luxury sofa care available. Free WhatsApp quote.",
   },
   'abu-dhabi-mohamed-bin-zayed-city-villa-deep-cleaning': {

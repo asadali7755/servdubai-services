@@ -43,10 +43,10 @@ export const services: Service[] = [
     id: 'sofa-cleaning',
     name: 'Sofa Cleaning & Shampooing',
     heroTitle: 'Sofa Cleaning Dubai | Sofa Shampooing at Your Home',
-    heroSubtitle: 'Looking for professional sofa cleaning services across the UAE? Our upholstery service removes stains, allergens, and odors using advanced pH-balanced technology — serving Dubai, Abu Dhabi, Sharjah and beyond. Book now!',
+    heroSubtitle: 'Sofa shampooing and hot-water extraction at your home in Dubai and across the UAE, for fabric, leather and L-shape sofas. Same-day slots and a free quote on WhatsApp.',
     slug: 'sofa-cleaning',
     category: 'domestic',
-    shortDescription: 'Best professional sofa cleaning services in Dubai, Abu Dhabi & Sharjah. Expert upholstery shampooing at home — removes stains, odors & allergens. Same-day service across UAE.',
+    shortDescription: 'Sofa cleaning in Dubai at your home: shampooing and hot-water extraction for fabric, leather and L-shape sofas. Same-day slots, free WhatsApp quote.',
     fullDescription: `The Ultimate Guide to Reviving Your Upholstery Across the UAE
 
 From the high-rise towers of Dubai Marina to the family villas of Al Ain and the coastal apartments of Fujairah, one of the most used items in any UAE household — the sofa — is often the most neglected. Desert dust, high humidity, and constant air conditioning mean sofas across all seven Emirates accumulate allergens and grime far faster than furniture in temperate climates.
@@ -63,7 +63,7 @@ Deep cleaning removes allergens that can trigger asthma or skin sensitivities. F
 
 Extending the Life of Your Furniture
 
-Upholstery is an investment. Dust particles act like tiny sandpaper, grinding down fabric fibers every time you sit. Our professional sofa cleaning at home removes these abrasive particles, preserving fabric integrity for years. Whether you need sofa cleaning Ras Al Khaimah for a villa in Al Hamra or sofa cleaning Fujairah for a coastal apartment near the Corniche, our certified technicians deliver consistent results.
+Upholstery is an investment. Dust particles act like tiny sandpaper, grinding down fabric fibers every time you sit. Our professional sofa cleaning at home removes these abrasive particles, preserving fabric integrity for years. Whether you need sofa cleaning Ras Al Khaimah for a villa in Al Hamra or sofa cleaning Fujairah for a coastal apartment near the Corniche, our technicians deliver consistent results.
 
 Eliminating Stubborn Odors
 
@@ -71,7 +71,7 @@ The UAE's heat can lead to trapped moisture and musty smells within sofa cushion
 
 Our Sofa Cleaning Services Cover All 7 UAE Emirates
 
-Madinat Alhaya provides sofa cleaning Dubai, sofa cleaning Abu Dhabi, sofa cleaning Sharjah, sofa cleaning Ajman, sofa cleaning RAK, sofa cleaning Fujairah, and sofa cleaning UAQ — every one of the seven Emirates, Monday to Saturday, with same-day booking where available. We offer carpet sofa cleaning as a package deal, covering both your sofas and carpets in a single visit, whether you're in a UAQ City villa or a RAK City apartment near the Corniche. Our sofa cleaning cost is transparent — no hidden charges, free quotes via WhatsApp.
+Madinat Alhaya provides sofa cleaning in Dubai, Abu Dhabi, Sharjah, Ajman, RAK, Fujairah and UAQ — every one of the seven Emirates, Monday to Saturday, with same-day booking where available. We offer carpet sofa cleaning as a package deal, covering both your sofas and carpets in a single visit, whether you're in a UAQ City villa or a RAK City apartment near the Corniche. Our sofa cleaning cost is transparent — no hidden charges, free quotes via WhatsApp.
 
 We handle all sofa types: L-shaped, sectional, 3-seater, corner sofas, fabric recliners, velvet sofas, leather sofas, and modular configurations, from Fujairah's Gulf of Oman coastline to Ajman's growing residential districts. Our quick-dry technology means your sofa is ready to use within 3–4 hours after our professional sofa cleaning at home.`,
     benefits: [
@@ -159,7 +159,7 @@ We handle all sofa types: L-shaped, sectional, 3-seater, corner sofas, fabric re
       {
         headingLevel: 'h3',
         heading: 'Deep Steam Cleaning for Sanitization',
-        text: 'Our sofa steam cleaning Dubai uses high-temperature steam extraction that penetrates deep into upholstery fibers — killing 99.9% of bacteria, dust mites, and mold spores without harsh chemicals. The gold standard for sofa sanitization in Dubai, Abu Dhabi, and Sharjah.',
+        text: 'Our sofa steam cleaning Dubai uses high-temperature steam extraction that penetrates deep into upholstery fibers — killing bacteria, dust mites, and mold spores without harsh chemicals. The gold standard for sofa sanitization in Dubai, Abu Dhabi, and Sharjah.',
       },
       {
         headingLevel: 'h3',
@@ -174,7 +174,7 @@ We handle all sofa types: L-shaped, sectional, 3-seater, corner sofas, fabric re
       {
         headingLevel: 'h3',
         heading: 'Eco-Friendly & Pet-Safe Disinfection',
-        text: 'All sofa cleaning services products are Dubai Municipality approved, non-toxic, and biodegradable — completely safe for children, babies, and pets. Our processes align with eco-friendly cleaning standards for a healthy home environment.',
+        text: 'All sofa cleaning services products are non-toxic and biodegradable — completely safe for children, babies, and pets. Our processes align with eco-friendly cleaning standards for a healthy home environment.',
       },
       {
         headingLevel: 'h2',
@@ -199,7 +199,7 @@ We handle all sofa types: L-shaped, sectional, 3-seater, corner sofas, fabric re
       {
         headingLevel: 'h3',
         heading: 'From Dubai Marina and JBR to Downtown Dubai',
-        text: 'Professional sofa cleaning services in Dubai Marina, JBR, Jumeirah Beach Residence, Downtown Dubai, Business Bay, DIFC, Deira, Al Qusais, and all surrounding areas. Same-day sofa cleaning services near me available.',
+        text: 'Professional sofa cleaning services in Dubai Marina, JBR, Jumeirah Beach Residence, Downtown Dubai, Business Bay, DIFC, Deira, Al Qusais, and all surrounding areas. Same-day sofa cleaning services available.',
       },
       {
         headingLevel: 'h3',
@@ -224,7 +224,7 @@ We handle all sofa types: L-shaped, sectional, 3-seater, corner sofas, fabric re
       {
         headingLevel: 'h3',
         heading: 'Same-Day Booking and Transparent Pricing',
-        text: 'Need sofa cleaning services near me urgently? Same-day sofa cleaning services Dubai available across most areas. Transparent pricing — get a free quote via WhatsApp in minutes. No estimates that change upon arrival.',
+        text: 'Need sofa cleaning services urgently? Same-day sofa cleaning services Dubai available across most areas. Transparent pricing — get a free quote via WhatsApp in minutes. No estimates that change upon arrival.',
       },
     ],
     images: ['/images/services/leather-sofa-cleaning-dubai.webp'],
@@ -235,17 +235,17 @@ We handle all sofa types: L-shaped, sectional, 3-seater, corner sofas, fabric re
     id: 'carpet-cleaning',
     name: 'Carpet Cleaning & Shampooing',
     heroTitle: 'Carpet Cleaning Dubai | Carpet Shampooing at Your Home',
-    heroSubtitle: 'Our carpet cleaning services UAE use deep steam extraction to remove desert sand, allergens & tough stains. Book carpet cleaning services in Dubai, Abu Dhabi & Sharjah — eco-friendly, safe for kids & pets. Same-day service available!',
+    heroSubtitle: 'Deep steam extraction at your home that lifts desert sand, allergens and stains from carpets and rugs. Eco-friendly products, safe for kids and pets. Same-day slots available.',
     slug: 'carpet-cleaning',
     category: 'domestic',
-    shortDescription: 'Best carpet cleaning services UAE — trusted carpet cleaner Dubai for sofa carpet cleaning, dry carpet cleaning services & professional carpet cleaning services in Sharjah. Affordable carpet cleaning services UAE — safe for kids & pets. Book today!',
+    shortDescription: 'Carpet cleaning in Dubai at your home: deep steam extraction for carpets and rugs that lifts sand, stains and allergens. Free quote on WhatsApp.',
     fullDescription: `The Ultimate Guide to a Dust-Free Home Across the UAE
 
 In the United Arab Emirates, your carpet is more than just a floor covering — it is a centerpiece of home aesthetics and comfort. Between the sweeping desert sand inland and the high humidity of coastal cities like Dubai, Abu Dhabi, and Fujairah, maintaining that showroom look is a unique challenge from Ras Al Khaimah's mountain-backed communities to Umm Al Quwain's quiet villas. Our carpet cleaning services UAE use deep steam extraction to tackle what the climate throws at your carpets every day.
 
 Why UAE Carpets Need Specialized Care
 
-The UAE's desert climate means fine sand and dust particles find their way into homes through the smallest crevices and AC vents. Research shows that carpets in the UAE collect dirt up to three times faster than those in temperate regions. This is why carpet cleaning Dubai, carpet cleaning Sharjah, and carpet cleaning Ajman are in such high demand — standard vacuuming simply is not enough.
+The UAE's desert climate means fine sand and dust particles find their way into homes through the smallest crevices and AC vents. This is why carpet cleaning in Dubai, Sharjah and Ajman are in such high demand — standard vacuuming simply is not enough.
 
 The Sand Accumulation Factor
 
@@ -261,13 +261,13 @@ Carpet shampooing is ideal for surface-level stains and refreshing the appearanc
 
 Our Carpet Cleaning Services Cover All 7 UAE Emirates
 
-Madinat Alhaya provides carpet cleaning Dubai, carpet cleaning Abu Dhabi, carpet cleaning Sharjah, carpet cleaning Ajman, carpet cleaning Ras Al Khaimah, carpet cleaning Fujairah, and carpet cleaning Umm Al Quwain — home carpet cleaning, office carpet cleaning, commercial carpet cleaning, and house cleaning combined, our certified teams deliver consistent results across every Emirate.
+Madinat Alhaya provides carpet cleaning in Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Fujairah and Umm Al Quwain — home carpet cleaning, office carpet cleaning, commercial carpet cleaning, and house cleaning combined, our teams deliver consistent results across every Emirate.
 
 We also offer sofa carpet cleaning as a combined package, saving you time and cost wherever you are — from a Dubai Marina tower to a Falaj Al Mualla villa in UAQ. Our dry carpet cleaning services use low-moisture techniques ideal for delicate rugs and quick-turnaround commercial spaces. As an affordable carpet cleaning provider, we keep our pricing transparent — no hidden charges, free quotes via WhatsApp.
 
 A clean carpet is the foundation of a healthy UAE home, wherever you live between the seven Emirates. Book our carpet cleaning services today and experience the difference a professional carpet cleaner makes.`,
     benefits: [
-      'Best carpet cleaning services in Dubai — affordable carpet cleaning services',
+      'Carpet cleaning services in Dubai — affordable carpet cleaning services',
       'Trusted carpet cleaner Dubai — 500+ satisfied clients',
       'Professional carpet cleaning services in Sharjah, Abu Dhabi & all UAE',
       'Sofa carpet cleaning Dubai & carpet and sofa cleaning Dubai packages',
@@ -319,14 +319,14 @@ A clean carpet is the foundation of a healthy UAE home, wherever you live betwee
       },
       {
         question: 'Do you serve areas outside of Dubai?',
-        answer: 'Yes. Our carpet cleaning services cover Abu Dhabi, Sharjah, Ajman, RAK, Fujairah, and Umm Al Quwain. We provide carpet cleaning services near me across all 7 UAE Emirates with the same high standards.',
+        answer: 'Yes. Our carpet cleaning services cover Abu Dhabi, Sharjah, Ajman, RAK, Fujairah, and Umm Al Quwain. We provide carpet cleaning services across all 7 UAE Emirates with the same high standards.',
       },
     ],
     contentSections: [
       {
         headingLevel: 'h2',
         heading: 'Why UAE Carpets Need Professional Deep Cleaning',
-        text: 'Dubai and Abu Dhabi homes accumulate desert sand three times faster than homes in temperate climates. Standard vacuuming only removes surface debris — professional carpet cleaning services UAE use industrial hot-water extraction to flush out deep-settled sand, dust mites, and allergens that damage carpet fibers and reduce indoor air quality.',
+        text: 'Dubai and Abu Dhabi homes accumulate desert sand quickly. Standard vacuuming only removes surface debris — professional carpet cleaning services UAE use industrial hot-water extraction to flush out deep-settled sand, dust mites, and allergens that damage carpet fibers and reduce indoor air quality.',
       },
       {
         headingLevel: 'h3',
@@ -346,7 +346,7 @@ A clean carpet is the foundation of a healthy UAE home, wherever you live betwee
       {
         headingLevel: 'h3',
         heading: 'Steam Extraction: The Gold Standard for UAE Carpets',
-        text: 'Hot-water extraction (steam cleaning) is the most effective carpet cleaning method for UAE homes. High-pressure hot water penetrates deep into carpet fibers, dissolving embedded sand, oils, and organic matter — then powerful suction extracts all contaminants along with 95% of the moisture. Carpets dry within 1–2 hours.',
+        text: 'Hot-water extraction (steam cleaning) is the most effective carpet cleaning method for UAE homes. High-pressure hot water penetrates deep into carpet fibers, dissolving embedded sand, oils, and organic matter — then powerful suction extracts all contaminants along with most of the moisture. Carpets dry within 1–2 hours.',
       },
       {
         headingLevel: 'h3',
@@ -376,7 +376,7 @@ A clean carpet is the foundation of a healthy UAE home, wherever you live betwee
       {
         headingLevel: 'h2',
         heading: 'Why Choose Madinat Alhaya for Carpet Cleaning in Dubai?',
-        text: 'Madinat Alhaya is the trusted carpet cleaning company Dubai — with trained technicians, industrial-grade equipment and eco-friendly products across all 7 UAE Emirates.',
+        text: 'Madinat Alhaya cleans carpets across Dubai — with trained technicians, industrial-grade equipment and eco-friendly products across all 7 UAE Emirates.',
       },
       {
         headingLevel: 'h3',
@@ -391,7 +391,7 @@ A clean carpet is the foundation of a healthy UAE home, wherever you live betwee
       {
         headingLevel: 'h3',
         heading: 'Same-Day Carpet Cleaning Service',
-        text: 'Need carpet cleaning services near me urgently? Same-day carpet cleaning Dubai is often available across most areas — send a WhatsApp message with a photo and we confirm a time.',
+        text: 'Need carpet cleaning services urgently? Same-day carpet cleaning Dubai is often available across most areas — send a WhatsApp message with a photo and we confirm a time.',
       },
     ],
     images: ['/images/services/carpet-cleaning.webp'],
@@ -402,10 +402,10 @@ A clean carpet is the foundation of a healthy UAE home, wherever you live betwee
     id: 'mattress-cleaning',
     name: 'Mattress Deep Cleaning',
     heroTitle: 'Mattress Cleaning in Dubai | Deep Clean for Dust Mites & Stains',
-    heroSubtitle: 'Top-rated mattress cleaning services Dubai — eliminates dust mites, allergens & bacteria. Expert mattress cleaning services Dubai available near me across all UAE. Safe for kids & pets. Book today!',
+    heroSubtitle: 'Steam cleaning at your home that removes dust mites, allergens and stains from mattresses. Eco-friendly products, safe for kids and pets. Same-day slots available.',
     slug: 'mattress-cleaning',
     category: 'domestic',
-    shortDescription: 'Best mattress cleaning services across the UAE — eliminate 99.9% dust mites, bacteria & stains. The price is confirmed on WhatsApp before we start. Book your sanitization today!',
+    shortDescription: 'Mattress cleaning in Dubai at your home: steam cleaning for dust mites, sweat stains and odours. Price confirmed on WhatsApp before we start.',
     fullDescription: `The Ultimate Guide to a Healthier Sleep Across the UAE
 
 In cities as vibrant and fast-paced as Dubai and Abu Dhabi, quality sleep is your most valuable asset. However, while you might diligently wash your linens, the mattress beneath them often becomes a forgotten reservoir for allergens and debris. With the UAE's unique combination of fine desert dust, high humidity, and constant AC usage, a standard vacuum is not enough to maintain a truly hygienic sleep environment anywhere from a Sharjah apartment to a Fujairah coastal villa. Professional mattress deep cleaning is no longer a luxury — it is a health necessity. Whether you are searching for mattress cleaning Dubai, mattress cleaning Abu Dhabi, or a trusted mattress deep cleaner in Ajman, Madinat Alhaya delivers results.
@@ -420,7 +420,7 @@ While DIY methods like baking soda or home vacuuming can manage surface odors, t
 
 Advanced Steam Sanitization
 
-High-temperature steam cleaning is the gold standard for mattress hygiene. It effectively kills 99.9% of bacteria and dust mites without the need for harsh chemicals — making it completely safe for children and pets. Our mattress cleaning Umm Al Quwain and mattress cleaning Abu Dhabi teams use this method as standard.
+High-temperature steam cleaning is the gold standard for mattress hygiene. It effectively kills bacteria and dust mites without the need for harsh chemicals — making it completely safe for children and pets. Our mattress cleaning Umm Al Quwain and mattress cleaning Abu Dhabi teams use this method as standard.
 
 Specialized Stain Removal and HEPA Filtration
 
@@ -440,8 +440,8 @@ Investing in mattress deep cleaning is an investment in your long-term respirato
       'Sofa and mattress deep cleaning package — save on combined booking',
       'Industrial mattress deep cleaning machine with HEPA filtration',
       'Deep cleaning mattress vacuum removes 0.3 micron particles',
-      'Mattress deep cleaning services near me — all 7 UAE Emirates',
-      'Kills 99.9% dust mites — deep cleaning of mattress guaranteed',
+      'Mattress deep cleaning services — all 7 UAE Emirates',
+      'Kills dust mites — deep cleaning of mattress guaranteed',
       'pH-balanced eco-friendly products — safe for kids & pets',
       'Sofa carpet mattress deep cleaning in Dubai in one visit',
     ],
@@ -480,7 +480,7 @@ Investing in mattress deep cleaning is an investment in your long-term respirato
       },
       {
         question: 'Can you clean a memory foam mattress without damaging it?',
-        answer: 'Absolutely. We use specialized low-moisture techniques for memory foam and latex mattresses — sanitizing thoroughly without oversaturating the delicate internal structures. Our mattress deep cleaning services near me cover all mattress types.',
+        answer: 'Absolutely. We use specialized low-moisture techniques for memory foam and latex mattresses — sanitizing thoroughly without oversaturating the delicate internal structures. Our mattress deep cleaning services cover all mattress types.',
       },
       {
         question: 'Do I need to prepare anything before the mattress cleaning team arrives?',
@@ -525,7 +525,7 @@ Investing in mattress deep cleaning is an investment in your long-term respirato
       {
         headingLevel: 'h3',
         heading: 'Step 3: High-Temperature Steam Sanitization',
-        text: 'Using 100°C+ steam, our deep mattress cleaning kills 99.9% of bacteria, dust mites, mold spores, and pathogens deep within the mattress layers — without harsh chemicals. Safe for children, babies, and pets.',
+        text: 'Using 100°C+ steam, our deep mattress cleaning kills bacteria, dust mites, mold spores, and pathogens deep within the mattress layers — without harsh chemicals. Safe for children, babies, and pets.',
       },
       {
         headingLevel: 'h3',
@@ -540,7 +540,7 @@ Investing in mattress deep cleaning is an investment in your long-term respirato
       {
         headingLevel: 'h3',
         heading: 'Combating Desert Dust and Humidity',
-        text: 'Fine desert sand enters through AC vents and settles deep in mattress fibers. Combined with humidity, this creates ideal conditions for mold and dust mite growth. Our mattress deep cleaning services near me are specifically effective for UAE desert conditions.',
+        text: 'Fine desert sand enters through AC vents and settles deep in mattress fibers. Combined with humidity, this creates ideal conditions for mold and dust mite growth. Our mattress deep cleaning services are specifically effective for UAE desert conditions.',
       },
       {
         headingLevel: 'h3',
@@ -570,7 +570,7 @@ Investing in mattress deep cleaning is an investment in your long-term respirato
       {
         headingLevel: 'h3',
         heading: 'Residential Deep Cleaning in Dubai Marina, JLT, and Palm Jumeirah',
-        text: 'Our sofa carpet mattress deep cleaning in Dubai covers Dubai Marina, Jumeirah Lake Towers, Palm Jumeirah, Jumeirah Beach Residence, and all surrounding communities. Book mattress deep cleaning near me today.',
+        text: 'Our sofa carpet mattress deep cleaning in Dubai covers Dubai Marina, Jumeirah Lake Towers, Palm Jumeirah, Jumeirah Beach Residence, and all surrounding communities. Book mattress deep cleaning today.',
       },
       {
         headingLevel: 'h3',
@@ -587,8 +587,8 @@ Investing in mattress deep cleaning is an investment in your long-term respirato
     slug: 'curtain-cleaning',
     category: 'domestic',
     heroTitle: 'Curtain Cleaning Dubai | Curtains & Blinds at Home',
-    heroSubtitle: 'Top-rated curtain cleaning across the UAE — on-site steam & off-site dry cleaning for all fabrics. Professional curtain cleaning near me in Dubai, Sharjah & Abu Dhabi. Book today!',
-    shortDescription: 'Looking for professional curtain cleaning across the UAE? Expert on-site steam cleaning and off-site dry cleaning for all fabrics. Free pickup & delivery with 99% stain removal. Book your refresh today!',
+    heroSubtitle: 'On-site steam cleaning for curtains and blinds, and dry cleaning for delicate fabrics, in Dubai, Sharjah, Abu Dhabi and across the UAE.',
+    shortDescription: 'Curtain cleaning in Dubai: on-site steam cleaning for curtains and blinds, plus dry cleaning for delicate fabrics. Free quote on WhatsApp.',
     fullDescription: `The Ultimate Guide to a Dust-Free Home Across the UAE
 
 Living in a city as vibrant and fast-paced as Dubai comes with its perks, but it also brings unique challenges for homeowners across all seven Emirates. Between frequent sandstorms inland, high coastal humidity in Fujairah and Umm Al Quwain, and 24/7 reliance on air conditioning, your curtains do far more than look pretty — they act as a giant air filter for your home, whether it's in a Dubai high-rise or an Ajman villa.
@@ -597,15 +597,15 @@ Over time, these fabrics trap dust, allergens, and pollutants that impact both y
 
 Why Your Curtains Need Special Care in the UAE
 
-Fine desert sand finds its way into fabric fibers even with windows closed — making curtains look dull and feel gritty, a common complaint from Ajman's Al Nuaimiya to Ras Al Khaimah's Al Nakheel. AC vents blow dust directly onto drapes, and combined with humidity along the Fujairah and Umm Al Quwain coastlines, this can lead to musty smells or mold growth in delicate fabrics. The intense UAE sun also makes fabrics brittle and fades colors. Whether you need curtain cleaning Sharjah, curtain cleaning Ajman, or a professional curtain cleaning service near me in RAK, Madinat Alhaya is your trusted curtain cleaner across the UAE.
+Fine desert sand finds its way into fabric fibers even with windows closed — making curtains look dull and feel gritty, a common complaint from Ajman's Al Nuaimiya to Ras Al Khaimah's Al Nakheel. AC vents blow dust directly onto drapes, and combined with humidity along the Fujairah and Umm Al Quwain coastlines, this can lead to musty smells or mold growth in delicate fabrics. The intense UAE sun also makes fabrics brittle and fades colors. Whether you need curtain cleaning Sharjah, curtain cleaning Ajman, or a professional curtain cleaning service in RAK, Madinat Alhaya is your trusted curtain cleaner across the UAE.
 
 On-Site vs. Off-Site Curtain Cleaning
 
 Our curtain cleaning service offers two primary methods depending on your schedule and fabric type.
 
-On-Site Steam Cleaning — the most popular option for residents from Dubai Marina to Abu Dhabi's Khalifa City. We use high-grade extraction machines to deep-clean your curtains while they are still hanging — no removal, no disruption. Best for cotton, synthetic blends, and heavy drapes, and our most requested curtain cleaning near me option across Dubai, Sharjah, and Fujairah alike.
+On-Site Steam Cleaning — the most popular option for residents from Dubai Marina to Abu Dhabi's Khalifa City. We use high-grade extraction machines to deep-clean your curtains while they are still hanging — no removal, no disruption. Best for cotton, synthetic blends, and heavy drapes, and our most requested curtain cleaning option across Dubai, Sharjah, and Fujairah alike.
 
-Off-Site Dry Cleaning — curtain dry cleaning near me for high-end or delicate fabrics. Our team removes the curtains, takes them to a specialist facility, and returns them pressed and perfectly cleaned. Best for silk, velvet, chiffon, and embroidered curtains found in villas from Al Hamra Village in Ras Al Khaimah to UAQ City homes.
+Off-Site Dry Cleaning — curtain dry cleaning for high-end or delicate fabrics. Our team removes the curtains, takes them to a specialist facility, and returns them pressed and perfectly cleaned. Best for silk, velvet, chiffon, and embroidered curtains found in villas from Al Hamra Village in Ras Al Khaimah to UAQ City homes.
 
 The Health Benefits of Professional Curtain Cleaning
 
@@ -615,14 +615,14 @@ How Much Does Curtain Cleaning Cost?
 
 Message us on WhatsApp for a free quote. Free on-site inspection and quote available via WhatsApp.
 
-Madinat Alhaya is the curtain cleaning company covering curtain cleaning Dubai, curtain cleaning Abu Dhabi, curtain cleaning Sharjah, curtain cleaning Ajman, curtain cleaning Ras Al Khaimah, curtain cleaning Fujairah, and curtain cleaning Umm Al Quwain — homes, villas, hotels, and commercial premises across all 7 UAE Emirates. Book our professional curtain cleaning services today and breathe easier tomorrow.`,
+Madinat Alhaya covers curtain cleaning in Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Fujairah and Umm Al Quwain — homes, villas, hotels, and commercial premises across all 7 UAE Emirates. Book our professional curtain cleaning services today and breathe easier tomorrow.`,
     benefits: [
-      'Best curtain cleaning Dubai — on-site steam & off-site dry cleaning',
-      'Professional curtain cleaning service near me across all UAE',
-      'Curtain dry cleaning near me for silk, velvet & delicate fabrics',
+      'Curtain cleaning Dubai — on-site steam & off-site dry cleaning',
+      'Professional curtain cleaning service across all UAE',
+      'Curtain dry cleaning for silk, velvet & delicate fabrics',
       'Home curtain cleaning services — we come to you',
       'Curtain cleaning Abu Dhabi & curtain cleaning Sharjah covered',
-      'Best curtain cleaning in Dubai',
+      'Curtain cleaning in Dubai',
       'Pressing and re-hanging included — trusted curtain cleaner',
       'Cleaning shower curtain liners & all bathroom drapes available',
     ],
@@ -645,7 +645,7 @@ Madinat Alhaya is the curtain cleaning company covering curtain cleaning Dubai, 
       },
       {
         question: 'Which is better: steam cleaning or dry cleaning for curtains?',
-        answer: 'It depends on the fabric. Steam cleaning is excellent for cotton and synthetic blends as it kills bacteria on-site. Curtain dry cleaning near me is preferred for delicate fabrics like silk, velvet, or embroidered drapes to prevent shrinkage and preserve texture.',
+        answer: 'It depends on the fabric. Steam cleaning is excellent for cotton and synthetic blends as it kills bacteria on-site. Curtain dry cleaning is preferred for delicate fabrics like silk, velvet, or embroidered drapes to prevent shrinkage and preserve texture.',
       },
       {
         question: 'How much does professional curtain cleaning cost in Dubai?',
@@ -653,11 +653,11 @@ Madinat Alhaya is the curtain cleaning company covering curtain cleaning Dubai, 
       },
       {
         question: 'How long does off-site curtain cleaning take?',
-        answer: 'Off-site curtain dry cleaning near me has a turnaround of 3 to 5 business days — including free pickup, specialist cleaning, pressing, and professional re-hanging by our curtain cleaning Dubai team.',
+        answer: 'Off-site curtain dry cleaning has a turnaround of 3 to 5 business days — including free pickup, specialist cleaning, pressing, and professional re-hanging by our curtain cleaning Dubai team.',
       },
       {
         question: 'Can I wash my curtains in a regular washing machine?',
-        answer: 'Most Dubai-style heavy drapes and blackout curtains are not suitable for home machines due to their weight and delicate linings. Professional curtain cleaning service near me is safer to avoid shrinkage or fabric damage.',
+        answer: 'Most Dubai-style heavy drapes and blackout curtains are not suitable for home machines due to their weight and delicate linings. Professional curtain cleaning service is safer to avoid shrinkage or fabric damage.',
       },
       {
         question: 'Does curtain cleaning remove the musty AC smell?',
@@ -669,7 +669,7 @@ Madinat Alhaya is the curtain cleaning company covering curtain cleaning Dubai, 
       },
       {
         question: 'Is it worth getting curtains professionally cleaned?',
-        answer: 'Yes. Beyond aesthetics, best curtain cleaning in Dubai extends fabric life by removing abrasive dust and prevents buildup of health-harming allergens. A cleaner curtain means cleaner air for your family.',
+        answer: 'Yes. Beyond aesthetics, curtain cleaning in Dubai extends fabric life by removing abrasive dust and prevents buildup of health-harming allergens. A cleaner curtain means cleaner air for your family.',
       },
       {
         question: 'Do you offer curtain cleaning in Dubai Marina and Downtown?',
@@ -690,7 +690,7 @@ Madinat Alhaya is the curtain cleaning company covering curtain cleaning Dubai, 
       {
         headingLevel: 'h3',
         heading: 'Eliminating AC Allergens and Mold Growth',
-        text: 'Constant air conditioning creates the perfect conditions for dust mite colonies and mold growth in fabric folds. AC vents blow contaminated air directly onto drapes, trapping pollutants that affect indoor air quality. Professional curtain cleaning in Dubai using steam sanitization kills 99.9% of these biological contaminants.',
+        text: 'Constant air conditioning creates the perfect conditions for dust mite colonies and mold growth in fabric folds. AC vents blow contaminated air directly onto drapes, trapping pollutants that affect indoor air quality. Professional curtain cleaning in Dubai using steam sanitization kills these biological contaminants.',
       },
       {
         headingLevel: 'h3',
@@ -705,12 +705,12 @@ Madinat Alhaya is the curtain cleaning company covering curtain cleaning Dubai, 
       {
         headingLevel: 'h3',
         heading: 'On-Site Steam Cleaning (While-Hanging Service)',
-        text: 'Our most popular curtain cleaning service near me — high-temperature steam extraction cleans, sanitizes, and deodorizes your curtains while they remain hanging. No removal, no re-hanging hassle. Ideal for cotton, synthetic blends, and heavy drapes. Service completed in a few hours using professional-grade equipment.',
+        text: 'Our most popular curtain cleaning service — high-temperature steam extraction cleans, sanitizes, and deodorizes your curtains while they remain hanging. No removal, no re-hanging hassle. Ideal for cotton, synthetic blends, and heavy drapes. Service completed in a few hours using professional-grade equipment.',
       },
       {
         headingLevel: 'h3',
         heading: 'Professional Off-Site Dry Cleaning',
-        text: 'Curtain dry cleaning near me for delicate fabrics — silk, velvet, organza, chiffon, and embroidered drapes require specialist chemical solvents at our facility. Our professional curtain cleaning Dubai team removes, labels, cleans, presses, and re-hangs with zero risk of shrinkage or texture damage.',
+        text: 'Curtain dry cleaning for delicate fabrics — silk, velvet, organza, chiffon, and embroidered drapes require specialist chemical solvents at our facility. Our professional curtain cleaning Dubai team removes, labels, cleans, presses, and re-hangs with zero risk of shrinkage or texture damage.',
       },
       {
         headingLevel: 'h3',
@@ -740,22 +740,22 @@ Madinat Alhaya is the curtain cleaning company covering curtain cleaning Dubai, 
       {
         headingLevel: 'h2',
         heading: 'The Benefits of Choosing Our Dubai Cleaning Team',
-        text: 'With 500+ satisfied clients across Dubai, Abu Dhabi, and Sharjah, Madinat Alhaya is the best curtain cleaning company for quality, reliability, and care.',
+        text: 'Madinat Alhaya cleans curtains at your home across Dubai, Abu Dhabi and Sharjah, with a free quote on WhatsApp before we start.',
       },
       {
         headingLevel: 'h3',
         heading: 'Eco-Friendly and Pet-Safe Cleaning Solutions',
-        text: 'All products used in our professional curtain cleaning Dubai are pH-balanced, non-toxic, and biodegradable — safe for children, pets, and residents with respiratory sensitivities. Our on-site steam uses only heat and water.',
+        text: 'All products used in our professional curtain cleaning Dubai are pH-balanced, non-toxic and biodegradable — safe for children, pets, and residents with respiratory sensitivities. Our on-site steam uses only heat and water.',
       },
       {
         headingLevel: 'h3',
         heading: 'Advanced Stain and Odor Removal Technology',
-        text: 'Our curtain cleaning in Dubai removes 99% of common household stains and neutralizes musty AC smells trapped in fabric fibers. Enzyme-based treatments break down organic staining at the molecular level — not just surface cleaning.',
+        text: 'Our curtain cleaning in Dubai removes most common household stains and neutralizes musty AC smells trapped in fabric fibers. Enzyme-based treatments break down organic staining at the molecular level — not just surface cleaning.',
       },
       {
         headingLevel: 'h3',
         heading: 'Same-Day Service and Flexible Booking',
-        text: 'Need curtain cleaning near me urgently? We offer same-day curtain cleaning Dubai for most areas. Early morning, evening, and weekend slots available — designed for busy Dubai residents and professionals.',
+        text: 'Need curtain cleaning urgently? We offer same-day curtain cleaning Dubai for most areas. Early morning, evening, and weekend slots available — designed for busy Dubai residents and professionals.',
       },
       {
         headingLevel: 'h2',
@@ -765,12 +765,12 @@ Madinat Alhaya is the curtain cleaning company covering curtain cleaning Dubai, 
       {
         headingLevel: 'h3',
         heading: 'Covering Dubai Marina, JLT, and Downtown',
-        text: 'Best curtain cleaning in Dubai Marina, Jumeirah Lake Towers, JBR, and Downtown Dubai. Our curtain cleaning service Dubai teams cover all high-rise towers and waterfront apartments in these areas.',
+        text: 'Curtain cleaning in Dubai Marina, Jumeirah Lake Towers, JBR, and Downtown Dubai. Our curtain cleaning service Dubai teams cover all high-rise towers and waterfront apartments in these areas.',
       },
       {
         headingLevel: 'h3',
         heading: 'Serving Palm Jumeirah, Business Bay, and Al Barsha',
-        text: 'Professional curtain cleaning services for Palm Jumeirah villas, Business Bay offices, DIFC towers, Jumeirah, Al Barsha, and Mirdif. Same-day curtain cleaning near me available across all these communities.',
+        text: 'Professional curtain cleaning services for Palm Jumeirah villas, Business Bay offices, DIFC towers, Jumeirah, Al Barsha, and Mirdif. Same-day curtain cleaning available across all these communities.',
       },
       {
         headingLevel: 'h3',
@@ -785,10 +785,10 @@ Madinat Alhaya is the curtain cleaning company covering curtain cleaning Dubai, 
     id: 'car-interior-detailing',
     name: 'Car Interior Detailing',
     heroTitle: 'Car Seat Cleaning Dubai | Steam Cleaning & Stain Removal',
-    heroSubtitle: 'Expert car seats cleaning Dubai, Sharjah & Abu Dhabi — fabric & leather car seats cleaning near me. Car seat steam cleaner, stain removal & odor elimination. Mobile service at your location!',
+    heroSubtitle: 'Fabric and leather car seat cleaning at your home or office in Dubai, Sharjah and Abu Dhabi: steam cleaning, stain removal and odour removal.',
     slug: 'car-interior-detailing',
     category: 'domestic',
-    shortDescription: 'Refresh your vehicle with expert car seat cleaning across the UAE. Deep steam sanitization, leather conditioning & fabric stain removal. Eco-friendly, fast-drying mobile service at your doorstep. Book today!',
+    shortDescription: 'Car seat cleaning in Dubai at your home or office: steam cleaning, stain removal and leather care for fabric and leather seats. Free WhatsApp quote.',
     fullDescription: `The Ultimate Guide to Car Seat Cleaning Services Across the UAE
 
 Your car is your second home in the UAE — and just like your home, the interior needs regular professional care whether you're commuting through Dubai, Abu Dhabi, or driving the mountain roads of Ras Al Khaimah and Fujairah. Between the desert dust, extreme heat, and the daily demands of UAE life, car seats accumulate stains, allergens, and bacteria faster than in most other cities worldwide. Our professional car seats cleaning services bring the highest standard of automotive interior care directly to your location, anywhere in the seven Emirates.
@@ -797,7 +797,7 @@ Why Car Seats Cleaning Services are Essential in the UAE
 
 Extreme summer heat — regularly exceeding 45°C in inland areas like Ajman and Al Ain — accelerates the deterioration of both leather and fabric car seats. Heat causes leather to dry out and crack, while fabric seats trap sweat, dust, and food particles deep within the fibers. Coastal humidity in Fujairah and Umm Al Quwain adds AC mold buildup, creating musty odors that standard car washes cannot address.
 
-Our mobile car seats cleaning service uses hot-water extraction for fabric seats and specialist leather car seat cleaner products formulated for the UAE climate. We service all vehicle types and come to your home, office, or any convenient location. Whether you need car seats cleaning Dubai, car seats cleaning Sharjah, car seats cleaning Abu Dhabi, car seats cleaning Ajman, car seats cleaning RAK, car seats cleaning Fujairah, or car seats cleaning UAQ — Madinat Alhaya covers all UAE Emirates.
+Our mobile car seats cleaning service uses hot-water extraction for fabric seats and specialist leather car seat cleaner products formulated for the UAE climate. We service all vehicle types and come to your home, office, or any convenient location. Whether you need car seats cleaning in Dubai, Sharjah, Abu Dhabi, Ajman, RAK, Fujairah or UAQ — Madinat Alhaya covers all UAE Emirates.
 
 Fabric Car Seats Deep Cleaning
 
@@ -820,7 +820,7 @@ Madinat Alhaya provides car seats cleaning services across all 7 UAE Emirates �
       'Car seats cleaning machine — industrial grade, not household grade',
       'Fabric car seat cleaner safe for all materials — no damage',
       'Cleaning leather car seats & cleaning material car seats available',
-      'Car seat cleaning near me — same-day across all 7 UAE Emirates',
+      'Car seat cleaning — same-day across all 7 UAE Emirates',
     ],
     process: [
       'Full dry vacuum — seats, carpets, floor mats, crevices',
@@ -837,7 +837,7 @@ Madinat Alhaya provides car seats cleaning services across all 7 UAE Emirates �
       },
       {
         question: 'Can steam cleaning remove milk and coffee stains from car seats?',
-        answer: 'Yes. Professional high-temperature car seat steam cleaner is highly effective at breaking down organic stains like milk, coffee, and food spills — simultaneously neutralizing odors and killing 99.9% of bacteria. Car seats cleaning without leaving water stains guaranteed.',
+        answer: 'Yes. Professional high-temperature car seat steam cleaner is highly effective at breaking down organic stains like milk, coffee, and food spills — simultaneously neutralizing odors and killing bacteria. Car seats cleaning without leaving water stains guaranteed.',
       },
       {
         question: 'Is it safe to professionally clean a baby car seat?',
@@ -853,7 +853,7 @@ Madinat Alhaya provides car seats cleaning services across all 7 UAE Emirates �
       },
       {
         question: 'How often should I get my car seats cleaned in the UAE?',
-        answer: 'Due to high dust, sand, and humidity in the UAE, professional car seat cleaning near me every 4 to 6 months is recommended — preventing abrasive grit buildup and bacteria accumulation in car seats cleaning Dubai, Sharjah, and Abu Dhabi.',
+        answer: 'Due to high dust, sand, and humidity in the UAE, professional car seat cleaning every 4 to 6 months is recommended — preventing abrasive grit buildup and bacteria accumulation in car seats cleaning Dubai, Sharjah, and Abu Dhabi.',
       },
       {
         question: 'Will professional cleaning damage leather or Alcantara seats?',
@@ -861,11 +861,11 @@ Madinat Alhaya provides car seats cleaning services across all 7 UAE Emirates �
       },
       {
         question: 'Do you offer mobile car seat cleaning at my home or office?',
-        answer: 'Yes. Our mobile car seats cleaning service Dubai brings all equipment to your location — Dubai Marina, JLT, Business Bay, Jumeirah, Al Quoz, Downtown, and all areas. Car seat cleaning near me also available in Sharjah and Abu Dhabi.',
+        answer: 'Yes. Our mobile car seats cleaning service Dubai brings all equipment to your location — Dubai Marina, JLT, Business Bay, Jumeirah, Al Quoz, Downtown, and all areas. Car seat cleaning also available in Sharjah and Abu Dhabi.',
       },
       {
         question: 'Can you remove smoke or pet smell from car seats?',
-        answer: 'Yes. Our car seats cleaning services target odor sources within the upholstery using ozone treatments and enzymatic fabric car seat cleaner — neutralizing odor molecules rather than masking them. Available as part of full car seats cleaning services near me.',
+        answer: 'Yes. Our car seats cleaning services target odor sources within the upholstery using ozone treatments and enzymatic fabric car seat cleaner — neutralizing odor molecules rather than masking them. Available as part of full car seats cleaning services.',
       },
     ],
     contentSections: [
@@ -877,7 +877,7 @@ Madinat Alhaya provides car seats cleaning services across all 7 UAE Emirates �
       {
         headingLevel: 'h3',
         heading: 'Combating Bacteria Growth in High Humidity',
-        text: 'In Dubai\'s humid coastal climate, spills on car seats do not just stain — they become breeding grounds for mold, bacteria, and dust mites within hours. The combination of heat and moisture trapped in seat foam creates an invisible hygiene problem. Our car seat steam cleaner kills 99.9% of bacteria deep within the upholstery layers.',
+        text: 'In Dubai\'s humid coastal climate, spills on car seats do not just stain — they become breeding grounds for mold, bacteria, and dust mites within hours. The combination of heat and moisture trapped in seat foam creates an invisible hygiene problem. Our car seat steam cleaner kills bacteria deep within the upholstery layers.',
       },
       {
         headingLevel: 'h3',
@@ -927,12 +927,12 @@ Madinat Alhaya provides car seats cleaning services across all 7 UAE Emirates �
       {
         headingLevel: 'h3',
         heading: 'Eliminating Biohazards: Vomit, Urine, and Milk Spills',
-        text: 'Baby car seats face unique biological contamination — vomit, urine, and milk spills create severe odor and bacteria problems. Our deep steam sterilization combined with enzyme-based fabric car seat cleaner ensures 99.9% germ removal while preserving seat integrity.',
+        text: 'Baby car seats face unique biological contamination — vomit, urine, and milk spills create severe odor and bacteria problems. Our deep steam sterilization combined with enzyme-based fabric car seat cleaner lifts these stains and odours while preserving seat integrity.',
       },
       {
         headingLevel: 'h2',
         heading: 'Why Choose Our Car Seats Cleaning Services in Dubai?',
-        text: 'Madinat Alhaya is the trusted car seats cleaning service near me for residents across Dubai Marina, Downtown, JLT, Business Bay, Jumeirah, Al Quoz, and all UAE Emirates.',
+        text: 'Madinat Alhaya is the trusted car seats cleaning service for residents across Dubai Marina, Downtown, JLT, Business Bay, Jumeirah, Al Quoz, and all UAE Emirates.',
       },
       {
         headingLevel: 'h3',
@@ -947,7 +947,7 @@ Madinat Alhaya provides car seats cleaning services across all 7 UAE Emirates �
       {
         headingLevel: 'h3',
         heading: 'Clear Quotes & Same-Day Service',
-        text: 'Message us on WhatsApp for a free quote. Car seat cleaning near me same-day service available across most UAE areas. Free quotes via WhatsApp — transparent car seats cleaning products pricing, no hidden charges.',
+        text: 'Message us on WhatsApp for a free quote. Car seat cleaning same-day service available across most UAE areas. Free quotes via WhatsApp — transparent car seats cleaning products pricing, no hidden charges.',
       },
     ],
     images: ['/images/services/car-interior-detailing.webp'],
@@ -957,13 +957,13 @@ Madinat Alhaya provides car seats cleaning services across all 7 UAE Emirates �
     id: 'dining-chair-cleaning',
     name: 'Dining Chair Cleaning',
     heroTitle: 'Dining Chair Cleaning Dubai | Food Stain & Grease Removal',
-    heroSubtitle: 'Best dining chair cleaning services Dubai, Abu Dhabi & Sharjah — fabric, leather & faux leather dining chairs. Deep stain removal, deodorizing & fabric protection. Same-day service across UAE!',
+    heroSubtitle: 'Fabric, leather and faux-leather dining chairs cleaned at your home: food stains, grease and odours removed, with an optional fabric protector.',
     slug: 'dining-chair-cleaning',
     category: 'domestic',
-    shortDescription: 'Best dining chair cleaning services Dubai — expert food stain, grease & odor removal for fabric and leather dining chairs. Professional upholstery cleaning near me across Dubai, Abu Dhabi & all UAE. Same-day service!',
+    shortDescription: 'Dining chair cleaning in Dubai at your home: food, grease and odour removal for fabric, leather and faux-leather chairs. Free quote on WhatsApp.',
     fullDescription: `Dining chairs are among the most heavily used and frequently soiled furniture items in any home across the UAE — from a Dubai apartment to a Ras Al Khaimah villa. Daily contact with food, grease, sauces, beverages, and body oils creates a combination of staining and odor that regular wiping cannot address. Our dining chair cleaning service uses targeted stain treatment and hot-water extraction or leather conditioning to restore your chairs to a clean, hygienic condition, whether you're in Sharjah, Ajman, Fujairah, or Umm Al Quwain.
 
-We clean all dining chair types: fabric-upholstered chairs, leather dining chairs, faux leather or PU chairs, mixed-material chairs with padded seats, and wooden chairs with upholstered cushions. Each material requires a different approach, and our technicians — serving dining chair cleaning Dubai, dining chair cleaning Abu Dhabi, and dining chair cleaning Sharjah alike — are trained to identify the correct method before starting.
+We clean all dining chair types: fabric-upholstered chairs, leather dining chairs, faux leather or PU chairs, mixed-material chairs with padded seats, and wooden chairs with upholstered cushions. Each material requires a different approach, and our technicians — serving dining chair cleaning in Dubai, Abu Dhabi and Sharjah alike — are trained to identify the correct method before starting.
 
 For fabric dining chairs, we apply a food-grade pre-treatment spray to grease and food stains before performing hot-water extraction. This combination removes the vast majority of staining including cooking oil, coffee, wine, and tomato sauce — common in family dining rooms from Ajman's Al Rashidiya to Fujairah's coastal villas. Stubborn older stains may require a second treatment pass. After cleaning, we apply an optional fabric protector that creates a barrier against future spills.
 
@@ -1066,10 +1066,10 @@ The service is available for single chairs or full dining sets, and we can also 
     id: 'villa-deep-cleaning',
     name: 'Villa Deep Cleaning',
     heroTitle: 'Villa Deep Cleaning Services Dubai | Move-In, Move-Out & Regular',
-    heroSubtitle: 'Best villa deep cleaning services Dubai, Abu Dhabi & Sharjah — move-in, move-out, post-construction & periodic deep clean. Eco-friendly villa deep cleaning UAE. Book today!',
+    heroSubtitle: 'Move-in, move-out, post-construction and regular villa deep cleaning in Dubai, Abu Dhabi and Sharjah, by a trained team with eco-friendly products. Same-day slots available.',
     slug: 'villa-deep-cleaning',
     category: 'commercial',
-    shortDescription: 'Transform your home with top villa deep cleaning services across the UAE. Eco-friendly steam technology eliminates 99% of dust and allergens. Spotless, healthy villa guaranteed. Free estimates — book today!',
+    shortDescription: 'Villa deep cleaning in Dubai: move-in, move-out and regular deep cleans by a trained team using eco-friendly products. Free quote on WhatsApp.',
     fullDescription: `The Ultimate Guide to Villa Deep Cleaning Across the UAE
 
 Maintaining a luxury villa anywhere in the UAE is a statement of lifestyle, but the region's environment — defined by fine desert dust, high humidity, and year-round air conditioning — presents a relentless challenge to home hygiene, whether your villa sits in Dubai's Emirates Hills, Abu Dhabi's Al Reef, or Sharjah's Al Khan. Standard dusting and mopping simply are not enough to combat the microscopic pollutants that settle into the crevices of a high-end residence.
@@ -1094,7 +1094,7 @@ Specialized Floor Restoration: Rather than just mopping, our professionals use s
 
 Detailed Kitchen Sanitization: Our villa deep cleaning services include full degreasing of oven interiors and exhaust hoods, sanitizing areas behind and underneath appliances, and steam cleaning of cabinets to eliminate food-borne bacteria.
 
-Bathroom Steam Disinfection: Professionals use high-pressure steam cleaners reaching 100°C+ to kill 99.9% of germs in tile grouting and around fixtures — without harsh chemicals.
+Bathroom Steam Disinfection: Professionals use high-pressure steam cleaners reaching 100°C+ to kill germs in tile grouting and around fixtures — without harsh chemicals.
 
 AC Vents, Windows and Facade Refresh: Sandstorms leave windows dull across the region — from Dubai's high-rises to villas near Fujairah's Dibba coastline. Our villa deep cleaning includes AC grille sanitization, internal and external window cleaning, and power washing of balconies and patio areas.
 
@@ -1102,13 +1102,13 @@ Strategic Benefits of Villa Deep Cleaning
 
 Investing in professional villa deep cleaning twice a year offers more than aesthetics. Health and Wellness: significant reduction in indoor allergens — vital for residents with asthma or dust sensitivities anywhere from Ajman to RAK. Asset Protection: regular villa deep cleaning prevents permanent staining of expensive flooring. Property Value: for villas in Palm Jumeirah, Emirates Hills, Abu Dhabi's Al Shamkha, and Sharjah's Al Khan, a spotless maintenance record maximizes rental yields and resale value.
 
-Madinat Alhaya provides villa deep cleaning Dubai, villa deep cleaning Abu Dhabi, villa deep cleaning Sharjah, villa deep cleaning Ajman, villa deep cleaning Ras Al Khaimah, villa deep cleaning Fujairah, and villa deep cleaning Umm Al Quwain — serving all villa types across all 7 UAE Emirates with Dubai Municipality approved protocols and eco-friendly, biodegradable products.`,
+Madinat Alhaya provides villa deep cleaning in Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Fujairah and Umm Al Quwain — serving all villa types across all 7 UAE Emirates with eco-friendly, biodegradable products.`,
     benefits: [
-      'Best villa deep cleaning services Dubai',
+      'Villa deep cleaning services Dubai',
       'Villa deep cleaning Dubai, Abu Dhabi & Sharjah covered',
       'Move-in, move-out & post-construction villa deep cleaning UAE',
       'Commercial deep cleaning service in villa — offices & commercial villas',
-      'Dubai Municipality approved eco-friendly products',
+      'eco-friendly products',
       'Teams of 2–6 trained, background-checked technicians',
       'Villa deep cleaning services Dubai price — transparent, no hidden charges',
       'Same-day villa deep cleaning services available',
@@ -1124,7 +1124,7 @@ Madinat Alhaya provides villa deep cleaning Dubai, villa deep cleaning Abu Dhabi
     faqs: [
       {
         question: 'What is included in a villa deep cleaning service?',
-        answer: 'Our villa deep cleaning Dubai goes beyond surface tidying — industrial floor scrubbing with single-disc machine, steam sanitization of kitchens and bathrooms, cleaning of AC vents and grilles, internal window cleaning, and detailed dusting of ceiling fans and high-reach areas. The best villa deep cleaning services Dubai cover every inch.',
+        answer: 'Our villa deep cleaning Dubai goes beyond surface tidying — industrial floor scrubbing with single-disc machine, steam sanitization of kitchens and bathrooms, cleaning of AC vents and grilles, internal window cleaning, and detailed dusting of ceiling fans and high-reach areas. The villa deep cleaning services Dubai cover every inch.',
       },
       {
         question: 'How much does villa deep cleaning cost in Dubai?',
@@ -1136,7 +1136,7 @@ Madinat Alhaya provides villa deep cleaning Dubai, villa deep cleaning Abu Dhabi
       },
       {
         question: 'Do you use eco-friendly cleaning products?',
-        answer: 'Yes. Our villa deep cleaning UAE uses Dubai Municipality-approved, non-toxic, and biodegradable cleaning agents combined with high-pressure steam machines — disinfecting surfaces without harsh chemicals. Safe for children and pets.',
+        answer: 'Yes. Our villa deep cleaning UAE uses non-toxic and biodegradable cleaning agents combined with high-pressure steam machines — disinfecting surfaces without harsh chemicals. Safe for children and pets.',
       },
       {
         question: 'What is the difference between regular cleaning and deep cleaning in Dubai?',
@@ -1164,7 +1164,7 @@ Madinat Alhaya provides villa deep cleaning Dubai, villa deep cleaning Abu Dhabi
       {
         headingLevel: 'h3',
         heading: 'Fine Particulate Accumulation — Desert Sand in Your Villa',
-        text: 'Desert sand is exceptionally fine — bypassing window seals, accumulating inside AC vents, behind heavy furniture, and deep within grout lines. Best villa deep cleaning services Dubai use industrial-grade equipment to extract this deep-settled sand that standard cleaning cannot reach.',
+        text: 'Desert sand is exceptionally fine — bypassing window seals, accumulating inside AC vents, behind heavy furniture, and deep within grout lines. Villa deep cleaning services Dubai use industrial-grade equipment to extract this deep-settled sand that standard cleaning cannot reach.',
       },
       {
         headingLevel: 'h3',
@@ -1179,7 +1179,7 @@ Madinat Alhaya provides villa deep cleaning Dubai, villa deep cleaning Abu Dhabi
       {
         headingLevel: 'h2',
         heading: 'The Professional Villa Deep Cleaning Checklist',
-        text: 'Our best villa deep cleaning services Dubai cover every area systematically — from the highest ceiling fixtures to the deepest floor grout lines. Here is exactly what our villa deep cleaning service includes.',
+        text: 'Our villa deep cleaning services Dubai cover every area systematically — from the highest ceiling fixtures to the deepest floor grout lines. Here is exactly what our villa deep cleaning service includes.',
       },
       {
         headingLevel: 'h3',
@@ -1194,7 +1194,7 @@ Madinat Alhaya provides villa deep cleaning Dubai, villa deep cleaning Abu Dhabi
       {
         headingLevel: 'h3',
         heading: 'Bathroom Steam Disinfection',
-        text: 'High-pressure steam cleaners reaching 100°C+ kill 99.9% of germs in tile grouting and around fixtures — without harsh chemicals. Our villa deep cleaning Abu Dhabi and Dubai bathroom service leaves every fixture sparkling and sanitized.',
+        text: 'High-pressure steam cleaners reaching 100°C+ kill germs in tile grouting and around fixtures — without harsh chemicals. Our villa deep cleaning Abu Dhabi and Dubai bathroom service leaves every fixture sparkling and sanitized.',
       },
       {
         headingLevel: 'h3',
@@ -1204,7 +1204,7 @@ Madinat Alhaya provides villa deep cleaning Dubai, villa deep cleaning Abu Dhabi
       {
         headingLevel: 'h2',
         heading: 'Strategic Benefits of Villa Deep Cleaning Dubai',
-        text: 'Investing in best villa deep cleaning services in Dubai twice a year delivers measurable benefits beyond aesthetics.',
+        text: 'Investing in villa deep cleaning services in Dubai twice a year delivers measurable benefits beyond aesthetics.',
       },
       {
         headingLevel: 'h3',
@@ -1224,12 +1224,12 @@ Madinat Alhaya provides villa deep cleaning Dubai, villa deep cleaning Abu Dhabi
       {
         headingLevel: 'h2',
         heading: 'How to Choose the Best Villa Deep Cleaning Company in Dubai',
-        text: 'With hundreds of providers in the market, Madinat Alhaya stands out as the best villa deep cleaning services Dubai provider for the following reasons.',
+        text: 'Here is what to expect when Madinat Alhaya deep cleans your villa in Dubai.',
       },
       {
         headingLevel: 'h3',
         heading: 'Dubai Municipality Approved & Eco-Friendly',
-        text: 'All products and protocols used in our villa deep cleaning UAE service are Dubai Municipality approved. We offer eco-friendly "Green Cleaning" using non-toxic, biodegradable detergents — essential for homes with children and pets.',
+        text: 'For villa deep cleaning we offer eco-friendly "Green Cleaning" using non-toxic, biodegradable detergents — essential for homes with children and pets.',
       },
       {
         headingLevel: 'h3',
@@ -1245,10 +1245,10 @@ Madinat Alhaya provides villa deep cleaning Dubai, villa deep cleaning Abu Dhabi
     id: 'apartment-cleaning',
     name: 'Apartment Cleaning',
     heroTitle: 'Apartment Cleaning Services Dubai | Deep Clean, Move-In & Move-Out',
-    heroSubtitle: 'Best apartment cleaning services Dubai, Abu Dhabi & Sharjah — studio, 1BHK to 4BHK deep cleaning, move-in move-out cleaning Dubai, end of tenancy cleaning. Professional flat cleaning near me across UAE!',
+    heroSubtitle: 'Studio to 4BHK apartment deep cleaning in Dubai, Abu Dhabi and Sharjah: move-in, move-out and end-of-tenancy cleans at your flat.',
     slug: 'apartment-cleaning',
     category: 'commercial',
-    shortDescription: 'Best apartment cleaning Dubai — professional flat cleaning services near me for studios to 4BHK. Move-in move-out cleaning Dubai, end of tenancy cleaning, deep cleaning apartments. Same-day service Dubai, Abu Dhabi & all UAE!',
+    shortDescription: 'Apartment cleaning in Dubai for studios to 4BHK: deep, move-in, move-out and end-of-tenancy cleaning at your flat. Free quote on WhatsApp.',
     fullDescription: `Our apartment cleaning service offers flexible packages designed to meet every need — from a quick regular maintenance clean to a comprehensive deep clean or a move-in/move-out clean that restores the property to its original condition. Whether you live in a Dubai Marina tower, an Abu Dhabi Corniche apartment, or a family flat in Sharjah's Al Nahda, Madinat Alhaya provides consistent, professional results across all UAE Emirates.
 
 Our regular apartment cleaning package covers all the essential tasks needed to keep your home fresh and organized between deep cleans: dusting all surfaces, vacuuming carpets and rugs, mopping hard floors, cleaning bathroom surfaces, wiping kitchen counters and hob, emptying bins, cleaning mirrors, and general tidying. This package is ideal for weekly or fortnightly bookings in apartments from Ajman's Al Rashidiya to Ras Al Khaimah's Al Nakheel, and can be customized to your specific priorities.
@@ -1257,7 +1257,7 @@ The deep cleaning package goes significantly further, addressing everything in t
 
 Our move-in and move-out cleaning is the most thorough level — designed to meet the requirements of UAE tenancy agreements and property handovers, whether the apartment is in Downtown Dubai, Khalifa City in Abu Dhabi, or UAQ City. The team deep-cleans every surface, fixture, and fitting in the apartment, leaving it in a verifiably clean condition. We can provide a detailed cleaning checklist and completion report for landlord or agency sign-off.
 
-All packages are available for studio apartments through to 4+ bedroom apartments, penthouses, and duplexes. Our cleaning teams are background-checked, uniformed, and trained to Madinat Alhaya's quality standards, ensuring a consistent result every visit — whether you book apartment cleaning Dubai, apartment cleaning Abu Dhabi, apartment cleaning Sharjah, apartment cleaning Ajman, apartment cleaning Ras Al Khaimah, apartment cleaning Fujairah, or apartment cleaning Umm Al Quwain.`,
+All packages are available for studio apartments through to 4+ bedroom apartments, penthouses, and duplexes. Our cleaning teams are background-checked, uniformed, and trained to Madinat Alhaya's quality standards, ensuring a consistent result every visit — whether you book apartment cleaning in Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Fujairah or Umm Al Quwain.`,
     benefits: [
       'Regular, deep, and move-in/move-out packages',
       'Customizable to your specific requirements',
@@ -1297,7 +1297,7 @@ All packages are available for studio apartments through to 4+ bedroom apartment
       },
       {
         question: 'Do I need to be home during the cleaning?',
-        answer: 'Not necessarily. Many clients provide a key or access code. We are fully insured and our team members are background-checked. You will receive a confirmation message when the clean is complete.',
+        answer: 'Not necessarily. Many clients provide a key or access code. Our team members are background-checked. You will receive a confirmation message when the clean is complete.',
       },
     ],
     contentSections: [
@@ -1344,7 +1344,7 @@ All packages are available for studio apartments through to 4+ bedroom apartment
       {
         headingLevel: 'h2',
         heading: 'Trusted, Background-Checked Cleaning Teams',
-        text: 'All Madinat Alhaya apartment cleaners are background-checked, uniformed, and trained to our quality standards. Regular clients receive the same assigned team for consistency. We carry comprehensive liability insurance — and many clients provide key access, confident in our team\'s reliability.',
+        text: 'All Madinat Alhaya apartment cleaners are background-checked, uniformed, and trained to our quality standards. Regular clients receive the same assigned team for consistency. Many clients provide key access for the visit.',
       },
       {
         headingLevel: 'h2',
@@ -1359,27 +1359,26 @@ All packages are available for studio apartments through to 4+ bedroom apartment
     id: 'office-cleaning',
     name: 'Office Cleaning',
     heroTitle: 'Office Cleaning Services Dubai | Commercial & Workplace Deep Cleaning',
-    heroSubtitle: 'Best office cleaning services Dubai, Abu Dhabi & Sharjah — daily, weekly & deep commercial cleaning. Professional workplace cleaning company near me. Sanitization & disinfection services UAE!',
+    heroSubtitle: 'Daily, weekly and deep office cleaning in Dubai, Abu Dhabi and Sharjah, with sanitising of desks, kitchens and washrooms.',
     slug: 'office-cleaning',
     category: 'commercial',
-    shortDescription: 'Best office cleaning company Dubai — professional commercial cleaning services near me for offices, co-working spaces & corporate floors. Daily, weekly & deep office cleaning Dubai, Abu Dhabi & all UAE. Workplace sanitization included!',
+    shortDescription: 'Office cleaning in Dubai: daily, weekly and deep cleaning for offices, co-working spaces and corporate floors, with desk and kitchen sanitising.',
     fullDescription: `A consistently clean and well-maintained office environment directly influences employee productivity, morale, and health — and creates a strong first impression on visiting clients and partners, whether your office is in Dubai's Business Bay, Abu Dhabi's Al Khalidiyah, or a growing business hub in Sharjah's Al Nahda. Madinat Alhaya's professional office cleaning service covers all types of commercial spaces across all 7 UAE Emirates, from small boutique offices and co-working spaces to large corporate floors, government offices, and retail premises.
 
-Our office cleaning packages are designed to be flexible around your business operations. We offer early-morning cleans before staff arrive, evening cleans after the working day, and weekend deep cleans — all scheduled to minimize disruption to your team, whether you're booking office cleaning Dubai, office cleaning Abu Dhabi, or office cleaning Ajman. For large corporate clients, we can assign a dedicated team and site supervisor who manages the cleaning schedule and quality on an ongoing basis.
+Our office cleaning packages are designed to be flexible around your business operations. We offer early-morning cleans before staff arrive, evening cleans after the working day, and weekend deep cleans — all scheduled to minimize disruption to your team, whether you're booking office cleaning in Dubai, Abu Dhabi or Ajman. For large corporate clients, we can assign a dedicated team and site supervisor who manages the cleaning schedule and quality on an ongoing basis.
 
 The standard office cleaning service includes workstation and desk surface cleaning, computer monitor and keyboard wiping with anti-static solutions, shared area and reception cleaning, phone and intercom sanitization, kitchen and pantry cleaning, bathroom and toilet sanitization, waste bin emptying and liner replacement, floor sweeping, vacuuming, and mopping, glass partition and window interior cleaning, and door handle and high-touch surface disinfection — a standard we apply equally to office cleaning Sharjah clients in Al Majaz and office cleaning Ras Al Khaimah businesses near the Corniche.
 
 Our office deep cleaning service adds to this: full carpet extraction cleaning, upholstered furniture cleaning, ceiling fan and air vent cleaning, light fixture cleaning, detailed cleaning behind and beneath furniture, tile and grout scrubbing in bathrooms and kitchens, and kitchen appliance interior cleaning. This is in high demand from office cleaning Fujairah businesses along the Gulf of Oman coast to office cleaning Umm Al Quwain free zone tenants.
 
-Post-COVID, workplace hygiene expectations have risen significantly across every Emirate. We offer an optional enhanced disinfection protocol using hospital-grade disinfectant and electrostatic spraying that ensures comprehensive coverage of all surfaces including vertical planes and underside surfaces — ideal for offices with high foot traffic or staff returning from sick leave.
+Post-COVID, workplace hygiene expectations have risen significantly across every Emirate. We offer an optional enhanced disinfection protocol using disinfectant and electrostatic spraying that ensures comprehensive coverage of all surfaces including vertical planes and underside surfaces — ideal for offices with high foot traffic or staff returning from sick leave.
 
-We hold comprehensive liability insurance and our cleaning teams undergo regular training in chemical handling, equipment operation, and commercial cleaning standards, serving office cleaning Dubai, office cleaning Abu Dhabi, office cleaning Sharjah, office cleaning Ajman, office cleaning Ras Al Khaimah, office cleaning Fujairah, and office cleaning Umm Al Quwain with the same consistent quality.`,
+Our cleaning teams undergo regular training in chemical handling, equipment operation, and commercial cleaning standards, serving office cleaning in Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Fujairah and Umm Al Quwain with the same consistent quality.`,
     benefits: [
       'Flexible scheduling around your business hours',
       'Daily, weekly, and deep cleaning packages',
       'Enhanced disinfection protocol available',
       'Dedicated team and site supervisor option',
-      'Comprehensive liability insurance',
       'High-touch surface disinfection included',
     ],
     process: [
@@ -1409,7 +1408,7 @@ We hold comprehensive liability insurance and our cleaning teams undergo regular
       },
       {
         question: 'Do you offer disinfection services?',
-        answer: 'Yes. Our enhanced disinfection protocol uses hospital-grade disinfectant and electrostatic spraying for comprehensive surface coverage — ideal after illness outbreaks or during peak seasons.',
+        answer: 'Yes. Our enhanced disinfection protocol uses disinfectant and electrostatic spraying for comprehensive surface coverage — ideal after illness outbreaks or during peak seasons.',
       },
       {
         question: 'Are your cleaning staff vetted?',
@@ -1455,12 +1454,12 @@ We hold comprehensive liability insurance and our cleaning teams undergo regular
       {
         headingLevel: 'h3',
         heading: 'Enhanced Disinfection and Electrostatic Spraying',
-        text: 'For offices with high foot traffic or after illness outbreaks, our enhanced disinfection protocol uses hospital-grade disinfectant and electrostatic spraying — ensuring comprehensive coverage of all surfaces including vertical planes and undersides that manual wiping misses.',
+        text: 'For offices with high foot traffic or after illness outbreaks, our enhanced disinfection protocol uses disinfectant and electrostatic spraying — ensuring comprehensive coverage of all surfaces including vertical planes and undersides that manual wiping misses.',
       },
       {
         headingLevel: 'h2',
         heading: 'All Commercial Spaces Covered',
-        text: 'We clean small boutique offices, co-working spaces, large corporate floors, government offices, retail premises, medical clinics, and educational facilities across Dubai, Abu Dhabi, Sharjah, and all UAE Emirates. Comprehensive liability insurance and trained, vetted staff for every deployment.',
+        text: 'We clean small boutique offices, co-working spaces, large corporate floors, government offices, retail premises, medical clinics, and educational facilities across Dubai, Abu Dhabi, Sharjah, and all UAE Emirates. Trained, background-checked staff for every visit.',
       },
       {
         headingLevel: 'h2',
@@ -1475,13 +1474,13 @@ We hold comprehensive liability insurance and our cleaning teams undergo regular
     id: 'restaurant-kitchen-cleaning',
     name: 'Restaurant & Kitchen Cleaning',
     heroTitle: 'Kitchen Deep Cleaning Dubai | Restaurant & Commercial Kitchen Cleaning',
-    heroSubtitle: 'Best kitchen deep cleaning services Dubai — commercial kitchen cleaning, restaurant hood cleaning, grease trap cleaning Dubai. Municipality hygiene compliance. Professional kitchen cleaning near me across UAE!',
+    heroSubtitle: 'Commercial and home kitchen deep cleaning in Dubai: hood and duct degreasing, appliance cleaning and grease removal at your premises.',
     slug: 'restaurant-kitchen-cleaning',
     category: 'commercial',
-    shortDescription: 'Best kitchen deep cleaning services Dubai — professional restaurant cleaning, commercial kitchen hood cleaning, grease trap cleaning near me. Municipality compliance reports included. Deep kitchen cleaning Dubai, Abu Dhabi & all UAE!',
+    shortDescription: 'Kitchen deep cleaning in Dubai for restaurants and homes: hood, duct and appliance degreasing at your premises. Free quote on WhatsApp.',
     fullDescription: `Commercial kitchens operate under enormous demands, generating extreme levels of grease, steam, smoke, and food residue on a daily basis — whether the kitchen is in a Dubai Marina restaurant, an Abu Dhabi hotel, or a family-run cafe in Sharjah's Al Qasimia. Without regular professional deep cleaning, this buildup presents serious fire hazards from grease accumulation in exhaust hoods and ducts, hygiene compliance failures that risk your trade license, and an environment that accelerates equipment deterioration. Our restaurant and kitchen deep cleaning team is specifically trained in commercial kitchen hygiene protocols and uses industrial-strength degreasers and specialist equipment to deliver results that standard cleaning simply cannot match.
 
-Our service is suitable for all types of food service operations — fine dining restaurants, fast food outlets, hotel kitchens, catering facilities, school and hospital canteens, food manufacturing premises, and cloud kitchens across all seven Emirates. We work during off-peak hours, late nights, or early mornings to minimize any impact on your operations, whether you need kitchen cleaning Dubai, kitchen cleaning Abu Dhabi, or kitchen cleaning Ajman.
+Our service is suitable for all types of food service operations — fine dining restaurants, fast food outlets, hotel kitchens, catering facilities, school and hospital canteens, food manufacturing premises, and cloud kitchens across all seven Emirates. We work during off-peak hours, late nights, or early mornings to minimize any impact on your operations, whether you need kitchen cleaning in Dubai, Abu Dhabi or Ajman.
 
 The commercial kitchen deep clean covers exhaust hood interior and exterior degreasing, ductwork degreasing to the required access points, extraction fan blade cleaning, fryer oil drain and deep clean, grill and griddle degreasing, oven and combi-oven deep clean (including racks, glass, and door seals), range top and burner cleaning, stainless steel work surface degreasing and polishing, floor degreasing and sanitization (including floor drain cleaning), wall tile and grout scrubbing, refrigeration unit external and internal cleaning and gasket sanitization, waste area sanitization, and grease trap pumping and cleaning where applicable — a scope requested equally by kitchen cleaning Sharjah restaurants and kitchen cleaning Ras Al Khaimah hotel kitchens near Al Hamra.
 
@@ -1584,17 +1583,17 @@ Pricing is based on kitchen size and the extent of buildup. We recommend monthly
     id: 'marble-polishing',
     name: 'Marble Polishing & Restoration',
     heroTitle: 'Marble Polishing Dubai | Floor Polishing & Marble Restoration UAE',
-    heroSubtitle: 'Best marble polishing services Dubai — professional floor polishing, marble crystallization, marble grinding & stone restoration. Marble polishing Abu Dhabi, Sharjah & all UAE. Diamond technology!',
+    heroSubtitle: 'Marble grinding, polishing and crystallization with diamond pads in Dubai, Abu Dhabi, Sharjah and across the UAE.',
     slug: 'marble-polishing',
     category: 'specialized',
-    shortDescription: 'Best marble polishing Dubai — professional floor polishing services, marble crystallization, marble restoration & stone polishing near me. Diamond abrasive technology. Marble polishing Abu Dhabi, Sharjah & all UAE Emirates!',
+    shortDescription: 'Marble polishing in Dubai: grinding, polishing and crystallization with diamond pads to bring the shine back to marble floors. Free WhatsApp quote.',
     fullDescription: `Marble is one of the most beautiful and prestigious natural stones used in homes and commercial spaces across the UAE, but it requires specialist care to maintain its appearance and integrity — from the marble lobbies of Dubai's Downtown towers to the villa entryways of Abu Dhabi's Al Bateen and Sharjah's Al Khan. Unlike ceramic or porcelain tiles, marble is a calcium carbonate-based stone that is naturally porous and prone to etching from acids (including lemon juice, vinegar, and certain cleaning products), scratching from grit and abrasive cleaners, and dulling from foot traffic and everyday wear. Our marble polishing and restoration service uses diamond abrasive technology and professional polishing compounds to restore your marble to its original factory finish — or better.
 
 We offer the full spectrum of marble care services, from light polishing of surface scratches to comprehensive restoration of severely damaged or neglected marble. The appropriate service is determined during an initial assessment of the marble's current condition, the type and severity of damage, and the client's desired finish (matte, satin, or high gloss) — whether the property is in Ajman's Al Rashidiya or a golf villa in Ras Al Khaimah's Al Hamra Village.
 
 Marble grinding is used for floors with deep scratches, lippage (uneven tile edges), or surface irregularities that cannot be addressed by polishing alone. Using progressively finer diamond abrasive pads on a planetary grinding machine, we level the surface and remove all visible damage — a service popular for marble polishing Fujairah hotel lobbies along the Corniche and marble polishing Umm Al Quwain family villas alike. Marble honing removes surface scratches, etch marks, and light staining to produce a smooth, matte finish without shine. Marble polishing uses fine diamond pads and polishing powders or compounds to produce the characteristic high-gloss mirror finish. Crystallization is an alternative high-gloss treatment that uses heat and a chemical reaction to harden the surface layer. Marble sealing applies a penetrating impregnator sealer that fills the pores of the marble, significantly reducing staining and making ongoing maintenance easier.
 
-We work on all marble surfaces — floors, walls, countertops, staircases, bathroom surfaces, and feature columns — and also handle other natural stones including travertine, limestone, onyx, and terrazzo. Whether you need marble polishing Dubai for a Palm Jumeirah villa, marble polishing Abu Dhabi for a Corniche apartment, marble polishing Sharjah for an Al Majaz property, marble polishing Ajman, marble polishing Ras Al Khaimah, marble polishing Fujairah, or marble polishing Umm Al Quwain, our teams bring the same diamond-grade equipment and technique to every job. Service is available across all 7 UAE Emirates with competitive pricing for large areas.`,
+We work on all marble surfaces — floors, walls, countertops, staircases, bathroom surfaces, and feature columns — and also handle other natural stones including travertine, limestone, onyx, and terrazzo. Whether you need marble polishing Dubai for a Palm Jumeirah villa, marble polishing Abu Dhabi for a Corniche apartment, marble polishing Sharjah for an Al Majaz property, marble polishing in Ajman, Ras Al Khaimah, Fujairah or Umm Al Quwain, our teams bring the same diamond-grade equipment and technique to every job. Service is available across all 7 UAE Emirates with competitive pricing for large areas.`,
     benefits: [
       'Diamond abrasive technology restores factory shine',
       'Handles grinding, honing, polishing, and sealing',
@@ -1702,12 +1701,10 @@ We work on all marble surfaces — floors, walls, countertops, staircases, bathr
     id: 'floor-cleaning',
     name: 'Floor Cleaning & Deep Scrubbing',
     heroTitle: 'Floor Cleaning Services Dubai | Tile, Grout & Hard Floor Deep Cleaning',
-    heroSubtitle:
-      'Professional floor cleaning services across Dubai and all UAE. Machine scrubbing for ceramic, porcelain, vinyl and wooden floors, plus grout deep cleaning that restores tile lines to their original colour.',
+    heroSubtitle: 'Machine scrubbing for ceramic, porcelain, vinyl and wooden floors across Dubai and the UAE, plus grout deep cleaning that brings tile lines back to their colour.',
     slug: 'floor-cleaning',
     category: 'specialized',
-    shortDescription:
-      'Floor cleaning company in Dubai for tile, porcelain, ceramic, vinyl and wooden floors. Rotary machine scrubbing, grout line deep cleaning, and post-construction floor cleaning across Mirdif, Umm Suqeim and all UAE.',
+    shortDescription: 'Floor cleaning in Dubai: machine scrubbing for tile, porcelain, vinyl and wooden floors, plus grout deep cleaning. Free quote on WhatsApp.',
     fullDescription: `Everyday mopping moves dirt around a floor; it does not lift what has settled into the surface. Across the UAE, from Dubai's high-rises to Abu Dhabi's villas and Sharjah's apartment blocks, the problem compounds quickly, because fine desert dust is abrasive and works its way into grout lines, floor texture and the edges of every room. Within a year or two, floors that are cleaned regularly still look dull, and grout that started light grey turns brown - a pattern we see just as often in Ajman and Ras Al Khaimah as we do in Dubai. Our floor cleaning service exists for exactly that point - when a floor is clean but no longer looks clean.
 
 We work with rotary scrubbing machines and pressure extraction rather than mops and buckets. The machine agitates the surface with a pad or brush matched to your flooring, a suitable detergent lifts embedded soil, and the extraction unit removes the dirty solution instead of spreading it. The difference is most visible on grout: on tiled floors we run a separate grout pass with a narrow brush head, which is what actually restores the original colour of the lines between tiles, whether the tiles are in a Sharjah villa near Al Nahda or an Abu Dhabi apartment on Muroor Road.
@@ -1716,7 +1713,7 @@ Different floors need different handling, and using the wrong method causes dama
 
 We also handle post-construction and post-renovation floor cleaning, which is a different job again: cement haze, paint spots, adhesive residue and plaster dust need specific removal steps before any normal cleaning can begin. This is usually the service required after a fit-out, a move-in, or any building work in an apartment or villa - a common need for new developments in Ajman and Umm Al Quwain as much as established communities in Dubai.
 
-Floor cleaning is available across all seven Emirates. In Dubai we work regularly in Mirdif, Umm Suqeim, Al Barsha and Bur Dubai; we also provide floor cleaning Abu Dhabi, floor cleaning Sharjah, floor cleaning Ajman, floor cleaning Ras Al Khaimah, floor cleaning Fujairah, and floor cleaning Umm Al Quwain, alongside every other area we cover. Areas, floor sizes and floor types all affect the time a job takes, so we quote after understanding what you have rather than publishing a single flat rate.`,
+Floor cleaning is available across all seven Emirates. In Dubai we work regularly in Mirdif, Umm Suqeim, Al Barsha and Bur Dubai; we also provide floor cleaning in Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Fujairah and Umm Al Quwain, alongside every other area we cover. Areas, floor sizes and floor types all affect the time a job takes, so we quote after understanding what you have rather than publishing a single flat rate.`,
     contentSections: [
       {
         headingLevel: 'h2',
