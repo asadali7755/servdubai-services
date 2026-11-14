@@ -65,20 +65,20 @@ export default function ContactPage() {
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
           <div>
-            <label className="block text-sm font-medium text-gray-300 mb-1">{ct.nameLabel}</label>
-            <input {...register('name')} placeholder={ct.namePlaceholder} className="ct-input" />
+            <label htmlFor="ct-name" className="block text-sm font-medium text-gray-300 mb-1">{ct.nameLabel}</label>
+            <input id="ct-name" {...register('name')} placeholder={ct.namePlaceholder} className="ct-input" />
             {errors.name && <p className="text-red-400 text-xs mt-1">{errors.name.message}</p>}
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-300 mb-1">{ct.phoneLabel}</label>
-            <input {...register('phone')} placeholder={ct.phonePlaceholder} className="ct-input" />
+            <label htmlFor="ct-phone" className="block text-sm font-medium text-gray-300 mb-1">{ct.phoneLabel}</label>
+            <input id="ct-phone" {...register('phone')} placeholder={ct.phonePlaceholder} className="ct-input" />
             {errors.phone && <p className="text-red-400 text-xs mt-1">{errors.phone.message}</p>}
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-300 mb-1">{ct.serviceLabel}</label>
-            <select {...register('service')} className="ct-select">
+            <label htmlFor="ct-service" className="block text-sm font-medium text-gray-300 mb-1">{ct.serviceLabel}</label>
+            <select id="ct-service" {...register('service')} className="ct-select">
               <option value="">{ct.servicePlaceholder}</option>
               {ct.serviceOptions.map((s) => (
                 <option key={s} value={s}>{s}</option>
@@ -88,8 +88,8 @@ export default function ContactPage() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-300 mb-1">{ct.messageLabel}</label>
-            <textarea {...register('message')} rows={4} placeholder={ct.messagePlaceholder} className="ct-textarea" />
+            <label htmlFor="ct-message" className="block text-sm font-medium text-gray-300 mb-1">{ct.messageLabel}</label>
+            <textarea id="ct-message" {...register('message')} rows={4} placeholder={ct.messagePlaceholder} className="ct-textarea" />
             {errors.message && <p className="text-red-400 text-xs mt-1">{errors.message.message}</p>}
           </div>
 

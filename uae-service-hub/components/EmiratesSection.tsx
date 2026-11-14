@@ -16,7 +16,7 @@ export default function EmiratesSection({ emirates }: { emirates: Emirate[] }) {
 
         <div className="p-title text-center">
           <div className="p-title-center">
-            <h5>{t.emirates_section.label}</h5>
+            <p className="p-eyebrow">{t.emirates_section.label}</p>
             <h2>{t.emirates_section.title}</h2>
           </div>
         </div>
@@ -60,7 +60,7 @@ export default function EmiratesSection({ emirates }: { emirates: Emirate[] }) {
                 </div>
 
                 <div className="team-name">
-                  <h5>{t.emirateNames[emirate.slug as keyof typeof t.emirateNames] ?? emirate.name}</h5>
+                  <h3>{t.emirateNames[emirate.slug as keyof typeof t.emirateNames] ?? emirate.name}</h3>
                 </div>
               </div>
             </Link>

@@ -70,7 +70,7 @@ const translations = {
         },
       ],
       getFreeQuote: 'Get Free Quote',
-      learnMore: 'Learn More',
+      learnMore: 'About Madinat Alhaya',
       ourWebsites: 'Our Websites ↗',
     },
     home: {

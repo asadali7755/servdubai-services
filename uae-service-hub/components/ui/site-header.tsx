@@ -66,7 +66,7 @@ export function SiteHeader({ onOpenMobile, mobileOpen }: { onOpenMobile: () => v
       <nav className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-4 lg:px-8">
         <div className="flex items-center gap-6">
           <Link href="/" className="rounded-md p-1 font-heading text-lg font-bold tracking-tight text-foreground hover:opacity-80">
-            Madinat <span className="text-primary">Alhaya</span>
+            Madinat <span className="text-primary logo-accent">Alhaya</span>
           </Link>
 
           <NavigationMenu className="hidden lg:flex">

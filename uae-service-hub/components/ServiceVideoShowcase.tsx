@@ -70,7 +70,7 @@ function QuoteCard({ defaultService }: { defaultService: string }) {
       <span className="hqc-label">FREE QUOTE REQUEST</span>
       <h3 className="svs-quote-heading">Get your free quote.</h3>
       <div className="hqc-form">
-        <select value={service} onChange={(e) => setService(e.target.value)} className="hqc-select">
+        <select value={service} onChange={(e) => setService(e.target.value)} className="hqc-select" aria-label="Select a service">
           <option value="">Select a service (optional)</option>
           {SERVICES.map((s) => <option key={s} value={s}>{s}</option>)}
         </select>
@@ -80,6 +80,7 @@ function QuoteCard({ defaultService }: { defaultService: string }) {
           value={phone}
           onChange={(e) => { setPhone(e.target.value); setErr('') }}
           placeholder="Your mobile number (UAE)*"
+          aria-label="Your mobile number"
           className="hqc-input"
           style={err ? { borderColor: '#e53e3e' } : {}}
         />

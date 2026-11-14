@@ -2,7 +2,6 @@
 
 import * as React from 'react'
 import Link from 'next/link'
-import gsap from 'gsap'
 import { X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { servicesNav } from '@/lib/data/services-nav'
@@ -19,9 +18,19 @@ export function KineticMobileMenu({ open, onClose }: { open: boolean; onClose: (
   const { locale } = useLocale()
   const t = translations[locale]
 
+  // GSAP is only downloaded the first time the menu opens (speed audit, 14 Nov
+  // 2026): it was ~25 KB of unused JS on every page load. The overlay starts
+  // with display:none, so nothing needs animating before the first open.
+  const opened = React.useRef(false)
   React.useEffect(() => {
     if (!overlayRef.current || !panelRef.current) return
-    const ctx = gsap.context(() => {
+    if (!open && !opened.current) return
+    if (open) opened.current = true
+    let ctx: { revert: () => void } | undefined
+    let cancelled = false
+    import('gsap').then(({ default: gsap }) => {
+      if (cancelled) return
+      ctx = gsap.context(() => {
       const tl = gsap.timeline()
       if (open) {
         document.body.style.overflow = 'hidden'
@@ -41,8 +50,12 @@ export function KineticMobileMenu({ open, onClose }: { open: boolean; onClose: (
           .to(overlayRef.current, { autoAlpha: 0, duration: 0.3 }, '<')
           .set(overlayRef.current, { display: 'none' })
       }
+      })
     })
-    return () => ctx.revert()
+    return () => {
+      cancelled = true
+      ctx?.revert()
+    }
   }, [open])
 
   React.useEffect(() => {
@@ -60,7 +73,7 @@ export function KineticMobileMenu({ open, onClose }: { open: boolean; onClose: (
       >
         <div className="mb-8 flex items-center justify-between">
           <span className="font-heading text-lg font-bold text-foreground">
-            Madinat <span className="text-primary">Alhaya</span>
+            Madinat <span className="text-primary logo-accent">Alhaya</span>
           </span>
           <Button size="icon" variant="outline" onClick={onClose} aria-label="Close menu" className="border-border text-foreground">
             <X className="size-5" />

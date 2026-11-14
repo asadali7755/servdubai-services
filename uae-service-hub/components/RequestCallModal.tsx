@@ -111,6 +111,7 @@ function RequestCallModal({ onClose, onSent }: { onClose: () => void; onSent: (m
             value={service}
             onChange={(e) => setService(e.target.value)}
             className="rcm-select"
+            aria-label="Service (optional)"
           >
             <option value="">Select a service (optional)</option>
             <option value="Sofa Cleaning">Sofa Cleaning</option>
@@ -127,6 +128,7 @@ function RequestCallModal({ onClose, onSent }: { onClose: () => void; onSent: (m
             type="tel"
             inputMode="tel"
             placeholder="+971 5X XXX XXXX *"
+            aria-label="Your mobile number"
             value={phone}
             onChange={(e) => { setPhone(e.target.value); setErr('') }}
             className="rcm-input"
