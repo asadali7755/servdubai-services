@@ -130,7 +130,7 @@ export default function HomeContent() {
             {[
               { number: '11+', label: t.home.stats.services },
               { number: '7', label: t.home.stats.emirates },
-              { number: '500+', label: t.home.stats.happyClients },
+              { number: t.home.stats.free, label: t.home.stats.whatsappQuote },
               { number: t.home.stats.sameDay, label: t.home.stats.availability },
             ].map((stat) => (
               <div key={stat.label} className="cta-stat-item">

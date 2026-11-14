@@ -64,7 +64,7 @@ export default function AboutPage() {
       {/* STATS BAR */}
       <div className="pg-stats-bar">
         <div className="pg-stats-inner">
-          {[{ n: '11+', l: 'Services' },{ n: '7', l: 'Emirates' },{ n: '500+', l: 'Clients' },{ n: 'Same Day', l: 'Availability' },{ n: '100%', l: 'Satisfaction' }].map((s, i) => (
+          {[{ n: '11+', l: 'Services' },{ n: '7', l: 'Emirates' },{ n: 'Free', l: 'WhatsApp Quote' },{ n: 'Same Day', l: 'Availability' },{ n: '100%', l: 'Satisfaction' }].map((s, i) => (
             <div key={s.l} className={`pg-stat${i > 0 ? ' pg-stat-bordered' : ''}`}>
               <div className="pg-stat-num">{s.n}</div>
               <div className="pg-stat-label">{s.l}</div>

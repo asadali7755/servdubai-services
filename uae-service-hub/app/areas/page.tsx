@@ -8,7 +8,7 @@ import QuoteCard from '@/components/QuoteCard'
 
 export const metadata: Metadata = {
   ...buildMetadata({
-    title: 'Cleaning Services Near Me UAE | All Emirates, Cities & Neighbourhoods',
+    title: 'Cleaning Service Areas in the UAE | All Emirates & Neighbourhoods',
     description:
       'Find cleaning services across the UAE — villa cleaning, sofa cleaning, carpet cleaning & marble polishing in Dubai, Sharjah, Abu Dhabi, Ajman, RAK, Fujairah & Umm Al Quwain. Same-day service.',
     path: '/areas',
