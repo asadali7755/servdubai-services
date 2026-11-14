@@ -7,7 +7,7 @@ const SPAM_QUERY_PATTERNS = [/products\//i, /\.php/i, /categoryindex/i, /ctg\//i
 
 export const metadata: Metadata = {
   ...buildMetadata({
-    title: 'Cleaning & Car Wash at Home in Dubai & UAE',
+    title: 'Cleaning Services in Dubai & UAE',
     description:
       'Sofa, carpet, villa and marble cleaning plus car wash, car interior and AC odour cleaning at your door across all 7 UAE emirates. Free WhatsApp quote.',
     path: '/',

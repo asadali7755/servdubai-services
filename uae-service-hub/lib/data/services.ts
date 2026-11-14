@@ -42,7 +42,7 @@ export const services: Service[] = [
   {
     id: 'sofa-cleaning',
     name: 'Sofa Cleaning & Shampooing',
-    heroTitle: 'Sofa Cleaning Services in Dubai & UAE',
+    heroTitle: 'Sofa Cleaning Dubai | Sofa Shampooing at Your Home',
     heroSubtitle: 'Looking for professional sofa cleaning services across the UAE? Our upholstery service removes stains, allergens, and odors using advanced pH-balanced technology — serving Dubai, Abu Dhabi, Sharjah and beyond. Book now!',
     slug: 'sofa-cleaning',
     category: 'domestic',
@@ -234,7 +234,7 @@ We handle all sofa types: L-shaped, sectional, 3-seater, corner sofas, fabric re
   {
     id: 'carpet-cleaning',
     name: 'Carpet Cleaning & Shampooing',
-    heroTitle: 'Carpet Cleaning Services in Dubai & UAE',
+    heroTitle: 'Carpet Cleaning Dubai | Carpet Shampooing at Your Home',
     heroSubtitle: 'Our carpet cleaning services UAE use deep steam extraction to remove desert sand, allergens & tough stains. Book carpet cleaning services in Dubai, Abu Dhabi & Sharjah — eco-friendly, safe for kids & pets. Same-day service available!',
     slug: 'carpet-cleaning',
     category: 'domestic',
@@ -586,7 +586,7 @@ Investing in mattress deep cleaning is an investment in your long-term respirato
     name: 'Curtain Cleaning',
     slug: 'curtain-cleaning',
     category: 'domestic',
-    heroTitle: 'Curtain Cleaning Services in Dubai & UAE',
+    heroTitle: 'Curtain Cleaning Dubai | Curtains & Blinds at Home',
     heroSubtitle: 'Top-rated curtain cleaning across the UAE — on-site steam & off-site dry cleaning for all fabrics. Professional curtain cleaning near me in Dubai, Sharjah & Abu Dhabi. Book today!',
     shortDescription: 'Looking for professional curtain cleaning across the UAE? Expert on-site steam cleaning and off-site dry cleaning for all fabrics. Free pickup & delivery with 99% stain removal. Book your refresh today!',
     fullDescription: `The Ultimate Guide to a Dust-Free Home Across the UAE

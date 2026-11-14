@@ -301,7 +301,7 @@ export default async function ServiceAreaPage({ params }: Props) {
                   {sameServiceAreas.map((c) => (
                     <Link key={`${c.emirate}-${c.city}`} href={`/${c.emirate}/${c.city}/${sSlug}`}>{c.name}</Link>
                   ))}
-                  <Link href={`/services/${service.slug}`}>About {shortService.toLowerCase()} →</Link>
+                  <Link href={`/services/${service.slug}`}>{shortService} in Dubai &amp; UAE →</Link>
                 </div>
               </div>
             )}
