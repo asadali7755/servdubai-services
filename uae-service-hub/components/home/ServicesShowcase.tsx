@@ -68,6 +68,22 @@ function Heading({ tag, className, children }: { tag: 'h2' | 'h3'; className: st
  * the globally active service in the scroll-locked card deck — and the row
  * just renders its cards in the right state.
  */
+/**
+ * Descriptive link text per service (English only): the homepage is the
+ * strongest page on the site, and a "View service" link tells Google nothing.
+ * The sofa link carries the exact phrase the sofa page should rank for.
+ */
+const CTA_TEXT: Record<string, string> = {
+  'sofa-cleaning': 'Sofa cleaning services in Dubai →',
+  'carpet-cleaning': 'Carpet cleaning in Dubai →',
+  'villa-deep-cleaning': 'Villa deep cleaning in Dubai →',
+  'marble-polishing': 'Marble polishing in Dubai →',
+  'mattress-cleaning': 'Mattress cleaning in Dubai →',
+  'office-cleaning': 'Office cleaning in Dubai →',
+}
+const ctaText = (slug: string, fallback: string) =>
+  /[؀-ۿ]/.test(fallback) ? fallback : (CTA_TEXT[slug] ?? fallback)
+
 function PanelRow({ panels, offset, viewService, delay, deck, onPick }: {
   panels: Panel[]; offset: number; viewService: string; delay: number
   deck: number | null; onPick?: (globalIndex: number) => void
@@ -147,7 +163,7 @@ function PanelRow({ panels, offset, viewService, delay, deck, onPick }: {
                 <div className={s.kws}>{p.kws.map((k) => <span key={k}>{k}</span>)}</div>
               )}
               <Link href={`/services/${p.slug}`} className={s.cta} tabIndex={on ? 0 : -1}>
-                {viewService}
+                {ctaText(p.slug, viewService)}
               </Link>
             </div>
 

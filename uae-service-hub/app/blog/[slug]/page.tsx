@@ -1,4 +1,4 @@
-import { wikiForTopic } from '@/lib/data/wikiLinks'
+import { wikiForTopic, serviceForTopic } from '@/lib/data/wikiLinks'
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -114,6 +114,14 @@ export default async function BlogPostPage({ params }: Props) {
         {post.intro.map((p, i) => (
           <p key={i} className="blog-p bp-p">{p}</p>
         ))}
+        {(() => {
+          const svc = serviceForTopic(`${post.slug} ${post.title}`)
+          return (
+            <p className="blog-p bp-p">
+              <strong>Want it done for you?</strong> See our <Link href={svc.href}>{svc.text}</Link> page, and get a free quote on WhatsApp.
+            </p>
+          )
+        })()}
 
         {/* Sections */}
         {post.sections.map((sec, i) => (

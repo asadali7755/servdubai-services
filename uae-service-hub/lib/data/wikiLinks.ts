@@ -118,3 +118,22 @@ export function wikiForTopic(text: string): WikiLink {
   const hit = TOPIC.find(([re]) => re.test(t))
   return WIKI_SERVICE[hit ? hit[1] : 'villa-deep-cleaning']
 }
+
+/** The service page a blog post should send readers (and link weight) to, with descriptive link text */
+const SERVICE_LINK: Record<string, { href: string; text: string }> = {
+  'sofa-cleaning': { href: '/services/sofa-cleaning', text: 'sofa cleaning services in Dubai' },
+  'carpet-cleaning': { href: '/services/carpet-cleaning', text: 'carpet cleaning in Dubai' },
+  'mattress-cleaning': { href: '/services/mattress-cleaning', text: 'mattress cleaning in Dubai' },
+  'curtain-cleaning': { href: '/services/curtain-cleaning', text: 'curtain cleaning in Dubai' },
+  'marble-polishing': { href: '/services/marble-polishing', text: 'marble polishing in Dubai' },
+  'floor-cleaning': { href: '/services/floor-cleaning', text: 'floor cleaning in Dubai' },
+  'office-cleaning': { href: '/services/office-cleaning', text: 'office cleaning in Dubai' },
+  'restaurant-kitchen-cleaning': { href: '/services/restaurant-kitchen-cleaning', text: 'kitchen deep cleaning in Dubai' },
+  'car-interior-detailing': { href: '/services/car-interior-detailing', text: 'car seat cleaning in Dubai' },
+  'villa-deep-cleaning': { href: '/services/villa-deep-cleaning', text: 'villa deep cleaning in Dubai' },
+}
+export function serviceForTopic(text: string): { href: string; text: string } {
+  const t = text.toLowerCase()
+  const hit = TOPIC.find(([re]) => re.test(t))
+  return SERVICE_LINK[hit ? hit[1] : 'villa-deep-cleaning']
+}
