@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   ...buildMetadata({
     title: 'Cleaning Services in Dubai & UAE',
     description:
-      'Sofa, carpet, villa and marble cleaning plus car wash, car interior and AC odour cleaning at your door across all 7 UAE emirates. Free WhatsApp quote.',
+      'Cleaning services in Dubai and all 7 UAE emirates at your door: sofa, carpet, villa and marble cleaning, plus car wash at home. Free WhatsApp quote.',
     path: '/',
   }),
   keywords: [

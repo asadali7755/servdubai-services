@@ -20,7 +20,7 @@ export default function BeforeAfter({
     <div className="dn-ba" style={{ ['--ba' as string]: `${pos}%` }}>
       <Image src={after} alt={`${alt} — after cleaning`} fill sizes="(max-width: 768px) 100vw, 560px" className="dn-ba-img" />
       <div className="dn-ba-before" aria-hidden="true">
-        <Image src={before} alt="" fill sizes="(max-width: 768px) 100vw, 560px" className="dn-ba-img" />
+        <Image src={before} alt={`${alt} — before cleaning`} fill sizes="(max-width: 768px) 100vw, 560px" className="dn-ba-img" />
       </div>
       <span className="dn-ba-tag dn-ba-tag-b">Before</span>
       <span className="dn-ba-tag dn-ba-tag-a">After</span>

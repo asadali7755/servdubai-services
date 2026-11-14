@@ -24,6 +24,7 @@ import { getWhatsAppLink } from '@/lib/utils/whatsapp'
 import { SITE_CONFIG } from '@/lib/data/constants'
 import { makeDna, dnaStyle, hash } from '@/lib/design/dna'
 import { fraunces } from '@/lib/design/fonts'
+import { WIKI_CITY, WIKI_EMIRATE } from '@/lib/data/wikiLinks'
 import '../../../dna.css'
 
 type Props = { params: Promise<{ emirate: string; city: string; service: string }> }
@@ -305,6 +306,14 @@ export default async function ServiceAreaPage({ params }: Props) {
                 </div>
               </div>
             )}
+            {(() => {
+              const wiki = WIKI_CITY[`${emirate.slug}/${city.slug}`] ?? WIKI_EMIRATE[emirate.slug]
+              return wiki ? (
+                <p className="dn-p" style={{ fontSize: '.9rem', opacity: 0.8, marginTop: '1rem' }}>
+                  About the area: <a href={wiki.url} target="_blank" rel="noopener">{wiki.title} on Wikipedia</a>
+                </p>
+              ) : null
+            })()}
           </div>
         </section>
 

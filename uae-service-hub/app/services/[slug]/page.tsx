@@ -20,6 +20,7 @@ import { combosForService } from '@/lib/data/serviceAreaCombos'
 import { buildMetadata, buildServiceSchema, buildBreadcrumbSchema, buildFAQSchema, shortServiceName } from '@/lib/utils/seo'
 import { getWhatsAppLink } from '@/lib/utils/whatsapp'
 import { SITE_CONFIG } from '@/lib/data/constants'
+import { WIKI_SERVICE } from '@/lib/data/wikiLinks'
 import { makeDna, dnaStyle } from '@/lib/design/dna'
 import { fraunces } from '@/lib/design/fonts'
 import '../../dna.css'
@@ -240,6 +241,11 @@ export default async function ServicePage({ params }: Props) {
               ))}
             </div>
           </div>
+        )}
+        {WIKI_SERVICE[service.slug] && (
+          <p className="dn-p" style={{ fontSize: '.9rem', opacity: 0.8, marginTop: '1rem' }}>
+            Background reading: <a href={WIKI_SERVICE[service.slug].url} target="_blank" rel="noopener">{WIKI_SERVICE[service.slug].title} on Wikipedia</a>
+          </p>
         )}
       </div>
     </section>

@@ -112,7 +112,7 @@ export default function DnaHero(p: HeroProps) {
             <div className="dn-polaroids" aria-hidden="true">
               {imgs.slice(0, 2).map((src, i) => (
                 <div className="dn-polaroid" key={src + i}>
-                  <div><Image src={src} alt="" fill sizes="260px" priority={i === 0} /></div>
+                  <div><Image src={src} alt={`${p.title} — ${chips[i] ?? p.badge}`} fill sizes="260px" priority={i === 0} /></div>
                   <span>{chips[i] ?? p.badge}</span>
                 </div>
               ))}

@@ -17,6 +17,7 @@ import { buildMetadata, buildLocalBusinessSchema, buildBreadcrumbSchema, buildFA
 import { getWhatsAppLink } from '@/lib/utils/whatsapp'
 import { getEmirateCoords } from '@/lib/data/cityCoordinates'
 import { SITE_CONFIG } from '@/lib/data/constants'
+import { WIKI_EMIRATE } from '@/lib/data/wikiLinks'
 import { makeDna, dnaStyle } from '@/lib/design/dna'
 import { fraunces } from '@/lib/design/fonts'
 import '../dna.css'
@@ -33,8 +34,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!emirate) return {}
   const profile = EMIRATE_PROFILES[emirateSlug]
   return buildMetadata({
-    title: `Cleaning Services in ${emirate.name} — Sofa, Carpet & Villa Cleaning`,
-    description: profile?.tagline ?? `Professional cleaning services in ${emirate.name}. Free WhatsApp quote: ${SITE_CONFIG.phoneDisplay}.`,
+    title: emirate.name.length > 9
+      ? `Cleaning Services in ${emirate.name} | Sofa & Carpet`
+      : `Cleaning Services in ${emirate.name} | Sofa, Carpet & Villa`,
+    // the profile tagline alone is short (~90-110 chars) and often skips the word "cleaning"
+    description: `Cleaning services in ${emirate.name} at your home or office: sofa, carpet, mattress and villa deep cleaning. Same-day slots and a free WhatsApp quote.`,
     path: `/${emirateSlug}`,
   })
 }
@@ -170,6 +174,9 @@ export default async function EmiratePage({ params }: Props) {
             <Link key={s.slug} href={`/services/${s.slug}`} className="dn-chip">{shortServiceName(s.name)}</Link>
           ))}
         </div>
+              <p className="dn-p" style={{ fontSize: '.9rem', opacity: 0.8, marginTop: '1rem' }}>
+                About {emirate.name}: <a href={WIKI_EMIRATE[emirate.slug].url} target="_blank" rel="noopener">{WIKI_EMIRATE[emirate.slug].title} on Wikipedia</a>
+              </p>
       </div>
     </section>
   )

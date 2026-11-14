@@ -4,6 +4,7 @@ import WhatsAppButton from '@/components/WhatsAppButton'
 import { getWhatsAppLink } from '@/lib/utils/whatsapp'
 import { SITE_CONFIG } from '@/lib/data/constants'
 import type { AiGuide } from '@/lib/data/aiGuides'
+import { wikiForTopic } from '@/lib/data/wikiLinks'
 
 /**
  * Premium editorial rendering for AI-researched deep guides. Matches the
@@ -52,6 +53,14 @@ export default function AiGuideArticle({ guide }: { guide: AiGuide }) {
         {/* ── Floating article card ── */}
         <div className="aig-canvas">
           <div className="aig-body" dangerouslySetInnerHTML={{ __html: guide.bodyHtml }} />
+          {(() => {
+            const wiki = wikiForTopic(`${guide.slug} ${guide.title}`)
+            return (
+              <p className="aig-wiki" style={{ fontSize: '.9rem', opacity: 0.8, margin: '1.5rem 0 0' }}>
+                Background reading: <a href={wiki.url} target="_blank" rel="noopener">{wiki.title} on Wikipedia</a>
+              </p>
+            )
+          })()}
 
           {/* CTA */}
           <div className="aig-cta">

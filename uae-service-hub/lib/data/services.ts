@@ -234,7 +234,7 @@ We handle all sofa types: L-shaped, sectional, 3-seater, corner sofas, fabric re
   {
     id: 'carpet-cleaning',
     name: 'Carpet Cleaning & Shampooing',
-    heroTitle: 'Carpet Cleaning Dubai | Carpet Shampooing at Your Home',
+    heroTitle: 'Carpet Cleaning Dubai | Carpet Shampooing at Home',
     heroSubtitle: 'Deep steam extraction at your home that lifts desert sand, allergens and stains from carpets and rugs. Eco-friendly products, safe for kids and pets. Same-day slots available.',
     slug: 'carpet-cleaning',
     category: 'domestic',
@@ -401,7 +401,7 @@ A clean carpet is the foundation of a healthy UAE home, wherever you live betwee
   {
     id: 'mattress-cleaning',
     name: 'Mattress Deep Cleaning',
-    heroTitle: 'Mattress Cleaning in Dubai | Deep Clean for Dust Mites & Stains',
+    heroTitle: 'Mattress Cleaning Dubai | Dust Mites & Stains',
     heroSubtitle: 'Steam cleaning at your home that removes dust mites, allergens and stains from mattresses. Eco-friendly products, safe for kids and pets. Same-day slots available.',
     slug: 'mattress-cleaning',
     category: 'domestic',
@@ -784,7 +784,7 @@ Madinat Alhaya covers curtain cleaning in Dubai, Abu Dhabi, Sharjah, Ajman, Ras 
   {
     id: 'car-interior-detailing',
     name: 'Car Interior Detailing',
-    heroTitle: 'Car Seat Cleaning Dubai | Steam Cleaning & Stain Removal',
+    heroTitle: 'Car Seat Cleaning Dubai | Steam & Stain Removal',
     heroSubtitle: 'Fabric and leather car seat cleaning at your home or office in Dubai, Sharjah and Abu Dhabi: steam cleaning, stain removal and odour removal.',
     slug: 'car-interior-detailing',
     category: 'domestic',
@@ -956,7 +956,7 @@ Madinat Alhaya provides car seats cleaning services across all 7 UAE Emirates â€
   {
     id: 'dining-chair-cleaning',
     name: 'Dining Chair Cleaning',
-    heroTitle: 'Dining Chair Cleaning Dubai | Food Stain & Grease Removal',
+    heroTitle: 'Dining Chair Cleaning Dubai | Stains & Grease',
     heroSubtitle: 'Fabric, leather and faux-leather dining chairs cleaned at your home: food stains, grease and odours removed, with an optional fabric protector.',
     slug: 'dining-chair-cleaning',
     category: 'domestic',
@@ -1065,7 +1065,7 @@ The service is available for single chairs or full dining sets, and we can also 
   {
     id: 'villa-deep-cleaning',
     name: 'Villa Deep Cleaning',
-    heroTitle: 'Villa Deep Cleaning Services Dubai | Move-In, Move-Out & Regular',
+    heroTitle: 'Villa Deep Cleaning Dubai | Move-In & Move-Out',
     heroSubtitle: 'Move-in, move-out, post-construction and regular villa deep cleaning in Dubai, Abu Dhabi and Sharjah, by a trained team with eco-friendly products. Same-day slots available.',
     slug: 'villa-deep-cleaning',
     category: 'commercial',
@@ -1244,7 +1244,7 @@ Madinat Alhaya provides villa deep cleaning in Dubai, Abu Dhabi, Sharjah, Ajman,
   {
     id: 'apartment-cleaning',
     name: 'Apartment Cleaning',
-    heroTitle: 'Apartment Cleaning Services Dubai | Deep Clean, Move-In & Move-Out',
+    heroTitle: 'Apartment Cleaning Dubai | Move-In & Move-Out',
     heroSubtitle: 'Studio to 4BHK apartment deep cleaning in Dubai, Abu Dhabi and Sharjah: move-in, move-out and end-of-tenancy cleans at your flat.',
     slug: 'apartment-cleaning',
     category: 'commercial',
@@ -1358,7 +1358,7 @@ All packages are available for studio apartments through to 4+ bedroom apartment
   {
     id: 'office-cleaning',
     name: 'Office Cleaning',
-    heroTitle: 'Office Cleaning Services Dubai | Commercial & Workplace Deep Cleaning',
+    heroTitle: 'Office Cleaning Dubai | Daily & Deep Office Cleaning',
     heroSubtitle: 'Daily, weekly and deep office cleaning in Dubai, Abu Dhabi and Sharjah, with sanitising of desks, kitchens and washrooms.',
     slug: 'office-cleaning',
     category: 'commercial',
@@ -1473,7 +1473,7 @@ Our cleaning teams undergo regular training in chemical handling, equipment oper
   {
     id: 'restaurant-kitchen-cleaning',
     name: 'Restaurant & Kitchen Cleaning',
-    heroTitle: 'Kitchen Deep Cleaning Dubai | Restaurant & Commercial Kitchen Cleaning',
+    heroTitle: 'Kitchen Deep Cleaning Dubai | Restaurants & Homes',
     heroSubtitle: 'Commercial and home kitchen deep cleaning in Dubai: hood and duct degreasing, appliance cleaning and grease removal at your premises.',
     slug: 'restaurant-kitchen-cleaning',
     category: 'commercial',
@@ -1582,7 +1582,7 @@ Pricing is based on kitchen size and the extent of buildup. We recommend monthly
   {
     id: 'marble-polishing',
     name: 'Marble Polishing & Restoration',
-    heroTitle: 'Marble Polishing Dubai | Floor Polishing & Marble Restoration UAE',
+    heroTitle: 'Marble Polishing Dubai | Polishing & Restoration',
     heroSubtitle: 'Marble grinding, polishing and crystallization with diamond pads in Dubai, Abu Dhabi, Sharjah and across the UAE.',
     slug: 'marble-polishing',
     category: 'specialized',
@@ -1700,7 +1700,7 @@ We work on all marble surfaces â€” floors, walls, countertops, staircases, bathr
   {
     id: 'floor-cleaning',
     name: 'Floor Cleaning & Deep Scrubbing',
-    heroTitle: 'Floor Cleaning Services Dubai | Tile, Grout & Hard Floor Deep Cleaning',
+    heroTitle: 'Floor Cleaning Dubai | Tile & Grout Deep Cleaning',
     heroSubtitle: 'Machine scrubbing for ceramic, porcelain, vinyl and wooden floors across Dubai and the UAE, plus grout deep cleaning that brings tile lines back to their colour.',
     slug: 'floor-cleaning',
     category: 'specialized',

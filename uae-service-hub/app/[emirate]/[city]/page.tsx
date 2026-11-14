@@ -19,6 +19,7 @@ import { getComboExtra } from '@/lib/data/comboExtras'
 import { getCarMedia } from '@/lib/data/carMedia'
 import { getServiceHoverImage } from '@/lib/data/serviceGalleryImages'
 import { SITE_CONFIG } from '@/lib/data/constants'
+import { WIKI_CITY, WIKI_EMIRATE } from '@/lib/data/wikiLinks'
 import { makeDna, dnaStyle, hash } from '@/lib/design/dna'
 import { fraunces } from '@/lib/design/fonts'
 import '../../dna.css'
@@ -39,10 +40,10 @@ const T = {
     (c: string) => `${c} homes, up close`,
   ],
   services: [
-    (c: string) => `Most-booked in ${c}`,
-    (c: string) => `Where to start in ${c}`,
-    (c: string) => `Three jobs ${c} residents ask for most`,
-    (c: string) => `Our top picks for ${c}`,
+    (c: string) => `Most-booked cleaning in ${c}`,
+    (c: string) => `Where to start with cleaning in ${c}`,
+    (c: string) => `Three cleaning jobs ${c} residents ask for most`,
+    (c: string) => `Our top cleaning picks for ${c}`,
   ],
   tips: [
     (c: string) => `Keeping a ${c} home fresh between visits`,
@@ -126,6 +127,7 @@ export default async function CityPage({ params }: Props) {
   const emirate = getEmirateBySlug(emirateSlug)
   const city = getCityBySlug(emirateSlug, citySlug)
   if (!emirate || !city) notFound()
+  const cityWiki = WIKI_CITY[`${emirate.slug}/${city.slug}`] ?? WIKI_EMIRATE[emirate.slug]
 
   const local = getCityContent(emirateSlug, citySlug)
   const profile = getCityProfile(emirateSlug, citySlug)
@@ -233,7 +235,7 @@ export default async function CityPage({ params }: Props) {
         </Reveal>
         <Reveal delay={80}>
           <div className="dn-eyebrow">{T.proof[v]}</div>
-          <h2 className="dn-h dn-h2" style={{ marginBottom: '1rem' }}>Booking a visit in {city.name}</h2>
+          <h2 className="dn-h dn-h2" style={{ marginBottom: '1rem' }}>Booking a cleaning visit in {city.name}</h2>
           {profile && (
             <div className="dn-visit">
               <span aria-hidden="true">🚐</span>
@@ -351,6 +353,9 @@ export default async function CityPage({ params }: Props) {
                 ))}
                 <Link href={`/${emirate.slug}`}>All of {emirate.name} →</Link>
               </div>
+              <p className="dn-p" style={{ fontSize: '.9rem', opacity: 0.8, marginTop: '1rem' }}>
+                About the area: <a href={cityWiki.url} target="_blank" rel="noopener">{cityWiki.title} on Wikipedia</a>
+              </p>
             </div>
           </section>
         )}

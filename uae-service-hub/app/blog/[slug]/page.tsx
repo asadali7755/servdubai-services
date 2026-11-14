@@ -1,3 +1,4 @@
+import { wikiForTopic } from '@/lib/data/wikiLinks'
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -151,6 +152,15 @@ export default async function BlogPostPage({ params }: Props) {
             )}
           </div>
         )}
+
+        {(() => {
+          const wiki = wikiForTopic(`${post.slug} ${post.title}`)
+          return (
+            <p className="blog-p" style={{ fontSize: '.9rem', opacity: 0.8, margin: '1.5rem 0' }}>
+              Background reading: <a href={wiki.url} target="_blank" rel="noopener">{wiki.title} on Wikipedia</a>
+            </p>
+          )
+        })()}
 
         {/* CTA */}
         <div className="city-cta-block rounded-xl p-8 text-center bp-cta-block">
