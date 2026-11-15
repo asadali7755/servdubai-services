@@ -15,13 +15,21 @@ const FROM = process.env.RESEND_FROM || 'ServeDubai Alerts <leads@mail.marblepro
 const BOT = /bot|crawl|spider|slurp|preview|lighthouse|headless|facebookexternalhit|whatsapp\//i
 const recent = new Map<string, number>() // per-instance de-dupe of rapid repeat taps
 
+/** Common visitor time zones -> place (a phone set to Dubai time is almost always in the UAE) */
+const TZ_PLACE: Record<string, string> = {
+  'Asia/Dubai': 'UAE', 'Asia/Muscat': 'Oman', 'Asia/Riyadh': 'Saudi Arabia', 'Asia/Qatar': 'Qatar', 'Asia/Bahrain': 'Bahrain',
+  'Asia/Kuwait': 'Kuwait', 'Asia/Karachi': 'Pakistan', 'Asia/Kolkata': 'India', 'Asia/Calcutta': 'India', 'Asia/Dhaka': 'Bangladesh',
+  'Asia/Manila': 'Philippines', 'Asia/Kathmandu': 'Nepal', 'Asia/Colombo': 'Sri Lanka', 'Africa/Cairo': 'Egypt',
+  'Europe/London': 'United Kingdom', 'Europe/Moscow': 'Russia', 'Asia/Tehran': 'Iran',
+}
+
 const esc = (s: string) => s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]!))
 
 export async function POST(req: Request) {
   const ua = req.headers.get('user-agent') ?? ''
   if (BOT.test(ua)) return new NextResponse(null, { status: 204 })
 
-  let body: { method?: string; page?: string; text?: string } = {}
+  let body: { method?: string; page?: string; text?: string; tz?: string; lang?: string } = {}
   try {
     body = JSON.parse(await req.text())
   } catch {
@@ -39,8 +47,13 @@ export async function POST(req: Request) {
   recent.set(key, now)
   if (recent.size > 500) for (const [k, t] of recent) if (t < now - 120_000) recent.delete(k)
 
+  // Location: an IP-location header if the host adds one, else the visitor's time zone.
   const city = decodeURIComponent(req.headers.get('x-vercel-ip-city') ?? '')
-  const country = req.headers.get('x-vercel-ip-country') ?? ''
+  const country =
+    req.headers.get('x-vercel-ip-country') ?? req.headers.get('cf-ipcountry') ?? req.headers.get('x-country-code') ?? ''
+  const tz = String(body.tz ?? '').slice(0, 60)
+  const lang = String(body.lang ?? '').slice(0, 20)
+  const tzPlace = TZ_PLACE[tz] ?? (tz ? tz.replace(/_/g, ' ') : '')
   const device = /mobile|iphone|android/i.test(ua) ? 'Mobile' : 'Desktop'
   const time = new Date().toLocaleString('en-AE', { timeZone: 'Asia/Dubai' })
   const url = `https://servedubai.ae${page.startsWith('/') ? page : '/'}`
@@ -48,7 +61,8 @@ export async function POST(req: Request) {
   const rows: [string, string][] = [
     ['Button', `${method}${text ? ` — “${text}”` : ''}`],
     ['Page', `<a href="${esc(url)}">${esc(page)}</a>`],
-    ['Visitor location', esc([city, country].filter(Boolean).join(', ') || 'Unknown')],
+    ['Visitor location', esc([city, country].filter(Boolean).join(', ') || (tzPlace ? `${tzPlace} (phone time zone)` : 'Unknown'))],
+    ['Phone language', esc(lang || 'Unknown')],
     ['Device', device],
     ['Time (Dubai)', time],
   ]

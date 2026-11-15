@@ -6,7 +6,11 @@ import { trackLead } from '@/lib/utils/track'
 /** Fire-and-forget alert to /api/lead-click (emails the owner). sendBeacon survives the page navigating away. */
 function alertOwner(method: 'whatsapp' | 'phone', text: string) {
   try {
-    const payload = JSON.stringify({ method, page: window.location.pathname, text })
+    // The site no longer runs on Vercel, so there are no IP-location headers; the
+    // visitor's own time zone and language say roughly where they are (no IP is
+    // sent to any third-party lookup).
+    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone ?? ''
+    const payload = JSON.stringify({ method, page: window.location.pathname, text, tz, lang: navigator.language ?? '' })
     if (!navigator.sendBeacon?.('/api/lead-click', new Blob([payload], { type: 'text/plain' }))) {
       fetch('/api/lead-click', { method: 'POST', body: payload, keepalive: true }).catch(() => {})
     }

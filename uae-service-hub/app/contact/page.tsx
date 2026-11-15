@@ -1,5 +1,6 @@
 'use client'
 
+import { trackLead } from '@/lib/utils/track'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -42,6 +43,7 @@ export default function ContactPage() {
         body: JSON.stringify(data),
       })
       if (res.ok) {
+        trackLead('quote_form', { form_source: 'contact_page', form_service: data.service ?? '' })
         setSubmitStatus('success')
         reset()
       } else {
