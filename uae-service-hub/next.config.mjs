@@ -1,12 +1,15 @@
-import type { NextConfig } from 'next'
+// Plain JavaScript on purpose; do not rename back to next.config.ts.
+// Hostinger's build server has glibc < 2.29, too old for the native SWC
+// binary of next >= 16.4.5 (needs 2.30; 16.2.4 needed 2.17), so Next falls
+// back to WASM SWC. Hostinger wraps this file in a generated config that
+// imports it; a .ts config then has to be transpiled by WASM SWC, which emits
+// ESM with an extensionless import and the build fails (ERR_MODULE_NOT_FOUND).
+// An .mjs config needs no transpiling. For the same reason keep it free of
+// imports of local .ts files and of __dirname: redirects that need site data
+// live in proxy.ts.
 
-// Keep this file free of local imports and __dirname. Hostinger's build server
-// has glibc < 2.29, too old for the native SWC binary of next >= 16.4.5 (needs
-// 2.30; 16.2.4 needed 2.17), so Next
-// falls back to WASM SWC. That path loads this file as ESM: an extensionless
-// import of a .ts file fails with ERR_MODULE_NOT_FOUND and __dirname is
-// undefined. Redirects that need site data live in proxy.ts instead.
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   // Hostinger shared hosting caps how many processes a build may start, so
   // keep the build to one worker.
   experimental: { cpus: 1 },
