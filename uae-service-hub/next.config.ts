@@ -1,13 +1,17 @@
 import type { NextConfig } from 'next'
-import path from 'path'
-import { PRUNED_COMBOS } from './lib/data/serviceAreaCombos'
 
+// Keep this file free of local imports and __dirname. Hostinger's build server
+// has glibc < 2.29, too old for the native SWC binary of next >= 16.4.5 (needs
+// 2.30; 16.2.4 needed 2.17), so Next
+// falls back to WASM SWC. That path loads this file as ESM: an extensionless
+// import of a .ts file fails with ERR_MODULE_NOT_FOUND and __dirname is
+// undefined. Redirects that need site data live in proxy.ts instead.
 const nextConfig: NextConfig = {
   // Hostinger shared hosting caps how many processes a build may start, so
   // keep the build to one worker.
   experimental: { cpus: 1 },
   turbopack: {
-    root: path.resolve(__dirname),
+    root: process.cwd(),
   },
   images: {
     formats: ['image/avif', 'image/webp'],
@@ -133,12 +137,7 @@ const nextConfig: NextConfig = {
         destination: 'https://servedubai.ae/:path*',
         permanent: true,
       },
-      // Pruned service x area pages (Oct 2026) -> their area page
-      ...PRUNED_COMBOS.map((c) => ({
-        source: `/${c.emirate}/${c.city}/${c.service}`,
-        destination: `/${c.emirate}/${c.city}`,
-        permanent: true,
-      })),
+      // Pruned service x area pages (Oct 2026) 308 to their area page in proxy.ts.
       // Old singular /service/* -> new plural /services/*
       { source: '/service/:slug', destination: '/services/:slug', permanent: true },
       // Root-level service URLs (old site, and links the blog agents sometimes

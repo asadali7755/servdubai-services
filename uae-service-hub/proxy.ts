@@ -1,4 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { PRUNED_COMBOS } from '@/lib/data/serviceAreaCombos'
+
+// Service x area pages removed in Oct 2026 -> their area page. This lived in
+// next.config.ts redirects, but next.config.ts must not import site data (see
+// the note there), so the lookup happens here.
+const PRUNED_TO_AREA = new Map(
+  PRUNED_COMBOS.map((c) => [`/${c.emirate}/${c.city}/${c.service}`, `/${c.emirate}/${c.city}`]),
+)
 
 const SPAM_PATH_PATTERNS = [
   /\.php/i,
@@ -44,6 +52,15 @@ export function proxy(request: NextRequest) {
 
   if (isSpamPath || isSpamQuery) {
     return gone()
+  }
+
+  const area = PRUNED_TO_AREA.get(pathname)
+  if (area) {
+    // Same host as the request (www and .com already 308 to servedubai.ae in
+    // next.config.ts, which runs before the proxy); query string is kept.
+    const url = request.nextUrl.clone()
+    url.pathname = area
+    return NextResponse.redirect(url, 308)
   }
 
   return NextResponse.next()

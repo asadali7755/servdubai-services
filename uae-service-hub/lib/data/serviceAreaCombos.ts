@@ -50,7 +50,7 @@ const build = (service: string, cities: string[], emirate = 'dubai'): ServiceAre
 // Non-Dubai emirates — pruned (Oct 2026) from 192 auto-generated pages
 // (every city x 4 services) down to the main residential hubs only. The old
 // set was ~75% identical text page-to-page, which reads as doorway content.
-// Every removed URL 301s to its city page (see PRUNED_COMBOS + next.config.ts).
+// Every removed URL 308s to its city page (see PRUNED_COMBOS + proxy.ts).
 const OTHER_EMIRATE_COMBOS: ServiceAreaCombo[] = [
   { emirate: 'sharjah', city: 'sharjah-city', service: 'sofa-cleaning' },
   { emirate: 'sharjah', city: 'sharjah-city', service: 'carpet-cleaning' },
