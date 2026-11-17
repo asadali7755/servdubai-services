@@ -50,7 +50,7 @@ const serviceKws = [
   ['office cleaning Fujairah', 'commercial cleaning UAE', 'workspace sanitization Fujairah', 'office deep clean'],
 ]
 
-const extraSlugs = ['curtain-cleaning', 'dining-chair-cleaning', 'car-interior-detailing', 'apartment-cleaning', 'restaurant-kitchen-cleaning']
+const extraSlugs = ['curtain-cleaning', 'upholstery-cleaning', 'car-interior-detailing', 'apartment-cleaning', 'restaurant-kitchen-cleaning']
 
 const whyIcons = ['🏅', '🌿', '⚡', '✓']
 

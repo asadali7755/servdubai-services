@@ -50,6 +50,7 @@ interface Panel {
 
 const EXTRA_META: Record<string, { badge: string; img: string; alt: string; pos?: string }> = {
   'curtain-cleaning': { badge: 'CURTAIN', img: '/images/services/curtain-cleaning.webp', alt: 'Curtain and blinds cleaning in Dubai', pos: '82% 50%' },
+  'upholstery-cleaning': { badge: 'FURNITURE', img: '/images/services/dining-chair-cleaning.webp', alt: 'Upholstery and furniture cleaning in Dubai' },
   'dining-chair-cleaning': { badge: 'CHAIRS', img: '/images/services/dining-chair-cleaning.webp', alt: 'Dining chair and upholstery cleaning in Dubai' },
   'car-interior-detailing': { badge: 'CAR', img: '/images/services/car-interior-detailing.webp', alt: 'Car interior detailing and AC vent cleaning in Dubai' },
   'apartment-cleaning': { badge: 'APARTMENT', img: '/images/services/apartment-cleaning.webp', alt: 'Apartment deep cleaning team in a Dubai apartment' },
@@ -80,6 +81,7 @@ const CTA_TEXT: Record<string, string> = {
   'marble-polishing': 'Marble polishing in Dubai →',
   'mattress-cleaning': 'Mattress cleaning in Dubai →',
   'office-cleaning': 'Office cleaning in Dubai →',
+  'upholstery-cleaning': 'Upholstery cleaning in Dubai →',
 }
 const ctaText = (slug: string, fallback: string) =>
   /[؀-ۿ]/.test(fallback) ? fallback : (CTA_TEXT[slug] ?? fallback)

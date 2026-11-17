@@ -35,6 +35,7 @@ const SERVICE_ICONS: Record<string, typeof Sparkles> = {
   'car-wash-at-home': Car,
   'car-ac-odor-sanitization': Car,
   'dining-chair-cleaning': UtensilsCrossed,
+  'upholstery-cleaning': Sofa,
   'villa-deep-cleaning': HomeIcon,
   'apartment-cleaning': Building2,
   'office-cleaning': Briefcase,

@@ -48,6 +48,11 @@ const GALLERY: Record<string, { src: string; alt: string }[]> = {
     { src: '/galary-images-pics/curtain/curtain-dry-steam-cleaning-dubai-2-poster.jpg', alt: 'Curtain dry steam cleaning by Madinat Alhaya' },
     { src: '/galary-images-pics/curtain/kitchen-blinds-steam-cleaning-dubai-3-poster.jpg', alt: 'Kitchen blinds cleaning by Madinat Alhaya' },
   ],
+  'upholstery-cleaning': [
+    { src: '/galary-images-pics/dining-chair/dining-chair-fabric-cleaning-dubai-1-poster.jpg', alt: 'Fabric dining chair cleaning by Madinat Alhaya' },
+    { src: '/images/sofa-before-after/after-5.jpeg', alt: 'Upholstered sofa after cleaning by Madinat Alhaya' },
+    { src: '/galary-images-pics/dining-chair/dining-chair-steam-cleaning-dubai-2-poster.jpg', alt: 'Chair upholstery steam cleaning by Madinat Alhaya' },
+  ],
   'car-interior-detailing': [
     { src: '/galary-images-pics/car/car-floor-mat-cleaning-dubai-poster.jpg', alt: 'Car floor mat cleaning by Madinat Alhaya' },
     { src: '/galary-images-pics/car/car-interior-steam-cleaning-dubai-poster.jpg', alt: 'Car interior steam cleaning by Madinat Alhaya' },
@@ -56,6 +61,7 @@ const GALLERY: Record<string, { src: string; alt: string }[]> = {
 
 const BEFORE_AFTER: Record<string, { before: string; after: string }> = {
   'sofa-cleaning': { before: '/images/sofa-before-after/before-4.jpeg', after: '/images/sofa-before-after/after-4.jpeg' },
+  'upholstery-cleaning': { before: '/images/sofa-before-after/before-3.jpeg', after: '/images/sofa-before-after/after-3.jpeg' },
   'mattress-cleaning': { before: '/images/mattress-gallery/mattress-before.jpeg', after: '/images/mattress-gallery/mattress-after.jpeg' },
 }
 

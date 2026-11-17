@@ -8,6 +8,8 @@
  * customer's place, free WhatsApp quote, same-day slots, eco-friendly products
  * safe for kids and pets, trained and background-checked team. No prices.
  */
+import { REGION_TOPICS } from './pageTopics.regions'
+
 export type TopicSection = {
   h2: string
   paras: string[]
@@ -31,6 +33,7 @@ export const PAGE_TOPICS: Record<string, TopicSection[]> = {
         'If your dining chairs or a mattress need attention too, mention it when you ask for the quote and they are done on the same day.',
       ],
       related: [
+        { text: 'Upholstery and furniture cleaning', href: '/services/upholstery-cleaning' },
         { text: 'Dining chair cleaning', href: '/services/dining-chair-cleaning' },
         { text: 'Mattress cleaning', href: '/services/mattress-cleaning' },
       ],
@@ -294,4 +297,4 @@ export const PAGE_TOPICS: Record<string, TopicSection[]> = {
   ],
 }
 
-export const getPageTopics = (path: string): TopicSection[] => PAGE_TOPICS[path] ?? []
+export const getPageTopics = (path: string): TopicSection[] => [...(PAGE_TOPICS[path] ?? []), ...(REGION_TOPICS[path] ?? [])]

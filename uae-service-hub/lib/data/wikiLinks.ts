@@ -98,12 +98,14 @@ export const WIKI_SERVICE: Record<string, WikiLink> = {
   'office-cleaning': { title: "Commercial cleaning", url: "https://en.wikipedia.org/wiki/Commercial_cleaning" },
   'restaurant-kitchen-cleaning': { title: "Kitchen exhaust cleaning", url: "https://en.wikipedia.org/wiki/Kitchen_exhaust_cleaning" },
   'sofa-cleaning': { title: "Upholstery", url: "https://en.wikipedia.org/wiki/Upholstery" },
+  'upholstery-cleaning': { title: "Upholstery", url: "https://en.wikipedia.org/wiki/Upholstery" },
   'villa-deep-cleaning': { title: "Housekeeping", url: "https://en.wikipedia.org/wiki/Housekeeping" },
 }
 
 /** Pick the service article that matches a blog slug or title (falls back to Housekeeping) */
 const TOPIC: [RegExp, string][] = [
-  [/sofa|upholster|couch|furniture/, 'sofa-cleaning'],
+  [/sofa|couch/, 'sofa-cleaning'],
+  [/upholster|furniture|headboard|armchair/, 'upholstery-cleaning'],
   [/carpet|rug/, 'carpet-cleaning'],
   [/mattress/, 'mattress-cleaning'],
   [/curtain|blind/, 'curtain-cleaning'],
@@ -122,6 +124,7 @@ export function wikiForTopic(text: string): WikiLink {
 /** The service page a blog post should send readers (and link weight) to, with descriptive link text */
 const SERVICE_LINK: Record<string, { href: string; text: string }> = {
   'sofa-cleaning': { href: '/services/sofa-cleaning', text: 'sofa cleaning services in Dubai' },
+  'upholstery-cleaning': { href: '/services/upholstery-cleaning', text: 'upholstery and furniture cleaning in Dubai' },
   'carpet-cleaning': { href: '/services/carpet-cleaning', text: 'carpet cleaning in Dubai' },
   'mattress-cleaning': { href: '/services/mattress-cleaning', text: 'mattress cleaning in Dubai' },
   'curtain-cleaning': { href: '/services/curtain-cleaning', text: 'curtain cleaning in Dubai' },

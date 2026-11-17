@@ -30,6 +30,7 @@ const translations = {
       'curtain-cleaning': 'Curtain Cleaning',
       'car-interior-detailing': 'Car Interior Detailing',
       'dining-chair-cleaning': 'Dining Chair Cleaning',
+      'upholstery-cleaning': 'Upholstery Cleaning',
       'villa-deep-cleaning': 'Villa Deep Cleaning',
       'apartment-cleaning': 'Apartment Cleaning',
       'office-cleaning': 'Office Cleaning',
@@ -90,7 +91,7 @@ const translations = {
       ],
       extraServices: [
         { name: 'Curtain & Blinds Cleaning Dubai', desc: 'Professional curtain and dining chair steam cleaning in Dubai. On-site cleaning for linen, velvet, silk & blackout blinds — remove Dubai dust without taking curtains down.' },
-        { name: 'Dining Chair & Furniture Cleaning', desc: 'Dining chair and upholstery deep cleaning in Dubai. Targeted stain treatment and steam extraction for fabric, leather & velvet chairs with eco-friendly solutions.' },
+        { name: 'Upholstery & Furniture Cleaning', desc: 'Upholstery and furniture cleaning in Dubai at your home: armchairs, headboards, ottomans, dining and office chairs. Each fabric is checked first, and products are eco-friendly.' },
         { name: 'Car Interior Detailing Dubai', desc: 'Professional car interior cleaning and detailing in Dubai. Full cabin sanitization, seat shampooing, dashboard deep clean & AC vent cleaning.' },
         { name: 'Apartment Deep Cleaning Dubai', desc: 'Apartment cleaners in Dubai — move-in and move-out deep cleaning. AC vents, balcony glass, kitchen, bathrooms covered across JLT, Downtown & all areas.' },
         { name: 'Restaurant Kitchen Cleaning', desc: 'Commercial kitchen cleaning services in Dubai. Industrial degreasers, steam cleaning & pressure washing for restaurant kitchens meeting Dubai Municipality standards.' },
@@ -230,6 +231,7 @@ const translations = {
       'curtain-cleaning': 'تنظيف الستائر',
       'car-interior-detailing': 'تنظيف داخلية السيارة',
       'dining-chair-cleaning': 'تنظيف كراسي الطعام',
+      'upholstery-cleaning': 'تنظيف المفروشات والأثاث',
       'villa-deep-cleaning': 'تنظيف الفلل العميق',
       'apartment-cleaning': 'تنظيف الشقق',
       'office-cleaning': 'تنظيف المكاتب',
@@ -290,7 +292,7 @@ const translations = {
       ],
       extraServices: [
         { name: 'تنظيف الستائر والبلايندز', desc: 'تنظيف بالبخار في الموقع للكتان والمخمل والحرير والبلايندز المعتمة. إزالة غبار دبي دون إنزال الستائر.' },
-        { name: 'تنظيف كراسي الطعام والأثاث', desc: 'معالجة مستهدفة للبقع واستخراج بالبخار للكراسي القماشية والجلدية والمخملية. حلول صديقة للبيئة وآمنة للطعام.' },
+        { name: 'تنظيف المفروشات والأثاث', desc: 'تنظيف الكراسي والأرائك المنفردة ومساند الأسرة والأثاث المنجد في منزلك. نفحص القماش أولاً ونستخدم منتجات صديقة للبيئة.' },
         { name: 'تنظيف داخلية السيارة', desc: 'تعقيم كامل للمقصورة، غسيل المقاعد، تنظيف عميق للوحة القيادة وفتحات التكييف. آمن للجلد وجميع التشطيبات.' },
         { name: 'تنظيف الشقق العميق', desc: 'متخصصون في الشقق البرجية. فتحات التكييف، زجاج الشرفة، المطبخ، الحمامات — تنظيف عميق شامل للانتقال.' },
         { name: 'تنظيف مطابخ المطاعم', desc: 'مزيلات شحوم صناعية، تنظيف بالبخار وغسيل بالضغط للمطابخ التجارية. وفق معايير بلدية دبي.' },

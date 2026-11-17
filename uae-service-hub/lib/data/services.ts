@@ -1063,6 +1063,115 @@ The service is available for single chairs or full dining sets, and we can also 
     availableInEmirates: ALL_EMIRATES,
   },
   {
+    // Own page for "upholstery / furniture cleaning" searches (Nov 2026): ~600
+    // impressions a quarter were landing on the homepage because no page was
+    // about upholstered furniture as a whole. Sofas keep their own page.
+    id: 'upholstery-cleaning',
+    name: 'Upholstery & Furniture Cleaning',
+    heroTitle: 'Upholstery Cleaning Dubai | Furniture & Couch Cleaning',
+    heroSubtitle: 'Upholstered furniture cleaned at your home in Dubai and across the UAE: armchairs, couches, headboards, ottomans, chairs and cushions. Same-day slots and a free WhatsApp quote.',
+    slug: 'upholstery-cleaning',
+    category: 'domestic',
+    shortDescription: 'Upholstery and furniture cleaning in Dubai at your home: armchairs, couches, headboards, ottomans and chairs. Same-day slots and a free WhatsApp quote.',
+    fullDescription: `Upholstery and Furniture Cleaning at Your Home
+
+Most homes in Dubai have far more upholstered furniture than just the sofa: armchairs in the living room, a padded headboard in the bedroom, ottomans and poufs, a bench at the end of the bed, dining chairs, office chairs and floor cushions in the majlis. All of it collects the same fine dust, sweat, food marks and odours, and almost none of it fits in a washing machine.
+
+Our upholstery cleaning service covers every upholstered piece in the home in one visit. The team comes to your villa, apartment or office with its own machines and products, checks each fabric, and cleans the furniture where it stands. Nothing is taken away, and most pieces are dry enough to use again within a few hours, faster with the AC running.
+
+What We Clean
+
+Armchairs, accent chairs and recliners. Upholstered headboards and bed frames. Ottomans, poufs, footstools and upholstered benches. Dining chairs and bar stools with padded seats. Office chairs and reception seating. Majlis cushions and floor seating. Loose cushions and seat pads. Sofas and couches can be added to the same visit; our sofa cleaning page explains that service in more detail.
+
+How the Visit Works
+
+The technician first vacuums each piece with an upholstery tool to lift loose sand and dust from seams and crevices. Stains and heavily used areas such as arms, headrests and seat fronts are pre-treated. Fabric that can take moisture is then cleaned with hot-water extraction, which rinses the dirt and the cleaning solution back out of the padding instead of leaving residue behind. Delicate fabrics get a low-moisture method, and leather is cleaned and conditioned rather than washed.
+
+Before anything is cleaned we look at the care label and test an unseen spot, because velvet, chenille, linen, microfibre and silk blends each react differently to water and heat. If a fabric is not suitable for wet cleaning we tell you before we start.
+
+Why Furniture in the UAE Needs Regular Cleaning
+
+Fine desert dust settles into fabric every day, and air conditioning runs most of the year, so the same air keeps circulating through the home. Upholstery acts like a filter: it holds dust, dust mites, skin flakes and odours deep in the padding where a household vacuum cannot reach. Light fabrics also show sweat and body-oil marks on arms and headrests within months.
+
+A professional deep clean every six to twelve months keeps fabric looking fresh and makes the furniture more pleasant to sit on, especially in homes with children, pets or allergy sufferers. Our products are eco-friendly and safe for kids and pets once the fabric is dry.`,
+    benefits: [
+      'Every upholstered piece cleaned in one visit',
+      'Cleaned at your home, nothing taken away',
+      'Fabric checked and spot-tested before cleaning',
+      'Hot-water extraction or low-moisture method per fabric',
+      'Leather cleaned and conditioned, not shampooed',
+      'Eco-friendly products, safe for kids and pets',
+      'Trained, background-checked technicians',
+      'Same-day slots and a free WhatsApp quote',
+    ],
+    process: [
+      'Send photos of the furniture on WhatsApp for a free quote',
+      'Fabric and care-label check, spot test on a hidden area',
+      'Dry vacuuming of seams, crevices and cushions',
+      'Pre-treatment of stains, arms and headrests',
+      'Hot-water extraction, low-moisture clean or leather care',
+      'Final grooming of the fabric and a walk-through with you',
+    ],
+    faqs: [
+      {
+        question: 'What is the difference between upholstery cleaning and sofa cleaning?',
+        answer: 'Sofa cleaning covers sofas and couches. Upholstery cleaning covers every other upholstered piece as well: armchairs, headboards, ottomans, dining and office chairs, benches and majlis cushions. Both can be booked in the same visit.',
+      },
+      {
+        question: 'Do you clean the furniture at my home?',
+        answer: 'Yes. Everything is cleaned where it stands in your villa, apartment or office. The team brings its own machines, water extraction equipment and products.',
+      },
+      {
+        question: 'How long does upholstered furniture take to dry?',
+        answer: 'Most fabric pieces are dry enough to use within a few hours. Running the AC or a fan speeds it up. Leather and low-moisture cleans are usable almost straight away.',
+      },
+      {
+        question: 'Can you clean an upholstered headboard without removing it?',
+        answer: 'Yes. Headboards and bed frames are cleaned in place with a hand upholstery tool, so the bed does not need to be moved apart.',
+      },
+      {
+        question: 'Can you clean velvet or delicate fabrics?',
+        answer: 'Usually, yes. Delicate fabrics such as velvet, silk blends and some linens get a low-moisture method. We check the care label and test a hidden spot first, and we tell you before starting if a fabric is not suitable.',
+      },
+      {
+        question: 'How do I get a price for upholstery cleaning?',
+        answer: 'Send photos of the pieces and tell us roughly how many there are on WhatsApp. We reply with a free quote, and same-day slots are often available.',
+      },
+      {
+        question: 'Do you clean office chairs and reception furniture?',
+        answer: 'Yes. Office chairs, meeting-room seating and reception sofas are cleaned on site, and visits can be planned outside working hours.',
+      },
+      {
+        question: 'Which areas do you cover?',
+        answer: 'All of Dubai and the other emirates: Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Fujairah and Umm Al Quwain.',
+      },
+    ],
+    contentSections: [
+      {
+        headingLevel: 'h2',
+        heading: 'Furniture Cleaning for Villas, Apartments and Offices',
+        text: 'In villas the job is usually a full room set: sofas, armchairs, dining chairs, the majlis and the bedroom headboards, cleaned in one visit so the whole home is done at once. In apartments it is often a couch, a couple of armchairs and the headboard before a guest arrives or at the end of a tenancy. In offices we clean task chairs, meeting-room chairs and reception seating, outside working hours if that suits you better.',
+      },
+      {
+        headingLevel: 'h2',
+        heading: 'Fabric Types We Work With',
+        text: 'Cotton, polyester and microfibre usually take a full hot-water extraction clean. Velvet and chenille are cleaned with low moisture and brushed so the pile dries evenly. Linen and silk blends get a gentle low-moisture method. Leather and faux leather are cleaned with a leather cleaner and conditioned. Each piece is checked before cleaning, so mixed sets with different fabrics are no problem.',
+      },
+      {
+        headingLevel: 'h3',
+        heading: 'Stains, Odours and Pet Hair',
+        text: 'Coffee, tea, food, make-up and sweat marks are pre-treated before the main clean. Pet hair is lifted with rubber brushes and vacuumed out first, and the extraction rinse removes much of the odour held in the padding. Very old or set-in stains can fade rather than disappear completely; we tell you what to expect from the photo before the visit.',
+      },
+      {
+        headingLevel: 'h2',
+        heading: 'Upholstery Cleaning Across the UAE',
+        text: 'The same service is available in Dubai Marina, JLT, Downtown, Jumeirah, Al Barsha, Mirdif and every other Dubai area, and across Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Fujairah and Umm Al Quwain. Send photos and your area on WhatsApp and we reply with a free quote and the next available slot.',
+      },
+    ],
+    images: ['/images/sofa-before-after/after-3.jpeg'],
+    availableInEmirates: ALL_EMIRATES,
+  },
+  {
     id: 'villa-deep-cleaning',
     name: 'Villa Deep Cleaning',
     heroTitle: 'Villa Deep Cleaning Dubai | Move-In & Move-Out',
