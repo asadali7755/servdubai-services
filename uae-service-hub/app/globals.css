@@ -4586,6 +4586,11 @@ img { max-width: 100%; }
 [data-theme="light"] .svs-gallery-link { background: #f5f0e8; }
 [data-theme="light"] .svs-gallery-btn { color: #8b7530; border-color: rgba(139,117,48,0.3); }
 [data-theme="light"] .svs-section { border-top-color: rgba(201,168,76,0.2); }
+/* gold #c9a84c on these cream sections was ~2:1; #74580f is 5.3:1 on #ebe4d8 and 6.6:1 on white */
+[data-theme="light"] .svs-eyebrow,
+[data-theme="light"] .svs-quote .hqc-label,
+[data-theme="light"] .svs-quote .hqc-call { color: #74580f; }
+[data-theme="light"] .svs-quote .hqc-call { border-color: rgba(116,88,15,0.35) !important; }
 
 /* --- QUOTE CARD OUTSIDE THE HERO ---
    The card was hero-only, where the hero grid supplied its width and placement.

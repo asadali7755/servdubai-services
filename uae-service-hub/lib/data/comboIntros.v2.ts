@@ -63,7 +63,7 @@ export const COMBO_INTROS_V2: Record<string, ComboIntro> = {
   },
   'umm-al-quwain-uaq-city-car-wash-at-home': {
     intro: "UAQ City is quieter and more spacious than its neighbours, and most homes have their own parking or driveway. Our car wash at home in Umm Al Quwain washes your car right there — exterior, wheels and tyres, glass and interior vacuum — at prices set for UAQ. Families with more than one car often book them together.",
-    metaDescription: "Car wash at home in Umm Al Quwain — at your villa or building parking, UAQ pricing. Book on WhatsApp.",
+    metaDescription: "Car wash at home in Umm Al Quwain: exterior wash and interior vacuum at your villa or building parking in UAQ City. Free quote on WhatsApp.",
   },
 
   /* ---------------- CAR INTERIOR ---------------- */

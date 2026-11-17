@@ -133,7 +133,7 @@ export default function DnaHero(p: HeroProps) {
             <div className="dn-stack">
               {[imgs[0], imgs[1] ?? imgs[0], imgs[2] ?? imgs[0]].map((src, i) => (
                 <div className="dn-stack-card" key={i}>
-                  <Image src={src} alt={i === 0 ? p.imageAlt : ''} fill sizes="(max-width: 900px) 70vw, 440px" priority={i === 0} />
+                  <Image src={src} alt={i === 0 ? p.imageAlt : `${p.title} — photo ${i + 1}`} fill sizes="(max-width: 900px) 70vw, 440px" priority={i === 0} />
                 </div>
               ))}
             </div>

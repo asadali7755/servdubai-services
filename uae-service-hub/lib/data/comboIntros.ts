@@ -71,7 +71,7 @@ const comboIntros: Record<string, ComboIntro> = {
   },
   'sharjah-al-qasimia-sofa-cleaning': {
     intro: "Al Qasimia sits close to Sharjah's city centre, and most of our sofa cleaning bookings here come from dense apartment buildings where a fast, tidy visit matters as much as the clean itself. We use the same hot-water extraction and pre-treatment process citywide,, with the fabric usable again in 3-4 hours. Leather and sectional sofas are quoted after a quick fabric check. Same-day appointments are usually available, and every price is confirmed over WhatsApp before we start work.",
-    metaDescription: "Sofa cleaning in Al Qasimia, Sharjah — fast apartment-friendly service, same-day booking via WhatsApp.",
+    metaDescription: "Sofa cleaning in Al Qasimia, Sharjah at your apartment: shampooing and hot-water extraction for fabric and leather sofas. Same-day slots, free WhatsApp quote.",
   },
   'sharjah-al-khan-sofa-cleaning': {
     intro: "Al Khan's beachfront towers face the same humidity challenge as Al Majaz further along the Corniche, which is why our sofa cleaning here leans on quick-dry extraction rather than standard shampooing — it stops moisture settling back into the fabric after the visit. The price is confirmed on WhatsApp before we start. We recommend a clean every 5-6 months for waterfront apartments here. Message us on WhatsApp for a free quote and same-day availability.",
@@ -352,7 +352,7 @@ const comboIntros: Record<string, ComboIntro> = {
   },
   'abu-dhabi-baniyas-carpet-cleaning': {
     intro: "Baniyas' established villas often have carpets that have been in place for years, so our technicians assess fibre type and condition before choosing hot-water steam extraction or a gentler low-moisture method. Embedded dust and grime are lifted in a single pass, with the carpet dry within 1-2 hours. Same-day service is usually available across Baniyas and Baniyas North. WhatsApp us for a free, no-obligation quote.",
-    metaDescription: "Carpet cleaning in Baniyas, Abu Dhabi — fabric-appropriate steam extraction for established homes.",
+    metaDescription: "Carpet cleaning in Baniyas, Abu Dhabi at your home: wall-to-wall carpets and rugs deep cleaned with hot-water extraction. Free quote on WhatsApp.",
   },
   'abu-dhabi-al-reef-carpet-cleaning': {
     intro: "Al Reef's gated villa community means we schedule carpet cleaning visits with community security coordination built in, so there's no delay at the gate on the day. Once inside, our hot-water steam extraction lifts embedded dust and grime from villa carpets, with spot treatment for stains and a dry time of 1-2 hours. Share your gate access details when you WhatsApp us to book a free quote.",
