@@ -44,6 +44,8 @@ const nextConfig = {
       { source: '/blog/bathroom-cleaning-dubai-expert-guide', destination: '/blog/bathroom-cleaning-dubai-price', permanent: true },
       { source: '/blog/bathroom-cleaning-services-dubai-guide', destination: '/blog/bathroom-cleaning-dubai-price', permanent: true },
       { source: '/blog/best-carpet-cleaning-home-dubai', destination: '/services/carpet-cleaning', permanent: true },
+      // 20 Nov 2026: ranked for "sofa cleaning dubai" in place of the service page.
+      { source: '/blog/best-sofa-cleaning-dubai-guide', destination: '/services/sofa-cleaning', permanent: true },
       { source: '/blog/carpet-cleaners-dubai-guide', destination: '/services/carpet-cleaning', permanent: true },
       { source: '/blog/carpet-cleaning-dubai-professional-care', destination: '/services/carpet-cleaning', permanent: true },
       { source: '/blog/carpet-cleaning-home-dubai-hills', destination: '/services/carpet-cleaning', permanent: true },

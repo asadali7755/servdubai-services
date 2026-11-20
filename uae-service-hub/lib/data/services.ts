@@ -126,6 +126,10 @@ We handle all sofa types: L-shaped, sectional, 3-seater, corner sofas, fabric re
         answer: 'Absolutely. Our technicians are trained to identify fabric types before starting. For delicate materials, we use specialized low-moisture techniques and pH-neutral cleaners to ensure the fabric is cleaned thoroughly without any risk of browning, shrinking, or dye bleeding.',
       },
       {
+        question: 'What do the W, S, WS and X codes on a sofa label mean?',
+        answer: 'They tell you how the fabric can be cleaned. W means water-based cleaners are safe, S means solvent-based (dry) cleaning only, WS means either can be used, and X means vacuum or brush only, with no liquid cleaner at all. Our team checks the label and the fabric before choosing a method. If your sofa has no label, mention the fabric when you ask for a quote on WhatsApp.',
+      },
+      {
         question: 'Do I need to do anything to prepare for the cleaning?',
         answer: 'We suggest clearing any small items or breakables from the area surrounding the sofa. Our team will handle the pre-vacuuming and furniture moving if necessary to ensure every inch of the upholstery is reached.',
       },
