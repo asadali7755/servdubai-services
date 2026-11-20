@@ -93,6 +93,14 @@ https://servedubai.ae/services/sofa-cleaning.
 
 ## Tracking
 
-| # | Sent (date, by) | Reply | Added? | Link URL |
-|---|---|---|---|---|
-| 1 | | | | |
+Sender on all messages: Raja Sheryar, reply to marbleprodxb@gmail.com or
+leoali851@gmail.com.
+
+| Publisher | Sent (date, how) | Status | Reply | Added? | Link URL |
+|---|---|---|---|---|---|
+| Bayut (#1-3) | 20 Nov 2026, contact form | Unconfirmed: Send clicked once, the result popup could not be read. Check marbleprodxb inbox for an auto-reply; if none, send the form once more by hand | | | |
+| dubizzle (#7-10) | 20 Nov 2026, support form (Any Other Suggestion, Property Section) | Waiting: dubizzle sent a verification email to marbleprodxb@gmail.com; the request is submitted only after that link is clicked | | | |
+| Nubia Magazine (#11) | 20 Nov 2026, email from leoali851 (cc nubiamagazinegroup, marbleprodxb) | Sent | | | |
+| HowUAE (#13) | 20 Nov 2026, email from leoali851 to content@dominate.online (cc marbleprodxb) | Sent | | | |
+| Property Finder (#4-6) | | Not sent: LinkedIn note to Nadeen Qadadeh, from the user's own account | | | |
+| UAE Contractors Hub (#15) | | Dropped: site shows "Deployment Paused" (20 Nov 2026) | | | |
