@@ -1,0 +1,42 @@
+# servedubai.com -> servedubai.ae (draft, 20 Nov 2026)
+#
+# Today servedubai.com 301s only the homepage; every other URL returns
+# 410 Gone, so links pointing at old .com pages pass nothing to .ae.
+# Old URLs come from the Wayback Machine (172 page URLs, 2018-2026).
+#
+# Upload as public_html/.htaccess of the servedubai.com website in hPanel
+# (File Manager), replacing the current rules. Keep a copy of the old file.
+
+RewriteEngine On
+
+# 1. Pages that exist on servedubai.ae under the same path (the .com ran
+#    the same Next.js site in 2026). servedubai.ae handles its own later
+#    redirects (pruned area pages, merged blog posts, /service/ -> /services/).
+RewriteRule ^(about|about-us|contact|contact-us|areas|gallery|websites|blog)/?$ https://servedubai.ae/$1 [R=301,L,NC]
+RewriteRule ^blog/([a-z0-9-]+)/?$ https://servedubai.ae/blog/$1 [R=301,L,NC]
+RewriteRule ^services/([a-z0-9-]+)/?$ https://servedubai.ae/services/$1 [R=301,L,NC]
+RewriteRule ^service/apartment-deep-cleaning-dubai/?$ https://servedubai.ae/services/apartment-cleaning [R=301,L,NC]
+RewriteRule ^service/car-seat-cleaning/?$ https://servedubai.ae/services/car-interior-detailing [R=301,L,NC]
+RewriteRule ^service/(deep-cleaning|villa-cleaning)/?$ https://servedubai.ae/services/villa-deep-cleaning [R=301,L,NC]
+RewriteRule ^service/tile-cleaning/?$ https://servedubai.ae/services/floor-cleaning [R=301,L,NC]
+RewriteRule ^service/([a-z0-9-]+)/?$ https://servedubai.ae/services/$1 [R=301,L,NC]
+RewriteRule ^(dubai|abu-dhabi|sharjah|ajman|ras-al-khaimah|fujairah|umm-al-quwain)(/[a-z0-9-]+){0,2}/?$ https://servedubai.ae/$0 [R=301,L,NC]
+
+# 2. Old (2018-2024) service pages -> the matching .ae service page.
+RewriteRule ^services/?$ https://servedubai.ae/ [R=301,L,NC]
+RewriteRule ^sofa-cleaning-services-in-dubai\.html$ https://servedubai.ae/services/sofa-cleaning [R=301,L,NC]
+RewriteRule ^carpet-cleaning-service-in-dubai\.html$ https://servedubai.ae/services/carpet-cleaning [R=301,L,NC]
+RewriteRule ^villa-apartment-cleaning-service-in-dubai-sharjah-ajman-alain\.html$ https://servedubai.ae/services/villa-deep-cleaning [R=301,L,NC]
+RewriteRule ^marble-polishing-and-home-sanitization-services/?$ https://servedubai.ae/services/marble-polishing [R=301,L,NC]
+RewriteRule ^commercial-and-house-cleaning/?$ https://servedubai.ae/services/office-cleaning [R=301,L,NC]
+RewriteRule ^portfolio/(carpet-cleaning-and-shampooing|carpet-upholstery-cleaning)/?$ https://servedubai.ae/services/carpet-cleaning [R=301,L,NC]
+RewriteRule ^(sofa-cleaning|carpet-cleaning|mattress-cleaning|curtain-cleaning|villa-deep-cleaning|apartment-cleaning|office-cleaning|marble-polishing|floor-cleaning)/?$ https://servedubai.ae/services/$1 [R=301,L,NC]
+RewriteRule ^(pricing|my-blog-page)/?$ https://servedubai.ae/ [R=301,L,NC]
+
+# 3. Homepage.
+RewriteRule ^$ https://servedubai.ae/ [R=301,L]
+
+# 4. Everything else (old WordPress theme demo posts, tag/category/feed
+#    pages, spam such as /uncategorized/kms-windows-activator...) stays
+#    410 Gone so it is dropped from Google and passes no spam signals.
+RewriteRule ^ - [G,L]
