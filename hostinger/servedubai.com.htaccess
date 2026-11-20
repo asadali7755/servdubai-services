@@ -1,20 +1,133 @@
 # servedubai.com (retired, hacked WordPress history)
 #
-# ONLY the homepage moves to servedubai.ae. Nothing else from .com is sent to .ae:
-# every other URL (hacked *.php, /?products/..., /products/, /ctg/, old WordPress
-# pages, archives, files) gets 410 Gone here, so Google drops it and never sees
-# it on .ae. The homepage redirect never carries a query string or path.
-# Set 14 Nov 2026. Source copy: servedubai-live/hostinger/servedubai.com.htaccess
+# The homepage and a WHITELIST of exact old URLs move to servedubai.ae;
+# everything else gets 410 Gone, so Google drops it and never sees it on .ae.
+# Nothing is forwarded by pattern: each whitelisted URL is a real page the
+# .com served (Wayback Machine, 2018-2026) and its .ae target was checked
+# live (200). Spam never moves: any request with a query string other than
+# ad tracking (utm/fbclid/gclid) is 410 (e.g. /?products/...), and hacked
+# *.php, /products/, /ctg/, old WordPress files and theme demo posts are not
+# on the whitelist. Redirects drop the query string (trailing "?").
+# 14 Nov 2026: homepage only. 20 Nov 2026: whitelist added so links to old
+# .com pages pass to .ae. Source copy: servedubai-live/hostinger/servedubai.com.htaccess
 
 RewriteEngine On
 
 # Keep SSL renewal working (Let's Encrypt / Hostinger)
 RewriteRule ^\.well-known/ - [L]
 
-# Homepage only: plain, or with ad tracking (utm/fbclid/gclid). Query is dropped.
-RewriteCond %{QUERY_STRING} ^$ [OR]
-RewriteCond %{QUERY_STRING} ^(utm_[a-z]+|fbclid|gclid)=[^/]*$ [NC]
+# Any query string other than ad tracking -> 410 Gone (spam such as /?products/...).
+RewriteCond %{QUERY_STRING} !^$
+RewriteCond %{QUERY_STRING} !^(utm_[a-z]+|fbclid|gclid)=[^/]*$ [NC]
+RewriteRule ^ - [G,L]
+
+# Homepage. Query is dropped.
 RewriteRule ^$ https://servedubai.ae/? [R=301,L]
+
+# Whitelisted old URLs -> servedubai.ae (103 rules).
+RewriteRule ^about/?$ https://servedubai.ae/about? [R=301,L,NC]
+RewriteRule ^about-us/?$ https://servedubai.ae/about? [R=301,L,NC]
+RewriteRule ^abu-dhabi/?$ https://servedubai.ae/abu-dhabi? [R=301,L,NC]
+RewriteRule ^abu-dhabi/abu-dhabi-city/?$ https://servedubai.ae/abu-dhabi/abu-dhabi-city? [R=301,L,NC]
+RewriteRule ^abu-dhabi/al-ain/?$ https://servedubai.ae/abu-dhabi/al-ain? [R=301,L,NC]
+RewriteRule ^abu-dhabi/khalifa-city/?$ https://servedubai.ae/abu-dhabi/khalifa-city? [R=301,L,NC]
+RewriteRule ^abu-dhabi/yas-island/?$ https://servedubai.ae/abu-dhabi/yas-island? [R=301,L,NC]
+RewriteRule ^ajman/?$ https://servedubai.ae/ajman? [R=301,L,NC]
+RewriteRule ^ajman/ajman-city/?$ https://servedubai.ae/ajman/ajman-city? [R=301,L,NC]
+RewriteRule ^ajman/al-nuaimiya/?$ https://servedubai.ae/ajman/al-nuaimiya? [R=301,L,NC]
+RewriteRule ^ajman/al-rashidiya/?$ https://servedubai.ae/ajman/al-rashidiya? [R=301,L,NC]
+RewriteRule ^areas/?$ https://servedubai.ae/areas? [R=301,L,NC]
+RewriteRule ^blog/?$ https://servedubai.ae/blog? [R=301,L,NC]
+RewriteRule ^blog/carpet-cleaning-cost-dubai/?$ https://servedubai.ae/blog/carpet-cleaning-cost-dubai? [R=301,L,NC]
+RewriteRule ^blog/how-often-clean-sofa-carpet-dubai/?$ https://servedubai.ae/blog/how-often-clean-sofa-carpet-dubai? [R=301,L,NC]
+RewriteRule ^blog/marble-polishing-dubai-guide/?$ https://servedubai.ae/blog/marble-polishing-dubai-guide? [R=301,L,NC]
+RewriteRule ^blog/move-out-cleaning-checklist-dubai/?$ https://servedubai.ae/blog/move-out-cleaning-checklist-dubai? [R=301,L,NC]
+RewriteRule ^blog/sofa-cleaning-cost-dubai/?$ https://servedubai.ae/blog/sofa-cleaning-cost-dubai? [R=301,L,NC]
+RewriteRule ^blog/villa-deep-cleaning-cost-dubai/?$ https://servedubai.ae/blog/villa-deep-cleaning-cost-dubai? [R=301,L,NC]
+RewriteRule ^contact/?$ https://servedubai.ae/contact? [R=301,L,NC]
+RewriteRule ^contact-us/?$ https://servedubai.ae/contact? [R=301,L,NC]
+RewriteRule ^dubai/?$ https://servedubai.ae/dubai? [R=301,L,NC]
+RewriteRule ^dubai/al-barsha/?$ https://servedubai.ae/dubai/al-barsha? [R=301,L,NC]
+RewriteRule ^dubai/al-barsha/carpet-cleaning/?$ https://servedubai.ae/dubai/al-barsha/carpet-cleaning? [R=301,L,NC]
+RewriteRule ^dubai/al-barsha/sofa-cleaning/?$ https://servedubai.ae/dubai/al-barsha/sofa-cleaning? [R=301,L,NC]
+RewriteRule ^dubai/al-barsha/villa-deep-cleaning/?$ https://servedubai.ae/dubai/al-barsha/villa-deep-cleaning? [R=301,L,NC]
+RewriteRule ^dubai/bur-dubai/?$ https://servedubai.ae/dubai/bur-dubai? [R=301,L,NC]
+RewriteRule ^dubai/bur-dubai/carpet-cleaning/?$ https://servedubai.ae/dubai/bur-dubai/carpet-cleaning? [R=301,L,NC]
+RewriteRule ^dubai/bur-dubai/sofa-cleaning/?$ https://servedubai.ae/dubai/bur-dubai/sofa-cleaning? [R=301,L,NC]
+RewriteRule ^dubai/bur-dubai/villa-deep-cleaning/?$ https://servedubai.ae/dubai/bur-dubai/villa-deep-cleaning? [R=301,L,NC]
+RewriteRule ^dubai/business-bay/?$ https://servedubai.ae/dubai/business-bay? [R=301,L,NC]
+RewriteRule ^dubai/business-bay/carpet-cleaning/?$ https://servedubai.ae/dubai/business-bay/carpet-cleaning? [R=301,L,NC]
+RewriteRule ^dubai/business-bay/marble-polishing/?$ https://servedubai.ae/dubai/business-bay/marble-polishing? [R=301,L,NC]
+RewriteRule ^dubai/business-bay/sofa-cleaning/?$ https://servedubai.ae/dubai/business-bay/sofa-cleaning? [R=301,L,NC]
+RewriteRule ^dubai/deira/?$ https://servedubai.ae/dubai/deira? [R=301,L,NC]
+RewriteRule ^dubai/downtown/?$ https://servedubai.ae/dubai/downtown? [R=301,L,NC]
+RewriteRule ^dubai/downtown/carpet-cleaning/?$ https://servedubai.ae/dubai/downtown/carpet-cleaning? [R=301,L,NC]
+RewriteRule ^dubai/downtown/marble-polishing/?$ https://servedubai.ae/dubai/downtown/marble-polishing? [R=301,L,NC]
+RewriteRule ^dubai/downtown/sofa-cleaning/?$ https://servedubai.ae/dubai/downtown/sofa-cleaning? [R=301,L,NC]
+RewriteRule ^dubai/international-city/?$ https://servedubai.ae/dubai/international-city? [R=301,L,NC]
+RewriteRule ^dubai/jlt/?$ https://servedubai.ae/dubai/jlt? [R=301,L,NC]
+RewriteRule ^dubai/jlt/carpet-cleaning/?$ https://servedubai.ae/dubai/jlt/carpet-cleaning? [R=301,L,NC]
+RewriteRule ^dubai/jlt/sofa-cleaning/?$ https://servedubai.ae/dubai/jlt/sofa-cleaning? [R=301,L,NC]
+RewriteRule ^dubai/jumeirah/?$ https://servedubai.ae/dubai/jumeirah? [R=301,L,NC]
+RewriteRule ^dubai/jumeirah/carpet-cleaning/?$ https://servedubai.ae/dubai/jumeirah/carpet-cleaning? [R=301,L,NC]
+RewriteRule ^dubai/jumeirah/marble-polishing/?$ https://servedubai.ae/dubai/jumeirah/marble-polishing? [R=301,L,NC]
+RewriteRule ^dubai/jumeirah/sofa-cleaning/?$ https://servedubai.ae/dubai/jumeirah/sofa-cleaning? [R=301,L,NC]
+RewriteRule ^dubai/jumeirah/villa-deep-cleaning/?$ https://servedubai.ae/dubai/jumeirah/villa-deep-cleaning? [R=301,L,NC]
+RewriteRule ^dubai/marina/?$ https://servedubai.ae/dubai/marina? [R=301,L,NC]
+RewriteRule ^dubai/marina/carpet-cleaning/?$ https://servedubai.ae/dubai/marina/carpet-cleaning? [R=301,L,NC]
+RewriteRule ^dubai/marina/sofa-cleaning/?$ https://servedubai.ae/dubai/marina/sofa-cleaning? [R=301,L,NC]
+RewriteRule ^dubai/palm-jumeirah/?$ https://servedubai.ae/dubai/palm-jumeirah? [R=301,L,NC]
+RewriteRule ^dubai/palm-jumeirah/carpet-cleaning/?$ https://servedubai.ae/dubai/palm-jumeirah/carpet-cleaning? [R=301,L,NC]
+RewriteRule ^dubai/palm-jumeirah/marble-polishing/?$ https://servedubai.ae/dubai/palm-jumeirah/marble-polishing? [R=301,L,NC]
+RewriteRule ^dubai/palm-jumeirah/sofa-cleaning/?$ https://servedubai.ae/dubai/palm-jumeirah/sofa-cleaning? [R=301,L,NC]
+RewriteRule ^dubai/palm-jumeirah/villa-deep-cleaning/?$ https://servedubai.ae/dubai/palm-jumeirah/villa-deep-cleaning? [R=301,L,NC]
+RewriteRule ^dubai/silicon-oasis/?$ https://servedubai.ae/dubai/silicon-oasis? [R=301,L,NC]
+RewriteRule ^fujairah/?$ https://servedubai.ae/fujairah? [R=301,L,NC]
+RewriteRule ^fujairah/dibba-al-fujairah/?$ https://servedubai.ae/fujairah/dibba-al-fujairah? [R=301,L,NC]
+RewriteRule ^fujairah/fujairah-city/?$ https://servedubai.ae/fujairah/fujairah-city? [R=301,L,NC]
+RewriteRule ^fujairah/kalba/?$ https://servedubai.ae/fujairah/kalba? [R=301,L,NC]
+RewriteRule ^ras-al-khaimah/?$ https://servedubai.ae/ras-al-khaimah? [R=301,L,NC]
+RewriteRule ^ras-al-khaimah/al-hamra/?$ https://servedubai.ae/ras-al-khaimah/al-hamra? [R=301,L,NC]
+RewriteRule ^ras-al-khaimah/al-nakheel/?$ https://servedubai.ae/ras-al-khaimah/al-nakheel? [R=301,L,NC]
+RewriteRule ^ras-al-khaimah/rak-city/?$ https://servedubai.ae/ras-al-khaimah/rak-city? [R=301,L,NC]
+RewriteRule ^services/apartment-cleaning/?$ https://servedubai.ae/services/apartment-cleaning? [R=301,L,NC]
+RewriteRule ^services/car-interior-detailing/?$ https://servedubai.ae/services/car-interior-detailing? [R=301,L,NC]
+RewriteRule ^services/carpet-cleaning/?$ https://servedubai.ae/services/carpet-cleaning? [R=301,L,NC]
+RewriteRule ^services/curtain-cleaning/?$ https://servedubai.ae/services/curtain-cleaning? [R=301,L,NC]
+RewriteRule ^services/dining-chair-cleaning/?$ https://servedubai.ae/services/dining-chair-cleaning? [R=301,L,NC]
+RewriteRule ^services/marble-polishing/?$ https://servedubai.ae/services/marble-polishing? [R=301,L,NC]
+RewriteRule ^services/mattress-cleaning/?$ https://servedubai.ae/services/mattress-cleaning? [R=301,L,NC]
+RewriteRule ^services/office-cleaning/?$ https://servedubai.ae/services/office-cleaning? [R=301,L,NC]
+RewriteRule ^services/restaurant-kitchen-cleaning/?$ https://servedubai.ae/services/restaurant-kitchen-cleaning? [R=301,L,NC]
+RewriteRule ^services/sofa-cleaning/?$ https://servedubai.ae/services/sofa-cleaning? [R=301,L,NC]
+RewriteRule ^services/villa-deep-cleaning/?$ https://servedubai.ae/services/villa-deep-cleaning? [R=301,L,NC]
+RewriteRule ^sharjah/?$ https://servedubai.ae/sharjah? [R=301,L,NC]
+RewriteRule ^sharjah/al-khan/?$ https://servedubai.ae/sharjah/al-khan? [R=301,L,NC]
+RewriteRule ^sharjah/al-majaz/?$ https://servedubai.ae/sharjah/al-majaz? [R=301,L,NC]
+RewriteRule ^sharjah/al-nahda/?$ https://servedubai.ae/sharjah/al-nahda? [R=301,L,NC]
+RewriteRule ^sharjah/al-qasimia/?$ https://servedubai.ae/sharjah/al-qasimia? [R=301,L,NC]
+RewriteRule ^sharjah/sharjah-city/?$ https://servedubai.ae/sharjah/sharjah-city? [R=301,L,NC]
+RewriteRule ^umm-al-quwain/?$ https://servedubai.ae/umm-al-quwain? [R=301,L,NC]
+RewriteRule ^umm-al-quwain/falaj-al-mualla/?$ https://servedubai.ae/umm-al-quwain/falaj-al-mualla? [R=301,L,NC]
+RewriteRule ^umm-al-quwain/uaq-city/?$ https://servedubai.ae/umm-al-quwain/uaq-city? [R=301,L,NC]
+RewriteRule ^websites/?$ https://servedubai.ae/websites? [R=301,L,NC]
+RewriteRule ^service/sofa-cleaning/?$ https://servedubai.ae/services/sofa-cleaning? [R=301,L,NC]
+RewriteRule ^service/carpet-cleaning/?$ https://servedubai.ae/services/carpet-cleaning? [R=301,L,NC]
+RewriteRule ^service/mattress-cleaning/?$ https://servedubai.ae/services/mattress-cleaning? [R=301,L,NC]
+RewriteRule ^service/apartment-deep-cleaning-dubai/?$ https://servedubai.ae/services/apartment-cleaning? [R=301,L,NC]
+RewriteRule ^service/car-seat-cleaning/?$ https://servedubai.ae/services/car-interior-detailing? [R=301,L,NC]
+RewriteRule ^service/deep-cleaning/?$ https://servedubai.ae/services/villa-deep-cleaning? [R=301,L,NC]
+RewriteRule ^service/villa-cleaning/?$ https://servedubai.ae/services/villa-deep-cleaning? [R=301,L,NC]
+RewriteRule ^service/tile-cleaning/?$ https://servedubai.ae/services/floor-cleaning? [R=301,L,NC]
+RewriteRule ^sofa-cleaning-services-in-dubai\.(html|php)/?$ https://servedubai.ae/services/sofa-cleaning? [R=301,L,NC]
+RewriteRule ^carpet-cleaning-service-in-dubai\.(html|php)/?$ https://servedubai.ae/services/carpet-cleaning? [R=301,L,NC]
+RewriteRule ^villa-apartment-cleaning-service-in-dubai-sharjah-ajman-alain\.(html|php)/?$ https://servedubai.ae/services/villa-deep-cleaning? [R=301,L,NC]
+RewriteRule ^marble-polishing-and-home-sanitization-services/?$ https://servedubai.ae/services/marble-polishing? [R=301,L,NC]
+RewriteRule ^commercial-and-house-cleaning/?$ https://servedubai.ae/services/office-cleaning? [R=301,L,NC]
+RewriteRule ^portfolio/carpet-cleaning-and-shampooing/?$ https://servedubai.ae/services/carpet-cleaning? [R=301,L,NC]
+RewriteRule ^portfolio/carpet-upholstery-cleaning/?$ https://servedubai.ae/services/carpet-cleaning? [R=301,L,NC]
+RewriteRule ^services/?$ https://servedubai.ae/? [R=301,L,NC]
+RewriteRule ^pricing/?$ https://servedubai.ae/contact? [R=301,L,NC]
 
 # Everything else -> 410 Gone
 RewriteRule ^ - [G,L]
