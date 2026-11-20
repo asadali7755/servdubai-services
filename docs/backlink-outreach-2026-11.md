@@ -98,7 +98,7 @@ leoali851@gmail.com.
 
 | Publisher | Sent (date, how) | Status | Reply | Added? | Link URL |
 |---|---|---|---|---|---|
-| Bayut (#1-3) | 20 Nov 2026, contact form | Unconfirmed: Send clicked once, the result popup could not be read. Check marbleprodxb inbox for an auto-reply; if none, send the form once more by hand | | | |
+| Bayut (#1-3) | 20 Nov 2026, email from leoali851 to esupport@bayut.com (cc marbleprodxb) | Sent (their contact form is broken: "Message not sent", no request goes out). Asked support to forward it to MyBayut editorial | | | |
 | dubizzle (#7-10) | 20 Nov 2026, support form (Any Other Suggestion, Property Section) | Waiting: dubizzle sent a verification email to marbleprodxb@gmail.com; the request is submitted only after that link is clicked | | | |
 | Nubia Magazine (#11) | 20 Nov 2026, email from leoali851 (cc nubiamagazinegroup, marbleprodxb) | Sent | | | |
 | HowUAE (#13) | 20 Nov 2026, email from leoali851 to content@dominate.online (cc marbleprodxb) | Sent | | | |
