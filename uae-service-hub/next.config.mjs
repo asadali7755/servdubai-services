@@ -61,10 +61,12 @@ const nextConfig = {
       { source: '/blog/dining-chair-cleaning-dubai-cost', destination: '/services/dining-chair-cleaning', permanent: true },
       { source: '/blog/dining-chair-cleaning-dubai-islands', destination: '/services/dining-chair-cleaning', permanent: true },
       { source: '/blog/dubai-carpet-cleaning-services', destination: '/services/carpet-cleaning', permanent: true },
-      { source: '/blog/dubai-floor-cleaning-company-price', destination: '/blog/floor-cleaning-dubai-price-list-2024', permanent: true },
+      { source: '/blog/dubai-floor-cleaning-company-price', destination: '/services/floor-cleaning', permanent: true },
       { source: '/blog/floor-cleaning-company-dubai-contact-number', destination: '/services/floor-cleaning', permanent: true },
       { source: '/blog/floor-cleaning-company-dubai-deira', destination: '/services/floor-cleaning', permanent: true },
       { source: '/blog/floor-cleaning-dubai-al-barsha', destination: '/services/floor-cleaning', permanent: true },
+      // 20 Nov 2026: invented packages and discounts; targeted the service page's search.
+      { source: '/blog/floor-cleaning-dubai-price-list-2024', destination: '/services/floor-cleaning', permanent: true },
       { source: '/blog/floor-cleaning-dubai-bay', destination: '/services/floor-cleaning', permanent: true },
       { source: '/blog/furniture-cleaning-dubai-business-bay', destination: '/services/sofa-cleaning', permanent: true },
       { source: '/blog/home-cleaning-company-dubai', destination: '/blog/home-deep-cleaning-dubai-guide', permanent: true },
