@@ -6,6 +6,8 @@ classified ads) point at the homepage; competitors have DR 32-47 against
 our 5. One editorial link from a DR 70+ property portal is worth more than
 hundreds of classified ads.
 
+Ready-to-send drafts: backlink-outreach-emails.md.
+
 Rules: confirmed claims only (see "What we can say"); no prices, no
 guarantee or 24/7 (owner has not decided), no "best / leading / #1".
 Never pay for a link without asking first. Lists published by a
@@ -26,10 +28,10 @@ bio-on.ae) are skipped: they will not list a rival.
 | 8 | dubizzle (74) | [House cleaning services in Abu Dhabi](https://www.dubizzle.com/blog/property/house-cleaning-services-abu-dhabi/) | | same | Add us (link to /abu-dhabi) |
 | 9 | dubizzle (74) | [Cleaning companies in Al Ain](https://www.dubizzle.com/blog/property/cleaning-companies-al-ain/) | | same | Add us (link to /abu-dhabi/al-ain) |
 | 10 | dubizzle (74) | [Home cleaning companies in UAQ](https://www.dubizzle.com/blog/property/home-cleaning-companies-uaq/) | | same | Add us (link to /umm-al-quwain) |
-| 11 | Nubia Magazine (46) | [Top 10 best cleaning services in UAE 2026](https://nubiapage.com/top-10-best-cleaning-services-in-uae/) | 1 Oct 2026 | [Contact](https://nubiapage.com/contact/) | Add us |
-| 12 | Square Yards (36) | [Home cleaning services in Sharjah](https://www.squareyards.ae/blog/home-cleaning-services-in-sharjah-regart) | | Site contact page | Add us (link to /sharjah) |
-| 13 | HowUAE (26) | [Top 10 sofa, carpet & mattress cleaning companies in Dubai](https://howuae.ae/top-10-sofa-carpet-mattress-cleaning-companies-in-dubai/) | 2026 | Site contact page | Add us (link to /services/sofa-cleaning) |
-| 14 | Film District Dubai (25) | [Top 10 cleaning companies in Dubai (2026)](https://www.filmdistrictdubai.com/blogs/top-10-cleaning-companies-in-dubai-2026) | 2026 | Site contact page | Add us |
+| 11 | Nubia Magazine (46) | [Top 10 best cleaning services in UAE 2026](https://nubiapage.com/top-10-best-cleaning-services-in-uae/) | 1 Oct 2026 | info@nubiapage.com, cc nubiamagazinegroup@gmail.com | Add us |
+| 12 | Square Yards (36) | [Home cleaning services in Sharjah](https://www.squareyards.ae/blog/home-cleaning-services-in-sharjah-regart) | Offline: site being rebuilt (20 Nov 2026) | connect@squareyards.com, later | Add us (link to /sharjah) |
+| 13 | HowUAE (26) | [Top 10 sofa, carpet & mattress cleaning companies in Dubai](https://howuae.ae/top-10-sofa-carpet-mattress-cleaning-companies-in-dubai/) | 2026 | [Contact form](https://howuae.ae/contact-us/) (did not load on 20 Nov) | Add us (link to /services/sofa-cleaning) |
+| 14 | ~~Film District Dubai (25)~~ | Dropped: article no longer loads; film production company | | | |
 | 15 | UAE Contractors Hub (13) | [Best home services in Sharjah](https://uaecontractorshub.com/blog/best-home-services-in-sharjah-prices-and-reviews) | ~2025 | Site contact page | Add us |
 
 Ask the owner first (may cost money or change how leads arrive):
