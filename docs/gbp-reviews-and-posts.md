@@ -22,7 +22,12 @@ Reviews are the strongest Maps ranking signal we can still grow. Target:
 Owner: Google Business Profile -> "Ask for reviews" (or "Get more
 reviews") -> copy the short link, looks like `https://g.page/r/XXXX/review`.
 
-Review link: `______________________` (paste here)
+Review link: `https://g.page/r/Cb1IPdAbIVZfEBM/review`
+
+Status (21 Nov 2026, Madinat Alhaya profile): posts 1-4 done (sofa live,
+carpet 24 Nov, mattress 28 Nov, recliner 1 Dec, all 11:00). Old "AED 399"
+villa post deleted. Other old posts with unconfirmed claims (24/7, 99.9%,
+"only / first company", "tested in UK and USA") still up, waiting on the owner.
 
 ### 2. Who and when
 
