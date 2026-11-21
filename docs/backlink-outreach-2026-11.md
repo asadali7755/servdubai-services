@@ -109,7 +109,9 @@ leoali851@gmail.com.
 
 Same details everywhere: Madinat Alhaya Building Cleaning Services, Office 718,
 Tamani Art Tower, Business Bay, Dubai; +971 55 127 5545 (call and WhatsApp);
-https://servedubai.ae; Monday to Sunday 8 AM to 10 PM.
+https://servedubai.ae; Monday to Saturday 9 AM to 10 PM, Sunday closed (the
+Google Business Profile hours, checked 21 Nov 2026; the earlier outreach
+emails said Monday to Sunday 8 AM to 10 PM, which was wrong).
 
 | Directory | What was done | Status |
 |---|---|---|
