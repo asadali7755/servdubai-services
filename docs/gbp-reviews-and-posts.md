@@ -201,7 +201,7 @@ the customer's place, one or two confirmed facts, free WhatsApp quote.
 - Send the originals on WhatsApp to the office the same day, with the
   service and area (for example "curtains, Al Nahda").
 
-### Also on the profile (once)
+### Also on the profile (once) - done 21 Nov 2026, pending Google review
 
 - Upload the two job videos to Photos -> Videos:
   `media-library\images\sofa clenaing imges and video for GBP\Sofa cleaning video.MP4`
