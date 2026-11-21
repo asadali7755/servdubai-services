@@ -1,21 +1,42 @@
 import type { Metadata } from 'next'
 import { SITE_CONFIG } from '@/lib/data/constants'
+import { arPathFor, enPathFor, isArPath } from '@/lib/i18n/routes'
 
 export interface SeoOptions {
   title: string
   description: string
   path: string
   imageUrl?: string
+  /** 'ar' for pages under /ar. */
+  locale?: 'en' | 'ar'
 }
 
 const SITE_URL = 'https://servedubai.ae'
 export const BUSINESS_ID = `${SITE_URL}/#business`
 
+const AR_TITLE_SUFFIX = ' | مدينة الحياة'
+
+const absUrl = (path: string) => (path === '/' ? SITE_URL : `${SITE_URL}${path}`)
+
+/**
+ * hreflang links. A page with an Arabic version (see lib/i18n/routes) lists
+ * both languages, with English as x-default; other pages list only English.
+ */
+export const buildLanguageAlternates = (path: string): Record<string, string> => {
+  const enPath = isArPath(path) ? enPathFor(path) : path
+  const arPath = isArPath(path) ? path : arPathFor(path)
+  const en = absUrl(enPath)
+  return arPath
+    ? { 'en-AE': en, 'ar-AE': absUrl(arPath), 'x-default': en }
+    : { 'en-AE': en, 'x-default': en }
+}
+
 export const buildMetadata = (options: SeoOptions): Metadata => {
-  const { title, description, path, imageUrl } = options
-  const url = path === '/' ? SITE_URL : `${SITE_URL}${path}`
+  const { title, description, path, imageUrl, locale = 'en' } = options
+  const url = absUrl(path)
   const ogImage = imageUrl ?? `${SITE_URL}/images/hero/professional-cleaning-services-UAE.webp`
-  const fullTitle = title.endsWith(SITE_CONFIG.titleSuffix) ? title : `${title}${SITE_CONFIG.titleSuffix}`
+  const suffix = locale === 'ar' ? AR_TITLE_SUFFIX : SITE_CONFIG.titleSuffix
+  const fullTitle = title.endsWith(suffix) ? title : `${title}${suffix}`
 
   // Keep meta descriptions <=160 chars (trim at a word boundary) so they don't get
   // truncated in search results / flagged as "too long".
@@ -29,14 +50,14 @@ export const buildMetadata = (options: SeoOptions): Metadata => {
     description: metaDescription,
     alternates: {
       canonical: url,
-      languages: { 'en-AE': url, 'x-default': url },
+      languages: buildLanguageAlternates(path),
     },
     openGraph: {
       title: fullTitle,
       description: metaDescription,
       url,
       siteName: SITE_CONFIG.siteName,
-      locale: 'en_AE',
+      locale: locale === 'ar' ? 'ar_AE' : 'en_AE',
       images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
       type: 'website',
     },

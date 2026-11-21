@@ -1,17 +1,22 @@
 'use client'
 
+import Link from 'next/link'
 import { useLocale } from '@/lib/i18n/LanguageProvider'
 
-export default function LanguageToggle() {
-  const { locale, toggle } = useLocale()
+/** A real link (crawlable) to the same page in the other language. */
+export default function LanguageToggle({ className = 'lang-toggle-btn' }: { className?: string }) {
+  const { locale, altHref } = useLocale()
+  const toAr = locale === 'en'
 
   return (
-    <button
-      onClick={toggle}
-      aria-label={locale === 'en' ? 'Switch to Arabic' : 'Switch to English'}
-      className="lang-toggle-btn"
+    <Link
+      href={altHref}
+      hrefLang={toAr ? 'ar' : 'en'}
+      lang={toAr ? 'ar' : 'en'}
+      aria-label={toAr ? 'Switch to Arabic' : 'Switch to English'}
+      className={className}
     >
-      {locale === 'en' ? 'العربية' : 'English'}
-    </button>
+      {toAr ? 'العربية' : 'English'}
+    </Link>
   )
 }

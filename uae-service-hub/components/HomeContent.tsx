@@ -38,7 +38,7 @@ const serviceAlts = [
   'Sofa cleaning Abu Dhabi — professional upholstery and couch deep cleaning UAE',
   'Carpet cleaning Sharjah — professional steam extraction and rug cleaning UAE',
   'Marble polishing Ajman — professional floor restoration and re-crystallization UAE',
-  'Mattress cleaning Ras Al Khaimah — UV-C sanitization and deep cleaning UAE',
+  'Mattress cleaning Ras Al Khaimah — deep cleaning and dust mite removal UAE',
   'Office cleaning Fujairah — professional commercial workspace cleaning UAE',
 ]
 const serviceKws = [
@@ -46,7 +46,7 @@ const serviceKws = [
   ['sofa cleaning Abu Dhabi', 'couch cleaning service', 'upholstery cleaning Abu Dhabi', 'leather sofa cleaning'],
   ['carpet cleaning Sharjah', 'rug cleaning services Sharjah', 'steam carpet cleaning', 'professional carpet cleaners'],
   ['marble polishing Ajman', 'floor polishing services Ajman', 'marble restoration UAE', 'stone polishing UAE'],
-  ['mattress cleaning Ras Al Khaimah', 'mattress sanitization UAE', 'dust mite removal', 'UV-C mattress cleaning'],
+  ['mattress cleaning Ras Al Khaimah', 'mattress sanitization UAE', 'dust mite removal', 'mattress steam cleaning'],
   ['office cleaning Fujairah', 'commercial cleaning UAE', 'workspace sanitization Fujairah', 'office deep clean'],
 ]
 

@@ -7,6 +7,7 @@ import { getWhatsAppLink } from '@/lib/utils/whatsapp'
 import { SITE_CONFIG } from '@/lib/data/constants'
 import { useLocale } from '@/lib/i18n/LanguageProvider'
 import translations from '@/lib/i18n/translations'
+import { localHref } from '@/lib/i18n/routes'
 
 export default function Footer() {
   const year = new Date().getFullYear()
@@ -20,7 +21,7 @@ export default function Footer() {
 
       <div className="p-footer-inner">
         {/* Large brand name — exact Poseify display-4 */}
-        <Link href="/" className="p-footer-logo">
+        <Link href={localHref('/', locale)} className="p-footer-logo">
           Madinat Alhaya
         </Link>
 
@@ -54,7 +55,7 @@ export default function Footer() {
               <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
             </svg>
           </Link>
-          <Link href="/contact" className="p-btn-icon" aria-label="Contact" title="Contact us">
+          <Link href={localHref('/contact', locale)} className="p-btn-icon" aria-label="Contact" title="Contact us">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
               <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
             </svg>
@@ -89,7 +90,7 @@ export default function Footer() {
             <ul>
               {services.map((s) => (
                 <li key={s.id}>
-                  <Link href={`/services/${s.slug}`}>
+                  <Link href={localHref(`/services/${s.slug}`, locale)}>
                     {t.serviceNames[s.id as keyof typeof t.serviceNames] ?? s.name}
                   </Link>
                 </li>
@@ -116,7 +117,7 @@ export default function Footer() {
               <li><Link href="/about">{t.footer.aboutUs}</Link></li>
               <li><Link href="/blog">{t.footer.blog}</Link></li>
               <li><Link href="/gallery">{t.footer.gallery}</Link></li>
-              <li><Link href="/contact">{t.footer.contact}</Link></li>
+              <li><Link href={localHref('/contact', locale)}>{t.footer.contact}</Link></li>
               <li><Link href="/areas">{t.footer.serviceAreas}</Link></li>
               <li><a href={`tel:${SITE_CONFIG.phone}`}>{SITE_CONFIG.phone}</a></li>
               <li><a href={SITE_CONFIG.googleReviewLink} target="_blank" rel="noopener noreferrer">{t.footer.reviewGoogle}</a></li>
@@ -127,7 +128,7 @@ export default function Footer() {
         {/* Copyright */}
         <p className="p-footer-copy">
           &copy; {year}{' '}
-          <Link href="/" style={{ borderBottom: '1px solid #6b7280', color: '#6b7280', textDecoration: 'none' }}>
+          <Link href={localHref('/', locale)} style={{ borderBottom: '1px solid #6b7280', color: '#6b7280', textDecoration: 'none' }}>
             Madinat Alhaya Building Cleaning Services
           </Link>
           , {t.footer.allRightsReserved}

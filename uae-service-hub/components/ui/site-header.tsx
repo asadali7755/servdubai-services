@@ -24,6 +24,7 @@ import { getWhatsAppLink } from '@/lib/utils/whatsapp'
 import { SITE_CONFIG } from '@/lib/data/constants'
 import { useLocale } from '@/lib/i18n/LanguageProvider'
 import translations from '@/lib/i18n/translations'
+import { localHref } from '@/lib/i18n/routes'
 import LanguageToggle from '@/components/LanguageToggle'
 
 const SERVICE_ICONS: Record<string, typeof Sparkles> = {
@@ -66,7 +67,7 @@ export function SiteHeader({ onOpenMobile, mobileOpen }: { onOpenMobile: () => v
     >
       <nav className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-4 lg:px-8">
         <div className="flex items-center gap-6">
-          <Link href="/" className="rounded-md p-1 font-heading text-lg font-bold tracking-tight text-foreground hover:opacity-80">
+          <Link href={localHref('/', locale)} className="rounded-md p-1 font-heading text-lg font-bold tracking-tight text-foreground hover:opacity-80">
             Madinat <span className="text-primary logo-accent">Alhaya</span>
           </Link>
 
@@ -74,7 +75,7 @@ export function SiteHeader({ onOpenMobile, mobileOpen }: { onOpenMobile: () => v
             <NavigationMenuList>
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
-                  <Link href="/" className="inline-flex h-9 items-center rounded-md px-3 text-sm font-medium text-foreground/90 hover:bg-accent/10 hover:text-primary">
+                  <Link href={localHref('/', locale)} className="inline-flex h-9 items-center rounded-md px-3 text-sm font-medium text-foreground/90 hover:bg-accent/10 hover:text-primary">
                     {t.nav.home}
                   </Link>
                 </NavigationMenuLink>
@@ -100,7 +101,7 @@ export function SiteHeader({ onOpenMobile, mobileOpen }: { onOpenMobile: () => v
                         <li key={s.id}>
                           <NavigationMenuLink asChild>
                             <Link
-                              href={`/services/${s.slug}`}
+                              href={localHref(`/services/${s.slug}`, locale)}
                               className="flex items-center gap-3 rounded-md p-2 hover:bg-accent/10"
                             >
                               <span className="flex size-9 shrink-0 items-center justify-center rounded-md border border-border bg-background/60 text-primary">
@@ -144,7 +145,7 @@ export function SiteHeader({ onOpenMobile, mobileOpen }: { onOpenMobile: () => v
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
-                  <Link href="/contact" className="inline-flex h-9 items-center rounded-md px-3 text-sm font-medium text-foreground/90 hover:bg-accent/10 hover:text-primary">
+                  <Link href={localHref('/contact', locale)} className="inline-flex h-9 items-center rounded-md px-3 text-sm font-medium text-foreground/90 hover:bg-accent/10 hover:text-primary">
                     {t.nav.contact}
                   </Link>
                 </NavigationMenuLink>

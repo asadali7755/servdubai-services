@@ -8,6 +8,8 @@ import { SERVICE_AREA_COMBOS } from '@/lib/data/serviceAreaCombos'
 import { blogPosts } from '@/lib/data/blog'
 import { aiGuides } from '@/lib/data/aiGuides'
 import { CAR_SHOWCASE } from '@/lib/data/carShowcase'
+import { allArPaths, enPathFor } from '@/lib/i18n/routes'
+import { buildLanguageAlternates } from '@/lib/utils/seo'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = 'https://servedubai.ae'
@@ -74,5 +76,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }))
 
-  return [...staticRoutes, ...serviceRoutes, ...emirateRoutes, ...cityRoutes, ...comboRoutes, ...blogRoutes, ...guideRoutes]
+  // Arabic pages (/ar) and the hreflang pair on both language versions.
+  const arLastModified = new Date('2026-11-21')
+  const arRoutes: MetadataRoute.Sitemap = allArPaths().map((p) => ({
+    url: `${base}${p}`,
+    lastModified: arLastModified,
+    changeFrequency: 'monthly' as const,
+    priority: p === '/ar' ? 0.9 : 0.8,
+    alternates: { languages: buildLanguageAlternates(p) },
+  }))
+  const pairedEn = new Set(allArPaths().map((p) => { const en = enPathFor(p); return en === '/' ? base : `${base}${en}` }))
+  const withAlternates = (routes: MetadataRoute.Sitemap) =>
+    routes.map((r) =>
+      pairedEn.has(r.url)
+        ? { ...r, alternates: { languages: buildLanguageAlternates(r.url === base ? '/' : r.url.slice(base.length)) } }
+        : r,
+    )
+
+  return [
+    ...withAlternates(staticRoutes), ...withAlternates(serviceRoutes), ...arRoutes,
+    ...emirateRoutes, ...cityRoutes, ...comboRoutes, ...blogRoutes, ...guideRoutes,
+  ]
 }

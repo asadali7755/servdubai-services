@@ -1,48 +1,30 @@
 'use client'
 
-import { useSyncExternalStore, useEffect } from 'react'
+import { useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 import type { Locale } from './translations'
+import { arPathFor, enPathFor, isArPath } from './routes'
 
-let listeners: Array<() => void> = []
-let currentLocale: Locale = 'en'
-
-function getLocale(): Locale {
-  return currentLocale
-}
-
-function getServerLocale(): Locale {
-  return 'en'
-}
-
-function subscribe(cb: () => void) {
-  listeners.push(cb)
-  return () => {
-    listeners = listeners.filter((l) => l !== cb)
-  }
-}
-
-function setLocale(next: Locale) {
-  currentLocale = next
-  if (typeof window !== 'undefined') {
-    localStorage.setItem('site-lang', next)
-    document.documentElement.setAttribute('dir', next === 'ar' ? 'rtl' : 'ltr')
-    document.documentElement.setAttribute('lang', next === 'ar' ? 'ar' : 'en-AE')
-  }
-  listeners.forEach((cb) => cb())
-}
-
+/**
+ * The language comes from the URL: pages under /ar are Arabic, everything
+ * else is English. Because the server knows the path, the Arabic text is in
+ * the server HTML (indexable), not swapped in after load.
+ */
 export function useLocale() {
-  const locale = useSyncExternalStore(subscribe, getLocale, getServerLocale)
+  const pathname = usePathname() ?? '/'
+  const locale: Locale = isArPath(pathname) ? 'ar' : 'en'
 
   useEffect(() => {
-    const saved = localStorage.getItem('site-lang') as Locale | null
-    if (saved === 'ar' || saved === 'en') {
-      if (saved !== currentLocale) setLocale(saved)
-    }
-  }, [])
+    // Client-side navigation between / and /ar does not re-run the inline
+    // script in app/ar/layout.tsx, so keep <html> in step here.
+    document.documentElement.setAttribute('lang', locale === 'ar' ? 'ar' : 'en-AE')
+    document.documentElement.setAttribute('dir', locale === 'ar' ? 'rtl' : 'ltr')
+  }, [locale])
 
-  const toggle = () => setLocale(currentLocale === 'en' ? 'ar' : 'en')
-  return { locale, toggle }
+  /** The same page in the other language, or the other home page. */
+  const altHref = locale === 'ar' ? enPathFor(pathname) : (arPathFor(pathname) ?? '/ar')
+
+  return { locale, altHref }
 }
 
 export default function LanguageProvider({ children }: { children: React.ReactNode }) {

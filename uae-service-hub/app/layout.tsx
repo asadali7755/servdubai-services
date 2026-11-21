@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Josefin_Sans, Work_Sans } from 'next/font/google'
+import { Cairo, Josefin_Sans, Work_Sans } from 'next/font/google'
 import Script from 'next/script'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -20,6 +20,16 @@ const workSans = Work_Sans({
   variable: '--font-work',
   weight: ['400', '600'],
   display: 'swap',
+})
+
+// Arabic pages only (see globals.css, html[lang="ar"]). Not preloaded, so
+// English pages never download it.
+const cairo = Cairo({
+  subsets: ['arabic'],
+  variable: '--font-ar',
+  weight: ['400', '600', '700'],
+  display: 'swap',
+  preload: false,
 })
 
 export const metadata: Metadata = {
@@ -53,7 +63,7 @@ export const metadata: Metadata = {
     canonical: 'https://servedubai.ae',
     languages: {
       'en-AE': 'https://servedubai.ae',
-      'en-US': 'https://servedubai.ae',
+      'x-default': 'https://servedubai.ae',
     },
   },
   robots: {
@@ -84,7 +94,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en-AE" className={`${josefin.variable} ${workSans.variable}`} data-theme="light" suppressHydrationWarning>
+    <html lang="en-AE" className={`${josefin.variable} ${workSans.variable} ${cairo.variable}`} data-theme="light" suppressHydrationWarning>
       <head />
 
       {/* GTM — head script */}
