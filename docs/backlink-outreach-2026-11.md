@@ -104,3 +104,15 @@ leoali851@gmail.com.
 | HowUAE (#13) | 20 Nov 2026, email from leoali851 to content@dominate.online (cc marbleprodxb) | Sent | | | |
 | Property Finder (#4-6) | | Not sent: LinkedIn note to Nadeen Qadadeh, from the user's own account | | | |
 | UAE Contractors Hub (#15) | | Dropped: site shows "Deployment Paused" (20 Nov 2026) | | | |
+
+## Directory listings (21 Nov 2026)
+
+Same details everywhere: Madinat Alhaya Building Cleaning Services, Office 718,
+Tamani Art Tower, Business Bay, Dubai; +971 55 127 5545 (call and WhatsApp);
+https://servedubai.ae; Monday to Sunday 8 AM to 10 PM.
+
+| Directory | What was done | Status |
+|---|---|---|
+| Cybo | Existing listing (71 reviews) edited: old Al Nahda address, servedubai.com and wrong hours replaced; WhatsApp and description added. Not claimed. | Edit submitted, may be moderated |
+| Foursquare | New place, pin on Tamani Arts Offices: https://app.foursquare.com/v/madinat-alhaya-building-cleaning-services/6b01c3bf99166055afcca8c1 | Live; website and description edit in review |
+| Connect.ae | | Dropped: domain does not resolve |
