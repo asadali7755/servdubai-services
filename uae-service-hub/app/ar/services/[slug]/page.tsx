@@ -8,6 +8,7 @@ import translations from '@/lib/i18n/translations'
 import { buildMetadata, buildServiceSchema, buildBreadcrumbSchema } from '@/lib/utils/seo'
 import { SITE_CONFIG } from '@/lib/data/constants'
 import { makeDna, dnaStyle } from '@/lib/design/dna'
+import { arWhatsAppLink } from '@/lib/utils/whatsappAr'
 import '../../../dna.css'
 
 type Props = { params: Promise<{ slug: string }> }
@@ -40,11 +41,6 @@ const WHY_US = [
   { title: 'مواعيد في نفس اليوم', text: 'تتوفر مواعيد في نفس اليوم في دبي وباقي الإمارات حسب جدول الفريق.' },
 ]
 
-const arWhatsAppLink = (serviceName: string) => {
-  const number = SITE_CONFIG.whatsappNumber.replace('+', '')
-  const msg = `مرحباً ${AR_BRAND_SHORT}، أريد حجز خدمة ${serviceName}. أرجو إرسال السعر والمواعيد المتاحة.`
-  return `https://wa.me/${number}?text=${encodeURIComponent(msg)}`
-}
 
 export default async function ArabicServicePage({ params }: Props) {
   const { slug } = await params

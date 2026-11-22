@@ -8,6 +8,7 @@ import { getWhatsAppLink } from '@/lib/utils/whatsapp'
 import QuoteCard from '@/components/QuoteCard'
 import { useLocale } from '@/lib/i18n/LanguageProvider'
 import translations from '@/lib/i18n/translations'
+import { localHref } from '@/lib/i18n/routes'
 
 interface Lightbox {
   type: 'image' | 'video'
@@ -115,7 +116,7 @@ export default function GalleryContent() {
                   {locale === 'ar' ? service.nameAr : service.name}
                 </h2>
               </div>
-              <Link href={`/services/${service.slug}`} className="gallery-svc-link">
+              <Link href={localHref(`/services/${service.slug}`, locale)} className="gallery-svc-link">
                 {locale === 'ar' ? 'عرض الخدمة ←' : 'View Service →'}
               </Link>
             </div>

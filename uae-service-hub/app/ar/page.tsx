@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import { buildMetadata, buildLocalBusinessSchema } from '@/lib/utils/seo'
-import HomeContent from '@/components/HomeContent'
+import HomeContent, { type ArAreaGroup } from '@/components/HomeContent'
+import { emirates } from '@/lib/data/emirates'
+import { AR_EMIRATES } from '@/lib/data/emirates.ar'
+import { getArCity } from '@/lib/data/cities.ar'
 import translations from '@/lib/i18n/translations'
 
 export const metadata: Metadata = buildMetadata({
@@ -24,12 +27,18 @@ const faqSchema = {
   })),
 }
 
+const arAreas: ArAreaGroup[] = emirates.map((e) => ({
+  name: AR_EMIRATES[e.slug]?.name ?? e.name,
+  href: `/ar/${e.slug}`,
+  cities: e.cities.map((c) => ({ name: getArCity(e.slug, c.slug)?.name ?? c.name, href: `/ar/${e.slug}/${c.slug}` })),
+}))
+
 export default function ArabicHome() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <HomeContent />
+      <HomeContent arAreas={arAreas} />
     </>
   )
 }

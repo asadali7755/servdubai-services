@@ -86,7 +86,7 @@ export function KineticMobileMenu({ open, onClose }: { open: boolean; onClose: (
           <Link data-kinetic-link href={localHref('/', locale)} onClick={onClose} className="rounded-md px-2 py-2.5 text-lg font-medium text-foreground hover:text-primary">
             {t.nav.home}
           </Link>
-          <Link data-kinetic-link href="/about" onClick={onClose} className="rounded-md px-2 py-2.5 text-lg font-medium text-foreground hover:text-primary">
+          <Link data-kinetic-link href={localHref('/about', locale)} onClick={onClose} className="rounded-md px-2 py-2.5 text-lg font-medium text-foreground hover:text-primary">
             {t.nav.about}
           </Link>
 
@@ -108,7 +108,7 @@ export function KineticMobileMenu({ open, onClose }: { open: boolean; onClose: (
             <Link
               key={e.id}
               data-kinetic-link
-              href={`/${e.slug}`}
+              href={localHref(`/${e.slug}`, locale)}
               onClick={onClose}
               className="rounded-md px-2 py-1.5 text-sm text-foreground/90 hover:text-primary"
             >
@@ -119,7 +119,7 @@ export function KineticMobileMenu({ open, onClose }: { open: boolean; onClose: (
           <Link data-kinetic-link href="/blog" onClick={onClose} className="mt-3 rounded-md px-2 py-2.5 text-lg font-medium text-foreground hover:text-primary">
             {t.nav.blog}
           </Link>
-          <Link data-kinetic-link href="/gallery" onClick={onClose} className="rounded-md px-2 py-2.5 text-lg font-medium text-foreground hover:text-primary">
+          <Link data-kinetic-link href={localHref('/gallery', locale)} onClick={onClose} className="rounded-md px-2 py-2.5 text-lg font-medium text-foreground hover:text-primary">
             {t.nav.gallery}
           </Link>
           <Link data-kinetic-link href={localHref('/contact', locale)} onClick={onClose} className="rounded-md px-2 py-2.5 text-lg font-medium text-foreground hover:text-primary">

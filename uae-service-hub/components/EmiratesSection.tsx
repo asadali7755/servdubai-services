@@ -5,6 +5,7 @@ import Link from 'next/link'
 import type { Emirate } from '@/lib/data/emirates'
 import { useLocale } from '@/lib/i18n/LanguageProvider'
 import translations from '@/lib/i18n/translations'
+import { localHref } from '@/lib/i18n/routes'
 
 export default function EmiratesSection({ emirates }: { emirates: Emirate[] }) {
   const { locale } = useLocale()
@@ -25,7 +26,7 @@ export default function EmiratesSection({ emirates }: { emirates: Emirate[] }) {
           {emirates.map((emirate) => (
             <Link
               key={emirate.id}
-              href={`/${emirate.slug}`}
+              href={localHref(`/${emirate.slug}`, locale)}
               className="emir-link"
             >
               <div className="team-item" style={{ cursor: 'pointer' }}>

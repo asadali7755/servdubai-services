@@ -7,6 +7,7 @@ import { getWhatsAppLink } from '@/lib/utils/whatsapp'
 import { SITE_CONFIG } from '@/lib/data/constants'
 import { useLocale } from '@/lib/i18n/LanguageProvider'
 import translations from '@/lib/i18n/translations'
+import { localHref } from '@/lib/i18n/routes'
 import PopularAreas from '@/components/PopularAreas'
 import GoogleReviews from '@/components/GoogleReviews'
 import { useRequestCall } from '@/components/RequestCallModal'
@@ -54,7 +55,14 @@ const extraSlugs = ['curtain-cleaning', 'upholstery-cleaning', 'car-interior-det
 
 const whyIcons = ['🏅', '🌿', '⚡', '✓']
 
-export default function HomeContent() {
+/** Arabic area links, built on the server by app/ar/page.tsx (keeps the Arabic copy out of the English bundle). */
+export interface ArAreaGroup {
+  name: string
+  href: string
+  cities: { name: string; href: string }[]
+}
+
+export default function HomeContent({ arAreas }: { arAreas?: ArAreaGroup[] }) {
   const { locale } = useLocale()
   const t = translations[locale]
   const isAr = locale === 'ar'
@@ -72,6 +80,7 @@ export default function HomeContent() {
         backgroundAlt={heroImages[0].imageAlt}
         getFreeQuoteLabel={t.hero.getFreeQuote}
         learnMoreLabel={t.hero.learnMore}
+        learnMoreHref={localHref('/about', locale)}
         ourWebsitesLabel={t.hero.ourWebsites}
         contactInfo={{ website: 'servedubai.ae', phone: SITE_CONFIG.phoneDisplay, address: 'Serving all 7 UAE Emirates' }}
         isAr={isAr}
@@ -94,17 +103,17 @@ export default function HomeContent() {
         viewArrow={t.home.viewArrow}
       />
 
-      {/* 2b. CAR CARE */}
-      <CarShowcase
+      {/* 2b. CAR CARE (English copy, so not on the Arabic home) */}
+      {!isAr && <CarShowcase
         heading="Car Wash at Home in Dubai & across the UAE"
         intro="We come to your villa driveway, building parking or office with everything needed — foam wash, wheels, glass, interior vacuum, plus interior deep cleaning and AC odour removal when the car needs more. Available in all 7 emirates."
-      />
+      />}
 
       {/* 3. EMIRATES */}
       <EmiratesSection emirates={emirates} />
 
       {/* 3b. OUR OTHER WEBSITES */}
-      <WebsitesShowcase />
+      {!isAr && <WebsitesShowcase />}
 
       {/* 4. BOOK BY LOCATION */}
       <section className="home-services-section sec-pad">
@@ -114,9 +123,22 @@ export default function HomeContent() {
             <h2 className="home-section-h2 text-center">{t.home.bookByLocationTitle}</h2>
             <p className="home-section-p max-w-640 mx-auto text-center">{t.home.bookByLocationSubtitle}</p>
           </div>
-          <PopularAreas />
+          {isAr && arAreas ? (
+            <div className="ar-area-groups">
+              {arAreas.map((g) => (
+                <div key={g.href} className="ar-area-group">
+                  <Link href={g.href} className="ar-area-emirate">{g.name}</Link>
+                  <div className="ar-area-links">
+                    {g.cities.map((c) => <Link key={c.href} href={c.href}>{c.name}</Link>)}
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <PopularAreas />
+          )}
           <div className="text-center mt-md">
-            <Link href="/areas" className="home-svc-link" style={{ fontWeight: 600 }}>{t.home.viewAllAreas}</Link>
+            <Link href={localHref('/areas', locale)} className="home-svc-link" style={{ fontWeight: 600 }}>{t.home.viewAllAreas}</Link>
           </div>
         </div>
       </section>
@@ -201,7 +223,7 @@ export default function HomeContent() {
               </ul>
               <div className="home-cta-btns">
                 <a href={getWhatsAppLink()} target="_blank" rel="noopener noreferrer" className="p-btn-outline">{t.hero.getFreeQuote}</a>
-                <Link href="/about" className="p-btn-primary">{t.home.aboutUs}</Link>
+                <Link href={localHref('/about', locale)} className="p-btn-primary">{t.home.aboutUs}</Link>
               </div>
             </div>
             <div className="p-about-img home-about-img relative overflow-hidden" style={{ borderRadius: '10px' }}>

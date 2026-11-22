@@ -50,7 +50,7 @@ export default function Footer() {
               <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.29 21 3 13.71 3 4.5c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.24 1.02l-2.21 2.2z"/>
             </svg>
           </a>
-          <Link href="/about" className="p-btn-icon" aria-label="About" title="About us">
+          <Link href={localHref('/about', locale)} className="p-btn-icon" aria-label="About" title="About us">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
             </svg>
@@ -103,7 +103,7 @@ export default function Footer() {
             <ul>
               {emirates.map((e) => (
                 <li key={e.id}>
-                  <Link href={`/${e.slug}`}>
+                  <Link href={localHref(`/${e.slug}`, locale)}>
                     {t.emirateNames[e.slug as keyof typeof t.emirateNames] ?? e.name}
                   </Link>
                 </li>
@@ -114,11 +114,11 @@ export default function Footer() {
           <div>
             <h3>{t.footer.company}</h3>
             <ul>
-              <li><Link href="/about">{t.footer.aboutUs}</Link></li>
+              <li><Link href={localHref('/about', locale)}>{t.footer.aboutUs}</Link></li>
               <li><Link href="/blog">{t.footer.blog}</Link></li>
-              <li><Link href="/gallery">{t.footer.gallery}</Link></li>
+              <li><Link href={localHref('/gallery', locale)}>{t.footer.gallery}</Link></li>
               <li><Link href={localHref('/contact', locale)}>{t.footer.contact}</Link></li>
-              <li><Link href="/areas">{t.footer.serviceAreas}</Link></li>
+              <li><Link href={localHref('/areas', locale)}>{t.footer.serviceAreas}</Link></li>
               <li><a href={`tel:${SITE_CONFIG.phone}`}>{SITE_CONFIG.phone}</a></li>
               <li><a href={SITE_CONFIG.googleReviewLink} target="_blank" rel="noopener noreferrer">{t.footer.reviewGoogle}</a></li>
             </ul>

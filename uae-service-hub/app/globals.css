@@ -4802,3 +4802,10 @@ html[lang="ar"] body { text-align: right; }
 @media (max-width: 860px) { .ar-service .ar-hero { grid-template-columns: 1fr; } }
 /* Phone numbers keep their left-to-right order inside Arabic text. */
 html[dir="rtl"] a[href^="tel:"] { direction: ltr; unicode-bidi: isolate; }
+/* Arabic home: areas by emirate */
+.ar-area-groups { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; margin-top: 1.4rem; }
+.ar-area-group { background: var(--card, #fff); border: 1px solid rgba(201,168,76,.35); border-radius: 16px; padding: 18px 20px; }
+.ar-area-emirate { display: block; font-weight: 700; font-size: 1.1rem; margin-bottom: .6rem; color: inherit; }
+.ar-area-links { display: flex; flex-wrap: wrap; gap: 6px 14px; }
+.ar-area-links a { font-size: .92rem; color: inherit; opacity: .85; text-decoration: none; }
+.ar-area-links a:hover { opacity: 1; text-decoration: underline; }

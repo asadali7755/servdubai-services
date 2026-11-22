@@ -1,12 +1,16 @@
 import { arServices } from '@/lib/data/services.ar'
+import { emirates } from '@/lib/data/emirates'
 import type { Locale } from './translations'
 
 /**
  * Which English pages have an Arabic version under /ar. Only these get an
  * hreflang pair and a language switch to the same page; every other page
- * stays English-only.
+ * (blog, service-by-area pages, websites) stays English-only.
  */
 const AR_SERVICE_SLUGS = new Set(arServices.map((s) => s.slug))
+const AR_STATIC = new Set(['/contact', '/about', '/areas', '/gallery'])
+const EMIRATE_SLUGS = new Set(emirates.map((e) => e.slug))
+const CITY_PATHS = new Set(emirates.flatMap((e) => e.cities.map((c) => `/${e.slug}/${c.slug}`)))
 
 const stripSlash = (p: string) => (p.length > 1 ? p.replace(/\/+$/, '') : p)
 
@@ -18,9 +22,12 @@ export function isArPath(path: string): boolean {
 export function arPathFor(enPath: string): string | null {
   const p = stripSlash(enPath)
   if (p === '/') return '/ar'
-  if (p === '/contact') return '/ar/contact'
+  if (AR_STATIC.has(p)) return `/ar${p}`
   const m = p.match(/^\/services\/([^/]+)$/)
   if (m && AR_SERVICE_SLUGS.has(m[1])) return `/ar/services/${m[1]}`
+  const seg = p.split('/').filter(Boolean)
+  if (seg.length === 1 && EMIRATE_SLUGS.has(seg[0])) return `/ar${p}`
+  if (seg.length === 2 && CITY_PATHS.has(p)) return `/ar${p}`
   return null
 }
 
@@ -39,5 +46,11 @@ export function localHref(enPath: string, locale: Locale): string {
 
 /** Every Arabic path, for the sitemap. */
 export function allArPaths(): string[] {
-  return ['/ar', '/ar/contact', ...arServices.map((s) => `/ar/services/${s.slug}`)]
+  return [
+    '/ar',
+    ...[...AR_STATIC].map((p) => `/ar${p}`),
+    ...arServices.map((s) => `/ar/services/${s.slug}`),
+    ...emirates.map((e) => `/ar/${e.slug}`),
+    ...[...CITY_PATHS].map((p) => `/ar${p}`),
+  ]
 }

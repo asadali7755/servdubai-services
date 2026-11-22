@@ -4,6 +4,8 @@ import { useEffect, useRef, useState, type ReactNode } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import s from './services-showcase.module.css'
+import { useLocale } from '@/lib/i18n/LanguageProvider'
+import { localHref } from '@/lib/i18n/routes'
 
 export interface ShowcaseCard {
   badge: string
@@ -90,6 +92,7 @@ function PanelRow({ panels, offset, viewService, delay, deck, onPick }: {
   panels: Panel[]; offset: number; viewService: string; delay: number
   deck: number | null; onPick?: (globalIndex: number) => void
 }) {
+  const { locale } = useLocale()
   const [open, setOpen] = useState(0)
   const [hold, setHold] = useState(false)
   const [tick, setTick] = useState(0)
@@ -164,7 +167,7 @@ function PanelRow({ panels, offset, viewService, delay, deck, onPick }: {
               {p.kws.length > 0 && (
                 <div className={s.kws}>{p.kws.map((k) => <span key={k}>{k}</span>)}</div>
               )}
-              <Link href={`/services/${p.slug}`} className={s.cta} tabIndex={on ? 0 : -1}>
+              <Link href={localHref(`/services/${p.slug}`, locale)} className={s.cta} tabIndex={on ? 0 : -1}>
                 {ctaText(p.slug, viewService)}
               </Link>
             </div>

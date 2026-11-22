@@ -82,7 +82,7 @@ export function SiteHeader({ onOpenMobile, mobileOpen }: { onOpenMobile: () => v
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
-                  <Link href="/about" className="inline-flex h-9 items-center rounded-md px-3 text-sm font-medium text-foreground/90 hover:bg-accent/10 hover:text-primary">
+                  <Link href={localHref('/about', locale)} className="inline-flex h-9 items-center rounded-md px-3 text-sm font-medium text-foreground/90 hover:bg-accent/10 hover:text-primary">
                     {t.nav.about}
                   </Link>
                 </NavigationMenuLink>
@@ -138,7 +138,7 @@ export function SiteHeader({ onOpenMobile, mobileOpen }: { onOpenMobile: () => v
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
-                  <Link href="/gallery" className="inline-flex h-9 items-center rounded-md px-3 text-sm font-medium text-foreground/90 hover:bg-accent/10 hover:text-primary">
+                  <Link href={localHref('/gallery', locale)} className="inline-flex h-9 items-center rounded-md px-3 text-sm font-medium text-foreground/90 hover:bg-accent/10 hover:text-primary">
                     {t.nav.gallery}
                   </Link>
                 </NavigationMenuLink>
@@ -193,6 +193,7 @@ export function SiteHeader({ onOpenMobile, mobileOpen }: { onOpenMobile: () => v
  *  cursor-follow "selected work" pattern, but built from the site's real /images/emirates photos. */
 function EmiratesPreviewList({ emirateNames }: { emirateNames: Record<string, string> }) {
   const [hovered, setHovered] = React.useState(0)
+  const { locale } = useLocale()
   return (
     <div className="flex w-[420px] gap-3 p-1">
       <ul className="flex-1 space-y-0.5">
@@ -200,7 +201,7 @@ function EmiratesPreviewList({ emirateNames }: { emirateNames: Record<string, st
           <li key={e.id}>
             <NavigationMenuLink asChild>
               <Link
-                href={`/${e.slug}`}
+                href={localHref(`/${e.slug}`, locale)}
                 onMouseEnter={() => setHovered(i)}
                 className={cn(
                   'block rounded-md px-3 py-2 text-sm font-medium transition-colors',
