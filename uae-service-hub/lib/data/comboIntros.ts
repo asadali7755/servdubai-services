@@ -17,6 +17,8 @@ export interface ComboIntro {
   intro: string
   /** ~150-160 char meta description for <meta name="description"> — also unique per combo. */
   metaDescription: string
+  /** Optional page title override (without the " | Madinat Alhaya" suffix). */
+  title?: string
 }
 
 const comboIntros: Record<string, ComboIntro> = {
@@ -915,7 +917,8 @@ const comboIntros: Record<string, ComboIntro> = {
   },
   'dubai-umm-suqeim-floor-cleaning': {
     intro: "Umm Suqeim's beachside villas across Umm Suqeim 1, 2 and 3 face a specific floor problem that inland areas don't: coastal humidity means dust arrives damp and sets into grout lines instead of sweeping away, while salt in the air speeds up dulling on natural stone. Our floor cleaning here uses rotary scrubbing with a dedicated grout pass on tiled sections, restoring the tile lines that mopping alone can't reach. If your floors are marble or another natural stone that's gone dull rather than dirty, that needs polishing rather than cleaning, and we'll tell you which one applies during the assessment. Villa floor and sofa cleaning can be combined in one visit for a better combined rate.",
-    metaDescription: "Floor cleaning in Umm Suqeim — grout deep cleaning for coastal humidity, marble polishing assessed separately. Free quote.",
+    metaDescription: "Floor cleaning in Umm Suqeim at your villa: machine scrubbing for tile and stone, a grout pass for damp-set dust, marble checked. Free WhatsApp quote.",
+    title: 'Floor Cleaning Umm Suqeim | Tile & Grout Scrubbing',
   },
   'dubai-al-barsha-floor-cleaning': {
     intro: "Al Barsha's established villa compounds and apartment complexes across Al Barsha 1, 2 and 3 accumulate the same abrasive desert dust that affects floors throughout inland Dubai, and regular mopping alone doesn't remove what's worked into grout lines and floor texture over time. Our floor cleaning uses rotary scrubbing machines matched to your specific flooring — ceramic and porcelain get more aggressive scrubbing, while natural stone is treated as a separate marble restoration job rather than standard cleaning. A dedicated grout pass restores the original colour between tiles, which is usually the most visible difference after the visit. Quotes are confirmed after we understand your floor area and type.",

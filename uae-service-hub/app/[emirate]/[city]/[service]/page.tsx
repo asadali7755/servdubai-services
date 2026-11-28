@@ -69,7 +69,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const place = /^(RAK|UAQ) City$/.test(city.name) ? emirate.name : city.name
   return buildMetadata({
     // CTR: lead with the exact query ("<service> in <area>"), add the offer when it still fits ~60 chars
-    title: `${shortService} in ${place}${`${shortService} in ${place} | Free Quote | Madinat Alhaya`.length <= 62 ? ' | Free Quote' : ''} | Madinat Alhaya`,
+    title: comboIntro?.title ?? `${shortService} in ${place}${`${shortService} in ${place} | Free Quote | Madinat Alhaya`.length <= 62 ? ' | Free Quote' : ''} | Madinat Alhaya`,
     description:
       comboIntro?.metaDescription ??
       `Professional ${service.name.toLowerCase()} in ${city.name}, ${emirate.name}. Free quote — call ${SITE_CONFIG.phone}.`,

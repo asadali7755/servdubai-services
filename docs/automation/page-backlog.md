@@ -7,7 +7,7 @@ once a month from fresh GSC data.
 Format: `- [ ] ID | page | task | evidence`. The routine ticks `[x]` when done
 or marks `[!]` with a reason when it could not finish.
 
-- [ ] S01 | /dubai/umm-suqeim/floor-cleaning | Raise click rate: rewrite the title and meta description around "floor cleaning Umm Suqeim" (state what is done: machine scrubbing, grout cleaning, at your villa), and add 3 FAQs specific to Umm Suqeim villas (sea humidity, marble vs tile, how long it takes) | 3,549 impr, 0 clicks, pos 6.0
+- [x] S01 | /dubai/umm-suqeim/floor-cleaning | Raise click rate: rewrite the title and meta description around "floor cleaning Umm Suqeim" (state what is done: machine scrubbing, grout cleaning, at your villa), and add 3 FAQs specific to Umm Suqeim villas (sea humidity, marble vs tile, how long it takes) | 3,549 impr, 0 clicks, pos 6.0 (done 2026-11-28)
 - [ ] S02 | /dubai/mirdif/floor-cleaning | Same as S01 for Mirdif ("floor cleaning company in Mirdif"): new title/meta, 3 Mirdif-specific FAQs (desert sand, grout darkening, villa ground floors) | 2,355 impr, 0 clicks, pos 8.3
 - [ ] S03 | /dubai/umm-suqeim | The area page competes with its floor-cleaning page for "floor cleaning Umm Suqeim". Keep the area page about the area in general and add a short, clear paragraph that links to /dubai/umm-suqeim/floor-cleaning with the anchor "floor cleaning in Umm Suqeim" | area page 2,388 impr pos 10.6 for floor queries
 - [ ] S04 | /dubai/mirdif | Same as S03 for Mirdif, linking to /dubai/mirdif/floor-cleaning | area page pos 20 to 22 for "floor cleaning mirdif"

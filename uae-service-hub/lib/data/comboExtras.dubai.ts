@@ -346,6 +346,9 @@ export const DUBAI_COMBO_EXTRAS: Record<string, ComboExtra> = {
       { question: 'My marble floor looks dull — do I need cleaning or polishing?', answer: 'If it looks dirty in patches, cleaning helps. If it looks evenly dull, it usually needs polishing. We tell you which during the visit.' },
       { question: 'Why does my floor feel sticky after mopping?', answer: 'Often it is product residue mixed with damp dust. Machine scrubbing and rinsing removes the residue.' },
       { question: 'Can you clean floors in a villa that is still furnished?', answer: 'Yes. We move light furniture and work around heavy pieces unless arranged beforehand.' },
+      { question: 'Does the sea humidity in Umm Suqeim make floors dirtier?', answer: 'It changes how dirt sticks. Humid air from the beach makes fine dust damp, so it settles into grout lines instead of sweeping away, and mopping tends to spread it. Machine scrubbing with rinsing lifts it out. Between visits, dry-mop before you wet-mop.' },
+      { question: 'Do you clean marble and tile floors the same way?', answer: 'No. Tile and porcelain get machine scrubbing and a separate grout pass. Marble is softer and reacts to acidic cleaners, so it gets pH-neutral products and softer pads. If the marble is dull or etched rather than dirty, it needs polishing, and we tell you that before we start.' },
+      { question: 'How long does floor cleaning take in an Umm Suqeim villa?', answer: 'It depends on the floor area, the number of rooms and how dark the grout is. Send us the villa size and a few photos on WhatsApp and we give you a time estimate with the free quote. Most rooms can be walked on again once the floor is dry.' },
     ],
   },
   'dubai-al-barsha-floor-cleaning': {
