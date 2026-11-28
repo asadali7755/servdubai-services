@@ -10,6 +10,7 @@ import { aiGuides } from '@/lib/data/aiGuides'
 import { CAR_SHOWCASE } from '@/lib/data/carShowcase'
 import { allArPaths, enPathFor } from '@/lib/i18n/routes'
 import { buildLanguageAlternates } from '@/lib/utils/seo'
+import { PAGE_UPDATES } from '@/lib/data/pageUpdates'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = 'https://servedubai.ae'
@@ -93,8 +94,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
         : r,
     )
 
-  return [
+  // A page changed after the default date gets its own lastmod (see lib/data/pageUpdates.ts).
+  const withPageDates = (routes: MetadataRoute.Sitemap) =>
+    routes.map((r) => {
+      const path = r.url === base ? '/' : r.url.slice(base.length)
+      const changed = PAGE_UPDATES[path]
+      return changed ? { ...r, lastModified: new Date(changed) } : r
+    })
+
+  return withPageDates([
     ...withAlternates(staticRoutes), ...withAlternates(serviceRoutes), ...arRoutes,
-    ...emirateRoutes, ...cityRoutes, ...comboRoutes, ...blogRoutes, ...guideRoutes,
-  ]
+    ...withAlternates(emirateRoutes), ...withAlternates(cityRoutes), ...comboRoutes, ...blogRoutes, ...guideRoutes,
+  ])
 }
